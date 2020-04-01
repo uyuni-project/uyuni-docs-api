@@ -1,0 +1,157 @@
+
+
+
+[#api]
+== api
+
+
+=== Available methods
+
+* <<api-getApiCallList,getApiCallList>>
+* <<api-getApiNamespaceCallList,getApiNamespaceCallList>>
+* <<api-getApiNamespaces,getApiNamespaces>>
+* <<api-getVersion,getVersion>>
+* <<api-systemVersion,systemVersion>>
+
+=== Description
+
+Methods providing information about the API.
+
+*Namespace*:
+
+api
+
+'''
+
+
+[#api-getApiCallList]
+=== Method: getApiCallList 
+
+Description:
+
+Lists all available api calls grouped by namespace
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.struct]#struct#  - method_info
+       * [.string]#string#  "name" - method name
+       * [.string]#string#  "parameters" - method parameters
+       * [.string]#string#  "exceptions" - method exceptions
+       * [.string]#string#  "return" - method return type
+   // no end needed
+ 
+
+
+'''
+
+
+[#api-getApiNamespaceCallList]
+=== Method: getApiNamespaceCallList 
+
+Description:
+
+Lists all available api calls for the specified namespace
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  namespace
+ 
+
+Returns:
+
+* [.struct]#struct#  - method_info
+        * [.string]#string#  "name" - method name
+        * [.string]#string#  "parameters" - method parameters
+        * [.string]#string#  "exceptions" - method exceptions
+        * [.string]#string#  "return" - method return type
+   // no end needed
+ 
+
+
+'''
+
+
+[#api-getApiNamespaces]
+=== Method: getApiNamespaces 
+
+Description:
+
+Lists available API namespaces
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.struct]#struct#  - namespace
+        * [.string]#string#  "namespace" - API namespace
+        * [.string]#string#  "handler" - API Handler
+   // no end needed
+ 
+
+
+'''
+
+
+[#api-getVersion]
+=== Method: getVersion 
+
+Description:
+
+Returns the version of the API. Since Spacewalk 0.4
+ (Satellite 5.3) it is no more related to server version.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#api-systemVersion]
+=== Method: systemVersion 
+
+Description:
+
+Returns the server version.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* string 
+ 
+
+
+'''
+

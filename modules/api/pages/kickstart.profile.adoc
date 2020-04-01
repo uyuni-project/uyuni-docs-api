@@ -1,0 +1,1251 @@
+
+
+
+[#kickstart_profile]
+== kickstart.profile
+
+
+=== Available methods
+
+* <<kickstart_profile-addIpRange,addIpRange>>
+* <<kickstart_profile-addScript,addScript>>
+* <<kickstart_profile-addScript,addScript>>
+* <<kickstart_profile-addScript,addScript>>
+* <<kickstart_profile-compareActivationKeys,compareActivationKeys>>
+* <<kickstart_profile-compareAdvancedOptions,compareAdvancedOptions>>
+* <<kickstart_profile-comparePackages,comparePackages>>
+* <<kickstart_profile-downloadKickstart,downloadKickstart>>
+* <<kickstart_profile-downloadRenderedKickstart,downloadRenderedKickstart>>
+* <<kickstart_profile-getAdvancedOptions,getAdvancedOptions>>
+* <<kickstart_profile-getAvailableRepositories,getAvailableRepositories>>
+* <<kickstart_profile-getCfgPreservation,getCfgPreservation>>
+* <<kickstart_profile-getChildChannels,getChildChannels>>
+* <<kickstart_profile-getCustomOptions,getCustomOptions>>
+* <<kickstart_profile-getKickstartTree,getKickstartTree>>
+* <<kickstart_profile-getRepositories,getRepositories>>
+* <<kickstart_profile-getUpdateType,getUpdateType>>
+* <<kickstart_profile-getVariables,getVariables>>
+* <<kickstart_profile-getVirtualizationType,getVirtualizationType>>
+* <<kickstart_profile-listIpRanges,listIpRanges>>
+* <<kickstart_profile-listScripts,listScripts>>
+* <<kickstart_profile-orderScripts,orderScripts>>
+* <<kickstart_profile-removeIpRange,removeIpRange>>
+* <<kickstart_profile-removeScript,removeScript>>
+* <<kickstart_profile-setAdvancedOptions,setAdvancedOptions>>
+* <<kickstart_profile-setCfgPreservation,setCfgPreservation>>
+* <<kickstart_profile-setChildChannels,setChildChannels>>
+* <<kickstart_profile-setCustomOptions,setCustomOptions>>
+* <<kickstart_profile-setKickstartTree,setKickstartTree>>
+* <<kickstart_profile-setLogging,setLogging>>
+* <<kickstart_profile-setRepositories,setRepositories>>
+* <<kickstart_profile-setUpdateType,setUpdateType>>
+* <<kickstart_profile-setVariables,setVariables>>
+* <<kickstart_profile-setVirtualizationType,setVirtualizationType>>
+
+=== Description
+
+Provides methods to access and modify many aspects of
+ a kickstart profile.
+
+*Namespace*:
+
+kickstart.profile
+
+'''
+
+
+[#kickstart_profile-addIpRange]
+=== Method: addIpRange 
+
+Description:
+
+Add an ip range to a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - The label of the
+ kickstart
+ 
+* [.string]#string#  min - The ip address making up the
+ minimum of the range (i.e. 192.168.0.1)
+ 
+* [.string]#string#  max - The ip address making up the
+ maximum of the range (i.e. 192.168.0.254)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-addScript]
+=== Method: addScript 
+
+Description:
+
+Add a pre/post script to a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The kickstart label to
+ add the script to.
+ 
+* [.string]#string#  name - The kickstart script name.
+ 
+* [.string]#string#  contents - The full script to
+ add.
+ 
+* [.string]#string#  interpreter - The path to the
+ interpreter to use (i.e. /bin/bash). An empty string will use the
+ kickstart default interpreter.
+ 
+* [.string]#string#  type - The type of script (either
+ 'pre' or 'post').
+ 
+* [.boolean]#boolean#  chroot - Whether to run the script
+ in the chrooted install location (recommended) or not.
+ 
+
+Returns:
+
+* int id - the id of the added script 
+ 
+
+
+'''
+
+
+[#kickstart_profile-addScript]
+=== Method: addScript 
+
+Description:
+
+Add a pre/post script to a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The kickstart label to
+ add the script to.
+ 
+* [.string]#string#  name - The kickstart script name.
+ 
+* [.string]#string#  contents - The full script to
+ add.
+ 
+* [.string]#string#  interpreter - The path to the
+ interpreter to use (i.e. /bin/bash). An empty string will use the
+ kickstart default interpreter.
+ 
+* [.string]#string#  type - The type of script (either
+ 'pre' or 'post').
+ 
+* [.boolean]#boolean#  chroot - Whether to run the script
+ in the chrooted install location (recommended) or not.
+ 
+* [.boolean]#boolean#  template - Enable templating using cobbler.
+ 
+
+Returns:
+
+* int id - the id of the added script 
+ 
+
+
+'''
+
+
+[#kickstart_profile-addScript]
+=== Method: addScript 
+
+Description:
+
+Add a pre/post script to a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The kickstart label to
+ add the script to.
+ 
+* [.string]#string#  name - The kickstart script name.
+ 
+* [.string]#string#  contents - The full script to
+ add.
+ 
+* [.string]#string#  interpreter - The path to the
+ interpreter to use (i.e. /bin/bash). An empty string will use the
+ kickstart default interpreter.
+ 
+* [.string]#string#  type - The type of script (either
+ 'pre' or 'post').
+ 
+* [.boolean]#boolean#  chroot - Whether to run the script
+ in the chrooted install location (recommended) or not.
+ 
+* [.boolean]#boolean#  template - Enable templating using cobbler.
+ 
+* [.boolean]#boolean#  erroronfail - Whether to throw an
+ error if the script fails or not
+ 
+
+Returns:
+
+* int id - the id of the added script 
+ 
+
+
+'''
+
+
+[#kickstart_profile-compareActivationKeys]
+=== Method: compareActivationKeys 
+
+Description:
+
+Returns a list for each kickstart profile; each list will contain
+             activation keys not present on the other profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel1
+ 
+* [.string]#string#  kickstartLabel2
+ 
+
+Returns:
+
+* [.struct]#struct#  - Comparison Info
+      * [.array]#array#  "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+              * [.struct]#struct#  - activation key
+     * [.string]#string#  "key"
+     * [.string]#string#  "description"
+     * [.int]#int#  "usage_limit"
+     * [.string]#string#  "base_channel_label"
+     * [.array]#array#  "child_channel_labels"
+** string - childChannelLabel
+     * [.array]#array#  "entitlements"
+** string - entitlementLabel
+     * [.array]#array#  "server_group_ids"
+** string - serverGroupId
+     * [.array]#array#  "package_names"
+** string - packageName - (deprecated by packages)
+     * [.array]#array#  "packages"
+       * [.struct]#struct#  - package
+         * [.string]#string#  "name" - packageName
+         * [.string]#string#  "arch" - archLabel - optional
+       // no end needed
+     // no end needed
+     * [.boolean]#boolean#  "universal_default"
+     * [.boolean]#boolean#  "disabled"
+     * [.string]#string#  "contact_method" - One of the following:
+       // no end needed
+         * default
+         * ssh-push
+         * ssh-push-tunnel
+       // no end needed
+   // no end needed
+ 
+          // no end needed
+      * [.array]#array#  "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+              * [.struct]#struct#  - activation key
+     * [.string]#string#  "key"
+     * [.string]#string#  "description"
+     * [.int]#int#  "usage_limit"
+     * [.string]#string#  "base_channel_label"
+     * [.array]#array#  "child_channel_labels"
+** string - childChannelLabel
+     * [.array]#array#  "entitlements"
+** string - entitlementLabel
+     * [.array]#array#  "server_group_ids"
+** string - serverGroupId
+     * [.array]#array#  "package_names"
+** string - packageName - (deprecated by packages)
+     * [.array]#array#  "packages"
+       * [.struct]#struct#  - package
+         * [.string]#string#  "name" - packageName
+         * [.string]#string#  "arch" - archLabel - optional
+       // no end needed
+     // no end needed
+     * [.boolean]#boolean#  "universal_default"
+     * [.boolean]#boolean#  "disabled"
+     * [.string]#string#  "contact_method" - One of the following:
+       // no end needed
+         * default
+         * ssh-push
+         * ssh-push-tunnel
+       // no end needed
+   // no end needed
+ 
+          // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-compareAdvancedOptions]
+=== Method: compareAdvancedOptions 
+
+Description:
+
+Returns a list for each kickstart profile; each list will contain the
+             properties that differ between the profiles and their values for that
+             specific profile .
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel1
+ 
+* [.string]#string#  kickstartLabel2
+ 
+
+Returns:
+
+* [.struct]#struct#  - Comparison Info
+      * [.array]#array#  "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+              * [.struct]#struct#  - value
+          * [.string]#string#  "name"
+          * [.string]#string#  "value"
+          * [.boolean]#boolean#  "enabled"
+      // no end needed
+ 
+          // no end needed
+      * [.array]#array#  "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+              * [.struct]#struct#  - value
+          * [.string]#string#  "name"
+          * [.string]#string#  "value"
+          * [.boolean]#boolean#  "enabled"
+      // no end needed
+ 
+          // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-comparePackages]
+=== Method: comparePackages 
+
+Description:
+
+Returns a list for each kickstart profile; each list will contain
+             package names not present on the other profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel1
+ 
+* [.string]#string#  kickstartLabel2
+ 
+
+Returns:
+
+* [.struct]#struct#  - Comparison Info
+      * [.array]#array#  "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+** string - package name
+      * [.array]#array#  "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct
+          * [.array]#array# :
+** string - package name
+  // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-downloadKickstart]
+=== Method: downloadKickstart 
+
+Description:
+
+Download the full contents of a kickstart file.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of the
+ kickstart to download.
+ 
+* [.string]#string#  host - The host to use when
+ referring to the satellite itself (Usually this should be the FQDN of the
+ satellite, but could be the ip address or shortname of it as well.
+ 
+
+Returns:
+
+* string - The contents of the kickstart file. Note: if
+ an activation key is not associated with the kickstart file, registration
+ will not occur in the satellite generated %post section. If one is
+ associated, it will be used for registration. 
+ 
+
+
+'''
+
+
+[#kickstart_profile-downloadRenderedKickstart]
+=== Method: downloadRenderedKickstart 
+
+Description:
+
+Downloads the Cobbler-rendered Kickstart file.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of the
+ kickstart to download.
+ 
+
+Returns:
+
+* string - The contents of the kickstart file. 
+ 
+
+
+'''
+
+
+[#kickstart_profile-getAdvancedOptions]
+=== Method: getAdvancedOptions 
+
+Description:
+
+Get advanced options for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - Label of kickstart
+ profile to be changed.
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - option
+          * [.string]#string#  "name"
+          * [.string]#string#  "arguments"
+      // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-getAvailableRepositories]
+=== Method: getAvailableRepositories 
+
+Description:
+
+Lists available OS repositories to associate with the provided
+ kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - repositoryLabel
+ 
+
+
+'''
+
+
+[#kickstart_profile-getCfgPreservation]
+=== Method: getCfgPreservation 
+
+Description:
+
+Get ks.cfg preservation option for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+
+Returns:
+
+* boolean - The value of the option. True means that
+     ks.cfg will be copied to /root, false means that it will not. 
+ 
+
+
+'''
+
+
+[#kickstart_profile-getChildChannels]
+=== Method: getChildChannels 
+
+Description:
+
+Get the child channels for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile.
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - channelLabel
+ 
+
+
+'''
+
+
+[#kickstart_profile-getCustomOptions]
+=== Method: getCustomOptions 
+
+Description:
+
+Get custom options for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - option
+          * [.int]#int#  "id"
+          * [.string]#string#  "arguments"
+      // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-getKickstartTree]
+=== Method: getKickstartTree 
+
+Description:
+
+Get the kickstart tree for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+
+Returns:
+
+* [.string]#string#  kstreeLabel - Label of the kickstart tree.
+ 
+
+
+'''
+
+
+[#kickstart_profile-getRepositories]
+=== Method: getRepositories 
+
+Description:
+
+Lists all OS repositories associated with provided kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - repositoryLabel
+ 
+
+
+'''
+
+
+[#kickstart_profile-getUpdateType]
+=== Method: getUpdateType 
+
+Description:
+
+Get the update type for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile.
+ 
+
+Returns:
+
+* [.string]#string#  update_type - Update type for this Kickstart Profile.
+ 
+
+
+'''
+
+
+[#kickstart_profile-getVariables]
+=== Method: getVariables 
+
+Description:
+
+Returns a list of variables
+                      associated with the specified kickstart profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.struct]#struct#  - kickstart variable
+         * [.string]#string#  "key"
+         * [.string or int]#string or int#  "value"
+     // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-getVirtualizationType]
+=== Method: getVirtualizationType 
+
+Description:
+
+For given kickstart profile label returns label of
+ virtualization type it's using
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.string]#string#  virtLabel - Label of virtualization type.
+ 
+
+
+'''
+
+
+[#kickstart_profile-listIpRanges]
+=== Method: listIpRanges 
+
+Description:
+
+List all ip ranges for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - The label of the
+ kickstart
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Kickstart Ip Range
+     * [.string]#string#  "ksLabel" - The kickstart label associated with the ip range
+     * [.string]#string#  "max" - The max ip of the range
+     * [.string]#string#  "min" - The min ip of the range
+   // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-listScripts]
+=== Method: listScripts 
+
+Description:
+
+List the pre and post scripts for a kickstart profile
+ in the order they will run during the kickstart.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of the
+ kickstart
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - kickstart script
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "contents"
+          * [.string]#string#  "script_type" - Which type of script ('pre' or 'post').
+          * [.string]#string#  "interpreter" - The scripting language interpreter to use
+                      for this script.  An empty string indicates the default kickstart
+                      shell.
+          * [.boolean]#boolean#  "chroot" - True if the script will be executed within the
+                  chroot environment.
+          * [.boolean]#boolean#  "erroronfail" - True if the script will throw an error if
+                  it fails.
+          * [.boolean]#boolean#  "template" - True if templating using cobbler is enabled
+          * [.boolean]#boolean#  "beforeRegistration" - True if script will run before the
+                  server registers and performs server actions.
+     // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile-orderScripts]
+=== Method: orderScripts 
+
+Description:
+
+Change the order that kickstart scripts will run for
+ this kickstart profile. Scripts will run in the order they appear
+ in the array. There are three arrays, one for all pre scripts, one
+ for the post scripts that run before registration and server
+ actions happen, and one for post scripts that run after registration
+ and server actions. All scripts must be included in one of these
+ lists, as appropriate.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of the
+ kickstart
+ 
+* [.array]#array# :
+** int - IDs of the ordered pre scripts
+ 
+* [.array]#array# :
+** int - IDs of the ordered post scripts that will run
+              before registration
+ 
+* [.array]#array# :
+** int - IDs of the ordered post scripts that will run
+              after registration
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-removeIpRange]
+=== Method: removeIpRange 
+
+Description:
+
+Remove an ip range from a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The kickstart label of
+ the ip range you want to remove
+ 
+* [.string]#string#  ip_address - An Ip Address that
+ falls within the range that you are wanting to remove. The min or max of
+ the range will work.
+ 
+
+Returns:
+
+* int - 1 on successful removal, 0 if range wasn't found
+ for the specified kickstart, exception otherwise. 
+ 
+
+
+'''
+
+
+[#kickstart_profile-removeScript]
+=== Method: removeScript 
+
+Description:
+
+Remove a script from a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The kickstart from which
+ to remove the script from.
+ 
+* [.int]#int#  scriptId - The id of the script to
+ remove.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setAdvancedOptions]
+=== Method: setAdvancedOptions 
+
+Description:
+
+Set advanced options for a kickstart profile.
+ If 'md5_crypt_rootpw' is set to 'True', 'root_pw' is taken as plaintext and
+ will md5 encrypted on server side, otherwise a hash encoded password
+ (according to the auth option) is expected
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+* [.array]#array# :
+      * [.struct]#struct#  - advanced options
+          * [.string]#string#  "name" - Name of the advanced option.
+              Valid Option names: autostep, interactive, install, upgrade, text,
+              network, cdrom, harddrive, nfs, url, lang, langsupport keyboard,
+              mouse, device, deviceprobe, zerombr, clearpart, bootloader,
+              timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx,
+              key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi,
+              iscsiname, logging, monitor, multipath, poweroff, halt, services,
+              shutdown, user, vnc, zfcp, driverdisk, md5_crypt_rootpw
+          * [.string]#string#  "arguments" - Arguments of the option
+      // no end needed
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setCfgPreservation]
+=== Method: setCfgPreservation 
+
+Description:
+
+Set ks.cfg preservation option for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+* [.boolean]#boolean#  preserve - whether or not
+      ks.cfg and all %include fragments will be copied to /root.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setChildChannels]
+=== Method: setChildChannels 
+
+Description:
+
+Set the child channels for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+* [.string[]]#string[]#  channelLabels - List of labels of child channels
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setCustomOptions]
+=== Method: setCustomOptions 
+
+Description:
+
+Set custom options for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+* [.string[]]#string[]#  options
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setKickstartTree]
+=== Method: setKickstartTree 
+
+Description:
+
+Set the kickstart tree for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+* [.string]#string#  kstreeLabel - Label of new
+ kickstart tree.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setLogging]
+=== Method: setLogging 
+
+Description:
+
+Set logging options for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+* [.boolean]#boolean#  pre - whether or not to log
+      the pre section of a kickstart to /root/ks-pre.log
+ 
+* [.boolean]#boolean#  post - whether or not to log
+      the post section of a kickstart to /root/ks-post.log
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setRepositories]
+=== Method: setRepositories 
+
+Description:
+
+Associates OS repository to a kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+* [.array]#array# :
+** string - repositoryLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setUpdateType]
+=== Method: setUpdateType 
+
+Description:
+
+Set the update typefor a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  kslabel - Label of kickstart
+ profile to be changed.
+ 
+* [.string]#string#  updateType - The new update type
+ to set. Possible values are 'all' and 'none'.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setVariables]
+=== Method: setVariables 
+
+Description:
+
+Associates list of kickstart variables
+                              with the specified kickstart profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+* [.struct]#struct#  - kickstart variable
+         * [.string]#string#  "key"
+         * [.string or int]#string or int#  "value"
+     // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile-setVirtualizationType]
+=== Method: setVirtualizationType 
+
+Description:
+
+For given kickstart profile label sets its virtualization type.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel
+ 
+* [.string]#string#  typeLabel - One of the following: 'none',
+ 'qemu', 'para_host', 'xenpv', 'xenfv'
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

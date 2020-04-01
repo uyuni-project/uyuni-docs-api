@@ -1,0 +1,967 @@
+
+
+
+[#activationkey]
+== activationkey
+
+
+=== Available methods
+
+* <<activationkey-addChildChannels,addChildChannels>>
+* <<activationkey-addConfigChannels,addConfigChannels>>
+* <<activationkey-addEntitlements,addEntitlements>>
+* <<activationkey-addPackageNames,addPackageNames>>
+* <<activationkey-addPackages,addPackages>>
+* <<activationkey-addServerGroups,addServerGroups>>
+* <<activationkey-checkConfigDeployment,checkConfigDeployment>>
+* <<activationkey-clone,clone>>
+* <<activationkey-create,create>>
+* <<activationkey-create,create>>
+* <<activationkey-delete,delete>>
+* <<activationkey-disableConfigDeployment,disableConfigDeployment>>
+* <<activationkey-enableConfigDeployment,enableConfigDeployment>>
+* <<activationkey-getDetails,getDetails>>
+* <<activationkey-listActivatedSystems,listActivatedSystems>>
+* <<activationkey-listActivationKeys,listActivationKeys>>
+* <<activationkey-listChannels,listChannels>>
+* <<activationkey-listConfigChannels,listConfigChannels>>
+* <<activationkey-removeChildChannels,removeChildChannels>>
+* <<activationkey-removeConfigChannels,removeConfigChannels>>
+* <<activationkey-removeEntitlements,removeEntitlements>>
+* <<activationkey-removePackageNames,removePackageNames>>
+* <<activationkey-removePackages,removePackages>>
+* <<activationkey-removeServerGroups,removeServerGroups>>
+* <<activationkey-setConfigChannels,setConfigChannels>>
+* <<activationkey-setDetails,setDetails>>
+
+=== Description
+
+Contains methods to access common activation key functions
+ available from the web interface.
+
+*Namespace*:
+
+activationkey
+
+'''
+
+
+[#activationkey-addChildChannels]
+=== Method: addChildChannels 
+
+Description:
+
+Add child channels to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** string - childChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-addConfigChannels]
+=== Method: addConfigChannels 
+
+Description:
+
+Given a list of activation keys and configuration channels,
+ this method adds given configuration channels to either the top or
+ the bottom (whichever you specify) of an activation key's
+ configuration channels list. The ordering of the configuration channels
+ provided in the add list is maintained while adding.
+ If one of the configuration channels in the 'add' list
+ already exists in an activation key, the
+ configuration  channel will be re-ranked to the appropriate place.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** string - activationKey
+ 
+* [.array]#array# :
+** string - List of configuration channel labels in the ranked order.
+ 
+* [.boolean]#boolean#  addToTop
+      // no end needed
+          * true - To prepend the given channels to the beginning of
+                                 the activation key's config channel list
+          * false - To append the given channels to the end of
+                                     the activation key's config channel list
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-addEntitlements]
+=== Method: addEntitlements 
+
+Description:
+
+Add entitlements to an activation key. Currently only
+ virtualization_host add-on entitlement is permitted.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  string - entitlement label
+   // no end needed
+     * virtualization_host
+   // no end needed
+ // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-addPackageNames]
+=== Method: addPackageNames (Deprecated)
+
+Description:
+
+Add packages to an activation key using package name only.
+
+
+Deprecated - being replaced by addPackages(string sessionKey, string key,
+ array[packages])
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** string - packageName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.2
+
+'''
+
+
+[#activationkey-addPackages]
+=== Method: addPackages 
+
+Description:
+
+Add packages to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+      * [.struct]#struct#  - packages
+          * [.string]#string#  "name" - Package name
+          * [.string]#string#  "arch" - Arch label - Optional
+     // no end needed
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-addServerGroups]
+=== Method: addServerGroups 
+
+Description:
+
+Add server groups to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** int - serverGroupId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-checkConfigDeployment]
+=== Method: checkConfigDeployment 
+
+Description:
+
+Check configuration file deployment status for the
+ activation key specified.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* 1 if enabled, 0 if disabled, exception thrown otherwise. 
+ 
+
+
+'''
+
+
+[#activationkey-clone]
+=== Method: clone 
+
+Description:
+
+Clone an existing activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Key to be cloned.
+ 
+* [.string]#string#  cloneDescription - Description of the cloned key.
+ 
+
+Returns:
+
+* string - The new activation key. 
+ 
+
+
+'''
+
+
+[#activationkey-create]
+=== Method: create 
+
+Description:
+
+Create a new activation key.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.
+
+ Eg. If the caller passes in the key "foo" and belong to an organization with
+ the ID 100, the actual activation key will be "100-foo".
+
+ This call allows for the setting of a usage limit on this activation key.
+ If unlimited usage is desired see the similarly named API method with no
+ usage limit argument.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Leave empty to have new key autogenerated.
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  baseChannelLabel - Leave empty to accept
+ default.
+ 
+* [.int]#int#  usageLimit - If unlimited usage is desired,
+ use the create API that does not include the parameter.
+ 
+* [.array]#array#  string - Add-on entitlement label to associate with the
+ key.
+   // no end needed
+     * virtualization_host
+   // no end needed
+ // no end needed
+ 
+* [.boolean]#boolean#  universalDefault
+ 
+
+Returns:
+
+* string - The new activation key. 
+ 
+
+
+'''
+
+
+[#activationkey-create]
+=== Method: create 
+
+Description:
+
+Create a new activation key with unlimited usage.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.
+
+ Eg. If the caller passes in the key "foo" and belong to an organization with
+ the ID 100, the actual activation key will be "100-foo".
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Leave empty to have new key autogenerated.
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  baseChannelLabel - Leave empty to accept
+ default.
+ 
+* [.array]#array#  string - Add-on entitlement label to associate with the
+ key.
+   // no end needed
+     * virtualization_host
+   // no end needed
+ // no end needed
+ 
+* [.boolean]#boolean#  universalDefault
+ 
+
+Returns:
+
+* string - The new activation key. 
+ 
+
+
+'''
+
+
+[#activationkey-delete]
+=== Method: delete 
+
+Description:
+
+Delete an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-disableConfigDeployment]
+=== Method: disableConfigDeployment 
+
+Description:
+
+Disable configuration file deployment for the specified activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-enableConfigDeployment]
+=== Method: enableConfigDeployment 
+
+Description:
+
+Enable configuration file deployment for the specified activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Lookup an activation key's details.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* * [.struct]#struct#  - activation key
+     * [.string]#string#  "key"
+     * [.string]#string#  "description"
+     * [.int]#int#  "usage_limit"
+     * [.string]#string#  "base_channel_label"
+     * [.array]#array#  "child_channel_labels"
+** string - childChannelLabel
+     * [.array]#array#  "entitlements"
+** string - entitlementLabel
+     * [.array]#array#  "server_group_ids"
+** string - serverGroupId
+     * [.array]#array#  "package_names"
+** string - packageName - (deprecated by packages)
+     * [.array]#array#  "packages"
+       * [.struct]#struct#  - package
+         * [.string]#string#  "name" - packageName
+         * [.string]#string#  "arch" - archLabel - optional
+       // no end needed
+     // no end needed
+     * [.boolean]#boolean#  "universal_default"
+     * [.boolean]#boolean#  "disabled"
+     * [.string]#string#  "contact_method" - One of the following:
+       // no end needed
+         * default
+         * ssh-push
+         * ssh-push-tunnel
+       // no end needed
+   // no end needed
+  
+ 
+
+Available since API version: 10.2
+
+'''
+
+
+[#activationkey-listActivatedSystems]
+=== Method: listActivatedSystems 
+
+Description:
+
+List the systems activated with the key provided.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.array]#array# :
+       * [.struct]#struct#  - system structure
+           * [.int]#int#  "id" - System id
+           * [.string]#string#  "hostname"
+           * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+               successfully checked in
+       // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#activationkey-listActivationKeys]
+=== Method: listActivationKeys 
+
+Description:
+
+List activation keys that are visible to the
+ user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - activation key
+     * [.string]#string#  "key"
+     * [.string]#string#  "description"
+     * [.int]#int#  "usage_limit"
+     * [.string]#string#  "base_channel_label"
+     * [.array]#array#  "child_channel_labels"
+** string - childChannelLabel
+     * [.array]#array#  "entitlements"
+** string - entitlementLabel
+     * [.array]#array#  "server_group_ids"
+** string - serverGroupId
+     * [.array]#array#  "package_names"
+** string - packageName - (deprecated by packages)
+     * [.array]#array#  "packages"
+       * [.struct]#struct#  - package
+         * [.string]#string#  "name" - packageName
+         * [.string]#string#  "arch" - archLabel - optional
+       // no end needed
+     // no end needed
+     * [.boolean]#boolean#  "universal_default"
+     * [.boolean]#boolean#  "disabled"
+     * [.string]#string#  "contact_method" - One of the following:
+       // no end needed
+         * default
+         * ssh-push
+         * ssh-push-tunnel
+       // no end needed
+   // no end needed
+ 
+   // no end needed
+ 
+
+Available since API version: 10.2
+
+'''
+
+
+[#activationkey-listChannels]
+=== Method: listChannels 
+
+Description:
+
+List the channels for the given activation key
+ with temporary authentication tokens to access them.
+ Authentication is done via a machine specific password.
+
+
+
+
+Parameters:
+
+* [.string]#string#  minionId - The id of the minion to authenticate with.
+ 
+* [.string]#string#  machinePassword - password specific to a machine.
+ 
+* [.string]#string#  activationKey - activation key to use channels from.
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channelInfo
+       * [.string]#string#  "label" - Channel label
+       * [.string]#string#  "name" - Channel name
+       * [.string]#string#  "url" - Channel url
+       * [.string]#string#  "token" - Channel access token
+  // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#activationkey-listConfigChannels]
+=== Method: listConfigChannels 
+
+Description:
+
+List configuration channels
+ associated to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - Configuration Channel information
+   * [.int]#int#  "id"
+   * [.int]#int#  "orgId"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.struct]#struct#  "configChannelType"
+   * [.struct]#struct#  - Configuration Channel Type information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.int]#int#  "priority"
+ // no end needed
+ 
+ // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#activationkey-removeChildChannels]
+=== Method: removeChildChannels 
+
+Description:
+
+Remove child channels from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** string - childChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-removeConfigChannels]
+=== Method: removeConfigChannels 
+
+Description:
+
+Remove configuration channels from the given activation keys.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey 
+ 
+* [.array]#array# :
+** string - activationKey
+ 
+* [.array]#array# :
+** string - configChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-removeEntitlements]
+=== Method: removeEntitlements 
+
+Description:
+
+Remove entitlements (by label) from an activation key.
+ Currently only virtualization_host add-on entitlement is permitted.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  string - entitlement label
+   // no end needed
+     * virtualization_host
+   // no end needed
+ // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-removePackageNames]
+=== Method: removePackageNames (Deprecated)
+
+Description:
+
+Remove package names from an activation key.
+
+
+Deprecated - being replaced by removePackages(string sessionKey, string key,
+ array[packages])
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** string - packageName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.2
+
+'''
+
+
+[#activationkey-removePackages]
+=== Method: removePackages 
+
+Description:
+
+Remove package names from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+      * [.struct]#struct#  - packages
+          * [.string]#string#  "name" - Package name
+          * [.string]#string#  "arch" - Arch label - Optional
+     // no end needed
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-removeServerGroups]
+=== Method: removeServerGroups 
+
+Description:
+
+Remove server groups from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** int - serverGroupId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-setConfigChannels]
+=== Method: setConfigChannels 
+
+Description:
+
+Replace the existing set of
+ configuration channels on the given activation keys.
+ Channels are ranked by their order in the array.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey 
+ 
+* [.array]#array# :
+** string - activationKey
+ 
+* [.array]#array# :
+** string - configChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#activationkey-setDetails]
+=== Method: setDetails 
+
+Description:
+
+Update the details of an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.struct]#struct#  - activation key
+   * [.string]#string#  "description" - optional
+   * [.string]#string#  "base_channel_label" - optional -
+   to set default base channel set to empty string or 'none'
+   * [.int]#int#  "usage_limit" - optional
+   * [.boolean]#boolean#  "unlimited_usage_limit" - Set true
+   for unlimited usage and to override usage_limit
+   * [.boolean]#boolean#  "universal_default" - optional
+   * [.boolean]#boolean#  "disabled" - optional
+   * [.string]#string#  "contact_method" - One of the following:
+     // no end needed
+       * default
+       * ssh-push
+       * ssh-push-tunnel
+     // no end needed
+ // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

@@ -1,0 +1,375 @@
+
+
+
+[#system_crash]
+== system.crash
+
+
+=== Available methods
+
+* <<system_crash-createCrashNote,createCrashNote>>
+* <<system_crash-deleteCrash,deleteCrash>>
+* <<system_crash-deleteCrashNote,deleteCrashNote>>
+* <<system_crash-getCrashCountInfo,getCrashCountInfo>>
+* <<system_crash-getCrashFile,getCrashFile>>
+* <<system_crash-getCrashFileUrl,getCrashFileUrl>>
+* <<system_crash-getCrashNotesForCrash,getCrashNotesForCrash>>
+* <<system_crash-getCrashOverview,getCrashOverview>>
+* <<system_crash-getCrashesByUuid,getCrashesByUuid>>
+* <<system_crash-listSystemCrashFiles,listSystemCrashFiles>>
+* <<system_crash-listSystemCrashes,listSystemCrashes>>
+
+=== Description
+
+Provides methods to access and modify software crash information.
+
+*Namespace*:
+
+system.crash
+
+'''
+
+
+[#system_crash-createCrashNote]
+=== Method: createCrashNote 
+
+Description:
+
+Create a crash note
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashId
+ 
+* [.string]#string#  subject
+ 
+* [.string]#string#  details
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system_crash-deleteCrash]
+=== Method: deleteCrash 
+
+Description:
+
+Delete a crash with given crash id.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system_crash-deleteCrashNote]
+=== Method: deleteCrashNote 
+
+Description:
+
+Delete a crash note
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashNoteId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system_crash-getCrashCountInfo]
+=== Method: getCrashCountInfo 
+
+Description:
+
+Return date of last software crashes report for given system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - Crash Count Information
+         * [.int]#int#  "total_count" - Total number of software crashes for a system
+         * [.int]#int#  "unique_count" - Number of unique software crashes for a system
+         * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Date of the last software crash report
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_crash-getCrashFile]
+=== Method: getCrashFile 
+
+Description:
+
+Download a crash file.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashFileId
+ 
+
+Returns:
+
+* base64 - base64 encoded crash file. 
+ 
+
+
+'''
+
+
+[#system_crash-getCrashFileUrl]
+=== Method: getCrashFileUrl 
+
+Description:
+
+Get a crash file download url.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashFileId
+ 
+
+Returns:
+
+* string - The crash file download url 
+ 
+
+
+'''
+
+
+[#system_crash-getCrashNotesForCrash]
+=== Method: getCrashNotesForCrash 
+
+Description:
+
+List crash notes for crash
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashId
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - crashNote
+             * [.int]#int#  "id"
+             * [.string]#string#  "subject"
+             * [.string]#string#  "details"
+             * [.string]#string#  "updated"
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_crash-getCrashOverview]
+=== Method: getCrashOverview 
+
+Description:
+
+Get Software Crash Overview
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - crash
+             * [.string]#string#  "uuid" - Crash UUID
+             * [.string]#string#  "component" - Package component (set if unique and non empty)
+             * [.int]#int#  "crash_count" - Number of crashes occurred
+             * [.int]#int#  "system_count" - Number of systems affected
+             * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_crash-getCrashesByUuid]
+=== Method: getCrashesByUuid 
+
+Description:
+
+List software crashes with given UUID
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  uuid
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - crash
+             * [.int]#int#  "server_id" - ID of the server the crash occurred on
+             * [.string]#string#  "server_name" - Name of the server the crash occurred on
+             * [.int]#int#  "crash_id" - ID of the crash with given UUID
+             * [.int]#int#  "crash_count" - Number of times the crash with given UUID occurred
+             * [.string]#string#  "crash_component" - Crash component
+             * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_crash-listSystemCrashFiles]
+=== Method: listSystemCrashFiles 
+
+Description:
+
+Return list of crash files for given crash id.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  crashId
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - crashFile
+             * [.int]#int#  "id"
+             * [.string]#string#  "filename"
+             * [.string]#string#  "path"
+             * [.int]#int#  "filesize"
+             * [.boolean]#boolean#  "is_uploaded"
+             * [.date]#date#  "created"
+             * [.date]#date#  "modified"
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_crash-listSystemCrashes]
+=== Method: listSystemCrashes 
+
+Description:
+
+Return list of software crashes for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - crash
+             * [.int]#int#  "id"
+             * [.string]#string#  "crash"
+             * [.string]#string#  "path"
+             * [.int]#int#  "count"
+             * [.string]#string#  "uuid"
+             * [.string]#string#  "analyzer"
+             * [.string]#string#  "architecture"
+             * [.string]#string#  "cmdline"
+             * [.string]#string#  "component"
+             * [.string]#string#  "executable"
+             * [.string]#string#  "kernel"
+             * [.string]#string#  "reason"
+             * [.string]#string#  "username"
+             * [.date]#date#  "created"
+             * [.date]#date#  "modified"
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+

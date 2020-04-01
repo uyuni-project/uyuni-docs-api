@@ -1,0 +1,456 @@
+
+
+
+[#sync_content]
+== sync.content
+
+
+=== Available methods
+
+* <<sync_content-addChannel,addChannel>>
+* <<sync_content-addChannels,addChannels>>
+* <<sync_content-addCredentials,addCredentials>>
+* <<sync_content-deleteCredentials,deleteCredentials>>
+* <<sync_content-listChannels,listChannels>>
+* <<sync_content-listCredentials,listCredentials>>
+* <<sync_content-listProducts,listProducts>>
+* <<sync_content-synchronizeChannelFamilies,synchronizeChannelFamilies>>
+* <<sync_content-synchronizeChannels,synchronizeChannels>>
+* <<sync_content-synchronizeProductChannels,synchronizeProductChannels>>
+* <<sync_content-synchronizeProducts,synchronizeProducts>>
+* <<sync_content-synchronizeRepositories,synchronizeRepositories>>
+* <<sync_content-synchronizeSubscriptions,synchronizeSubscriptions>>
+
+=== Description
+
+Provides the namespace for the content synchronization methods.
+
+*Namespace*:
+
+sync.content
+
+'''
+
+
+[#sync_content-addChannel]
+=== Method: addChannel 
+
+Description:
+
+Add a new channel to the Uyuni database
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  channelLabel - Label of the channel to add
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-addChannels]
+=== Method: addChannels 
+
+Description:
+
+Add a new channel to the Uyuni database
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  channelLabel - Label of the channel to add
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - enabled channel labels
+ 
+
+
+'''
+
+
+[#sync_content-addCredentials]
+=== Method: addCredentials 
+
+Description:
+
+Add organization credentials (mirror credentials) to Uyuni.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  username - Organization credentials
+                                                  (Mirror credentials) username
+ 
+* [.string]#string#  password - Organization credentials
+                                                  (Mirror credentials) password
+ 
+* [.boolean]#boolean#  primary - Make this the primary credentials
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-deleteCredentials]
+=== Method: deleteCredentials 
+
+Description:
+
+Delete organization credentials (mirror credentials) from Uyuni.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  username - Username of credentials to delete
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-listChannels]
+=== Method: listChannels 
+
+Description:
+
+List all accessible channels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - channel
+     * [.string]#string#  "arch" - Architecture of the channel
+     * [.string]#string#  "description" - Description of the channel
+     * [.string]#string#  "family" - Channel family label
+     * [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     * [.string]#string#  "label" - Label of the channel
+     * [.string]#string#  "name" - Name of the channel
+     * [.boolean]#boolean#  "optional" - Channel is optional
+     * [.string]#string#  "parent" - The label of the parent channel
+     * [.string]#string#  "product_name" - Product name
+     * [.string]#string#  "product_version" - Product version
+     * [.string]#string#  "source_url" - Repository source URL
+     * [.string]#string#  "status" - Status: available, unavailable or installed
+     * [.string]#string#  "summary" - Channel summary
+     * [.string]#string#  "update_tag" - Update tag
+   // no end needed
+ 
+                    // no end needed
+ 
+
+
+'''
+
+
+[#sync_content-listCredentials]
+=== Method: listCredentials 
+
+Description:
+
+List organization credentials (mirror credentials) available in
+             Uyuni.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - credentials
+     * [.int]#int#  "id" - ID of the credentials
+     * [.string]#string#  "user" - username
+     * [.boolean]#boolean#  "isPrimary" - primary
+   // no end needed
+ 
+                    // no end needed
+ 
+
+
+'''
+
+
+[#sync_content-listProducts]
+=== Method: listProducts 
+
+Description:
+
+List all accessible products.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - product
+     * [.string]#string#  "friendly_name" - Friendly name of the product
+     * [.string]#string#  "arch" - Architecture
+     * [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     * [.array]#array# :
+       * [.struct]#struct#  - channel
+     * [.string]#string#  "arch" - Architecture of the channel
+     * [.string]#string#  "description" - Description of the channel
+     * [.string]#string#  "family" - Channel family label
+     * [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     * [.string]#string#  "label" - Label of the channel
+     * [.string]#string#  "name" - Name of the channel
+     * [.boolean]#boolean#  "optional" - Channel is optional
+     * [.string]#string#  "parent" - The label of the parent channel
+     * [.string]#string#  "product_name" - Product name
+     * [.string]#string#  "product_version" - Product version
+     * [.string]#string#  "source_url" - Repository source URL
+     * [.string]#string#  "status" - Status: available, unavailable or installed
+     * [.string]#string#  "summary" - Channel summary
+     * [.string]#string#  "update_tag" - Update tag
+   // no end needed
+ 
+     // no end needed
+     * [.array]#array# :
+       * [.struct]#struct#  - extension product
+         * [.string]#string#  "friendly_name" - Friendly name of extension product
+         * [.string]#string#  "arch" - Architecture
+         * [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+         * [.array]#array# :
+           * [.struct]#struct#  - channel
+     * [.string]#string#  "arch" - Architecture of the channel
+     * [.string]#string#  "description" - Description of the channel
+     * [.string]#string#  "family" - Channel family label
+     * [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     * [.string]#string#  "label" - Label of the channel
+     * [.string]#string#  "name" - Name of the channel
+     * [.boolean]#boolean#  "optional" - Channel is optional
+     * [.string]#string#  "parent" - The label of the parent channel
+     * [.string]#string#  "product_name" - Product name
+     * [.string]#string#  "product_version" - Product version
+     * [.string]#string#  "source_url" - Repository source URL
+     * [.string]#string#  "status" - Status: available, unavailable or installed
+     * [.string]#string#  "summary" - Channel summary
+     * [.string]#string#  "update_tag" - Update tag
+   // no end needed
+ 
+         // no end needed
+       // no end needed
+     // no end needed
+     * [.boolean]#boolean#  "recommended" - Recommended
+   // no end needed
+ 
+                    // no end needed
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeChannelFamilies]
+=== Method: synchronizeChannelFamilies 
+
+Description:
+
+Synchronize channel families between the Customer Center
+             and the Uyuni database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeChannels]
+=== Method: synchronizeChannels 
+
+Description:
+
+(Deprecated) Synchronize channels between the Customer Center
+             and the Uyuni database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeProductChannels]
+=== Method: synchronizeProductChannels (Deprecated)
+
+Description:
+
+(Deprecated) Synchronize SUSE product channels between the Customer Center
+             and the Uyuni database.
+
+
+Deprecated - Synchronize SUSE product channels between the Customer Center
+ and the Uyuni database.
+ This method is one step of the whole refresh cycle.
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeProducts]
+=== Method: synchronizeProducts 
+
+Description:
+
+Synchronize SUSE products between the Customer Center
+             and the Uyuni database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeRepositories]
+=== Method: synchronizeRepositories 
+
+Description:
+
+Synchronize repositories between the Customer Center
+             and the Uyuni database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  mirrorUrl - Optional mirror url or null
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_content-synchronizeSubscriptions]
+=== Method: synchronizeSubscriptions 
+
+Description:
+
+Synchronize subscriptions between the Customer Center
+             and the Uyuni database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

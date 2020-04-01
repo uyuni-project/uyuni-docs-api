@@ -1,0 +1,505 @@
+
+
+
+[#schedule]
+== schedule
+
+
+=== Available methods
+
+* <<schedule-archiveActions,archiveActions>>
+* <<schedule-cancelActions,cancelActions>>
+* <<schedule-deleteActions,deleteActions>>
+* <<schedule-failSystemAction,failSystemAction>>
+* <<schedule-failSystemAction,failSystemAction>>
+* <<schedule-listAllActions,listAllActions>>
+* <<schedule-listArchivedActions,listArchivedActions>>
+* <<schedule-listCompletedActions,listCompletedActions>>
+* <<schedule-listCompletedSystems,listCompletedSystems>>
+* <<schedule-listFailedActions,listFailedActions>>
+* <<schedule-listFailedSystems,listFailedSystems>>
+* <<schedule-listInProgressActions,listInProgressActions>>
+* <<schedule-listInProgressSystems,listInProgressSystems>>
+* <<schedule-rescheduleActions,rescheduleActions>>
+
+=== Description
+
+Methods to retrieve information about scheduled actions.
+
+*Namespace*:
+
+schedule
+
+'''
+
+
+[#schedule-archiveActions]
+=== Method: archiveActions 
+
+Description:
+
+Archive all actions in the given list.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - action id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#schedule-cancelActions]
+=== Method: cancelActions 
+
+Description:
+
+Cancel all actions in given list. If an invalid action is provided,
+ none of the actions given will canceled.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - action id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#schedule-deleteActions]
+=== Method: deleteActions 
+
+Description:
+
+Delete all archived actions in the given list.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - action id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#schedule-failSystemAction]
+=== Method: failSystemAction 
+
+Description:
+
+Fail specific event on specified system
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  actionId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#schedule-failSystemAction]
+=== Method: failSystemAction 
+
+Description:
+
+Fail specific event on specified system
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  actionId
+ 
+* [.string]#string#  message
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#schedule-listAllActions]
+=== Method: listAllActions 
+
+Description:
+
+Returns a list of all actions.  This includes completed, in progress,
+ failed and archived actions.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   * [.int]#int#  "id" - Action Id.
+   * [.string]#string#  "name" - Action name.
+   * [.string]#string#  "type" - Action type.
+   * [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   * [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   * [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   * [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   * [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   * [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listArchivedActions]
+=== Method: listArchivedActions 
+
+Description:
+
+Returns a list of actions that have been archived.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   * [.int]#int#  "id" - Action Id.
+   * [.string]#string#  "name" - Action name.
+   * [.string]#string#  "type" - Action type.
+   * [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   * [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   * [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   * [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   * [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   * [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listCompletedActions]
+=== Method: listCompletedActions 
+
+Description:
+
+Returns a list of actions that have completed successfully.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   * [.int]#int#  "id" - Action Id.
+   * [.string]#string#  "name" - Action name.
+   * [.string]#string#  "type" - Action type.
+   * [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   * [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   * [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   * [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   * [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   * [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listCompletedSystems]
+=== Method: listCompletedSystems 
+
+Description:
+
+Returns a list of systems that have completed a specific action.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - system
+   * [.int]#int#  "server_id"
+   * [.string]#string#  "server_name" - Server name.
+   * [.string]#string#  "base_channel" - Base channel used by the server.
+   * [.dateTime.iso8601]#dateTime.iso8601#  "timestamp" - The time the action was completed
+   * [.string]#string#  "message" - Optional message containing details
+   on the execution of the action.  For example, if the action failed,
+   this will contain the failure text.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listFailedActions]
+=== Method: listFailedActions 
+
+Description:
+
+Returns a list of actions that have failed.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   * [.int]#int#  "id" - Action Id.
+   * [.string]#string#  "name" - Action name.
+   * [.string]#string#  "type" - Action type.
+   * [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   * [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   * [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   * [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   * [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   * [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listFailedSystems]
+=== Method: listFailedSystems 
+
+Description:
+
+Returns a list of systems that have failed a specific action.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - system
+   * [.int]#int#  "server_id"
+   * [.string]#string#  "server_name" - Server name.
+   * [.string]#string#  "base_channel" - Base channel used by the server.
+   * [.dateTime.iso8601]#dateTime.iso8601#  "timestamp" - The time the action was completed
+   * [.string]#string#  "message" - Optional message containing details
+   on the execution of the action.  For example, if the action failed,
+   this will contain the failure text.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listInProgressActions]
+=== Method: listInProgressActions 
+
+Description:
+
+Returns a list of actions that are in progress.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   * [.int]#int#  "id" - Action Id.
+   * [.string]#string#  "name" - Action name.
+   * [.string]#string#  "type" - Action type.
+   * [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   * [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   * [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   * [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   * [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   * [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-listInProgressSystems]
+=== Method: listInProgressSystems 
+
+Description:
+
+Returns a list of systems that have a specific action in progress.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - system
+   * [.int]#int#  "server_id"
+   * [.string]#string#  "server_name" - Server name.
+   * [.string]#string#  "base_channel" - Base channel used by the server.
+   * [.dateTime.iso8601]#dateTime.iso8601#  "timestamp" - The time the action was completed
+   * [.string]#string#  "message" - Optional message containing details
+   on the execution of the action.  For example, if the action failed,
+   this will contain the failure text.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#schedule-rescheduleActions]
+=== Method: rescheduleActions 
+
+Description:
+
+Reschedule all actions in the given list.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - action id
+ 
+* [.boolean]#boolean#  onlyFailed - True to only reschedule failed actions, False to reschedule all
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

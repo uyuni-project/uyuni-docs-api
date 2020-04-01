@@ -1,0 +1,529 @@
+
+
+
+[#user_external]
+== user.external
+
+
+=== Available methods
+
+* <<user_external-createExternalGroupToRoleMap,createExternalGroupToRoleMap>>
+* <<user_external-createExternalGroupToSystemGroupMap,createExternalGroupToSystemGroupMap>>
+* <<user_external-deleteExternalGroupToRoleMap,deleteExternalGroupToRoleMap>>
+* <<user_external-deleteExternalGroupToSystemGroupMap,deleteExternalGroupToSystemGroupMap>>
+* <<user_external-getDefaultOrg,getDefaultOrg>>
+* <<user_external-getExternalGroupToRoleMap,getExternalGroupToRoleMap>>
+* <<user_external-getExternalGroupToSystemGroupMap,getExternalGroupToSystemGroupMap>>
+* <<user_external-getKeepTemporaryRoles,getKeepTemporaryRoles>>
+* <<user_external-getUseOrgUnit,getUseOrgUnit>>
+* <<user_external-listExternalGroupToRoleMaps,listExternalGroupToRoleMaps>>
+* <<user_external-listExternalGroupToSystemGroupMaps,listExternalGroupToSystemGroupMaps>>
+* <<user_external-setDefaultOrg,setDefaultOrg>>
+* <<user_external-setExternalGroupRoles,setExternalGroupRoles>>
+* <<user_external-setExternalGroupSystemGroups,setExternalGroupSystemGroups>>
+* <<user_external-setKeepTemporaryRoles,setKeepTemporaryRoles>>
+* <<user_external-setUseOrgUnit,setUseOrgUnit>>
+
+=== Description
+
+If you are using IPA integration to allow authentication of users from
+ an external IPA server (rare) the users will still need to be created in the Satellite
+ database. Methods in this namespace allow you to configure some specifics of how this
+ happens, like what organization they are created in or what roles they will have.
+ These options can also be set in the web admin interface.
+
+*Namespace*:
+
+user.external
+
+'''
+
+
+[#user_external-createExternalGroupToRoleMap]
+=== Method: createExternalGroupToRoleMap 
+
+Description:
+
+Externally authenticated users may be members of external groups. You
+ can use these groups to assign additional roles to the users when they log in.
+ Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group. Must be
+ unique.
+ 
+* [.array]#array# :
+** string - role - Can be any of:
+ satellite_admin, org_admin (implies all other roles except for satellite_admin),
+ channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#user_external-createExternalGroupToSystemGroupMap]
+=== Method: createExternalGroupToSystemGroupMap 
+
+Description:
+
+Externally authenticated users may be members of external groups. You
+ can use these groups to give access to server groups to the users when they log in.
+ Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group. Must be
+ unique.
+ 
+* [.array]#array# :
+** string - groupName - The names of the server
+ groups to grant access to.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#user_external-deleteExternalGroupToRoleMap]
+=== Method: deleteExternalGroupToRoleMap 
+
+Description:
+
+Delete the role map for an external group. Can only be called
+ by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-deleteExternalGroupToSystemGroupMap]
+=== Method: deleteExternalGroupToSystemGroupMap 
+
+Description:
+
+Delete the server group map for an external group. Can only be called
+ by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-getDefaultOrg]
+=== Method: getDefaultOrg 
+
+Description:
+
+Get the default org that users should be added in if orgunit from
+ IPA server isn't found or is disabled. Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* int - Id of the default organization. 0 if there is no default. 
+ 
+
+
+'''
+
+
+[#user_external-getExternalGroupToRoleMap]
+=== Method: getExternalGroupToRoleMap 
+
+Description:
+
+Get a representation of the role mapping for an external group.
+ Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#user_external-getExternalGroupToSystemGroupMap]
+=== Method: getExternalGroupToSystemGroupMap 
+
+Description:
+
+Get a representation of the server group mapping for an external
+ group. Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#user_external-getKeepTemporaryRoles]
+=== Method: getKeepTemporaryRoles 
+
+Description:
+
+Get whether we should keeps roles assigned to users because of
+ their IPA groups even after they log in through a non-IPA method. Can only be
+ called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* boolean - True if we should keep roles
+ after users log in through non-IPA method, false otherwise. 
+ 
+
+
+'''
+
+
+[#user_external-getUseOrgUnit]
+=== Method: getUseOrgUnit 
+
+Description:
+
+Get whether we place users into the organization that corresponds
+ to the "orgunit" set on the IPA server. The orgunit name must match exactly the
+ Satellite organization name. Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* boolean - True if we should use the IPA
+ orgunit to determine which organization to create the user in, false otherwise. 
+ 
+
+
+'''
+
+
+[#user_external-listExternalGroupToRoleMaps]
+=== Method: listExternalGroupToRoleMaps 
+
+Description:
+
+List role mappings for all known external groups. Can only be called
+ by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#user_external-listExternalGroupToSystemGroupMaps]
+=== Method: listExternalGroupToSystemGroupMaps 
+
+Description:
+
+List server group mappings for all known external groups. Can only be
+ called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - externalGroup
+      * [.string]#string#  "name"
+      * [.array]#array#  "roles"
+** string - role
+  // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#user_external-setDefaultOrg]
+=== Method: setDefaultOrg 
+
+Description:
+
+Set the default org that users should be added in if orgunit from
+ IPA server isn't found or is disabled. Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  defaultOrg - Id of the organization to set
+ as the default org. 0 if there should not be a default organization.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-setExternalGroupRoles]
+=== Method: setExternalGroupRoles 
+
+Description:
+
+Update the roles for an external group. Replace previously set roles
+ with the ones passed in here. Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+* [.array]#array# :
+** string - role - Can be any of:
+ satellite_admin, org_admin (implies all other roles except for satellite_admin),
+ channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-setExternalGroupSystemGroups]
+=== Method: setExternalGroupSystemGroups 
+
+Description:
+
+Update the server groups for an external group. Replace previously set
+ server groups with the ones passed in here. Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the external group.
+ 
+* [.array]#array# :
+** string - groupName - The names of the
+ server groups to grant access to.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-setKeepTemporaryRoles]
+=== Method: setKeepTemporaryRoles 
+
+Description:
+
+Set whether we should keeps roles assigned to users because of
+ their IPA groups even after they log in through a non-IPA method. Can only be
+ called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.boolean]#boolean#  keepRoles - True if we should keep roles
+ after users log in through non-IPA method, false otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user_external-setUseOrgUnit]
+=== Method: setUseOrgUnit 
+
+Description:
+
+Set whether we place users into the organization that corresponds
+ to the "orgunit" set on the IPA server. The orgunit name must match exactly the
+ Satellite organization name. Can only be called by a satellite_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.boolean]#boolean#  useOrgUnit - True if we should use the IPA
+ orgunit to determine which organization to create the user in, false otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

@@ -1,0 +1,214 @@
+
+
+
+[#image_store]
+== image.store
+
+
+=== Available methods
+
+* <<image_store-create,create>>
+* <<image_store-delete,delete>>
+* <<image_store-getDetails,getDetails>>
+* <<image_store-listImageStoreTypes,listImageStoreTypes>>
+* <<image_store-listImageStores,listImageStores>>
+* <<image_store-setDetails,setDetails>>
+
+=== Description
+
+Provides methods to access and modify image stores.
+
+*Namespace*:
+
+image.store
+
+'''
+
+
+[#image_store-create]
+=== Method: create 
+
+Description:
+
+Create a new Image Store
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.string]#string#  uri
+ 
+* [.string]#string#  storeType
+ 
+* [.struct]#struct#  - credentials optional
+   * [.string]#string#  "username"
+   * [.string]#string#  "password"
+ // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_store-delete]
+=== Method: delete 
+
+Description:
+
+Delete an Image Store
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_store-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Get details of an Image Store
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Image Store information
+   * [.string]#string#  "label"
+   * [.string]#string#  "uri"
+   * [.string]#string#  "storetype"
+   * [.boolean]#boolean#  "hasCredentials"
+   * [.string]#string#  "username"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#image_store-listImageStoreTypes]
+=== Method: listImageStoreTypes 
+
+Description:
+
+List available Image Store Types
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Image Store Type information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+ // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#image_store-listImageStores]
+=== Method: listImageStores 
+
+Description:
+
+List available Image Stores
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Image Store information
+   * [.string]#string#  "label"
+   * [.string]#string#  "uri"
+   * [.string]#string#  "storetype"
+   * [.boolean]#boolean#  "hasCredentials"
+   * [.string]#string#  "username"
+ // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#image_store-setDetails]
+=== Method: setDetails 
+
+Description:
+
+Set details of an Image Store
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.struct]#struct#  - image store details
+     * [.string]#string#  "uri"
+     * [.string]#string#  "username" - pass empty string to unset credentials
+     * [.string]#string#  "password"
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

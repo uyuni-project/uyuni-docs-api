@@ -1,0 +1,445 @@
+
+
+
+[#packages]
+== packages
+
+
+=== Available methods
+
+* <<packages-findByNvrea,findByNvrea>>
+* <<packages-getDetails,getDetails>>
+* <<packages-getPackage,getPackage>>
+* <<packages-getPackageUrl,getPackageUrl>>
+* <<packages-listChangelog,listChangelog>>
+* <<packages-listDependencies,listDependencies>>
+* <<packages-listFiles,listFiles>>
+* <<packages-listProvidingChannels,listProvidingChannels>>
+* <<packages-listProvidingErrata,listProvidingErrata>>
+* <<packages-listSourcePackages,listSourcePackages>>
+* <<packages-removePackage,removePackage>>
+* <<packages-removeSourcePackage,removeSourcePackage>>
+
+=== Description
+
+Methods to retrieve information about the Packages contained
+ within this server.
+
+*Namespace*:
+
+packages
+
+'''
+
+
+[#packages-findByNvrea]
+=== Method: findByNvrea 
+
+Description:
+
+Lookup the details for packages with the given name, version,
+          release, architecture label, and (optionally) epoch.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name
+ 
+* [.string]#string#  version
+ 
+* [.string]#string#  release
+ 
+* [.string]#string#  epoch - If set to something other than empty string,
+          strict matching will be used and the epoch string must be correct.
+          If set to an empty string, if the epoch is null or there is only one
+          NVRA combination, it will be returned.  (Empty string is recommended.)
+ 
+* [.string]#string#  archLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - package
+      * [.string]#string#  "name"
+      * [.string]#string#  "version"
+      * [.string]#string#  "release"
+      * [.string]#string#  "epoch"
+      * [.int]#int#  "id"
+      * [.string]#string#  "arch_label"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      * [.string]#string#  "path" - The path on that file system that the package
+             resides
+      * [.string]#string#  "provider" - The provider of the package, determined by
+              the gpg key it was signed with.
+  // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#packages-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Retrieve details for the package with the ID.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.struct]#struct#  - package
+       * [.int]#int#  "id"
+       * [.string]#string#  "name"
+       * [.string]#string#  "epoch"
+       * [.string]#string#  "version"
+       * [.string]#string#  "release"
+       * [.string]#string#  "arch_label"
+       * [.array]#array#  "providing_channels"
+** string - Channel label providing this package.
+       * [.string]#string#  "build_host"
+       * [.string]#string#  "description"
+       * [.string]#string#  "checksum"
+       * [.string]#string#  "checksum_type"
+       * [.string]#string#  "vendor"
+       * [.string]#string#  "summary"
+       * [.string]#string#  "cookie"
+       * [.string]#string#  "license"
+       * [.string]#string#  "file"
+       * [.string]#string#  "build_date"
+       * [.string]#string#  "last_modified_date"
+       * [.string]#string#  "size"
+       * [.string]#string#  "path" - The path on the Satellite's file system that
+              the package resides.
+       * [.string]#string#  "payload_size"
+    // no end needed
+ 
+
+
+'''
+
+
+[#packages-getPackage]
+=== Method: getPackage 
+
+Description:
+
+Retrieve the package file associated with a package.
+ (Consider using packages.getPackageUrl
+ for larger files.)
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  package_id
+ 
+
+Returns:
+
+* binary object - package file 
+ 
+
+
+'''
+
+
+[#packages-getPackageUrl]
+=== Method: getPackageUrl 
+
+Description:
+
+Retrieve the url that can be used to download a package.
+      This will expire after a certain time period.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  package_id
+ 
+
+Returns:
+
+* string - the download url 
+ 
+
+
+'''
+
+
+[#packages-listChangelog]
+=== Method: listChangelog 
+
+Description:
+
+List the change log for a package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#packages-listDependencies]
+=== Method: listDependencies 
+
+Description:
+
+List the dependencies for a package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - dependency
+       * [.string]#string#  "dependency"
+       * [.string]#string#  "dependency_type" - One of the following:
+         // no end needed
+           * requires
+           * conflicts
+           * obsoletes
+           * provides
+           * recommends
+           * suggests
+           * supplements
+           * enhances
+           * predepends
+           * breaks
+         // no end needed
+       * [.string]#string#  "dependency_modifier"
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#packages-listFiles]
+=== Method: listFiles 
+
+Description:
+
+List the files associated with a package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - file info
+       * [.string]#string#  "path"
+       * [.string]#string#  "type"
+       * [.string]#string#  "last_modified_date"
+       * [.string]#string#  "checksum"
+       * [.string]#string#  "checksum_type"
+       * [.int]#int#  "size"
+       * [.string]#string#  "linkto"
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#packages-listProvidingChannels]
+=== Method: listProvidingChannels 
+
+Description:
+
+List the channels that provide the a package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - channel
+     * [.string]#string#  "label"
+     * [.string]#string#  "parent_label"
+     * [.string]#string#  "name"
+   // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#packages-listProvidingErrata]
+=== Method: listProvidingErrata 
+
+Description:
+
+List the errata providing the a package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - errata
+     * [.string]#string#  "advisory"
+     * [.string]#string#  "issue_date"
+     * [.string]#string#  "last_modified_date"
+     * [.string]#string#  "update_date"
+     * [.string]#string#  "synopsis"
+     * [.string]#string#  "type"
+   // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#packages-listSourcePackages]
+=== Method: listSourcePackages 
+
+Description:
+
+List all source packages in user's organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - source_package
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+   // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#packages-removePackage]
+=== Method: removePackage 
+
+Description:
+
+Remove a package from the satellite.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#packages-removeSourcePackage]
+=== Method: removeSourcePackage 
+
+Description:
+
+Remove a source package.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  packageSourceId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

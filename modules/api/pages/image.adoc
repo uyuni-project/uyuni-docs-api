@@ -1,0 +1,318 @@
+
+
+
+[#image]
+== image
+
+
+=== Available methods
+
+* <<image-delete,delete>>
+* <<image-getCustomValues,getCustomValues>>
+* <<image-getDetails,getDetails>>
+* <<image-getRelevantErrata,getRelevantErrata>>
+* <<image-importImage,importImage>>
+* <<image-listImages,listImages>>
+* <<image-listPackages,listPackages>>
+* <<image-scheduleImageBuild,scheduleImageBuild>>
+
+=== Description
+
+Provides methods to access and modify images.
+
+*Namespace*:
+
+image
+
+'''
+
+
+[#image-delete]
+=== Method: delete 
+
+Description:
+
+Delete an Image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image-getCustomValues]
+=== Method: getCustomValues 
+
+Description:
+
+Get the custom data values defined for the Image.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* [.struct]#struct#  - Map of custom labels to custom values
+      * [.string]#string#  "custom info label"
+      * [.string]#string#  "value"
+    // no end needed
+ 
+
+
+'''
+
+
+[#image-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Get details of an Image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Image Overview information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name" - image name
+   * [.string]#string#  "version" - image tag/version
+   * [.int]#int#  "revision" - image build revision number
+   * [.string]#string#  "arch" - image architecture
+   * [.boolean]#boolean#  "external" - true if the image is built externally,
+          false otherwise
+   * [.string]#string#  "checksum"
+   * [.string]#string#  "profileLabel"
+   * [.string]#string#  "buildStatus" - One of:
+            // no end needed
+              * queued
+              * picked up
+              * completed
+              * failed
+            // no end needed
+   * [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
+            // no end needed
+              * queued
+              * picked up
+              * completed
+              * failed
+            // no end needed
+   * [.int]#int#  "buildServerId"
+   * [.int]#int#  "securityErrata"
+   * [.int]#int#  "bugErrata"
+   * [.int]#int#  "enhancementErrata"
+   * [.int]#int#  "outdatedPackages"
+   * [.int]#int#  "installedPackages"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#image-getRelevantErrata]
+=== Method: getRelevantErrata 
+
+Description:
+
+Returns a list of all errata that are relevant for the image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - errata
+          * [.int]#int#  "id" - Errata ID.
+          * [.string]#string#  "date" - Date erratum was created.
+          * [.string]#string#  "update_date" - Date erratum was updated.
+          * [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+          * [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
+          * [.string]#string#  "advisory_name" - Name such as RHSA, etc
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#image-importImage]
+=== Method: importImage 
+
+Description:
+
+Import an image and schedule an inspect afterwards
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - image name as specified in the
+ store
+ 
+* [.string]#string#  version - version to import or empty
+ 
+* [.int]#int#  buildHostId - system ID of the build
+ host
+ 
+* [.string]#string#  storeLabel
+ 
+* [.string]#string#  activationKey - activation key to get
+ the channel data from
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest
+ the following inspect can run
+ 
+
+Returns:
+
+* int - ID of the inspect action created 
+ 
+
+
+'''
+
+
+[#image-listImages]
+=== Method: listImages 
+
+Description:
+
+List available Images
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Image information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name" - image name
+   * [.string]#string#  "version" - image tag/version
+   * [.int]#int#  "revision" - image build revision number
+   * [.string]#string#  "arch" - image architecture
+   * [.boolean]#boolean#  "external" - true if the image is built externally,
+          false otherwise
+   * [.string]#string#  "storeLabel"
+   * [.string]#string#  "checksum"
+ // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#image-listPackages]
+=== Method: listPackages 
+
+Description:
+
+List the installed packages on the given image.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - package
+                 * [.string]#string#  "name"
+                 * [.string]#string#  "version"
+                 * [.string]#string#  "release"
+                 * [.string]#string#  "epoch"
+                 * [.string]#string#  "arch"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#image-scheduleImageBuild]
+=== Method: scheduleImageBuild 
+
+Description:
+
+Schedule an image build
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  profileLabel
+ 
+* [.string]#string#  version - version to build or empty
+ 
+* [.int]#int#  buildHostId - system id of the build host
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the build can run.
+ 
+
+Returns:
+
+* int - ID of the build action created. 
+ 
+
+
+'''
+

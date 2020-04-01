@@ -1,0 +1,535 @@
+
+
+
+[#actionchain]
+== actionchain
+
+
+=== Available methods
+
+* <<actionchain-addConfigurationDeployment,addConfigurationDeployment>>
+* <<actionchain-addErrataUpdate,addErrataUpdate>>
+* <<actionchain-addPackageInstall,addPackageInstall>>
+* <<actionchain-addPackageRemoval,addPackageRemoval>>
+* <<actionchain-addPackageUpgrade,addPackageUpgrade>>
+* <<actionchain-addPackageVerify,addPackageVerify>>
+* <<actionchain-addScriptRun,addScriptRun>>
+* <<actionchain-addScriptRun,addScriptRun>>
+* <<actionchain-addSystemReboot,addSystemReboot>>
+* <<actionchain-createChain,createChain>>
+* <<actionchain-deleteChain,deleteChain>>
+* <<actionchain-listChainActions,listChainActions>>
+* <<actionchain-listChains,listChains>>
+* <<actionchain-removeAction,removeAction>>
+* <<actionchain-renameChain,renameChain>>
+* <<actionchain-scheduleChain,scheduleChain>>
+
+=== Description
+
+Provides the namespace for the Action Chain methods.
+
+*Namespace*:
+
+actionchain
+
+'''
+
+
+[#actionchain-addConfigurationDeployment]
+=== Method: addConfigurationDeployment 
+
+Description:
+
+Adds an action to deploy a configuration file to an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.int]#int#  System ID - System ID
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - config revision specifier
+                       * [.string]#string#  "channelLabel" - Channel label
+                       * [.string]#string#  "filePath" - Path of the configuration file
+                       * [.int]#int#  "revision" - Revision number
+                   // no end needed
+               // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-addErrataUpdate]
+=== Method: addErrataUpdate 
+
+Description:
+
+Adds Errata update to an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.array]#array# :
+** int - Errata ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#actionchain-addPackageInstall]
+=== Method: addPackageInstall 
+
+Description:
+
+Adds package installation action to an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.array]#array# :
+** int - Package ID
+ 
+* [.string]#string#  chainLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-addPackageRemoval]
+=== Method: addPackageRemoval 
+
+Description:
+
+Adds an action to remove installed packages on the system to an Action
+ Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.array]#array# :
+** int - Package ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action or exception 
+ 
+
+
+'''
+
+
+[#actionchain-addPackageUpgrade]
+=== Method: addPackageUpgrade 
+
+Description:
+
+Adds an action to upgrade installed packages on the system to an Action
+ Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* int actionId - The id of the action or throw an exception 
+ 
+
+
+'''
+
+
+[#actionchain-addPackageVerify]
+=== Method: addPackageVerify 
+
+Description:
+
+Adds an action to verify installed packages on the system to an Action
+ Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-addScriptRun]
+=== Method: addScriptRun 
+
+Description:
+
+Add an action to run a script to an Action Chain.
+ NOTE: The script body must be Base64 encoded!
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.string]#string#  uid - User ID on the particular system
+ 
+* [.string]#string#  gid - Group ID on the particular system
+ 
+* [.int]#int#  timeout - Timeout
+ 
+* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
+ 
+
+Returns:
+
+* int actionId - The id of the action or throw an
+ exception 
+ 
+
+
+'''
+
+
+[#actionchain-addScriptRun]
+=== Method: addScriptRun 
+
+Description:
+
+Add an action to run a script to an Action Chain.
+ NOTE: The script body must be Base64 encoded!
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.string]#string#  uid - User ID on the particular system
+ 
+* [.string]#string#  gid - Group ID on the particular system
+ 
+* [.int]#int#  timeout - Timeout
+ 
+* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
+ 
+
+Returns:
+
+* int actionId - The id of the action or throw an
+ exception 
+ 
+
+
+'''
+
+
+[#actionchain-addSystemReboot]
+=== Method: addSystemReboot 
+
+Description:
+
+Add system reboot to an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#actionchain-createChain]
+=== Method: createChain 
+
+Description:
+
+Create an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* int actionId - The ID of the created action chain 
+ 
+
+
+'''
+
+
+[#actionchain-deleteChain]
+=== Method: deleteChain 
+
+Description:
+
+Delete action chain by label.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-listChainActions]
+=== Method: listChainActions 
+
+Description:
+
+List all actions in the particular Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* [.array]#array# :
+                      * [.struct]#struct#  - entry
+                        * [.int]#int#  "id" - Action ID
+                        * [.string]#string#  "label" - Label of an Action
+                        * [.string]#string#  "created" - Created date/time
+                        * [.string]#string#  "earliest" - Earliest scheduled date/time
+                        * [.string]#string#  "type" - Type of the action
+                        * [.string]#string#  "modified" - Modified date/time
+                        * [.string]#string#  "cuid" - Creator UID
+                      // no end needed
+                    // no end needed
+ 
+
+
+'''
+
+
+[#actionchain-listChains]
+=== Method: listChains 
+
+Description:
+
+List currently available action chains.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                      * [.struct]#struct#  - chain
+                        * [.string]#string#  "label" - Label of an Action Chain
+                        * [.string]#string#  "entrycount" - Number of entries in the Action Chain
+                      // no end needed
+                    // no end needed
+ 
+
+
+'''
+
+
+[#actionchain-removeAction]
+=== Method: removeAction 
+
+Description:
+
+Remove an action from an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.int]#int#  actionId - Action ID
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-renameChain]
+=== Method: renameChain 
+
+Description:
+
+Rename an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  previousLabel - Previous chain label
+ 
+* [.string]#string#  newLabel - New chain label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#actionchain-scheduleChain]
+=== Method: scheduleChain 
+
+Description:
+
+Schedule the Action Chain so that its actions will actually occur.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  Earliest date
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

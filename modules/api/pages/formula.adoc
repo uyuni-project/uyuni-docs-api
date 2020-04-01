@@ -1,0 +1,310 @@
+
+
+
+[#formula]
+== formula
+
+
+=== Available methods
+
+* <<formula-getCombinedFormulasByServerId,getCombinedFormulasByServerId>>
+* <<formula-getFormulasByGroupId,getFormulasByGroupId>>
+* <<formula-getFormulasByServerId,getFormulasByServerId>>
+* <<formula-getGroupFormulaData,getGroupFormulaData>>
+* <<formula-getSystemFormulaData,getSystemFormulaData>>
+* <<formula-listFormulas,listFormulas>>
+* <<formula-setFormulasOfGroup,setFormulasOfGroup>>
+* <<formula-setFormulasOfServer,setFormulasOfServer>>
+* <<formula-setGroupFormulaData,setGroupFormulaData>>
+* <<formula-setSystemFormulaData,setSystemFormulaData>>
+
+=== Description
+
+Provides methods to access and modify formulas.
+
+*Namespace*:
+
+formula
+
+'''
+
+
+[#formula-getCombinedFormulasByServerId]
+=== Method: getCombinedFormulasByServerId 
+
+Description:
+
+Return the list of formulas a server and all his groups have.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (formulas)
+ 
+
+
+'''
+
+
+[#formula-getFormulasByGroupId]
+=== Method: getFormulasByGroupId 
+
+Description:
+
+Return the list of formulas a server group has.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemGroupId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (formulas)
+ 
+
+
+'''
+
+
+[#formula-getFormulasByServerId]
+=== Method: getFormulasByServerId 
+
+Description:
+
+Return the list of formulas directly applied to a server.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (formulas)
+ 
+
+
+'''
+
+
+[#formula-getGroupFormulaData]
+=== Method: getGroupFormulaData 
+
+Description:
+
+Get the saved data for the specific formula against specific group
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  groupId
+ 
+* [.string]#string#  formulaName
+ 
+
+Returns:
+
+* struct with saved formula data 
+ 
+
+
+'''
+
+
+[#formula-getSystemFormulaData]
+=== Method: getSystemFormulaData 
+
+Description:
+
+Get the saved data for the specific formula against specific server
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.string]#string#  formulaName
+ 
+
+Returns:
+
+* struct with saved formula data 
+ 
+
+
+'''
+
+
+[#formula-listFormulas]
+=== Method: listFormulas 
+
+Description:
+
+Return the list of formulas currently installed.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (formulas)
+ 
+
+
+'''
+
+
+[#formula-setFormulasOfGroup]
+=== Method: setFormulasOfGroup 
+
+Description:
+
+Set the formulas of a server group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemGroupId
+ 
+* [.array]#array# :
+** string - formulaName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#formula-setFormulasOfServer]
+=== Method: setFormulasOfServer 
+
+Description:
+
+Set the formulas of a server.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.array]#array# :
+** string - formulaName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#formula-setGroupFormulaData]
+=== Method: setGroupFormulaData 
+
+Description:
+
+Set the formula form for the specified group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  groupId
+ 
+* [.string]#string#  formulaName
+ 
+* struct containing the values for each field in the form 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#formula-setSystemFormulaData]
+=== Method: setSystemFormulaData 
+
+Description:
+
+Set the formula form for the specified server.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.string]#string#  formulaName
+ 
+* struct content with the values for each field in the form 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

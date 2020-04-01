@@ -1,0 +1,914 @@
+
+
+
+[#user]
+== user
+
+
+=== Available methods
+
+* <<user-addAssignedSystemGroup,addAssignedSystemGroup>>
+* <<user-addAssignedSystemGroups,addAssignedSystemGroups>>
+* <<user-addDefaultSystemGroup,addDefaultSystemGroup>>
+* <<user-addDefaultSystemGroups,addDefaultSystemGroups>>
+* <<user-addRole,addRole>>
+* <<user-create,create>>
+* <<user-create,create>>
+* <<user-delete,delete>>
+* <<user-disable,disable>>
+* <<user-enable,enable>>
+* <<user-getCreateDefaultSystemGroup,getCreateDefaultSystemGroup>>
+* <<user-getDetails,getDetails>>
+* <<user-getLoggedInTime,getLoggedInTime>>
+* <<user-listAssignableRoles,listAssignableRoles>>
+* <<user-listAssignedSystemGroups,listAssignedSystemGroups>>
+* <<user-listDefaultSystemGroups,listDefaultSystemGroups>>
+* <<user-listRoles,listRoles>>
+* <<user-listUsers,listUsers>>
+* <<user-removeAssignedSystemGroup,removeAssignedSystemGroup>>
+* <<user-removeAssignedSystemGroups,removeAssignedSystemGroups>>
+* <<user-removeDefaultSystemGroup,removeDefaultSystemGroup>>
+* <<user-removeDefaultSystemGroups,removeDefaultSystemGroups>>
+* <<user-removeRole,removeRole>>
+* <<user-setCreateDefaultSystemGroup,setCreateDefaultSystemGroup>>
+* <<user-setDetails,setDetails>>
+* <<user-setErrataNotifications,setErrataNotifications>>
+* <<user-setReadOnly,setReadOnly>>
+* <<user-usePamAuthentication,usePamAuthentication>>
+
+=== Description
+
+User namespace contains methods to access common user functions
+ available from the web user interface.
+
+*Namespace*:
+
+user
+
+'''
+
+
+[#user-addAssignedSystemGroup]
+=== Method: addAssignedSystemGroup 
+
+Description:
+
+Add system group to user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system group also be
+ added to user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-addAssignedSystemGroups]
+=== Method: addAssignedSystemGroups 
+
+Description:
+
+Add system groups to user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** string - serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system groups also be
+ added to user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-addDefaultSystemGroup]
+=== Method: addDefaultSystemGroup 
+
+Description:
+
+Add system group to user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-addDefaultSystemGroups]
+=== Method: addDefaultSystemGroups 
+
+Description:
+
+Add system groups to user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** string - serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-addRole]
+=== Method: addRole 
+
+Description:
+
+Adds a role to a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to update.
+ 
+* [.string]#string#  role - Role label to add.  Can be any of:
+ satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-create]
+=== Method: create 
+
+Description:
+
+Create a new user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  desiredLogin - Desired login name, will fail if
+ already in use.
+ 
+* [.string]#string#  desiredPassword
+ 
+* [.string]#string#  firstName
+ 
+* [.string]#string#  lastName
+ 
+* [.string]#string#  email - User's e-mail address.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-create]
+=== Method: create 
+
+Description:
+
+Create a new user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  desiredLogin - Desired login name,
+ will fail if already in use.
+ 
+* [.string]#string#  desiredPassword
+ 
+* [.string]#string#  firstName
+ 
+* [.string]#string#  lastName
+ 
+* [.string]#string#  email - User's e-mail address.
+ 
+* [.int]#int#  usePamAuth - 1 if you wish to use PAM
+ authentication for this user, 0 otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-delete]
+=== Method: delete 
+
+Description:
+
+Delete a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to delete.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-disable]
+=== Method: disable 
+
+Description:
+
+Disable a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to disable.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-enable]
+=== Method: enable 
+
+Description:
+
+Enable a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to enable.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-getCreateDefaultSystemGroup]
+=== Method: getCreateDefaultSystemGroup 
+
+Description:
+
+Returns the current value of the CreateDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Returns the details about a given user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.struct]#struct#  - user details
+     * [.string]#string#  "first_names" - deprecated, use first_name
+     * [.string]#string#  "first_name"
+     * [.string]#string#  "last_name"
+     * [.string]#string#  "email"
+     * [.int]#int#  "org_id"
+     * [.string]#string#  "org_name"
+     * [.string]#string#  "prefix"
+     * [.string]#string#  "last_login_date"
+     * [.string]#string#  "created_date"
+     * [.boolean]#boolean#  "enabled" - true if user is enabled,
+     false if the user is disabled
+     * [.boolean]#boolean#  "use_pam" - true if user is configured to use
+     PAM authentication
+     * [.boolean]#boolean#  "read_only" - true if user is readonly
+     * [.boolean]#boolean#  "errata_notification" - true if errata e-mail notification
+     is enabled for the user
+   // no end needed
+ 
+
+
+'''
+
+
+[#user-getLoggedInTime]
+=== Method: getLoggedInTime (Deprecated)
+
+Description:
+
+Returns the time user last logged in.
+
+
+Deprecated - Never returned usable value.
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* dateTime.iso8601 
+ 
+
+
+'''
+
+
+[#user-listAssignableRoles]
+=== Method: listAssignableRoles 
+
+Description:
+
+Returns a list of user roles that this user can assign to others.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (role label)
+ 
+
+
+'''
+
+
+[#user-listAssignedSystemGroups]
+=== Method: listAssignedSystemGroups 
+
+Description:
+
+Returns the system groups that a user can administer.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - system group
+       * [.int]#int#  "id"
+       * [.string]#string#  "name"
+       * [.string]#string#  "description"
+       * [.int]#int#  "system_count"
+       * [.int]#int#  "org_id" - Organization ID for this system group.
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#user-listDefaultSystemGroups]
+=== Method: listDefaultSystemGroups 
+
+Description:
+
+Returns a user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - system group
+       * [.int]#int#  "id"
+       * [.string]#string#  "name"
+       * [.string]#string#  "description"
+       * [.int]#int#  "system_count"
+       * [.int]#int#  "org_id" - Organization ID for this system group.
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#user-listRoles]
+=== Method: listRoles 
+
+Description:
+
+Returns a list of the user's roles.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - (role label)
+ 
+
+
+'''
+
+
+[#user-listUsers]
+=== Method: listUsers 
+
+Description:
+
+Returns a list of users in your organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - user
+              * [.int]#int#  "id"
+              * [.string]#string#  "login"
+              * [.string]#string#  "login_uc" - upper case version of the login
+              * [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+      // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#user-removeAssignedSystemGroup]
+=== Method: removeAssignedSystemGroup 
+
+Description:
+
+Remove system group from the user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system group also
+ be removed from the user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-removeAssignedSystemGroups]
+=== Method: removeAssignedSystemGroups 
+
+Description:
+
+Remove system groups from a user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** string - serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system groups also be
+ removed from the user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-removeDefaultSystemGroup]
+=== Method: removeDefaultSystemGroup 
+
+Description:
+
+Remove a system group from user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-removeDefaultSystemGroups]
+=== Method: removeDefaultSystemGroups 
+
+Description:
+
+Remove system groups from a user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** string - serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-removeRole]
+=== Method: removeRole 
+
+Description:
+
+Remove a role from a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to update.
+ 
+* [.string]#string#  role - Role label to remove.  Can be any of:
+ satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-setCreateDefaultSystemGroup]
+=== Method: setCreateDefaultSystemGroup 
+
+Description:
+
+Sets the value of the CreateDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.boolean]#boolean#  createDefaultSystemGruop - True if we should automatically create system groups, false otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-setDetails]
+=== Method: setDetails 
+
+Description:
+
+Updates the details of a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.struct]#struct#  - user details
+     * [.string]#string#  "first_names" - deprecated, use first_name
+     * [.string]#string#  "first_name"
+     * [.string]#string#  "last_name"
+     * [.string]#string#  "email"
+     * [.string]#string#  "prefix"
+     * [.string]#string#  "password"
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-setErrataNotifications]
+=== Method: setErrataNotifications 
+
+Description:
+
+Enables/disables errata mail notifications for a specific user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.boolean]#boolean#  value - True for enabling
+ errata notifications, False for disabling
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-setReadOnly]
+=== Method: setReadOnly 
+
+Description:
+
+Sets whether the target user should have only read-only API access or
+ standard full scale access.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.boolean]#boolean#  readOnly - Sets whether the target user should
+ have only read-only API access or standard full scale access.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#user-usePamAuthentication]
+=== Method: usePamAuthentication 
+
+Description:
+
+Toggles whether or not a user uses PAM authentication or
+ basic Satellite authentication.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.int]#int#  pam_value
+   // no end needed
+     * 1 to enable PAM authentication
+     * 0 to disable.
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

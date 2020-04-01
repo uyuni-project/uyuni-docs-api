@@ -185,22 +185,15 @@ clean: ## Remove build artifacts from output directory (Antora and PDF)
 	-rm -rf build/ \
 		.cache/ \
 		public/ \
-		modules/installation/nav-installation-guide.pdf.adoc \
-		modules/client-configuration/nav-client-configuration-guide.pdf.adoc \
-		modules/upgrade/nav-upgrade-guide.pdf.adoc \
-		modules/reference/nav-reference-guide.pdf.adoc \
-		modules/administration/nav-administration-guide.pdf.adoc \
-		modules/salt/nav-salt-guide.pdf.adoc \
-		modules/retail/nav-retail-guide.pdf.adoc \
-		modules/architecture/nav-architecture-guide.pdf.adoc \
-		modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
+		modules/api/nav-api-guide.pdf.adoc
+
 
 
 # SUMA DOCUMENTATION BUILD COMMANDS
 
 .PHONY: validate-suma
 validate-suma: ## Validates page references and prints a report (Does not build the site)
-	$(call validate-product,suma-site.yml)
+	$(call validate-product,suma-api-site.yml)
 
 
 
@@ -217,7 +210,7 @@ antora-suma: clean pdf-all-suma pdf-tar-suma ## Build the SUMA Antora static sit
 	s/^ # *\(title: *SUSE Manager\)/\1/;\
 	s/^ *\(title: *Uyuni\)/#\1/;\
 	s/^ *\(name: *uyuni\)/#\1/;" antora.yml
-	DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr antora suma-site.yml --generator antora-site-generator-lunr
+	DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr antora suma-api-site.yml --generator antora-site-generator-lunr
 
 
 
@@ -337,7 +330,7 @@ pdf-quickstart-public-cloud-suma: modules/quickstart-public-cloud/nav-quickstart
 
 .PHONY: validate-uyuni
 validate-uyuni: ## Validates page references and prints a report (Does not build the site)
-	$(call validate,uyuni-site.yml)
+	$(call validate,uyuni-api-site.yml)
 
 
 
@@ -347,74 +340,30 @@ pdf-tar-uyuni: ## Create tar of PDF files
 
 
 .PHONY: antora-uyuni
-antora-uyuni: clean pdf-all-uyuni pdf-tar-uyuni ## Build the UYUNI Antora static site (See README for more information)
+antora-uyuni: clean #pdf-all-uyuni pdf-tar-uyuni ## Build the UYUNI Antora static site (See README for more information)
 		sed -i "s/^ *\(name: *suse-manager\)/#\1/;\
 	s/^ *\(title: *SUSE Manager\)/#\1/;\
 	s/^ *# *\(title: *Uyuni\)/\1/;\
 	s/^ *# *\(name: *uyuni\)/\1/;" antora.yml
-		DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr antora uyuni-site.yml --generator antora-site-generator-lunr
+		DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr antora uyuni-api-site.yml --generator antora-site-generator-lunr
 
 
 
 # UYUNI
-.PHONY: obs-packages-uyuni
-obs-packages-uyuni: clean pdf-all-uyuni antora-uyuni ## Generate UYUNI OBS tar files
-	$(call obs-packages-product,$(HTML_OUTPUT_UYUNI),$(PDF_OUTPUT_UYUNI))
+#.PHONY: obs-packages-uyuni
+#obs-packages-uyuni: clean pdf-all-uyuni antora-uyuni ## Generate UYUNI OBS tar files
+#	$(call obs-packages-product,$(HTML_OUTPUT_UYUNI),$(PDF_OUTPUT_UYUNI))
 
 
-
-.PHONY: pdf-all-uyuni
-pdf-all-uyuni: pdf-install-uyuni pdf-client-configuration-uyuni pdf-upgrade-uyuni pdf-reference-uyuni pdf-administration-uyuni pdf-salt-uyuni pdf-retail-uyuni ##pdf-architecture-uyuni ## Generate PDF versions of all UYUNI books
-
+#.PHONY: pdf-all-uyuni
+#pdf-all-uyuni: pdf-api-uyuni ##pdf-architecture-uyuni ## Generate PDF versions of all UYUNI books
 
 
-## Generate PDF version of the UYUNI Installation Guide
-.PHONY: pdf-install-uyuni
-pdf-install-uyuni: modules/installation/nav-installation-guide.pdf.adoc
-	$(call pdf-install-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
+#.PHONY: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
+#modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc:
+#	$(call pdf-book-create-index,quickstart-public-cloud)
 
-
-
-## Generate PDF version of the UYUNI Client Configuration Guide
-.PHONY: pdf-client-configuration-uyuni
-pdf-client-configuration-uyuni: modules/client-configuration/nav-client-configuration-guide.pdf.adoc
-	$(call pdf-client-configuration-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Upgrade Guide
-.PHONY: pdf-upgrade-uyuni
-pdf-upgrade-uyuni: modules/upgrade/nav-upgrade-guide.pdf.adoc
-	$(call pdf-upgrade-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Reference Guide
-.PHONY: pdf-reference-uyuni
-pdf-reference-uyuni: modules/reference/nav-reference-guide.pdf.adoc
-	$(call pdf-reference-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Administration Guide
-.PHONY: pdf-administration-uyuni
-pdf-administration-uyuni: modules/administration/nav-administration-guide.pdf.adoc
-	$(call pdf-administration-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Salt Guide
-.PHONY: pdf-salt-uyuni
-pdf-salt-uyuni: modules/salt/nav-salt-guide.pdf.adoc
-	$(call pdf-salt-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Retail Guide
-.PHONY: pdf-retail-uyuni
-pdf-retail-uyuni: modules/retail/nav-retail-guide.pdf.adoc
-	$(call pdf-retail-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-## Generate PDF version of the UYUNI Architecture Guide
-.PHONY: pdf-architecture-uyuni
-pdf-architecture-uyuni: modules/architecture/nav-architecture-guide.pdf.adoc
-	$(call pdf-architecture-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
-
-.PHONY: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc:
-	$(call pdf-book-create-index,quickstart-public-cloud)
-
-.PHONY: pdf-quickstart-public-cloud-uyuni
+#.PHONY: pdf-quickstart-public-cloud-uyuni
 ## Generate PDF version of the SUMA Quickstart Guide for Public Cloud
-pdf-quickstart-public-cloud-uyuni: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-	$(call pdf-quickstart-public-cloud-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
+#pdf-quickstart-public-cloud-uyuni: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
+#	$(call pdf-quickstart-public-cloud-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))

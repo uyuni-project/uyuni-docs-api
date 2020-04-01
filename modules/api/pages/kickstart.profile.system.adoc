@@ -1,0 +1,655 @@
+
+
+
+[#kickstart_profile_system]
+== kickstart.profile.system
+
+
+=== Available methods
+
+* <<kickstart_profile_system-addFilePreservations,addFilePreservations>>
+* <<kickstart_profile_system-addKeys,addKeys>>
+* <<kickstart_profile_system-checkConfigManagement,checkConfigManagement>>
+* <<kickstart_profile_system-checkRemoteCommands,checkRemoteCommands>>
+* <<kickstart_profile_system-disableConfigManagement,disableConfigManagement>>
+* <<kickstart_profile_system-disableRemoteCommands,disableRemoteCommands>>
+* <<kickstart_profile_system-enableConfigManagement,enableConfigManagement>>
+* <<kickstart_profile_system-enableRemoteCommands,enableRemoteCommands>>
+* <<kickstart_profile_system-getLocale,getLocale>>
+* <<kickstart_profile_system-getPartitioningScheme,getPartitioningScheme>>
+* <<kickstart_profile_system-getRegistrationType,getRegistrationType>>
+* <<kickstart_profile_system-getSELinux,getSELinux>>
+* <<kickstart_profile_system-listFilePreservations,listFilePreservations>>
+* <<kickstart_profile_system-listKeys,listKeys>>
+* <<kickstart_profile_system-removeFilePreservations,removeFilePreservations>>
+* <<kickstart_profile_system-removeKeys,removeKeys>>
+* <<kickstart_profile_system-setLocale,setLocale>>
+* <<kickstart_profile_system-setPartitioningScheme,setPartitioningScheme>>
+* <<kickstart_profile_system-setRegistrationType,setRegistrationType>>
+* <<kickstart_profile_system-setSELinux,setSELinux>>
+
+=== Description
+
+Provides methods to set various properties of a kickstart profile.
+
+*Namespace*:
+
+kickstart.profile.system
+
+'''
+
+
+[#kickstart_profile_system-addFilePreservations]
+=== Method: addFilePreservations 
+
+Description:
+
+Adds the given list of file preservations to the specified kickstart
+ profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+* [.array]#array# :
+** string - filePreservations
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-addKeys]
+=== Method: addKeys 
+
+Description:
+
+Adds the given list of keys to the specified kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+* [.array]#array# :
+** string - keyDescription
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-checkConfigManagement]
+=== Method: checkConfigManagement 
+
+Description:
+
+Check the configuration management status for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.boolean]#boolean#  enabled - true if configuration
+ management is enabled; otherwise, false
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-checkRemoteCommands]
+=== Method: checkRemoteCommands 
+
+Description:
+
+Check the remote commands status flag for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.boolean]#boolean#  enabled - true if remote
+ commands support is enabled; otherwise, false
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-disableConfigManagement]
+=== Method: disableConfigManagement 
+
+Description:
+
+Disables the configuration management flag in a kickstart profile
+ so that a system created using this profile will be NOT be configuration capable.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-disableRemoteCommands]
+=== Method: disableRemoteCommands 
+
+Description:
+
+Disables the remote command flag in a kickstart profile
+ so that a system created using this profile
+ will be capable of running remote commands
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-enableConfigManagement]
+=== Method: enableConfigManagement 
+
+Description:
+
+Enables the configuration management flag in a kickstart profile
+ so that a system created using this profile will be configuration capable.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-enableRemoteCommands]
+=== Method: enableRemoteCommands 
+
+Description:
+
+Enables the remote command flag in a kickstart profile
+ so that a system created using this profile
+  will be capable of running remote commands
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-getLocale]
+=== Method: getLocale 
+
+Description:
+
+Retrieves the locale for a kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.struct]#struct#  - locale info
+              * [.string]#string#  "locale"
+              * [.boolean]#boolean#  "useUtc"
+                  // no end needed
+                      * true - the hardware clock uses UTC
+                      * false - the hardware clock does not use UTC
+                  // no end needed
+          // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-getPartitioningScheme]
+=== Method: getPartitioningScheme 
+
+Description:
+
+Get the partitioning scheme for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of a kickstart
+ profile.
+ 
+
+Returns:
+
+* string[] - A list of partitioning commands used to
+ setup the partitions, logical volumes and volume groups." 
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-getRegistrationType]
+=== Method: getRegistrationType 
+
+Description:
+
+returns the registration type of a given kickstart profile.
+ Registration Type can be one of reactivation/deletion/none
+ These types determine the behaviour of the registration when using
+ this profile for reprovisioning.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+
+Returns:
+
+* [.string]#string#  registrationType
+      // no end needed
+         * reactivation
+         * deletion
+         * none
+      // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-getSELinux]
+=== Method: getSELinux 
+
+Description:
+
+Retrieves the SELinux enforcing mode property of a kickstart
+ profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.string]#string#  enforcingMode
+      // no end needed
+          * enforcing
+          * permissive
+          * disabled
+      // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-listFilePreservations]
+=== Method: listFilePreservations 
+
+Description:
+
+Returns the set of all file preservations associated with the given
+ kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - file list
+     * [.string]#string#  "name"
+     * [.array]#array#  "file_names"
+** string - name
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-listKeys]
+=== Method: listKeys 
+
+Description:
+
+Returns the set of all keys associated with the given kickstart
+             profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - key
+              * [.string]#string#  "description"
+              * [.string]#string#  "type"
+              * [.string]#string#  "content"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-removeFilePreservations]
+=== Method: removeFilePreservations 
+
+Description:
+
+Removes the given list of file preservations from the specified
+ kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+* [.array]#array# :
+** string - filePreservations
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-removeKeys]
+=== Method: removeKeys 
+
+Description:
+
+Removes the given list of keys from the specified kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+* [.array]#array# :
+** string - keyDescription
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-setLocale]
+=== Method: setLocale 
+
+Description:
+
+Sets the locale for a kickstart profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+* [.string]#string#  locale - the locale
+ 
+* [.boolean]#boolean#  useUtc
+      // no end needed
+          * true - the hardware clock uses UTC
+          * false - the hardware clock does not use UTC
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-setPartitioningScheme]
+=== Method: setPartitioningScheme 
+
+Description:
+
+Set the partitioning scheme for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of the
+ kickstart profile to update.
+ 
+* [.string[]]#string[]#  scheme - The partitioning scheme
+ is a list of partitioning command strings used to setup the partitions,
+ volume groups and logical volumes.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-setRegistrationType]
+=== Method: setRegistrationType 
+
+Description:
+
+Sets the registration type of a given kickstart profile.
+ Registration Type can be one of reactivation/deletion/none
+ These types determine the behaviour of the re registration when using
+ this profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  kickstartLabel
+ 
+* [.string]#string#  registrationType
+      // no end needed
+         * reactivation - to try and generate a reactivation key
+              and use that to register the system when reprovisioning a system.
+         * deletion - to try and delete the existing system profile
+              and reregister the system being reprovisioned as new
+         * none - to preserve the status quo and leave the current system
+              as a duplicate on a reprovision.
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_system-setSELinux]
+=== Method: setSELinux 
+
+Description:
+
+Sets the SELinux enforcing mode property of a kickstart profile
+ so that a system created using this profile will be have
+ the appropriate SELinux enforcing mode.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+* [.string]#string#  enforcingMode - the selinux enforcing mode
+      // no end needed
+          * enforcing
+          * permissive
+          * disabled
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

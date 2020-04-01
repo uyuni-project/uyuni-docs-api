@@ -1,0 +1,817 @@
+
+
+
+[#org]
+== org
+
+
+=== Available methods
+
+* <<org-create,create>>
+* <<org-delete,delete>>
+* <<org-getCrashFileSizeLimit,getCrashFileSizeLimit>>
+* <<org-getDetails,getDetails>>
+* <<org-getDetails,getDetails>>
+* <<org-getPolicyForScapFileUpload,getPolicyForScapFileUpload>>
+* <<org-getPolicyForScapResultDeletion,getPolicyForScapResultDeletion>>
+* <<org-isContentStagingEnabled,isContentStagingEnabled>>
+* <<org-isCrashReportingEnabled,isCrashReportingEnabled>>
+* <<org-isCrashfileUploadEnabled,isCrashfileUploadEnabled>>
+* <<org-isErrataEmailNotifsForOrg,isErrataEmailNotifsForOrg>>
+* <<org-isOrgConfigManagedByOrgAdmin,isOrgConfigManagedByOrgAdmin>>
+* <<org-listOrgs,listOrgs>>
+* <<org-listUsers,listUsers>>
+* <<org-migrateSystems,migrateSystems>>
+* <<org-setContentStaging,setContentStaging>>
+* <<org-setCrashFileSizeLimit,setCrashFileSizeLimit>>
+* <<org-setCrashReporting,setCrashReporting>>
+* <<org-setCrashfileUpload,setCrashfileUpload>>
+* <<org-setErrataEmailNotifsForOrg,setErrataEmailNotifsForOrg>>
+* <<org-setOrgConfigManagedByOrgAdmin,setOrgConfigManagedByOrgAdmin>>
+* <<org-setPolicyForScapFileUpload,setPolicyForScapFileUpload>>
+* <<org-setPolicyForScapResultDeletion,setPolicyForScapResultDeletion>>
+* <<org-updateName,updateName>>
+
+=== Description
+
+Contains methods to access common organization management
+ functions available from the web interface.
+
+*Namespace*:
+
+org
+
+'''
+
+
+[#org-create]
+=== Method: create 
+
+Description:
+
+Create a new organization and associated administrator account.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  orgName - Organization name. Must meet same
+ criteria as in the web UI.
+ 
+* [.string]#string#  adminLogin - New administrator login name.
+ 
+* [.string]#string#  adminPassword - New administrator password.
+ 
+* [.string]#string#  prefix - New administrator's prefix. Must
+ match one of the values available in the web UI. (i.e. Dr., Mr., Mrs., Sr., etc.)
+ 
+* [.string]#string#  firstName - New administrator's first name.
+ 
+* [.string]#string#  lastName - New administrator's first name.
+ 
+* [.string]#string#  email - New administrator's e-mail.
+ 
+* [.boolean]#boolean#  usePamAuth - True if PAM authentication
+ should be used for the new administrator account.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - organization info
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "active_users" - Number of active users in the organization.
+   * [.int]#int#  "systems" - Number of systems in the organization.
+   * [.int]#int#  "trusts" - Number of trusted organizations.
+   * [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   * [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   * [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   * [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   * [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#org-delete]
+=== Method: delete 
+
+Description:
+
+Delete an organization. The default organization
+ (i.e. orgId=1) cannot be deleted.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-getCrashFileSizeLimit]
+=== Method: getCrashFileSizeLimit 
+
+Description:
+
+Get the organization wide crash file size limit. The limit value
+ must be a non-negative number, zero means no limit.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* int - Crash file size limit. 
+ 
+
+
+'''
+
+
+[#org-getDetails]
+=== Method: getDetails 
+
+Description:
+
+The detailed information about an organization given
+ the organization ID.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - organization info
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "active_users" - Number of active users in the organization.
+   * [.int]#int#  "systems" - Number of systems in the organization.
+   * [.int]#int#  "trusts" - Number of trusted organizations.
+   * [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   * [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   * [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   * [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   * [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#org-getDetails]
+=== Method: getDetails 
+
+Description:
+
+The detailed information about an organization given
+ the organization name.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name
+ 
+
+Returns:
+
+* * [.struct]#struct#  - organization info
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "active_users" - Number of active users in the organization.
+   * [.int]#int#  "systems" - Number of systems in the organization.
+   * [.int]#int#  "trusts" - Number of trusted organizations.
+   * [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   * [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   * [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   * [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   * [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#org-getPolicyForScapFileUpload]
+=== Method: getPolicyForScapFileUpload 
+
+Description:
+
+Get the status of SCAP detailed result file upload settings
+ for the given organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* [.struct]#struct#  - scap_upload_info
+         * [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
+         * [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
+     // no end needed
+ 
+
+
+'''
+
+
+[#org-getPolicyForScapResultDeletion]
+=== Method: getPolicyForScapResultDeletion 
+
+Description:
+
+Get the status of SCAP result deletion settings for the given
+ organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* [.struct]#struct#  - scap_deletion_info
+         * [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
+         * [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
+     // no end needed
+ 
+
+
+'''
+
+
+[#org-isContentStagingEnabled]
+=== Method: isContentStagingEnabled 
+
+Description:
+
+Get the status of content staging settings for the given organization.
+ Returns true if enabled, false otherwise.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* boolean - Get the status of content staging settings. 
+ 
+
+
+'''
+
+
+[#org-isCrashReportingEnabled]
+=== Method: isCrashReportingEnabled 
+
+Description:
+
+Get the status of crash reporting settings for the given organization.
+ Returns true if enabled, false otherwise.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* boolean - Get the status of crash reporting settings. 
+ 
+
+
+'''
+
+
+[#org-isCrashfileUploadEnabled]
+=== Method: isCrashfileUploadEnabled 
+
+Description:
+
+Get the status of crash file upload settings for the given organization.
+ Returns true if enabled, false otherwise.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* boolean - Get the status of crash file upload settings. 
+ 
+
+
+'''
+
+
+[#org-isErrataEmailNotifsForOrg]
+=== Method: isErrataEmailNotifsForOrg 
+
+Description:
+
+Returns whether errata e-mail notifications are enabled
+ for the organization
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* boolean - Returns the status of the errata e-mail notification
+ setting for the organization 
+ 
+
+
+'''
+
+
+[#org-isOrgConfigManagedByOrgAdmin]
+=== Method: isOrgConfigManagedByOrgAdmin 
+
+Description:
+
+Returns whether Organization Administrator is able to manage his
+ organization configuration. This organization configuration may have a high impact
+ on the whole Spacewalk/Satellite performance
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* boolean - Returns the status org admin management setting 
+ 
+
+
+'''
+
+
+[#org-listOrgs]
+=== Method: listOrgs 
+
+Description:
+
+Returns the list of organizations.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - organization info
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "active_users" - Number of active users in the organization.
+   * [.int]#int#  "systems" - Number of systems in the organization.
+   * [.int]#int#  "trusts" - Number of trusted organizations.
+   * [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   * [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   * [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   * [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   * [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+ // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#org-listUsers]
+=== Method: listUsers 
+
+Description:
+
+Returns the list of users in a given organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - user
+   * [.string]#string#  "login"
+   * [.string]#string#  "login_uc"
+   * [.string]#string#  "name"
+   * [.string]#string#  "email"
+   * [.boolean]#boolean#  "is_org_admin"
+ // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#org-migrateSystems]
+=== Method: migrateSystems 
+
+Description:
+
+Migrate systems from one organization to another.  If executed by
+ a Satellite administrator, the systems will be migrated from their current
+ organization to the organization specified by the toOrgId.  If executed by
+ an organization administrator, the systems must exist in the same organization
+ as that administrator and the systems will be migrated to the organization
+ specified by the toOrgId. In any scenario, the origination and destination
+ organizations must be defined in a trust.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  toOrgId - ID of the organization where the
+ system(s) will be migrated to.
+ 
+* [.array]#array# :
+** int - systemId
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - serverIdMigrated
+ 
+
+
+'''
+
+
+[#org-setContentStaging]
+=== Method: setContentStaging 
+
+Description:
+
+Set the status of content staging for the given organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.boolean]#boolean#  enable - Use true/false to enable/disable
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setCrashFileSizeLimit]
+=== Method: setCrashFileSizeLimit 
+
+Description:
+
+Set the organization wide crash file size limit. The limit value
+ must be non-negative, zero means no limit.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.int]#int#  limit - The limit to set (non-negative value).
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setCrashReporting]
+=== Method: setCrashReporting 
+
+Description:
+
+Set the status of crash reporting settings for the given organization.
+ Disabling crash reporting will automatically disable crash file upload.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.boolean]#boolean#  enable - Use true/false to enable/disable
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setCrashfileUpload]
+=== Method: setCrashfileUpload 
+
+Description:
+
+Set the status of crash file upload settings for the given organization.
+ Modifying the settings is possible as long as crash reporting is enabled.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.boolean]#boolean#  enable - Use true/false to enable/disable
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setErrataEmailNotifsForOrg]
+=== Method: setErrataEmailNotifsForOrg 
+
+Description:
+
+Dis/enables errata e-mail notifications for the organization
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.boolean]#boolean#  enable - Use true/false to enable/disable
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setOrgConfigManagedByOrgAdmin]
+=== Method: setOrgConfigManagedByOrgAdmin 
+
+Description:
+
+Sets whether Organization Administrator can manage his organization
+ configuration. This organization configuration may have a high impact
+ on the whole Spacewalk/Satellite performance
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.boolean]#boolean#  enable - Use true/false to enable/disable
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setPolicyForScapFileUpload]
+=== Method: setPolicyForScapFileUpload 
+
+Description:
+
+Set the status of SCAP detailed result file upload settings
+ for the given organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.struct]#struct#  - scap_upload_info
+         * [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
+         * [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
+     // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-setPolicyForScapResultDeletion]
+=== Method: setPolicyForScapResultDeletion 
+
+Description:
+
+Set the status of SCAP result deletion settins for the given
+ organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.struct]#struct#  - scap_deletion_info
+         * [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
+         * [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
+     // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org-updateName]
+=== Method: updateName 
+
+Description:
+
+Updates the name of an organization
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.string]#string#  name - Organization name. Must meet same
+ criteria as in the web UI.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - organization info
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "active_users" - Number of active users in the organization.
+   * [.int]#int#  "systems" - Number of systems in the organization.
+   * [.int]#int#  "trusts" - Number of trusted organizations.
+   * [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   * [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   * [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   * [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   * [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+ // no end needed
+  
+ 
+
+
+'''
+

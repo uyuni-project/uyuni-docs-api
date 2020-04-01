@@ -1,0 +1,119 @@
+
+
+
+[#admin_monitoring]
+== admin.monitoring
+
+
+=== Available methods
+
+* <<admin_monitoring-disable,disable>>
+* <<admin_monitoring-enable,enable>>
+* <<admin_monitoring-getStatus,getStatus>>
+
+=== Description
+
+Provides methods to manage the monitoring of the Uyuni server.
+
+*Namespace*:
+
+admin.monitoring
+
+'''
+
+
+[#admin_monitoring-disable]
+=== Method: disable 
+
+Description:
+
+Disable monitoring.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - Exporters
+          * [.string]#string#  "node"
+          * [.string]#string#  "tomcat"
+          * [.string]#string#  "taskomatic"
+          * [.string]#string#  "postgres"
+          * [.string]#string#  "self_monitoring"
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#admin_monitoring-enable]
+=== Method: enable 
+
+Description:
+
+Enable monitoring.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - Exporters
+          * [.string]#string#  "node"
+          * [.string]#string#  "tomcat"
+          * [.string]#string#  "taskomatic"
+          * [.string]#string#  "postgres"
+          * [.string]#string#  "self_monitoring"
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#admin_monitoring-getStatus]
+=== Method: getStatus 
+
+Description:
+
+Get the status of each Prometheus exporter.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - Exporters
+          * [.string]#string#  "node"
+          * [.string]#string#  "tomcat"
+          * [.string]#string#  "taskomatic"
+          * [.string]#string#  "postgres"
+          * [.string]#string#  "self_monitoring"
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+

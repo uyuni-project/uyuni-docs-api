@@ -1,0 +1,171 @@
+
+
+
+[#kickstart_keys]
+== kickstart.keys
+
+
+=== Available methods
+
+* <<kickstart_keys-create,create>>
+* <<kickstart_keys-delete,delete>>
+* <<kickstart_keys-getDetails,getDetails>>
+* <<kickstart_keys-listAllKeys,listAllKeys>>
+* <<kickstart_keys-update,update>>
+
+=== Description
+
+Provides methods to manipulate kickstart keys.
+
+*Namespace*:
+
+kickstart.keys
+
+'''
+
+
+[#kickstart_keys-create]
+=== Method: create 
+
+Description:
+
+creates a new key with the given parameters
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  type - valid values are GPG or SSL
+ 
+* [.string]#string#  content
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_keys-delete]
+=== Method: delete 
+
+Description:
+
+deletes the key identified by the given parameters
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  description
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_keys-getDetails]
+=== Method: getDetails 
+
+Description:
+
+returns all of the data associated with the given key
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  description
+ 
+
+Returns:
+
+* [.struct]#struct#  - key
+          * [.string]#string#  "description"
+          * [.string]#string#  "type"
+          * [.string]#string#  "content"
+      // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_keys-listAllKeys]
+=== Method: listAllKeys 
+
+Description:
+
+list all keys for the org associated with the user logged into the
+             given session
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - key
+              * [.string]#string#  "description"
+              * [.string]#string#  "type"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_keys-update]
+=== Method: update 
+
+Description:
+
+Updates type and content of the key identified by the description
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  type - valid values are GPG or SSL
+ 
+* [.string]#string#  content
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

@@ -1,0 +1,159 @@
+
+
+
+[#distchannel]
+== distchannel
+
+
+=== Available methods
+
+* <<distchannel-listDefaultMaps,listDefaultMaps>>
+* <<distchannel-listMapsForOrg,listMapsForOrg>>
+* <<distchannel-listMapsForOrg,listMapsForOrg>>
+* <<distchannel-setMapForOrg,setMapForOrg>>
+
+=== Description
+
+Provides methods to access and modify distribution channel information
+
+*Namespace*:
+
+distchannel
+
+'''
+
+
+[#distchannel-listDefaultMaps]
+=== Method: listDefaultMaps 
+
+Description:
+
+Lists the default distribution channel maps
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - distChannelMap
+          * [.string]#string#  "os" - Operationg System
+          * [.string]#string#  "release" - OS Relase
+          * [.string]#string#  "arch_name" - Channel architecture
+          * [.string]#string#  "channel_label" - Channel label
+          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+     // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#distchannel-listMapsForOrg]
+=== Method: listMapsForOrg 
+
+Description:
+
+Lists distribution channel maps valid for the user's organization
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - distChannelMap
+          * [.string]#string#  "os" - Operationg System
+          * [.string]#string#  "release" - OS Relase
+          * [.string]#string#  "arch_name" - Channel architecture
+          * [.string]#string#  "channel_label" - Channel label
+          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+     // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#distchannel-listMapsForOrg]
+=== Method: listMapsForOrg 
+
+Description:
+
+Lists distribution channel maps valid for an organization,
+ satellite admin right needed
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - distChannelMap
+          * [.string]#string#  "os" - Operationg System
+          * [.string]#string#  "release" - OS Relase
+          * [.string]#string#  "arch_name" - Channel architecture
+          * [.string]#string#  "channel_label" - Channel label
+          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+     // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#distchannel-setMapForOrg]
+=== Method: setMapForOrg 
+
+Description:
+
+Sets, overrides (/removes if channelLabel empty)
+ a distribution channel map within an organization
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  os
+ 
+* [.string]#string#  release
+ 
+* [.string]#string#  archName
+ 
+* [.string]#string#  channelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

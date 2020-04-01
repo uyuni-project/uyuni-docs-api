@@ -1,0 +1,6102 @@
+
+
+
+[#system]
+== system
+
+
+=== Available methods
+
+* <<system-addEntitlements,addEntitlements>>
+* <<system-addNote,addNote>>
+* <<system-applyErrata,applyErrata>>
+* <<system-bootstrap,bootstrap>>
+* <<system-bootstrap,bootstrap>>
+* <<system-comparePackageProfile,comparePackageProfile>>
+* <<system-comparePackages,comparePackages>>
+* <<system-createPackageProfile,createPackageProfile>>
+* <<system-createSystemProfile,createSystemProfile>>
+* <<system-createSystemRecord,createSystemRecord>>
+* <<system-createSystemRecord,createSystemRecord>>
+* <<system-deleteCustomValues,deleteCustomValues>>
+* <<system-deleteGuestProfiles,deleteGuestProfiles>>
+* <<system-deleteNote,deleteNote>>
+* <<system-deleteNotes,deleteNotes>>
+* <<system-deletePackageProfile,deletePackageProfile>>
+* <<system-deleteSystem,deleteSystem>>
+* <<system-deleteSystem,deleteSystem>>
+* <<system-deleteSystem,deleteSystem>>
+* <<system-deleteSystems,deleteSystems>>
+* <<system-deleteSystems,deleteSystems>>
+* <<system-deleteTagFromSnapshot,deleteTagFromSnapshot>>
+* <<system-downloadSystemId,downloadSystemId>>
+* <<system-getConnectionPath,getConnectionPath>>
+* <<system-getCpu,getCpu>>
+* <<system-getCustomValues,getCustomValues>>
+* <<system-getDetails,getDetails>>
+* <<system-getDevices,getDevices>>
+* <<system-getDmi,getDmi>>
+* <<system-getEntitlements,getEntitlements>>
+* <<system-getEventHistory,getEventHistory>>
+* <<system-getId,getId>>
+* <<system-getInstalledProducts,getInstalledProducts>>
+* <<system-getKernelLivePatch,getKernelLivePatch>>
+* <<system-getMemory,getMemory>>
+* <<system-getMinionIdMap,getMinionIdMap>>
+* <<system-getName,getName>>
+* <<system-getNetwork,getNetwork>>
+* <<system-getNetworkDevices,getNetworkDevices>>
+* <<system-getOsaPing,getOsaPing>>
+* <<system-getRegistrationDate,getRegistrationDate>>
+* <<system-getRelevantErrata,getRelevantErrata>>
+* <<system-getRelevantErrataByType,getRelevantErrataByType>>
+* <<system-getRunningKernel,getRunningKernel>>
+* <<system-getScriptActionDetails,getScriptActionDetails>>
+* <<system-getScriptResults,getScriptResults>>
+* <<system-getSubscribedBaseChannel,getSubscribedBaseChannel>>
+* <<system-getSystemCurrencyMultipliers,getSystemCurrencyMultipliers>>
+* <<system-getSystemCurrencyScores,getSystemCurrencyScores>>
+* <<system-getUnscheduledErrata,getUnscheduledErrata>>
+* <<system-getUuid,getUuid>>
+* <<system-getVariables,getVariables>>
+* <<system-isNvreInstalled,isNvreInstalled>>
+* <<system-isNvreInstalled,isNvreInstalled>>
+* <<system-listActivationKeys,listActivationKeys>>
+* <<system-listActiveSystems,listActiveSystems>>
+* <<system-listActiveSystemsDetails,listActiveSystemsDetails>>
+* <<system-listAdministrators,listAdministrators>>
+* <<system-listAllInstallablePackages,listAllInstallablePackages>>
+* <<system-listBaseChannels,listBaseChannels>>
+* <<system-listChildChannels,listChildChannels>>
+* <<system-listDuplicatesByHostname,listDuplicatesByHostname>>
+* <<system-listDuplicatesByIp,listDuplicatesByIp>>
+* <<system-listDuplicatesByMac,listDuplicatesByMac>>
+* <<system-listEmptySystemProfiles,listEmptySystemProfiles>>
+* <<system-listExtraPackages,listExtraPackages>>
+* <<system-listFqdns,listFqdns>>
+* <<system-listGroups,listGroups>>
+* <<system-listInactiveSystems,listInactiveSystems>>
+* <<system-listInactiveSystems,listInactiveSystems>>
+* <<system-listLatestAvailablePackage,listLatestAvailablePackage>>
+* <<system-listLatestInstallablePackages,listLatestInstallablePackages>>
+* <<system-listLatestUpgradablePackages,listLatestUpgradablePackages>>
+* <<system-listMigrationTargets,listMigrationTargets>>
+* <<system-listNewerInstalledPackages,listNewerInstalledPackages>>
+* <<system-listNotes,listNotes>>
+* <<system-listOlderInstalledPackages,listOlderInstalledPackages>>
+* <<system-listOutOfDateSystems,listOutOfDateSystems>>
+* <<system-listPackageProfiles,listPackageProfiles>>
+* <<system-listPackages,listPackages>>
+* <<system-listPackagesFromChannel,listPackagesFromChannel>>
+* <<system-listPhysicalSystems,listPhysicalSystems>>
+* <<system-listSubscribableBaseChannels,listSubscribableBaseChannels>>
+* <<system-listSubscribableChildChannels,listSubscribableChildChannels>>
+* <<system-listSubscribedChildChannels,listSubscribedChildChannels>>
+* <<system-listSuggestedReboot,listSuggestedReboot>>
+* <<system-listSystemEvents,listSystemEvents>>
+* <<system-listSystemEvents,listSystemEvents>>
+* <<system-listSystems,listSystems>>
+* <<system-listSystemsWithExtraPackages,listSystemsWithExtraPackages>>
+* <<system-listSystemsWithPackage,listSystemsWithPackage>>
+* <<system-listSystemsWithPackage,listSystemsWithPackage>>
+* <<system-listUngroupedSystems,listUngroupedSystems>>
+* <<system-listUserSystems,listUserSystems>>
+* <<system-listUserSystems,listUserSystems>>
+* <<system-listVirtualGuests,listVirtualGuests>>
+* <<system-listVirtualHosts,listVirtualHosts>>
+* <<system-obtainReactivationKey,obtainReactivationKey>>
+* <<system-obtainReactivationKey,obtainReactivationKey>>
+* <<system-provisionSystem,provisionSystem>>
+* <<system-provisionSystem,provisionSystem>>
+* <<system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<system-removeEntitlements,removeEntitlements>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<system-scheduleApplyHighstate,scheduleApplyHighstate>>
+* <<system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
+* <<system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
+* <<system-scheduleChangeChannels,scheduleChangeChannels>>
+* <<system-scheduleChangeChannels,scheduleChangeChannels>>
+* <<system-scheduleDistUpgrade,scheduleDistUpgrade>>
+* <<system-scheduleGuestAction,scheduleGuestAction>>
+* <<system-scheduleGuestAction,scheduleGuestAction>>
+* <<system-scheduleHardwareRefresh,scheduleHardwareRefresh>>
+* <<system-schedulePackageInstall,schedulePackageInstall>>
+* <<system-schedulePackageInstall,schedulePackageInstall>>
+* <<system-schedulePackageInstall,schedulePackageInstall>>
+* <<system-schedulePackageInstall,schedulePackageInstall>>
+* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<system-schedulePackageRefresh,schedulePackageRefresh>>
+* <<system-schedulePackageRemove,schedulePackageRemove>>
+* <<system-schedulePackageRemove,schedulePackageRemove>>
+* <<system-schedulePackageRemove,schedulePackageRemove>>
+* <<system-schedulePackageRemove,schedulePackageRemove>>
+* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<system-scheduleReboot,scheduleReboot>>
+* <<system-scheduleSPMigration,scheduleSPMigration>>
+* <<system-scheduleSPMigration,scheduleSPMigration>>
+* <<system-scheduleScriptRun,scheduleScriptRun>>
+* <<system-scheduleScriptRun,scheduleScriptRun>>
+* <<system-scheduleScriptRun,scheduleScriptRun>>
+* <<system-scheduleScriptRun,scheduleScriptRun>>
+* <<system-scheduleSyncPackagesWithSystem,scheduleSyncPackagesWithSystem>>
+* <<system-searchByName,searchByName>>
+* <<system-sendOsaPing,sendOsaPing>>
+* <<system-setBaseChannel,setBaseChannel>>
+* <<system-setBaseChannel,setBaseChannel>>
+* <<system-setChildChannels,setChildChannels>>
+* <<system-setCustomValues,setCustomValues>>
+* <<system-setDetails,setDetails>>
+* <<system-setGroupMembership,setGroupMembership>>
+* <<system-setGuestCpus,setGuestCpus>>
+* <<system-setGuestMemory,setGuestMemory>>
+* <<system-setLockStatus,setLockStatus>>
+* <<system-setPrimaryInterface,setPrimaryInterface>>
+* <<system-setProfileName,setProfileName>>
+* <<system-setVariables,setVariables>>
+* <<system-tagLatestSnapshot,tagLatestSnapshot>>
+* <<system-unentitle,unentitle>>
+* <<system-upgradeEntitlement,upgradeEntitlement>>
+* <<system-whoRegistered,whoRegistered>>
+
+=== Description
+
+Provides methods to access and modify registered system.
+
+*Namespace*:
+
+system
+
+'''
+
+
+[#system-addEntitlements]
+=== Method: addEntitlements 
+
+Description:
+
+Add entitlements to a server. Entitlements a server already has
+ are quietly ignored.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** string - entitlementLabel - one of following:
+ virtualization_host, enterprise_entitled
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-addNote]
+=== Method: addNote 
+
+Description:
+
+Add a new note to the given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  subject - What the note is about.
+ 
+* [.string]#string#  body - Content of the note.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-applyErrata]
+=== Method: applyErrata (Deprecated)
+
+Description:
+
+Schedules an action to apply errata updates to a system.
+
+
+Deprecated - being replaced by system.scheduleApplyErrata(string sessionKey,
+ int serverId, array[int errataId])
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-bootstrap]
+=== Method: bootstrap 
+
+Description:
+
+Bootstrap a system for management via either Salt or Salt SSH.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - Hostname or IP address of target
+ 
+* [.int]#int#  sshPort - SSH port on target machine
+ 
+* [.string]#string#  sshUser - SSH user on target machine
+ 
+* [.string]#string#  sshPassword - SSH password of given user
+ 
+* [.string]#string#  activationKey - Activation key
+ 
+* [.boolean]#boolean#  saltSSH - Manage system with Salt SSH
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-bootstrap]
+=== Method: bootstrap 
+
+Description:
+
+Bootstrap a system for management via either Salt or Salt SSH.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - Hostname or IP address of target
+ 
+* [.int]#int#  sshPort - SSH port on target machine
+ 
+* [.string]#string#  sshUser - SSH user on target machine
+ 
+* [.string]#string#  sshPassword - SSH password of given user
+ 
+* [.string]#string#  activationKey - Activation key
+ 
+* [.int]#int#  proxyId - System ID of proxy to use
+ 
+* [.boolean]#boolean#  saltSSH - Manage system with Salt SSH
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-comparePackageProfile]
+=== Method: comparePackageProfile 
+
+Description:
+
+Compare a system's packages against a package profile.  In
+ the result returned, 'this_system' represents the server provided as an input
+ and 'other_system' represents the profile provided as an input.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  profileLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - Package Metadata
+      * [.int]#int#  "package_name_id"
+      * [.string]#string#  "package_name"
+      * [.string]#string#  "package_epoch"
+      * [.string]#string#  "package_version"
+      * [.string]#string#  "package_release"
+      * [.string]#string#  "package_arch"
+      * [.string]#string#  "this_system" - Version of package on this system.
+      * [.string]#string#  "other_system" - Version of package on the other system.
+      * [.int]#int#  "comparison"
+          // no end needed
+              * 0 - No difference.
+              * 1 - Package on this system only.
+              * 2 - Newer package version on this system.
+              * 3 - Package on other system only.
+              * 4 - Newer package version on other system.
+           // no end needed
+   // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-comparePackages]
+=== Method: comparePackages 
+
+Description:
+
+Compares the packages installed on two systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  thisServerId
+ 
+* [.int]#int#  otherServerId
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - Package Metadata
+      * [.int]#int#  "package_name_id"
+      * [.string]#string#  "package_name"
+      * [.string]#string#  "package_epoch"
+      * [.string]#string#  "package_version"
+      * [.string]#string#  "package_release"
+      * [.string]#string#  "package_arch"
+      * [.string]#string#  "this_system" - Version of package on this system.
+      * [.string]#string#  "other_system" - Version of package on the other system.
+      * [.int]#int#  "comparison"
+          // no end needed
+              * 0 - No difference.
+              * 1 - Package on this system only.
+              * 2 - Newer package version on this system.
+              * 3 - Package on other system only.
+              * 4 - Newer package version on other system.
+           // no end needed
+   // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-createPackageProfile]
+=== Method: createPackageProfile 
+
+Description:
+
+Create a new stored Package Profile from a systems
+      installed package list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  profileLabel
+ 
+* [.string]#string#  description
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-createSystemProfile]
+=== Method: createSystemProfile 
+
+Description:
+
+Creates a system record in database for a system that is not registered.
+ Either "hwAddress" or "hostname" prop must be specified in the "data" struct.
+ If a system(s) matching given data exists, a SystemsExistFaultException is thrown which
+ contains matching system IDs in its message.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemName - System name
+ 
+* [.struct]#struct#  - data
+      * [.string]#string#  "hwAddress" - The HW address of the network interface (MAC)
+      * [.string]#string#  "hostname" - The hostname of the profile
+  // no end needed
+ 
+
+Returns:
+
+* int systemId - The id of the created system 
+ 
+
+
+'''
+
+
+[#system-createSystemRecord]
+=== Method: createSystemRecord 
+
+Description:
+
+Creates a cobbler system record with the specified kickstart label
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  ksLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-createSystemRecord]
+=== Method: createSystemRecord 
+
+Description:
+
+Creates a cobbler system record for a system that is not registered.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  sysName
+ 
+* [.string]#string#  ksLabel
+ 
+* [.string]#string#  kOptions
+ 
+* [.string]#string#  comment
+ 
+* [.array]#array# :
+          * [.struct]#struct#  - network device
+              * [.string]#string#  "name"
+              * [.string]#string#  "mac"
+              * [.string]#string#  "ip"
+              * [.string]#string#  "dnsname"
+          // no end needed
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteCustomValues]
+=== Method: deleteCustomValues 
+
+Description:
+
+Delete the custom values defined for the custom system information keys
+ provided from the given system.
+ (Note: Attempt to delete values of non-existing keys throws exception. Attempt to
+ delete value of existing key which has assigned no values doesn't throw exception.)
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** string - customInfoLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteGuestProfiles]
+=== Method: deleteGuestProfiles 
+
+Description:
+
+Delete the specified list of guest profiles for a given host
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  hostId
+ 
+* [.array]#array# :
+** string - guestNames
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteNote]
+=== Method: deleteNote 
+
+Description:
+
+Deletes the given note from the server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  noteId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteNotes]
+=== Method: deleteNotes 
+
+Description:
+
+Deletes all notes from the server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deletePackageProfile]
+=== Method: deletePackageProfile 
+
+Description:
+
+Delete a package profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  profileId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteSystem]
+=== Method: deleteSystem 
+
+Description:
+
+Delete a system given its client certificate.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.10
+
+'''
+
+
+[#system-deleteSystem]
+=== Method: deleteSystem 
+
+Description:
+
+Delete a system given its server id synchronously without cleanup
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteSystem]
+=== Method: deleteSystem 
+
+Description:
+
+Delete a system given its server id synchronously
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  cleanupType - Possible values:
+  'FAIL_ON_CLEANUP_ERR' - fail in case of cleanup error,
+  'NO_CLEANUP' - do not cleanup, just delete,
+  'FORCE_DELETE' - Try cleanup first but delete server anyway in case of error
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteSystems]
+=== Method: deleteSystems 
+
+Description:
+
+Delete systems given a list of system ids asynchronously.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteSystems]
+=== Method: deleteSystems 
+
+Description:
+
+Delete systems given a list of system ids asynchronously.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.string]#string#  cleanupType - Possible values:
+  'FAIL_ON_CLEANUP_ERR' - fail in case of cleanup error,
+  'NO_CLEANUP' - do not cleanup, just delete,
+  'FORCE_DELETE' - Try cleanup first but delete server anyway in case of error
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-deleteTagFromSnapshot]
+=== Method: deleteTagFromSnapshot 
+
+Description:
+
+Deletes tag from system snapshot
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  tagName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-downloadSystemId]
+=== Method: downloadSystemId 
+
+Description:
+
+Get the system ID file for a given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#system-getConnectionPath]
+=== Method: getConnectionPath 
+
+Description:
+
+Get the list of proxies that the given system connects
+ through in order to reach the server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - proxy connection path details
+         * [.int]#int#  "position" - Position of proxy in chain. The proxy that the
+             system connects directly to is listed in position 1.
+         * [.int]#int#  "id" - Proxy system id
+         * [.string]#string#  "hostname" - Proxy host name
+  // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getCpu]
+=== Method: getCpu 
+
+Description:
+
+Gets the CPU information of a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - CPU
+      * [.string]#string#  "cache"
+      * [.string]#string#  "family"
+      * [.string]#string#  "mhz"
+      * [.string]#string#  "flags"
+      * [.string]#string#  "model"
+      * [.string]#string#  "vendor"
+      * [.string]#string#  "arch"
+      * [.string]#string#  "stepping"
+      * [.string]#string#  "count"
+      * [.int]#int#  "socket_count (if available)"
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#system-getCustomValues]
+=== Method: getCustomValues 
+
+Description:
+
+Get the custom data values defined for the server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - custom value
+          * [.string]#string#  "custom info label"
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Get system details.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - server details
+         * [.int]#int#  "id" - System id
+         * [.string]#string#  "profile_name"
+         * [.string]#string#  "machine_id"
+         * [.string]#string#  "minion_id"
+         * [.string]#string#  "base_entitlement" - System's base entitlement label
+
+         * [.array]#array#  "string"
+** addon_entitlements - System's addon entitlements labels,
+                       currently only 'virtualization_host'
+          * [.boolean]#boolean#  "auto_update" - True if system has auto errata updates
+                                          enabled.
+          * [.string]#string#  "release" - The Operating System release (i.e. 4AS,
+                      5Server
+          * [.string]#string#  "address1"
+          * [.string]#string#  "address2"
+          * [.string]#string#  "city"
+          * [.string]#string#  "state"
+          * [.string]#string#  "country"
+          * [.string]#string#  "building"
+          * [.string]#string#  "room"
+          * [.string]#string#  "rack"
+          * [.string]#string#  "description"
+          * [.string]#string#  "hostname"
+          * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot"
+          * [.string]#string#  "osa_status" - Either 'unknown', 'offline', or 'online'.
+          * [.boolean]#boolean#  "lock_status" - True indicates that the system is locked.
+           False indicates that the system is unlocked.
+          * [.string]#string#  "virtualization" - Virtualization type -
+           for virtual guests only (optional)
+          * [.string]#string#  "contact_method" - One of the following:
+            // no end needed
+              * default
+              * ssh-push
+              * ssh-push-tunnel
+            // no end needed
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#system-getDevices]
+=== Method: getDevices 
+
+Description:
+
+Gets a list of devices for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - device
+      * [.string]#string#  "device" - optional
+      * [.string]#string#  "device_class" - Includes CDROM, FIREWIRE, HD, USB, VIDEO,
+                  OTHER, etc.
+      * [.string]#string#  "driver"
+      * [.string]#string#  "description"
+      * [.string]#string#  "bus"
+      * [.string]#string#  "pcitype"
+   // no end needed
+ 
+              // no end needed
+ 
+
+
+'''
+
+
+[#system-getDmi]
+=== Method: getDmi 
+
+Description:
+
+Gets the DMI information of a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - DMI
+          * [.string]#string#  "vendor"
+          * [.string]#string#  "system"
+          * [.string]#string#  "product"
+          * [.string]#string#  "asset"
+          * [.string]#string#  "board"
+          * [.string]#string#  "bios_release" - (optional)
+          * [.string]#string#  "bios_vendor" - (optional)
+          * [.string]#string#  "bios_version" - (optional)
+      // no end needed
+  
+ 
+
+
+'''
+
+
+[#system-getEntitlements]
+=== Method: getEntitlements 
+
+Description:
+
+Gets the entitlements for a given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - entitlement_label
+ 
+
+
+'''
+
+
+[#system-getEventHistory]
+=== Method: getEventHistory 
+
+Description:
+
+Returns a list history items associated with the system, ordered
+             from newest to oldest. Note that the details may be empty for
+             events that were scheduled against the system (as compared to instant).
+             For more information on such events, see the system.listSystemEvents
+             operation.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+           * [.struct]#struct#  - History Event
+      * [.dateTime.iso8601]#dateTime.iso8601#  "completed" - Date that
+          the event occurred (optional)
+      * [.string]#string#  "summary" - Summary of the event
+      * [.string]#string#  "details" - Details of the event
+  // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getId]
+=== Method: getId 
+
+Description:
+
+Get system IDs and last check in information for the given system name.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemName
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-getInstalledProducts]
+=== Method: getInstalledProducts 
+
+Description:
+
+Get a list of installed products for given system
+
+
+
+
+Parameters:
+
+* [.User]#User#  loggedInUser
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - installed product
+     * [.string]#string#  "name"
+     * [.boolean]#boolean#  "isBaseProduct"
+     * [.string]#string#  "version" - returned only if applies
+     * [.string]#string#  "arch" - returned only if applies
+     * [.string]#string#  "release" - returned only if applies
+     * [.string]#string#  "friendlyName" - returned only if available
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getKernelLivePatch]
+=== Method: getKernelLivePatch 
+
+Description:
+
+Returns the currently active kernel live patching version relative to
+ the running kernel version of the system, or empty string if live patching feature
+ is not in use for the given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#system-getMemory]
+=== Method: getMemory 
+
+Description:
+
+Gets the memory information for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - memory
+      * [.int]#int#  "ram" - The amount of physical memory in MB.
+      * [.int]#int#  "swap" - The amount of swap space in MB.
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-getMinionIdMap]
+=== Method: getMinionIdMap 
+
+Description:
+
+Return a map from Salt minion IDs to System IDs.
+ Map entries are limited to systems that are visible by the current user.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* Map from minion IDs to system IDs 
+ 
+
+
+'''
+
+
+[#system-getName]
+=== Method: getName 
+
+Description:
+
+Get system name and last check in information for the given system ID.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - name info
+      * [.int]#int#  "id" - Server id
+      * [.string]#string#  "name" - Server name
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-getNetwork]
+=== Method: getNetwork 
+
+Description:
+
+Get the addresses and hostname for a given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - network info
+              * [.string]#string#  "ip" - IPv4 address of server
+              * [.string]#string#  "ip6" - IPv6 address of server
+              * [.string]#string#  "hostname" - Hostname of server
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-getNetworkDevices]
+=== Method: getNetworkDevices 
+
+Description:
+
+Returns the network devices for the given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - network device
+          * [.string]#string#  "ip" - IP address assigned to this network device
+          * [.string]#string#  "interface" - Network interface assigned to device e.g.
+                              eth0
+          * [.string]#string#  "netmask" - Network mask assigned to device
+          * [.string]#string#  "hardware_address" - Hardware Address of device.
+          * [.string]#string#  "module" - Network driver used for this device.
+          * [.string]#string#  "broadcast" -  Broadcast address for device.
+          * [.array]#array#  "ipv6" - List of IPv6 addresses
+            * [.array]#array# :
+               * [.struct]#struct#  - ipv6 address
+                 * [.string]#string#  "address" - IPv6 address of this network device
+                 * [.string]#string#  "netmask" - IPv6 netmask of this network device
+                 * [.string]#string#  "scope" - IPv6 address scope
+               // no end needed
+            // no end needed
+          * [.array]#array#  "ipv4" - List of IPv4 addresses
+            * [.array]#array# :
+               * [.struct]#struct#  - ipv4 address
+                 * [.string]#string#  "address" - IPv4 address of this network device
+                 * [.string]#string#  "netmask" - IPv4 netmask of this network device
+                 * [.string]#string#  "broadcast" - IPv4 broadcast address of this network device
+               // no end needed
+            // no end needed
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getOsaPing]
+=== Method: getOsaPing 
+
+Description:
+
+get details about a ping sent to a system using OSA
+
+
+
+
+Parameters:
+
+* [.User]#User#  loggedInUser
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - osaPing
+          * [.string]#string#  "state" - state of the system (unknown, online, offline)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "lastMessageTime" - time of the last received response
+          (1970/01/01 00:00:00 if never received a response)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "lastPingTime" - time of the last sent ping
+          (1970/01/01 00:00:00 if no ping is pending
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getRegistrationDate]
+=== Method: getRegistrationDate 
+
+Description:
+
+Returns the date the system was registered.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* dateTime.iso8601 - The date the system was registered,
+ in local time. 
+ 
+
+
+'''
+
+
+[#system-getRelevantErrata]
+=== Method: getRelevantErrata 
+
+Description:
+
+Returns a list of all errata that are relevant to the system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - errata
+          * [.int]#int#  "id" - Errata ID.
+          * [.string]#string#  "date" - Date erratum was created.
+          * [.string]#string#  "update_date" - Date erratum was updated.
+          * [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+          * [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
+          * [.string]#string#  "advisory_name" - Name such as RHSA, etc
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getRelevantErrataByType]
+=== Method: getRelevantErrataByType 
+
+Description:
+
+Returns a list of all errata of the specified type that are
+ relevant to the system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  advisoryType - type of advisory (one of
+ of the following: 'Security Advisory', 'Product Enhancement Advisory',
+ 'Bug Fix Advisory'
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - errata
+          * [.int]#int#  "id" - Errata ID.
+          * [.string]#string#  "date" - Date erratum was created.
+          * [.string]#string#  "update_date" - Date erratum was updated.
+          * [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+          * [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
+          * [.string]#string#  "advisory_name" - Name such as RHSA, etc
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getRunningKernel]
+=== Method: getRunningKernel 
+
+Description:
+
+Returns the running kernel of the given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#system-getScriptActionDetails]
+=== Method: getScriptActionDetails 
+
+Description:
+
+Returns script details for script run actions
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId - ID of the script run action.
+ 
+
+Returns:
+
+* [.struct]#struct#  - Script details
+          * [.int]#int#  "id" - action id
+          * [.string]#string#  "content" - script content
+          * [.string]#string#  "run_as_user" - Run as user
+          * [.string]#string#  "run_as_group" - Run as group
+          * [.int]#int#  "timeout" - Timeout in seconds
+          * [.array]#array# :
+              * [.struct]#struct#  - script result
+      * [.int]#int#  "serverId" - ID of the server the script runs on.
+      * [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Time script began execution.
+      * [.dateTime.iso8601]#dateTime.iso8601#  "stopDate" - Time script stopped execution.
+      * [.int]#int#  "returnCode" - Script execution return code.
+      * [.string]#string#  "output" - Output of the script (base64 encoded according
+                to the output_enc64 attribute)
+      * [.boolean]#boolean#  "output_enc64" - Identifies base64 encoded output
+  // no end needed
+ 
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getScriptResults]
+=== Method: getScriptResults 
+
+Description:
+
+Fetch results from a script execution. Returns an empty array if no
+ results are yet available.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId - ID of the script run action.
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - script result
+      * [.int]#int#  "serverId" - ID of the server the script runs on.
+      * [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Time script began execution.
+      * [.dateTime.iso8601]#dateTime.iso8601#  "stopDate" - Time script stopped execution.
+      * [.int]#int#  "returnCode" - Script execution return code.
+      * [.string]#string#  "output" - Output of the script (base64 encoded according
+                to the output_enc64 attribute)
+      * [.boolean]#boolean#  "output_enc64" - Identifies base64 encoded output
+  // no end needed
+ 
+         // no end needed
+ 
+
+
+'''
+
+
+[#system-getSubscribedBaseChannel]
+=== Method: getSubscribedBaseChannel 
+
+Description:
+
+Provides the base channel of a given system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - channel
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.string]#string#  "label"
+      * [.string]#string#  "arch_name"
+      * [.string]#string#  "arch_label"
+      * [.string]#string#  "summary"
+      * [.string]#string#  "description"
+      * [.string]#string#  "checksum_label"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      * [.string]#string#  "maintainer_name"
+      * [.string]#string#  "maintainer_email"
+      * [.string]#string#  "maintainer_phone"
+      * [.string]#string#  "support_policy"
+      * [.string]#string#  "gpg_key_url"
+      * [.string]#string#  "gpg_key_id"
+      * [.string]#string#  "gpg_key_fp"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      * [.string]#string#  "end_of_life"
+      * [.string]#string#  "parent_channel_label"
+      * [.string]#string#  "clone_original"
+      * [.array]#array# :
+          * [.struct]#struct#  - contentSources
+              * [.int]#int#  "id"
+              * [.string]#string#  "label"
+              * [.string]#string#  "sourceUrl"
+              * [.string]#string#  "type"
+          // no end needed
+      // no end needed
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#system-getSystemCurrencyMultipliers]
+=== Method: getSystemCurrencyMultipliers 
+
+Description:
+
+Get the System Currency score multipliers
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* Map of score multipliers 
+ 
+
+
+'''
+
+
+[#system-getSystemCurrencyScores]
+=== Method: getSystemCurrencyScores 
+
+Description:
+
+Get the System Currency scores for all servers the user has access to
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system currency
+              * [.int]#int#  "sid"
+              * [.int]#int#  "critical security errata count"
+              * [.int]#int#  "important security errata count"
+              * [.int]#int#  "moderate security errata count"
+              * [.int]#int#  "low security errata count"
+              * [.int]#int#  "bug fix errata count"
+              * [.int]#int#  "enhancement errata count"
+              * [.int]#int#  "system currency score"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getUnscheduledErrata]
+=== Method: getUnscheduledErrata 
+
+Description:
+
+Provides an array of errata that are applicable to a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - errata
+          * [.int]#int#  "id" - Errata Id
+          * [.string]#string#  "date" - Date erratum was created.
+          * [.string]#string#  "advisory_type" - Type of the advisory.
+          * [.string]#string#  "advisory_name" - Name of the advisory.
+          * [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+     // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-getUuid]
+=== Method: getUuid 
+
+Description:
+
+Get the UUID from the given system ID.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#system-getVariables]
+=== Method: getVariables 
+
+Description:
+
+Lists kickstart variables set  in the system record
+  for the specified server.
+  Note: This call assumes that a system record exists in cobbler for the
+  given system and will raise an XMLRPC fault if that is not the case.
+  To create a system record over xmlrpc use system.createSystemRecord
+
+  To create a system record in the Web UI  please go to
+  System -&gt; &lt;Specified System&gt; -&gt; Provisioning -&gt;
+  Select a Kickstart profile -&gt; Create Cobbler System Record.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.struct]#struct#  - System kickstart variables
+          * [.boolean]#boolean#  "netboot" - netboot enabled
+          * [.array]#array#  "kickstart variables"
+              * [.struct]#struct#  - kickstart variable
+                  * [.string]#string#  "key"
+                  * [.string or int]#string or int#  "value"
+              // no end needed
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-isNvreInstalled]
+=== Method: isNvreInstalled 
+
+Description:
+
+Check if the package with the given NVRE is installed on given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  name - Package name.
+ 
+* [.string]#string#  version - Package version.
+ 
+* [.string]#string#  release - Package release.
+ 
+
+Returns:
+
+* 1 if package exists, 0 if not, exception is thrown
+ if an error occurs 
+ 
+
+
+'''
+
+
+[#system-isNvreInstalled]
+=== Method: isNvreInstalled 
+
+Description:
+
+Is the package with the given NVRE installed on given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  name - Package name.
+ 
+* [.string]#string#  version - Package version.
+ 
+* [.string]#string#  release - Package release.
+ 
+* [.string]#string#  epoch - Package epoch.
+ 
+
+Returns:
+
+* 1 if package exists, 0 if not, exception is thrown
+ if an error occurs 
+ 
+
+
+'''
+
+
+[#system-listActivationKeys]
+=== Method: listActivationKeys 
+
+Description:
+
+List the activation keys the system was registered with.  An empty
+ list will be returned if an activation key was not used during registration.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - key
+ 
+
+
+'''
+
+
+[#system-listActiveSystems]
+=== Method: listActiveSystems 
+
+Description:
+
+Returns a list of active servers visible to the user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listActiveSystemsDetails]
+=== Method: listActiveSystemsDetails 
+
+Description:
+
+Given a list of server ids, returns a list of active servers'
+ details visible to the user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverIds
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - server details
+       * [.int]#int#  "id" - The server's id
+       * [.string]#string#  "name" - The server's name
+       * [.string]#string#  "minion_id" - The server's minion id, in case it is a salt minion client
+       * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server successfully checked in (in UTC)
+       * [.int]#int#  "ram" - The amount of physical memory in MB.
+       * [.int]#int#  "swap" - The amount of swap space in MB.
+       * [.struct]#struct#  "network_devices" - The server's network devices
+       * [.struct]#struct#  - network device
+          * [.string]#string#  "ip" - IP address assigned to this network device
+          * [.string]#string#  "interface" - Network interface assigned to device e.g.
+                              eth0
+          * [.string]#string#  "netmask" - Network mask assigned to device
+          * [.string]#string#  "hardware_address" - Hardware Address of device.
+          * [.string]#string#  "module" - Network driver used for this device.
+          * [.string]#string#  "broadcast" -  Broadcast address for device.
+          * [.array]#array#  "ipv6" - List of IPv6 addresses
+            * [.array]#array# :
+               * [.struct]#struct#  - ipv6 address
+                 * [.string]#string#  "address" - IPv6 address of this network device
+                 * [.string]#string#  "netmask" - IPv6 netmask of this network device
+                 * [.string]#string#  "scope" - IPv6 address scope
+               // no end needed
+            // no end needed
+          * [.array]#array#  "ipv4" - List of IPv4 addresses
+            * [.array]#array# :
+               * [.struct]#struct#  - ipv4 address
+                 * [.string]#string#  "address" - IPv4 address of this network device
+                 * [.string]#string#  "netmask" - IPv4 netmask of this network device
+                 * [.string]#string#  "broadcast" - IPv4 broadcast address of this network device
+               // no end needed
+            // no end needed
+      // no end needed
+ 
+       * [.struct]#struct#  "dmi_info" - The server's dmi info
+       * [.struct]#struct#  - DMI
+          * [.string]#string#  "vendor"
+          * [.string]#string#  "system"
+          * [.string]#string#  "product"
+          * [.string]#string#  "asset"
+          * [.string]#string#  "board"
+          * [.string]#string#  "bios_release" - (optional)
+          * [.string]#string#  "bios_vendor" - (optional)
+          * [.string]#string#  "bios_version" - (optional)
+      // no end needed
+ 
+       * [.struct]#struct#  "cpu_info" - The server's cpu info
+       * [.struct]#struct#  - CPU
+      * [.string]#string#  "cache"
+      * [.string]#string#  "family"
+      * [.string]#string#  "mhz"
+      * [.string]#string#  "flags"
+      * [.string]#string#  "model"
+      * [.string]#string#  "vendor"
+      * [.string]#string#  "arch"
+      * [.string]#string#  "stepping"
+      * [.string]#string#  "count"
+      * [.int]#int#  "socket_count (if available)"
+  // no end needed
+ 
+       * [.array]#array#  "subscribed_channels" - List of subscribed channels
+         * [.array]#array# :
+           * [.struct]#struct#  - channel
+             * [.int]#int#  "channel_id" - The channel id.
+             * [.string]#string#  "channel_label" - The channel label.
+           // no end needed
+         // no end needed
+       * [.array]#array#  "active_guest_system_ids" - List of virtual guest system ids for active guests
+         * [.array]#array# :
+           * [.int]#int#  "guest_id" - The guest's system id.
+         // no end needed
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#system-listAdministrators]
+=== Method: listAdministrators 
+
+Description:
+
+Returns a list of users which can administer the system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - user
+              * [.int]#int#  "id"
+              * [.string]#string#  "login"
+              * [.string]#string#  "login_uc" - upper case version of the login
+              * [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listAllInstallablePackages]
+=== Method: listAllInstallablePackages 
+
+Description:
+
+Get the list of all installable packages for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package
+          * [.string]#string#  "name"
+          * [.string]#string#  "version"
+          * [.string]#string#  "release"
+          * [.string]#string#  "epoch"
+          * [.int]#int#  "id"
+          * [.string]#string#  "arch_label"
+      // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#system-listBaseChannels]
+=== Method: listBaseChannels (Deprecated)
+
+Description:
+
+Returns a list of subscribable base channels.
+
+
+Deprecated - being replaced by listSubscribableBaseChannels(string sessionKey,
+ int serverId)
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - channel
+          * [.int]#int#  "id" - Base Channel ID.
+          * [.string]#string#  "name" - Name of channel.
+          * [.string]#string#  "label" - Label of Channel
+          * [.int]#int#  "current_base" - 1 indicates it is the current base
+                                      channel
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listChildChannels]
+=== Method: listChildChannels (Deprecated)
+
+Description:
+
+Returns a list of subscribable child channels.  This only shows channels
+ the system is *not* currently subscribed to.
+
+
+Deprecated - being replaced by listSubscribableChildChannels(string sessionKey,
+ int serverId)
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - child channel
+              * [.int]#int#  "id"
+              * [.string]#string#  "name"
+              * [.string]#string#  "label"
+              * [.string]#string#  "summary"
+              * [.string]#string#  "has_license"
+              * [.string]#string#  "gpg_key_url"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listDuplicatesByHostname]
+=== Method: listDuplicatesByHostname 
+
+Description:
+
+List duplicate systems by Hostname.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+           * [.struct]#struct#  - Duplicate Group
+                   * [.string]#string#  "hostname"
+                   * [.array]#array#  "systems"
+                      * [.struct]#struct#  - system
+      * [.int]#int#  "systemId"
+      * [.string]#string#  "systemName"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+ // no end needed
+ 
+                   // no end needed
+           // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listDuplicatesByIp]
+=== Method: listDuplicatesByIp 
+
+Description:
+
+List duplicate systems by IP Address.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+           * [.struct]#struct#  - Duplicate Group
+                   * [.string]#string#  "ip"
+                   * [.array]#array#  "systems"
+                      * [.struct]#struct#  - system
+      * [.int]#int#  "systemId"
+      * [.string]#string#  "systemName"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+ // no end needed
+ 
+                   // no end needed
+           // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listDuplicatesByMac]
+=== Method: listDuplicatesByMac 
+
+Description:
+
+List duplicate systems by Mac Address.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+           * [.struct]#struct#  - Duplicate Group
+                   * [.string]#string#  "mac"
+                   * [.array]#array#  "systems"
+                      * [.struct]#struct#  - system
+      * [.int]#int#  "systemId"
+      * [.string]#string#  "systemName"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+ // no end needed
+ 
+                   // no end needed
+           // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listEmptySystemProfiles]
+=== Method: listEmptySystemProfiles 
+
+Description:
+
+Returns a list of empty system profiles visible to user (created by the createSystemProfile method).
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server creation time
+     * [.array]#array#  "hw_addresses" - HW addresses
+         * [.array]#array# :
+** string - HW address
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-listExtraPackages]
+=== Method: listExtraPackages 
+
+Description:
+
+List extra packages for a system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - package
+                 * [.string]#string#  "name"
+                 * [.string]#string#  "version"
+                 * [.string]#string#  "release"
+                 * [.string]#string#  "epoch" - returned only if non-zero
+                 * [.string]#string#  "arch"
+                 * [.date]#date#  "installtime" - returned only if known
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listFqdns]
+=== Method: listFqdns 
+
+Description:
+
+Provides a list of FQDNs associated with a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - fqdn
+ 
+
+
+'''
+
+
+[#system-listGroups]
+=== Method: listGroups 
+
+Description:
+
+List the available groups for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - system group
+          * [.int]#int#  "id" - server group id
+          * [.int]#int#  "subscribed" - 1 if the given server is subscribed
+               to this server group, 0 otherwise
+          * [.string]#string#  "system_group_name" - Name of the server group
+          * [.string]#string#  "sgid" - server group id (Deprecated)
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listInactiveSystems]
+=== Method: listInactiveSystems 
+
+Description:
+
+Lists systems that have been inactive for the default period of
+          inactivity
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listInactiveSystems]
+=== Method: listInactiveSystems 
+
+Description:
+
+Lists systems that have been inactive for the specified
+      number of days..
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  days
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listLatestAvailablePackage]
+=== Method: listLatestAvailablePackage 
+
+Description:
+
+Get the latest available version of a package for each system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.string]#string#  packageName
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+             * [.int]#int#  "id" - server ID
+             * [.string]#string#  "name" - server name
+             * [.struct]#struct#  "package" - package structure
+                 * [.struct]#struct#  - package
+                     * [.int]#int#  "id"
+                     * [.string]#string#  "name"
+                     * [.string]#string#  "version"
+                     * [.string]#string#  "release"
+                     * [.string]#string#  "epoch"
+                     * [.string]#string#  "arch"
+                // no end needed
+        // no end needed
+    // no end needed
+ 
+
+
+'''
+
+
+[#system-listLatestInstallablePackages]
+=== Method: listLatestInstallablePackages 
+
+Description:
+
+Get the list of latest installable packages for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package
+          * [.string]#string#  "name"
+          * [.string]#string#  "version"
+          * [.string]#string#  "release"
+          * [.string]#string#  "epoch"
+          * [.int]#int#  "id"
+          * [.string]#string#  "arch_label"
+      // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#system-listLatestUpgradablePackages]
+=== Method: listLatestUpgradablePackages 
+
+Description:
+
+Get the list of latest upgradable packages for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package
+          * [.string]#string#  "name"
+          * [.string]#string#  "arch"
+          * [.string]#string#  "from_version"
+          * [.string]#string#  "from_release"
+          * [.string]#string#  "from_epoch"
+          * [.string]#string#  "to_version"
+          * [.string]#string#  "to_release"
+          * [.string]#string#  "to_epoch"
+          * [.string]#string#  "to_package_id"
+      // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#system-listMigrationTargets]
+=== Method: listMigrationTargets 
+
+Description:
+
+List possible migration targets for a system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - migrationtarget
+                 * [.string]#string#  "ident"
+                 * [.string]#string#  "friendly"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listNewerInstalledPackages]
+=== Method: listNewerInstalledPackages 
+
+Description:
+
+Given a package name, version, release, and epoch, returns the
+ list of packages installed on the system w/ the same name that are newer.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  name - Package name.
+ 
+* [.string]#string#  version - Package version.
+ 
+* [.string]#string#  release - Package release.
+ 
+* [.string]#string#  epoch - Package epoch.
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - package
+              * [.string]#string#  "name"
+              * [.string]#string#  "version"
+              * [.string]#string#  "release"
+              * [.string]#string#  "epoch"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listNotes]
+=== Method: listNotes 
+
+Description:
+
+Provides a list of notes associated with a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - note details
+   * [.int]#int#  "id"
+   * [.string]#string#  "subject" - Subject of the note
+   * [.string]#string#  "note" - Contents of the note
+   * [.int]#int#  "system_id" - The id of the system associated with the note
+   * [.string]#string#  "creator" - Creator of the note if exists (optional)
+   * [.date]#date#  "updated" - Date of the last note update
+ // no end needed
+ 
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listOlderInstalledPackages]
+=== Method: listOlderInstalledPackages 
+
+Description:
+
+Given a package name, version, release, and epoch, returns
+ the list of packages installed on the system with the same name that are
+ older.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  name - Package name.
+ 
+* [.string]#string#  version - Package version.
+ 
+* [.string]#string#  release - Package release.
+ 
+* [.string]#string#  epoch - Package epoch.
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - package
+              * [.string]#string#  "name"
+              * [.string]#string#  "version"
+              * [.string]#string#  "release"
+              * [.string]#string#  "epoch"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listOutOfDateSystems]
+=== Method: listOutOfDateSystems 
+
+Description:
+
+Returns list of systems needing package updates.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-listPackageProfiles]
+=== Method: listPackageProfiles 
+
+Description:
+
+List the package profiles in this organization
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package profile
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.string]#string#  "channel"
+ // no end needed
+ 
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listPackages]
+=== Method: listPackages 
+
+Description:
+
+List the installed packages for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - package
+                 * [.string]#string#  "name"
+                 * [.string]#string#  "version"
+                 * [.string]#string#  "release"
+                 * [.string]#string#  "epoch"
+                 * [.string]#string#  "arch"
+                 * [.date]#date#  "installtime" - returned only if known
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listPackagesFromChannel]
+=== Method: listPackagesFromChannel 
+
+Description:
+
+Provides a list of packages installed on a system that are also
+          contained in the given channel.  The installed package list did not
+          include arch information before RHEL 5, so it is arch unaware.  RHEL 5
+          systems do upload the arch information, and thus are arch aware.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  channelLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package
+      * [.string]#string#  "name"
+      * [.string]#string#  "version"
+      * [.string]#string#  "release"
+      * [.string]#string#  "epoch"
+      * [.int]#int#  "id"
+      * [.string]#string#  "arch_label"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      * [.string]#string#  "path" - The path on that file system that the package
+             resides
+      * [.string]#string#  "provider" - The provider of the package, determined by
+              the gpg key it was signed with.
+  // no end needed
+ 
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listPhysicalSystems]
+=== Method: listPhysicalSystems 
+
+Description:
+
+Returns a list of all Physical servers visible to the user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listSubscribableBaseChannels]
+=== Method: listSubscribableBaseChannels 
+
+Description:
+
+Returns a list of subscribable base channels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - channel
+          * [.int]#int#  "id" - Base Channel ID.
+          * [.string]#string#  "name" - Name of channel.
+          * [.string]#string#  "label" - Label of Channel
+          * [.int]#int#  "current_base" - 1 indicates it is the current base
+                                      channel
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#system-listSubscribableChildChannels]
+=== Method: listSubscribableChildChannels 
+
+Description:
+
+Returns a list of subscribable child channels.  This only shows channels
+ the system is *not* currently subscribed to.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - child channel
+              * [.int]#int#  "id"
+              * [.string]#string#  "name"
+              * [.string]#string#  "label"
+              * [.string]#string#  "summary"
+              * [.string]#string#  "has_license"
+              * [.string]#string#  "gpg_key_url"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listSubscribedChildChannels]
+=== Method: listSubscribedChildChannels 
+
+Description:
+
+Returns a list of subscribed child channels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - channel
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.string]#string#  "label"
+      * [.string]#string#  "arch_name"
+      * [.string]#string#  "arch_label"
+      * [.string]#string#  "summary"
+      * [.string]#string#  "description"
+      * [.string]#string#  "checksum_label"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      * [.string]#string#  "maintainer_name"
+      * [.string]#string#  "maintainer_email"
+      * [.string]#string#  "maintainer_phone"
+      * [.string]#string#  "support_policy"
+      * [.string]#string#  "gpg_key_url"
+      * [.string]#string#  "gpg_key_id"
+      * [.string]#string#  "gpg_key_fp"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      * [.string]#string#  "end_of_life"
+      * [.string]#string#  "parent_channel_label"
+      * [.string]#string#  "clone_original"
+      * [.array]#array# :
+          * [.struct]#struct#  - contentSources
+              * [.int]#int#  "id"
+              * [.string]#string#  "label"
+              * [.string]#string#  "sourceUrl"
+              * [.string]#string#  "type"
+          // no end needed
+      // no end needed
+  // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listSuggestedReboot]
+=== Method: listSuggestedReboot 
+
+Description:
+
+List systems that require reboot.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+              * [.int]#int#  "id"
+              * [.string]#string#  "name"
+          // no end needed
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listSystemEvents]
+=== Method: listSystemEvents 
+
+Description:
+
+List system actions of the specified type that were *scheduled* against the given server.
+ "actionType" should be exactly the string returned in the action_type field
+ from the listSystemEvents(sessionKey, serverId) method. For example,
+ 'Package Install' or 'Initiate a kickstart for a virtual guest.'
+ Note: see also system.getEventHistory method which returns a history of all events.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of system.
+ 
+* [.string]#string#  actionType - Type of the action.
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - action
+          * [.int]#int#  "failed_count" - Number of times action failed.
+          * [.string]#string#  "modified" - Date modified. (Deprecated by
+                     modified_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "modified_date" - Date modified.
+          * [.string]#string#  "created" - Date created. (Deprecated by
+                     created_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "created_date" - Date created.
+          * [.string]#string#  "action_type"
+          * [.int]#int#  "successful_count" - Number of times action was successful.
+          * [.string]#string#  "earliest_action" - Earliest date this action
+                     will occur.
+          * [.int]#int#  "archived" - If this action is archived. (1 or 0)
+          * [.string]#string#  "scheduler_user" - available only if concrete user
+                     has scheduled the action
+          * [.string]#string#  "prerequisite" - Pre-requisite action. (optional)
+          * [.string]#string#  "name" - Name of this action.
+          * [.int]#int#  "id" - Id of this action.
+          * [.string]#string#  "version" - Version of action.
+          * [.string]#string#  "completion_time" - The date/time the event was
+                     completed. Format -&gt;YYYY-MM-dd hh:mm:ss.ms
+                     Eg -&gt;2007-06-04 13:58:13.0. (optional)
+                     (Deprecated by completed_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "completed_date" - The date/time the event was completed.
+                     (optional)
+          * [.string]#string#  "pickup_time" - The date/time the action was picked
+                     up. Format -&gt;YYYY-MM-dd hh:mm:ss.ms
+                     Eg -&gt;2007-06-04 13:58:13.0. (optional)
+                     (Deprecated by pickup_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "pickup_date" - The date/time the action was picked up.
+                     (optional)
+          * [.string]#string#  "result_msg" - The result string after the action
+                     executes at the client machine. (optional)
+          * [.array]#array#  "additional_info" - This array contains additional
+              information for the event, if available.
+              * [.struct]#struct#  - info
+                  * [.string]#string#  "detail" - The detail provided depends on the
+                  specific event.  For example, for a package event, this will be the
+                  package name, for an errata event, this will be the advisory name
+                  and synopsis, for a config file event, this will be path and
+                  optional revision information...etc.
+                  * [.string]#string#  "result" - The result (if included) depends
+                  on the specific event.  For example, for a package or errata event,
+                  no result is included, for a config file event, the result might
+                  include an error (if one occurred, such as the file was missing)
+                  or in the case of a config file comparison it might include the
+                  differenes found.
+              // no end needed
+          // no end needed
+      // no end needed
+  // no end needed
+ 
+
+Available since API version: 10.8
+
+'''
+
+
+[#system-listSystemEvents]
+=== Method: listSystemEvents 
+
+Description:
+
+List all system actions that were *scheduled* against the given server.
+ This may require the caller to filter the result to fetch actions with a specific action type or
+ to use the overloaded system.listSystemEvents method with actionType as a parameter.
+ Note: see also system.getEventHistory method which returns a history of all events.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of system.
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - action
+          * [.int]#int#  "failed_count" - Number of times action failed.
+          * [.string]#string#  "modified" - Date modified. (Deprecated by
+                     modified_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "modified_date" - Date modified.
+          * [.string]#string#  "created" - Date created. (Deprecated by
+                     created_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "created_date" - Date created.
+          * [.string]#string#  "action_type"
+          * [.int]#int#  "successful_count" - Number of times action was successful.
+          * [.string]#string#  "earliest_action" - Earliest date this action
+                     will occur.
+          * [.int]#int#  "archived" - If this action is archived. (1 or 0)
+          * [.string]#string#  "scheduler_user" - available only if concrete user
+                     has scheduled the action
+          * [.string]#string#  "prerequisite" - Pre-requisite action. (optional)
+          * [.string]#string#  "name" - Name of this action.
+          * [.int]#int#  "id" - Id of this action.
+          * [.string]#string#  "version" - Version of action.
+          * [.string]#string#  "completion_time" - The date/time the event was
+                     completed. Format -&gt;YYYY-MM-dd hh:mm:ss.ms
+                     Eg -&gt;2007-06-04 13:58:13.0. (optional)
+                     (Deprecated by completed_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "completed_date" - The date/time the event was completed.
+                     (optional)
+          * [.string]#string#  "pickup_time" - The date/time the action was picked
+                     up. Format -&gt;YYYY-MM-dd hh:mm:ss.ms
+                     Eg -&gt;2007-06-04 13:58:13.0. (optional)
+                     (Deprecated by pickup_date)
+          * [.dateTime.iso8601]#dateTime.iso8601#  "pickup_date" - The date/time the action was picked up.
+                     (optional)
+          * [.string]#string#  "result_msg" - The result string after the action
+                     executes at the client machine. (optional)
+          * [.array]#array#  "additional_info" - This array contains additional
+              information for the event, if available.
+              * [.struct]#struct#  - info
+                  * [.string]#string#  "detail" - The detail provided depends on the
+                  specific event.  For example, for a package event, this will be the
+                  package name, for an errata event, this will be the advisory name
+                  and synopsis, for a config file event, this will be path and
+                  optional revision information...etc.
+                  * [.string]#string#  "result" - The result (if included) depends
+                  on the specific event.  For example, for a package or errata event,
+                  no result is included, for a config file event, the result might
+                  include an error (if one occurred, such as the file was missing)
+                  or in the case of a config file comparison it might include the
+                  differenes found.
+              // no end needed
+          // no end needed
+      // no end needed
+  // no end needed
+ 
+
+Available since API version: 10.8
+
+'''
+
+
+[#system-listSystems]
+=== Method: listSystems 
+
+Description:
+
+Returns a list of all servers visible to the user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listSystemsWithExtraPackages]
+=== Method: listSystemsWithExtraPackages 
+
+Description:
+
+List systems with extra packages
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+             * [.int]#int#  "id" - System ID
+             * [.string]#string#  "name" - System profile name
+             * [.int]#int#  "extra_pkg_count" - Extra packages count
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#system-listSystemsWithPackage]
+=== Method: listSystemsWithPackage 
+
+Description:
+
+Lists the systems that have the given installed package
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  pid - the package id
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+           // no end needed
+ 
+
+
+'''
+
+
+[#system-listSystemsWithPackage]
+=== Method: listSystemsWithPackage 
+
+Description:
+
+Lists the systems that have the given installed package
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - the package name
+ 
+* [.string]#string#  version - the package version
+ 
+* [.string]#string#  release - the package release
+ 
+
+Returns:
+
+* [.array]#array# :
+                  * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+              // no end needed
+ 
+
+
+'''
+
+
+[#system-listUngroupedSystems]
+=== Method: listUngroupedSystems 
+
+Description:
+
+List systems that are not associated with any system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-listUserSystems]
+=== Method: listUserSystems 
+
+Description:
+
+List systems for a given user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-listUserSystems]
+=== Method: listUserSystems 
+
+Description:
+
+List systems for the logged in user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-listVirtualGuests]
+=== Method: listVirtualGuests 
+
+Description:
+
+Lists the virtual guests for a given virtual host
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - the virtual host's id
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - virtual system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.string]#string#  "guest_name" - The virtual guest name as provided
+                  by the virtual host
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server successfully
+                   checked in.
+      * [.string]#string#  "uuid"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system-listVirtualHosts]
+=== Method: listVirtualHosts 
+
+Description:
+
+Lists the virtual hosts visible to the user
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+       * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system-obtainReactivationKey]
+=== Method: obtainReactivationKey 
+
+Description:
+
+Obtains a reactivation key for this server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* string 
+ 
+
+
+'''
+
+
+[#system-obtainReactivationKey]
+=== Method: obtainReactivationKey 
+
+Description:
+
+Obtains a reactivation key for this server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* string 
+ 
+
+Available since API version: 10.10
+
+'''
+
+
+[#system-provisionSystem]
+=== Method: provisionSystem 
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+
+Returns:
+
+* int - ID of the action scheduled, otherwise exception thrown
+ on error 
+ 
+
+
+'''
+
+
+[#system-provisionSystem]
+=== Method: provisionSystem 
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+
+Returns:
+
+* int - ID of the action scheduled, otherwise exception thrown
+ on error 
+ 
+
+
+'''
+
+
+[#system-provisionVirtualGuest]
+=== Method: provisionVirtualGuest 
+
+Description:
+
+Provision a guest on the host specified.  Defaults to:
+ memory=512MB, vcpu=1, storage=3GB, mac_address=random.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of host to provision guest on.
+ 
+* [.string]#string#  guestName
+ 
+* [.string]#string#  profileName - Kickstart profile to use.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-provisionVirtualGuest]
+=== Method: provisionVirtualGuest 
+
+Description:
+
+Provision a guest on the host specified.  This schedules the guest
+ for creation and will begin the provisioning process when the host checks in
+ or if OSAD is enabled will begin immediately. Defaults to mac_address=random.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of host to provision guest on.
+ 
+* [.string]#string#  guestName
+ 
+* [.string]#string#  profileName - Kickstart Profile to use.
+ 
+* [.int]#int#  memoryMb - Memory to allocate to the guest
+ 
+* [.int]#int#  vcpus - Number of virtual CPUs to allocate to
+                                          the guest.
+ 
+* [.int]#int#  storageGb - Size of the guests disk image.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-provisionVirtualGuest]
+=== Method: provisionVirtualGuest 
+
+Description:
+
+Provision a guest on the host specified.  This schedules the guest
+ for creation and will begin the provisioning process when the host checks in
+ or if OSAD is enabled will begin immediately.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of host to provision guest on.
+ 
+* [.string]#string#  guestName
+ 
+* [.string]#string#  profileName - Kickstart Profile to use.
+ 
+* [.int]#int#  memoryMb - Memory to allocate to the guest
+ 
+* [.int]#int#  vcpus - Number of virtual CPUs to allocate to
+                                          the guest.
+ 
+* [.int]#int#  storageGb - Size of the guests disk image.
+ 
+* [.string]#string#  macAddress - macAddress to give the guest's
+                                          virtual networking hardware.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-removeEntitlements]
+=== Method: removeEntitlements 
+
+Description:
+
+Remove addon entitlements from a server. Entitlements a server does
+ not have are quietly ignored.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** string - entitlement_label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to multiple systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to multiple systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to multiple systems at a
+ given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to multiple systems at a
+ given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to a system at a
+ given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-scheduleApplyErrata]
+=== Method: scheduleApplyErrata 
+
+Description:
+
+Schedules an action to apply errata updates to a system at a
+ given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-scheduleApplyHighstate]
+=== Method: scheduleApplyHighstate 
+
+Description:
+
+Schedule highstate application for a given system.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+* [.boolean]#boolean#  test - Run states in test-only mode
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleCertificateUpdate]
+=== Method: scheduleCertificateUpdate 
+
+Description:
+
+Schedule update of client certificate
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleCertificateUpdate]
+=== Method: scheduleCertificateUpdate 
+
+Description:
+
+Schedule update of client certificate at given date and time
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.dateTime.iso860]#dateTime.iso860#  date
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleChangeChannels]
+=== Method: scheduleChangeChannels 
+
+Description:
+
+Schedule an action to change the channels of the given system. Works for both traditional
+ and Salt systems.
+ This method accepts labels for the base and child channels.
+ If the user provides an empty string for the channelLabel, the current base channel and
+ all child channels will be removed from the system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  baseChannelLabel
+ 
+* [.array]#array# :
+** string - channelLabel
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - the time/date to schedule the action
+ 
+
+Returns:
+
+* int - ID of the action scheduled, otherwise exception thrown
+ on error 
+ 
+
+Available since API version: 19.0
+
+'''
+
+
+[#system-scheduleChangeChannels]
+=== Method: scheduleChangeChannels 
+
+Description:
+
+Schedule an action to change the channels of the given system. Works for both traditional
+ and Salt systems.
+ This method accepts labels for the base and child channels.
+ If the user provides an empty string for the channelLabel, the current base channel and
+ all child channels will be removed from the system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  baseChannelLabel
+ 
+* [.array]#array# :
+** string - channelLabel
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - the time/date to schedule the action
+ 
+
+Returns:
+
+* [.array]#array# :
+** long - actionIds
+ 
+
+Available since API version: 19.0
+
+'''
+
+
+[#system-scheduleDistUpgrade]
+=== Method: scheduleDistUpgrade 
+
+Description:
+
+Schedule a dist upgrade for a system. This call takes a list of channel
+ labels that the system will be subscribed to before performing the dist upgrade.
+ Note: You can seriously damage your system with this call, use it only if you really
+ know what you are doing! Make sure that the list of channel labels is complete and in
+ any case do a dry run before scheduling an actual dist upgrade.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** string - channels
+ 
+* [.boolean]#boolean#  dryRun
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleGuestAction]
+=== Method: scheduleGuestAction 
+
+Description:
+
+Schedules a guest action for the specified virtual guest for a given
+          date/time.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - the system Id of the guest
+ 
+* [.string]#string#  state - One of the following actions  'start',
+          'suspend', 'resume', 'restart', 'shutdown'.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - the time/date to schedule the action
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleGuestAction]
+=== Method: scheduleGuestAction 
+
+Description:
+
+Schedules a guest action for the specified virtual guest for the
+          current time.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - the system Id of the guest
+ 
+* [.string]#string#  state - One of the following actions  'start',
+          'suspend', 'resume', 'restart', 'shutdown'.
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleHardwareRefresh]
+=== Method: scheduleHardwareRefresh 
+
+Description:
+
+Schedule a hardware refresh for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-schedulePackageInstall]
+=== Method: schedulePackageInstall 
+
+Description:
+
+Schedule package installation for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+
+'''
+
+
+[#system-schedulePackageInstall]
+=== Method: schedulePackageInstall 
+
+Description:
+
+Schedule package installation for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageInstall]
+=== Method: schedulePackageInstall 
+
+Description:
+
+Schedule package installation for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-schedulePackageInstall]
+=== Method: schedulePackageInstall 
+
+Description:
+
+Schedule package installation for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageInstallByNevra]
+=== Method: schedulePackageInstallByNevra 
+
+Description:
+
+Schedule package installation for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+
+'''
+
+
+[#system-schedulePackageInstallByNevra]
+=== Method: schedulePackageInstallByNevra 
+
+Description:
+
+Schedule package installation for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageInstallByNevra]
+=== Method: schedulePackageInstallByNevra 
+
+Description:
+
+Schedule package installation for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-schedulePackageInstallByNevra]
+=== Method: schedulePackageInstallByNevra 
+
+Description:
+
+Schedule package installation for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageRefresh]
+=== Method: schedulePackageRefresh 
+
+Description:
+
+Schedule a package list refresh for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+
+Returns:
+
+* int - ID of the action scheduled, otherwise exception thrown
+ on error 
+ 
+
+
+'''
+
+
+[#system-schedulePackageRemove]
+=== Method: schedulePackageRemove 
+
+Description:
+
+Schedule package removal for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+
+'''
+
+
+[#system-schedulePackageRemove]
+=== Method: schedulePackageRemove 
+
+Description:
+
+Schedule package removal for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageRemove]
+=== Method: schedulePackageRemove 
+
+Description:
+
+Schedule package removal for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-schedulePackageRemove]
+=== Method: schedulePackageRemove 
+
+Description:
+
+Schedule package removal for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int - packageId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageRemoveByNevra]
+=== Method: schedulePackageRemoveByNevra 
+
+Description:
+
+Schedule package removal for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+
+'''
+
+
+[#system-schedulePackageRemoveByNevra]
+=== Method: schedulePackageRemoveByNevra 
+
+Description:
+
+Schedule package removal for several systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-schedulePackageRemoveByNevra]
+=== Method: schedulePackageRemoveByNevra 
+
+Description:
+
+Schedule package removal for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+
+'''
+
+
+[#system-schedulePackageRemoveByNevra]
+=== Method: schedulePackageRemoveByNevra 
+
+Description:
+
+Schedule package removal for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+                   * [.struct]#struct#  - Package nevra
+                          * [.string]#string#  "package_name"
+                          * [.string]#string#  "package_epoch"
+                          * [.string]#string#  "package_version"
+                          * [.string]#string#  "package_release"
+                          * [.string]#string#  "package_arch"
+
+                   // no end needed
+               // no end needed
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+* [.boolean]#boolean#  allowModules - Allow this API call, despite modular content being present
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 21
+
+'''
+
+
+[#system-scheduleReboot]
+=== Method: scheduleReboot 
+
+Description:
+
+Schedule a reboot for a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.dateTime.iso860]#dateTime.iso860#  earliestOccurrence
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-scheduleSPMigration]
+=== Method: scheduleSPMigration 
+
+Description:
+
+Schedule a Service Pack migration for a system. This call is the
+ recommended and supported way of migrating a system to the next Service Pack. It will
+ automatically find all mandatory product channels below a given target base channel
+ and subscribe the system accordingly. Any additional optional channels can be
+ subscribed by providing their labels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  baseChannelLabel
+ 
+* [.array]#array# :
+** string - optionalChildChannels
+ 
+* [.boolean]#boolean#  dryRun
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleSPMigration]
+=== Method: scheduleSPMigration 
+
+Description:
+
+Schedule a Service Pack migration for a system. This call is the
+ recommended and supported way of migrating a system to the next Service Pack. It will
+ automatically find all mandatory product channels below a given target base channel
+ and subscribe the system accordingly. Any additional optional channels can be
+ subscribed by providing their labels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  targetIdent
+ 
+* [.string]#string#  baseChannelLabel
+ 
+* [.array]#array# :
+** string - optionalChildChannels
+ 
+* [.boolean]#boolean#  dryRun
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+
+'''
+
+
+[#system-scheduleScriptRun]
+=== Method: scheduleScriptRun 
+
+Description:
+
+Schedule a script to run.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#array# :
+** int - System IDs of the servers to run the script on.
+ 
+* [.string]#string#  username - User to run script as.
+ 
+* [.string]#string#  groupname - Group to run script as.
+ 
+* [.int]#int#  timeout - Seconds to allow the script to run
+before timing out.
+ 
+* [.string]#string#  script - Contents of the script to run.
+ Must start with a shebang (e.g. #!/bin/bash)
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - Earliest the script can run.
+ 
+
+Returns:
+
+* int - ID of the script run action created. Can be used to fetch
+ results with system.getScriptResults. 
+ 
+
+
+'''
+
+
+[#system-scheduleScriptRun]
+=== Method: scheduleScriptRun 
+
+Description:
+
+Schedule a script to run.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** int - System IDs of the servers to run the script on.
+ 
+* [.string]#string#  username - User to run script as.
+ 
+* [.string]#string#  groupname - Group to run script as.
+ 
+* [.int]#int#  timeout - Seconds to allow the script to run
+before timing out.
+ 
+* [.string]#string#  script - Contents of the script to run.
+ Must start with a shebang (e.g. #!/bin/bash)
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - Earliest the script can run.
+ 
+
+Returns:
+
+* int - ID of the script run action created. Can be used to fetch
+ results with system.getScriptResults. 
+ 
+
+
+'''
+
+
+[#system-scheduleScriptRun]
+=== Method: scheduleScriptRun 
+
+Description:
+
+Schedule a script to run.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of the server to run the script on.
+ 
+* [.string]#string#  username - User to run script as.
+ 
+* [.string]#string#  groupname - Group to run script as.
+ 
+* [.int]#int#  timeout - Seconds to allow the script to run
+before timing out.
+ 
+* [.string]#string#  script - Contents of the script to run.
+ Must start with a shebang (e.g. #!/bin/bash)
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - Earliest the script can run.
+ 
+
+Returns:
+
+* int - ID of the script run action created. Can be used to fetch
+ results with system.getScriptResults. 
+ 
+
+
+'''
+
+
+[#system-scheduleScriptRun]
+=== Method: scheduleScriptRun 
+
+Description:
+
+Schedule a script to run.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.int]#int#  serverId - ID of the server to run the script on.
+ 
+* [.string]#string#  username - User to run script as.
+ 
+* [.string]#string#  groupname - Group to run script as.
+ 
+* [.int]#int#  timeout - Seconds to allow the script to run
+before timing out.
+ 
+* [.string]#string#  script - Contents of the script to run.
+ Must start with a shebang (e.g. #!/bin/bash)
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - Earliest the script can run.
+ 
+
+Returns:
+
+* int - ID of the script run action created. Can be used to fetch
+ results with system.getScriptResults. 
+ 
+
+
+'''
+
+
+[#system-scheduleSyncPackagesWithSystem]
+=== Method: scheduleSyncPackagesWithSystem 
+
+Description:
+
+Sync packages from a source system to a target.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  targetServerId - Target system to apply package
+                  changes to.
+ 
+* [.int]#int#  sourceServerId - Source system to retrieve
+                  package state from.
+ 
+* [.array]#array# :
+** int - packageId - Package IDs to be synced.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - Date to schedule action for
+ 
+
+Returns:
+
+* int actionId - The action id of the scheduled action 
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#system-searchByName]
+=== Method: searchByName 
+
+Description:
+
+Returns a list of system IDs whose name matches
+  the supplied regular expression(defined by
+  
+ Java representation of regular expressions)
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  regexp - A regular expression
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+          // no end needed
+ 
+
+
+'''
+
+
+[#system-sendOsaPing]
+=== Method: sendOsaPing 
+
+Description:
+
+send a ping to a system using OSA
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setBaseChannel]
+=== Method: setBaseChannel (Deprecated)
+
+Description:
+
+Assigns the server to a new baseChannel.
+
+
+Deprecated - being replaced by system.setBaseChannel(string sessionKey,
+ int serverId, string channelLabel)
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  channelId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setBaseChannel]
+=== Method: setBaseChannel (Deprecated)
+
+Description:
+
+Assigns the server to a new base channel.  If the user provides an empty
+ string for the channelLabel, the current base channel and all child channels will
+ be removed from the system.
+
+
+Deprecated - being replaced by system.scheduleChangeChannels(string sessionKey,
+ int serverId, String baseChannelLabel, array_single channelLabels, date earliestOccurrence).
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  channelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setChildChannels]
+=== Method: setChildChannels (Deprecated)
+
+Description:
+
+Subscribe the given server to the child channels provided.  This
+ method will unsubscribe the server from any child channels that the server
+ is currently subscribed to, but that are not included in the list.  The user may
+ provide either a list of channel ids (int) or a list of channel labels (string) as
+ input. Changes to channel assignments on salt managed systems will take effect
+ at next highstate application.
+
+
+Deprecated - being replaced by system.scheduleChangeChannels(string sessionKey,
+ int serverId, String baseChannelLabel, array_single channelLabels, date earliestOccurrence).
+ This method will schedule an action for changing the child channels immediately.
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.array]#array# :
+** int (deprecated) or string - channelId (deprecated)
+ or channelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setCustomValues]
+=== Method: setCustomValues 
+
+Description:
+
+Set custom values for the specified server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.struct]#struct#  - Map of custom labels to custom values
+      * [.string]#string#  "custom info label"
+      * [.string]#string#  "value"
+    // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setDetails]
+=== Method: setDetails 
+
+Description:
+
+Set server details. All arguments are optional and will only be modified
+ if included in the struct.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId - ID of server to lookup details for.
+ 
+* [.struct]#struct#  - server details
+          * [.string]#string#  "profile_name" - System's profile name
+          * [.string]#string#  "base_entitlement" - System's base entitlement label.
+                      (enterprise_entitled or unentitle)
+           * [.boolean]#boolean#  "auto_errata_update" - True if system has
+                          auto errata updates enabled
+           * [.string]#string#  "description" - System description
+           * [.string]#string#  "address1" - System's address line 1.
+           * [.string]#string#  "address2" - System's address line 2.
+           * [.string]#string#  "city"
+           * [.string]#string#  "state"
+           * [.string]#string#  "country"
+           * [.string]#string#  "building"
+           * [.string]#string#  "room"
+           * [.string]#string#  "rack"
+           * [.string]#string#  "contact_method" - One of the following:
+             // no end needed
+               * default
+               * ssh-push
+               * ssh-push-tunnel
+             // no end needed
+     // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setGroupMembership]
+=== Method: setGroupMembership 
+
+Description:
+
+Set a servers membership in a given group.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  serverGroupId
+ 
+* [.boolean]#boolean#  member - '1' to assign the given server to
+ the given server group, '0' to remove the given server from the given server
+ group.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setGuestCpus]
+=== Method: setGuestCpus 
+
+Description:
+
+Schedule an action of a guest's host, to set that guest's CPU
+          allocation
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - The guest's system id
+ 
+* [.int]#int#  numOfCpus - The number of virtual cpus to
+          allocate to the guest
+ 
+
+Returns:
+
+* int actionID - the action Id for the schedule action
+              on the host system. 
+ 
+
+
+'''
+
+
+[#system-setGuestMemory]
+=== Method: setGuestMemory 
+
+Description:
+
+Schedule an action of a guest's host, to set that guest's memory
+          allocation
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - The guest's system id
+ 
+* [.int]#int#  memory - The amount of memory to
+          allocate to the guest
+ 
+
+Returns:
+
+* int actionID - the action Id for the schedule action
+              on the host system. 
+ 
+
+
+'''
+
+
+[#system-setLockStatus]
+=== Method: setLockStatus 
+
+Description:
+
+Set server lock status.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.boolean]#boolean#  lockStatus - true to lock the system,
+ false to unlock the system.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setPrimaryInterface]
+=== Method: setPrimaryInterface 
+
+Description:
+
+Sets new primary network interface
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  interfaceName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setProfileName]
+=== Method: setProfileName 
+
+Description:
+
+Set the profile name for the server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  name - Name of the profile.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-setVariables]
+=== Method: setVariables 
+
+Description:
+
+Sets a list of kickstart variables in the cobbler system record
+ for the specified server.
+  Note: This call assumes that a system record exists in cobbler for the
+  given system and will raise an XMLRPC fault if that is not the case.
+  To create a system record over xmlrpc use system.createSystemRecord
+
+  To create a system record in the Web UI  please go to
+  System -&gt; &lt;Specified System&gt; -&gt; Provisioning -&gt;
+  Select a Kickstart profile -&gt; Create Cobbler System Record.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.boolean]#boolean#  netboot
+ 
+* [.array]#array# :
+          * [.struct]#struct#  - kickstart variable
+              * [.string]#string#  "key"
+              * [.string or int]#string or int#  "value"
+          // no end needed
+      // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-tagLatestSnapshot]
+=== Method: tagLatestSnapshot 
+
+Description:
+
+Tags latest system snapshot
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  tagName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-unentitle]
+=== Method: unentitle 
+
+Description:
+
+Unentitle the system completely
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-upgradeEntitlement]
+=== Method: upgradeEntitlement 
+
+Description:
+
+Adds an entitlement to a given server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  entitlementName - One of:
+          'enterprise_entitled' or 'virtualization_host'.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system-whoRegistered]
+=== Method: whoRegistered 
+
+Description:
+
+Returns information about the user who registered the system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - Id of the system in question
+ 
+
+Returns:
+
+* * [.struct]#struct#  - user
+              * [.int]#int#  "id"
+              * [.string]#string#  "login"
+              * [.string]#string#  "login_uc" - upper case version of the login
+              * [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+      // no end needed
+  
+ 
+
+
+'''
+

@@ -1,0 +1,302 @@
+
+
+
+[#image_profile]
+== image.profile
+
+
+=== Available methods
+
+* <<image_profile-create,create>>
+* <<image_profile-delete,delete>>
+* <<image_profile-deleteCustomValues,deleteCustomValues>>
+* <<image_profile-getCustomValues,getCustomValues>>
+* <<image_profile-getDetails,getDetails>>
+* <<image_profile-listImageProfileTypes,listImageProfileTypes>>
+* <<image_profile-listImageProfiles,listImageProfiles>>
+* <<image_profile-setCustomValues,setCustomValues>>
+* <<image_profile-setDetails,setDetails>>
+
+=== Description
+
+Provides methods to access and modify image profiles.
+
+*Namespace*:
+
+image.profile
+
+'''
+
+
+[#image_profile-create]
+=== Method: create 
+
+Description:
+
+Create a new Image Profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.string]#string#  type
+ 
+* [.string]#string#  storeLabel
+ 
+* [.string]#string#  path
+ 
+* [.string]#string#  activationKey - Optional
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_profile-delete]
+=== Method: delete 
+
+Description:
+
+Delete an Image Profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_profile-deleteCustomValues]
+=== Method: deleteCustomValues 
+
+Description:
+
+Delete the custom values defined for the specified Image Profile.
+ (Note: Attempt to delete values of non-existing keys throws exception. Attempt to
+ delete value of existing key which has assigned no values doesn't throw exception.)
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#array# :
+** string - customDataKeys
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_profile-getCustomValues]
+=== Method: getCustomValues 
+
+Description:
+
+Get the custom data values defined for the Image Profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* [.struct]#struct#  - Map of custom labels to custom values
+      * [.string]#string#  "custom info label"
+      * [.string]#string#  "value"
+    // no end needed
+ 
+
+
+'''
+
+
+[#image_profile-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Get details of an Image Profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Image Profile information
+   * [.string]#string#  "label"
+   * [.string]#string#  "imageType"
+   * [.string]#string#  "imageStore"
+   * [.string]#string#  "activationKey"
+   * [.string]#string#  "path" - in case type support path
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#image_profile-listImageProfileTypes]
+=== Method: listImageProfileTypes 
+
+Description:
+
+List available Image Store Types
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - imageProfileTypes
+ 
+
+
+'''
+
+
+[#image_profile-listImageProfiles]
+=== Method: listImageProfiles 
+
+Description:
+
+List available Image Profiles
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Image Profile information
+   * [.string]#string#  "label"
+   * [.string]#string#  "imageType"
+   * [.string]#string#  "imageStore"
+   * [.string]#string#  "activationKey"
+   * [.string]#string#  "path" - in case type support path
+ // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#image_profile-setCustomValues]
+=== Method: setCustomValues 
+
+Description:
+
+Set custom values for the specified Image Profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.struct]#struct#  - Map of custom labels to custom values
+      * [.string]#string#  "custom info label"
+      * [.string]#string#  "value"
+    // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#image_profile-setDetails]
+=== Method: setDetails 
+
+Description:
+
+Set details of an Image Profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.struct]#struct#  - image profile details
+     * [.string]#string#  "storeLabel"
+     * [.string]#string#  "path"
+     * [.string]#string#  "activationKey" - set empty string to unset
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

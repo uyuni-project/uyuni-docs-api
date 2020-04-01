@@ -1,0 +1,348 @@
+
+
+
+[#system_search]
+== system.search
+
+
+=== Available methods
+
+* <<system_search-deviceDescription,deviceDescription>>
+* <<system_search-deviceDriver,deviceDriver>>
+* <<system_search-deviceId,deviceId>>
+* <<system_search-deviceVendorId,deviceVendorId>>
+* <<system_search-hostname,hostname>>
+* <<system_search-ip,ip>>
+* <<system_search-nameAndDescription,nameAndDescription>>
+* <<system_search-uuid,uuid>>
+
+=== Description
+
+Provides methods to perform system search requests using the search server.
+
+*Namespace*:
+
+system.search
+
+'''
+
+
+[#system_search-deviceDescription]
+=== Method: deviceDescription 
+
+Description:
+
+List the systems which match the device description.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-deviceDriver]
+=== Method: deviceDriver 
+
+Description:
+
+List the systems which match this device driver.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-deviceId]
+=== Method: deviceId 
+
+Description:
+
+List the systems which match this device id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-deviceVendorId]
+=== Method: deviceVendorId 
+
+Description:
+
+List the systems which match this device vendor_id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-hostname]
+=== Method: hostname 
+
+Description:
+
+List the systems which match this hostname
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-ip]
+=== Method: ip 
+
+Description:
+
+List the systems which match this ip.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-nameAndDescription]
+=== Method: nameAndDescription 
+
+Description:
+
+List the systems which match this name or description
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#system_search-uuid]
+=== Method: uuid 
+
+Description:
+
+List the systems which match this UUID
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  searchTerm
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - system
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+              successfully checked in
+      * [.string]#string#  "hostname"
+      * [.string]#string#  "ip"
+      * [.string]#string#  "hw_description" - hw description if not null
+      * [.string]#string#  "hw_device_id" - hw device id if not null
+      * [.string]#string#  "hw_vendor_id" - hw vendor id if not null
+      * [.string]#string#  "hw_driver" - hw driver if not null
+ // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+

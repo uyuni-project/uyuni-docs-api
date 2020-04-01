@@ -1,0 +1,1039 @@
+
+
+
+[#contentmanagement]
+== contentmanagement
+
+
+=== Available methods
+
+* <<contentmanagement-attachFilter,attachFilter>>
+* <<contentmanagement-attachSource,attachSource>>
+* <<contentmanagement-attachSource,attachSource>>
+* <<contentmanagement-buildProject,buildProject>>
+* <<contentmanagement-buildProject,buildProject>>
+* <<contentmanagement-createEnvironment,createEnvironment>>
+* <<contentmanagement-createFilter,createFilter>>
+* <<contentmanagement-createProject,createProject>>
+* <<contentmanagement-detachFilter,detachFilter>>
+* <<contentmanagement-detachSource,detachSource>>
+* <<contentmanagement-listFilterCriteria,listFilterCriteria>>
+* <<contentmanagement-listFilters,listFilters>>
+* <<contentmanagement-listProjectEnvironments,listProjectEnvironments>>
+* <<contentmanagement-listProjectFilters,listProjectFilters>>
+* <<contentmanagement-listProjectSources,listProjectSources>>
+* <<contentmanagement-listProjects,listProjects>>
+* <<contentmanagement-lookupEnvironment,lookupEnvironment>>
+* <<contentmanagement-lookupFilter,lookupFilter>>
+* <<contentmanagement-lookupProject,lookupProject>>
+* <<contentmanagement-lookupSource,lookupSource>>
+* <<contentmanagement-promoteProject,promoteProject>>
+* <<contentmanagement-removeEnvironment,removeEnvironment>>
+* <<contentmanagement-removeFilter,removeFilter>>
+* <<contentmanagement-removeProject,removeProject>>
+* <<contentmanagement-updateEnvironment,updateEnvironment>>
+* <<contentmanagement-updateFilter,updateFilter>>
+* <<contentmanagement-updateProject,updateProject>>
+
+=== Description
+
+Provides methods to access and modify Content Lifecycle Management related entities
+ (Projects, Environments, Filters, Sources).
+
+*Namespace*:
+
+contentmanagement
+
+'''
+
+
+[#contentmanagement-attachFilter]
+=== Method: attachFilter 
+
+Description:
+
+Attach a Filter to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.int]#int#  id - Filter id to attach
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-attachSource]
+=== Method: attachSource 
+
+Description:
+
+Attach a Source to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+* [.int]#int#  sourcePosition - Project Source position
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "type"
+   * [.string]#string#  "state"
+     * [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-attachSource]
+=== Method: attachSource 
+
+Description:
+
+Attach a Source to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "type"
+   * [.string]#string#  "state"
+     * [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-buildProject]
+=== Method: buildProject 
+
+Description:
+
+Build a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-buildProject]
+=== Method: buildProject 
+
+Description:
+
+Build a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  message - Log message to be assigned to the build
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-createEnvironment]
+=== Method: createEnvironment 
+
+Description:
+
+Create a Content Environment and appends it behind given Content Environment
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  predecessorLabel - Predecessor Environment label
+ 
+* [.string]#string#  label - new Content Environment label
+ 
+* [.string]#string#  name - new Content Environment name
+ 
+* [.string]#string#  description - new Content Environment description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "version"
+   * [.string]#string#  "status"
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "previousEnvironmentLabel"
+   * [.string]#string#  "nextEnvironmentLabel"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-createFilter]
+=== Method: createFilter 
+
+Description:
+
+Create a Content Filter
+  
+  
+ The following filters are available (you can get the list in machine-readable format using
+ the listFilterCriteria() endpoint):
+  
+  
+ Package filtering:
+ // no end needed
+   * by name - field:name; matchers:contains or matches
+   * by name, epoch, version, release and architecture - field:nevr or nevra; matcher:equals
+  // no end needed
+  
+  
+ Errata/Patch filtering:
+ // no end needed
+   * by advisory name - field:advisory_name; matcher:equals or matches
+   * by type - field:advisory_type (e.g. 'Security Advisory'); matcher:equals
+   * by synopsis - field:synopsis; matcher:equals, contains or matches
+   * by keyword - field:keyword; matcher:contains
+   * by date - field:issue_date; matcher:greater or greatereq
+   * by affected package name - field:package_name; matcher:contains_pkg_name or matches_pkg_name
+   * by affected package with version - field:package_nevr; matcher:contains_pkg_lt_evr, contains_pkg_le_evr,
+   contains_pkg_eq_evr, contains_pkg_ge_evr or contains_pkg_gt_evr
+ // no end needed
+
+ Note: The 'matches' matcher works on Java regular expressions.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Filter name
+ 
+* [.string]#string#  rule - Filter rule ('deny' or 'allow')
+ 
+* [.string]#string#  entityType - Filter entityType ('package' or 'erratum')
+ 
+* [.struct]#struct#  - criteria
+      * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+      * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+      * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+  // no end needed
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-createProject]
+=== Method: createProject 
+
+Description:
+
+Create Content Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+* [.string]#string#  name - Content Project name
+ 
+* [.string]#string#  description - Content Project description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "orgId"
+   * [.string]#string#  "firstEnvironment label"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-detachFilter]
+=== Method: detachFilter 
+
+Description:
+
+Detach a Filter from a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.int]#int#  id - Filter id to detach
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-detachSource]
+=== Method: detachSource 
+
+Description:
+
+Detach a Source from a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-listFilterCriteria]
+=== Method: listFilterCriteria 
+
+Description:
+
+List of available filter criteria
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Filter Criteria
+ * [.string]#string#  "type"
+ * [.string]#string#  "matcher"
+ * [.string]#string#  "field"
+ // no end needed
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-listFilters]
+=== Method: listFilters 
+
+Description:
+
+List all Content Filters visible to given user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-listProjectEnvironments]
+=== Method: listProjectEnvironments 
+
+Description:
+
+List Environments in a Content Project with the respect to their ordering
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Environment information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "version"
+   * [.string]#string#  "status"
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "previousEnvironmentLabel"
+   * [.string]#string#  "nextEnvironmentLabel"
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-listProjectFilters]
+=== Method: listProjectFilters 
+
+Description:
+
+List all Filters associated with a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Assigned Content Filter information
+   * [.string]#string#  "state"
+   * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+ 
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-listProjectSources]
+=== Method: listProjectSources 
+
+Description:
+
+List Content Project Sources
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Project Source information
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "type"
+   * [.string]#string#  "state"
+     * [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-listProjects]
+=== Method: listProjects 
+
+Description:
+
+List Content Projects visible to user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Project information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "orgId"
+   * [.string]#string#  "firstEnvironment label"
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#contentmanagement-lookupEnvironment]
+=== Method: lookupEnvironment 
+
+Description:
+
+Look up Content Environment based on Content Project and Content Environment label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "version"
+   * [.string]#string#  "status"
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "previousEnvironmentLabel"
+   * [.string]#string#  "nextEnvironmentLabel"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-lookupFilter]
+=== Method: lookupFilter 
+
+Description:
+
+Lookup a Content Filter by id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Filter id
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-lookupProject]
+=== Method: lookupProject 
+
+Description:
+
+Look up Content Project with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "orgId"
+   * [.string]#string#  "firstEnvironment label"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-lookupSource]
+=== Method: lookupSource 
+
+Description:
+
+Look up Content Project Source
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "type"
+   * [.string]#string#  "state"
+     * [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-promoteProject]
+=== Method: promoteProject 
+
+Description:
+
+Promote an Environment in a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.string]#string#  envLabel - Environment label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-removeEnvironment]
+=== Method: removeEnvironment 
+
+Description:
+
+Remove a Content Environment
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-removeFilter]
+=== Method: removeFilter 
+
+Description:
+
+Remove a Content Filter
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Filter id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-removeProject]
+=== Method: removeProject 
+
+Description:
+
+Remove Content Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#contentmanagement-updateEnvironment]
+=== Method: updateEnvironment 
+
+Description:
+
+Update Content Environment with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+* [.struct]#struct#  - data
+      * [.string]#string#  "name" - Content Environment name
+      * [.string]#string#  "description" - Content Environment description
+  // no end needed
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "version"
+   * [.string]#string#  "status"
+   * [.string]#string#  "contentProjectLabel"
+   * [.string]#string#  "previousEnvironmentLabel"
+   * [.string]#string#  "nextEnvironmentLabel"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-updateFilter]
+=== Method: updateFilter 
+
+Description:
+
+Update a Content Filter
+  
+  
+ See also: createFilter(), listFilterCriteria()
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  filterId - Filter id
+ 
+* [.string]#string#  name - New filter name
+ 
+* [.string]#string#  rule - New filter rule ('deny' or 'allow')
+ 
+* [.struct]#struct#  - criteria
+      * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+      * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+      * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+  // no end needed
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   * [.int]#int#  "id"
+   * [.string]#string#  "name"
+   * [.int]#int#  "orgId"
+   * [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   * [.rule]#rule#  "Rule (e.g. 'deny')"
+   * [.struct]#struct#  - criteria
+       * [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       * [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       * [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   // no end needed
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#contentmanagement-updateProject]
+=== Method: updateProject 
+
+Description:
+
+Update Content Project with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+* [.struct]#struct#  - data
+      * [.string]#string#  "name" - Content Project name
+      * [.string]#string#  "description" - Content Project description
+  // no end needed
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "name"
+   * [.string]#string#  "description"
+   * [.int]#int#  "orgId"
+   * [.string]#string#  "firstEnvironment label"
+ // no end needed
+  
+ 
+
+
+'''
+

@@ -1,0 +1,292 @@
+
+
+
+[#org_trusts]
+== org.trusts
+
+
+=== Available methods
+
+* <<org_trusts-addTrust,addTrust>>
+* <<org_trusts-getDetails,getDetails>>
+* <<org_trusts-listChannelsConsumed,listChannelsConsumed>>
+* <<org_trusts-listChannelsProvided,listChannelsProvided>>
+* <<org_trusts-listOrgs,listOrgs>>
+* <<org_trusts-listSystemsAffected,listSystemsAffected>>
+* <<org_trusts-listTrusts,listTrusts>>
+* <<org_trusts-removeTrust,removeTrust>>
+
+=== Description
+
+Contains methods to access common organization trust information
+ available from the web interface.
+
+*Namespace*:
+
+org.trusts
+
+'''
+
+
+[#org_trusts-addTrust]
+=== Method: addTrust 
+
+Description:
+
+Add an organization to the list of trusted organizations.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.int]#int#  trustOrgId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#org_trusts-getDetails]
+=== Method: getDetails 
+
+Description:
+
+The trust details about an organization given
+ the organization's ID.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  trustOrgId - Id of the trusted organization
+ 
+
+Returns:
+
+* [.struct]#struct#  - org trust details
+          * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Date the organization was
+          created
+          * [.dateTime.iso8601]#dateTime.iso8601#  "trusted_since" - Date the organization was
+          defined as trusted
+          * [.int]#int#  "channels_provided" - Number of channels provided by
+          the organization.
+          * [.int]#int#  "channels_consumed" - Number of channels consumed by
+          the organization.
+          * [.int]#int#  "systems_migrated_to" - Number of systems migrated to
+          the organization.
+          * [.int]#int#  "systems_migrated_from" - Number of systems migrated
+          from the organization.
+     // no end needed
+ 
+
+
+'''
+
+
+[#org_trusts-listChannelsConsumed]
+=== Method: listChannelsConsumed 
+
+Description:
+
+Lists all software channels that the organization given may consume
+ from the user's organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  trustOrgId - Id of the trusted organization
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+             * [.int]#int#  "channel_id"
+             * [.string]#string#  "channel_name"
+             * [.int]#int#  "packages"
+             * [.int]#int#  "systems"
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#org_trusts-listChannelsProvided]
+=== Method: listChannelsProvided 
+
+Description:
+
+Lists all software channels that the organization given is providing to
+ the user's organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  trustOrgId - Id of the trusted organization
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+             * [.int]#int#  "channel_id"
+             * [.string]#string#  "channel_name"
+             * [.int]#int#  "packages"
+             * [.int]#int#  "systems"
+         // no end needed
+     // no end needed
+ 
+
+
+'''
+
+
+[#org_trusts-listOrgs]
+=== Method: listOrgs 
+
+Description:
+
+List all organanizations trusted by the user's organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - trusted organizations
+       * [.int]#int#  "org_id"
+       * [.string]#string#  "org_name"
+       * [.int]#int#  "shared_channels"
+     // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#org_trusts-listSystemsAffected]
+=== Method: listSystemsAffected 
+
+Description:
+
+Get a list of systems within the  trusted organization
+   that would be affected if the trust relationship was removed.
+   This basically lists systems that are sharing at least (1) package.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.string]#string#  trustOrgId
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - affected systems
+       * [.int]#int#  "systemId"
+       * [.string]#string#  "systemName"
+     // no end needed
+   // no end needed
+ 
+
+
+'''
+
+
+[#org_trusts-listTrusts]
+=== Method: listTrusts 
+
+Description:
+
+Returns the list of trusted organizations.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+
+Returns:
+
+* * [.array]#array# :
+     * [.struct]#struct#  - trusted organizations
+       * [.int]#int#  "orgId"
+       * [.string]#string#  "orgName"
+       * [.boolean]#boolean#  "trustEnabled"
+     // no end needed
+   // no end needed
+  
+ 
+
+
+'''
+
+
+[#org_trusts-removeTrust]
+=== Method: removeTrust 
+
+Description:
+
+Remove an organization to the list of trusted organizations.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  orgId
+ 
+* [.int]#int#  trustOrgId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

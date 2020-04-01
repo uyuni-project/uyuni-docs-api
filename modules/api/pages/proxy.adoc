@@ -1,0 +1,221 @@
+
+
+
+[#proxy]
+== proxy
+
+
+=== Available methods
+
+* <<proxy-activateProxy,activateProxy>>
+* <<proxy-createMonitoringScout,createMonitoringScout>>
+* <<proxy-deactivateProxy,deactivateProxy>>
+* <<proxy-isProxy,isProxy>>
+* <<proxy-listAvailableProxyChannels,listAvailableProxyChannels>>
+* <<proxy-listProxies,listProxies>>
+* <<proxy-listProxyClients,listProxyClients>>
+
+=== Description
+
+Provides methods to activate/deactivate a proxy
+ server.
+
+*Namespace*:
+
+proxy
+
+'''
+
+
+[#proxy-activateProxy]
+=== Method: activateProxy 
+
+Description:
+
+Activates the proxy identified by the given client
+ certificate i.e. systemid file.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+* [.string]#string#  version - Version of proxy to be
+ registered.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#proxy-createMonitoringScout]
+=== Method: createMonitoringScout 
+
+Description:
+
+Create Monitoring Scout for proxy.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* string 
+ 
+
+Available since API version: 10.7
+
+'''
+
+
+[#proxy-deactivateProxy]
+=== Method: deactivateProxy 
+
+Description:
+
+Deactivates the proxy identified by the given client
+ certificate i.e. systemid file.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#proxy-isProxy]
+=== Method: isProxy 
+
+Description:
+
+Test, if the system identified by the given client
+ certificate i.e. systemid file, is proxy.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#proxy-listAvailableProxyChannels]
+=== Method: listAvailableProxyChannels 
+
+Description:
+
+List available version of proxy channel for system
+ identified by the given client certificate i.e. systemid file.
+
+
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - version
+ 
+
+Available since API version: 10.5
+
+'''
+
+
+[#proxy-listProxies]
+=== Method: listProxies 
+
+Description:
+
+List the proxies within the user's organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#proxy-listProxyClients]
+=== Method: listProxyClients 
+
+Description:
+
+List the clients directly connected to a given Proxy.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+*  
+
+Returns:
+
+* [.array]#array# :
+** int - clientId
+ 
+
+
+'''
+

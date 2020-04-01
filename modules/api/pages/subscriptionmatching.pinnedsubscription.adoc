@@ -1,0 +1,113 @@
+
+
+
+[#subscriptionmatching_pinnedsubscription]
+== subscriptionmatching.pinnedsubscription
+
+
+=== Available methods
+
+* <<subscriptionmatching_pinnedsubscription-create,create>>
+* <<subscriptionmatching_pinnedsubscription-delete,delete>>
+* <<subscriptionmatching_pinnedsubscription-list,list>>
+
+=== Description
+
+Provides the namespace for operations on Pinned Subscriptions
+
+*Namespace*:
+
+subscriptionmatching.pinnedsubscription
+
+'''
+
+
+[#subscriptionmatching_pinnedsubscription-create]
+=== Method: create 
+
+Description:
+
+Creates a Pinned Subscription based on given subscription and system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  subscriptionId - Subscription Id
+ 
+* [.int]#int#  systemId - System Id
+ 
+
+Returns:
+
+* * [.struct]#struct#  - pinned subscription
+      * [.int]#int#  "id"
+      * [.int]#int#  "subscription_id"
+      * [.int]#int#  "system_id"
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#subscriptionmatching_pinnedsubscription-delete]
+=== Method: delete 
+
+Description:
+
+Deletes Pinned Subscription with given id
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  pinnedSubscriptionId - Pinned Subscription id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#subscriptionmatching_pinnedsubscription-list]
+=== Method: list 
+
+Description:
+
+Lists all PinnedSubscriptions
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - pinned subscription
+      * [.int]#int#  "id"
+      * [.int]#int#  "subscription_id"
+      * [.int]#int#  "system_id"
+  // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+

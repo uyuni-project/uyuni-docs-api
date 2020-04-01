@@ -1,0 +1,134 @@
+
+
+
+[#channel_access]
+== channel.access
+
+
+=== Available methods
+
+* <<channel_access-disableUserRestrictions,disableUserRestrictions>>
+* <<channel_access-enableUserRestrictions,enableUserRestrictions>>
+* <<channel_access-getOrgSharing,getOrgSharing>>
+* <<channel_access-setOrgSharing,setOrgSharing>>
+
+=== Description
+
+Provides methods to retrieve and alter channel access restrictions.
+
+*Namespace*:
+
+channel.access
+
+'''
+
+
+[#channel_access-disableUserRestrictions]
+=== Method: disableUserRestrictions 
+
+Description:
+
+Disable user restrictions for the given channel.  If disabled,
+ all users within the organization may subscribe to the channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#channel_access-enableUserRestrictions]
+=== Method: enableUserRestrictions 
+
+Description:
+
+Enable user restrictions for the given channel. If enabled, only
+ selected users within the organization may subscribe to the channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#channel_access-getOrgSharing]
+=== Method: getOrgSharing 
+
+Description:
+
+Get organization sharing access control.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* string - The access value (one of the following: 'public',
+ 'private', or 'protected'. 
+ 
+
+
+'''
+
+
+[#channel_access-setOrgSharing]
+=== Method: setOrgSharing 
+
+Description:
+
+Set organization sharing access control.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+* [.string]#string#  access - Access (one of the
+                  following: 'public', 'private', or 'protected'
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

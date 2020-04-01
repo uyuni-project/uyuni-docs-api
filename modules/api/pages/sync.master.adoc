@@ -1,0 +1,485 @@
+
+
+
+[#sync_master]
+== sync.master
+
+
+=== Available methods
+
+* <<sync_master-addToMaster,addToMaster>>
+* <<sync_master-create,create>>
+* <<sync_master-delete,delete>>
+* <<sync_master-getDefaultMaster,getDefaultMaster>>
+* <<sync_master-getMaster,getMaster>>
+* <<sync_master-getMasterByLabel,getMasterByLabel>>
+* <<sync_master-getMasterOrgs,getMasterOrgs>>
+* <<sync_master-getMasters,getMasters>>
+* <<sync_master-hasMaster,hasMaster>>
+* <<sync_master-makeDefault,makeDefault>>
+* <<sync_master-mapToLocal,mapToLocal>>
+* <<sync_master-setCaCert,setCaCert>>
+* <<sync_master-setMasterOrgs,setMasterOrgs>>
+* <<sync_master-unsetDefaultMaster,unsetDefaultMaster>>
+* <<sync_master-update,update>>
+
+=== Description
+
+Contains methods to set up information about known-"masters", for use
+ on the "slave" side of ISS
+
+*Namespace*:
+
+sync.master
+
+'''
+
+
+[#sync_master-addToMaster]
+=== Method: addToMaster 
+
+Description:
+
+Add a single organizations to the list of those the specified Master has
+ exported to this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Master
+ 
+* [.struct]#struct#  - master-org details
+          * [.int]#int#  "masterOrgId"
+          * [.string]#string#  "masterOrgName"
+          * [.int]#int#  "localOrgId"
+     // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-create]
+=== Method: create 
+
+Description:
+
+Create a new Master, known to this Slave.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Master's fully-qualified domain name
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_master-delete]
+=== Method: delete 
+
+Description:
+
+Remove the specified Master
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Master to remove
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-getDefaultMaster]
+=== Method: getDefaultMaster 
+
+Description:
+
+Return the current default-Master for this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_master-getMaster]
+=== Method: getMaster 
+
+Description:
+
+Find a Master by specifying its ID
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Master
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_master-getMasterByLabel]
+=== Method: getMasterByLabel 
+
+Description:
+
+Find a Master by specifying its label
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Label of the desired Master
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_master-getMasterOrgs]
+=== Method: getMasterOrgs 
+
+Description:
+
+List all organizations the specified Master has exported to this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Master
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - IssMasterOrg info
+   * [.int]#int#  "masterOrgId"
+   * [.string]#string#  "masterOrgName"
+   * [.int]#int#  "localOrgId"
+ // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#sync_master-getMasters]
+=== Method: getMasters 
+
+Description:
+
+Get all the Masters this Slave knows about
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#sync_master-hasMaster]
+=== Method: hasMaster 
+
+Description:
+
+Check if this host is reading configuration from an ISS master.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* boolean - True if has an ISS master, false otherwise. 
+ 
+
+
+'''
+
+
+[#sync_master-makeDefault]
+=== Method: makeDefault 
+
+Description:
+
+Make the specified Master the default for this Slave's satellite-sync
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Master to make the default
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-mapToLocal]
+=== Method: mapToLocal 
+
+Description:
+
+Add a single organizations to the list of those the specified Master has
+ exported to this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  masterId - Id of the desired Master
+ 
+* [.int]#int#  masterOrgId - Id of the desired Master
+ 
+* [.int]#int#  localOrgId - Id of the desired Master
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-setCaCert]
+=== Method: setCaCert 
+
+Description:
+
+Set the CA-CERT filename for specified Master on this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Master to affect
+ 
+* [.string]#string#  caCertFilename - path to specified Master's CA cert
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-setMasterOrgs]
+=== Method: setMasterOrgs 
+
+Description:
+
+Reset all organizations the specified Master has exported to this Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Master
+ 
+* [.array]#array# :
+      * [.struct]#struct#  - master-org details
+          * [.int]#int#  "masterOrgId"
+          * [.string]#string#  "masterOrgName"
+          * [.int]#int#  "localOrgId"
+     // no end needed
+   // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-unsetDefaultMaster]
+=== Method: unsetDefaultMaster 
+
+Description:
+
+Make this slave have no default Master for satellite-sync
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_master-update]
+=== Method: update 
+
+Description:
+
+Updates the label of the specified Master
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Master to update
+ 
+* [.string]#string#  label - Desired new label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssMaster info
+   * [.int]#int#  "id"
+   * [.string]#string#  "label"
+   * [.string]#string#  "caCert"
+   * [.boolean]#boolean#  "isCurrentMaster"
+ // no end needed
+  
+ 
+
+
+'''
+

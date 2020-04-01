@@ -1,0 +1,629 @@
+
+
+
+[#systemgroup]
+== systemgroup
+
+
+=== Available methods
+
+* <<systemgroup-addOrRemoveAdmins,addOrRemoveAdmins>>
+* <<systemgroup-addOrRemoveSystems,addOrRemoveSystems>>
+* <<systemgroup-create,create>>
+* <<systemgroup-delete,delete>>
+* <<systemgroup-getDetails,getDetails>>
+* <<systemgroup-getDetails,getDetails>>
+* <<systemgroup-listActiveSystemsInGroup,listActiveSystemsInGroup>>
+* <<systemgroup-listAdministrators,listAdministrators>>
+* <<systemgroup-listAllGroups,listAllGroups>>
+* <<systemgroup-listGroupsWithNoAssociatedAdmins,listGroupsWithNoAssociatedAdmins>>
+* <<systemgroup-listInactiveSystemsInGroup,listInactiveSystemsInGroup>>
+* <<systemgroup-listInactiveSystemsInGroup,listInactiveSystemsInGroup>>
+* <<systemgroup-listSystems,listSystems>>
+* <<systemgroup-listSystemsMinimal,listSystemsMinimal>>
+* <<systemgroup-scheduleApplyErrataToActive,scheduleApplyErrataToActive>>
+* <<systemgroup-scheduleApplyErrataToActive,scheduleApplyErrataToActive>>
+* <<systemgroup-update,update>>
+
+=== Description
+
+Provides methods to access and modify system groups.
+
+*Namespace*:
+
+systemgroup
+
+'''
+
+
+[#systemgroup-addOrRemoveAdmins]
+=== Method: addOrRemoveAdmins 
+
+Description:
+
+Add or remove administrators to/from the given group. Satellite and
+ Organization administrators are granted access to groups within their organization
+ by default; therefore, users with those roles should not be included in the array
+ provided. Caller must be an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** string - loginName - User's loginName
+ 
+* [.int]#int#  add - 1 to add administrators, 0 to remove.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#systemgroup-addOrRemoveSystems]
+=== Method: addOrRemoveSystems 
+
+Description:
+
+Add/remove the given servers to a system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** int - serverId
+ 
+* [.boolean]#boolean#  add - True to add to the group,
+              False to remove.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#systemgroup-create]
+=== Method: create 
+
+Description:
+
+Create a new system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the system group.
+ 
+* [.string]#string#  description - Description of the
+                  system group.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+  
+ 
+
+
+'''
+
+
+[#systemgroup-delete]
+=== Method: delete 
+
+Description:
+
+Delete a system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#systemgroup-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Retrieve details of a ServerGroup based on it's id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemGroupId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+  
+ 
+
+
+'''
+
+
+[#systemgroup-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Retrieve details of a ServerGroup based on it's name
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+  
+ 
+
+
+'''
+
+
+[#systemgroup-listActiveSystemsInGroup]
+=== Method: listActiveSystemsInGroup 
+
+Description:
+
+Lists active systems within a server group
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - server_id
+ 
+
+
+'''
+
+
+[#systemgroup-listAdministrators]
+=== Method: listAdministrators 
+
+Description:
+
+Returns the list of users who can administer the given group.
+ Caller must be a system group admin or an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* string systemGroupName 
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - user
+              * [.int]#int#  "id"
+              * [.string]#string#  "login"
+              * [.string]#string#  "login_uc" - upper case version of the login
+              * [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+      // no end needed
+ 
+   // no end needed
+ 
+
+
+'''
+
+
+[#systemgroup-listAllGroups]
+=== Method: listAllGroups 
+
+Description:
+
+Retrieve a list of system groups that are accessible by the logged
+      in user.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#systemgroup-listGroupsWithNoAssociatedAdmins]
+=== Method: listGroupsWithNoAssociatedAdmins 
+
+Description:
+
+Returns a list of system groups that do not have an administrator.
+ (who is not an organization administrator, as they have implicit access to
+ system groups) Caller must be an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#systemgroup-listInactiveSystemsInGroup]
+=== Method: listInactiveSystemsInGroup 
+
+Description:
+
+Lists inactive systems within a server group using a
+          specified inactivity time.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.int]#int#  daysInactive - Number of days a system
+           must not check in to be considered inactive.
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - server_id
+ 
+
+
+'''
+
+
+[#systemgroup-listInactiveSystemsInGroup]
+=== Method: listInactiveSystemsInGroup 
+
+Description:
+
+Lists inactive systems within a server group using the default
+          1 day threshold.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - server_id
+ 
+
+
+'''
+
+
+[#systemgroup-listSystems]
+=== Method: listSystems 
+
+Description:
+
+Return a list of systems associated with this system group.
+ User must have access to this system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - server details
+         * [.int]#int#  "id" - System id
+         * [.string]#string#  "profile_name"
+         * [.string]#string#  "machine_id"
+         * [.string]#string#  "minion_id"
+         * [.string]#string#  "base_entitlement" - System's base entitlement label
+
+         * [.array]#array#  "string"
+** addon_entitlements - System's addon entitlements labels,
+                       currently only 'virtualization_host'
+          * [.boolean]#boolean#  "auto_update" - True if system has auto errata updates
+                                          enabled.
+          * [.string]#string#  "release" - The Operating System release (i.e. 4AS,
+                      5Server
+          * [.string]#string#  "address1"
+          * [.string]#string#  "address2"
+          * [.string]#string#  "city"
+          * [.string]#string#  "state"
+          * [.string]#string#  "country"
+          * [.string]#string#  "building"
+          * [.string]#string#  "room"
+          * [.string]#string#  "rack"
+          * [.string]#string#  "description"
+          * [.string]#string#  "hostname"
+          * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot"
+          * [.string]#string#  "osa_status" - Either 'unknown', 'offline', or 'online'.
+          * [.boolean]#boolean#  "lock_status" - True indicates that the system is locked.
+           False indicates that the system is unlocked.
+          * [.string]#string#  "virtualization" - Virtualization type -
+           for virtual guests only (optional)
+          * [.string]#string#  "contact_method" - One of the following:
+            // no end needed
+              * default
+              * ssh-push
+              * ssh-push-tunnel
+            // no end needed
+  // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#systemgroup-listSystemsMinimal]
+=== Method: listSystemsMinimal 
+
+Description:
+
+Return a list of systems associated with this system group.
+ User must have access to this system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#systemgroup-scheduleApplyErrataToActive]
+=== Method: scheduleApplyErrataToActive 
+
+Description:
+
+Schedules an action to apply errata updates to active systems
+ from a group.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** int - errataId
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#systemgroup-scheduleApplyErrataToActive]
+=== Method: scheduleApplyErrataToActive 
+
+Description:
+
+Schedules an action to apply errata updates to active systems
+ from a group at a given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** int - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - actionId
+ 
+
+Available since API version: 13.0
+
+'''
+
+
+[#systemgroup-update]
+=== Method: update 
+
+Description:
+
+Update an existing system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.string]#string#  description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          * [.int]#int#  "id"
+          * [.string]#string#  "name"
+          * [.string]#string#  "description"
+          * [.int]#int#  "org_id"
+          * [.int]#int#  "system_count"
+      // no end needed
+  
+ 
+
+
+'''
+

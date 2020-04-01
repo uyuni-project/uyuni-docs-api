@@ -1,0 +1,113 @@
+
+
+
+[#channel_org]
+== channel.org
+
+
+=== Available methods
+
+* <<channel_org-disableAccess,disableAccess>>
+* <<channel_org-enableAccess,enableAccess>>
+* <<channel_org-list,list>>
+
+=== Description
+
+Provides methods to retrieve and alter organization trust
+ relationships for a channel.
+
+*Namespace*:
+
+channel.org
+
+'''
+
+
+[#channel_org-disableAccess]
+=== Method: disableAccess 
+
+Description:
+
+Disable access to the channel for the given organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+* [.int]#int#  orgId - id of org being removed access
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#channel_org-enableAccess]
+=== Method: enableAccess 
+
+Description:
+
+Enable access to the channel for the given organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+* [.int]#int#  orgId - id of org being granted access
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#channel_org-list]
+=== Method: list 
+
+Description:
+
+List the organizations associated with the given channel
+ that may be trusted.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - org
+          * [.int]#int#  "org_id"
+          * [.string]#string#  "org_name"
+          * [.boolean]#boolean#  "access_enabled"
+     // no end needed
+  // no end needed
+ 
+
+
+'''
+

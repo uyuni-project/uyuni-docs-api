@@ -1,0 +1,133 @@
+
+
+
+[#preferences_locale]
+== preferences.locale
+
+
+=== Available methods
+
+* <<preferences_locale-listLocales,listLocales>>
+* <<preferences_locale-listTimeZones,listTimeZones>>
+* <<preferences_locale-setLocale,setLocale>>
+* <<preferences_locale-setTimeZone,setTimeZone>>
+
+=== Description
+
+Provides methods to access and modify user locale information
+
+*Namespace*:
+
+preferences.locale
+
+'''
+
+
+[#preferences_locale-listLocales]
+=== Method: listLocales 
+
+Description:
+
+Returns a list of all understood locales. Can be
+ used as input to setLocale.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* [.array]#array# :
+** string - Locale code.
+ 
+
+
+'''
+
+
+[#preferences_locale-listTimeZones]
+=== Method: listTimeZones 
+
+Description:
+
+Returns a list of all understood timezones. Results can be
+ used as input to setTimeZone.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - timezone
+   * [.int]#int#  "time_zone_id" - Unique identifier for timezone.
+   * [.string]#string#  "olson_name" - Name as identified by the Olson database.
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+
+
+[#preferences_locale-setLocale]
+=== Method: setLocale 
+
+Description:
+
+Set a user's locale.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  locale - Locale to set. (from listLocales)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#preferences_locale-setTimeZone]
+=== Method: setTimeZone 
+
+Description:
+
+Set a user's timezone.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.int]#int#  tzid - Timezone ID. (from listTimeZones)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

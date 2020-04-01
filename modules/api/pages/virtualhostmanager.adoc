@@ -1,0 +1,198 @@
+
+
+
+[#virtualhostmanager]
+== virtualhostmanager
+
+
+=== Available methods
+
+* <<virtualhostmanager-create,create>>
+* <<virtualhostmanager-delete,delete>>
+* <<virtualhostmanager-getDetail,getDetail>>
+* <<virtualhostmanager-getModuleParameters,getModuleParameters>>
+* <<virtualhostmanager-listAvailableVirtualHostGathererModules,listAvailableVirtualHostGathererModules>>
+* <<virtualhostmanager-listVirtualHostManagers,listVirtualHostManagers>>
+
+=== Description
+
+Provides the namespace for the Virtual Host Manager methods.
+
+*Namespace*:
+
+virtualhostmanager
+
+'''
+
+
+[#virtualhostmanager-create]
+=== Method: create 
+
+Description:
+
+Creates a Virtual Host Manager from given arguments
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  label - Virtual Host Manager label
+ 
+* [.string]#string#  moduleName - the name of the Gatherer module
+ 
+* [.parameters]#parameters#  parameters - additional parameters (credentials, parameters for virtual-host-gatherer)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#virtualhostmanager-delete]
+=== Method: delete 
+
+Description:
+
+Deletes a Virtual Host Manager with a given label
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  label - Virtual Host Manager label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#virtualhostmanager-getDetail]
+=== Method: getDetail 
+
+Description:
+
+Gets details of a Virtual Host Manager with a given label
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  label - Virtual Host Manager label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - virtual host manager
+      * [.string]#string#  "label"
+      * [.int]#int#  "org_id"
+      * [.string]#string#  "gatherer_module"
+      * [.struct]#struct#  "configs"
+  // no end needed
+  
+ 
+
+
+'''
+
+
+[#virtualhostmanager-getModuleParameters]
+=== Method: getModuleParameters 
+
+Description:
+
+Get a list of parameters for a virtual-host-gatherer module.
+ It returns a map of parameters with their typical default values.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  moduleName - The name of the module
+ 
+
+Returns:
+
+* map 
+ 
+
+
+'''
+
+
+[#virtualhostmanager-listAvailableVirtualHostGathererModules]
+=== Method: listAvailableVirtualHostGathererModules 
+
+Description:
+
+List all available modules from virtual-host-gatherer
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+** string - moduleName
+ 
+
+
+'''
+
+
+[#virtualhostmanager-listVirtualHostManagers]
+=== Method: listVirtualHostManagers 
+
+Description:
+
+Lists Virtual Host Managers visible to a user
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - virtual host manager
+      * [.string]#string#  "label"
+      * [.int]#int#  "org_id"
+      * [.string]#string#  "gatherer_module"
+      * [.struct]#struct#  "configs"
+  // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+

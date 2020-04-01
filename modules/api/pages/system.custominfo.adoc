@@ -1,0 +1,139 @@
+
+
+
+[#system_custominfo]
+== system.custominfo
+
+
+=== Available methods
+
+* <<system_custominfo-createKey,createKey>>
+* <<system_custominfo-deleteKey,deleteKey>>
+* <<system_custominfo-listAllKeys,listAllKeys>>
+* <<system_custominfo-updateKey,updateKey>>
+
+=== Description
+
+Provides methods to access and modify custom system information.
+
+*Namespace*:
+
+system.custominfo
+
+'''
+
+
+[#system_custominfo-createKey]
+=== Method: createKey 
+
+Description:
+
+Create a new custom key
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  keyLabel - new key's label
+ 
+* [.string]#string#  keyDescription - new key's description
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system_custominfo-deleteKey]
+=== Method: deleteKey 
+
+Description:
+
+Delete an existing custom key and all systems' values for the key.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  keyLabel - new key's label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#system_custominfo-listAllKeys]
+=== Method: listAllKeys 
+
+Description:
+
+List the custom information keys defined for the user's organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - custom info
+          * [.int]#int#  "id"
+          * [.string]#string#  "label"
+          * [.string]#string#  "description"
+          * [.int]#int#  "system_count"
+          * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#system_custominfo-updateKey]
+=== Method: updateKey 
+
+Description:
+
+Update description of a custom key
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  keyLabel - key to change
+ 
+* [.string]#string#  keyDescription - new key's description
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

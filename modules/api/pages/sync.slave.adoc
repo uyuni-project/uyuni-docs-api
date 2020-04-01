@@ -1,0 +1,281 @@
+
+
+
+[#sync_slave]
+== sync.slave
+
+
+=== Available methods
+
+* <<sync_slave-create,create>>
+* <<sync_slave-delete,delete>>
+* <<sync_slave-getAllowedOrgs,getAllowedOrgs>>
+* <<sync_slave-getSlave,getSlave>>
+* <<sync_slave-getSlaveByName,getSlaveByName>>
+* <<sync_slave-getSlaves,getSlaves>>
+* <<sync_slave-setAllowedOrgs,setAllowedOrgs>>
+* <<sync_slave-update,update>>
+
+=== Description
+
+Contains methods to set up information about allowed-"slaves", for use
+ on the "master" side of ISS
+
+*Namespace*:
+
+sync.slave
+
+'''
+
+
+[#sync_slave-create]
+=== Method: create 
+
+Description:
+
+Create a new Slave, known to this Master.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  slave - Slave's fully-qualified domain name
+ 
+* [.boolean]#boolean#  enabled - Let this slave talk to us?
+ 
+* [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this slave?
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   * [.int]#int#  "id"
+   * [.string]#string#  "slave"
+   * [.boolean]#boolean#  "enabled"
+   * [.boolean]#boolean#  "allowAllOrgs"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_slave-delete]
+=== Method: delete 
+
+Description:
+
+Remove the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Slave to remove
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_slave-getAllowedOrgs]
+=== Method: getAllowedOrgs 
+
+Description:
+
+Get all orgs this Master is willing to export to the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+
+Returns:
+
+* [.array]#array# :
+** int - ids of allowed organizations
+ 
+
+
+'''
+
+
+[#sync_slave-getSlave]
+=== Method: getSlave 
+
+Description:
+
+Find a Slave by specifying its ID
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   * [.int]#int#  "id"
+   * [.string]#string#  "slave"
+   * [.boolean]#boolean#  "enabled"
+   * [.boolean]#boolean#  "allowAllOrgs"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_slave-getSlaveByName]
+=== Method: getSlaveByName 
+
+Description:
+
+Find a Slave by specifying its Fully-Qualified Domain Name
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - Domain-name of the desired Slave
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   * [.int]#int#  "id"
+   * [.string]#string#  "slave"
+   * [.boolean]#boolean#  "enabled"
+   * [.boolean]#boolean#  "allowAllOrgs"
+ // no end needed
+  
+ 
+
+
+'''
+
+
+[#sync_slave-getSlaves]
+=== Method: getSlaves 
+
+Description:
+
+Get all the Slaves this Master knows about
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - IssSlave info
+   * [.int]#int#  "id"
+   * [.string]#string#  "slave"
+   * [.boolean]#boolean#  "enabled"
+   * [.boolean]#boolean#  "allowAllOrgs"
+ // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+
+
+[#sync_slave-setAllowedOrgs]
+=== Method: setAllowedOrgs 
+
+Description:
+
+Set the orgs this Master is willing to export to the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+* [.array]#array# :
+** int - List of org-ids we're willing to export
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#sync_slave-update]
+=== Method: update 
+
+Description:
+
+Updates attributes of the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Slave to update
+ 
+* [.string]#string#  slave - Slave's fully-qualified domain name
+ 
+* [.boolean]#boolean#  enabled - Let this slave talk to us?
+ 
+* [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this Slave?
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   * [.int]#int#  "id"
+   * [.string]#string#  "slave"
+   * [.boolean]#boolean#  "enabled"
+   * [.boolean]#boolean#  "allowAllOrgs"
+ // no end needed
+  
+ 
+
+
+'''
+

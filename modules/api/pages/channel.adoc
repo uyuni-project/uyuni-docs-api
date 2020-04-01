@@ -1,0 +1,351 @@
+
+
+
+[#channel]
+== channel
+
+
+=== Available methods
+
+* <<channel-listAllChannels,listAllChannels>>
+* <<channel-listManageableChannels,listManageableChannels>>
+* <<channel-listMyChannels,listMyChannels>>
+* <<channel-listPopularChannels,listPopularChannels>>
+* <<channel-listRedHatChannels,listRedHatChannels>>
+* <<channel-listRetiredChannels,listRetiredChannels>>
+* <<channel-listSharedChannels,listSharedChannels>>
+* <<channel-listSoftwareChannels,listSoftwareChannels>>
+* <<channel-listVendorChannels,listVendorChannels>>
+
+=== Description
+
+Provides method to get back a list of Software Channels.
+
+*Namespace*:
+
+channel
+
+'''
+
+
+[#channel-listAllChannels]
+=== Method: listAllChannels 
+
+Description:
+
+List all software channels that the user's organization is entitled to.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listManageableChannels]
+=== Method: listManageableChannels 
+
+Description:
+
+List all software channels that the user is entitled to manage.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listMyChannels]
+=== Method: listMyChannels 
+
+Description:
+
+List all software channels that belong to the user's organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listPopularChannels]
+=== Method: listPopularChannels 
+
+Description:
+
+List the most popular software channels.  Channels that have at least
+ the number of systems subscribed as specified by the popularity count will be
+ returned.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  popularityCount
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listRedHatChannels]
+=== Method: listRedHatChannels (Deprecated)
+
+Description:
+
+List all Red Hat software channels that the user's organization is
+ entitled to.
+
+
+Deprecated - being replaced by listVendorChannels(String sessionKey)
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listRetiredChannels]
+=== Method: listRetiredChannels 
+
+Description:
+
+List all retired software channels.  These are channels that the user's
+ organization is entitled to, but are no longer supported because they have reached
+ their 'end-of-life' date.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listSharedChannels]
+=== Method: listSharedChannels 
+
+Description:
+
+List all software channels that may be shared by the user's
+ organization.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+
+
+[#channel-listSoftwareChannels]
+=== Method: listSoftwareChannels 
+
+Description:
+
+List all visible software channels.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - channel
+          * [.string]#string#  "label"
+          * [.string]#string#  "name"
+          * [.string]#string#  "parent_label"
+          * [.string]#string#  "end_of_life"
+          * [.string]#string#  "arch"
+      // no end needed
+  // no end needed
+ 
+
+
+'''
+
+
+[#channel-listVendorChannels]
+=== Method: listVendorChannels 
+
+Description:
+
+Lists all the vendor software channels that the user's organization
+ is entitled to.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channel info
+     * [.int]#int#  "id"
+     * [.string]#string#  "label"
+     * [.string]#string#  "name"
+     * [.string]#string#  "provider_name"
+     * [.int]#int#  "packages"
+     * [.int]#int#  "systems"
+     * [.string]#string#  "arch_name"
+   // no end needed
+ 
+     // no end needed
+ 
+
+
+'''
+

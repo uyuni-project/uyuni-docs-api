@@ -1,0 +1,212 @@
+
+
+
+[#kickstart_profile_software]
+== kickstart.profile.software
+
+
+=== Available methods
+
+* <<kickstart_profile_software-appendToSoftwareList,appendToSoftwareList>>
+* <<kickstart_profile_software-getSoftwareDetails,getSoftwareDetails>>
+* <<kickstart_profile_software-getSoftwareList,getSoftwareList>>
+* <<kickstart_profile_software-setSoftwareDetails,setSoftwareDetails>>
+* <<kickstart_profile_software-setSoftwareList,setSoftwareList>>
+* <<kickstart_profile_software-setSoftwareList,setSoftwareList>>
+
+=== Description
+
+Provides methods to access and modify the software list
+ associated with a kickstart profile.
+
+*Namespace*:
+
+kickstart.profile.software
+
+'''
+
+
+[#kickstart_profile_software-appendToSoftwareList]
+=== Method: appendToSoftwareList 
+
+Description:
+
+Append the list of software packages to a kickstart profile.
+ Duplicate packages will be ignored.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of a kickstart
+ profile.
+ 
+* [.string[]]#string[]#  packageList - A list of package
+ names to be added to the profile.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_software-getSoftwareDetails]
+=== Method: getSoftwareDetails 
+
+Description:
+
+Gets kickstart profile software details.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - Label of the kickstart profile
+ 
+
+Returns:
+
+* [.struct]#struct#  - Kickstart packages info
+              * [.string]#string#  "noBase" - Install @Base package group
+              * [.string]#string#  "ignoreMissing" - Ignore missing packages
+          // no end needed
+ 
+
+
+'''
+
+
+[#kickstart_profile_software-getSoftwareList]
+=== Method: getSoftwareList 
+
+Description:
+
+Get a list of a kickstart profile's software packages.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of a kickstart
+ profile.
+ 
+
+Returns:
+
+* string[] - Get a list of a kickstart profile's
+ software packages. 
+ 
+
+
+'''
+
+
+[#kickstart_profile_software-setSoftwareDetails]
+=== Method: setSoftwareDetails 
+
+Description:
+
+Sets kickstart profile software details.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - Label of the kickstart profile
+ 
+* [.struct]#struct#  - Kickstart packages info
+              * [.string]#string#  "noBase" - Install @Base package group
+              * [.string]#string#  "ignoreMissing" - Ignore missing packages
+          // no end needed
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_software-setSoftwareList]
+=== Method: setSoftwareList 
+
+Description:
+
+Set the list of software packages for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of a kickstart
+ profile.
+ 
+* [.string[]]#string[]#  packageList - A list of package
+ names to be set on the profile.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_profile_software-setSoftwareList]
+=== Method: setSoftwareList 
+
+Description:
+
+Set the list of software packages for a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - The label of a kickstart
+ profile.
+ 
+* [.string[]]#string[]#  packageList - A list of package
+ names to be set on the profile.
+ 
+* [.boolean]#boolean#  ignoremissing - Ignore missing packages
+ if true
+ 
+* [.boolean]#boolean#  nobase - Don't install @Base package group
+ if true
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+

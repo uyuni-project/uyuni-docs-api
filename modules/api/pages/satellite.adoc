@@ -1,0 +1,111 @@
+
+
+
+[#satellite]
+== satellite
+
+
+=== Available methods
+
+* <<satellite-isMonitoringEnabled,isMonitoringEnabled>>
+* <<satellite-isMonitoringEnabledBySystemId,isMonitoringEnabledBySystemId>>
+* <<satellite-listProxies,listProxies>>
+
+=== Description
+
+Provides methods to obtain details on the Satellite.
+
+*Namespace*:
+
+satellite
+
+'''
+
+
+[#satellite-isMonitoringEnabled]
+=== Method: isMonitoringEnabled (Deprecated)
+
+Description:
+
+Indicates if monitoring is enabled on the satellite
+
+
+Deprecated - deprecated unused method. See new namespace admin.monitoring.
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.boolean]#boolean#  True if monitoring is enabled
+ 
+
+
+'''
+
+
+[#satellite-isMonitoringEnabledBySystemId]
+=== Method: isMonitoringEnabledBySystemId (Deprecated)
+
+Description:
+
+Indicates if monitoring is enabled on the satellite
+
+
+Deprecated - deprecated unused method. See new namespace admin.monitoring.
+
+
+Parameters:
+
+* [.string]#string#  systemid - systemid file
+ 
+
+Returns:
+
+* [.boolean]#boolean#  True if monitoring is enabled
+ 
+
+
+'''
+
+
+[#satellite-listProxies]
+=== Method: listProxies (Deprecated)
+
+Description:
+
+List the proxies within the user's organization.
+
+
+Deprecated - moved to proxy.listProxies
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - system
+     * [.int]#int#  "id"
+     * [.string]#string#  "name"
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+ // no end needed
+ 
+ // no end needed
+ 
+
+
+'''
+

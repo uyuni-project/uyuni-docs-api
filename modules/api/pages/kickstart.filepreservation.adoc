@@ -1,0 +1,146 @@
+
+
+
+[#kickstart_filepreservation]
+== kickstart.filepreservation
+
+
+=== Available methods
+
+* <<kickstart_filepreservation-create,create>>
+* <<kickstart_filepreservation-delete,delete>>
+* <<kickstart_filepreservation-getDetails,getDetails>>
+* <<kickstart_filepreservation-listAllFilePreservations,listAllFilePreservations>>
+
+=== Description
+
+Provides methods to retrieve and manipulate kickstart file
+ preservation lists.
+
+*Namespace*:
+
+kickstart.filepreservation
+
+'''
+
+
+[#kickstart_filepreservation-create]
+=== Method: create 
+
+Description:
+
+Create a new file preservation list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to create
+ 
+* [.array]#array# :
+** string - name - file names to include
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_filepreservation-delete]
+=== Method: delete 
+
+Description:
+
+Delete a file preservation list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to delete
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#kickstart_filepreservation-getDetails]
+=== Method: getDetails 
+
+Description:
+
+Returns all of the data associated with the given file preservation
+ list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to retrieve
+ details for
+ 
+
+Returns:
+
+* * [.struct]#struct#  - file list
+     * [.string]#string#  "name"
+     * [.array]#array#  "file_names"
+** string - name
+   // no end needed
+  
+ 
+
+
+'''
+
+
+[#kickstart_filepreservation-listAllFilePreservations]
+=== Method: listAllFilePreservations 
+
+Description:
+
+List all file preservation lists for the organization
+ associated with the user logged into the given session
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+        * [.struct]#struct#  - file preservation
+      * [.int]#int#  "id"
+      * [.string]#string#  "name"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "created"
+      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+   // no end needed
+ 
+      // no end needed
+ 
+
+
+'''
+

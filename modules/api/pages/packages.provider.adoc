@@ -1,0 +1,127 @@
+
+
+
+[#packages_provider]
+== packages.provider
+
+
+=== Available methods
+
+* <<packages_provider-associateKey,associateKey>>
+* <<packages_provider-list,list>>
+* <<packages_provider-listKeys,listKeys>>
+
+=== Description
+
+Methods to retrieve information about Package Providers associated with
+      packages.
+
+*Namespace*:
+
+packages.provider
+
+'''
+
+
+[#packages_provider-associateKey]
+=== Method: associateKey 
+
+Description:
+
+Associate a package security key and with the package provider.
+      If the provider or key doesn't exist, it is created. User executing the
+      request must be a Satellite administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  providerName - The provider name
+ 
+* [.string]#string#  key - The actual key
+ 
+* [.string]#string#  type - The type of the key. Currently,
+ only 'gpg' is supported
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#packages_provider-list]
+=== Method: list 
+
+Description:
+
+List all Package Providers.
+ User executing the request must be a Satellite administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package provider
+   * [.string]#string#  "name"
+   * [.array]#array#  "keys"
+      * [.struct]#struct#  - package security key
+     * [.string]#string#  "key"
+     * [.string]#string#  "type"
+   // no end needed
+ 
+   // no end needed
+   // no end needed
+ 
+  // no end needed
+ 
+
+
+'''
+
+
+[#packages_provider-listKeys]
+=== Method: listKeys 
+
+Description:
+
+List all security keys associated with a package provider.
+ User executing the request must be a Satellite administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  providerName - The provider name
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package security key
+     * [.string]#string#  "key"
+     * [.string]#string#  "type"
+   // no end needed
+ 
+  // no end needed
+ 
+
+
+'''
+
