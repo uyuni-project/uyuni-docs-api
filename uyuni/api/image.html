@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/image.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+                <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
+        <span class="separator">//</span>
+          <a href="https://www.uyuni-project.org/uyuni-docs-api">Documentation</a> -->
+            </div>
+                <div class="navbar-item">
+                    <!-- <i class="fas fa-search"></i>&nbsp; -->
+                    <input id="search-input" type="text" placeholder="Search...">
+                </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Comment out this section and the twitter section for Product WebUI docs (SUMA) -->
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Resources</div>
+                    <div class="navbar-dropdown">
+                        <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                                class="fab fa-github"></i>&nbsp;Report Issue</a>
+                        <a class="navbar-item"
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+              <path fill="#57aaee"
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+        </a>
+    </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="uyuni" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scripts.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Uyuni</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Uyuni</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Uyuni</a></li>
+    <li><a href="image.html">image</a></li>
+  </ul>
+</nav>
+
+
+
+  <div class="edit-this-page">
+    <span class="prev-caret">
+      <a href="formula.html">
+        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
+&nbsp;
+<span class="next-caret">
+      <a href="#image_profile.adoc">
+        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
+    &nbsp;
+    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/image.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+</div>
+</div>
+<article class="doc"><a name="section-top"></a>
+<div class="sect1">
+<h2 id="image"><a class="anchor" href="#image"></a><a class="link" href="#image">image</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#image-delete">delete</a></p>
+</li>
+<li>
+<p><a href="#image-getCustomValues">getCustomValues</a></p>
+</li>
+<li>
+<p><a href="#image-getDetails">getDetails</a></p>
+</li>
+<li>
+<p><a href="#image-getRelevantErrata">getRelevantErrata</a></p>
+</li>
+<li>
+<p><a href="#image-importImage">importImage</a></p>
+</li>
+<li>
+<p><a href="#image-listImages">listImages</a></p>
+</li>
+<li>
+<p><a href="#image-listPackages">listPackages</a></p>
+</li>
+<li>
+<p><a href="#image-scheduleImageBuild">scheduleImageBuild</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+<div class="paragraph">
+<p>Provides methods to access and modify images.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>image</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-delete"><a class="anchor" href="#image-delete"></a><a class="link" href="#image-delete">Method: delete</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete an Image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-getCustomValues"><a class="anchor" href="#image-getCustomValues"></a><a class="link" href="#image-getCustomValues">Method: getCustomValues</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get the custom data values defined for the Image.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - Map of custom labels to custom values</p>
+</li>
+<li>
+<p><span class="string">string</span>  "custom info label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "value"
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-getDetails"><a class="anchor" href="#image-getDetails"></a><a class="link" href="#image-getDetails">Method: getDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get details of an Image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Image Overview information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - image name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version" - image tag/version</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - image build revision number</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - image architecture</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "external" - true if the image is built externally,
+false otherwise</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "profileLabel"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "buildStatus" - One of:
+// no end needed</p>
+</li>
+<li>
+<p>queued</p>
+</li>
+<li>
+<p>picked up</p>
+</li>
+<li>
+<p>completed</p>
+</li>
+<li>
+<p>failed
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "inspectStatus" - Available if the build is successful. One of:
+// no end needed</p>
+</li>
+<li>
+<p>queued</p>
+</li>
+<li>
+<p>picked up</p>
+</li>
+<li>
+<p>completed</p>
+</li>
+<li>
+<p>failed
+// no end needed</p>
+</li>
+<li>
+<p><span class="int">int</span>  "buildServerId"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "securityErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bugErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "enhancementErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "outdatedPackages"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "installedPackages"
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-getRelevantErrata"><a class="anchor" href="#image-getRelevantErrata"></a><a class="link" href="#image-getRelevantErrata">Method: getRelevantErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of all errata that are relevant for the image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata ID.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - Date erratum was updated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-importImage"><a class="anchor" href="#image-importImage"></a><a class="link" href="#image-importImage">Method: importImage</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Import an image and schedule an inspect afterwards</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - image name as specified in the
+store</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to import or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system ID of the build
+host</p>
+</li>
+<li>
+<p><span class="string">string</span>  storeLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - activation key to get
+the channel data from</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest
+the following inspect can run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - ID of the inspect action created</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-listImages"><a class="anchor" href="#image-listImages"></a><a class="link" href="#image-listImages">Method: listImages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List available Images</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Image information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - image name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version" - image tag/version</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - image build revision number</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - image architecture</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "external" - true if the image is built externally,
+false otherwise</p>
+</li>
+<li>
+<p><span class="string">string</span>  "storeLabel"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"
+// no end needed
+ // no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-listPackages"><a class="anchor" href="#image-listPackages"></a><a class="link" href="#image-listPackages">Method: listPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the installed packages on the given image.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch"
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="image-scheduleImageBuild"><a class="anchor" href="#image-scheduleImageBuild"></a><a class="link" href="#image-scheduleImageBuild">Method: scheduleImageBuild</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule an image build</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to build or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system id of the build host</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the build can run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - ID of the build action created.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+
+<div class="cedents grid" role="navigation">
+
+  <div class="prev">
+      <a href="formula.html" title="formula">
+        <div class="change-page">
+          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
+        <span class="label">Previous</span>
+        <br/>
+        <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">formula</span>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+      <a href="#image_profile.adoc" title="image_profile">
+        <div class="change-page">
+          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
+        <span class="label">Next</span>
+        <br/>
+       <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">image_profile</span>
+        </div>
+      </a>
+  </div>
+</div>
+</article>
+<aside class="article-aside hidden" role="navigation">
+  <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
+  <div id="article-toc"></div>
+</aside>
+
+</main>
+</div>
+<script>tippy('#previousPage', {
+placement: 'bottom', // or 'left', 'right', ...
+})
+
+tippy('#nextPage', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#createIssue', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#submitPR', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+</script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script>
+    tippy.setDefaults({
+        placement: 'bottom',
+        arrow: true,
+        arrowType: 'sharp',
+        delay: 800,
+        theme: 'light',
+    });
+
+    tippy('#previousPage', {
+        content: "Previous Page",
+    });
+
+    tippy('#nextPage', {
+        content: "Next Page",
+    });
+
+    tippy('#createIssue', {
+        content: "Create Issue",
+    });
+
+    tippy('#submitPR', {
+        content: "Edit this page and submit a pull request",
+    });
+
+    /* Testing tooltips for terms */
+    tippy('#ubuntu', {
+        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
+
+    });
+
+    tippy('#salt', {
+        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
+
+    });
+
+    tippy('#sle', {
+        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
+
+    });
+
+    tippy('#rhel', {
+        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
+
+    });
+
+    tippy('#centos', {
+        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
+
+    });
+
+    tippy('#sl', {
+        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
+
+
+    });
+
+</script>
+<script type="text/javascript">
+    window.antora = window.antora || {}
+    window.antora.basePath = '../..'
+    window.antora.pagePath = '/uyuni/api/image.html'
+</script>
+<script src="../../_/js/site.js"></script>
+    <script src="../../_/js/vendor/lunr.js"></script>
+    <script src="../../_/js/vendor/search.js"></script>
+    <script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+<script src="../../_/js/vendor/tocbot.min.js"></script>
+<script>
+    tocbot.init( {
+        tocSelector: '#article-toc',
+        contentSelector: 'article',
+        headingSelector: 'h2, h3, h4, h5, h6',
+        collapseDepth: 6,
+        positionFixedSelector: '#article-toc',
+        scrollSmooth: false
+    } );
+    var tocList = document.getElementById( 'article-toc' ).getElementsByClassName( 'toc-list' );
+    if ( tocList && tocList.length > 0 && tocList[0].childNodes.length > 0 ) {
+        document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
+    }
+</script>
+  </body>
+</html>

@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/configchannel.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+                <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
+        <span class="separator">//</span>
+          <a href="https://www.uyuni-project.org/uyuni-docs-api">Documentation</a> -->
+            </div>
+                <div class="navbar-item">
+                    <!-- <i class="fas fa-search"></i>&nbsp; -->
+                    <input id="search-input" type="text" placeholder="Search...">
+                </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Comment out this section and the twitter section for Product WebUI docs (SUMA) -->
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Resources</div>
+                    <div class="navbar-dropdown">
+                        <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                                class="fab fa-github"></i>&nbsp;Report Issue</a>
+                        <a class="navbar-item"
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+              <path fill="#57aaee"
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+        </a>
+    </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="uyuni" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scripts.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Uyuni</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Uyuni</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Uyuni</a></li>
+    <li><a href="configchannel.html">configchannel</a></li>
+  </ul>
+</nav>
+
+
+
+  <div class="edit-this-page">
+    <span class="prev-caret">
+      <a href="#channel_software.adoc">
+        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
+&nbsp;
+<span class="next-caret">
+      <a href="contentmanagement.html">
+        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
+    &nbsp;
+    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/configchannel.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+</div>
+</div>
+<article class="doc"><a name="section-top"></a>
+<div class="sect1">
+<h2 id="configchannel"><a class="anchor" href="#configchannel"></a><a class="link" href="#configchannel">configchannel</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#configchannel-channelExists">channelExists</a></p>
+</li>
+<li>
+<p><a href="#configchannel-create">create</a></p>
+</li>
+<li>
+<p><a href="#configchannel-create">create</a></p>
+</li>
+<li>
+<p><a href="#configchannel-createOrUpdatePath">createOrUpdatePath</a></p>
+</li>
+<li>
+<p><a href="#configchannel-createOrUpdateSymlink">createOrUpdateSymlink</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deleteChannels">deleteChannels</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deleteFileRevisions">deleteFileRevisions</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deleteFiles">deleteFiles</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deployAllSystems">deployAllSystems</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deployAllSystems">deployAllSystems</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deployAllSystems">deployAllSystems</a></p>
+</li>
+<li>
+<p><a href="#configchannel-deployAllSystems">deployAllSystems</a></p>
+</li>
+<li>
+<p><a href="#configchannel-getDetails">getDetails</a></p>
+</li>
+<li>
+<p><a href="#configchannel-getDetails">getDetails</a></p>
+</li>
+<li>
+<p><a href="#configchannel-getEncodedFileRevision">getEncodedFileRevision</a></p>
+</li>
+<li>
+<p><a href="#configchannel-getFileRevision">getFileRevision</a></p>
+</li>
+<li>
+<p><a href="#configchannel-getFileRevisions">getFileRevisions</a></p>
+</li>
+<li>
+<p><a href="#configchannel-listFiles">listFiles</a></p>
+</li>
+<li>
+<p><a href="#configchannel-listGlobals">listGlobals</a></p>
+</li>
+<li>
+<p><a href="#configchannel-listSubscribedSystems">listSubscribedSystems</a></p>
+</li>
+<li>
+<p><a href="#configchannel-lookupChannelInfo">lookupChannelInfo</a></p>
+</li>
+<li>
+<p><a href="#configchannel-lookupFileInfo">lookupFileInfo</a></p>
+</li>
+<li>
+<p><a href="#configchannel-lookupFileInfo">lookupFileInfo</a></p>
+</li>
+<li>
+<p><a href="#configchannel-scheduleFileComparisons">scheduleFileComparisons</a></p>
+</li>
+<li>
+<p><a href="#configchannel-update">update</a></p>
+</li>
+<li>
+<p><a href="#configchannel-updateInitSls">updateInitSls</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+<div class="paragraph">
+<p>Provides methods to access and modify many aspects of
+ configuration channels.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>configchannel</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-channelExists"><a class="anchor" href="#configchannel-channelExists"></a><a class="link" href="#configchannel-channelExists">Method: channelExists</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Check for the existence of the config channel provided.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - Channel to check for.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1 if exists, 0 otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-create"><a class="anchor" href="#configchannel-create"></a><a class="link" href="#configchannel-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new global config channel. Caller must be at least a
+ config admin or an organization admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelName</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelDescription</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-create"><a class="anchor" href="#configchannel-create"></a><a class="link" href="#configchannel-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new global config channel. Caller must be at least a
+ config admin or an organization admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelName</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelDescription</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelType - The channel type either 'normal' or 'state'.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-createOrUpdatePath"><a class="anchor" href="#configchannel-createOrUpdatePath"></a><a class="link" href="#configchannel-createOrUpdatePath">Method: createOrUpdatePath</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new file or directory with the given path, or
+ update an existing path.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  configChannelLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  path</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  isDir - True if the path is a directory, False if it is a file.</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - path info</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - Contents of the file (text or base64 encoded if binary or want to preserve
+control characters like LF, CR etc.)(only for non-directories)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" - Identifies base64 encoded content
+(default: disabled, only for non-directories)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - Owner of the file/directory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - Group name of the file/directory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions" - Octal file/directory permissions (eg: 644)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Security context (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Config file macro start delimiter. Use null or empty
+string to accept the default. (only for non-directories)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Config file macro end delimiter. Use null or
+empty string to accept the default. (only for non-directories)</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - next revision number, auto increment for null</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - mark the binary content, if True,
+base64 encoded content is expected (only for non-directories)</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.2</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-createOrUpdateSymlink"><a class="anchor" href="#configchannel-createOrUpdateSymlink"></a><a class="link" href="#configchannel-createOrUpdateSymlink">Method: createOrUpdateSymlink</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new symbolic link with the given path, or
+ update an existing path in config channel of 'normal' type.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  configChannelLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  path</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - path info</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - The target path for the symbolic link</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Security context (optional)</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - next revision number,
+     skip this field for automatic revision number assignment
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.2</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deleteChannels"><a class="anchor" href="#configchannel-deleteChannels"></a><a class="link" href="#configchannel-deleteChannels">Method: deleteChannels</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete a list of global config channels.
+ Caller must be a config admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - configuration channel labels to delete.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deleteFileRevisions"><a class="anchor" href="#configchannel-deleteFileRevisions"></a><a class="link" href="#configchannel-deleteFileRevisions">Method: deleteFileRevisions</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete specified revisions of a given configuration file</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - Label of config channel to lookup on.</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - Configuration file path.</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - List of revisions to delete</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deleteFiles"><a class="anchor" href="#configchannel-deleteFiles"></a><a class="link" href="#configchannel-deleteFiles">Method: deleteFiles</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove file paths from a global channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - Channel to remove the files from.</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - file paths to remove.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deployAllSystems"><a class="anchor" href="#configchannel-deployAllSystems"></a><a class="link" href="#configchannel-deployAllSystems">Method: deployAllSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule an immediate configuration deployment for all systems
+    subscribed to a particular configuration channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - The configuration channel&#8217;s label.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deployAllSystems"><a class="anchor" href="#configchannel-deployAllSystems"></a><a class="link" href="#configchannel-deployAllSystems">Method: deployAllSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a configuration deployment for all systems
+    subscribed to a particular configuration channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - The configuration channel&#8217;s label.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deployAllSystems"><a class="anchor" href="#configchannel-deployAllSystems"></a><a class="link" href="#configchannel-deployAllSystems">Method: deployAllSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a configuration deployment of a certain file for all systems
+    subscribed to a particular configuration channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - The configuration channel&#8217;s label.</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - The configuration file path.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-deployAllSystems"><a class="anchor" href="#configchannel-deployAllSystems"></a><a class="link" href="#configchannel-deployAllSystems">Method: deployAllSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a configuration deployment of a certain file for all systems
+    subscribed to a particular configuration channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - The configuration channel&#8217;s label.</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - The configuration file path.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-getDetails"><a class="anchor" href="#configchannel-getDetails"></a><a class="link" href="#configchannel-getDetails">Method: getDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup config channel details.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-getDetails"><a class="anchor" href="#configchannel-getDetails"></a><a class="link" href="#configchannel-getDetails">Method: getDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup config channel details.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p>int channelId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-getEncodedFileRevision"><a class="anchor" href="#configchannel-getEncodedFileRevision"></a><a class="link" href="#configchannel-getEncodedFileRevision">Method: getEncodedFileRevision</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get revision of the specified configuration file and transmit the
+             contents as base64 encoded.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  configChannelLabel - label of config channel to lookup on</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - config file path to examine</p>
+</li>
+<li>
+<p><span class="int">int</span>  revision - config file revision to examine</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-getFileRevision"><a class="anchor" href="#configchannel-getFileRevision"></a><a class="link" href="#configchannel-getFileRevision">Method: getFileRevision</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get revision of the specified config file</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  configChannelLabel - label of config channel to lookup on</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - config file path to examine</p>
+</li>
+<li>
+<p><span class="int">int</span>  revision - config file revision to examine</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-getFileRevisions"><a class="anchor" href="#configchannel-getFileRevisions"></a><a class="link" href="#configchannel-getFileRevisions">Method: getFileRevisions</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get list of revisions for specified config file</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of config channel to lookup on</p>
+</li>
+<li>
+<p><span class="string">string</span>  filePath - config file path to examine</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-listFiles"><a class="anchor" href="#configchannel-listFiles"></a><a class="link" href="#configchannel-listFiles">Method: listFiles</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a list of files in a channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of config channel to list files on.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration File information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified" - Last Modified Date
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-listGlobals"><a class="anchor" href="#configchannel-listGlobals"></a><a class="link" href="#configchannel-listGlobals">Method: listGlobals</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List all the global config channels accessible to the logged-in user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-listSubscribedSystems"><a class="anchor" href="#configchannel-listSubscribedSystems"></a><a class="link" href="#configchannel-listSubscribedSystems">Method: listSubscribedSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a list of systems subscribed to a configuration channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of config channel to list subscribed systems.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - system</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-lookupChannelInfo"><a class="anchor" href="#configchannel-lookupChannelInfo"></a><a class="link" href="#configchannel-lookupChannelInfo">Method: lookupChannelInfo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists details on a list channels given their channel labels.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - configuration channel label</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-lookupFileInfo"><a class="anchor" href="#configchannel-lookupFileInfo"></a><a class="link" href="#configchannel-lookupFileInfo">Method: lookupFileInfo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Given a list of paths and a channel, returns details about
+ the latest revisions of the paths.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of config channel to lookup on</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - List of paths to examine.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.2</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-lookupFileInfo"><a class="anchor" href="#configchannel-lookupFileInfo"></a><a class="link" href="#configchannel-lookupFileInfo">Method: lookupFileInfo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Given a path, revision number, and a channel, returns details about
+ the latest revisions of the paths.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of config channel to lookup on</p>
+</li>
+<li>
+<p><span class="string">string</span>  path - path of file/directory</p>
+</li>
+<li>
+<p><span class="int">int</span>  revsion - The revision number.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.12</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-scheduleFileComparisons"><a class="anchor" href="#configchannel-scheduleFileComparisons"></a><a class="link" href="#configchannel-scheduleFileComparisons">Method: scheduleFileComparisons</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a comparison of the latest revision of a file
+ against the version deployed on a list of systems.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - Label of config channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  path - File path</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>long - The list of server id that the
+comparison will be performed on</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int actionId - The action id of the scheduled action</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-update"><a class="anchor" href="#configchannel-update"></a><a class="link" href="#configchannel-update">Method: update</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update a global config channel. Caller must be at least a
+ config admin or an organization admin, or have access to a system containing this
+ config channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p>string channelLabel</p>
+</li>
+<li>
+<p>string channelName</p>
+</li>
+<li>
+<p>string description</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="configchannel-updateInitSls"><a class="anchor" href="#configchannel-updateInitSls"></a><a class="link" href="#configchannel-updateInitSls">Method: updateInitSls</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update the init.sls file for the given state channel. User can only update contents, nothing else.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  configChannelLabel</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - path info</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - Contents of the init.sls file</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" - Identifies base64 encoded content(default: disabled)
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Revision information</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+// no end needed</p>
+</li>
+<li>
+<p>file</p>
+</li>
+<li>
+<p>directory</p>
+</li>
+<li>
+<p>symlink
+// no end needed</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - File Path</p>
+</li>
+<li>
+<p><span class="string">string</span>  "target_path" - Symbolic link Target File Path.
+Present for Symbolic links only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "channel" - Channel Name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contents" - File contents (base64 encoded according
+to the contents_enc64 attribute)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" -  Identifies base64 encoded content</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - File Revision</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "creation" - Creation Date</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "modified" - Last Modified Date</p>
+</li>
+<li>
+<p><span class="string">string</span>  "owner" - File Owner. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "group" - File Group. Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "permissions" - File Permissions (Deprecated).
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "permissions_mode" - File Permissions.
+Present for files or directories only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "selinux_ctx" - SELinux Context (optional).</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "binary" - true/false , Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sha256" - File&#8217;s sha256 signature. Present for files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+
+<div class="cedents grid" role="navigation">
+
+  <div class="prev">
+      <a href="#channel_software.adoc" title="channel_software">
+        <div class="change-page">
+          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
+        <span class="label">Previous</span>
+        <br/>
+        <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">channel_software</span>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+      <a href="contentmanagement.html" title="contentmanagement">
+        <div class="change-page">
+          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
+        <span class="label">Next</span>
+        <br/>
+       <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">contentmanagement</span>
+        </div>
+      </a>
+  </div>
+</div>
+</article>
+<aside class="article-aside hidden" role="navigation">
+  <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
+  <div id="article-toc"></div>
+</aside>
+
+</main>
+</div>
+<script>tippy('#previousPage', {
+placement: 'bottom', // or 'left', 'right', ...
+})
+
+tippy('#nextPage', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#createIssue', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#submitPR', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+</script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script>
+    tippy.setDefaults({
+        placement: 'bottom',
+        arrow: true,
+        arrowType: 'sharp',
+        delay: 800,
+        theme: 'light',
+    });
+
+    tippy('#previousPage', {
+        content: "Previous Page",
+    });
+
+    tippy('#nextPage', {
+        content: "Next Page",
+    });
+
+    tippy('#createIssue', {
+        content: "Create Issue",
+    });
+
+    tippy('#submitPR', {
+        content: "Edit this page and submit a pull request",
+    });
+
+    /* Testing tooltips for terms */
+    tippy('#ubuntu', {
+        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
+
+    });
+
+    tippy('#salt', {
+        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
+
+    });
+
+    tippy('#sle', {
+        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
+
+    });
+
+    tippy('#rhel', {
+        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
+
+    });
+
+    tippy('#centos', {
+        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
+
+    });
+
+    tippy('#sl', {
+        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
+
+
+    });
+
+</script>
+<script type="text/javascript">
+    window.antora = window.antora || {}
+    window.antora.basePath = '../..'
+    window.antora.pagePath = '/uyuni/api/configchannel.html'
+</script>
+<script src="../../_/js/site.js"></script>
+    <script src="../../_/js/vendor/lunr.js"></script>
+    <script src="../../_/js/vendor/search.js"></script>
+    <script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+<script src="../../_/js/vendor/tocbot.min.js"></script>
+<script>
+    tocbot.init( {
+        tocSelector: '#article-toc',
+        contentSelector: 'article',
+        headingSelector: 'h2, h3, h4, h5, h6',
+        collapseDepth: 6,
+        positionFixedSelector: '#article-toc',
+        scrollSmooth: false
+    } );
+    var tocList = document.getElementById( 'article-toc' ).getElementsByClassName( 'toc-list' );
+    if ( tocList && tocList.length > 0 && tocList[0].childNodes.length > 0 ) {
+        document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
+    }
+</script>
+  </body>
+</html>

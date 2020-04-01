@@ -1,0 +1,5831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/channel.software.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+                <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
+        <span class="separator">//</span>
+          <a href="https://www.uyuni-project.org/uyuni-docs-api">Documentation</a> -->
+            </div>
+                <div class="navbar-item">
+                    <!-- <i class="fas fa-search"></i>&nbsp; -->
+                    <input id="search-input" type="text" placeholder="Search...">
+                </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Comment out this section and the twitter section for Product WebUI docs (SUMA) -->
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Resources</div>
+                    <div class="navbar-dropdown">
+                        <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                                class="fab fa-github"></i>&nbsp;Report Issue</a>
+                        <a class="navbar-item"
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+              <path fill="#57aaee"
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+        </a>
+    </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="uyuni" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scripts.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Uyuni</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Uyuni</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+
+
+
+  <div class="edit-this-page">
+    <span class="prev-caret">
+&nbsp;
+<span class="next-caret">
+    &nbsp;
+    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/channel.software.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+</div>
+</div>
+<article class="doc"><a name="section-top"></a>
+<div class="sect1">
+<h2 id="channel_software"><a class="anchor" href="#channel_software"></a><a class="link" href="#channel_software">channel.software</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#channel_software-addPackages">addPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-addRepoFilter">addRepoFilter</a></p>
+</li>
+<li>
+<p><a href="#channel_software-applyChannelState">applyChannelState</a></p>
+</li>
+<li>
+<p><a href="#channel_software-associateRepo">associateRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-clearRepoFilters">clearRepoFilters</a></p>
+</li>
+<li>
+<p><a href="#channel_software-clone">clone</a></p>
+</li>
+<li>
+<p><a href="#channel_software-create">create</a></p>
+</li>
+<li>
+<p><a href="#channel_software-create">create</a></p>
+</li>
+<li>
+<p><a href="#channel_software-create">create</a></p>
+</li>
+<li>
+<p><a href="#channel_software-create">create</a></p>
+</li>
+<li>
+<p><a href="#channel_software-createRepo">createRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-createRepo">createRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-createRepo">createRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-delete">delete</a></p>
+</li>
+<li>
+<p><a href="#channel_software-disassociateRepo">disassociateRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getChannelLastBuildById">getChannelLastBuildById</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getDetails">getDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getDetails">getDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getRepoDetails">getRepoDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getRepoDetails">getRepoDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-getRepoSyncCronExpression">getRepoSyncCronExpression</a></p>
+</li>
+<li>
+<p><a href="#channel_software-isGloballySubscribable">isGloballySubscribable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-isUserManageable">isUserManageable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-isUserSubscribable">isUserSubscribable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listArches">listArches</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listChannelRepos">listChannelRepos</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listChildren">listChildren</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrata">listErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrataByType">listErrataByType</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listErrataNeedingSync">listErrataNeedingSync</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listLatestPackages">listLatestPackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listPackagesWithoutChannel">listPackagesWithoutChannel</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listRepoFilters">listRepoFilters</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listSubscribedSystems">listSubscribedSystems</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listSystemChannels">listSystemChannels</a></p>
+</li>
+<li>
+<p><a href="#channel_software-listUserRepos">listUserRepos</a></p>
+</li>
+<li>
+<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-mergePackages">mergePackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
+</li>
+<li>
+<p><a href="#channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
+</li>
+<li>
+<p><a href="#channel_software-regenerateYumCache">regenerateYumCache</a></p>
+</li>
+<li>
+<p><a href="#channel_software-removeErrata">removeErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-removePackages">removePackages</a></p>
+</li>
+<li>
+<p><a href="#channel_software-removeRepo">removeRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-removeRepo">removeRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-removeRepoFilter">removeRepoFilter</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setContactDetails">setContactDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setDetails">setDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setDetails">setDetails</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setGloballySubscribable">setGloballySubscribable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setRepoFilters">setRepoFilters</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setSystemChannels">setSystemChannels</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setUserManageable">setUserManageable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-setUserSubscribable">setUserSubscribable</a></p>
+</li>
+<li>
+<p><a href="#channel_software-subscribeSystem">subscribeSystem</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncErrata">syncErrata</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-unsubscribeChannels">unsubscribeChannels</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepo">updateRepo</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoLabel">updateRepoLabel</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoLabel">updateRepoLabel</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoSsl">updateRepoSsl</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoSsl">updateRepoSsl</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoUrl">updateRepoUrl</a></p>
+</li>
+<li>
+<p><a href="#channel_software-updateRepoUrl">updateRepoUrl</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+<div class="paragraph">
+<p>Provides methods to access and modify many aspects of a channel.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>channel.software</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-addPackages"><a class="anchor" href="#channel_software-addPackages"></a><a class="link" href="#channel_software-addPackages">Method: addPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Adds a given list of packages to the given channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - target channel.</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - packageId -  id of a package to
+add to the channel.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-addRepoFilter"><a class="anchor" href="#channel_software-addRepoFilter"></a><a class="link" href="#channel_software-addRepoFilter">Method: addRepoFilter</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Adds a filter for a given repo.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - filter_map</p>
+</li>
+<li>
+<p><span class="string">string</span>  "filter" - string to filter on</p>
+</li>
+<li>
+<p><span class="string">string</span>  "flag" - + for include, - for exclude
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int sort order for new filter</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-applyChannelState"><a class="anchor" href="#channel_software-applyChannelState"></a><a class="link" href="#channel_software-applyChannelState">Method: applyChannelState</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Refresh pillar data and then schedule channels state on the provided systems</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - serverId</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - actionId</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-associateRepo"><a class="anchor" href="#channel_software-associateRepo"></a><a class="link" href="#channel_software-associateRepo">Method: associateRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Associates a repository with a channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+<li>
+<p><span class="string">string</span>  repoLabel - repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "support_policy"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "yumrepo_last_sync" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "end_of_life"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "clone_original"</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentSources</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+        // no end needed
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-clearRepoFilters"><a class="anchor" href="#channel_software-clearRepoFilters"></a><a class="link" href="#channel_software-clearRepoFilters">Method: clearRepoFilters</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes the filters for a repo</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-clone"><a class="anchor" href="#channel_software-clone"></a><a class="link" href="#channel_software-clone">Method: clone</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Clone a channel.  If arch_label is omitted, the arch label of the
+      original channel will be used. If parent_label is omitted, the clone will be
+      a base channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  original_label</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel details</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_label" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url" - (optional),
+gpg_url might be used as well</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id" - (optional),
+gpg_id might be used as well</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp" - (optional),
+gpg_fingerprint might be used as well</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_check" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum" - either sha1 or sha256
+// no end needed</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  original_state</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int the cloned channel ID</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a software channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - label of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - name of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  summary - summary of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  archLabel - the label of the architecture the channel corresponds to,
+run channel.software.listArches API for complete listing</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentLabel - label of the parent of this
+channel, an empty string if it does not have one</p>
+</li>
+<li>
+<p><span class="string">string</span>  checksumType - checksum type for this channel,
+        used for yum repository metadata generation
+// no end needed</p>
+</li>
+<li>
+<p>sha1 - Offers widest compatibility  with clients</p>
+</li>
+<li>
+<p>sha256 - Offers highest security, but is compatible
+                  only with newer clients: Fedora 11 and newer,
+                  or Enterprise Linux 6 and newer.
+// no end needed</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - gpgKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - GPG key URL</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id" - GPG key ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "fingerprint" - GPG key Fingerprint
+// no end needed</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  gpgCheck - true if the GPG check should be
+enabled by default, false otherwise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if the creation operation succeeded, 0 otherwise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.9</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a software channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - label of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - name of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  summary - summary of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  archLabel - the label of the architecture the channel corresponds to,
+run channel.software.listArches API for complete listing</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentLabel - label of the parent of this
+channel, an empty string if it does not have one</p>
+</li>
+<li>
+<p><span class="string">string</span>  checksumType - checksum type for this channel,
+        used for yum repository metadata generation
+// no end needed</p>
+</li>
+<li>
+<p>sha1 - Offers widest compatibility  with clients</p>
+</li>
+<li>
+<p>sha256 - Offers highest security, but is compatible
+                  only with newer clients: Fedora 11 and newer,
+                  or Enterprise Linux 6 and newer.
+// no end needed</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - gpgKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - GPG key URL</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id" - GPG key ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "fingerprint" - GPG key Fingerprint
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if the creation operation succeeded, 0 otherwise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.9</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a software channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - label of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - name of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  summary - summary of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  archLabel - the label of the architecture the channel corresponds to,
+run channel.software.listArches API for complete listing</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentLabel - label of the parent of this
+channel, an empty string if it does not have one</p>
+</li>
+<li>
+<p><span class="string">string</span>  checksumType - checksum type for this channel,
+        used for yum repository metadata generation
+// no end needed</p>
+</li>
+<li>
+<p>sha1 - Offers widest compatibility  with clients</p>
+</li>
+<li>
+<p>sha256 - Offers highest security, but is compatible
+                  only with newer clients: Fedora 11 and newer,
+                  or Enterprise Linux 6 and newer.
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if the creation operation succeeded, 0 otherwise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.9</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a software channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - label of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - name of the new channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  summary - summary of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  archLabel - the label of the architecture the channel corresponds to,
+run channel.software.listArches API for complete listing</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentLabel - label of the parent of this
+channel, an empty string if it does not have one</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if the creation operation succeeded, 0 otherwise</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - repository type (yum, uln&#8230;&#8203;)</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - repository url</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - repository type (yum, uln&#8230;&#8203;)</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - repository url</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCaCert - SSL CA cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliCert - SSL Client cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliKey - SSL Client key description</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Creates a repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - repository type (only YUM is supported)</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - repository url</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCaCert - SSL CA cert description, or an
+empty string</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliCert - SSL Client cert description, or
+an empty string</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliKey - SSL Client key description, or an
+empty string</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  hasSignedMetadata - true if the repository
+has signed metadata, false otherwise</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-delete"><a class="anchor" href="#channel_software-delete"></a><a class="link" href="#channel_software-delete">Method: delete</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Deletes a custom software channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to delete</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-disassociateRepo"><a class="anchor" href="#channel_software-disassociateRepo"></a><a class="link" href="#channel_software-disassociateRepo">Method: disassociateRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Disassociates a repository from a channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+<li>
+<p><span class="string">string</span>  repoLabel - repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "support_policy"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "yumrepo_last_sync" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "end_of_life"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "clone_original"</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentSources</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+        // no end needed
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getChannelLastBuildById"><a class="anchor" href="#channel_software-getChannelLastBuildById"></a><a class="link" href="#channel_software-getChannelLastBuildById">Method: getChannelLastBuildById</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the last build date of the repomd.xml file
+ for the given channel as a localised string.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - id of channel wanted</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the last build date of the repomd.xml file
+as a localised string</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getDetails"><a class="anchor" href="#channel_software-getDetails"></a><a class="link" href="#channel_software-getDetails">Method: getDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns details of the given channel as a map</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "support_policy"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "yumrepo_last_sync" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "end_of_life"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "clone_original"</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentSources</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+        // no end needed
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getDetails"><a class="anchor" href="#channel_software-getDetails"></a><a class="link" href="#channel_software-getDetails">Method: getDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns details of the given channel as a map</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "support_policy"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "yumrepo_last_sync" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "end_of_life"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "clone_original"</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentSources</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+        // no end needed
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getRepoDetails"><a class="anchor" href="#channel_software-getRepoDetails"></a><a class="link" href="#channel_software-getRepoDetails">Method: getRepoDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns details of the given repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  repoLabel - repo to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getRepoDetails"><a class="anchor" href="#channel_software-getRepoDetails"></a><a class="link" href="#channel_software-getRepoDetails">Method: getRepoDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns details of the given repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - repository id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-getRepoSyncCronExpression"><a class="anchor" href="#channel_software-getRepoSyncCronExpression"></a><a class="link" href="#channel_software-getRepoSyncCronExpression">Method: getRepoSyncCronExpression</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns repo synchronization cron expression</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>string quartz expression</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-isGloballySubscribable"><a class="anchor" href="#channel_software-isGloballySubscribable"></a><a class="link" href="#channel_software-isGloballySubscribable">Method: isGloballySubscribable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns whether the channel is subscribable by any user
+ in the organization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if true, 0 otherwise</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-isUserManageable"><a class="anchor" href="#channel_software-isUserManageable"></a><a class="link" href="#channel_software-isUserManageable">Method: isUserManageable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns whether the channel may be managed by the given user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - login of the target user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if manageable, 0 if not</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-isUserSubscribable"><a class="anchor" href="#channel_software-isUserSubscribable"></a><a class="link" href="#channel_software-isUserSubscribable">Method: isUserSubscribable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns whether the channel may be subscribed to by the given user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - login of the target user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - 1 if subscribable, 0 if not</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of package version,
+ between the given dates.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  startDate</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_type"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified" - (Deprecated)
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of version whose last
+ modified date is greater than given date.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  startDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_type"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified" - (Deprecated)
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of the package version</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_type"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified" - (Deprecated)
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of package version,
+ between the given dates.
+ Example Date:  '2008-08-20 08:00:00'</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listAllPackages(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+<li>
+<p><span class="string">string</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_type"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified" - (Deprecated)
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of version whose last
+ modified date is greater than given date. Example Date: '2008-08-20 08:00:00'</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listAllPackages(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_type"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified" - (Deprecated)
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of the package version,
+ between the given dates. Example Date: '2008-08-20 08:00:00'</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listAllPackages(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+<li>
+<p><span class="string">string</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified"
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of the package version,
+ whose last modified date is greater than given date.
+ Example Date:  '2008-08-20 08:00:00'</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listAllPackages(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified"
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages in the channel, regardless of the package version</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listAllPackages(string sessionKey,
+ string channelLabel)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified"
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listArches"><a class="anchor" href="#channel_software-listArches"></a><a class="link" href="#channel_software-listArches">Method: listArches</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists the potential software channel architectures that can be created</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel arch</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listChannelRepos"><a class="anchor" href="#channel_software-listChannelRepos"></a><a class="link" href="#channel_software-listChannelRepos">Method: listChannelRepos</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists associated repos with the given channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listChildren"><a class="anchor" href="#channel_software-listChildren"></a><a class="link" href="#channel_software-listChildren">Method: listChildren</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the children of a channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - the label of the channel</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "support_policy"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "yumrepo_last_sync" - (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "end_of_life"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "parent_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "clone_original"</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentSources</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"
+        // no end needed
+    // no end needed
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel after given startDate</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  startDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata ID.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - Date erratum was updated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel between startDate and endDate.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  startDate</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata ID.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - Date erratum was updated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel between startDate and endDate.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  startDate</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  endDate</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  lastModified - select by last modified or not</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata ID.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - Date erratum was updated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata Id</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory" - name of the advisory (Deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS (Deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS (Deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "synopsis (Deprecated)"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS (Deprecated)
+  // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel after given startDate</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listErrata(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory" - name of the advisory</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "synopsis"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata applicable to a channel between startDate and endDate.</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by listErrata(string sessionKey,
+ string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+<li>
+<p><span class="string">string</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory" - name of the advisory</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "synopsis"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrataByType"><a class="anchor" href="#channel_software-listErrataByType"></a><a class="link" href="#channel_software-listErrataByType">Method: listErrataByType</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the errata of a specific type that are applicable to a channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+<li>
+<p><span class="string">string</span>  advisoryType - type of advisory (one of
+of the following: 'Security Advisory', 'Product Enhancement Advisory',
+'Bug Fix Advisory'</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory" - name of the advisory</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS</p>
+</li>
+<li>
+<p><span class="string">string</span>  "synopsis"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listErrataNeedingSync"><a class="anchor" href="#channel_software-listErrataNeedingSync"></a><a class="link" href="#channel_software-listErrataNeedingSync">Method: listErrataNeedingSync</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>If you have satellite-synced a new channel then Red Hat
+ Errata will have been updated with the packages that are in the newly
+ synced channel. A cloned erratum will not have been automatically updated
+ however. If you cloned a channel that includes those cloned errata and
+ should include the new packages, they will not be included when they
+ should. This method lists the errata that will be updated if you run the
+ syncErrata method.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to update</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata ID.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - Date erratum was updated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type label such as Security, Bug Fix</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name such as RHSA, etc
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listLatestPackages"><a class="anchor" href="#channel_software-listLatestPackages"></a><a class="link" href="#channel_software-listLatestPackages">Method: listLatestPackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists the packages with the latest version (including release and
+ epoch) for the given channel</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listPackagesWithoutChannel"><a class="anchor" href="#channel_software-listPackagesWithoutChannel"></a><a class="link" href="#channel_software-listPackagesWithoutChannel">Method: listPackagesWithoutChannel</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages that are not associated with a channel.  Typically
+          these are custom packages.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - The path on that file system that the package
+resides</p>
+</li>
+<li>
+<p><span class="string">string</span>  "provider" - The provider of the package, determined by
+            the gpg key it was signed with.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listRepoFilters"><a class="anchor" href="#channel_software-listRepoFilters"></a><a class="link" href="#channel_software-listRepoFilters">Method: listRepoFilters</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists the filters for a repo</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - filter</p>
+</li>
+<li>
+<p><span class="int">int</span>  "sortOrder"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "filter"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "flag"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listSubscribedSystems"><a class="anchor" href="#channel_software-listSubscribedSystems"></a><a class="link" href="#channel_software-listSubscribedSystems">Method: listSubscribedSystems</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns list of subscribed systems for the given channel label</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - system</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"
+   // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listSystemChannels"><a class="anchor" href="#channel_software-listSystemChannels"></a><a class="link" href="#channel_software-listSystemChannels">Method: listSystemChannels</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of channels that a system is subscribed to for the
+ given system id</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  serverId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"
+   // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-listUserRepos"><a class="anchor" href="#channel_software-listUserRepos"></a><a class="link" href="#channel_software-listUserRepos">Method: listUserRepos</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of ContentSource (repos) that the user can see</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - map</p>
+</li>
+<li>
+<p><span class="long">long</span>  "id" - ID of the repo</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label" - label of the repo</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl" - URL of the repo
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Merges all errata from one channel into another</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeFromLabel - the label of the
+channel to pull errata from</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeToLabel - the label to push the
+errata into</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata Id</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Merges all errata from one channel into another based upon a
+ given start/end date.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeFromLabel - the label of the
+channel to pull errata from</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeToLabel - the label to push the
+errata into</p>
+</li>
+<li>
+<p><span class="string">string</span>  startDate</p>
+</li>
+<li>
+<p><span class="string">string</span>  endDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata Id</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Merges a list of errata from one channel into another</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeFromLabel - the label of the
+channel to pull errata from</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeToLabel - the label to push the
+errata into</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string -  advisory - The advisory name of the errata to merge</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - errata</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - Errata Id</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - Date erratum was created.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - Type of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-mergePackages"><a class="anchor" href="#channel_software-mergePackages"></a><a class="link" href="#channel_software-mergePackages">Method: mergePackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Merges all packages from one channel into another</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeFromLabel - the label of the
+channel to pull packages from</p>
+</li>
+<li>
+<p><span class="string">string</span>  mergeToLabel - the label to push the
+packages into</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - The path on that file system that the package
+resides</p>
+</li>
+<li>
+<p><span class="string">string</span>  "provider" - The provider of the package, determined by
+            the gpg key it was signed with.
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-regenerateNeededCache"><a class="anchor" href="#channel_software-regenerateNeededCache"></a><a class="link" href="#channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Completely clear and regenerate the needed Errata and Package
+      cache for all systems subscribed to the specified channel.  This should
+      be used only if you believe your cache is incorrect for all the systems
+      in a given channel. This will schedule an asynchronous action to actually
+      do the processing.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - the label of the
+channel</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-regenerateNeededCache"><a class="anchor" href="#channel_software-regenerateNeededCache"></a><a class="link" href="#channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Completely clear and regenerate the needed Errata and Package
+      cache for all systems subscribed.  You must be a Satellite Admin to
+      perform this action. This will schedule an asynchronous action to
+      actually do the processing.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-regenerateYumCache"><a class="anchor" href="#channel_software-regenerateYumCache"></a><a class="link" href="#channel_software-regenerateYumCache">Method: regenerateYumCache</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Regenerate yum cache for the specified channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - the label of the
+channel</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  force - force cache regeneration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-removeErrata"><a class="anchor" href="#channel_software-removeErrata"></a><a class="link" href="#channel_software-removeErrata">Method: removeErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes a given list of errata from the given channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - target channel.</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - advisoryName - name of an erratum to remove</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  removePackages - True to remove packages from the channel</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-removePackages"><a class="anchor" href="#channel_software-removePackages"></a><a class="link" href="#channel_software-removePackages">Method: removePackages</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes a given list of packages from the given channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - target channel.</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - packageId -  id of a package to
+remove from the channel.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-removeRepo"><a class="anchor" href="#channel_software-removeRepo"></a><a class="link" href="#channel_software-removeRepo">Method: removeRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes a repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="long">long</span>  id - ID of repo to be removed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-removeRepo"><a class="anchor" href="#channel_software-removeRepo"></a><a class="link" href="#channel_software-removeRepo">Method: removeRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes a repository</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - label of repo to be removed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-removeRepoFilter"><a class="anchor" href="#channel_software-removeRepoFilter"></a><a class="link" href="#channel_software-removeRepoFilter">Method: removeRepoFilter</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes a filter for a given repo.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - filter_map</p>
+</li>
+<li>
+<p><span class="string">string</span>  "filter" - string to filter on</p>
+</li>
+<li>
+<p><span class="string">string</span>  "flag" - + for include, - for exclude
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setContactDetails"><a class="anchor" href="#channel_software-setContactDetails"></a><a class="link" href="#channel_software-setContactDetails">Method: setContactDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set contact/support information for given channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  maintainerName - name of the channel
+maintainer</p>
+</li>
+<li>
+<p><span class="string">string</span>  maintainerEmail - email of the channel
+maintainer</p>
+</li>
+<li>
+<p><span class="string">string</span>  maintainerPhone - phone number of the channel
+maintainer</p>
+</li>
+<li>
+<p><span class="string">string</span>  supportPolicy - channel support policy</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setDetails"><a class="anchor" href="#channel_software-setDetails"></a><a class="link" href="#channel_software-setDetails">Method: setDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Allows to modify channel attributes</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  channelId - channel id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel_map</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label" - new channel repository checksum label
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - new channel name (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary" - new channel summary (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description" - new channel description (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name" - new channel maintainer name
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email" - new channel email address
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone" - new channel phone number (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url" - new channel gpg key url (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id" - new channel gpg key id (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp" - new channel gpg key fingerprint
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_check" - enable/disable gpg check (optional)</p>
+<div class="literalblock">
+<div class="content">
+<pre>// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setDetails"><a class="anchor" href="#channel_software-setDetails"></a><a class="link" href="#channel_software-setDetails">Method: setDetails</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Allows to modify channel attributes</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  channelId - channel id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - channel_map</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum_label" - new channel repository checksum label
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - new channel name (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary" - new channel summary (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description" - new channel description (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_name" - new channel maintainer name
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_email" - new channel email address
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "maintainer_phone" - new channel phone number (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_url" - new channel gpg key url (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_id" - new channel gpg key id (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key_fp" - new channel gpg key fingerprint
+(optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_check" - enable/disable gpg check
+        (optional)
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setGloballySubscribable"><a class="anchor" href="#channel_software-setGloballySubscribable"></a><a class="link" href="#channel_software-setGloballySubscribable">Method: setGloballySubscribable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set globally subscribable attribute for given channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  subscribable - true if the channel is to be
+globally subscribable.  False otherwise.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setRepoFilters"><a class="anchor" href="#channel_software-setRepoFilters"></a><a class="link" href="#channel_software-setRepoFilters">Method: setRepoFilters</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Replaces the existing set of filters for a given repo.
+ Filters are ranked by their order in the array.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - filter_map</p>
+</li>
+<li>
+<p><span class="string">string</span>  "filter" - string to filter on</p>
+</li>
+<li>
+<p><span class="string">string</span>  "flag" - + for include, - for exclude
+    // no end needed
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setSystemChannels"><a class="anchor" href="#channel_software-setSystemChannels"></a><a class="link" href="#channel_software-setSystemChannels">Method: setSystemChannels (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Change a systems subscribed channels to the list of channels passed in.</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by system.setBaseChannel(string sessionKey,
+ int serverId, string channelLabel) and system.setChildChannels(string sessionKey,
+ int serverId, array[string channelLabel])</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  serverId</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - channelLabel - labels of the channels to
+subscribe the system to.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setUserManageable"><a class="anchor" href="#channel_software-setUserManageable"></a><a class="link" href="#channel_software-setUserManageable">Method: setUserManageable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set the manageable flag for a given channel and user.
+ If value is set to 'true', this method will give the user
+ manage permissions to the channel. Otherwise, that privilege is revoked.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - login of the target user</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  value - value of the flag to set</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-setUserSubscribable"><a class="anchor" href="#channel_software-setUserSubscribable"></a><a class="link" href="#channel_software-setUserSubscribable">Method: setUserSubscribable</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set the subscribable flag for a given channel and user.
+ If value is set to 'true', this method will give the user
+ subscribe permissions to the channel. Otherwise, that privilege is revoked.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - login of the target user</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  value - value of the flag to set</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-subscribeSystem"><a class="anchor" href="#channel_software-subscribeSystem"></a><a class="link" href="#channel_software-subscribeSystem">Method: subscribeSystem (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Subscribes a system to a list of channels.  If a base channel is
+      included, that is set before setting child channels.  When setting child
+      channels the current child channel subscriptions are cleared.  To fully
+      unsubscribe the system from all channels, simply provide an empty list of
+      channel labels.</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by system.setBaseChannel(string sessionKey,
+ int serverId, string channelLabel) and system.setChildChannels(string sessionKey,
+ int serverId, array[string channelLabel])</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  serverId</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - label - channel label to subscribe
+the system to.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncErrata"><a class="anchor" href="#channel_software-syncErrata"></a><a class="link" href="#channel_software-syncErrata">Method: syncErrata</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>If you have satellite-synced a new channel then Red Hat
+ Errata will have been updated with the packages that are in the newly
+ synced channel. A cloned erratum will not have been automatically updated
+ however. If you cloned a channel that includes those cloned errata and
+ should include the new packages, they will not be included when they
+ should. This method updates all the errata in the given cloned channel
+ with packages that have recently been added, and ensures that all the
+ packages you expect are in the channel.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel to update</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Trigger immediate repo synchronization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - channelLabels</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Trigger immediate repo synchronization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Trigger immediate repo synchronization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - params_map</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "sync-kickstart" - Create kickstartable tree - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "no-errata" - Do not sync errata - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "fail" - Terminate upon any error - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "latest" - Only download latest packages - Optional
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule periodic repo synchronization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+<li>
+<p><span class="string">string</span>  cron expression - if empty all periodic schedules will be disabled</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule periodic repo synchronization</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel - channel label</p>
+</li>
+<li>
+<p><span class="string">string</span>  cron expression - if empty all periodic schedules will be disabled</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - params_map</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "sync-kickstart" - Create kickstartable tree - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "no-errata" - Do not sync errata - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "fail" - Terminate upon any error - Optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "latest" - Only download latest packages - Optional
+// no end needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-unsubscribeChannels"><a class="anchor" href="#channel_software-unsubscribeChannels"></a><a class="link" href="#channel_software-unsubscribeChannels">Method: unsubscribeChannels (Deprecated)</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Unsubscribe channels from the specified minions, trigger immediate channels update state</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - being replaced by refreshSystemsChannelInfo</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - serverId</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="string">string</span>  baseChannelLabel</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - childLabels</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>int - actionId</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepo"><a class="anchor" href="#channel_software-updateRepo"></a><a class="link" href="#channel_software-updateRepo">Method: updateRepo</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates a ContentSource (repo)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - repository id</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - new repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - new repository URL</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoLabel"><a class="anchor" href="#channel_software-updateRepoLabel"></a><a class="link" href="#channel_software-updateRepoLabel">Method: updateRepoLabel</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository label</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - repository id</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - new repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoLabel"><a class="anchor" href="#channel_software-updateRepoLabel"></a><a class="link" href="#channel_software-updateRepoLabel">Method: updateRepoLabel</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository label</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  newLabel - new repository label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoSsl"><a class="anchor" href="#channel_software-updateRepoSsl"></a><a class="link" href="#channel_software-updateRepoSsl">Method: updateRepoSsl</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository SSL certificates</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - repository id</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCaCert - SSL CA cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliCert - SSL Client cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliKey - SSL Client key description</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoSsl"><a class="anchor" href="#channel_software-updateRepoSsl"></a><a class="link" href="#channel_software-updateRepoSsl">Method: updateRepoSsl</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository SSL certificates</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCaCert - SSL CA cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliCert - SSL Client cert description</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslCliKey - SSL Client key description</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoUrl"><a class="anchor" href="#channel_software-updateRepoUrl"></a><a class="link" href="#channel_software-updateRepoUrl">Method: updateRepoUrl</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository source URL</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  id - repository id</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - new repository url</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="channel_software-updateRepoUrl"><a class="anchor" href="#channel_software-updateRepoUrl"></a><a class="link" href="#channel_software-updateRepoUrl">Method: updateRepoUrl</a></h3>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates repository source URL</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - repository label</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - new repository url</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - channel</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sourceUrl"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "hasSignedMetadata"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "sslContentSources" -</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - contentsourcessl</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCaDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslCertDesc"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "sslKeyDesc"
+// no end needed</p>
+<div class="literalblock">
+<div class="content">
+<pre>    // no end needed
+// no end needed</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+
+<div class="cedents grid" role="navigation">
+
+  </div>
+
+  </div>
+</div>
+</article>
+<aside class="article-aside hidden" role="navigation">
+  <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
+  <div id="article-toc"></div>
+</aside>
+
+</main>
+</div>
+<script>tippy('#previousPage', {
+placement: 'bottom', // or 'left', 'right', ...
+})
+
+tippy('#nextPage', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#createIssue', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#submitPR', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+</script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script>
+    tippy.setDefaults({
+        placement: 'bottom',
+        arrow: true,
+        arrowType: 'sharp',
+        delay: 800,
+        theme: 'light',
+    });
+
+    tippy('#previousPage', {
+        content: "Previous Page",
+    });
+
+    tippy('#nextPage', {
+        content: "Next Page",
+    });
+
+    tippy('#createIssue', {
+        content: "Create Issue",
+    });
+
+    tippy('#submitPR', {
+        content: "Edit this page and submit a pull request",
+    });
+
+    /* Testing tooltips for terms */
+    tippy('#ubuntu', {
+        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
+
+    });
+
+    tippy('#salt', {
+        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
+
+    });
+
+    tippy('#sle', {
+        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
+
+    });
+
+    tippy('#rhel', {
+        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
+
+    });
+
+    tippy('#centos', {
+        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
+
+    });
+
+    tippy('#sl', {
+        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
+
+
+    });
+
+</script>
+<script type="text/javascript">
+    window.antora = window.antora || {}
+    window.antora.basePath = '../..'
+    window.antora.pagePath = '/uyuni/api/channel.software.html'
+</script>
+<script src="../../_/js/site.js"></script>
+    <script src="../../_/js/vendor/lunr.js"></script>
+    <script src="../../_/js/vendor/search.js"></script>
+    <script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+<script src="../../_/js/vendor/tocbot.min.js"></script>
+<script>
+    tocbot.init( {
+        tocSelector: '#article-toc',
+        contentSelector: 'article',
+        headingSelector: 'h2, h3, h4, h5, h6',
+        collapseDepth: 6,
+        positionFixedSelector: '#article-toc',
+        scrollSmooth: false
+    } );
+    var tocList = document.getElementById( 'article-toc' ).getElementsByClassName( 'toc-list' );
+    if ( tocList && tocList.length > 0 && tocList[0].childNodes.length > 0 ) {
+        document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
+    }
+</script>
+  </body>
+</html>
