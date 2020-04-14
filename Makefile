@@ -107,58 +107,6 @@ define pdf-book-create-index
 endef
 
 
-## Generate PDF version of the Installation Guide
-define pdf-install-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),installation)
-endef
-
-
-## Generate PDF version of the Client Configuration Guide
-define pdf-client-configuration-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),client-configuration)
-
-endef
-
-
-define pdf-upgrade-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),upgrade)
-
-endef
-
-
-define pdf-reference-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),reference)
-
-endef
-
-
-define pdf-administration-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),administration)
-
-endef
-
-
-define pdf-salt-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),salt)
-
-endef
-
-
-define pdf-retail-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),retail)
-
-endef
-
-
-define pdf-architecture-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),architecture)
-endef
-
-
-define pdf-quickstart-public-cloud-product
-	$(call pdf-book-create,$(1),$(2),$(3),$(4),quickstart-public-cloud)
-endef
-
 define pdf-api-product
 	$(call pdf-book-create,$(1),$(2),$(3),$(4),api)
 endef
@@ -257,20 +205,19 @@ antora-uyuni: clean #pdf-all-uyuni pdf-tar-uyuni ## Build the UYUNI Antora stati
 
 
 # UYUNI
-#.PHONY: obs-packages-uyuni
-#obs-packages-uyuni: clean pdf-all-uyuni antora-uyuni ## Generate UYUNI OBS tar files
-#	$(call obs-packages-product,$(HTML_OUTPUT_UYUNI),$(PDF_OUTPUT_UYUNI))
+.PHONY: obs-packages-uyuni
+obs-packages-uyuni: clean pdf-all-uyuni antora-uyuni ## Generate UYUNI OBS tar files
+	$(call obs-packages-product,$(HTML_OUTPUT_UYUNI),$(PDF_OUTPUT_UYUNI))
 
 
-#.PHONY: pdf-all-uyuni
-#pdf-all-uyuni: pdf-api-uyuni ##pdf-architecture-uyuni ## Generate PDF versions of all UYUNI books
+.PHONY: pdf-all-uyuni
+pdf-all-uyuni: pdf-api-uyuni ## Generate PDF version of the UYUNI API Documentation
 
+.PHONY: modules/api/nav-api-guide.pdf.adoc
+modules/api/nav-api-guide.pdf.adoc:
+	$(call pdf-book-create-index,api)
 
-#.PHONY: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-#modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc:
-#	$(call pdf-book-create-index,quickstart-public-cloud)
-
-#.PHONY: pdf-quickstart-public-cloud-uyuni
-## Generate PDF version of the SUMA Quickstart Guide for Public Cloud
-#pdf-quickstart-public-cloud-uyuni: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-#	$(call pdf-quickstart-public-cloud-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
+.PHONY: pdf-api-uyuni
+## Generate PDF version of the UYUNI API
+pdf-api-uyuni: modules/api/nav-api-guide.pdf.adoc
+	$(call pdf-api-product,$(PDF_THEME_UYUNI),$(PRODUCTNAME_UYUNI),$(UYUNI_CONTENT),$(FILENAME_UYUNI))
