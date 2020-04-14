@@ -159,6 +159,10 @@ define pdf-quickstart-public-cloud-product
 	$(call pdf-book-create,$(1),$(2),$(3),$(4),quickstart-public-cloud)
 endef
 
+define pdf-api-product
+	$(call pdf-book-create,$(1),$(2),$(3),$(4),api)
+endef
+
 # Help Menu
 PHONY: help
 help: ## Prints a basic help menu about available targets
@@ -187,8 +191,6 @@ clean: ## Remove build artifacts from output directory (Antora and PDF)
 		public/ \
 		modules/api/nav-api-guide.pdf.adoc
 
-
-
 # SUMA DOCUMENTATION BUILD COMMANDS
 
 .PHONY: validate-suma
@@ -205,7 +207,7 @@ pdf-tar-suma: ## Create tar of PDF files
 
 # To build for suma-webui or uyuni you need to comment out the correct name/title in the antora.yml file. (TODO remove this manual method.)
 .PHONY: antora-suma
-antora-suma: clean pdf-all-suma pdf-tar-suma ## Build the SUMA Antora static site (See README for more information)
+antora-suma: clean pdf-tar-suma #pdf-all-suma ## Build the SUMA Antora static site (See README for more information)
 		sed -i "s/^ # *\(name: *suse-manager\)/\1/;\
 	s/^ # *\(title: *SUSE Manager\)/\1/;\
 	s/^ *\(title: *Uyuni\)/#\1/;\
@@ -216,114 +218,22 @@ antora-suma: clean pdf-all-suma pdf-tar-suma ## Build the SUMA Antora static sit
 
 # SUMA
 .PHONY: obs-packages-suma
-obs-packages-suma: clean pdf-all-suma antora-suma ## Generate SUMA OBS tar files
+obs-packages-suma: clean antora-suma #pdf-all-suma ## Generate SUMA OBS tar files
 	$(call obs-packages-product,$(HTML_OUTPUT_SUMA),$(PDF_OUTPUT_SUMA))
 
 
 # Generate PDF versions of all SUMA books
-.PHONY: pdf-all-suma
-pdf-all-suma: pdf-install-suma pdf-client-configuration-suma pdf-upgrade-suma pdf-reference-suma pdf-administration-suma pdf-salt-suma pdf-retail-suma pdf-quickstart-public-cloud-suma ##pdf-architecture-suma-webui
+#.PHONY: pdf-all-suma
+#pdf-all-suma: pdf-api-suma
 
+#.PHONY: modules/api/nav-api-guide.pdf.adoc
+#modules/api/nav-api-guide.pdf.adoc:
+#	$(call pdf-book-create-index,api)
 
-.PHONY: modules/installation/nav-installation-guide.pdf.adoc
-modules/installation/nav-installation-guide.pdf.adoc:
-	$(call pdf-book-create-index,installation)
-
-## Generate PDF version of the SUMA Installation Guide
-.PHONY: pdf-install-suma
-pdf-install-suma: modules/installation/nav-installation-guide.pdf.adoc
-	$(call pdf-install-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-.PHONY: modules/client-configuration/nav-client-configuration-guide.pdf.adoc
-modules/client-configuration/nav-client-configuration-guide.pdf.adoc:
-	$(call pdf-book-create-index,client-configuration)
-
-## Generate PDF version of the SUMA Client Configuration Guide
-.PHONY: pdf-client-configuration-suma
-pdf-client-configuration-suma: modules/client-configuration/nav-client-configuration-guide.pdf.adoc
-	$(call pdf-client-configuration-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-
-.PHONY: modules/upgrade/nav-upgrade-guide.pdf.adoc
-modules/upgrade/nav-upgrade-guide.pdf.adoc:
-	$(call pdf-book-create-index,upgrade)
-
-## Generate PDF version of the SUMA Upgrade Guide
-.PHONY: pdf-upgrade-suma
-pdf-upgrade-suma: modules/upgrade/nav-upgrade-guide.pdf.adoc
-	$(call pdf-upgrade-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-
-.PHONY: modules/reference/nav-reference-guide.pdf.adoc
-modules/reference/nav-reference-guide.pdf.adoc:
-	$(call pdf-book-create-index,reference)
-
-## Generate PDF version of the SUMA Reference Manual
-.PHONY: pdf-reference-suma
-pdf-reference-suma: modules/reference/nav-reference-guide.pdf.adoc
-	$(call pdf-reference-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-.PHONY: modules/administration/nav-administration-guide.pdf.adoc
-modules/administration/nav-administration-guide.pdf.adoc:
-	$(call pdf-book-create-index,administration)
-
-.PHONY: pdf-administration-suma
-## Generate PDF version of the SUMA Administration Guide
-pdf-administration-suma: modules/administration/nav-administration-guide.pdf.adoc
-	$(call pdf-administration-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-.PHONY: modules/salt/nav-salt-guide.pdf.adoc
-modules/salt/nav-salt-guide.pdf.adoc:
-	$(call pdf-book-create-index,salt)
-
-.PHONY: pdf-salt-suma
-## Generate PDF version of the SUMA Salt Guide
-pdf-salt-suma: modules/salt/nav-salt-guide.pdf.adoc
-	$(call pdf-salt-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-.PHONY: modules/retail/nav-retail-guide.pdf.adoc
-modules/retail/nav-retail-guide.pdf.adoc:
-	$(call pdf-book-create-index,retail)
-
-.PHONY: pdf-retail-suma
-## Generate PDF version of the SUMA Retail Guide
-pdf-retail-suma: modules/retail/nav-retail-guide.pdf.adoc
-	$(call pdf-retail-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-.PHONY: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc:
-	$(call pdf-book-create-index,quickstart-public-cloud)
-
-.PHONY: pdf-qs-public-cloud-suma
-## Generate PDF version of the SUMA Quickstart for public cloud
-pdf-qs-public-cloud-suma: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-	$(call pdf-quickstart-public-cloud-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-.PHONY: modules/architecture/nav-architecture-guide.pdf.adoc
-modules/architecture/nav-architecture-guide.pdf.adoc:
-	$(call pdf-book-create-index,architecture)
-
-.PHONY: pdf-architecture-suma
-## Generate PDF version of the SUMA Architecture Guide
-pdf-architecture-suma: modules/architecture/nav-architecture-guide.pdf.adoc
-	$(call pdf-architecture-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
-
-
-.PHONY: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc:
-	$(call pdf-book-create-index,quickstart-public-cloud)
-
-.PHONY: pdf-quickstart-public-cloud-suma
+#.PHONY: pdf-api-suma
 ## Generate PDF version of the SUMA Quickstart Guide for Public Cloud
-pdf-quickstart-public-cloud-suma: modules/quickstart-public-cloud/nav-quickstart-public-cloud-guide.pdf.adoc
-	$(call pdf-quickstart-public-cloud-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
-
+#pdf-api-suma: modules/api/nav-api-guide.pdf.adoc
+#	$(call pdf-api-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
 
 
 # UYUNI DOCUMENTATION BUILD COMMANDS
@@ -332,12 +242,9 @@ pdf-quickstart-public-cloud-suma: modules/quickstart-public-cloud/nav-quickstart
 validate-uyuni: ## Validates page references and prints a report (Does not build the site)
 	$(call validate,uyuni-api-site.yml)
 
-
-
 .PHONY: pdf-tar-uyuni
 pdf-tar-uyuni: ## Create tar of PDF files
 	$(call pdf-tar-product,$(PDF_OUTPUT_UYUNI))
-
 
 .PHONY: antora-uyuni
 antora-uyuni: clean #pdf-all-uyuni pdf-tar-uyuni ## Build the UYUNI Antora static site (See README for more information)

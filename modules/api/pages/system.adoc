@@ -1,179 +1,178 @@
+[#apidoc-system]
+= system
 
 
+== Available methods
 
-[#system]
-== system
+* <<apidoc-system-addEntitlements,addEntitlements>>
+* <<apidoc-system-addNote,addNote>>
+* <<apidoc-system-applyErrata,applyErrata>>
+* <<apidoc-system-bootstrap,bootstrap>>
+* <<apidoc-system-bootstrap,bootstrap>>
+* <<apidoc-system-bootstrapWithPrivateSshKey,bootstrapWithPrivateSshKey>>
+* <<apidoc-system-bootstrapWithPrivateSshKey,bootstrapWithPrivateSshKey>>
+* <<apidoc-system-comparePackageProfile,comparePackageProfile>>
+* <<apidoc-system-comparePackages,comparePackages>>
+* <<apidoc-system-createPackageProfile,createPackageProfile>>
+* <<apidoc-system-createSystemProfile,createSystemProfile>>
+* <<apidoc-system-createSystemRecord,createSystemRecord>>
+* <<apidoc-system-createSystemRecord,createSystemRecord>>
+* <<apidoc-system-deleteCustomValues,deleteCustomValues>>
+* <<apidoc-system-deleteGuestProfiles,deleteGuestProfiles>>
+* <<apidoc-system-deleteNote,deleteNote>>
+* <<apidoc-system-deleteNotes,deleteNotes>>
+* <<apidoc-system-deletePackageProfile,deletePackageProfile>>
+* <<apidoc-system-deleteSystem,deleteSystem>>
+* <<apidoc-system-deleteSystem,deleteSystem>>
+* <<apidoc-system-deleteSystem,deleteSystem>>
+* <<apidoc-system-deleteSystems,deleteSystems>>
+* <<apidoc-system-deleteSystems,deleteSystems>>
+* <<apidoc-system-deleteTagFromSnapshot,deleteTagFromSnapshot>>
+* <<apidoc-system-downloadSystemId,downloadSystemId>>
+* <<apidoc-system-getConnectionPath,getConnectionPath>>
+* <<apidoc-system-getCpu,getCpu>>
+* <<apidoc-system-getCustomValues,getCustomValues>>
+* <<apidoc-system-getDetails,getDetails>>
+* <<apidoc-system-getDevices,getDevices>>
+* <<apidoc-system-getDmi,getDmi>>
+* <<apidoc-system-getEntitlements,getEntitlements>>
+* <<apidoc-system-getEventHistory,getEventHistory>>
+* <<apidoc-system-getId,getId>>
+* <<apidoc-system-getInstalledProducts,getInstalledProducts>>
+* <<apidoc-system-getKernelLivePatch,getKernelLivePatch>>
+* <<apidoc-system-getMemory,getMemory>>
+* <<apidoc-system-getMinionIdMap,getMinionIdMap>>
+* <<apidoc-system-getName,getName>>
+* <<apidoc-system-getNetwork,getNetwork>>
+* <<apidoc-system-getNetworkDevices,getNetworkDevices>>
+* <<apidoc-system-getOsaPing,getOsaPing>>
+* <<apidoc-system-getRegistrationDate,getRegistrationDate>>
+* <<apidoc-system-getRelevantErrata,getRelevantErrata>>
+* <<apidoc-system-getRelevantErrataByType,getRelevantErrataByType>>
+* <<apidoc-system-getRunningKernel,getRunningKernel>>
+* <<apidoc-system-getScriptActionDetails,getScriptActionDetails>>
+* <<apidoc-system-getScriptResults,getScriptResults>>
+* <<apidoc-system-getSubscribedBaseChannel,getSubscribedBaseChannel>>
+* <<apidoc-system-getSystemCurrencyMultipliers,getSystemCurrencyMultipliers>>
+* <<apidoc-system-getSystemCurrencyScores,getSystemCurrencyScores>>
+* <<apidoc-system-getUnscheduledErrata,getUnscheduledErrata>>
+* <<apidoc-system-getUuid,getUuid>>
+* <<apidoc-system-getVariables,getVariables>>
+* <<apidoc-system-isNvreInstalled,isNvreInstalled>>
+* <<apidoc-system-isNvreInstalled,isNvreInstalled>>
+* <<apidoc-system-listActivationKeys,listActivationKeys>>
+* <<apidoc-system-listActiveSystems,listActiveSystems>>
+* <<apidoc-system-listActiveSystemsDetails,listActiveSystemsDetails>>
+* <<apidoc-system-listAdministrators,listAdministrators>>
+* <<apidoc-system-listAllInstallablePackages,listAllInstallablePackages>>
+* <<apidoc-system-listBaseChannels,listBaseChannels>>
+* <<apidoc-system-listChildChannels,listChildChannels>>
+* <<apidoc-system-listDuplicatesByHostname,listDuplicatesByHostname>>
+* <<apidoc-system-listDuplicatesByIp,listDuplicatesByIp>>
+* <<apidoc-system-listDuplicatesByMac,listDuplicatesByMac>>
+* <<apidoc-system-listEmptySystemProfiles,listEmptySystemProfiles>>
+* <<apidoc-system-listExtraPackages,listExtraPackages>>
+* <<apidoc-system-listFqdns,listFqdns>>
+* <<apidoc-system-listGroups,listGroups>>
+* <<apidoc-system-listInactiveSystems,listInactiveSystems>>
+* <<apidoc-system-listInactiveSystems,listInactiveSystems>>
+* <<apidoc-system-listLatestAvailablePackage,listLatestAvailablePackage>>
+* <<apidoc-system-listLatestInstallablePackages,listLatestInstallablePackages>>
+* <<apidoc-system-listLatestUpgradablePackages,listLatestUpgradablePackages>>
+* <<apidoc-system-listMigrationTargets,listMigrationTargets>>
+* <<apidoc-system-listNewerInstalledPackages,listNewerInstalledPackages>>
+* <<apidoc-system-listNotes,listNotes>>
+* <<apidoc-system-listOlderInstalledPackages,listOlderInstalledPackages>>
+* <<apidoc-system-listOutOfDateSystems,listOutOfDateSystems>>
+* <<apidoc-system-listPackageProfiles,listPackageProfiles>>
+* <<apidoc-system-listPackages,listPackages>>
+* <<apidoc-system-listPackagesFromChannel,listPackagesFromChannel>>
+* <<apidoc-system-listPhysicalSystems,listPhysicalSystems>>
+* <<apidoc-system-listSubscribableBaseChannels,listSubscribableBaseChannels>>
+* <<apidoc-system-listSubscribableChildChannels,listSubscribableChildChannels>>
+* <<apidoc-system-listSubscribedChildChannels,listSubscribedChildChannels>>
+* <<apidoc-system-listSuggestedReboot,listSuggestedReboot>>
+* <<apidoc-system-listSystemEvents,listSystemEvents>>
+* <<apidoc-system-listSystemEvents,listSystemEvents>>
+* <<apidoc-system-listSystems,listSystems>>
+* <<apidoc-system-listSystemsWithExtraPackages,listSystemsWithExtraPackages>>
+* <<apidoc-system-listSystemsWithPackage,listSystemsWithPackage>>
+* <<apidoc-system-listSystemsWithPackage,listSystemsWithPackage>>
+* <<apidoc-system-listUngroupedSystems,listUngroupedSystems>>
+* <<apidoc-system-listUserSystems,listUserSystems>>
+* <<apidoc-system-listUserSystems,listUserSystems>>
+* <<apidoc-system-listVirtualGuests,listVirtualGuests>>
+* <<apidoc-system-listVirtualHosts,listVirtualHosts>>
+* <<apidoc-system-obtainReactivationKey,obtainReactivationKey>>
+* <<apidoc-system-obtainReactivationKey,obtainReactivationKey>>
+* <<apidoc-system-provisionSystem,provisionSystem>>
+* <<apidoc-system-provisionSystem,provisionSystem>>
+* <<apidoc-system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<apidoc-system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<apidoc-system-provisionVirtualGuest,provisionVirtualGuest>>
+* <<apidoc-system-removeEntitlements,removeEntitlements>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyErrata,scheduleApplyErrata>>
+* <<apidoc-system-scheduleApplyHighstate,scheduleApplyHighstate>>
+* <<apidoc-system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
+* <<apidoc-system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
+* <<apidoc-system-scheduleChangeChannels,scheduleChangeChannels>>
+* <<apidoc-system-scheduleChangeChannels,scheduleChangeChannels>>
+* <<apidoc-system-scheduleDistUpgrade,scheduleDistUpgrade>>
+* <<apidoc-system-scheduleGuestAction,scheduleGuestAction>>
+* <<apidoc-system-scheduleGuestAction,scheduleGuestAction>>
+* <<apidoc-system-scheduleHardwareRefresh,scheduleHardwareRefresh>>
+* <<apidoc-system-schedulePackageInstall,schedulePackageInstall>>
+* <<apidoc-system-schedulePackageInstall,schedulePackageInstall>>
+* <<apidoc-system-schedulePackageInstall,schedulePackageInstall>>
+* <<apidoc-system-schedulePackageInstall,schedulePackageInstall>>
+* <<apidoc-system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<apidoc-system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<apidoc-system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<apidoc-system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
+* <<apidoc-system-schedulePackageRefresh,schedulePackageRefresh>>
+* <<apidoc-system-schedulePackageRemove,schedulePackageRemove>>
+* <<apidoc-system-schedulePackageRemove,schedulePackageRemove>>
+* <<apidoc-system-schedulePackageRemove,schedulePackageRemove>>
+* <<apidoc-system-schedulePackageRemove,schedulePackageRemove>>
+* <<apidoc-system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<apidoc-system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<apidoc-system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<apidoc-system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
+* <<apidoc-system-scheduleReboot,scheduleReboot>>
+* <<apidoc-system-scheduleSPMigration,scheduleSPMigration>>
+* <<apidoc-system-scheduleSPMigration,scheduleSPMigration>>
+* <<apidoc-system-scheduleScriptRun,scheduleScriptRun>>
+* <<apidoc-system-scheduleScriptRun,scheduleScriptRun>>
+* <<apidoc-system-scheduleScriptRun,scheduleScriptRun>>
+* <<apidoc-system-scheduleScriptRun,scheduleScriptRun>>
+* <<apidoc-system-scheduleSyncPackagesWithSystem,scheduleSyncPackagesWithSystem>>
+* <<apidoc-system-searchByName,searchByName>>
+* <<apidoc-system-sendOsaPing,sendOsaPing>>
+* <<apidoc-system-setBaseChannel,setBaseChannel>>
+* <<apidoc-system-setBaseChannel,setBaseChannel>>
+* <<apidoc-system-setChildChannels,setChildChannels>>
+* <<apidoc-system-setCustomValues,setCustomValues>>
+* <<apidoc-system-setDetails,setDetails>>
+* <<apidoc-system-setGroupMembership,setGroupMembership>>
+* <<apidoc-system-setGuestCpus,setGuestCpus>>
+* <<apidoc-system-setGuestMemory,setGuestMemory>>
+* <<apidoc-system-setLockStatus,setLockStatus>>
+* <<apidoc-system-setPrimaryInterface,setPrimaryInterface>>
+* <<apidoc-system-setProfileName,setProfileName>>
+* <<apidoc-system-setVariables,setVariables>>
+* <<apidoc-system-tagLatestSnapshot,tagLatestSnapshot>>
+* <<apidoc-system-unentitle,unentitle>>
+* <<apidoc-system-upgradeEntitlement,upgradeEntitlement>>
+* <<apidoc-system-whoRegistered,whoRegistered>>
 
-
-=== Available methods
-
-* <<system-addEntitlements,addEntitlements>>
-* <<system-addNote,addNote>>
-* <<system-applyErrata,applyErrata>>
-* <<system-bootstrap,bootstrap>>
-* <<system-bootstrap,bootstrap>>
-* <<system-comparePackageProfile,comparePackageProfile>>
-* <<system-comparePackages,comparePackages>>
-* <<system-createPackageProfile,createPackageProfile>>
-* <<system-createSystemProfile,createSystemProfile>>
-* <<system-createSystemRecord,createSystemRecord>>
-* <<system-createSystemRecord,createSystemRecord>>
-* <<system-deleteCustomValues,deleteCustomValues>>
-* <<system-deleteGuestProfiles,deleteGuestProfiles>>
-* <<system-deleteNote,deleteNote>>
-* <<system-deleteNotes,deleteNotes>>
-* <<system-deletePackageProfile,deletePackageProfile>>
-* <<system-deleteSystem,deleteSystem>>
-* <<system-deleteSystem,deleteSystem>>
-* <<system-deleteSystem,deleteSystem>>
-* <<system-deleteSystems,deleteSystems>>
-* <<system-deleteSystems,deleteSystems>>
-* <<system-deleteTagFromSnapshot,deleteTagFromSnapshot>>
-* <<system-downloadSystemId,downloadSystemId>>
-* <<system-getConnectionPath,getConnectionPath>>
-* <<system-getCpu,getCpu>>
-* <<system-getCustomValues,getCustomValues>>
-* <<system-getDetails,getDetails>>
-* <<system-getDevices,getDevices>>
-* <<system-getDmi,getDmi>>
-* <<system-getEntitlements,getEntitlements>>
-* <<system-getEventHistory,getEventHistory>>
-* <<system-getId,getId>>
-* <<system-getInstalledProducts,getInstalledProducts>>
-* <<system-getKernelLivePatch,getKernelLivePatch>>
-* <<system-getMemory,getMemory>>
-* <<system-getMinionIdMap,getMinionIdMap>>
-* <<system-getName,getName>>
-* <<system-getNetwork,getNetwork>>
-* <<system-getNetworkDevices,getNetworkDevices>>
-* <<system-getOsaPing,getOsaPing>>
-* <<system-getRegistrationDate,getRegistrationDate>>
-* <<system-getRelevantErrata,getRelevantErrata>>
-* <<system-getRelevantErrataByType,getRelevantErrataByType>>
-* <<system-getRunningKernel,getRunningKernel>>
-* <<system-getScriptActionDetails,getScriptActionDetails>>
-* <<system-getScriptResults,getScriptResults>>
-* <<system-getSubscribedBaseChannel,getSubscribedBaseChannel>>
-* <<system-getSystemCurrencyMultipliers,getSystemCurrencyMultipliers>>
-* <<system-getSystemCurrencyScores,getSystemCurrencyScores>>
-* <<system-getUnscheduledErrata,getUnscheduledErrata>>
-* <<system-getUuid,getUuid>>
-* <<system-getVariables,getVariables>>
-* <<system-isNvreInstalled,isNvreInstalled>>
-* <<system-isNvreInstalled,isNvreInstalled>>
-* <<system-listActivationKeys,listActivationKeys>>
-* <<system-listActiveSystems,listActiveSystems>>
-* <<system-listActiveSystemsDetails,listActiveSystemsDetails>>
-* <<system-listAdministrators,listAdministrators>>
-* <<system-listAllInstallablePackages,listAllInstallablePackages>>
-* <<system-listBaseChannels,listBaseChannels>>
-* <<system-listChildChannels,listChildChannels>>
-* <<system-listDuplicatesByHostname,listDuplicatesByHostname>>
-* <<system-listDuplicatesByIp,listDuplicatesByIp>>
-* <<system-listDuplicatesByMac,listDuplicatesByMac>>
-* <<system-listEmptySystemProfiles,listEmptySystemProfiles>>
-* <<system-listExtraPackages,listExtraPackages>>
-* <<system-listFqdns,listFqdns>>
-* <<system-listGroups,listGroups>>
-* <<system-listInactiveSystems,listInactiveSystems>>
-* <<system-listInactiveSystems,listInactiveSystems>>
-* <<system-listLatestAvailablePackage,listLatestAvailablePackage>>
-* <<system-listLatestInstallablePackages,listLatestInstallablePackages>>
-* <<system-listLatestUpgradablePackages,listLatestUpgradablePackages>>
-* <<system-listMigrationTargets,listMigrationTargets>>
-* <<system-listNewerInstalledPackages,listNewerInstalledPackages>>
-* <<system-listNotes,listNotes>>
-* <<system-listOlderInstalledPackages,listOlderInstalledPackages>>
-* <<system-listOutOfDateSystems,listOutOfDateSystems>>
-* <<system-listPackageProfiles,listPackageProfiles>>
-* <<system-listPackages,listPackages>>
-* <<system-listPackagesFromChannel,listPackagesFromChannel>>
-* <<system-listPhysicalSystems,listPhysicalSystems>>
-* <<system-listSubscribableBaseChannels,listSubscribableBaseChannels>>
-* <<system-listSubscribableChildChannels,listSubscribableChildChannels>>
-* <<system-listSubscribedChildChannels,listSubscribedChildChannels>>
-* <<system-listSuggestedReboot,listSuggestedReboot>>
-* <<system-listSystemEvents,listSystemEvents>>
-* <<system-listSystemEvents,listSystemEvents>>
-* <<system-listSystems,listSystems>>
-* <<system-listSystemsWithExtraPackages,listSystemsWithExtraPackages>>
-* <<system-listSystemsWithPackage,listSystemsWithPackage>>
-* <<system-listSystemsWithPackage,listSystemsWithPackage>>
-* <<system-listUngroupedSystems,listUngroupedSystems>>
-* <<system-listUserSystems,listUserSystems>>
-* <<system-listUserSystems,listUserSystems>>
-* <<system-listVirtualGuests,listVirtualGuests>>
-* <<system-listVirtualHosts,listVirtualHosts>>
-* <<system-obtainReactivationKey,obtainReactivationKey>>
-* <<system-obtainReactivationKey,obtainReactivationKey>>
-* <<system-provisionSystem,provisionSystem>>
-* <<system-provisionSystem,provisionSystem>>
-* <<system-provisionVirtualGuest,provisionVirtualGuest>>
-* <<system-provisionVirtualGuest,provisionVirtualGuest>>
-* <<system-provisionVirtualGuest,provisionVirtualGuest>>
-* <<system-removeEntitlements,removeEntitlements>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyErrata,scheduleApplyErrata>>
-* <<system-scheduleApplyHighstate,scheduleApplyHighstate>>
-* <<system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
-* <<system-scheduleCertificateUpdate,scheduleCertificateUpdate>>
-* <<system-scheduleChangeChannels,scheduleChangeChannels>>
-* <<system-scheduleChangeChannels,scheduleChangeChannels>>
-* <<system-scheduleDistUpgrade,scheduleDistUpgrade>>
-* <<system-scheduleGuestAction,scheduleGuestAction>>
-* <<system-scheduleGuestAction,scheduleGuestAction>>
-* <<system-scheduleHardwareRefresh,scheduleHardwareRefresh>>
-* <<system-schedulePackageInstall,schedulePackageInstall>>
-* <<system-schedulePackageInstall,schedulePackageInstall>>
-* <<system-schedulePackageInstall,schedulePackageInstall>>
-* <<system-schedulePackageInstall,schedulePackageInstall>>
-* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
-* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
-* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
-* <<system-schedulePackageInstallByNevra,schedulePackageInstallByNevra>>
-* <<system-schedulePackageRefresh,schedulePackageRefresh>>
-* <<system-schedulePackageRemove,schedulePackageRemove>>
-* <<system-schedulePackageRemove,schedulePackageRemove>>
-* <<system-schedulePackageRemove,schedulePackageRemove>>
-* <<system-schedulePackageRemove,schedulePackageRemove>>
-* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
-* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
-* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
-* <<system-schedulePackageRemoveByNevra,schedulePackageRemoveByNevra>>
-* <<system-scheduleReboot,scheduleReboot>>
-* <<system-scheduleSPMigration,scheduleSPMigration>>
-* <<system-scheduleSPMigration,scheduleSPMigration>>
-* <<system-scheduleScriptRun,scheduleScriptRun>>
-* <<system-scheduleScriptRun,scheduleScriptRun>>
-* <<system-scheduleScriptRun,scheduleScriptRun>>
-* <<system-scheduleScriptRun,scheduleScriptRun>>
-* <<system-scheduleSyncPackagesWithSystem,scheduleSyncPackagesWithSystem>>
-* <<system-searchByName,searchByName>>
-* <<system-sendOsaPing,sendOsaPing>>
-* <<system-setBaseChannel,setBaseChannel>>
-* <<system-setBaseChannel,setBaseChannel>>
-* <<system-setChildChannels,setChildChannels>>
-* <<system-setCustomValues,setCustomValues>>
-* <<system-setDetails,setDetails>>
-* <<system-setGroupMembership,setGroupMembership>>
-* <<system-setGuestCpus,setGuestCpus>>
-* <<system-setGuestMemory,setGuestMemory>>
-* <<system-setLockStatus,setLockStatus>>
-* <<system-setPrimaryInterface,setPrimaryInterface>>
-* <<system-setProfileName,setProfileName>>
-* <<system-setVariables,setVariables>>
-* <<system-tagLatestSnapshot,tagLatestSnapshot>>
-* <<system-unentitle,unentitle>>
-* <<system-upgradeEntitlement,upgradeEntitlement>>
-* <<system-whoRegistered,whoRegistered>>
-
-=== Description
+== Description
 
 Provides methods to access and modify registered system.
 
@@ -184,8 +183,8 @@ system
 '''
 
 
-[#system-addEntitlements]
-=== Method: addEntitlements 
+[#apidoc-system-addEntitlements]
+== Method: addEntitlements 
 
 Description:
 
@@ -215,8 +214,8 @@ Returns:
 '''
 
 
-[#system-addNote]
-=== Method: addNote 
+[#apidoc-system-addNote]
+== Method: addNote 
 
 Description:
 
@@ -245,8 +244,8 @@ Returns:
 '''
 
 
-[#system-applyErrata]
-=== Method: applyErrata (Deprecated)
+[#apidoc-system-applyErrata]
+== Method: applyErrata (Deprecated)
 
 Description:
 
@@ -276,8 +275,8 @@ Returns:
 '''
 
 
-[#system-bootstrap]
-=== Method: bootstrap 
+[#apidoc-system-bootstrap]
+== Method: bootstrap 
 
 Description:
 
@@ -312,8 +311,8 @@ Returns:
 '''
 
 
-[#system-bootstrap]
-=== Method: bootstrap 
+[#apidoc-system-bootstrap]
+== Method: bootstrap 
 
 Description:
 
@@ -350,8 +349,88 @@ Returns:
 '''
 
 
-[#system-comparePackageProfile]
-=== Method: comparePackageProfile 
+[#apidoc-system-bootstrapWithPrivateSshKey]
+== Method: bootstrapWithPrivateSshKey 
+
+Description:
+
+Bootstrap a system for management via either Salt or Salt SSH.
+ Use SSH private key for authentication.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - Hostname or IP address of target
+ 
+* [.int]#int#  sshPort - SSH port on target machine
+ 
+* [.string]#string#  sshUser - SSH user on target machine
+ 
+* [.string]#string#  sshPrivKey - SSH private key as a string in PEM format
+ 
+* [.string]#string#  sshPrivKeyPass - SSH passphrase for the key (use empty string for no passphrase)
+ 
+* [.string]#string#  activationKey - Activation key
+ 
+* [.boolean]#boolean#  saltSSH - Manage system with Salt SSH
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#apidoc-system-bootstrapWithPrivateSshKey]
+== Method: bootstrapWithPrivateSshKey 
+
+Description:
+
+Bootstrap a system for management via either Salt or Salt SSH.
+ Use SSH private key for authentication.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - Hostname or IP address of target
+ 
+* [.int]#int#  sshPort - SSH port on target machine
+ 
+* [.string]#string#  sshUser - SSH user on target machine
+ 
+* [.string]#string#  sshPrivKey - SSH private key as a string in PEM format
+ 
+* [.string]#string#  sshPrivKeyPass - SSH passphrase for the key (use empty string for no passphrase)
+ 
+* [.string]#string#  activationKey - Activation key
+ 
+* [.int]#int#  proxyId - System ID of proxy to use
+ 
+* [.boolean]#boolean#  saltSSH - Manage system with Salt SSH
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+'''
+
+
+[#apidoc-system-comparePackageProfile]
+== Method: comparePackageProfile 
 
 Description:
 
@@ -400,8 +479,8 @@ Returns:
 '''
 
 
-[#system-comparePackages]
-=== Method: comparePackages 
+[#apidoc-system-comparePackages]
+== Method: comparePackages 
 
 Description:
 
@@ -448,8 +527,8 @@ Returns:
 '''
 
 
-[#system-createPackageProfile]
-=== Method: createPackageProfile 
+[#apidoc-system-createPackageProfile]
+== Method: createPackageProfile 
 
 Description:
 
@@ -479,8 +558,8 @@ Returns:
 '''
 
 
-[#system-createSystemProfile]
-=== Method: createSystemProfile 
+[#apidoc-system-createSystemProfile]
+== Method: createSystemProfile 
 
 Description:
 
@@ -513,8 +592,8 @@ Returns:
 '''
 
 
-[#system-createSystemRecord]
-=== Method: createSystemRecord 
+[#apidoc-system-createSystemRecord]
+== Method: createSystemRecord 
 
 Description:
 
@@ -541,8 +620,8 @@ Returns:
 '''
 
 
-[#system-createSystemRecord]
-=== Method: createSystemRecord 
+[#apidoc-system-createSystemRecord]
+== Method: createSystemRecord 
 
 Description:
 
@@ -582,8 +661,8 @@ Returns:
 '''
 
 
-[#system-deleteCustomValues]
-=== Method: deleteCustomValues 
+[#apidoc-system-deleteCustomValues]
+== Method: deleteCustomValues 
 
 Description:
 
@@ -614,8 +693,8 @@ Returns:
 '''
 
 
-[#system-deleteGuestProfiles]
-=== Method: deleteGuestProfiles 
+[#apidoc-system-deleteGuestProfiles]
+== Method: deleteGuestProfiles 
 
 Description:
 
@@ -643,8 +722,8 @@ Returns:
 '''
 
 
-[#system-deleteNote]
-=== Method: deleteNote 
+[#apidoc-system-deleteNote]
+== Method: deleteNote 
 
 Description:
 
@@ -671,8 +750,8 @@ Returns:
 '''
 
 
-[#system-deleteNotes]
-=== Method: deleteNotes 
+[#apidoc-system-deleteNotes]
+== Method: deleteNotes 
 
 Description:
 
@@ -697,8 +776,8 @@ Returns:
 '''
 
 
-[#system-deletePackageProfile]
-=== Method: deletePackageProfile 
+[#apidoc-system-deletePackageProfile]
+== Method: deletePackageProfile 
 
 Description:
 
@@ -723,8 +802,8 @@ Returns:
 '''
 
 
-[#system-deleteSystem]
-=== Method: deleteSystem 
+[#apidoc-system-deleteSystem]
+== Method: deleteSystem 
 
 Description:
 
@@ -748,8 +827,8 @@ Available since API version: 10.10
 '''
 
 
-[#system-deleteSystem]
-=== Method: deleteSystem 
+[#apidoc-system-deleteSystem]
+== Method: deleteSystem 
 
 Description:
 
@@ -774,8 +853,8 @@ Returns:
 '''
 
 
-[#system-deleteSystem]
-=== Method: deleteSystem 
+[#apidoc-system-deleteSystem]
+== Method: deleteSystem 
 
 Description:
 
@@ -805,8 +884,8 @@ Returns:
 '''
 
 
-[#system-deleteSystems]
-=== Method: deleteSystems 
+[#apidoc-system-deleteSystems]
+== Method: deleteSystems 
 
 Description:
 
@@ -832,8 +911,8 @@ Returns:
 '''
 
 
-[#system-deleteSystems]
-=== Method: deleteSystems 
+[#apidoc-system-deleteSystems]
+== Method: deleteSystems 
 
 Description:
 
@@ -864,8 +943,8 @@ Returns:
 '''
 
 
-[#system-deleteTagFromSnapshot]
-=== Method: deleteTagFromSnapshot 
+[#apidoc-system-deleteTagFromSnapshot]
+== Method: deleteTagFromSnapshot 
 
 Description:
 
@@ -892,8 +971,8 @@ Returns:
 '''
 
 
-[#system-downloadSystemId]
-=== Method: downloadSystemId 
+[#apidoc-system-downloadSystemId]
+== Method: downloadSystemId 
 
 Description:
 
@@ -918,8 +997,8 @@ Returns:
 '''
 
 
-[#system-getConnectionPath]
-=== Method: getConnectionPath 
+[#apidoc-system-getConnectionPath]
+== Method: getConnectionPath 
 
 Description:
 
@@ -953,8 +1032,8 @@ Returns:
 '''
 
 
-[#system-getCpu]
-=== Method: getCpu 
+[#apidoc-system-getCpu]
+== Method: getCpu 
 
 Description:
 
@@ -991,8 +1070,8 @@ Returns:
 '''
 
 
-[#system-getCustomValues]
-=== Method: getCustomValues 
+[#apidoc-system-getCustomValues]
+== Method: getCustomValues 
 
 Description:
 
@@ -1019,8 +1098,8 @@ Returns:
 '''
 
 
-[#system-getDetails]
-=== Method: getDetails 
+[#apidoc-system-getDetails]
+== Method: getDetails 
 
 Description:
 
@@ -1082,8 +1161,8 @@ Returns:
 '''
 
 
-[#system-getDevices]
-=== Method: getDevices 
+[#apidoc-system-getDevices]
+== Method: getDevices 
 
 Description:
 
@@ -1119,8 +1198,8 @@ Returns:
 '''
 
 
-[#system-getDmi]
-=== Method: getDmi 
+[#apidoc-system-getDmi]
+== Method: getDmi 
 
 Description:
 
@@ -1155,8 +1234,8 @@ Returns:
 '''
 
 
-[#system-getEntitlements]
-=== Method: getEntitlements 
+[#apidoc-system-getEntitlements]
+== Method: getEntitlements 
 
 Description:
 
@@ -1182,8 +1261,8 @@ Returns:
 '''
 
 
-[#system-getEventHistory]
-=== Method: getEventHistory 
+[#apidoc-system-getEventHistory]
+== Method: getEventHistory 
 
 Description:
 
@@ -1220,8 +1299,8 @@ Returns:
 '''
 
 
-[#system-getId]
-=== Method: getId 
+[#apidoc-system-getId]
+== Method: getId 
 
 Description:
 
@@ -1259,8 +1338,8 @@ Returns:
 '''
 
 
-[#system-getInstalledProducts]
-=== Method: getInstalledProducts 
+[#apidoc-system-getInstalledProducts]
+== Method: getInstalledProducts 
 
 Description:
 
@@ -1295,8 +1374,8 @@ Returns:
 '''
 
 
-[#system-getKernelLivePatch]
-=== Method: getKernelLivePatch 
+[#apidoc-system-getKernelLivePatch]
+== Method: getKernelLivePatch 
 
 Description:
 
@@ -1323,8 +1402,8 @@ Returns:
 '''
 
 
-[#system-getMemory]
-=== Method: getMemory 
+[#apidoc-system-getMemory]
+== Method: getMemory 
 
 Description:
 
@@ -1352,8 +1431,8 @@ Returns:
 '''
 
 
-[#system-getMinionIdMap]
-=== Method: getMinionIdMap 
+[#apidoc-system-getMinionIdMap]
+== Method: getMinionIdMap 
 
 Description:
 
@@ -1377,8 +1456,8 @@ Returns:
 '''
 
 
-[#system-getName]
-=== Method: getName 
+[#apidoc-system-getName]
+== Method: getName 
 
 Description:
 
@@ -1408,8 +1487,8 @@ Returns:
 '''
 
 
-[#system-getNetwork]
-=== Method: getNetwork 
+[#apidoc-system-getNetwork]
+== Method: getNetwork 
 
 Description:
 
@@ -1438,8 +1517,8 @@ Returns:
 '''
 
 
-[#system-getNetworkDevices]
-=== Method: getNetworkDevices 
+[#apidoc-system-getNetworkDevices]
+== Method: getNetworkDevices 
 
 Description:
 
@@ -1491,8 +1570,8 @@ Returns:
 '''
 
 
-[#system-getOsaPing]
-=== Method: getOsaPing 
+[#apidoc-system-getOsaPing]
+== Method: getOsaPing 
 
 Description:
 
@@ -1523,8 +1602,8 @@ Returns:
 '''
 
 
-[#system-getRegistrationDate]
-=== Method: getRegistrationDate 
+[#apidoc-system-getRegistrationDate]
+== Method: getRegistrationDate 
 
 Description:
 
@@ -1550,8 +1629,8 @@ Returns:
 '''
 
 
-[#system-getRelevantErrata]
-=== Method: getRelevantErrata 
+[#apidoc-system-getRelevantErrata]
+== Method: getRelevantErrata 
 
 Description:
 
@@ -1586,8 +1665,8 @@ Returns:
 '''
 
 
-[#system-getRelevantErrataByType]
-=== Method: getRelevantErrataByType 
+[#apidoc-system-getRelevantErrataByType]
+== Method: getRelevantErrataByType 
 
 Description:
 
@@ -1627,8 +1706,8 @@ Returns:
 '''
 
 
-[#system-getRunningKernel]
-=== Method: getRunningKernel 
+[#apidoc-system-getRunningKernel]
+== Method: getRunningKernel 
 
 Description:
 
@@ -1653,8 +1732,8 @@ Returns:
 '''
 
 
-[#system-getScriptActionDetails]
-=== Method: getScriptActionDetails 
+[#apidoc-system-getScriptActionDetails]
+== Method: getScriptActionDetails 
 
 Description:
 
@@ -1697,8 +1776,8 @@ Returns:
 '''
 
 
-[#system-getScriptResults]
-=== Method: getScriptResults 
+[#apidoc-system-getScriptResults]
+== Method: getScriptResults 
 
 Description:
 
@@ -1735,8 +1814,8 @@ Returns:
 '''
 
 
-[#system-getSubscribedBaseChannel]
-=== Method: getSubscribedBaseChannel 
+[#apidoc-system-getSubscribedBaseChannel]
+== Method: getSubscribedBaseChannel 
 
 Description:
 
@@ -1791,8 +1870,8 @@ Returns:
 '''
 
 
-[#system-getSystemCurrencyMultipliers]
-=== Method: getSystemCurrencyMultipliers 
+[#apidoc-system-getSystemCurrencyMultipliers]
+== Method: getSystemCurrencyMultipliers 
 
 Description:
 
@@ -1815,8 +1894,8 @@ Returns:
 '''
 
 
-[#system-getSystemCurrencyScores]
-=== Method: getSystemCurrencyScores 
+[#apidoc-system-getSystemCurrencyScores]
+== Method: getSystemCurrencyScores 
 
 Description:
 
@@ -1850,8 +1929,8 @@ Returns:
 '''
 
 
-[#system-getUnscheduledErrata]
-=== Method: getUnscheduledErrata 
+[#apidoc-system-getUnscheduledErrata]
+== Method: getUnscheduledErrata 
 
 Description:
 
@@ -1885,8 +1964,8 @@ Returns:
 '''
 
 
-[#system-getUuid]
-=== Method: getUuid 
+[#apidoc-system-getUuid]
+== Method: getUuid 
 
 Description:
 
@@ -1911,8 +1990,8 @@ Returns:
 '''
 
 
-[#system-getVariables]
-=== Method: getVariables 
+[#apidoc-system-getVariables]
+== Method: getVariables 
 
 Description:
 
@@ -1953,8 +2032,8 @@ Returns:
 '''
 
 
-[#system-isNvreInstalled]
-=== Method: isNvreInstalled 
+[#apidoc-system-isNvreInstalled]
+== Method: isNvreInstalled 
 
 Description:
 
@@ -1986,8 +2065,8 @@ Returns:
 '''
 
 
-[#system-isNvreInstalled]
-=== Method: isNvreInstalled 
+[#apidoc-system-isNvreInstalled]
+== Method: isNvreInstalled 
 
 Description:
 
@@ -2021,8 +2100,8 @@ Returns:
 '''
 
 
-[#system-listActivationKeys]
-=== Method: listActivationKeys 
+[#apidoc-system-listActivationKeys]
+== Method: listActivationKeys 
 
 Description:
 
@@ -2049,8 +2128,8 @@ Returns:
 '''
 
 
-[#system-listActiveSystems]
-=== Method: listActiveSystems 
+[#apidoc-system-listActiveSystems]
+== Method: listActiveSystems 
 
 Description:
 
@@ -2074,9 +2153,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
       // no end needed
@@ -2086,8 +2162,8 @@ Returns:
 '''
 
 
-[#system-listActiveSystemsDetails]
-=== Method: listActiveSystemsDetails 
+[#apidoc-system-listActiveSystemsDetails]
+== Method: listActiveSystemsDetails 
 
 Description:
 
@@ -2187,8 +2263,8 @@ Returns:
 '''
 
 
-[#system-listAdministrators]
-=== Method: listAdministrators 
+[#apidoc-system-listAdministrators]
+== Method: listAdministrators 
 
 Description:
 
@@ -2222,8 +2298,8 @@ Returns:
 '''
 
 
-[#system-listAllInstallablePackages]
-=== Method: listAllInstallablePackages 
+[#apidoc-system-listAllInstallablePackages]
+== Method: listAllInstallablePackages 
 
 Description:
 
@@ -2257,8 +2333,8 @@ Returns:
 '''
 
 
-[#system-listBaseChannels]
-=== Method: listBaseChannels (Deprecated)
+[#apidoc-system-listBaseChannels]
+== Method: listBaseChannels (Deprecated)
 
 Description:
 
@@ -2293,8 +2369,8 @@ Returns:
 '''
 
 
-[#system-listChildChannels]
-=== Method: listChildChannels (Deprecated)
+[#apidoc-system-listChildChannels]
+== Method: listChildChannels (Deprecated)
 
 Description:
 
@@ -2331,8 +2407,8 @@ Returns:
 '''
 
 
-[#system-listDuplicatesByHostname]
-=== Method: listDuplicatesByHostname 
+[#apidoc-system-listDuplicatesByHostname]
+== Method: listDuplicatesByHostname 
 
 Description:
 
@@ -2368,8 +2444,8 @@ Returns:
 '''
 
 
-[#system-listDuplicatesByIp]
-=== Method: listDuplicatesByIp 
+[#apidoc-system-listDuplicatesByIp]
+== Method: listDuplicatesByIp 
 
 Description:
 
@@ -2405,8 +2481,8 @@ Returns:
 '''
 
 
-[#system-listDuplicatesByMac]
-=== Method: listDuplicatesByMac 
+[#apidoc-system-listDuplicatesByMac]
+== Method: listDuplicatesByMac 
 
 Description:
 
@@ -2442,8 +2518,8 @@ Returns:
 '''
 
 
-[#system-listEmptySystemProfiles]
-=== Method: listEmptySystemProfiles 
+[#apidoc-system-listEmptySystemProfiles]
+== Method: listEmptySystemProfiles 
 
 Description:
 
@@ -2476,8 +2552,8 @@ Returns:
 '''
 
 
-[#system-listExtraPackages]
-=== Method: listExtraPackages 
+[#apidoc-system-listExtraPackages]
+== Method: listExtraPackages 
 
 Description:
 
@@ -2511,8 +2587,8 @@ Returns:
 '''
 
 
-[#system-listFqdns]
-=== Method: listFqdns 
+[#apidoc-system-listFqdns]
+== Method: listFqdns 
 
 Description:
 
@@ -2538,8 +2614,8 @@ Returns:
 '''
 
 
-[#system-listGroups]
-=== Method: listGroups 
+[#apidoc-system-listGroups]
+== Method: listGroups 
 
 Description:
 
@@ -2572,8 +2648,8 @@ Returns:
 '''
 
 
-[#system-listInactiveSystems]
-=== Method: listInactiveSystems 
+[#apidoc-system-listInactiveSystems]
+== Method: listInactiveSystems 
 
 Description:
 
@@ -2598,9 +2674,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
       // no end needed
@@ -2610,8 +2683,8 @@ Returns:
 '''
 
 
-[#system-listInactiveSystems]
-=== Method: listInactiveSystems 
+[#apidoc-system-listInactiveSystems]
+== Method: listInactiveSystems 
 
 Description:
 
@@ -2638,9 +2711,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
       // no end needed
@@ -2650,8 +2720,8 @@ Returns:
 '''
 
 
-[#system-listLatestAvailablePackage]
-=== Method: listLatestAvailablePackage 
+[#apidoc-system-listLatestAvailablePackage]
+== Method: listLatestAvailablePackage 
 
 Description:
 
@@ -2693,8 +2763,8 @@ Returns:
 '''
 
 
-[#system-listLatestInstallablePackages]
-=== Method: listLatestInstallablePackages 
+[#apidoc-system-listLatestInstallablePackages]
+== Method: listLatestInstallablePackages 
 
 Description:
 
@@ -2728,8 +2798,8 @@ Returns:
 '''
 
 
-[#system-listLatestUpgradablePackages]
-=== Method: listLatestUpgradablePackages 
+[#apidoc-system-listLatestUpgradablePackages]
+== Method: listLatestUpgradablePackages 
 
 Description:
 
@@ -2766,8 +2836,8 @@ Returns:
 '''
 
 
-[#system-listMigrationTargets]
-=== Method: listMigrationTargets 
+[#apidoc-system-listMigrationTargets]
+== Method: listMigrationTargets 
 
 Description:
 
@@ -2797,8 +2867,8 @@ Returns:
 '''
 
 
-[#system-listNewerInstalledPackages]
-=== Method: listNewerInstalledPackages 
+[#apidoc-system-listNewerInstalledPackages]
+== Method: listNewerInstalledPackages 
 
 Description:
 
@@ -2839,8 +2909,8 @@ Returns:
 '''
 
 
-[#system-listNotes]
-=== Method: listNotes 
+[#apidoc-system-listNotes]
+== Method: listNotes 
 
 Description:
 
@@ -2875,8 +2945,8 @@ Returns:
 '''
 
 
-[#system-listOlderInstalledPackages]
-=== Method: listOlderInstalledPackages 
+[#apidoc-system-listOlderInstalledPackages]
+== Method: listOlderInstalledPackages 
 
 Description:
 
@@ -2918,8 +2988,8 @@ Returns:
 '''
 
 
-[#system-listOutOfDateSystems]
-=== Method: listOutOfDateSystems 
+[#apidoc-system-listOutOfDateSystems]
+== Method: listOutOfDateSystems 
 
 Description:
 
@@ -2955,8 +3025,8 @@ Returns:
 '''
 
 
-[#system-listPackageProfiles]
-=== Method: listPackageProfiles 
+[#apidoc-system-listPackageProfiles]
+== Method: listPackageProfiles 
 
 Description:
 
@@ -2986,8 +3056,8 @@ Returns:
 '''
 
 
-[#system-listPackages]
-=== Method: listPackages 
+[#apidoc-system-listPackages]
+== Method: listPackages 
 
 Description:
 
@@ -3021,8 +3091,8 @@ Returns:
 '''
 
 
-[#system-listPackagesFromChannel]
-=== Method: listPackagesFromChannel 
+[#apidoc-system-listPackagesFromChannel]
+== Method: listPackagesFromChannel 
 
 Description:
 
@@ -3067,8 +3137,8 @@ Returns:
 '''
 
 
-[#system-listPhysicalSystems]
-=== Method: listPhysicalSystems 
+[#apidoc-system-listPhysicalSystems]
+== Method: listPhysicalSystems 
 
 Description:
 
@@ -3104,8 +3174,8 @@ Returns:
 '''
 
 
-[#system-listSubscribableBaseChannels]
-=== Method: listSubscribableBaseChannels 
+[#apidoc-system-listSubscribableBaseChannels]
+== Method: listSubscribableBaseChannels 
 
 Description:
 
@@ -3138,8 +3208,8 @@ Returns:
 '''
 
 
-[#system-listSubscribableChildChannels]
-=== Method: listSubscribableChildChannels 
+[#apidoc-system-listSubscribableChildChannels]
+== Method: listSubscribableChildChannels 
 
 Description:
 
@@ -3174,8 +3244,8 @@ Returns:
 '''
 
 
-[#system-listSubscribedChildChannels]
-=== Method: listSubscribedChildChannels 
+[#apidoc-system-listSubscribedChildChannels]
+== Method: listSubscribedChildChannels 
 
 Description:
 
@@ -3232,8 +3302,8 @@ Returns:
 '''
 
 
-[#system-listSuggestedReboot]
-=== Method: listSuggestedReboot 
+[#apidoc-system-listSuggestedReboot]
+== Method: listSuggestedReboot 
 
 Description:
 
@@ -3261,8 +3331,8 @@ Returns:
 '''
 
 
-[#system-listSystemEvents]
-=== Method: listSystemEvents 
+[#apidoc-system-listSystemEvents]
+== Method: listSystemEvents 
 
 Description:
 
@@ -3345,8 +3415,8 @@ Available since API version: 10.8
 '''
 
 
-[#system-listSystemEvents]
-=== Method: listSystemEvents 
+[#apidoc-system-listSystemEvents]
+== Method: listSystemEvents 
 
 Description:
 
@@ -3426,8 +3496,8 @@ Available since API version: 10.8
 '''
 
 
-[#system-listSystems]
-=== Method: listSystems 
+[#apidoc-system-listSystems]
+== Method: listSystems 
 
 Description:
 
@@ -3451,9 +3521,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
       // no end needed
@@ -3463,8 +3530,8 @@ Returns:
 '''
 
 
-[#system-listSystemsWithExtraPackages]
-=== Method: listSystemsWithExtraPackages 
+[#apidoc-system-listSystemsWithExtraPackages]
+== Method: listSystemsWithExtraPackages 
 
 Description:
 
@@ -3493,8 +3560,8 @@ Returns:
 '''
 
 
-[#system-listSystemsWithPackage]
-=== Method: listSystemsWithPackage 
+[#apidoc-system-listSystemsWithPackage]
+== Method: listSystemsWithPackage 
 
 Description:
 
@@ -3532,8 +3599,8 @@ Returns:
 '''
 
 
-[#system-listSystemsWithPackage]
-=== Method: listSystemsWithPackage 
+[#apidoc-system-listSystemsWithPackage]
+== Method: listSystemsWithPackage 
 
 Description:
 
@@ -3575,8 +3642,8 @@ Returns:
 '''
 
 
-[#system-listUngroupedSystems]
-=== Method: listUngroupedSystems 
+[#apidoc-system-listUngroupedSystems]
+== Method: listUngroupedSystems 
 
 Description:
 
@@ -3612,8 +3679,8 @@ Returns:
 '''
 
 
-[#system-listUserSystems]
-=== Method: listUserSystems 
+[#apidoc-system-listUserSystems]
+== Method: listUserSystems 
 
 Description:
 
@@ -3639,9 +3706,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
           // no end needed
@@ -3651,8 +3715,8 @@ Returns:
 '''
 
 
-[#system-listUserSystems]
-=== Method: listUserSystems 
+[#apidoc-system-listUserSystems]
+== Method: listUserSystems 
 
 Description:
 
@@ -3676,9 +3740,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
           // no end needed
@@ -3688,8 +3749,8 @@ Returns:
 '''
 
 
-[#system-listVirtualGuests]
-=== Method: listVirtualGuests 
+[#apidoc-system-listVirtualGuests]
+== Method: listVirtualGuests 
 
 Description:
 
@@ -3725,8 +3786,8 @@ Returns:
 '''
 
 
-[#system-listVirtualHosts]
-=== Method: listVirtualHosts 
+[#apidoc-system-listVirtualHosts]
+== Method: listVirtualHosts 
 
 Description:
 
@@ -3762,8 +3823,8 @@ Returns:
 '''
 
 
-[#system-obtainReactivationKey]
-=== Method: obtainReactivationKey 
+[#apidoc-system-obtainReactivationKey]
+== Method: obtainReactivationKey 
 
 Description:
 
@@ -3788,8 +3849,8 @@ Returns:
 '''
 
 
-[#system-obtainReactivationKey]
-=== Method: obtainReactivationKey 
+[#apidoc-system-obtainReactivationKey]
+== Method: obtainReactivationKey 
 
 Description:
 
@@ -3813,8 +3874,8 @@ Available since API version: 10.10
 '''
 
 
-[#system-provisionSystem]
-=== Method: provisionSystem 
+[#apidoc-system-provisionSystem]
+== Method: provisionSystem 
 
 Description:
 
@@ -3842,8 +3903,8 @@ Returns:
 '''
 
 
-[#system-provisionSystem]
-=== Method: provisionSystem 
+[#apidoc-system-provisionSystem]
+== Method: provisionSystem 
 
 Description:
 
@@ -3873,8 +3934,8 @@ Returns:
 '''
 
 
-[#system-provisionVirtualGuest]
-=== Method: provisionVirtualGuest 
+[#apidoc-system-provisionVirtualGuest]
+== Method: provisionVirtualGuest 
 
 Description:
 
@@ -3904,8 +3965,8 @@ Returns:
 '''
 
 
-[#system-provisionVirtualGuest]
-=== Method: provisionVirtualGuest 
+[#apidoc-system-provisionVirtualGuest]
+== Method: provisionVirtualGuest 
 
 Description:
 
@@ -3943,8 +4004,8 @@ Returns:
 '''
 
 
-[#system-provisionVirtualGuest]
-=== Method: provisionVirtualGuest 
+[#apidoc-system-provisionVirtualGuest]
+== Method: provisionVirtualGuest 
 
 Description:
 
@@ -3985,8 +4046,8 @@ Returns:
 '''
 
 
-[#system-removeEntitlements]
-=== Method: removeEntitlements 
+[#apidoc-system-removeEntitlements]
+== Method: removeEntitlements 
 
 Description:
 
@@ -4015,8 +4076,8 @@ Returns:
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4047,8 +4108,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4081,8 +4142,8 @@ Available since API version: 21
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4116,8 +4177,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4153,8 +4214,8 @@ Available since API version: 21
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4184,8 +4245,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4217,8 +4278,8 @@ Available since API version: 21
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4251,8 +4312,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-scheduleApplyErrata]
-=== Method: scheduleApplyErrata 
+[#apidoc-system-scheduleApplyErrata]
+== Method: scheduleApplyErrata 
 
 Description:
 
@@ -4287,8 +4348,8 @@ Available since API version: 21
 '''
 
 
-[#system-scheduleApplyHighstate]
-=== Method: scheduleApplyHighstate 
+[#apidoc-system-scheduleApplyHighstate]
+== Method: scheduleApplyHighstate 
 
 Description:
 
@@ -4317,8 +4378,8 @@ Returns:
 '''
 
 
-[#system-scheduleCertificateUpdate]
-=== Method: scheduleCertificateUpdate 
+[#apidoc-system-scheduleCertificateUpdate]
+== Method: scheduleCertificateUpdate 
 
 Description:
 
@@ -4343,8 +4404,8 @@ Returns:
 '''
 
 
-[#system-scheduleCertificateUpdate]
-=== Method: scheduleCertificateUpdate 
+[#apidoc-system-scheduleCertificateUpdate]
+== Method: scheduleCertificateUpdate 
 
 Description:
 
@@ -4371,8 +4432,8 @@ Returns:
 '''
 
 
-[#system-scheduleChangeChannels]
-=== Method: scheduleChangeChannels 
+[#apidoc-system-scheduleChangeChannels]
+== Method: scheduleChangeChannels 
 
 Description:
 
@@ -4410,8 +4471,8 @@ Available since API version: 19.0
 '''
 
 
-[#system-scheduleChangeChannels]
-=== Method: scheduleChangeChannels 
+[#apidoc-system-scheduleChangeChannels]
+== Method: scheduleChangeChannels 
 
 Description:
 
@@ -4449,8 +4510,8 @@ Available since API version: 19.0
 '''
 
 
-[#system-scheduleDistUpgrade]
-=== Method: scheduleDistUpgrade 
+[#apidoc-system-scheduleDistUpgrade]
+== Method: scheduleDistUpgrade 
 
 Description:
 
@@ -4486,8 +4547,8 @@ Returns:
 '''
 
 
-[#system-scheduleGuestAction]
-=== Method: scheduleGuestAction 
+[#apidoc-system-scheduleGuestAction]
+== Method: scheduleGuestAction 
 
 Description:
 
@@ -4518,8 +4579,8 @@ Returns:
 '''
 
 
-[#system-scheduleGuestAction]
-=== Method: scheduleGuestAction 
+[#apidoc-system-scheduleGuestAction]
+== Method: scheduleGuestAction 
 
 Description:
 
@@ -4548,8 +4609,8 @@ Returns:
 '''
 
 
-[#system-scheduleHardwareRefresh]
-=== Method: scheduleHardwareRefresh 
+[#apidoc-system-scheduleHardwareRefresh]
+== Method: scheduleHardwareRefresh 
 
 Description:
 
@@ -4577,8 +4638,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-schedulePackageInstall]
-=== Method: schedulePackageInstall 
+[#apidoc-system-schedulePackageInstall]
+== Method: schedulePackageInstall 
 
 Description:
 
@@ -4610,8 +4671,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageInstall]
-=== Method: schedulePackageInstall 
+[#apidoc-system-schedulePackageInstall]
+== Method: schedulePackageInstall 
 
 Description:
 
@@ -4646,8 +4707,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageInstall]
-=== Method: schedulePackageInstall 
+[#apidoc-system-schedulePackageInstall]
+== Method: schedulePackageInstall 
 
 Description:
 
@@ -4678,8 +4739,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-schedulePackageInstall]
-=== Method: schedulePackageInstall 
+[#apidoc-system-schedulePackageInstall]
+== Method: schedulePackageInstall 
 
 Description:
 
@@ -4712,8 +4773,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageInstallByNevra]
-=== Method: schedulePackageInstallByNevra 
+[#apidoc-system-schedulePackageInstallByNevra]
+== Method: schedulePackageInstallByNevra 
 
 Description:
 
@@ -4753,8 +4814,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageInstallByNevra]
-=== Method: schedulePackageInstallByNevra 
+[#apidoc-system-schedulePackageInstallByNevra]
+== Method: schedulePackageInstallByNevra 
 
 Description:
 
@@ -4797,8 +4858,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageInstallByNevra]
-=== Method: schedulePackageInstallByNevra 
+[#apidoc-system-schedulePackageInstallByNevra]
+== Method: schedulePackageInstallByNevra 
 
 Description:
 
@@ -4836,8 +4897,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageInstallByNevra]
-=== Method: schedulePackageInstallByNevra 
+[#apidoc-system-schedulePackageInstallByNevra]
+== Method: schedulePackageInstallByNevra 
 
 Description:
 
@@ -4878,8 +4939,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageRefresh]
-=== Method: schedulePackageRefresh 
+[#apidoc-system-schedulePackageRefresh]
+== Method: schedulePackageRefresh 
 
 Description:
 
@@ -4907,8 +4968,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageRemove]
-=== Method: schedulePackageRemove 
+[#apidoc-system-schedulePackageRemove]
+== Method: schedulePackageRemove 
 
 Description:
 
@@ -4940,8 +5001,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageRemove]
-=== Method: schedulePackageRemove 
+[#apidoc-system-schedulePackageRemove]
+== Method: schedulePackageRemove 
 
 Description:
 
@@ -4976,8 +5037,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageRemove]
-=== Method: schedulePackageRemove 
+[#apidoc-system-schedulePackageRemove]
+== Method: schedulePackageRemove 
 
 Description:
 
@@ -5007,8 +5068,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageRemove]
-=== Method: schedulePackageRemove 
+[#apidoc-system-schedulePackageRemove]
+== Method: schedulePackageRemove 
 
 Description:
 
@@ -5041,8 +5102,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageRemoveByNevra]
-=== Method: schedulePackageRemoveByNevra 
+[#apidoc-system-schedulePackageRemoveByNevra]
+== Method: schedulePackageRemoveByNevra 
 
 Description:
 
@@ -5082,8 +5143,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageRemoveByNevra]
-=== Method: schedulePackageRemoveByNevra 
+[#apidoc-system-schedulePackageRemoveByNevra]
+== Method: schedulePackageRemoveByNevra 
 
 Description:
 
@@ -5126,8 +5187,8 @@ Available since API version: 21
 '''
 
 
-[#system-schedulePackageRemoveByNevra]
-=== Method: schedulePackageRemoveByNevra 
+[#apidoc-system-schedulePackageRemoveByNevra]
+== Method: schedulePackageRemoveByNevra 
 
 Description:
 
@@ -5166,8 +5227,8 @@ Returns:
 '''
 
 
-[#system-schedulePackageRemoveByNevra]
-=== Method: schedulePackageRemoveByNevra 
+[#apidoc-system-schedulePackageRemoveByNevra]
+== Method: schedulePackageRemoveByNevra 
 
 Description:
 
@@ -5209,8 +5270,8 @@ Available since API version: 21
 '''
 
 
-[#system-scheduleReboot]
-=== Method: scheduleReboot 
+[#apidoc-system-scheduleReboot]
+== Method: scheduleReboot 
 
 Description:
 
@@ -5238,8 +5299,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-scheduleSPMigration]
-=== Method: scheduleSPMigration 
+[#apidoc-system-scheduleSPMigration]
+== Method: scheduleSPMigration 
 
 Description:
 
@@ -5277,8 +5338,8 @@ Returns:
 '''
 
 
-[#system-scheduleSPMigration]
-=== Method: scheduleSPMigration 
+[#apidoc-system-scheduleSPMigration]
+== Method: scheduleSPMigration 
 
 Description:
 
@@ -5318,8 +5379,8 @@ Returns:
 '''
 
 
-[#system-scheduleScriptRun]
-=== Method: scheduleScriptRun 
+[#apidoc-system-scheduleScriptRun]
+== Method: scheduleScriptRun 
 
 Description:
 
@@ -5360,8 +5421,8 @@ Returns:
 '''
 
 
-[#system-scheduleScriptRun]
-=== Method: scheduleScriptRun 
+[#apidoc-system-scheduleScriptRun]
+== Method: scheduleScriptRun 
 
 Description:
 
@@ -5400,8 +5461,8 @@ Returns:
 '''
 
 
-[#system-scheduleScriptRun]
-=== Method: scheduleScriptRun 
+[#apidoc-system-scheduleScriptRun]
+== Method: scheduleScriptRun 
 
 Description:
 
@@ -5439,8 +5500,8 @@ Returns:
 '''
 
 
-[#system-scheduleScriptRun]
-=== Method: scheduleScriptRun 
+[#apidoc-system-scheduleScriptRun]
+== Method: scheduleScriptRun 
 
 Description:
 
@@ -5480,8 +5541,8 @@ Returns:
 '''
 
 
-[#system-scheduleSyncPackagesWithSystem]
-=== Method: scheduleSyncPackagesWithSystem 
+[#apidoc-system-scheduleSyncPackagesWithSystem]
+== Method: scheduleSyncPackagesWithSystem 
 
 Description:
 
@@ -5516,8 +5577,8 @@ Available since API version: 13.0
 '''
 
 
-[#system-searchByName]
-=== Method: searchByName 
+[#apidoc-system-searchByName]
+== Method: searchByName 
 
 Description:
 
@@ -5546,9 +5607,6 @@ Returns:
              successfully checked in
      * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
      * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
-             to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
  // no end needed
  
           // no end needed
@@ -5558,8 +5616,8 @@ Returns:
 '''
 
 
-[#system-sendOsaPing]
-=== Method: sendOsaPing 
+[#apidoc-system-sendOsaPing]
+== Method: sendOsaPing 
 
 Description:
 
@@ -5584,8 +5642,8 @@ Returns:
 '''
 
 
-[#system-setBaseChannel]
-=== Method: setBaseChannel (Deprecated)
+[#apidoc-system-setBaseChannel]
+== Method: setBaseChannel (Deprecated)
 
 Description:
 
@@ -5614,8 +5672,8 @@ Returns:
 '''
 
 
-[#system-setBaseChannel]
-=== Method: setBaseChannel (Deprecated)
+[#apidoc-system-setBaseChannel]
+== Method: setBaseChannel (Deprecated)
 
 Description:
 
@@ -5646,8 +5704,8 @@ Returns:
 '''
 
 
-[#system-setChildChannels]
-=== Method: setChildChannels (Deprecated)
+[#apidoc-system-setChildChannels]
+== Method: setChildChannels (Deprecated)
 
 Description:
 
@@ -5684,8 +5742,8 @@ Returns:
 '''
 
 
-[#system-setCustomValues]
-=== Method: setCustomValues 
+[#apidoc-system-setCustomValues]
+== Method: setCustomValues 
 
 Description:
 
@@ -5715,8 +5773,8 @@ Returns:
 '''
 
 
-[#system-setDetails]
-=== Method: setDetails 
+[#apidoc-system-setDetails]
+== Method: setDetails 
 
 Description:
 
@@ -5765,8 +5823,8 @@ Returns:
 '''
 
 
-[#system-setGroupMembership]
-=== Method: setGroupMembership 
+[#apidoc-system-setGroupMembership]
+== Method: setGroupMembership 
 
 Description:
 
@@ -5797,8 +5855,8 @@ Returns:
 '''
 
 
-[#system-setGuestCpus]
-=== Method: setGuestCpus 
+[#apidoc-system-setGuestCpus]
+== Method: setGuestCpus 
 
 Description:
 
@@ -5828,8 +5886,8 @@ Returns:
 '''
 
 
-[#system-setGuestMemory]
-=== Method: setGuestMemory 
+[#apidoc-system-setGuestMemory]
+== Method: setGuestMemory 
 
 Description:
 
@@ -5859,8 +5917,8 @@ Returns:
 '''
 
 
-[#system-setLockStatus]
-=== Method: setLockStatus 
+[#apidoc-system-setLockStatus]
+== Method: setLockStatus 
 
 Description:
 
@@ -5888,8 +5946,8 @@ Returns:
 '''
 
 
-[#system-setPrimaryInterface]
-=== Method: setPrimaryInterface 
+[#apidoc-system-setPrimaryInterface]
+== Method: setPrimaryInterface 
 
 Description:
 
@@ -5916,8 +5974,8 @@ Returns:
 '''
 
 
-[#system-setProfileName]
-=== Method: setProfileName 
+[#apidoc-system-setProfileName]
+== Method: setProfileName 
 
 Description:
 
@@ -5944,8 +6002,8 @@ Returns:
 '''
 
 
-[#system-setVariables]
-=== Method: setVariables 
+[#apidoc-system-setVariables]
+== Method: setVariables 
 
 Description:
 
@@ -5987,8 +6045,8 @@ Returns:
 '''
 
 
-[#system-tagLatestSnapshot]
-=== Method: tagLatestSnapshot 
+[#apidoc-system-tagLatestSnapshot]
+== Method: tagLatestSnapshot 
 
 Description:
 
@@ -6015,8 +6073,8 @@ Returns:
 '''
 
 
-[#system-unentitle]
-=== Method: unentitle 
+[#apidoc-system-unentitle]
+== Method: unentitle 
 
 Description:
 
@@ -6039,8 +6097,8 @@ Returns:
 '''
 
 
-[#system-upgradeEntitlement]
-=== Method: upgradeEntitlement 
+[#apidoc-system-upgradeEntitlement]
+== Method: upgradeEntitlement 
 
 Description:
 
@@ -6068,8 +6126,8 @@ Returns:
 '''
 
 
-[#system-whoRegistered]
-=== Method: whoRegistered 
+[#apidoc-system-whoRegistered]
+== Method: whoRegistered 
 
 Description:
 

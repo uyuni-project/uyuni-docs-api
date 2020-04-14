@@ -1,98 +1,95 @@
+[#apidoc-channel_software]
+= channel.software
 
 
+== Available methods
 
-[#channel_software]
-== channel.software
+* <<apidoc-channel_software-addPackages,addPackages>>
+* <<apidoc-channel_software-addRepoFilter,addRepoFilter>>
+* <<apidoc-channel_software-applyChannelState,applyChannelState>>
+* <<apidoc-channel_software-associateRepo,associateRepo>>
+* <<apidoc-channel_software-clearRepoFilters,clearRepoFilters>>
+* <<apidoc-channel_software-clone,clone>>
+* <<apidoc-channel_software-create,create>>
+* <<apidoc-channel_software-create,create>>
+* <<apidoc-channel_software-create,create>>
+* <<apidoc-channel_software-create,create>>
+* <<apidoc-channel_software-createRepo,createRepo>>
+* <<apidoc-channel_software-createRepo,createRepo>>
+* <<apidoc-channel_software-createRepo,createRepo>>
+* <<apidoc-channel_software-delete,delete>>
+* <<apidoc-channel_software-disassociateRepo,disassociateRepo>>
+* <<apidoc-channel_software-getChannelLastBuildById,getChannelLastBuildById>>
+* <<apidoc-channel_software-getDetails,getDetails>>
+* <<apidoc-channel_software-getDetails,getDetails>>
+* <<apidoc-channel_software-getRepoDetails,getRepoDetails>>
+* <<apidoc-channel_software-getRepoDetails,getRepoDetails>>
+* <<apidoc-channel_software-getRepoSyncCronExpression,getRepoSyncCronExpression>>
+* <<apidoc-channel_software-isGloballySubscribable,isGloballySubscribable>>
+* <<apidoc-channel_software-isUserManageable,isUserManageable>>
+* <<apidoc-channel_software-isUserSubscribable,isUserSubscribable>>
+* <<apidoc-channel_software-listAllPackages,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages,listAllPackages>>
+* <<apidoc-channel_software-listAllPackagesByDate,listAllPackagesByDate>>
+* <<apidoc-channel_software-listAllPackagesByDate,listAllPackagesByDate>>
+* <<apidoc-channel_software-listAllPackagesByDate,listAllPackagesByDate>>
+* <<apidoc-channel_software-listArches,listArches>>
+* <<apidoc-channel_software-listChannelRepos,listChannelRepos>>
+* <<apidoc-channel_software-listChildren,listChildren>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrata,listErrata>>
+* <<apidoc-channel_software-listErrataByType,listErrataByType>>
+* <<apidoc-channel_software-listErrataNeedingSync,listErrataNeedingSync>>
+* <<apidoc-channel_software-listLatestPackages,listLatestPackages>>
+* <<apidoc-channel_software-listPackagesWithoutChannel,listPackagesWithoutChannel>>
+* <<apidoc-channel_software-listRepoFilters,listRepoFilters>>
+* <<apidoc-channel_software-listSubscribedSystems,listSubscribedSystems>>
+* <<apidoc-channel_software-listSystemChannels,listSystemChannels>>
+* <<apidoc-channel_software-listUserRepos,listUserRepos>>
+* <<apidoc-channel_software-mergeErrata,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata,mergeErrata>>
+* <<apidoc-channel_software-mergePackages,mergePackages>>
+* <<apidoc-channel_software-regenerateNeededCache,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateNeededCache,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateYumCache,regenerateYumCache>>
+* <<apidoc-channel_software-removeErrata,removeErrata>>
+* <<apidoc-channel_software-removePackages,removePackages>>
+* <<apidoc-channel_software-removeRepo,removeRepo>>
+* <<apidoc-channel_software-removeRepo,removeRepo>>
+* <<apidoc-channel_software-removeRepoFilter,removeRepoFilter>>
+* <<apidoc-channel_software-setContactDetails,setContactDetails>>
+* <<apidoc-channel_software-setDetails,setDetails>>
+* <<apidoc-channel_software-setDetails,setDetails>>
+* <<apidoc-channel_software-setGloballySubscribable,setGloballySubscribable>>
+* <<apidoc-channel_software-setRepoFilters,setRepoFilters>>
+* <<apidoc-channel_software-setSystemChannels,setSystemChannels>>
+* <<apidoc-channel_software-setUserManageable,setUserManageable>>
+* <<apidoc-channel_software-setUserSubscribable,setUserSubscribable>>
+* <<apidoc-channel_software-subscribeSystem,subscribeSystem>>
+* <<apidoc-channel_software-syncErrata,syncErrata>>
+* <<apidoc-channel_software-syncRepo,syncRepo>>
+* <<apidoc-channel_software-syncRepo,syncRepo>>
+* <<apidoc-channel_software-syncRepo,syncRepo>>
+* <<apidoc-channel_software-syncRepo,syncRepo>>
+* <<apidoc-channel_software-syncRepo,syncRepo>>
+* <<apidoc-channel_software-unsubscribeChannels,unsubscribeChannels>>
+* <<apidoc-channel_software-updateRepo,updateRepo>>
+* <<apidoc-channel_software-updateRepoLabel,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoLabel,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoSsl,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoSsl,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoUrl,updateRepoUrl>>
+* <<apidoc-channel_software-updateRepoUrl,updateRepoUrl>>
 
-
-=== Available methods
-
-* <<channel_software-addPackages,addPackages>>
-* <<channel_software-addRepoFilter,addRepoFilter>>
-* <<channel_software-applyChannelState,applyChannelState>>
-* <<channel_software-associateRepo,associateRepo>>
-* <<channel_software-clearRepoFilters,clearRepoFilters>>
-* <<channel_software-clone,clone>>
-* <<channel_software-create,create>>
-* <<channel_software-create,create>>
-* <<channel_software-create,create>>
-* <<channel_software-create,create>>
-* <<channel_software-createRepo,createRepo>>
-* <<channel_software-createRepo,createRepo>>
-* <<channel_software-createRepo,createRepo>>
-* <<channel_software-delete,delete>>
-* <<channel_software-disassociateRepo,disassociateRepo>>
-* <<channel_software-getChannelLastBuildById,getChannelLastBuildById>>
-* <<channel_software-getDetails,getDetails>>
-* <<channel_software-getDetails,getDetails>>
-* <<channel_software-getRepoDetails,getRepoDetails>>
-* <<channel_software-getRepoDetails,getRepoDetails>>
-* <<channel_software-getRepoSyncCronExpression,getRepoSyncCronExpression>>
-* <<channel_software-isGloballySubscribable,isGloballySubscribable>>
-* <<channel_software-isUserManageable,isUserManageable>>
-* <<channel_software-isUserSubscribable,isUserSubscribable>>
-* <<channel_software-listAllPackages,listAllPackages>>
-* <<channel_software-listAllPackages,listAllPackages>>
-* <<channel_software-listAllPackages,listAllPackages>>
-* <<channel_software-listAllPackages,listAllPackages>>
-* <<channel_software-listAllPackages,listAllPackages>>
-* <<channel_software-listAllPackagesByDate,listAllPackagesByDate>>
-* <<channel_software-listAllPackagesByDate,listAllPackagesByDate>>
-* <<channel_software-listAllPackagesByDate,listAllPackagesByDate>>
-* <<channel_software-listArches,listArches>>
-* <<channel_software-listChannelRepos,listChannelRepos>>
-* <<channel_software-listChildren,listChildren>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrata,listErrata>>
-* <<channel_software-listErrataByType,listErrataByType>>
-* <<channel_software-listErrataNeedingSync,listErrataNeedingSync>>
-* <<channel_software-listLatestPackages,listLatestPackages>>
-* <<channel_software-listPackagesWithoutChannel,listPackagesWithoutChannel>>
-* <<channel_software-listRepoFilters,listRepoFilters>>
-* <<channel_software-listSubscribedSystems,listSubscribedSystems>>
-* <<channel_software-listSystemChannels,listSystemChannels>>
-* <<channel_software-listUserRepos,listUserRepos>>
-* <<channel_software-mergeErrata,mergeErrata>>
-* <<channel_software-mergeErrata,mergeErrata>>
-* <<channel_software-mergeErrata,mergeErrata>>
-* <<channel_software-mergePackages,mergePackages>>
-* <<channel_software-regenerateNeededCache,regenerateNeededCache>>
-* <<channel_software-regenerateNeededCache,regenerateNeededCache>>
-* <<channel_software-regenerateYumCache,regenerateYumCache>>
-* <<channel_software-removeErrata,removeErrata>>
-* <<channel_software-removePackages,removePackages>>
-* <<channel_software-removeRepo,removeRepo>>
-* <<channel_software-removeRepo,removeRepo>>
-* <<channel_software-removeRepoFilter,removeRepoFilter>>
-* <<channel_software-setContactDetails,setContactDetails>>
-* <<channel_software-setDetails,setDetails>>
-* <<channel_software-setDetails,setDetails>>
-* <<channel_software-setGloballySubscribable,setGloballySubscribable>>
-* <<channel_software-setRepoFilters,setRepoFilters>>
-* <<channel_software-setSystemChannels,setSystemChannels>>
-* <<channel_software-setUserManageable,setUserManageable>>
-* <<channel_software-setUserSubscribable,setUserSubscribable>>
-* <<channel_software-subscribeSystem,subscribeSystem>>
-* <<channel_software-syncErrata,syncErrata>>
-* <<channel_software-syncRepo,syncRepo>>
-* <<channel_software-syncRepo,syncRepo>>
-* <<channel_software-syncRepo,syncRepo>>
-* <<channel_software-syncRepo,syncRepo>>
-* <<channel_software-syncRepo,syncRepo>>
-* <<channel_software-unsubscribeChannels,unsubscribeChannels>>
-* <<channel_software-updateRepo,updateRepo>>
-* <<channel_software-updateRepoLabel,updateRepoLabel>>
-* <<channel_software-updateRepoLabel,updateRepoLabel>>
-* <<channel_software-updateRepoSsl,updateRepoSsl>>
-* <<channel_software-updateRepoSsl,updateRepoSsl>>
-* <<channel_software-updateRepoUrl,updateRepoUrl>>
-* <<channel_software-updateRepoUrl,updateRepoUrl>>
-
-=== Description
+== Description
 
 Provides methods to access and modify many aspects of a channel.
 
@@ -103,8 +100,8 @@ channel.software
 '''
 
 
-[#channel_software-addPackages]
-=== Method: addPackages 
+[#apidoc-channel_software-addPackages]
+== Method: addPackages 
 
 Description:
 
@@ -133,8 +130,8 @@ Returns:
 '''
 
 
-[#channel_software-addRepoFilter]
-=== Method: addRepoFilter 
+[#apidoc-channel_software-addRepoFilter]
+== Method: addRepoFilter 
 
 Description:
 
@@ -164,8 +161,8 @@ Returns:
 '''
 
 
-[#channel_software-applyChannelState]
-=== Method: applyChannelState 
+[#apidoc-channel_software-applyChannelState]
+== Method: applyChannelState 
 
 Description:
 
@@ -192,8 +189,8 @@ Returns:
 '''
 
 
-[#channel_software-associateRepo]
-=== Method: associateRepo 
+[#apidoc-channel_software-associateRepo]
+== Method: associateRepo 
 
 Description:
 
@@ -250,8 +247,8 @@ Returns:
 '''
 
 
-[#channel_software-clearRepoFilters]
-=== Method: clearRepoFilters 
+[#apidoc-channel_software-clearRepoFilters]
+== Method: clearRepoFilters 
 
 Description:
 
@@ -276,8 +273,8 @@ Returns:
 '''
 
 
-[#channel_software-clone]
-=== Method: clone 
+[#apidoc-channel_software-clone]
+== Method: clone 
 
 Description:
 
@@ -323,8 +320,8 @@ Returns:
 '''
 
 
-[#channel_software-create]
-=== Method: create 
+[#apidoc-channel_software-create]
+== Method: create 
 
 Description:
 
@@ -378,8 +375,8 @@ Available since API version: 10.9
 '''
 
 
-[#channel_software-create]
-=== Method: create 
+[#apidoc-channel_software-create]
+== Method: create 
 
 Description:
 
@@ -430,8 +427,8 @@ Available since API version: 10.9
 '''
 
 
-[#channel_software-create]
-=== Method: create 
+[#apidoc-channel_software-create]
+== Method: create 
 
 Description:
 
@@ -476,8 +473,8 @@ Available since API version: 10.9
 '''
 
 
-[#channel_software-create]
-=== Method: create 
+[#apidoc-channel_software-create]
+== Method: create 
 
 Description:
 
@@ -512,8 +509,8 @@ Returns:
 '''
 
 
-[#channel_software-createRepo]
-=== Method: createRepo 
+[#apidoc-channel_software-createRepo]
+== Method: createRepo 
 
 Description:
 
@@ -557,8 +554,8 @@ Returns:
 '''
 
 
-[#channel_software-createRepo]
-=== Method: createRepo 
+[#apidoc-channel_software-createRepo]
+== Method: createRepo 
 
 Description:
 
@@ -608,8 +605,8 @@ Returns:
 '''
 
 
-[#channel_software-createRepo]
-=== Method: createRepo 
+[#apidoc-channel_software-createRepo]
+== Method: createRepo 
 
 Description:
 
@@ -665,8 +662,8 @@ Returns:
 '''
 
 
-[#channel_software-delete]
-=== Method: delete 
+[#apidoc-channel_software-delete]
+== Method: delete 
 
 Description:
 
@@ -691,8 +688,8 @@ Returns:
 '''
 
 
-[#channel_software-disassociateRepo]
-=== Method: disassociateRepo 
+[#apidoc-channel_software-disassociateRepo]
+== Method: disassociateRepo 
 
 Description:
 
@@ -749,8 +746,8 @@ Returns:
 '''
 
 
-[#channel_software-getChannelLastBuildById]
-=== Method: getChannelLastBuildById 
+[#apidoc-channel_software-getChannelLastBuildById]
+== Method: getChannelLastBuildById 
 
 Description:
 
@@ -777,8 +774,8 @@ Returns:
 '''
 
 
-[#channel_software-getDetails]
-=== Method: getDetails 
+[#apidoc-channel_software-getDetails]
+== Method: getDetails 
 
 Description:
 
@@ -833,8 +830,8 @@ Returns:
 '''
 
 
-[#channel_software-getDetails]
-=== Method: getDetails 
+[#apidoc-channel_software-getDetails]
+== Method: getDetails 
 
 Description:
 
@@ -889,8 +886,8 @@ Returns:
 '''
 
 
-[#channel_software-getRepoDetails]
-=== Method: getRepoDetails 
+[#apidoc-channel_software-getRepoDetails]
+== Method: getRepoDetails 
 
 Description:
 
@@ -930,8 +927,8 @@ Returns:
 '''
 
 
-[#channel_software-getRepoDetails]
-=== Method: getRepoDetails 
+[#apidoc-channel_software-getRepoDetails]
+== Method: getRepoDetails 
 
 Description:
 
@@ -971,8 +968,8 @@ Returns:
 '''
 
 
-[#channel_software-getRepoSyncCronExpression]
-=== Method: getRepoSyncCronExpression 
+[#apidoc-channel_software-getRepoSyncCronExpression]
+== Method: getRepoSyncCronExpression 
 
 Description:
 
@@ -997,8 +994,8 @@ Returns:
 '''
 
 
-[#channel_software-isGloballySubscribable]
-=== Method: isGloballySubscribable 
+[#apidoc-channel_software-isGloballySubscribable]
+== Method: isGloballySubscribable 
 
 Description:
 
@@ -1024,8 +1021,8 @@ Returns:
 '''
 
 
-[#channel_software-isUserManageable]
-=== Method: isUserManageable 
+[#apidoc-channel_software-isUserManageable]
+== Method: isUserManageable 
 
 Description:
 
@@ -1052,8 +1049,8 @@ Returns:
 '''
 
 
-[#channel_software-isUserSubscribable]
-=== Method: isUserSubscribable 
+[#apidoc-channel_software-isUserSubscribable]
+== Method: isUserSubscribable 
 
 Description:
 
@@ -1080,8 +1077,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackages]
-=== Method: listAllPackages 
+[#apidoc-channel_software-listAllPackages]
+== Method: listAllPackages 
 
 Description:
 
@@ -1125,8 +1122,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackages]
-=== Method: listAllPackages 
+[#apidoc-channel_software-listAllPackages]
+== Method: listAllPackages 
 
 Description:
 
@@ -1168,8 +1165,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackages]
-=== Method: listAllPackages 
+[#apidoc-channel_software-listAllPackages]
+== Method: listAllPackages 
 
 Description:
 
@@ -1208,8 +1205,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackages]
-=== Method: listAllPackages (Deprecated)
+[#apidoc-channel_software-listAllPackages]
+== Method: listAllPackages (Deprecated)
 
 Description:
 
@@ -1256,8 +1253,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackages]
-=== Method: listAllPackages (Deprecated)
+[#apidoc-channel_software-listAllPackages]
+== Method: listAllPackages (Deprecated)
 
 Description:
 
@@ -1301,8 +1298,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackagesByDate]
-=== Method: listAllPackagesByDate (Deprecated)
+[#apidoc-channel_software-listAllPackagesByDate]
+== Method: listAllPackagesByDate (Deprecated)
 
 Description:
 
@@ -1344,8 +1341,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackagesByDate]
-=== Method: listAllPackagesByDate (Deprecated)
+[#apidoc-channel_software-listAllPackagesByDate]
+== Method: listAllPackagesByDate (Deprecated)
 
 Description:
 
@@ -1386,8 +1383,8 @@ Returns:
 '''
 
 
-[#channel_software-listAllPackagesByDate]
-=== Method: listAllPackagesByDate (Deprecated)
+[#apidoc-channel_software-listAllPackagesByDate]
+== Method: listAllPackagesByDate (Deprecated)
 
 Description:
 
@@ -1424,8 +1421,8 @@ Returns:
 '''
 
 
-[#channel_software-listArches]
-=== Method: listArches 
+[#apidoc-channel_software-listArches]
+== Method: listArches 
 
 Description:
 
@@ -1454,8 +1451,8 @@ Returns:
 '''
 
 
-[#channel_software-listChannelRepos]
-=== Method: listChannelRepos 
+[#apidoc-channel_software-listChannelRepos]
+== Method: listChannelRepos 
 
 Description:
 
@@ -1497,8 +1494,8 @@ Returns:
 '''
 
 
-[#channel_software-listChildren]
-=== Method: listChildren 
+[#apidoc-channel_software-listChildren]
+== Method: listChildren 
 
 Description:
 
@@ -1555,8 +1552,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata 
+[#apidoc-channel_software-listErrata]
+== Method: listErrata 
 
 Description:
 
@@ -1593,8 +1590,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata 
+[#apidoc-channel_software-listErrata]
+== Method: listErrata 
 
 Description:
 
@@ -1633,8 +1630,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata 
+[#apidoc-channel_software-listErrata]
+== Method: listErrata 
 
 Description:
 
@@ -1675,8 +1672,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata 
+[#apidoc-channel_software-listErrata]
+== Method: listErrata 
 
 Description:
 
@@ -1713,8 +1710,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata (Deprecated)
+[#apidoc-channel_software-listErrata]
+== Method: listErrata (Deprecated)
 
 Description:
 
@@ -1752,8 +1749,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrata]
-=== Method: listErrata (Deprecated)
+[#apidoc-channel_software-listErrata]
+== Method: listErrata (Deprecated)
 
 Description:
 
@@ -1793,8 +1790,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrataByType]
-=== Method: listErrataByType 
+[#apidoc-channel_software-listErrataByType]
+== Method: listErrataByType 
 
 Description:
 
@@ -1832,8 +1829,8 @@ Returns:
 '''
 
 
-[#channel_software-listErrataNeedingSync]
-=== Method: listErrataNeedingSync 
+[#apidoc-channel_software-listErrataNeedingSync]
+== Method: listErrataNeedingSync 
 
 Description:
 
@@ -1874,8 +1871,8 @@ Returns:
 '''
 
 
-[#channel_software-listLatestPackages]
-=== Method: listLatestPackages 
+[#apidoc-channel_software-listLatestPackages]
+== Method: listLatestPackages 
 
 Description:
 
@@ -1910,8 +1907,8 @@ Returns:
 '''
 
 
-[#channel_software-listPackagesWithoutChannel]
-=== Method: listPackagesWithoutChannel 
+[#apidoc-channel_software-listPackagesWithoutChannel]
+== Method: listPackagesWithoutChannel 
 
 Description:
 
@@ -1950,8 +1947,8 @@ Returns:
 '''
 
 
-[#channel_software-listRepoFilters]
-=== Method: listRepoFilters 
+[#apidoc-channel_software-listRepoFilters]
+== Method: listRepoFilters 
 
 Description:
 
@@ -1983,8 +1980,8 @@ Returns:
 '''
 
 
-[#channel_software-listSubscribedSystems]
-=== Method: listSubscribedSystems 
+[#apidoc-channel_software-listSubscribedSystems]
+== Method: listSubscribedSystems 
 
 Description:
 
@@ -2014,8 +2011,8 @@ Returns:
 '''
 
 
-[#channel_software-listSystemChannels]
-=== Method: listSystemChannels 
+[#apidoc-channel_software-listSystemChannels]
+== Method: listSystemChannels 
 
 Description:
 
@@ -2047,8 +2044,8 @@ Returns:
 '''
 
 
-[#channel_software-listUserRepos]
-=== Method: listUserRepos 
+[#apidoc-channel_software-listUserRepos]
+== Method: listUserRepos 
 
 Description:
 
@@ -2077,8 +2074,8 @@ Returns:
 '''
 
 
-[#channel_software-mergeErrata]
-=== Method: mergeErrata 
+[#apidoc-channel_software-mergeErrata]
+== Method: mergeErrata 
 
 Description:
 
@@ -2116,8 +2113,8 @@ Returns:
 '''
 
 
-[#channel_software-mergeErrata]
-=== Method: mergeErrata 
+[#apidoc-channel_software-mergeErrata]
+== Method: mergeErrata 
 
 Description:
 
@@ -2160,8 +2157,8 @@ Returns:
 '''
 
 
-[#channel_software-mergeErrata]
-=== Method: mergeErrata 
+[#apidoc-channel_software-mergeErrata]
+== Method: mergeErrata 
 
 Description:
 
@@ -2202,8 +2199,8 @@ Returns:
 '''
 
 
-[#channel_software-mergePackages]
-=== Method: mergePackages 
+[#apidoc-channel_software-mergePackages]
+== Method: mergePackages 
 
 Description:
 
@@ -2247,8 +2244,8 @@ Returns:
 '''
 
 
-[#channel_software-regenerateNeededCache]
-=== Method: regenerateNeededCache 
+[#apidoc-channel_software-regenerateNeededCache]
+== Method: regenerateNeededCache 
 
 Description:
 
@@ -2278,8 +2275,8 @@ Returns:
 '''
 
 
-[#channel_software-regenerateNeededCache]
-=== Method: regenerateNeededCache 
+[#apidoc-channel_software-regenerateNeededCache]
+== Method: regenerateNeededCache 
 
 Description:
 
@@ -2305,8 +2302,8 @@ Returns:
 '''
 
 
-[#channel_software-regenerateYumCache]
-=== Method: regenerateYumCache 
+[#apidoc-channel_software-regenerateYumCache]
+== Method: regenerateYumCache 
 
 Description:
 
@@ -2334,8 +2331,8 @@ Returns:
 '''
 
 
-[#channel_software-removeErrata]
-=== Method: removeErrata 
+[#apidoc-channel_software-removeErrata]
+== Method: removeErrata 
 
 Description:
 
@@ -2365,8 +2362,8 @@ Returns:
 '''
 
 
-[#channel_software-removePackages]
-=== Method: removePackages 
+[#apidoc-channel_software-removePackages]
+== Method: removePackages 
 
 Description:
 
@@ -2395,8 +2392,8 @@ Returns:
 '''
 
 
-[#channel_software-removeRepo]
-=== Method: removeRepo 
+[#apidoc-channel_software-removeRepo]
+== Method: removeRepo 
 
 Description:
 
@@ -2421,8 +2418,8 @@ Returns:
 '''
 
 
-[#channel_software-removeRepo]
-=== Method: removeRepo 
+[#apidoc-channel_software-removeRepo]
+== Method: removeRepo 
 
 Description:
 
@@ -2447,8 +2444,8 @@ Returns:
 '''
 
 
-[#channel_software-removeRepoFilter]
-=== Method: removeRepoFilter 
+[#apidoc-channel_software-removeRepoFilter]
+== Method: removeRepoFilter 
 
 Description:
 
@@ -2478,8 +2475,8 @@ Returns:
 '''
 
 
-[#channel_software-setContactDetails]
-=== Method: setContactDetails 
+[#apidoc-channel_software-setContactDetails]
+== Method: setContactDetails 
 
 Description:
 
@@ -2515,8 +2512,8 @@ Returns:
 '''
 
 
-[#channel_software-setDetails]
-=== Method: setDetails 
+[#apidoc-channel_software-setDetails]
+== Method: setDetails 
 
 Description:
 
@@ -2560,8 +2557,8 @@ Returns:
 '''
 
 
-[#channel_software-setDetails]
-=== Method: setDetails 
+[#apidoc-channel_software-setDetails]
+== Method: setDetails 
 
 Description:
 
@@ -2605,8 +2602,8 @@ Returns:
 '''
 
 
-[#channel_software-setGloballySubscribable]
-=== Method: setGloballySubscribable 
+[#apidoc-channel_software-setGloballySubscribable]
+== Method: setGloballySubscribable 
 
 Description:
 
@@ -2634,8 +2631,8 @@ Returns:
 '''
 
 
-[#channel_software-setRepoFilters]
-=== Method: setRepoFilters 
+[#apidoc-channel_software-setRepoFilters]
+== Method: setRepoFilters 
 
 Description:
 
@@ -2668,8 +2665,8 @@ Returns:
 '''
 
 
-[#channel_software-setSystemChannels]
-=== Method: setSystemChannels (Deprecated)
+[#apidoc-channel_software-setSystemChannels]
+== Method: setSystemChannels (Deprecated)
 
 Description:
 
@@ -2701,8 +2698,8 @@ Returns:
 '''
 
 
-[#channel_software-setUserManageable]
-=== Method: setUserManageable 
+[#apidoc-channel_software-setUserManageable]
+== Method: setUserManageable 
 
 Description:
 
@@ -2733,8 +2730,8 @@ Returns:
 '''
 
 
-[#channel_software-setUserSubscribable]
-=== Method: setUserSubscribable 
+[#apidoc-channel_software-setUserSubscribable]
+== Method: setUserSubscribable 
 
 Description:
 
@@ -2765,8 +2762,8 @@ Returns:
 '''
 
 
-[#channel_software-subscribeSystem]
-=== Method: subscribeSystem (Deprecated)
+[#apidoc-channel_software-subscribeSystem]
+== Method: subscribeSystem (Deprecated)
 
 Description:
 
@@ -2802,8 +2799,8 @@ Returns:
 '''
 
 
-[#channel_software-syncErrata]
-=== Method: syncErrata 
+[#apidoc-channel_software-syncErrata]
+== Method: syncErrata 
 
 Description:
 
@@ -2835,8 +2832,8 @@ Returns:
 '''
 
 
-[#channel_software-syncRepo]
-=== Method: syncRepo 
+[#apidoc-channel_software-syncRepo]
+== Method: syncRepo 
 
 Description:
 
@@ -2862,8 +2859,8 @@ Returns:
 '''
 
 
-[#channel_software-syncRepo]
-=== Method: syncRepo 
+[#apidoc-channel_software-syncRepo]
+== Method: syncRepo 
 
 Description:
 
@@ -2888,8 +2885,8 @@ Returns:
 '''
 
 
-[#channel_software-syncRepo]
-=== Method: syncRepo 
+[#apidoc-channel_software-syncRepo]
+== Method: syncRepo 
 
 Description:
 
@@ -2921,8 +2918,8 @@ Returns:
 '''
 
 
-[#channel_software-syncRepo]
-=== Method: syncRepo 
+[#apidoc-channel_software-syncRepo]
+== Method: syncRepo 
 
 Description:
 
@@ -2949,8 +2946,8 @@ Returns:
 '''
 
 
-[#channel_software-syncRepo]
-=== Method: syncRepo 
+[#apidoc-channel_software-syncRepo]
+== Method: syncRepo 
 
 Description:
 
@@ -2984,8 +2981,8 @@ Returns:
 '''
 
 
-[#channel_software-unsubscribeChannels]
-=== Method: unsubscribeChannels (Deprecated)
+[#apidoc-channel_software-unsubscribeChannels]
+== Method: unsubscribeChannels (Deprecated)
 
 Description:
 
@@ -3018,8 +3015,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepo]
-=== Method: updateRepo 
+[#apidoc-channel_software-updateRepo]
+== Method: updateRepo 
 
 Description:
 
@@ -3063,8 +3060,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoLabel]
-=== Method: updateRepoLabel 
+[#apidoc-channel_software-updateRepoLabel]
+== Method: updateRepoLabel 
 
 Description:
 
@@ -3106,8 +3103,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoLabel]
-=== Method: updateRepoLabel 
+[#apidoc-channel_software-updateRepoLabel]
+== Method: updateRepoLabel 
 
 Description:
 
@@ -3149,8 +3146,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoSsl]
-=== Method: updateRepoSsl 
+[#apidoc-channel_software-updateRepoSsl]
+== Method: updateRepoSsl 
 
 Description:
 
@@ -3196,8 +3193,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoSsl]
-=== Method: updateRepoSsl 
+[#apidoc-channel_software-updateRepoSsl]
+== Method: updateRepoSsl 
 
 Description:
 
@@ -3243,8 +3240,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoUrl]
-=== Method: updateRepoUrl 
+[#apidoc-channel_software-updateRepoUrl]
+== Method: updateRepoUrl 
 
 Description:
 
@@ -3286,8 +3283,8 @@ Returns:
 '''
 
 
-[#channel_software-updateRepoUrl]
-=== Method: updateRepoUrl 
+[#apidoc-channel_software-updateRepoUrl]
+== Method: updateRepoUrl 
 
 Description:
 
