@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Uyuni API Documentation</title>
+    <title>system :: Uyuni API</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/system.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -15,13 +16,15 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
+
+
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -44,12 +47,12 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
+                                class="fab fa-github"></i>&nbsp API Repository</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
@@ -93,163 +96,169 @@
     <a class="nav-link" href="scripts.html">Scripts</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Handlers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="actionchain.html">actionchain</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="api.html">api</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="audit.html">audit</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="auth.html">auth</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="channel.html">channel</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="configchannel.html">configchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="distchannel.html">distchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="errata.html">errata</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="formula.html">formula</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="image.html">image</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.store.html">image.store</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="kickstart.html">kickstart</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="org.html">org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="packages.html">packages</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="proxy.html">proxy</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="satellite.html">satellite</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="schedule.html">schedule</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="system.html">system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.config.html">system.config</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.search.html">system.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="systemgroup.html">systemgroup</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="user.html">user</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user.external.html">user.external</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -283,6 +292,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni</a></li>
+    <li>API Handlers</li>
     <li><a href="system.html">system</a></li>
   </ul>
 </nav>
@@ -291,525 +301,534 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="#sync_slave.adoc">
+      <a href="sync.slave.html">
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="#system_config.adoc">
+      <a href="system.config.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+ <!-- 
   <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/system.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+   -->
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
+<h1 class="page">system</h1>
 <div class="sect1">
-<h2 id="system"><a class="anchor" href="#system"></a><a class="link" href="#system">system</a></h2>
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#system-addEntitlements">addEntitlements</a></p>
+<p><a href="#apidoc-system-addEntitlements">addEntitlements</a></p>
 </li>
 <li>
-<p><a href="#system-addNote">addNote</a></p>
+<p><a href="#apidoc-system-addNote">addNote</a></p>
 </li>
 <li>
-<p><a href="#system-applyErrata">applyErrata</a></p>
+<p><a href="#apidoc-system-applyErrata">applyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-bootstrap">bootstrap</a></p>
+<p><a href="#apidoc-system-bootstrap">bootstrap</a></p>
 </li>
 <li>
-<p><a href="#system-bootstrap">bootstrap</a></p>
+<p><a href="#apidoc-system-bootstrap">bootstrap</a></p>
 </li>
 <li>
-<p><a href="#system-comparePackageProfile">comparePackageProfile</a></p>
+<p><a href="#apidoc-system-bootstrapWithPrivateSshKey">bootstrapWithPrivateSshKey</a></p>
 </li>
 <li>
-<p><a href="#system-comparePackages">comparePackages</a></p>
+<p><a href="#apidoc-system-bootstrapWithPrivateSshKey">bootstrapWithPrivateSshKey</a></p>
 </li>
 <li>
-<p><a href="#system-createPackageProfile">createPackageProfile</a></p>
+<p><a href="#apidoc-system-comparePackageProfile">comparePackageProfile</a></p>
 </li>
 <li>
-<p><a href="#system-createSystemProfile">createSystemProfile</a></p>
+<p><a href="#apidoc-system-comparePackages">comparePackages</a></p>
 </li>
 <li>
-<p><a href="#system-createSystemRecord">createSystemRecord</a></p>
+<p><a href="#apidoc-system-createPackageProfile">createPackageProfile</a></p>
 </li>
 <li>
-<p><a href="#system-createSystemRecord">createSystemRecord</a></p>
+<p><a href="#apidoc-system-createSystemProfile">createSystemProfile</a></p>
 </li>
 <li>
-<p><a href="#system-deleteCustomValues">deleteCustomValues</a></p>
+<p><a href="#apidoc-system-createSystemRecord">createSystemRecord</a></p>
 </li>
 <li>
-<p><a href="#system-deleteGuestProfiles">deleteGuestProfiles</a></p>
+<p><a href="#apidoc-system-createSystemRecord">createSystemRecord</a></p>
 </li>
 <li>
-<p><a href="#system-deleteNote">deleteNote</a></p>
+<p><a href="#apidoc-system-deleteCustomValues">deleteCustomValues</a></p>
 </li>
 <li>
-<p><a href="#system-deleteNotes">deleteNotes</a></p>
+<p><a href="#apidoc-system-deleteGuestProfiles">deleteGuestProfiles</a></p>
 </li>
 <li>
-<p><a href="#system-deletePackageProfile">deletePackageProfile</a></p>
+<p><a href="#apidoc-system-deleteNote">deleteNote</a></p>
 </li>
 <li>
-<p><a href="#system-deleteSystem">deleteSystem</a></p>
+<p><a href="#apidoc-system-deleteNotes">deleteNotes</a></p>
 </li>
 <li>
-<p><a href="#system-deleteSystem">deleteSystem</a></p>
+<p><a href="#apidoc-system-deletePackageProfile">deletePackageProfile</a></p>
 </li>
 <li>
-<p><a href="#system-deleteSystem">deleteSystem</a></p>
+<p><a href="#apidoc-system-deleteSystem">deleteSystem</a></p>
 </li>
 <li>
-<p><a href="#system-deleteSystems">deleteSystems</a></p>
+<p><a href="#apidoc-system-deleteSystem">deleteSystem</a></p>
 </li>
 <li>
-<p><a href="#system-deleteSystems">deleteSystems</a></p>
+<p><a href="#apidoc-system-deleteSystem">deleteSystem</a></p>
 </li>
 <li>
-<p><a href="#system-deleteTagFromSnapshot">deleteTagFromSnapshot</a></p>
+<p><a href="#apidoc-system-deleteSystems">deleteSystems</a></p>
 </li>
 <li>
-<p><a href="#system-downloadSystemId">downloadSystemId</a></p>
+<p><a href="#apidoc-system-deleteSystems">deleteSystems</a></p>
 </li>
 <li>
-<p><a href="#system-getConnectionPath">getConnectionPath</a></p>
+<p><a href="#apidoc-system-deleteTagFromSnapshot">deleteTagFromSnapshot</a></p>
 </li>
 <li>
-<p><a href="#system-getCpu">getCpu</a></p>
+<p><a href="#apidoc-system-downloadSystemId">downloadSystemId</a></p>
 </li>
 <li>
-<p><a href="#system-getCustomValues">getCustomValues</a></p>
+<p><a href="#apidoc-system-getConnectionPath">getConnectionPath</a></p>
 </li>
 <li>
-<p><a href="#system-getDetails">getDetails</a></p>
+<p><a href="#apidoc-system-getCpu">getCpu</a></p>
 </li>
 <li>
-<p><a href="#system-getDevices">getDevices</a></p>
+<p><a href="#apidoc-system-getCustomValues">getCustomValues</a></p>
 </li>
 <li>
-<p><a href="#system-getDmi">getDmi</a></p>
+<p><a href="#apidoc-system-getDetails">getDetails</a></p>
 </li>
 <li>
-<p><a href="#system-getEntitlements">getEntitlements</a></p>
+<p><a href="#apidoc-system-getDevices">getDevices</a></p>
 </li>
 <li>
-<p><a href="#system-getEventHistory">getEventHistory</a></p>
+<p><a href="#apidoc-system-getDmi">getDmi</a></p>
 </li>
 <li>
-<p><a href="#system-getId">getId</a></p>
+<p><a href="#apidoc-system-getEntitlements">getEntitlements</a></p>
 </li>
 <li>
-<p><a href="#system-getInstalledProducts">getInstalledProducts</a></p>
+<p><a href="#apidoc-system-getEventHistory">getEventHistory</a></p>
 </li>
 <li>
-<p><a href="#system-getKernelLivePatch">getKernelLivePatch</a></p>
+<p><a href="#apidoc-system-getId">getId</a></p>
 </li>
 <li>
-<p><a href="#system-getMemory">getMemory</a></p>
+<p><a href="#apidoc-system-getInstalledProducts">getInstalledProducts</a></p>
 </li>
 <li>
-<p><a href="#system-getMinionIdMap">getMinionIdMap</a></p>
+<p><a href="#apidoc-system-getKernelLivePatch">getKernelLivePatch</a></p>
 </li>
 <li>
-<p><a href="#system-getName">getName</a></p>
+<p><a href="#apidoc-system-getMemory">getMemory</a></p>
 </li>
 <li>
-<p><a href="#system-getNetwork">getNetwork</a></p>
+<p><a href="#apidoc-system-getMinionIdMap">getMinionIdMap</a></p>
 </li>
 <li>
-<p><a href="#system-getNetworkDevices">getNetworkDevices</a></p>
+<p><a href="#apidoc-system-getName">getName</a></p>
 </li>
 <li>
-<p><a href="#system-getOsaPing">getOsaPing</a></p>
+<p><a href="#apidoc-system-getNetwork">getNetwork</a></p>
 </li>
 <li>
-<p><a href="#system-getRegistrationDate">getRegistrationDate</a></p>
+<p><a href="#apidoc-system-getNetworkDevices">getNetworkDevices</a></p>
 </li>
 <li>
-<p><a href="#system-getRelevantErrata">getRelevantErrata</a></p>
+<p><a href="#apidoc-system-getOsaPing">getOsaPing</a></p>
 </li>
 <li>
-<p><a href="#system-getRelevantErrataByType">getRelevantErrataByType</a></p>
+<p><a href="#apidoc-system-getRegistrationDate">getRegistrationDate</a></p>
 </li>
 <li>
-<p><a href="#system-getRunningKernel">getRunningKernel</a></p>
+<p><a href="#apidoc-system-getRelevantErrata">getRelevantErrata</a></p>
 </li>
 <li>
-<p><a href="#system-getScriptActionDetails">getScriptActionDetails</a></p>
+<p><a href="#apidoc-system-getRelevantErrataByType">getRelevantErrataByType</a></p>
 </li>
 <li>
-<p><a href="#system-getScriptResults">getScriptResults</a></p>
+<p><a href="#apidoc-system-getRunningKernel">getRunningKernel</a></p>
 </li>
 <li>
-<p><a href="#system-getSubscribedBaseChannel">getSubscribedBaseChannel</a></p>
+<p><a href="#apidoc-system-getScriptActionDetails">getScriptActionDetails</a></p>
 </li>
 <li>
-<p><a href="#system-getSystemCurrencyMultipliers">getSystemCurrencyMultipliers</a></p>
+<p><a href="#apidoc-system-getScriptResults">getScriptResults</a></p>
 </li>
 <li>
-<p><a href="#system-getSystemCurrencyScores">getSystemCurrencyScores</a></p>
+<p><a href="#apidoc-system-getSubscribedBaseChannel">getSubscribedBaseChannel</a></p>
 </li>
 <li>
-<p><a href="#system-getUnscheduledErrata">getUnscheduledErrata</a></p>
+<p><a href="#apidoc-system-getSystemCurrencyMultipliers">getSystemCurrencyMultipliers</a></p>
 </li>
 <li>
-<p><a href="#system-getUuid">getUuid</a></p>
+<p><a href="#apidoc-system-getSystemCurrencyScores">getSystemCurrencyScores</a></p>
 </li>
 <li>
-<p><a href="#system-getVariables">getVariables</a></p>
+<p><a href="#apidoc-system-getUnscheduledErrata">getUnscheduledErrata</a></p>
 </li>
 <li>
-<p><a href="#system-isNvreInstalled">isNvreInstalled</a></p>
+<p><a href="#apidoc-system-getUuid">getUuid</a></p>
 </li>
 <li>
-<p><a href="#system-isNvreInstalled">isNvreInstalled</a></p>
+<p><a href="#apidoc-system-getVariables">getVariables</a></p>
 </li>
 <li>
-<p><a href="#system-listActivationKeys">listActivationKeys</a></p>
+<p><a href="#apidoc-system-isNvreInstalled">isNvreInstalled</a></p>
 </li>
 <li>
-<p><a href="#system-listActiveSystems">listActiveSystems</a></p>
+<p><a href="#apidoc-system-isNvreInstalled">isNvreInstalled</a></p>
 </li>
 <li>
-<p><a href="#system-listActiveSystemsDetails">listActiveSystemsDetails</a></p>
+<p><a href="#apidoc-system-listActivationKeys">listActivationKeys</a></p>
 </li>
 <li>
-<p><a href="#system-listAdministrators">listAdministrators</a></p>
+<p><a href="#apidoc-system-listActiveSystems">listActiveSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listAllInstallablePackages">listAllInstallablePackages</a></p>
+<p><a href="#apidoc-system-listActiveSystemsDetails">listActiveSystemsDetails</a></p>
 </li>
 <li>
-<p><a href="#system-listBaseChannels">listBaseChannels</a></p>
+<p><a href="#apidoc-system-listAdministrators">listAdministrators</a></p>
 </li>
 <li>
-<p><a href="#system-listChildChannels">listChildChannels</a></p>
+<p><a href="#apidoc-system-listAllInstallablePackages">listAllInstallablePackages</a></p>
 </li>
 <li>
-<p><a href="#system-listDuplicatesByHostname">listDuplicatesByHostname</a></p>
+<p><a href="#apidoc-system-listBaseChannels">listBaseChannels</a></p>
 </li>
 <li>
-<p><a href="#system-listDuplicatesByIp">listDuplicatesByIp</a></p>
+<p><a href="#apidoc-system-listChildChannels">listChildChannels</a></p>
 </li>
 <li>
-<p><a href="#system-listDuplicatesByMac">listDuplicatesByMac</a></p>
+<p><a href="#apidoc-system-listDuplicatesByHostname">listDuplicatesByHostname</a></p>
 </li>
 <li>
-<p><a href="#system-listEmptySystemProfiles">listEmptySystemProfiles</a></p>
+<p><a href="#apidoc-system-listDuplicatesByIp">listDuplicatesByIp</a></p>
 </li>
 <li>
-<p><a href="#system-listExtraPackages">listExtraPackages</a></p>
+<p><a href="#apidoc-system-listDuplicatesByMac">listDuplicatesByMac</a></p>
 </li>
 <li>
-<p><a href="#system-listFqdns">listFqdns</a></p>
+<p><a href="#apidoc-system-listEmptySystemProfiles">listEmptySystemProfiles</a></p>
 </li>
 <li>
-<p><a href="#system-listGroups">listGroups</a></p>
+<p><a href="#apidoc-system-listExtraPackages">listExtraPackages</a></p>
 </li>
 <li>
-<p><a href="#system-listInactiveSystems">listInactiveSystems</a></p>
+<p><a href="#apidoc-system-listFqdns">listFqdns</a></p>
 </li>
 <li>
-<p><a href="#system-listInactiveSystems">listInactiveSystems</a></p>
+<p><a href="#apidoc-system-listGroups">listGroups</a></p>
 </li>
 <li>
-<p><a href="#system-listLatestAvailablePackage">listLatestAvailablePackage</a></p>
+<p><a href="#apidoc-system-listInactiveSystems">listInactiveSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listLatestInstallablePackages">listLatestInstallablePackages</a></p>
+<p><a href="#apidoc-system-listInactiveSystems">listInactiveSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listLatestUpgradablePackages">listLatestUpgradablePackages</a></p>
+<p><a href="#apidoc-system-listLatestAvailablePackage">listLatestAvailablePackage</a></p>
 </li>
 <li>
-<p><a href="#system-listMigrationTargets">listMigrationTargets</a></p>
+<p><a href="#apidoc-system-listLatestInstallablePackages">listLatestInstallablePackages</a></p>
 </li>
 <li>
-<p><a href="#system-listNewerInstalledPackages">listNewerInstalledPackages</a></p>
+<p><a href="#apidoc-system-listLatestUpgradablePackages">listLatestUpgradablePackages</a></p>
 </li>
 <li>
-<p><a href="#system-listNotes">listNotes</a></p>
+<p><a href="#apidoc-system-listMigrationTargets">listMigrationTargets</a></p>
 </li>
 <li>
-<p><a href="#system-listOlderInstalledPackages">listOlderInstalledPackages</a></p>
+<p><a href="#apidoc-system-listNewerInstalledPackages">listNewerInstalledPackages</a></p>
 </li>
 <li>
-<p><a href="#system-listOutOfDateSystems">listOutOfDateSystems</a></p>
+<p><a href="#apidoc-system-listNotes">listNotes</a></p>
 </li>
 <li>
-<p><a href="#system-listPackageProfiles">listPackageProfiles</a></p>
+<p><a href="#apidoc-system-listOlderInstalledPackages">listOlderInstalledPackages</a></p>
 </li>
 <li>
-<p><a href="#system-listPackages">listPackages</a></p>
+<p><a href="#apidoc-system-listOutOfDateSystems">listOutOfDateSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listPackagesFromChannel">listPackagesFromChannel</a></p>
+<p><a href="#apidoc-system-listPackageProfiles">listPackageProfiles</a></p>
 </li>
 <li>
-<p><a href="#system-listPhysicalSystems">listPhysicalSystems</a></p>
+<p><a href="#apidoc-system-listPackages">listPackages</a></p>
 </li>
 <li>
-<p><a href="#system-listSubscribableBaseChannels">listSubscribableBaseChannels</a></p>
+<p><a href="#apidoc-system-listPackagesFromChannel">listPackagesFromChannel</a></p>
 </li>
 <li>
-<p><a href="#system-listSubscribableChildChannels">listSubscribableChildChannels</a></p>
+<p><a href="#apidoc-system-listPhysicalSystems">listPhysicalSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listSubscribedChildChannels">listSubscribedChildChannels</a></p>
+<p><a href="#apidoc-system-listSubscribableBaseChannels">listSubscribableBaseChannels</a></p>
 </li>
 <li>
-<p><a href="#system-listSuggestedReboot">listSuggestedReboot</a></p>
+<p><a href="#apidoc-system-listSubscribableChildChannels">listSubscribableChildChannels</a></p>
 </li>
 <li>
-<p><a href="#system-listSystemEvents">listSystemEvents</a></p>
+<p><a href="#apidoc-system-listSubscribedChildChannels">listSubscribedChildChannels</a></p>
 </li>
 <li>
-<p><a href="#system-listSystemEvents">listSystemEvents</a></p>
+<p><a href="#apidoc-system-listSuggestedReboot">listSuggestedReboot</a></p>
 </li>
 <li>
-<p><a href="#system-listSystems">listSystems</a></p>
+<p><a href="#apidoc-system-listSystemEvents">listSystemEvents</a></p>
 </li>
 <li>
-<p><a href="#system-listSystemsWithExtraPackages">listSystemsWithExtraPackages</a></p>
+<p><a href="#apidoc-system-listSystemEvents">listSystemEvents</a></p>
 </li>
 <li>
-<p><a href="#system-listSystemsWithPackage">listSystemsWithPackage</a></p>
+<p><a href="#apidoc-system-listSystems">listSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listSystemsWithPackage">listSystemsWithPackage</a></p>
+<p><a href="#apidoc-system-listSystemsWithExtraPackages">listSystemsWithExtraPackages</a></p>
 </li>
 <li>
-<p><a href="#system-listUngroupedSystems">listUngroupedSystems</a></p>
+<p><a href="#apidoc-system-listSystemsWithPackage">listSystemsWithPackage</a></p>
 </li>
 <li>
-<p><a href="#system-listUserSystems">listUserSystems</a></p>
+<p><a href="#apidoc-system-listSystemsWithPackage">listSystemsWithPackage</a></p>
 </li>
 <li>
-<p><a href="#system-listUserSystems">listUserSystems</a></p>
+<p><a href="#apidoc-system-listUngroupedSystems">listUngroupedSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listVirtualGuests">listVirtualGuests</a></p>
+<p><a href="#apidoc-system-listUserSystems">listUserSystems</a></p>
 </li>
 <li>
-<p><a href="#system-listVirtualHosts">listVirtualHosts</a></p>
+<p><a href="#apidoc-system-listUserSystems">listUserSystems</a></p>
 </li>
 <li>
-<p><a href="#system-obtainReactivationKey">obtainReactivationKey</a></p>
+<p><a href="#apidoc-system-listVirtualGuests">listVirtualGuests</a></p>
 </li>
 <li>
-<p><a href="#system-obtainReactivationKey">obtainReactivationKey</a></p>
+<p><a href="#apidoc-system-listVirtualHosts">listVirtualHosts</a></p>
 </li>
 <li>
-<p><a href="#system-provisionSystem">provisionSystem</a></p>
+<p><a href="#apidoc-system-obtainReactivationKey">obtainReactivationKey</a></p>
 </li>
 <li>
-<p><a href="#system-provisionSystem">provisionSystem</a></p>
+<p><a href="#apidoc-system-obtainReactivationKey">obtainReactivationKey</a></p>
 </li>
 <li>
-<p><a href="#system-provisionVirtualGuest">provisionVirtualGuest</a></p>
+<p><a href="#apidoc-system-provisionSystem">provisionSystem</a></p>
 </li>
 <li>
-<p><a href="#system-provisionVirtualGuest">provisionVirtualGuest</a></p>
+<p><a href="#apidoc-system-provisionSystem">provisionSystem</a></p>
 </li>
 <li>
-<p><a href="#system-provisionVirtualGuest">provisionVirtualGuest</a></p>
+<p><a href="#apidoc-system-provisionVirtualGuest">provisionVirtualGuest</a></p>
 </li>
 <li>
-<p><a href="#system-removeEntitlements">removeEntitlements</a></p>
+<p><a href="#apidoc-system-provisionVirtualGuest">provisionVirtualGuest</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-provisionVirtualGuest">provisionVirtualGuest</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-removeEntitlements">removeEntitlements</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyErrata">scheduleApplyErrata</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleApplyHighstate">scheduleApplyHighstate</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleCertificateUpdate">scheduleCertificateUpdate</a></p>
+<p><a href="#apidoc-system-scheduleApplyErrata">scheduleApplyErrata</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleCertificateUpdate">scheduleCertificateUpdate</a></p>
+<p><a href="#apidoc-system-scheduleApplyHighstate">scheduleApplyHighstate</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleChangeChannels">scheduleChangeChannels</a></p>
+<p><a href="#apidoc-system-scheduleCertificateUpdate">scheduleCertificateUpdate</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleChangeChannels">scheduleChangeChannels</a></p>
+<p><a href="#apidoc-system-scheduleCertificateUpdate">scheduleCertificateUpdate</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleDistUpgrade">scheduleDistUpgrade</a></p>
+<p><a href="#apidoc-system-scheduleChangeChannels">scheduleChangeChannels</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleGuestAction">scheduleGuestAction</a></p>
+<p><a href="#apidoc-system-scheduleChangeChannels">scheduleChangeChannels</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleGuestAction">scheduleGuestAction</a></p>
+<p><a href="#apidoc-system-scheduleDistUpgrade">scheduleDistUpgrade</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleHardwareRefresh">scheduleHardwareRefresh</a></p>
+<p><a href="#apidoc-system-scheduleGuestAction">scheduleGuestAction</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstall">schedulePackageInstall</a></p>
+<p><a href="#apidoc-system-scheduleGuestAction">scheduleGuestAction</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstall">schedulePackageInstall</a></p>
+<p><a href="#apidoc-system-scheduleHardwareRefresh">scheduleHardwareRefresh</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstall">schedulePackageInstall</a></p>
+<p><a href="#apidoc-system-schedulePackageInstall">schedulePackageInstall</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstall">schedulePackageInstall</a></p>
+<p><a href="#apidoc-system-schedulePackageInstall">schedulePackageInstall</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageInstall">schedulePackageInstall</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageInstall">schedulePackageInstall</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRefresh">schedulePackageRefresh</a></p>
+<p><a href="#apidoc-system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemove">schedulePackageRemove</a></p>
+<p><a href="#apidoc-system-schedulePackageInstallByNevra">schedulePackageInstallByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemove">schedulePackageRemove</a></p>
+<p><a href="#apidoc-system-schedulePackageRefresh">schedulePackageRefresh</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemove">schedulePackageRemove</a></p>
+<p><a href="#apidoc-system-schedulePackageRemove">schedulePackageRemove</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemove">schedulePackageRemove</a></p>
+<p><a href="#apidoc-system-schedulePackageRemove">schedulePackageRemove</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageRemove">schedulePackageRemove</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageRemove">schedulePackageRemove</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
+<p><a href="#apidoc-system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleReboot">scheduleReboot</a></p>
+<p><a href="#apidoc-system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleSPMigration">scheduleSPMigration</a></p>
+<p><a href="#apidoc-system-schedulePackageRemoveByNevra">schedulePackageRemoveByNevra</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleSPMigration">scheduleSPMigration</a></p>
+<p><a href="#apidoc-system-scheduleReboot">scheduleReboot</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleScriptRun">scheduleScriptRun</a></p>
+<p><a href="#apidoc-system-scheduleSPMigration">scheduleSPMigration</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleScriptRun">scheduleScriptRun</a></p>
+<p><a href="#apidoc-system-scheduleSPMigration">scheduleSPMigration</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleScriptRun">scheduleScriptRun</a></p>
+<p><a href="#apidoc-system-scheduleScriptRun">scheduleScriptRun</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleScriptRun">scheduleScriptRun</a></p>
+<p><a href="#apidoc-system-scheduleScriptRun">scheduleScriptRun</a></p>
 </li>
 <li>
-<p><a href="#system-scheduleSyncPackagesWithSystem">scheduleSyncPackagesWithSystem</a></p>
+<p><a href="#apidoc-system-scheduleScriptRun">scheduleScriptRun</a></p>
 </li>
 <li>
-<p><a href="#system-searchByName">searchByName</a></p>
+<p><a href="#apidoc-system-scheduleScriptRun">scheduleScriptRun</a></p>
 </li>
 <li>
-<p><a href="#system-sendOsaPing">sendOsaPing</a></p>
+<p><a href="#apidoc-system-scheduleSyncPackagesWithSystem">scheduleSyncPackagesWithSystem</a></p>
 </li>
 <li>
-<p><a href="#system-setBaseChannel">setBaseChannel</a></p>
+<p><a href="#apidoc-system-searchByName">searchByName</a></p>
 </li>
 <li>
-<p><a href="#system-setBaseChannel">setBaseChannel</a></p>
+<p><a href="#apidoc-system-sendOsaPing">sendOsaPing</a></p>
 </li>
 <li>
-<p><a href="#system-setChildChannels">setChildChannels</a></p>
+<p><a href="#apidoc-system-setBaseChannel">setBaseChannel</a></p>
 </li>
 <li>
-<p><a href="#system-setCustomValues">setCustomValues</a></p>
+<p><a href="#apidoc-system-setBaseChannel">setBaseChannel</a></p>
 </li>
 <li>
-<p><a href="#system-setDetails">setDetails</a></p>
+<p><a href="#apidoc-system-setChildChannels">setChildChannels</a></p>
 </li>
 <li>
-<p><a href="#system-setGroupMembership">setGroupMembership</a></p>
+<p><a href="#apidoc-system-setCustomValues">setCustomValues</a></p>
 </li>
 <li>
-<p><a href="#system-setGuestCpus">setGuestCpus</a></p>
+<p><a href="#apidoc-system-setDetails">setDetails</a></p>
 </li>
 <li>
-<p><a href="#system-setGuestMemory">setGuestMemory</a></p>
+<p><a href="#apidoc-system-setGroupMembership">setGroupMembership</a></p>
 </li>
 <li>
-<p><a href="#system-setLockStatus">setLockStatus</a></p>
+<p><a href="#apidoc-system-setGuestCpus">setGuestCpus</a></p>
 </li>
 <li>
-<p><a href="#system-setPrimaryInterface">setPrimaryInterface</a></p>
+<p><a href="#apidoc-system-setGuestMemory">setGuestMemory</a></p>
 </li>
 <li>
-<p><a href="#system-setProfileName">setProfileName</a></p>
+<p><a href="#apidoc-system-setLockStatus">setLockStatus</a></p>
 </li>
 <li>
-<p><a href="#system-setVariables">setVariables</a></p>
+<p><a href="#apidoc-system-setPrimaryInterface">setPrimaryInterface</a></p>
 </li>
 <li>
-<p><a href="#system-tagLatestSnapshot">tagLatestSnapshot</a></p>
+<p><a href="#apidoc-system-setProfileName">setProfileName</a></p>
 </li>
 <li>
-<p><a href="#system-unentitle">unentitle</a></p>
+<p><a href="#apidoc-system-setVariables">setVariables</a></p>
 </li>
 <li>
-<p><a href="#system-upgradeEntitlement">upgradeEntitlement</a></p>
+<p><a href="#apidoc-system-tagLatestSnapshot">tagLatestSnapshot</a></p>
 </li>
 <li>
-<p><a href="#system-whoRegistered">whoRegistered</a></p>
+<p><a href="#apidoc-system-unentitle">unentitle</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-upgradeEntitlement">upgradeEntitlement</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-whoRegistered">whoRegistered</a></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Provides methods to access and modify registered system.</p>
 </div>
@@ -821,8 +840,10 @@
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-addEntitlements"><a class="anchor" href="#system-addEntitlements"></a><a class="link" href="#system-addEntitlements">Method: addEntitlements</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-addEntitlements"><a class="anchor" href="#apidoc-system-addEntitlements"></a><a class="link" href="#apidoc-system-addEntitlements">Method: addEntitlements</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -866,8 +887,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-addNote"><a class="anchor" href="#system-addNote"></a><a class="link" href="#system-addNote">Method: addNote</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-addNote"><a class="anchor" href="#apidoc-system-addNote"></a><a class="link" href="#apidoc-system-addNote">Method: addNote</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -905,8 +928,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-applyErrata"><a class="anchor" href="#system-applyErrata"></a><a class="link" href="#system-applyErrata">Method: applyErrata (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-applyErrata"><a class="anchor" href="#apidoc-system-applyErrata"></a><a class="link" href="#apidoc-system-applyErrata">Method: applyErrata (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -952,8 +977,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-bootstrap"><a class="anchor" href="#system-bootstrap"></a><a class="link" href="#system-bootstrap">Method: bootstrap</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-bootstrap"><a class="anchor" href="#apidoc-system-bootstrap"></a><a class="link" href="#apidoc-system-bootstrap">Method: bootstrap</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1000,8 +1027,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-bootstrap"><a class="anchor" href="#system-bootstrap"></a><a class="link" href="#system-bootstrap">Method: bootstrap</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-bootstrap"><a class="anchor" href="#apidoc-system-bootstrap"></a><a class="link" href="#apidoc-system-bootstrap">Method: bootstrap</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1051,8 +1080,121 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-comparePackageProfile"><a class="anchor" href="#system-comparePackageProfile"></a><a class="link" href="#system-comparePackageProfile">Method: comparePackageProfile</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-bootstrapWithPrivateSshKey"><a class="anchor" href="#apidoc-system-bootstrapWithPrivateSshKey"></a><a class="link" href="#apidoc-system-bootstrapWithPrivateSshKey">Method: bootstrapWithPrivateSshKey</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Bootstrap a system for management via either Salt or Salt SSH.
+ Use SSH private key for authentication.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - Hostname or IP address of target</p>
+</li>
+<li>
+<p><span class="int">int</span>  sshPort - SSH port on target machine</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshUser - SSH user on target machine</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshPrivKey - SSH private key as a string in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshPrivKeyPass - SSH passphrase for the key (use empty string for no passphrase)</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - Activation key</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  saltSSH - Manage system with Salt SSH</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-bootstrapWithPrivateSshKey"><a class="anchor" href="#apidoc-system-bootstrapWithPrivateSshKey"></a><a class="link" href="#apidoc-system-bootstrapWithPrivateSshKey">Method: bootstrapWithPrivateSshKey</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Bootstrap a system for management via either Salt or Salt SSH.
+ Use SSH private key for authentication.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - Hostname or IP address of target</p>
+</li>
+<li>
+<p><span class="int">int</span>  sshPort - SSH port on target machine</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshUser - SSH user on target machine</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshPrivKey - SSH private key as a string in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  sshPrivKeyPass - SSH passphrase for the key (use empty string for no passphrase)</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - Activation key</p>
+</li>
+<li>
+<p><span class="int">int</span>  proxyId - System ID of proxy to use</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  saltSSH - Manage system with Salt SSH</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-comparePackageProfile"><a class="anchor" href="#apidoc-system-comparePackageProfile"></a><a class="link" href="#apidoc-system-comparePackageProfile">Method: comparePackageProfile</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1142,8 +1284,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-comparePackages"><a class="anchor" href="#system-comparePackages"></a><a class="link" href="#system-comparePackages">Method: comparePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-comparePackages"><a class="anchor" href="#apidoc-system-comparePackages"></a><a class="link" href="#apidoc-system-comparePackages">Method: comparePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1231,8 +1375,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-createPackageProfile"><a class="anchor" href="#system-createPackageProfile"></a><a class="link" href="#system-createPackageProfile">Method: createPackageProfile</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-createPackageProfile"><a class="anchor" href="#apidoc-system-createPackageProfile"></a><a class="link" href="#apidoc-system-createPackageProfile">Method: createPackageProfile</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1271,8 +1417,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-createSystemProfile"><a class="anchor" href="#system-createSystemProfile"></a><a class="link" href="#system-createSystemProfile">Method: createSystemProfile</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-createSystemProfile"><a class="anchor" href="#apidoc-system-createSystemProfile"></a><a class="link" href="#apidoc-system-createSystemProfile">Method: createSystemProfile</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1317,8 +1465,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-createSystemRecord"><a class="anchor" href="#system-createSystemRecord"></a><a class="link" href="#system-createSystemRecord">Method: createSystemRecord</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-createSystemRecord"><a class="anchor" href="#apidoc-system-createSystemRecord"></a><a class="link" href="#apidoc-system-createSystemRecord">Method: createSystemRecord</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1353,8 +1503,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-createSystemRecord"><a class="anchor" href="#system-createSystemRecord"></a><a class="link" href="#system-createSystemRecord">Method: createSystemRecord</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-createSystemRecord"><a class="anchor" href="#apidoc-system-createSystemRecord"></a><a class="link" href="#apidoc-system-createSystemRecord">Method: createSystemRecord</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1415,8 +1567,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteCustomValues"><a class="anchor" href="#system-deleteCustomValues"></a><a class="link" href="#system-deleteCustomValues">Method: deleteCustomValues</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteCustomValues"><a class="anchor" href="#apidoc-system-deleteCustomValues"></a><a class="link" href="#apidoc-system-deleteCustomValues">Method: deleteCustomValues</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1461,8 +1615,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteGuestProfiles"><a class="anchor" href="#system-deleteGuestProfiles"></a><a class="link" href="#system-deleteGuestProfiles">Method: deleteGuestProfiles</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteGuestProfiles"><a class="anchor" href="#apidoc-system-deleteGuestProfiles"></a><a class="link" href="#apidoc-system-deleteGuestProfiles">Method: deleteGuestProfiles</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1504,8 +1660,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteNote"><a class="anchor" href="#system-deleteNote"></a><a class="link" href="#system-deleteNote">Method: deleteNote</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteNote"><a class="anchor" href="#apidoc-system-deleteNote"></a><a class="link" href="#apidoc-system-deleteNote">Method: deleteNote</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1540,8 +1698,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteNotes"><a class="anchor" href="#system-deleteNotes"></a><a class="link" href="#system-deleteNotes">Method: deleteNotes</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteNotes"><a class="anchor" href="#apidoc-system-deleteNotes"></a><a class="link" href="#apidoc-system-deleteNotes">Method: deleteNotes</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1573,8 +1733,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deletePackageProfile"><a class="anchor" href="#system-deletePackageProfile"></a><a class="link" href="#system-deletePackageProfile">Method: deletePackageProfile</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deletePackageProfile"><a class="anchor" href="#apidoc-system-deletePackageProfile"></a><a class="link" href="#apidoc-system-deletePackageProfile">Method: deletePackageProfile</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1606,8 +1768,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteSystem"><a class="anchor" href="#system-deleteSystem"></a><a class="link" href="#system-deleteSystem">Method: deleteSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteSystem"><a class="anchor" href="#apidoc-system-deleteSystem"></a><a class="link" href="#apidoc-system-deleteSystem">Method: deleteSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1639,8 +1803,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteSystem"><a class="anchor" href="#system-deleteSystem"></a><a class="link" href="#system-deleteSystem">Method: deleteSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteSystem"><a class="anchor" href="#apidoc-system-deleteSystem"></a><a class="link" href="#apidoc-system-deleteSystem">Method: deleteSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1672,8 +1838,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteSystem"><a class="anchor" href="#system-deleteSystem"></a><a class="link" href="#system-deleteSystem">Method: deleteSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteSystem"><a class="anchor" href="#apidoc-system-deleteSystem"></a><a class="link" href="#apidoc-system-deleteSystem">Method: deleteSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1711,8 +1879,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteSystems"><a class="anchor" href="#system-deleteSystems"></a><a class="link" href="#system-deleteSystems">Method: deleteSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteSystems"><a class="anchor" href="#apidoc-system-deleteSystems"></a><a class="link" href="#apidoc-system-deleteSystems">Method: deleteSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1751,8 +1921,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteSystems"><a class="anchor" href="#system-deleteSystems"></a><a class="link" href="#system-deleteSystems">Method: deleteSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteSystems"><a class="anchor" href="#apidoc-system-deleteSystems"></a><a class="link" href="#apidoc-system-deleteSystems">Method: deleteSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1797,8 +1969,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-deleteTagFromSnapshot"><a class="anchor" href="#system-deleteTagFromSnapshot"></a><a class="link" href="#system-deleteTagFromSnapshot">Method: deleteTagFromSnapshot</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-deleteTagFromSnapshot"><a class="anchor" href="#apidoc-system-deleteTagFromSnapshot"></a><a class="link" href="#apidoc-system-deleteTagFromSnapshot">Method: deleteTagFromSnapshot</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1833,8 +2007,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-downloadSystemId"><a class="anchor" href="#system-downloadSystemId"></a><a class="link" href="#system-downloadSystemId">Method: downloadSystemId</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-downloadSystemId"><a class="anchor" href="#apidoc-system-downloadSystemId"></a><a class="link" href="#apidoc-system-downloadSystemId">Method: downloadSystemId</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1866,8 +2042,10 @@ virtualization_host, enterprise_entitled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getConnectionPath"><a class="anchor" href="#system-getConnectionPath"></a><a class="link" href="#system-getConnectionPath">Method: getConnectionPath</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getConnectionPath"><a class="anchor" href="#apidoc-system-getConnectionPath"></a><a class="link" href="#apidoc-system-getConnectionPath">Method: getConnectionPath</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1919,8 +2097,10 @@ system connects directly to is listed in position 1.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getCpu"><a class="anchor" href="#system-getCpu"></a><a class="link" href="#system-getCpu">Method: getCpu</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getCpu"><a class="anchor" href="#apidoc-system-getCpu"></a><a class="link" href="#apidoc-system-getCpu">Method: getCpu</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1983,8 +2163,10 @@ system connects directly to is listed in position 1.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getCustomValues"><a class="anchor" href="#system-getCustomValues"></a><a class="link" href="#system-getCustomValues">Method: getCustomValues</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getCustomValues"><a class="anchor" href="#apidoc-system-getCustomValues"></a><a class="link" href="#apidoc-system-getCustomValues">Method: getCustomValues</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2020,8 +2202,10 @@ system connects directly to is listed in position 1.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getDetails"><a class="anchor" href="#system-getDetails"></a><a class="link" href="#system-getDetails">Method: getDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getDetails"><a class="anchor" href="#apidoc-system-getDetails"></a><a class="link" href="#apidoc-system-getDetails">Method: getDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2146,8 +2330,10 @@ for virtual guests only (optional)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getDevices"><a class="anchor" href="#system-getDevices"></a><a class="link" href="#system-getDevices">Method: getDevices</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getDevices"><a class="anchor" href="#apidoc-system-getDevices"></a><a class="link" href="#apidoc-system-getDevices">Method: getDevices</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2207,8 +2393,10 @@ OTHER, etc.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getDmi"><a class="anchor" href="#system-getDmi"></a><a class="link" href="#system-getDmi">Method: getDmi</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getDmi"><a class="anchor" href="#apidoc-system-getDmi"></a><a class="link" href="#apidoc-system-getDmi">Method: getDmi</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2265,8 +2453,10 @@ OTHER, etc.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getEntitlements"><a class="anchor" href="#system-getEntitlements"></a><a class="link" href="#system-getEntitlements">Method: getEntitlements</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getEntitlements"><a class="anchor" href="#apidoc-system-getEntitlements"></a><a class="link" href="#apidoc-system-getEntitlements">Method: getEntitlements</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2305,8 +2495,10 @@ OTHER, etc.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getEventHistory"><a class="anchor" href="#system-getEventHistory"></a><a class="link" href="#system-getEventHistory">Method: getEventHistory</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getEventHistory"><a class="anchor" href="#apidoc-system-getEventHistory"></a><a class="link" href="#apidoc-system-getEventHistory">Method: getEventHistory</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2361,8 +2553,10 @@ the event occurred (optional)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getId"><a class="anchor" href="#system-getId"></a><a class="link" href="#system-getId">Method: getId</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getId"><a class="anchor" href="#apidoc-system-getId"></a><a class="link" href="#apidoc-system-getId">Method: getId</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2426,8 +2620,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getInstalledProducts"><a class="anchor" href="#system-getInstalledProducts"></a><a class="link" href="#system-getInstalledProducts">Method: getInstalledProducts</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getInstalledProducts"><a class="anchor" href="#apidoc-system-getInstalledProducts"></a><a class="link" href="#apidoc-system-getInstalledProducts">Method: getInstalledProducts</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2486,8 +2682,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getKernelLivePatch"><a class="anchor" href="#system-getKernelLivePatch"></a><a class="link" href="#system-getKernelLivePatch">Method: getKernelLivePatch</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getKernelLivePatch"><a class="anchor" href="#apidoc-system-getKernelLivePatch"></a><a class="link" href="#apidoc-system-getKernelLivePatch">Method: getKernelLivePatch</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2521,8 +2719,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getMemory"><a class="anchor" href="#system-getMemory"></a><a class="link" href="#system-getMemory">Method: getMemory</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getMemory"><a class="anchor" href="#apidoc-system-getMemory"></a><a class="link" href="#apidoc-system-getMemory">Method: getMemory</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2561,8 +2761,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getMinionIdMap"><a class="anchor" href="#system-getMinionIdMap"></a><a class="link" href="#system-getMinionIdMap">Method: getMinionIdMap</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getMinionIdMap"><a class="anchor" href="#apidoc-system-getMinionIdMap"></a><a class="link" href="#apidoc-system-getMinionIdMap">Method: getMinionIdMap</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2592,8 +2794,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getName"><a class="anchor" href="#system-getName"></a><a class="link" href="#system-getName">Method: getName</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getName"><a class="anchor" href="#apidoc-system-getName"></a><a class="link" href="#apidoc-system-getName">Method: getName</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2636,8 +2840,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getNetwork"><a class="anchor" href="#system-getNetwork"></a><a class="link" href="#system-getNetwork">Method: getNetwork</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getNetwork"><a class="anchor" href="#apidoc-system-getNetwork"></a><a class="link" href="#apidoc-system-getNetwork">Method: getNetwork</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2679,8 +2885,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getNetworkDevices"><a class="anchor" href="#system-getNetworkDevices"></a><a class="link" href="#system-getNetworkDevices">Method: getNetworkDevices</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getNetworkDevices"><a class="anchor" href="#apidoc-system-getNetworkDevices"></a><a class="link" href="#apidoc-system-getNetworkDevices">Method: getNetworkDevices</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2780,8 +2988,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getOsaPing"><a class="anchor" href="#system-getOsaPing"></a><a class="link" href="#system-getOsaPing">Method: getOsaPing</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getOsaPing"><a class="anchor" href="#apidoc-system-getOsaPing"></a><a class="link" href="#apidoc-system-getOsaPing">Method: getOsaPing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2825,8 +3035,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getRegistrationDate"><a class="anchor" href="#system-getRegistrationDate"></a><a class="link" href="#system-getRegistrationDate">Method: getRegistrationDate</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getRegistrationDate"><a class="anchor" href="#apidoc-system-getRegistrationDate"></a><a class="link" href="#apidoc-system-getRegistrationDate">Method: getRegistrationDate</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2859,8 +3071,10 @@ in local time.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getRelevantErrata"><a class="anchor" href="#system-getRelevantErrata"></a><a class="link" href="#system-getRelevantErrata">Method: getRelevantErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getRelevantErrata"><a class="anchor" href="#apidoc-system-getRelevantErrata"></a><a class="link" href="#apidoc-system-getRelevantErrata">Method: getRelevantErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2919,8 +3133,10 @@ in local time.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getRelevantErrataByType"><a class="anchor" href="#system-getRelevantErrataByType"></a><a class="link" href="#system-getRelevantErrataByType">Method: getRelevantErrataByType</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getRelevantErrataByType"><a class="anchor" href="#apidoc-system-getRelevantErrataByType"></a><a class="link" href="#apidoc-system-getRelevantErrataByType">Method: getRelevantErrataByType</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2985,8 +3201,10 @@ of the following: 'Security Advisory', 'Product Enhancement Advisory',
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getRunningKernel"><a class="anchor" href="#system-getRunningKernel"></a><a class="link" href="#system-getRunningKernel">Method: getRunningKernel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getRunningKernel"><a class="anchor" href="#apidoc-system-getRunningKernel"></a><a class="link" href="#apidoc-system-getRunningKernel">Method: getRunningKernel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3018,8 +3236,10 @@ of the following: 'Security Advisory', 'Product Enhancement Advisory',
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getScriptActionDetails"><a class="anchor" href="#system-getScriptActionDetails"></a><a class="link" href="#system-getScriptActionDetails">Method: getScriptActionDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getScriptActionDetails"><a class="anchor" href="#apidoc-system-getScriptActionDetails"></a><a class="link" href="#apidoc-system-getScriptActionDetails">Method: getScriptActionDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3098,8 +3318,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getScriptResults"><a class="anchor" href="#system-getScriptResults"></a><a class="link" href="#system-getScriptResults">Method: getScriptResults</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getScriptResults"><a class="anchor" href="#apidoc-system-getScriptResults"></a><a class="link" href="#apidoc-system-getScriptResults">Method: getScriptResults</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3160,8 +3382,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getSubscribedBaseChannel"><a class="anchor" href="#system-getSubscribedBaseChannel"></a><a class="link" href="#system-getSubscribedBaseChannel">Method: getSubscribedBaseChannel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getSubscribedBaseChannel"><a class="anchor" href="#apidoc-system-getSubscribedBaseChannel"></a><a class="link" href="#apidoc-system-getSubscribedBaseChannel">Method: getSubscribedBaseChannel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3274,8 +3498,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getSystemCurrencyMultipliers"><a class="anchor" href="#system-getSystemCurrencyMultipliers"></a><a class="link" href="#system-getSystemCurrencyMultipliers">Method: getSystemCurrencyMultipliers</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getSystemCurrencyMultipliers"><a class="anchor" href="#apidoc-system-getSystemCurrencyMultipliers"></a><a class="link" href="#apidoc-system-getSystemCurrencyMultipliers">Method: getSystemCurrencyMultipliers</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3304,8 +3530,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getSystemCurrencyScores"><a class="anchor" href="#system-getSystemCurrencyScores"></a><a class="link" href="#system-getSystemCurrencyScores">Method: getSystemCurrencyScores</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getSystemCurrencyScores"><a class="anchor" href="#apidoc-system-getSystemCurrencyScores"></a><a class="link" href="#apidoc-system-getSystemCurrencyScores">Method: getSystemCurrencyScores</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3363,8 +3591,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getUnscheduledErrata"><a class="anchor" href="#system-getUnscheduledErrata"></a><a class="link" href="#system-getUnscheduledErrata">Method: getUnscheduledErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getUnscheduledErrata"><a class="anchor" href="#apidoc-system-getUnscheduledErrata"></a><a class="link" href="#apidoc-system-getUnscheduledErrata">Method: getUnscheduledErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3420,8 +3650,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getUuid"><a class="anchor" href="#system-getUuid"></a><a class="link" href="#system-getUuid">Method: getUuid</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getUuid"><a class="anchor" href="#apidoc-system-getUuid"></a><a class="link" href="#apidoc-system-getUuid">Method: getUuid</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3453,8 +3685,10 @@ to the output_enc64 attribute)</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-getVariables"><a class="anchor" href="#system-getVariables"></a><a class="link" href="#system-getVariables">Method: getVariables</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getVariables"><a class="anchor" href="#apidoc-system-getVariables"></a><a class="link" href="#apidoc-system-getVariables">Method: getVariables</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3515,8 +3749,10 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-isNvreInstalled"><a class="anchor" href="#system-isNvreInstalled"></a><a class="link" href="#system-isNvreInstalled">Method: isNvreInstalled</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-isNvreInstalled"><a class="anchor" href="#apidoc-system-isNvreInstalled"></a><a class="link" href="#apidoc-system-isNvreInstalled">Method: isNvreInstalled</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3558,8 +3794,10 @@ if an error occurs</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-isNvreInstalled"><a class="anchor" href="#system-isNvreInstalled"></a><a class="link" href="#system-isNvreInstalled">Method: isNvreInstalled</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-isNvreInstalled"><a class="anchor" href="#apidoc-system-isNvreInstalled"></a><a class="link" href="#apidoc-system-isNvreInstalled">Method: isNvreInstalled</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3604,8 +3842,10 @@ if an error occurs</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listActivationKeys"><a class="anchor" href="#system-listActivationKeys"></a><a class="link" href="#system-listActivationKeys">Method: listActivationKeys</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listActivationKeys"><a class="anchor" href="#apidoc-system-listActivationKeys"></a><a class="link" href="#apidoc-system-listActivationKeys">Method: listActivationKeys</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3645,8 +3885,10 @@ if an error occurs</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listActiveSystems"><a class="anchor" href="#system-listActiveSystems"></a><a class="link" href="#system-listActiveSystems">Method: listActiveSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listActiveSystems"><a class="anchor" href="#apidoc-system-listActiveSystems"></a><a class="link" href="#apidoc-system-listActiveSystems">Method: listActiveSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3688,14 +3930,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -3707,8 +3942,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listActiveSystemsDetails"><a class="anchor" href="#system-listActiveSystemsDetails"></a><a class="link" href="#system-listActiveSystemsDetails">Method: listActiveSystemsDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listActiveSystemsDetails"><a class="anchor" href="#apidoc-system-listActiveSystemsDetails"></a><a class="link" href="#apidoc-system-listActiveSystemsDetails">Method: listActiveSystemsDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3932,8 +4169,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listAdministrators"><a class="anchor" href="#system-listAdministrators"></a><a class="link" href="#system-listAdministrators">Method: listAdministrators</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listAdministrators"><a class="anchor" href="#apidoc-system-listAdministrators"></a><a class="link" href="#apidoc-system-listAdministrators">Method: listAdministrators</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3987,8 +4226,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listAllInstallablePackages"><a class="anchor" href="#system-listAllInstallablePackages"></a><a class="link" href="#system-listAllInstallablePackages">Method: listAllInstallablePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listAllInstallablePackages"><a class="anchor" href="#apidoc-system-listAllInstallablePackages"></a><a class="link" href="#apidoc-system-listAllInstallablePackages">Method: listAllInstallablePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4043,8 +4284,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listBaseChannels"><a class="anchor" href="#system-listBaseChannels"></a><a class="link" href="#system-listBaseChannels">Method: listBaseChannels (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listBaseChannels"><a class="anchor" href="#apidoc-system-listBaseChannels"></a><a class="link" href="#apidoc-system-listBaseChannels">Method: listBaseChannels (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4098,8 +4341,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listChildChannels"><a class="anchor" href="#system-listChildChannels"></a><a class="link" href="#system-listChildChannels">Method: listChildChannels (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listChildChannels"><a class="anchor" href="#apidoc-system-listChildChannels"></a><a class="link" href="#apidoc-system-listChildChannels">Method: listChildChannels (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4159,8 +4404,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listDuplicatesByHostname"><a class="anchor" href="#system-listDuplicatesByHostname"></a><a class="link" href="#system-listDuplicatesByHostname">Method: listDuplicatesByHostname</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listDuplicatesByHostname"><a class="anchor" href="#apidoc-system-listDuplicatesByHostname"></a><a class="link" href="#apidoc-system-listDuplicatesByHostname">Method: listDuplicatesByHostname</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4219,8 +4466,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listDuplicatesByIp"><a class="anchor" href="#system-listDuplicatesByIp"></a><a class="link" href="#system-listDuplicatesByIp">Method: listDuplicatesByIp</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listDuplicatesByIp"><a class="anchor" href="#apidoc-system-listDuplicatesByIp"></a><a class="link" href="#apidoc-system-listDuplicatesByIp">Method: listDuplicatesByIp</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4279,8 +4528,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listDuplicatesByMac"><a class="anchor" href="#system-listDuplicatesByMac"></a><a class="link" href="#system-listDuplicatesByMac">Method: listDuplicatesByMac</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listDuplicatesByMac"><a class="anchor" href="#apidoc-system-listDuplicatesByMac"></a><a class="link" href="#apidoc-system-listDuplicatesByMac">Method: listDuplicatesByMac</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4339,8 +4590,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listEmptySystemProfiles"><a class="anchor" href="#system-listEmptySystemProfiles"></a><a class="link" href="#system-listEmptySystemProfiles">Method: listEmptySystemProfiles</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listEmptySystemProfiles"><a class="anchor" href="#apidoc-system-listEmptySystemProfiles"></a><a class="link" href="#apidoc-system-listEmptySystemProfiles">Method: listEmptySystemProfiles</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4400,8 +4653,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listExtraPackages"><a class="anchor" href="#system-listExtraPackages"></a><a class="link" href="#system-listExtraPackages">Method: listExtraPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listExtraPackages"><a class="anchor" href="#apidoc-system-listExtraPackages"></a><a class="link" href="#apidoc-system-listExtraPackages">Method: listExtraPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4456,8 +4711,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listFqdns"><a class="anchor" href="#system-listFqdns"></a><a class="link" href="#system-listFqdns">Method: listFqdns</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listFqdns"><a class="anchor" href="#apidoc-system-listFqdns"></a><a class="link" href="#apidoc-system-listFqdns">Method: listFqdns</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4496,8 +4753,10 @@ eth0</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listGroups"><a class="anchor" href="#system-listGroups"></a><a class="link" href="#system-listGroups">Method: listGroups</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listGroups"><a class="anchor" href="#apidoc-system-listGroups"></a><a class="link" href="#apidoc-system-listGroups">Method: listGroups</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4547,8 +4806,10 @@ to this server group, 0 otherwise</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listInactiveSystems"><a class="anchor" href="#system-listInactiveSystems"></a><a class="link" href="#system-listInactiveSystems">Method: listInactiveSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listInactiveSystems"><a class="anchor" href="#apidoc-system-listInactiveSystems"></a><a class="link" href="#apidoc-system-listInactiveSystems">Method: listInactiveSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4591,14 +4852,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -4610,8 +4864,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listInactiveSystems"><a class="anchor" href="#system-listInactiveSystems"></a><a class="link" href="#system-listInactiveSystems">Method: listInactiveSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listInactiveSystems"><a class="anchor" href="#apidoc-system-listInactiveSystems"></a><a class="link" href="#apidoc-system-listInactiveSystems">Method: listInactiveSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4657,14 +4913,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -4676,8 +4925,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listLatestAvailablePackage"><a class="anchor" href="#system-listLatestAvailablePackage"></a><a class="link" href="#system-listLatestAvailablePackage">Method: listLatestAvailablePackage</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listLatestAvailablePackage"><a class="anchor" href="#apidoc-system-listLatestAvailablePackage"></a><a class="link" href="#apidoc-system-listLatestAvailablePackage">Method: listLatestAvailablePackage</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4755,8 +5006,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listLatestInstallablePackages"><a class="anchor" href="#system-listLatestInstallablePackages"></a><a class="link" href="#system-listLatestInstallablePackages">Method: listLatestInstallablePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listLatestInstallablePackages"><a class="anchor" href="#apidoc-system-listLatestInstallablePackages"></a><a class="link" href="#apidoc-system-listLatestInstallablePackages">Method: listLatestInstallablePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4811,8 +5064,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listLatestUpgradablePackages"><a class="anchor" href="#system-listLatestUpgradablePackages"></a><a class="link" href="#system-listLatestUpgradablePackages">Method: listLatestUpgradablePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listLatestUpgradablePackages"><a class="anchor" href="#apidoc-system-listLatestUpgradablePackages"></a><a class="link" href="#apidoc-system-listLatestUpgradablePackages">Method: listLatestUpgradablePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4876,8 +5131,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listMigrationTargets"><a class="anchor" href="#system-listMigrationTargets"></a><a class="link" href="#system-listMigrationTargets">Method: listMigrationTargets</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listMigrationTargets"><a class="anchor" href="#apidoc-system-listMigrationTargets"></a><a class="link" href="#apidoc-system-listMigrationTargets">Method: listMigrationTargets</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4920,8 +5177,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listNewerInstalledPackages"><a class="anchor" href="#system-listNewerInstalledPackages"></a><a class="link" href="#system-listNewerInstalledPackages">Method: listNewerInstalledPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listNewerInstalledPackages"><a class="anchor" href="#apidoc-system-listNewerInstalledPackages"></a><a class="link" href="#apidoc-system-listNewerInstalledPackages">Method: listNewerInstalledPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4983,8 +5242,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listNotes"><a class="anchor" href="#system-listNotes"></a><a class="link" href="#system-listNotes">Method: listNotes</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listNotes"><a class="anchor" href="#apidoc-system-listNotes"></a><a class="link" href="#apidoc-system-listNotes">Method: listNotes</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5043,8 +5304,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listOlderInstalledPackages"><a class="anchor" href="#system-listOlderInstalledPackages"></a><a class="link" href="#system-listOlderInstalledPackages">Method: listOlderInstalledPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listOlderInstalledPackages"><a class="anchor" href="#apidoc-system-listOlderInstalledPackages"></a><a class="link" href="#apidoc-system-listOlderInstalledPackages">Method: listOlderInstalledPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5107,8 +5370,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listOutOfDateSystems"><a class="anchor" href="#system-listOutOfDateSystems"></a><a class="link" href="#system-listOutOfDateSystems">Method: listOutOfDateSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listOutOfDateSystems"><a class="anchor" href="#apidoc-system-listOutOfDateSystems"></a><a class="link" href="#apidoc-system-listOutOfDateSystems">Method: listOutOfDateSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5169,8 +5434,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listPackageProfiles"><a class="anchor" href="#system-listPackageProfiles"></a><a class="link" href="#system-listPackageProfiles">Method: listPackageProfiles</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listPackageProfiles"><a class="anchor" href="#apidoc-system-listPackageProfiles"></a><a class="link" href="#apidoc-system-listPackageProfiles">Method: listPackageProfiles</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5217,8 +5484,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listPackages"><a class="anchor" href="#system-listPackages"></a><a class="link" href="#system-listPackages">Method: listPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listPackages"><a class="anchor" href="#apidoc-system-listPackages"></a><a class="link" href="#apidoc-system-listPackages">Method: listPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5273,8 +5542,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listPackagesFromChannel"><a class="anchor" href="#system-listPackagesFromChannel"></a><a class="link" href="#system-listPackagesFromChannel">Method: listPackagesFromChannel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listPackagesFromChannel"><a class="anchor" href="#apidoc-system-listPackagesFromChannel"></a><a class="link" href="#apidoc-system-listPackagesFromChannel">Method: listPackagesFromChannel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5350,8 +5621,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listPhysicalSystems"><a class="anchor" href="#system-listPhysicalSystems"></a><a class="link" href="#system-listPhysicalSystems">Method: listPhysicalSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listPhysicalSystems"><a class="anchor" href="#apidoc-system-listPhysicalSystems"></a><a class="link" href="#apidoc-system-listPhysicalSystems">Method: listPhysicalSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5412,8 +5685,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSubscribableBaseChannels"><a class="anchor" href="#system-listSubscribableBaseChannels"></a><a class="link" href="#system-listSubscribableBaseChannels">Method: listSubscribableBaseChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSubscribableBaseChannels"><a class="anchor" href="#apidoc-system-listSubscribableBaseChannels"></a><a class="link" href="#apidoc-system-listSubscribableBaseChannels">Method: listSubscribableBaseChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5463,8 +5738,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSubscribableChildChannels"><a class="anchor" href="#system-listSubscribableChildChannels"></a><a class="link" href="#system-listSubscribableChildChannels">Method: listSubscribableChildChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSubscribableChildChannels"><a class="anchor" href="#apidoc-system-listSubscribableChildChannels"></a><a class="link" href="#apidoc-system-listSubscribableChildChannels">Method: listSubscribableChildChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5520,8 +5797,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSubscribedChildChannels"><a class="anchor" href="#system-listSubscribedChildChannels"></a><a class="link" href="#system-listSubscribedChildChannels">Method: listSubscribedChildChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSubscribedChildChannels"><a class="anchor" href="#apidoc-system-listSubscribedChildChannels"></a><a class="link" href="#apidoc-system-listSubscribedChildChannels">Method: listSubscribedChildChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5642,8 +5921,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSuggestedReboot"><a class="anchor" href="#system-listSuggestedReboot"></a><a class="link" href="#system-listSuggestedReboot">Method: listSuggestedReboot</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSuggestedReboot"><a class="anchor" href="#apidoc-system-listSuggestedReboot"></a><a class="link" href="#apidoc-system-listSuggestedReboot">Method: listSuggestedReboot</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5683,8 +5964,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystemEvents"><a class="anchor" href="#system-listSystemEvents"></a><a class="link" href="#system-listSystemEvents">Method: listSystemEvents</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystemEvents"><a class="anchor" href="#apidoc-system-listSystemEvents"></a><a class="link" href="#apidoc-system-listSystemEvents">Method: listSystemEvents</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5825,8 +6108,10 @@ optional revision information&#8230;&#8203;etc.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystemEvents"><a class="anchor" href="#system-listSystemEvents"></a><a class="link" href="#system-listSystemEvents">Method: listSystemEvents</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystemEvents"><a class="anchor" href="#apidoc-system-listSystemEvents"></a><a class="link" href="#apidoc-system-listSystemEvents">Method: listSystemEvents</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5963,8 +6248,10 @@ optional revision information&#8230;&#8203;etc.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystems"><a class="anchor" href="#system-listSystems"></a><a class="link" href="#system-listSystems">Method: listSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystems"><a class="anchor" href="#apidoc-system-listSystems"></a><a class="link" href="#apidoc-system-listSystems">Method: listSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6006,14 +6293,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -6025,8 +6305,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystemsWithExtraPackages"><a class="anchor" href="#system-listSystemsWithExtraPackages"></a><a class="link" href="#system-listSystemsWithExtraPackages">Method: listSystemsWithExtraPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystemsWithExtraPackages"><a class="anchor" href="#apidoc-system-listSystemsWithExtraPackages"></a><a class="link" href="#apidoc-system-listSystemsWithExtraPackages">Method: listSystemsWithExtraPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6069,8 +6351,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystemsWithPackage"><a class="anchor" href="#system-listSystemsWithPackage"></a><a class="link" href="#system-listSystemsWithPackage">Method: listSystemsWithPackage</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystemsWithPackage"><a class="anchor" href="#apidoc-system-listSystemsWithPackage"></a><a class="link" href="#apidoc-system-listSystemsWithPackage">Method: listSystemsWithPackage</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6134,8 +6418,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listSystemsWithPackage"><a class="anchor" href="#system-listSystemsWithPackage"></a><a class="link" href="#system-listSystemsWithPackage">Method: listSystemsWithPackage</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listSystemsWithPackage"><a class="anchor" href="#apidoc-system-listSystemsWithPackage"></a><a class="link" href="#apidoc-system-listSystemsWithPackage">Method: listSystemsWithPackage</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6205,8 +6491,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listUngroupedSystems"><a class="anchor" href="#system-listUngroupedSystems"></a><a class="link" href="#system-listUngroupedSystems">Method: listUngroupedSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listUngroupedSystems"><a class="anchor" href="#apidoc-system-listUngroupedSystems"></a><a class="link" href="#apidoc-system-listUngroupedSystems">Method: listUngroupedSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6267,8 +6555,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listUserSystems"><a class="anchor" href="#system-listUserSystems"></a><a class="link" href="#system-listUserSystems">Method: listUserSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listUserSystems"><a class="anchor" href="#apidoc-system-listUserSystems"></a><a class="link" href="#apidoc-system-listUserSystems">Method: listUserSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6313,14 +6603,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -6332,8 +6615,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listUserSystems"><a class="anchor" href="#system-listUserSystems"></a><a class="link" href="#system-listUserSystems">Method: listUserSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listUserSystems"><a class="anchor" href="#apidoc-system-listUserSystems"></a><a class="link" href="#apidoc-system-listUserSystems">Method: listUserSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6375,14 +6660,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -6394,8 +6672,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listVirtualGuests"><a class="anchor" href="#system-listVirtualGuests"></a><a class="link" href="#system-listVirtualGuests">Method: listVirtualGuests</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listVirtualGuests"><a class="anchor" href="#apidoc-system-listVirtualGuests"></a><a class="link" href="#apidoc-system-listVirtualGuests">Method: listVirtualGuests</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6453,8 +6733,10 @@ checked in.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-listVirtualHosts"><a class="anchor" href="#system-listVirtualHosts"></a><a class="link" href="#system-listVirtualHosts">Method: listVirtualHosts</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listVirtualHosts"><a class="anchor" href="#apidoc-system-listVirtualHosts"></a><a class="link" href="#apidoc-system-listVirtualHosts">Method: listVirtualHosts</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6515,8 +6797,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-obtainReactivationKey"><a class="anchor" href="#system-obtainReactivationKey"></a><a class="link" href="#system-obtainReactivationKey">Method: obtainReactivationKey</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-obtainReactivationKey"><a class="anchor" href="#apidoc-system-obtainReactivationKey"></a><a class="link" href="#apidoc-system-obtainReactivationKey">Method: obtainReactivationKey</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6548,8 +6832,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-obtainReactivationKey"><a class="anchor" href="#system-obtainReactivationKey"></a><a class="link" href="#system-obtainReactivationKey">Method: obtainReactivationKey</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-obtainReactivationKey"><a class="anchor" href="#apidoc-system-obtainReactivationKey"></a><a class="link" href="#apidoc-system-obtainReactivationKey">Method: obtainReactivationKey</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6581,8 +6867,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-provisionSystem"><a class="anchor" href="#system-provisionSystem"></a><a class="link" href="#system-provisionSystem">Method: provisionSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionSystem"><a class="anchor" href="#apidoc-system-provisionSystem"></a><a class="link" href="#apidoc-system-provisionSystem">Method: provisionSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6618,8 +6906,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-provisionSystem"><a class="anchor" href="#system-provisionSystem"></a><a class="link" href="#system-provisionSystem">Method: provisionSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionSystem"><a class="anchor" href="#apidoc-system-provisionSystem"></a><a class="link" href="#apidoc-system-provisionSystem">Method: provisionSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6658,8 +6948,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-provisionVirtualGuest"><a class="anchor" href="#system-provisionVirtualGuest"></a><a class="link" href="#system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionVirtualGuest"><a class="anchor" href="#apidoc-system-provisionVirtualGuest"></a><a class="link" href="#apidoc-system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6698,8 +6990,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-provisionVirtualGuest"><a class="anchor" href="#system-provisionVirtualGuest"></a><a class="link" href="#system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionVirtualGuest"><a class="anchor" href="#apidoc-system-provisionVirtualGuest"></a><a class="link" href="#apidoc-system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6749,8 +7043,10 @@ the guest.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-provisionVirtualGuest"><a class="anchor" href="#system-provisionVirtualGuest"></a><a class="link" href="#system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionVirtualGuest"><a class="anchor" href="#apidoc-system-provisionVirtualGuest"></a><a class="link" href="#apidoc-system-provisionVirtualGuest">Method: provisionVirtualGuest</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6804,8 +7100,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-removeEntitlements"><a class="anchor" href="#system-removeEntitlements"></a><a class="link" href="#system-removeEntitlements">Method: removeEntitlements</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-removeEntitlements"><a class="anchor" href="#apidoc-system-removeEntitlements"></a><a class="link" href="#apidoc-system-removeEntitlements">Method: removeEntitlements</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6848,8 +7146,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6908,8 +7208,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -6971,8 +7273,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7035,8 +7339,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7102,8 +7408,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7155,8 +7463,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7211,8 +7521,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7268,8 +7580,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyErrata"><a class="anchor" href="#system-scheduleApplyErrata"></a><a class="link" href="#system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyErrata"><a class="anchor" href="#apidoc-system-scheduleApplyErrata"></a><a class="link" href="#apidoc-system-scheduleApplyErrata">Method: scheduleApplyErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7328,8 +7642,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleApplyHighstate"><a class="anchor" href="#system-scheduleApplyHighstate"></a><a class="link" href="#system-scheduleApplyHighstate">Method: scheduleApplyHighstate</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleApplyHighstate"><a class="anchor" href="#apidoc-system-scheduleApplyHighstate"></a><a class="link" href="#apidoc-system-scheduleApplyHighstate">Method: scheduleApplyHighstate</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7367,8 +7683,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleCertificateUpdate"><a class="anchor" href="#system-scheduleCertificateUpdate"></a><a class="link" href="#system-scheduleCertificateUpdate">Method: scheduleCertificateUpdate</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleCertificateUpdate"><a class="anchor" href="#apidoc-system-scheduleCertificateUpdate"></a><a class="link" href="#apidoc-system-scheduleCertificateUpdate">Method: scheduleCertificateUpdate</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7400,8 +7718,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleCertificateUpdate"><a class="anchor" href="#system-scheduleCertificateUpdate"></a><a class="link" href="#system-scheduleCertificateUpdate">Method: scheduleCertificateUpdate</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleCertificateUpdate"><a class="anchor" href="#apidoc-system-scheduleCertificateUpdate"></a><a class="link" href="#apidoc-system-scheduleCertificateUpdate">Method: scheduleCertificateUpdate</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7436,8 +7756,10 @@ virtual networking hardware.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleChangeChannels"><a class="anchor" href="#system-scheduleChangeChannels"></a><a class="link" href="#system-scheduleChangeChannels">Method: scheduleChangeChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleChangeChannels"><a class="anchor" href="#apidoc-system-scheduleChangeChannels"></a><a class="link" href="#apidoc-system-scheduleChangeChannels">Method: scheduleChangeChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7493,8 +7815,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleChangeChannels"><a class="anchor" href="#system-scheduleChangeChannels"></a><a class="link" href="#system-scheduleChangeChannels">Method: scheduleChangeChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleChangeChannels"><a class="anchor" href="#apidoc-system-scheduleChangeChannels"></a><a class="link" href="#apidoc-system-scheduleChangeChannels">Method: scheduleChangeChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7556,8 +7880,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleDistUpgrade"><a class="anchor" href="#system-scheduleDistUpgrade"></a><a class="link" href="#system-scheduleDistUpgrade">Method: scheduleDistUpgrade</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleDistUpgrade"><a class="anchor" href="#apidoc-system-scheduleDistUpgrade"></a><a class="link" href="#apidoc-system-scheduleDistUpgrade">Method: scheduleDistUpgrade</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7609,8 +7935,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleGuestAction"><a class="anchor" href="#system-scheduleGuestAction"></a><a class="link" href="#system-scheduleGuestAction">Method: scheduleGuestAction</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleGuestAction"><a class="anchor" href="#apidoc-system-scheduleGuestAction"></a><a class="link" href="#apidoc-system-scheduleGuestAction">Method: scheduleGuestAction</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7650,8 +7978,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleGuestAction"><a class="anchor" href="#system-scheduleGuestAction"></a><a class="link" href="#system-scheduleGuestAction">Method: scheduleGuestAction</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleGuestAction"><a class="anchor" href="#apidoc-system-scheduleGuestAction"></a><a class="link" href="#apidoc-system-scheduleGuestAction">Method: scheduleGuestAction</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7688,8 +8018,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleHardwareRefresh"><a class="anchor" href="#system-scheduleHardwareRefresh"></a><a class="link" href="#system-scheduleHardwareRefresh">Method: scheduleHardwareRefresh</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleHardwareRefresh"><a class="anchor" href="#apidoc-system-scheduleHardwareRefresh"></a><a class="link" href="#apidoc-system-scheduleHardwareRefresh">Method: scheduleHardwareRefresh</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7727,8 +8059,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstall"><a class="anchor" href="#system-schedulePackageInstall"></a><a class="link" href="#system-schedulePackageInstall">Method: schedulePackageInstall</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstall"><a class="anchor" href="#apidoc-system-schedulePackageInstall"></a><a class="link" href="#apidoc-system-schedulePackageInstall">Method: schedulePackageInstall</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7787,8 +8121,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstall"><a class="anchor" href="#system-schedulePackageInstall"></a><a class="link" href="#system-schedulePackageInstall">Method: schedulePackageInstall</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstall"><a class="anchor" href="#apidoc-system-schedulePackageInstall"></a><a class="link" href="#apidoc-system-schedulePackageInstall">Method: schedulePackageInstall</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7853,8 +8189,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstall"><a class="anchor" href="#system-schedulePackageInstall"></a><a class="link" href="#system-schedulePackageInstall">Method: schedulePackageInstall</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstall"><a class="anchor" href="#apidoc-system-schedulePackageInstall"></a><a class="link" href="#apidoc-system-schedulePackageInstall">Method: schedulePackageInstall</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7902,8 +8240,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstall"><a class="anchor" href="#system-schedulePackageInstall"></a><a class="link" href="#system-schedulePackageInstall">Method: schedulePackageInstall</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstall"><a class="anchor" href="#apidoc-system-schedulePackageInstall"></a><a class="link" href="#apidoc-system-schedulePackageInstall">Method: schedulePackageInstall</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -7954,8 +8294,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstallByNevra"><a class="anchor" href="#system-schedulePackageInstallByNevra"></a><a class="link" href="#system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstallByNevra"><a class="anchor" href="#apidoc-system-schedulePackageInstallByNevra"></a><a class="link" href="#apidoc-system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8031,8 +8373,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstallByNevra"><a class="anchor" href="#system-schedulePackageInstallByNevra"></a><a class="link" href="#system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstallByNevra"><a class="anchor" href="#apidoc-system-schedulePackageInstallByNevra"></a><a class="link" href="#apidoc-system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8114,8 +8458,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstallByNevra"><a class="anchor" href="#system-schedulePackageInstallByNevra"></a><a class="link" href="#system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstallByNevra"><a class="anchor" href="#apidoc-system-schedulePackageInstallByNevra"></a><a class="link" href="#apidoc-system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8177,8 +8523,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageInstallByNevra"><a class="anchor" href="#system-schedulePackageInstallByNevra"></a><a class="link" href="#system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageInstallByNevra"><a class="anchor" href="#apidoc-system-schedulePackageInstallByNevra"></a><a class="link" href="#apidoc-system-schedulePackageInstallByNevra">Method: schedulePackageInstallByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8246,8 +8594,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRefresh"><a class="anchor" href="#system-schedulePackageRefresh"></a><a class="link" href="#system-schedulePackageRefresh">Method: schedulePackageRefresh</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRefresh"><a class="anchor" href="#apidoc-system-schedulePackageRefresh"></a><a class="link" href="#apidoc-system-schedulePackageRefresh">Method: schedulePackageRefresh</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8283,8 +8633,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemove"><a class="anchor" href="#system-schedulePackageRemove"></a><a class="link" href="#system-schedulePackageRemove">Method: schedulePackageRemove</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemove"><a class="anchor" href="#apidoc-system-schedulePackageRemove"></a><a class="link" href="#apidoc-system-schedulePackageRemove">Method: schedulePackageRemove</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8343,8 +8695,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemove"><a class="anchor" href="#system-schedulePackageRemove"></a><a class="link" href="#system-schedulePackageRemove">Method: schedulePackageRemove</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemove"><a class="anchor" href="#apidoc-system-schedulePackageRemove"></a><a class="link" href="#apidoc-system-schedulePackageRemove">Method: schedulePackageRemove</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8409,8 +8763,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemove"><a class="anchor" href="#system-schedulePackageRemove"></a><a class="link" href="#system-schedulePackageRemove">Method: schedulePackageRemove</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemove"><a class="anchor" href="#apidoc-system-schedulePackageRemove"></a><a class="link" href="#apidoc-system-schedulePackageRemove">Method: schedulePackageRemove</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8455,8 +8811,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemove"><a class="anchor" href="#system-schedulePackageRemove"></a><a class="link" href="#system-schedulePackageRemove">Method: schedulePackageRemove</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemove"><a class="anchor" href="#apidoc-system-schedulePackageRemove"></a><a class="link" href="#apidoc-system-schedulePackageRemove">Method: schedulePackageRemove</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8507,8 +8865,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemoveByNevra"><a class="anchor" href="#system-schedulePackageRemoveByNevra"></a><a class="link" href="#system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemoveByNevra"><a class="anchor" href="#apidoc-system-schedulePackageRemoveByNevra"></a><a class="link" href="#apidoc-system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8584,8 +8944,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemoveByNevra"><a class="anchor" href="#system-schedulePackageRemoveByNevra"></a><a class="link" href="#system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemoveByNevra"><a class="anchor" href="#apidoc-system-schedulePackageRemoveByNevra"></a><a class="link" href="#apidoc-system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8667,8 +9029,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemoveByNevra"><a class="anchor" href="#system-schedulePackageRemoveByNevra"></a><a class="link" href="#system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemoveByNevra"><a class="anchor" href="#apidoc-system-schedulePackageRemoveByNevra"></a><a class="link" href="#apidoc-system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8737,8 +9101,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-schedulePackageRemoveByNevra"><a class="anchor" href="#system-schedulePackageRemoveByNevra"></a><a class="link" href="#system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-schedulePackageRemoveByNevra"><a class="anchor" href="#apidoc-system-schedulePackageRemoveByNevra"></a><a class="link" href="#apidoc-system-schedulePackageRemoveByNevra">Method: schedulePackageRemoveByNevra</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8813,8 +9179,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleReboot"><a class="anchor" href="#system-scheduleReboot"></a><a class="link" href="#system-scheduleReboot">Method: scheduleReboot</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleReboot"><a class="anchor" href="#apidoc-system-scheduleReboot"></a><a class="link" href="#apidoc-system-scheduleReboot">Method: scheduleReboot</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8852,8 +9220,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleSPMigration"><a class="anchor" href="#system-scheduleSPMigration"></a><a class="link" href="#system-scheduleSPMigration">Method: scheduleSPMigration</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleSPMigration"><a class="anchor" href="#apidoc-system-scheduleSPMigration"></a><a class="link" href="#apidoc-system-scheduleSPMigration">Method: scheduleSPMigration</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8908,8 +9278,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleSPMigration"><a class="anchor" href="#system-scheduleSPMigration"></a><a class="link" href="#system-scheduleSPMigration">Method: scheduleSPMigration</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleSPMigration"><a class="anchor" href="#apidoc-system-scheduleSPMigration"></a><a class="link" href="#apidoc-system-scheduleSPMigration">Method: scheduleSPMigration</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -8967,8 +9339,10 @@ on error</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleScriptRun"><a class="anchor" href="#system-scheduleScriptRun"></a><a class="link" href="#system-scheduleScriptRun">Method: scheduleScriptRun</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleScriptRun"><a class="anchor" href="#apidoc-system-scheduleScriptRun"></a><a class="link" href="#apidoc-system-scheduleScriptRun">Method: scheduleScriptRun</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9028,8 +9402,10 @@ results with system.getScriptResults.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleScriptRun"><a class="anchor" href="#system-scheduleScriptRun"></a><a class="link" href="#system-scheduleScriptRun">Method: scheduleScriptRun</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleScriptRun"><a class="anchor" href="#apidoc-system-scheduleScriptRun"></a><a class="link" href="#apidoc-system-scheduleScriptRun">Method: scheduleScriptRun</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9086,8 +9462,10 @@ results with system.getScriptResults.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleScriptRun"><a class="anchor" href="#system-scheduleScriptRun"></a><a class="link" href="#system-scheduleScriptRun">Method: scheduleScriptRun</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleScriptRun"><a class="anchor" href="#apidoc-system-scheduleScriptRun"></a><a class="link" href="#apidoc-system-scheduleScriptRun">Method: scheduleScriptRun</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9137,8 +9515,10 @@ results with system.getScriptResults.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleScriptRun"><a class="anchor" href="#system-scheduleScriptRun"></a><a class="link" href="#system-scheduleScriptRun">Method: scheduleScriptRun</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleScriptRun"><a class="anchor" href="#apidoc-system-scheduleScriptRun"></a><a class="link" href="#apidoc-system-scheduleScriptRun">Method: scheduleScriptRun</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9191,8 +9571,10 @@ results with system.getScriptResults.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-scheduleSyncPackagesWithSystem"><a class="anchor" href="#system-scheduleSyncPackagesWithSystem"></a><a class="link" href="#system-scheduleSyncPackagesWithSystem">Method: scheduleSyncPackagesWithSystem</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleSyncPackagesWithSystem"><a class="anchor" href="#apidoc-system-scheduleSyncPackagesWithSystem"></a><a class="link" href="#apidoc-system-scheduleSyncPackagesWithSystem">Method: scheduleSyncPackagesWithSystem</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9245,8 +9627,10 @@ package state from.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-searchByName"><a class="anchor" href="#system-searchByName"></a><a class="link" href="#system-searchByName">Method: searchByName</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-searchByName"><a class="anchor" href="#apidoc-system-searchByName"></a><a class="link" href="#apidoc-system-searchByName">Method: searchByName</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9297,14 +9681,7 @@ successfully checked in</p>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "created" - Server registration time</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time</p>
-</li>
-<li>
-<p><span class="int">int</span>  "extra_pkg_count" - Number of packages not belonging
-to any assigned channel</p>
-</li>
-<li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_boot" - Last server boot time
 // no end needed</p>
 <div class="literalblock">
 <div class="content">
@@ -9316,8 +9693,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-sendOsaPing"><a class="anchor" href="#system-sendOsaPing"></a><a class="link" href="#system-sendOsaPing">Method: sendOsaPing</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-sendOsaPing"><a class="anchor" href="#apidoc-system-sendOsaPing"></a><a class="link" href="#apidoc-system-sendOsaPing">Method: sendOsaPing</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9349,8 +9728,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setBaseChannel"><a class="anchor" href="#system-setBaseChannel"></a><a class="link" href="#system-setBaseChannel">Method: setBaseChannel (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setBaseChannel"><a class="anchor" href="#apidoc-system-setBaseChannel"></a><a class="link" href="#apidoc-system-setBaseChannel">Method: setBaseChannel (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9389,8 +9770,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setBaseChannel"><a class="anchor" href="#system-setBaseChannel"></a><a class="link" href="#system-setBaseChannel">Method: setBaseChannel (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setBaseChannel"><a class="anchor" href="#apidoc-system-setBaseChannel"></a><a class="link" href="#apidoc-system-setBaseChannel">Method: setBaseChannel (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9431,8 +9814,10 @@ to any assigned channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setChildChannels"><a class="anchor" href="#system-setChildChannels"></a><a class="link" href="#system-setChildChannels">Method: setChildChannels (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setChildChannels"><a class="anchor" href="#apidoc-system-setChildChannels"></a><a class="link" href="#apidoc-system-setChildChannels">Method: setChildChannels (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9485,8 +9870,10 @@ or channelLabel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setCustomValues"><a class="anchor" href="#system-setCustomValues"></a><a class="link" href="#system-setCustomValues">Method: setCustomValues</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setCustomValues"><a class="anchor" href="#apidoc-system-setCustomValues"></a><a class="link" href="#apidoc-system-setCustomValues">Method: setCustomValues</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9528,8 +9915,10 @@ or channelLabel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setDetails"><a class="anchor" href="#system-setDetails"></a><a class="link" href="#system-setDetails">Method: setDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setDetails"><a class="anchor" href="#apidoc-system-setDetails"></a><a class="link" href="#apidoc-system-setDetails">Method: setDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9618,8 +10007,10 @@ auto errata updates enabled</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setGroupMembership"><a class="anchor" href="#system-setGroupMembership"></a><a class="link" href="#system-setGroupMembership">Method: setGroupMembership</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setGroupMembership"><a class="anchor" href="#apidoc-system-setGroupMembership"></a><a class="link" href="#apidoc-system-setGroupMembership">Method: setGroupMembership</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9659,8 +10050,10 @@ group.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setGuestCpus"><a class="anchor" href="#system-setGuestCpus"></a><a class="link" href="#system-setGuestCpus">Method: setGuestCpus</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setGuestCpus"><a class="anchor" href="#apidoc-system-setGuestCpus"></a><a class="link" href="#apidoc-system-setGuestCpus">Method: setGuestCpus</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9698,8 +10091,10 @@ on the host system.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setGuestMemory"><a class="anchor" href="#system-setGuestMemory"></a><a class="link" href="#system-setGuestMemory">Method: setGuestMemory</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setGuestMemory"><a class="anchor" href="#apidoc-system-setGuestMemory"></a><a class="link" href="#apidoc-system-setGuestMemory">Method: setGuestMemory</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9737,8 +10132,10 @@ on the host system.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setLockStatus"><a class="anchor" href="#system-setLockStatus"></a><a class="link" href="#system-setLockStatus">Method: setLockStatus</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setLockStatus"><a class="anchor" href="#apidoc-system-setLockStatus"></a><a class="link" href="#apidoc-system-setLockStatus">Method: setLockStatus</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9774,8 +10171,10 @@ false to unlock the system.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setPrimaryInterface"><a class="anchor" href="#system-setPrimaryInterface"></a><a class="link" href="#system-setPrimaryInterface">Method: setPrimaryInterface</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setPrimaryInterface"><a class="anchor" href="#apidoc-system-setPrimaryInterface"></a><a class="link" href="#apidoc-system-setPrimaryInterface">Method: setPrimaryInterface</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9810,8 +10209,10 @@ false to unlock the system.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setProfileName"><a class="anchor" href="#system-setProfileName"></a><a class="link" href="#system-setProfileName">Method: setProfileName</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setProfileName"><a class="anchor" href="#apidoc-system-setProfileName"></a><a class="link" href="#apidoc-system-setProfileName">Method: setProfileName</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9846,8 +10247,10 @@ false to unlock the system.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-setVariables"><a class="anchor" href="#system-setVariables"></a><a class="link" href="#system-setVariables">Method: setVariables</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-setVariables"><a class="anchor" href="#apidoc-system-setVariables"></a><a class="link" href="#apidoc-system-setVariables">Method: setVariables</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9907,8 +10310,10 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-tagLatestSnapshot"><a class="anchor" href="#system-tagLatestSnapshot"></a><a class="link" href="#system-tagLatestSnapshot">Method: tagLatestSnapshot</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-tagLatestSnapshot"><a class="anchor" href="#apidoc-system-tagLatestSnapshot"></a><a class="link" href="#apidoc-system-tagLatestSnapshot">Method: tagLatestSnapshot</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9943,8 +10348,10 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-unentitle"><a class="anchor" href="#system-unentitle"></a><a class="link" href="#system-unentitle">Method: unentitle</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-unentitle"><a class="anchor" href="#apidoc-system-unentitle"></a><a class="link" href="#apidoc-system-unentitle">Method: unentitle</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -9973,8 +10380,10 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-upgradeEntitlement"><a class="anchor" href="#system-upgradeEntitlement"></a><a class="link" href="#system-upgradeEntitlement">Method: upgradeEntitlement</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-upgradeEntitlement"><a class="anchor" href="#apidoc-system-upgradeEntitlement"></a><a class="link" href="#apidoc-system-upgradeEntitlement">Method: upgradeEntitlement</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -10010,8 +10419,10 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="system-whoRegistered"><a class="anchor" href="#system-whoRegistered"></a><a class="link" href="#system-whoRegistered">Method: whoRegistered</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-whoRegistered"><a class="anchor" href="#apidoc-system-whoRegistered"></a><a class="link" href="#apidoc-system-whoRegistered">Method: whoRegistered</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -10058,30 +10469,29 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 <hr>
 </div>
 </div>
-</div>
 
 <div class="cedents grid" role="navigation">
 
   <div class="prev">
-      <a href="#sync_slave.adoc" title="sync_slave">
+      <a href="sync.slave.html" title="sync.slave">
         <div class="change-page">
           <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
         <span class="label">Previous</span>
         <br/>
         <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">sync_slave</span>
+        <span class="title">sync.slave</span>
         </div>
       </a>
   </div>
 
   <div class="next">
-      <a href="#system_config.adoc" title="system_config">
+      <a href="system.config.html" title="system.config">
         <div class="change-page">
           <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
         <span class="label">Next</span>
         <br/>
        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">system_config</span>
+        <span class="title">system.config</span>
         </div>
       </a>
   </div>
@@ -10177,8 +10587,7 @@ tippy('#submitPR', {
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
-<script>hljs.initHighlighting()</script>
+
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -10194,5 +10603,8 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
+
+
+<script src="../../_/js/prism.js"></script>
   </body>
 </html>

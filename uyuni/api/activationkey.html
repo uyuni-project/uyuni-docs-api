@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Uyuni API Documentation</title>
+    <title>activationkey :: Uyuni API</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/activationkey.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -15,13 +16,15 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
+
+
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -44,12 +47,12 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
+                                class="fab fa-github"></i>&nbsp API Repository</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
@@ -93,163 +96,169 @@
     <a class="nav-link" href="scripts.html">Scripts</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Handlers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="actionchain.html">actionchain</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="api.html">api</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="audit.html">audit</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="auth.html">auth</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="channel.html">channel</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="configchannel.html">configchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="distchannel.html">distchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="errata.html">errata</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="formula.html">formula</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="image.html">image</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.store.html">image.store</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="kickstart.html">kickstart</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="org.html">org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="packages.html">packages</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="proxy.html">proxy</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="satellite.html">satellite</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="schedule.html">schedule</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="system.html">system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.config.html">system.config</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.search.html">system.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="systemgroup.html">systemgroup</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="user.html">user</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user.external.html">user.external</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -283,6 +292,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni</a></li>
+    <li>API Handlers</li>
     <li><a href="activationkey.html">activationkey</a></li>
   </ul>
 </nav>
@@ -295,104 +305,107 @@
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="#admin_monitoring.adoc">
+      <a href="admin.monitoring.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+ <!-- 
   <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/activationkey.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+   -->
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
+<h1 class="page">activationkey</h1>
 <div class="sect1">
-<h2 id="activationkey"><a class="anchor" href="#activationkey"></a><a class="link" href="#activationkey">activationkey</a></h2>
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#activationkey-addChildChannels">addChildChannels</a></p>
+<p><a href="#apidoc-activationkey-addChildChannels">addChildChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-addConfigChannels">addConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-addConfigChannels">addConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-addEntitlements">addEntitlements</a></p>
+<p><a href="#apidoc-activationkey-addEntitlements">addEntitlements</a></p>
 </li>
 <li>
-<p><a href="#activationkey-addPackageNames">addPackageNames</a></p>
+<p><a href="#apidoc-activationkey-addPackageNames">addPackageNames</a></p>
 </li>
 <li>
-<p><a href="#activationkey-addPackages">addPackages</a></p>
+<p><a href="#apidoc-activationkey-addPackages">addPackages</a></p>
 </li>
 <li>
-<p><a href="#activationkey-addServerGroups">addServerGroups</a></p>
+<p><a href="#apidoc-activationkey-addServerGroups">addServerGroups</a></p>
 </li>
 <li>
-<p><a href="#activationkey-checkConfigDeployment">checkConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-checkConfigDeployment">checkConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#activationkey-clone">clone</a></p>
+<p><a href="#apidoc-activationkey-clone">clone</a></p>
 </li>
 <li>
-<p><a href="#activationkey-create">create</a></p>
+<p><a href="#apidoc-activationkey-create">create</a></p>
 </li>
 <li>
-<p><a href="#activationkey-create">create</a></p>
+<p><a href="#apidoc-activationkey-create">create</a></p>
 </li>
 <li>
-<p><a href="#activationkey-delete">delete</a></p>
+<p><a href="#apidoc-activationkey-delete">delete</a></p>
 </li>
 <li>
-<p><a href="#activationkey-disableConfigDeployment">disableConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-disableConfigDeployment">disableConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#activationkey-enableConfigDeployment">enableConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-enableConfigDeployment">enableConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#activationkey-getDetails">getDetails</a></p>
+<p><a href="#apidoc-activationkey-getDetails">getDetails</a></p>
 </li>
 <li>
-<p><a href="#activationkey-listActivatedSystems">listActivatedSystems</a></p>
+<p><a href="#apidoc-activationkey-listActivatedSystems">listActivatedSystems</a></p>
 </li>
 <li>
-<p><a href="#activationkey-listActivationKeys">listActivationKeys</a></p>
+<p><a href="#apidoc-activationkey-listActivationKeys">listActivationKeys</a></p>
 </li>
 <li>
-<p><a href="#activationkey-listChannels">listChannels</a></p>
+<p><a href="#apidoc-activationkey-listChannels">listChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-listConfigChannels">listConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-listConfigChannels">listConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removeChildChannels">removeChildChannels</a></p>
+<p><a href="#apidoc-activationkey-removeChildChannels">removeChildChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removeConfigChannels">removeConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-removeConfigChannels">removeConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removeEntitlements">removeEntitlements</a></p>
+<p><a href="#apidoc-activationkey-removeEntitlements">removeEntitlements</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removePackageNames">removePackageNames</a></p>
+<p><a href="#apidoc-activationkey-removePackageNames">removePackageNames</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removePackages">removePackages</a></p>
+<p><a href="#apidoc-activationkey-removePackages">removePackages</a></p>
 </li>
 <li>
-<p><a href="#activationkey-removeServerGroups">removeServerGroups</a></p>
+<p><a href="#apidoc-activationkey-removeServerGroups">removeServerGroups</a></p>
 </li>
 <li>
-<p><a href="#activationkey-setConfigChannels">setConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-setConfigChannels">setConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#activationkey-setDetails">setDetails</a></p>
+<p><a href="#apidoc-activationkey-setDetails">setDetails</a></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Contains methods to access common activation key functions
  available from the web interface.</p>
@@ -405,8 +418,10 @@
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addChildChannels"><a class="anchor" href="#activationkey-addChildChannels"></a><a class="link" href="#activationkey-addChildChannels">Method: addChildChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addChildChannels"><a class="anchor" href="#apidoc-activationkey-addChildChannels"></a><a class="link" href="#apidoc-activationkey-addChildChannels">Method: addChildChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -448,8 +463,10 @@
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addConfigChannels"><a class="anchor" href="#activationkey-addConfigChannels"></a><a class="link" href="#activationkey-addConfigChannels">Method: addConfigChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addConfigChannels"><a class="anchor" href="#apidoc-activationkey-addConfigChannels"></a><a class="link" href="#apidoc-activationkey-addConfigChannels">Method: addConfigChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -518,8 +535,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addEntitlements"><a class="anchor" href="#activationkey-addEntitlements"></a><a class="link" href="#activationkey-addEntitlements">Method: addEntitlements</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addEntitlements"><a class="anchor" href="#apidoc-activationkey-addEntitlements"></a><a class="link" href="#apidoc-activationkey-addEntitlements">Method: addEntitlements</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -561,8 +580,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addPackageNames"><a class="anchor" href="#activationkey-addPackageNames"></a><a class="link" href="#activationkey-addPackageNames">Method: addPackageNames (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addPackageNames"><a class="anchor" href="#apidoc-activationkey-addPackageNames"></a><a class="link" href="#apidoc-activationkey-addPackageNames">Method: addPackageNames (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -611,8 +632,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addPackages"><a class="anchor" href="#activationkey-addPackages"></a><a class="link" href="#activationkey-addPackages">Method: addPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addPackages"><a class="anchor" href="#apidoc-activationkey-addPackages"></a><a class="link" href="#apidoc-activationkey-addPackages">Method: addPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -658,8 +681,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-addServerGroups"><a class="anchor" href="#activationkey-addServerGroups"></a><a class="link" href="#activationkey-addServerGroups">Method: addServerGroups</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addServerGroups"><a class="anchor" href="#apidoc-activationkey-addServerGroups"></a><a class="link" href="#apidoc-activationkey-addServerGroups">Method: addServerGroups</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -701,8 +726,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-checkConfigDeployment"><a class="anchor" href="#activationkey-checkConfigDeployment"></a><a class="link" href="#activationkey-checkConfigDeployment">Method: checkConfigDeployment</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-checkConfigDeployment"><a class="anchor" href="#apidoc-activationkey-checkConfigDeployment"></a><a class="link" href="#apidoc-activationkey-checkConfigDeployment">Method: checkConfigDeployment</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -735,8 +762,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-clone"><a class="anchor" href="#activationkey-clone"></a><a class="link" href="#activationkey-clone">Method: clone</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-clone"><a class="anchor" href="#apidoc-activationkey-clone"></a><a class="link" href="#apidoc-activationkey-clone">Method: clone</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -771,8 +800,10 @@ the activation key&#8217;s config channel list</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-create"><a class="anchor" href="#activationkey-create"></a><a class="link" href="#activationkey-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-create"><a class="anchor" href="#apidoc-activationkey-create"></a><a class="link" href="#apidoc-activationkey-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -844,8 +875,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-create"><a class="anchor" href="#activationkey-create"></a><a class="link" href="#activationkey-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-create"><a class="anchor" href="#apidoc-activationkey-create"></a><a class="link" href="#apidoc-activationkey-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -906,8 +939,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-delete"><a class="anchor" href="#activationkey-delete"></a><a class="link" href="#activationkey-delete">Method: delete</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-delete"><a class="anchor" href="#apidoc-activationkey-delete"></a><a class="link" href="#apidoc-activationkey-delete">Method: delete</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -939,8 +974,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-disableConfigDeployment"><a class="anchor" href="#activationkey-disableConfigDeployment"></a><a class="link" href="#activationkey-disableConfigDeployment">Method: disableConfigDeployment</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-disableConfigDeployment"><a class="anchor" href="#apidoc-activationkey-disableConfigDeployment"></a><a class="link" href="#apidoc-activationkey-disableConfigDeployment">Method: disableConfigDeployment</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -972,8 +1009,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-enableConfigDeployment"><a class="anchor" href="#activationkey-enableConfigDeployment"></a><a class="link" href="#activationkey-enableConfigDeployment">Method: enableConfigDeployment</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-enableConfigDeployment"><a class="anchor" href="#apidoc-activationkey-enableConfigDeployment"></a><a class="link" href="#apidoc-activationkey-enableConfigDeployment">Method: enableConfigDeployment</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1005,8 +1044,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-getDetails"><a class="anchor" href="#activationkey-getDetails"></a><a class="link" href="#activationkey-getDetails">Method: getDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-getDetails"><a class="anchor" href="#apidoc-activationkey-getDetails"></a><a class="link" href="#apidoc-activationkey-getDetails">Method: getDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1128,8 +1169,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-listActivatedSystems"><a class="anchor" href="#activationkey-listActivatedSystems"></a><a class="link" href="#activationkey-listActivatedSystems">Method: listActivatedSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listActivatedSystems"><a class="anchor" href="#apidoc-activationkey-listActivatedSystems"></a><a class="link" href="#apidoc-activationkey-listActivatedSystems">Method: listActivatedSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1176,8 +1219,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-listActivationKeys"><a class="anchor" href="#activationkey-listActivationKeys"></a><a class="link" href="#activationkey-listActivationKeys">Method: listActivationKeys</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listActivationKeys"><a class="anchor" href="#apidoc-activationkey-listActivationKeys"></a><a class="link" href="#apidoc-activationkey-listActivationKeys">Method: listActivationKeys</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1305,8 +1350,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-listChannels"><a class="anchor" href="#activationkey-listChannels"></a><a class="link" href="#activationkey-listChannels">Method: listChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listChannels"><a class="anchor" href="#apidoc-activationkey-listChannels"></a><a class="link" href="#apidoc-activationkey-listChannels">Method: listChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1364,8 +1411,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-listConfigChannels"><a class="anchor" href="#activationkey-listConfigChannels"></a><a class="link" href="#activationkey-listConfigChannels">Method: listConfigChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listConfigChannels"><a class="anchor" href="#apidoc-activationkey-listConfigChannels"></a><a class="link" href="#apidoc-activationkey-listConfigChannels">Method: listConfigChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1445,8 +1494,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removeChildChannels"><a class="anchor" href="#activationkey-removeChildChannels"></a><a class="link" href="#activationkey-removeChildChannels">Method: removeChildChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeChildChannels"><a class="anchor" href="#apidoc-activationkey-removeChildChannels"></a><a class="link" href="#apidoc-activationkey-removeChildChannels">Method: removeChildChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1488,8 +1539,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removeConfigChannels"><a class="anchor" href="#activationkey-removeConfigChannels"></a><a class="link" href="#activationkey-removeConfigChannels">Method: removeConfigChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeConfigChannels"><a class="anchor" href="#apidoc-activationkey-removeConfigChannels"></a><a class="link" href="#apidoc-activationkey-removeConfigChannels">Method: removeConfigChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1538,8 +1591,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removeEntitlements"><a class="anchor" href="#activationkey-removeEntitlements"></a><a class="link" href="#activationkey-removeEntitlements">Method: removeEntitlements</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeEntitlements"><a class="anchor" href="#apidoc-activationkey-removeEntitlements"></a><a class="link" href="#apidoc-activationkey-removeEntitlements">Method: removeEntitlements</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1581,8 +1636,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removePackageNames"><a class="anchor" href="#activationkey-removePackageNames"></a><a class="link" href="#activationkey-removePackageNames">Method: removePackageNames (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removePackageNames"><a class="anchor" href="#apidoc-activationkey-removePackageNames"></a><a class="link" href="#apidoc-activationkey-removePackageNames">Method: removePackageNames (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1631,8 +1688,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removePackages"><a class="anchor" href="#activationkey-removePackages"></a><a class="link" href="#activationkey-removePackages">Method: removePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removePackages"><a class="anchor" href="#apidoc-activationkey-removePackages"></a><a class="link" href="#apidoc-activationkey-removePackages">Method: removePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1678,8 +1737,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-removeServerGroups"><a class="anchor" href="#activationkey-removeServerGroups"></a><a class="link" href="#activationkey-removeServerGroups">Method: removeServerGroups</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeServerGroups"><a class="anchor" href="#apidoc-activationkey-removeServerGroups"></a><a class="link" href="#apidoc-activationkey-removeServerGroups">Method: removeServerGroups</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1721,8 +1782,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-setConfigChannels"><a class="anchor" href="#activationkey-setConfigChannels"></a><a class="link" href="#activationkey-setConfigChannels">Method: setConfigChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-setConfigChannels"><a class="anchor" href="#apidoc-activationkey-setConfigChannels"></a><a class="link" href="#apidoc-activationkey-setConfigChannels">Method: setConfigChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1773,8 +1836,10 @@ key.
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="activationkey-setDetails"><a class="anchor" href="#activationkey-setDetails"></a><a class="link" href="#activationkey-setDetails">Method: setDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-setDetails"><a class="anchor" href="#apidoc-activationkey-setDetails"></a><a class="link" href="#apidoc-activationkey-setDetails">Method: setDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1845,7 +1910,6 @@ for unlimited usage and to override usage_limit</p>
 <hr>
 </div>
 </div>
-</div>
 
 <div class="cedents grid" role="navigation">
 
@@ -1862,13 +1926,13 @@ for unlimited usage and to override usage_limit</p>
   </div>
 
   <div class="next">
-      <a href="#admin_monitoring.adoc" title="admin_monitoring">
+      <a href="admin.monitoring.html" title="admin.monitoring">
         <div class="change-page">
           <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
         <span class="label">Next</span>
         <br/>
        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">admin_monitoring</span>
+        <span class="title">admin.monitoring</span>
         </div>
       </a>
   </div>
@@ -1964,8 +2028,7 @@ tippy('#submitPR', {
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
-<script>hljs.initHighlighting()</script>
+
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -1981,5 +2044,8 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
+
+
+<script src="../../_/js/prism.js"></script>
   </body>
 </html>

@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Uyuni API Documentation</title>
+    <title>channel.software :: Uyuni API</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/channel.software.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -15,13 +16,15 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
+
+
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
+                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -44,12 +47,12 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
+                                class="fab fa-github"></i>&nbsp API Repository</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
@@ -93,163 +96,169 @@
     <a class="nav-link" href="scripts.html">Scripts</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Handlers</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="actionchain.html">actionchain</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#admin_monitoring.adoc">admin_monitoring</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="api.html">api</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="audit.html">audit</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="auth.html">auth</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="channel.html">channel</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_access.adoc">channel_access</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_org.adoc">channel_org</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#channel_software.adoc">channel_software</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="configchannel.html">configchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="distchannel.html">distchannel</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="errata.html">errata</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="formula.html">formula</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="image.html">image</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_profile.adoc">image_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#image_store.adoc">image_store</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.store.html">image.store</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="kickstart.html">kickstart</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_filepreservation.adoc">kickstart_filepreservation</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_keys.adoc">kickstart_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile.adoc">kickstart_profile</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_keys.adoc">kickstart_profile_keys</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_software.adoc">kickstart_profile_software</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_profile_system.adoc">kickstart_profile_system</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_snippet.adoc">kickstart_snippet</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#kickstart_tree.adoc">kickstart_tree</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="org.html">org</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#org_trusts.adoc">org_trusts</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="packages.html">packages</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_provider.adoc">packages_provider</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#packages_search.adoc">packages_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#preferences_locale.adoc">preferences_locale</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="proxy.html">proxy</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="satellite.html">satellite</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="schedule.html">schedule</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#subscriptionmatching_pinnedsubscription.adoc">subscriptionmatching_pinnedsubscription</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_content.adoc">sync_content</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_master.adoc">sync_master</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#sync_slave.adoc">sync_slave</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="system.html">system</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_config.adoc">system_config</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.config.html">system.config</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_crash.adoc">system_crash</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_custominfo.adoc">system_custominfo</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_provisioning_snapshot.adoc">system_provisioning_snapshot</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_scap.adoc">system_scap</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system_search.adoc">system_search</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="system.search.html">system.search</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="systemgroup.html">systemgroup</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="user.html">user</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#user_external.adoc">user_external</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user.external.html">user.external</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -281,284 +290,296 @@
 
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Uyuni</a></li>
+    <li>API Handlers</li>
+    <li><a href="channel.software.html">channel.software</a></li>
+  </ul>
 </nav>
 
 
 
   <div class="edit-this-page">
     <span class="prev-caret">
+      <a href="channel.org.html">
+        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
+      <a href="configchannel.html">
+        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/SUSE/doc-susemanager/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+ <!-- 
   <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/channel.software.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+   -->
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
+<h1 class="page">channel.software</h1>
 <div class="sect1">
-<h2 id="channel_software"><a class="anchor" href="#channel_software"></a><a class="link" href="#channel_software">channel.software</a></h2>
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#channel_software-addPackages">addPackages</a></p>
+<p><a href="#apidoc-channel_software-addPackages">addPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-addRepoFilter">addRepoFilter</a></p>
+<p><a href="#apidoc-channel_software-addRepoFilter">addRepoFilter</a></p>
 </li>
 <li>
-<p><a href="#channel_software-applyChannelState">applyChannelState</a></p>
+<p><a href="#apidoc-channel_software-applyChannelState">applyChannelState</a></p>
 </li>
 <li>
-<p><a href="#channel_software-associateRepo">associateRepo</a></p>
+<p><a href="#apidoc-channel_software-associateRepo">associateRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-clearRepoFilters">clearRepoFilters</a></p>
+<p><a href="#apidoc-channel_software-clearRepoFilters">clearRepoFilters</a></p>
 </li>
 <li>
-<p><a href="#channel_software-clone">clone</a></p>
+<p><a href="#apidoc-channel_software-clone">clone</a></p>
 </li>
 <li>
-<p><a href="#channel_software-create">create</a></p>
+<p><a href="#apidoc-channel_software-create">create</a></p>
 </li>
 <li>
-<p><a href="#channel_software-create">create</a></p>
+<p><a href="#apidoc-channel_software-create">create</a></p>
 </li>
 <li>
-<p><a href="#channel_software-create">create</a></p>
+<p><a href="#apidoc-channel_software-create">create</a></p>
 </li>
 <li>
-<p><a href="#channel_software-create">create</a></p>
+<p><a href="#apidoc-channel_software-create">create</a></p>
 </li>
 <li>
-<p><a href="#channel_software-createRepo">createRepo</a></p>
+<p><a href="#apidoc-channel_software-createRepo">createRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-createRepo">createRepo</a></p>
+<p><a href="#apidoc-channel_software-createRepo">createRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-createRepo">createRepo</a></p>
+<p><a href="#apidoc-channel_software-createRepo">createRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-delete">delete</a></p>
+<p><a href="#apidoc-channel_software-delete">delete</a></p>
 </li>
 <li>
-<p><a href="#channel_software-disassociateRepo">disassociateRepo</a></p>
+<p><a href="#apidoc-channel_software-disassociateRepo">disassociateRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getChannelLastBuildById">getChannelLastBuildById</a></p>
+<p><a href="#apidoc-channel_software-getChannelLastBuildById">getChannelLastBuildById</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getDetails">getDetails</a></p>
+<p><a href="#apidoc-channel_software-getDetails">getDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getDetails">getDetails</a></p>
+<p><a href="#apidoc-channel_software-getDetails">getDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getRepoDetails">getRepoDetails</a></p>
+<p><a href="#apidoc-channel_software-getRepoDetails">getRepoDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getRepoDetails">getRepoDetails</a></p>
+<p><a href="#apidoc-channel_software-getRepoDetails">getRepoDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-getRepoSyncCronExpression">getRepoSyncCronExpression</a></p>
+<p><a href="#apidoc-channel_software-getRepoSyncCronExpression">getRepoSyncCronExpression</a></p>
 </li>
 <li>
-<p><a href="#channel_software-isGloballySubscribable">isGloballySubscribable</a></p>
+<p><a href="#apidoc-channel_software-isGloballySubscribable">isGloballySubscribable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-isUserManageable">isUserManageable</a></p>
+<p><a href="#apidoc-channel_software-isUserManageable">isUserManageable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-isUserSubscribable">isUserSubscribable</a></p>
+<p><a href="#apidoc-channel_software-isUserSubscribable">isUserSubscribable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+<p><a href="#apidoc-channel_software-listAllPackages">listAllPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+<p><a href="#apidoc-channel_software-listAllPackages">listAllPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+<p><a href="#apidoc-channel_software-listAllPackages">listAllPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+<p><a href="#apidoc-channel_software-listAllPackages">listAllPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackages">listAllPackages</a></p>
+<p><a href="#apidoc-channel_software-listAllPackages">listAllPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+<p><a href="#apidoc-channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+<p><a href="#apidoc-channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
+<p><a href="#apidoc-channel_software-listAllPackagesByDate">listAllPackagesByDate</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listArches">listArches</a></p>
+<p><a href="#apidoc-channel_software-listArches">listArches</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listChannelRepos">listChannelRepos</a></p>
+<p><a href="#apidoc-channel_software-listChannelRepos">listChannelRepos</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listChildren">listChildren</a></p>
+<p><a href="#apidoc-channel_software-listChildren">listChildren</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrata">listErrata</a></p>
+<p><a href="#apidoc-channel_software-listErrata">listErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrataByType">listErrataByType</a></p>
+<p><a href="#apidoc-channel_software-listErrataByType">listErrataByType</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listErrataNeedingSync">listErrataNeedingSync</a></p>
+<p><a href="#apidoc-channel_software-listErrataNeedingSync">listErrataNeedingSync</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listLatestPackages">listLatestPackages</a></p>
+<p><a href="#apidoc-channel_software-listLatestPackages">listLatestPackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listPackagesWithoutChannel">listPackagesWithoutChannel</a></p>
+<p><a href="#apidoc-channel_software-listPackagesWithoutChannel">listPackagesWithoutChannel</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listRepoFilters">listRepoFilters</a></p>
+<p><a href="#apidoc-channel_software-listRepoFilters">listRepoFilters</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listSubscribedSystems">listSubscribedSystems</a></p>
+<p><a href="#apidoc-channel_software-listSubscribedSystems">listSubscribedSystems</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listSystemChannels">listSystemChannels</a></p>
+<p><a href="#apidoc-channel_software-listSystemChannels">listSystemChannels</a></p>
 </li>
 <li>
-<p><a href="#channel_software-listUserRepos">listUserRepos</a></p>
+<p><a href="#apidoc-channel_software-listUserRepos">listUserRepos</a></p>
 </li>
 <li>
-<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+<p><a href="#apidoc-channel_software-mergeErrata">mergeErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+<p><a href="#apidoc-channel_software-mergeErrata">mergeErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-mergeErrata">mergeErrata</a></p>
+<p><a href="#apidoc-channel_software-mergeErrata">mergeErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-mergePackages">mergePackages</a></p>
+<p><a href="#apidoc-channel_software-mergePackages">mergePackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
+<p><a href="#apidoc-channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
 </li>
 <li>
-<p><a href="#channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
+<p><a href="#apidoc-channel_software-regenerateNeededCache">regenerateNeededCache</a></p>
 </li>
 <li>
-<p><a href="#channel_software-regenerateYumCache">regenerateYumCache</a></p>
+<p><a href="#apidoc-channel_software-regenerateYumCache">regenerateYumCache</a></p>
 </li>
 <li>
-<p><a href="#channel_software-removeErrata">removeErrata</a></p>
+<p><a href="#apidoc-channel_software-removeErrata">removeErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-removePackages">removePackages</a></p>
+<p><a href="#apidoc-channel_software-removePackages">removePackages</a></p>
 </li>
 <li>
-<p><a href="#channel_software-removeRepo">removeRepo</a></p>
+<p><a href="#apidoc-channel_software-removeRepo">removeRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-removeRepo">removeRepo</a></p>
+<p><a href="#apidoc-channel_software-removeRepo">removeRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-removeRepoFilter">removeRepoFilter</a></p>
+<p><a href="#apidoc-channel_software-removeRepoFilter">removeRepoFilter</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setContactDetails">setContactDetails</a></p>
+<p><a href="#apidoc-channel_software-setContactDetails">setContactDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setDetails">setDetails</a></p>
+<p><a href="#apidoc-channel_software-setDetails">setDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setDetails">setDetails</a></p>
+<p><a href="#apidoc-channel_software-setDetails">setDetails</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setGloballySubscribable">setGloballySubscribable</a></p>
+<p><a href="#apidoc-channel_software-setGloballySubscribable">setGloballySubscribable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setRepoFilters">setRepoFilters</a></p>
+<p><a href="#apidoc-channel_software-setRepoFilters">setRepoFilters</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setSystemChannels">setSystemChannels</a></p>
+<p><a href="#apidoc-channel_software-setSystemChannels">setSystemChannels</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setUserManageable">setUserManageable</a></p>
+<p><a href="#apidoc-channel_software-setUserManageable">setUserManageable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-setUserSubscribable">setUserSubscribable</a></p>
+<p><a href="#apidoc-channel_software-setUserSubscribable">setUserSubscribable</a></p>
 </li>
 <li>
-<p><a href="#channel_software-subscribeSystem">subscribeSystem</a></p>
+<p><a href="#apidoc-channel_software-subscribeSystem">subscribeSystem</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncErrata">syncErrata</a></p>
+<p><a href="#apidoc-channel_software-syncErrata">syncErrata</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+<p><a href="#apidoc-channel_software-syncRepo">syncRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+<p><a href="#apidoc-channel_software-syncRepo">syncRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+<p><a href="#apidoc-channel_software-syncRepo">syncRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+<p><a href="#apidoc-channel_software-syncRepo">syncRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-syncRepo">syncRepo</a></p>
+<p><a href="#apidoc-channel_software-syncRepo">syncRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-unsubscribeChannels">unsubscribeChannels</a></p>
+<p><a href="#apidoc-channel_software-unsubscribeChannels">unsubscribeChannels</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepo">updateRepo</a></p>
+<p><a href="#apidoc-channel_software-updateRepo">updateRepo</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoLabel">updateRepoLabel</a></p>
+<p><a href="#apidoc-channel_software-updateRepoLabel">updateRepoLabel</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoLabel">updateRepoLabel</a></p>
+<p><a href="#apidoc-channel_software-updateRepoLabel">updateRepoLabel</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoSsl">updateRepoSsl</a></p>
+<p><a href="#apidoc-channel_software-updateRepoSsl">updateRepoSsl</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoSsl">updateRepoSsl</a></p>
+<p><a href="#apidoc-channel_software-updateRepoSsl">updateRepoSsl</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoUrl">updateRepoUrl</a></p>
+<p><a href="#apidoc-channel_software-updateRepoUrl">updateRepoUrl</a></p>
 </li>
 <li>
-<p><a href="#channel_software-updateRepoUrl">updateRepoUrl</a></p>
+<p><a href="#apidoc-channel_software-updateRepoUrl">updateRepoUrl</a></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h3>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Provides methods to access and modify many aspects of a channel.</p>
 </div>
@@ -570,8 +591,10 @@
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-addPackages"><a class="anchor" href="#channel_software-addPackages"></a><a class="link" href="#channel_software-addPackages">Method: addPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-addPackages"><a class="anchor" href="#apidoc-channel_software-addPackages"></a><a class="link" href="#apidoc-channel_software-addPackages">Method: addPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -614,8 +637,10 @@ add to the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-addRepoFilter"><a class="anchor" href="#channel_software-addRepoFilter"></a><a class="link" href="#channel_software-addRepoFilter">Method: addRepoFilter</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-addRepoFilter"><a class="anchor" href="#apidoc-channel_software-addRepoFilter"></a><a class="link" href="#apidoc-channel_software-addRepoFilter">Method: addRepoFilter</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -657,8 +682,10 @@ add to the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-applyChannelState"><a class="anchor" href="#channel_software-applyChannelState"></a><a class="link" href="#channel_software-applyChannelState">Method: applyChannelState</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-applyChannelState"><a class="anchor" href="#apidoc-channel_software-applyChannelState"></a><a class="link" href="#apidoc-channel_software-applyChannelState">Method: applyChannelState</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -704,8 +731,10 @@ add to the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-associateRepo"><a class="anchor" href="#channel_software-associateRepo"></a><a class="link" href="#channel_software-associateRepo">Method: associateRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-associateRepo"><a class="anchor" href="#apidoc-channel_software-associateRepo"></a><a class="link" href="#apidoc-channel_software-associateRepo">Method: associateRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -821,8 +850,10 @@ add to the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-clearRepoFilters"><a class="anchor" href="#channel_software-clearRepoFilters"></a><a class="link" href="#channel_software-clearRepoFilters">Method: clearRepoFilters</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-clearRepoFilters"><a class="anchor" href="#apidoc-channel_software-clearRepoFilters"></a><a class="link" href="#apidoc-channel_software-clearRepoFilters">Method: clearRepoFilters</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -854,8 +885,10 @@ add to the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-clone"><a class="anchor" href="#channel_software-clone"></a><a class="link" href="#channel_software-clone">Method: clone</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-clone"><a class="anchor" href="#apidoc-channel_software-clone"></a><a class="link" href="#apidoc-channel_software-clone">Method: clone</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -932,8 +965,10 @@ gpg_fingerprint might be used as well</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-create"><a class="anchor" href="#apidoc-channel_software-create"></a><a class="link" href="#apidoc-channel_software-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1013,8 +1048,10 @@ enabled by default, false otherwise</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-create"><a class="anchor" href="#apidoc-channel_software-create"></a><a class="link" href="#apidoc-channel_software-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1090,8 +1127,10 @@ channel, an empty string if it does not have one</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-create"><a class="anchor" href="#apidoc-channel_software-create"></a><a class="link" href="#apidoc-channel_software-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1154,8 +1193,10 @@ channel, an empty string if it does not have one</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-create"><a class="anchor" href="#channel_software-create"></a><a class="link" href="#channel_software-create">Method: create</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-create"><a class="anchor" href="#apidoc-channel_software-create"></a><a class="link" href="#apidoc-channel_software-create">Method: create</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1201,8 +1242,10 @@ channel, an empty string if it does not have one</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-createRepo"><a class="anchor" href="#apidoc-channel_software-createRepo"></a><a class="link" href="#apidoc-channel_software-createRepo">Method: createRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1277,8 +1320,10 @@ channel, an empty string if it does not have one</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-createRepo"><a class="anchor" href="#apidoc-channel_software-createRepo"></a><a class="link" href="#apidoc-channel_software-createRepo">Method: createRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1362,8 +1407,10 @@ channel, an empty string if it does not have one</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-createRepo"><a class="anchor" href="#channel_software-createRepo"></a><a class="link" href="#channel_software-createRepo">Method: createRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-createRepo"><a class="anchor" href="#apidoc-channel_software-createRepo"></a><a class="link" href="#apidoc-channel_software-createRepo">Method: createRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1454,8 +1501,10 @@ has signed metadata, false otherwise</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-delete"><a class="anchor" href="#channel_software-delete"></a><a class="link" href="#channel_software-delete">Method: delete</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-delete"><a class="anchor" href="#apidoc-channel_software-delete"></a><a class="link" href="#apidoc-channel_software-delete">Method: delete</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1487,8 +1536,10 @@ has signed metadata, false otherwise</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-disassociateRepo"><a class="anchor" href="#channel_software-disassociateRepo"></a><a class="link" href="#channel_software-disassociateRepo">Method: disassociateRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-disassociateRepo"><a class="anchor" href="#apidoc-channel_software-disassociateRepo"></a><a class="link" href="#apidoc-channel_software-disassociateRepo">Method: disassociateRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1604,8 +1655,10 @@ has signed metadata, false otherwise</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getChannelLastBuildById"><a class="anchor" href="#channel_software-getChannelLastBuildById"></a><a class="link" href="#channel_software-getChannelLastBuildById">Method: getChannelLastBuildById</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getChannelLastBuildById"><a class="anchor" href="#apidoc-channel_software-getChannelLastBuildById"></a><a class="link" href="#apidoc-channel_software-getChannelLastBuildById">Method: getChannelLastBuildById</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1639,8 +1692,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getDetails"><a class="anchor" href="#channel_software-getDetails"></a><a class="link" href="#channel_software-getDetails">Method: getDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getDetails"><a class="anchor" href="#apidoc-channel_software-getDetails"></a><a class="link" href="#apidoc-channel_software-getDetails">Method: getDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1753,8 +1808,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getDetails"><a class="anchor" href="#channel_software-getDetails"></a><a class="link" href="#channel_software-getDetails">Method: getDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getDetails"><a class="anchor" href="#apidoc-channel_software-getDetails"></a><a class="link" href="#apidoc-channel_software-getDetails">Method: getDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1867,8 +1924,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getRepoDetails"><a class="anchor" href="#channel_software-getRepoDetails"></a><a class="link" href="#channel_software-getRepoDetails">Method: getRepoDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getRepoDetails"><a class="anchor" href="#apidoc-channel_software-getRepoDetails"></a><a class="link" href="#apidoc-channel_software-getRepoDetails">Method: getRepoDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -1937,8 +1996,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getRepoDetails"><a class="anchor" href="#channel_software-getRepoDetails"></a><a class="link" href="#channel_software-getRepoDetails">Method: getRepoDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getRepoDetails"><a class="anchor" href="#apidoc-channel_software-getRepoDetails"></a><a class="link" href="#apidoc-channel_software-getRepoDetails">Method: getRepoDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2007,8 +2068,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-getRepoSyncCronExpression"><a class="anchor" href="#channel_software-getRepoSyncCronExpression"></a><a class="link" href="#channel_software-getRepoSyncCronExpression">Method: getRepoSyncCronExpression</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-getRepoSyncCronExpression"><a class="anchor" href="#apidoc-channel_software-getRepoSyncCronExpression"></a><a class="link" href="#apidoc-channel_software-getRepoSyncCronExpression">Method: getRepoSyncCronExpression</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2040,8 +2103,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-isGloballySubscribable"><a class="anchor" href="#channel_software-isGloballySubscribable"></a><a class="link" href="#channel_software-isGloballySubscribable">Method: isGloballySubscribable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-isGloballySubscribable"><a class="anchor" href="#apidoc-channel_software-isGloballySubscribable"></a><a class="link" href="#apidoc-channel_software-isGloballySubscribable">Method: isGloballySubscribable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2074,8 +2139,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-isUserManageable"><a class="anchor" href="#channel_software-isUserManageable"></a><a class="link" href="#channel_software-isUserManageable">Method: isUserManageable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-isUserManageable"><a class="anchor" href="#apidoc-channel_software-isUserManageable"></a><a class="link" href="#apidoc-channel_software-isUserManageable">Method: isUserManageable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2110,8 +2177,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-isUserSubscribable"><a class="anchor" href="#channel_software-isUserSubscribable"></a><a class="link" href="#channel_software-isUserSubscribable">Method: isUserSubscribable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-isUserSubscribable"><a class="anchor" href="#apidoc-channel_software-isUserSubscribable"></a><a class="link" href="#apidoc-channel_software-isUserSubscribable">Method: isUserSubscribable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2146,8 +2215,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackages"><a class="anchor" href="#apidoc-channel_software-listAllPackages"></a><a class="link" href="#apidoc-channel_software-listAllPackages">Method: listAllPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2225,8 +2296,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackages"><a class="anchor" href="#apidoc-channel_software-listAllPackages"></a><a class="link" href="#apidoc-channel_software-listAllPackages">Method: listAllPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2301,8 +2374,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackages"><a class="anchor" href="#apidoc-channel_software-listAllPackages"></a><a class="link" href="#apidoc-channel_software-listAllPackages">Method: listAllPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2373,8 +2448,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackages"><a class="anchor" href="#apidoc-channel_software-listAllPackages"></a><a class="link" href="#apidoc-channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2457,8 +2534,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackages"><a class="anchor" href="#channel_software-listAllPackages"></a><a class="link" href="#channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackages"><a class="anchor" href="#apidoc-channel_software-listAllPackages"></a><a class="link" href="#apidoc-channel_software-listAllPackages">Method: listAllPackages (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2537,8 +2616,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackagesByDate"><a class="anchor" href="#apidoc-channel_software-listAllPackagesByDate"></a><a class="link" href="#apidoc-channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2607,8 +2688,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackagesByDate"><a class="anchor" href="#apidoc-channel_software-listAllPackagesByDate"></a><a class="link" href="#apidoc-channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2675,8 +2758,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listAllPackagesByDate"><a class="anchor" href="#channel_software-listAllPackagesByDate"></a><a class="link" href="#channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listAllPackagesByDate"><a class="anchor" href="#apidoc-channel_software-listAllPackagesByDate"></a><a class="link" href="#apidoc-channel_software-listAllPackagesByDate">Method: listAllPackagesByDate (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2738,8 +2823,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listArches"><a class="anchor" href="#channel_software-listArches"></a><a class="link" href="#channel_software-listArches">Method: listArches</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listArches"><a class="anchor" href="#apidoc-channel_software-listArches"></a><a class="link" href="#apidoc-channel_software-listArches">Method: listArches</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2783,8 +2870,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listChannelRepos"><a class="anchor" href="#channel_software-listChannelRepos"></a><a class="link" href="#channel_software-listChannelRepos">Method: listChannelRepos</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listChannelRepos"><a class="anchor" href="#apidoc-channel_software-listChannelRepos"></a><a class="link" href="#apidoc-channel_software-listChannelRepos">Method: listChannelRepos</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2861,8 +2950,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listChildren"><a class="anchor" href="#channel_software-listChildren"></a><a class="link" href="#channel_software-listChildren">Method: listChildren</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listChildren"><a class="anchor" href="#apidoc-channel_software-listChildren"></a><a class="link" href="#apidoc-channel_software-listChildren">Method: listChildren</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -2983,8 +3074,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3046,8 +3139,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3112,8 +3207,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3181,8 +3278,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3246,8 +3345,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3309,8 +3410,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrata"><a class="anchor" href="#channel_software-listErrata"></a><a class="link" href="#channel_software-listErrata">Method: listErrata (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrata"><a class="anchor" href="#apidoc-channel_software-listErrata"></a><a class="link" href="#apidoc-channel_software-listErrata">Method: listErrata (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3375,8 +3478,10 @@ as a localised string</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrataByType"><a class="anchor" href="#channel_software-listErrataByType"></a><a class="link" href="#channel_software-listErrataByType">Method: listErrataByType</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrataByType"><a class="anchor" href="#apidoc-channel_software-listErrataByType"></a><a class="link" href="#apidoc-channel_software-listErrataByType">Method: listErrataByType</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3436,8 +3541,10 @@ of the following: 'Security Advisory', 'Product Enhancement Advisory',
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listErrataNeedingSync"><a class="anchor" href="#channel_software-listErrataNeedingSync"></a><a class="link" href="#channel_software-listErrataNeedingSync">Method: listErrataNeedingSync</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listErrataNeedingSync"><a class="anchor" href="#apidoc-channel_software-listErrataNeedingSync"></a><a class="link" href="#apidoc-channel_software-listErrataNeedingSync">Method: listErrataNeedingSync</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3502,8 +3609,10 @@ of the following: 'Security Advisory', 'Product Enhancement Advisory',
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listLatestPackages"><a class="anchor" href="#channel_software-listLatestPackages"></a><a class="link" href="#channel_software-listLatestPackages">Method: listLatestPackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listLatestPackages"><a class="anchor" href="#apidoc-channel_software-listLatestPackages"></a><a class="link" href="#apidoc-channel_software-listLatestPackages">Method: listLatestPackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3559,8 +3668,10 @@ of the following: 'Security Advisory', 'Product Enhancement Advisory',
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listPackagesWithoutChannel"><a class="anchor" href="#channel_software-listPackagesWithoutChannel"></a><a class="link" href="#channel_software-listPackagesWithoutChannel">Method: listPackagesWithoutChannel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listPackagesWithoutChannel"><a class="anchor" href="#apidoc-channel_software-listPackagesWithoutChannel"></a><a class="link" href="#apidoc-channel_software-listPackagesWithoutChannel">Method: listPackagesWithoutChannel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3628,8 +3739,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listRepoFilters"><a class="anchor" href="#channel_software-listRepoFilters"></a><a class="link" href="#channel_software-listRepoFilters">Method: listRepoFilters</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listRepoFilters"><a class="anchor" href="#apidoc-channel_software-listRepoFilters"></a><a class="link" href="#apidoc-channel_software-listRepoFilters">Method: listRepoFilters</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3679,8 +3792,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listSubscribedSystems"><a class="anchor" href="#channel_software-listSubscribedSystems"></a><a class="link" href="#channel_software-listSubscribedSystems">Method: listSubscribedSystems</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listSubscribedSystems"><a class="anchor" href="#apidoc-channel_software-listSubscribedSystems"></a><a class="link" href="#apidoc-channel_software-listSubscribedSystems">Method: listSubscribedSystems</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3723,8 +3838,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listSystemChannels"><a class="anchor" href="#channel_software-listSystemChannels"></a><a class="link" href="#channel_software-listSystemChannels">Method: listSystemChannels</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listSystemChannels"><a class="anchor" href="#apidoc-channel_software-listSystemChannels"></a><a class="link" href="#apidoc-channel_software-listSystemChannels">Method: listSystemChannels</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3771,8 +3888,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-listUserRepos"><a class="anchor" href="#channel_software-listUserRepos"></a><a class="link" href="#channel_software-listUserRepos">Method: listUserRepos</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listUserRepos"><a class="anchor" href="#apidoc-channel_software-listUserRepos"></a><a class="link" href="#apidoc-channel_software-listUserRepos">Method: listUserRepos</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3815,8 +3934,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-mergeErrata"><a class="anchor" href="#apidoc-channel_software-mergeErrata"></a><a class="link" href="#apidoc-channel_software-mergeErrata">Method: mergeErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3877,8 +3998,10 @@ errata into</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-mergeErrata"><a class="anchor" href="#apidoc-channel_software-mergeErrata"></a><a class="link" href="#apidoc-channel_software-mergeErrata">Method: mergeErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -3946,8 +4069,10 @@ errata into</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-mergeErrata"><a class="anchor" href="#channel_software-mergeErrata"></a><a class="link" href="#channel_software-mergeErrata">Method: mergeErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-mergeErrata"><a class="anchor" href="#apidoc-channel_software-mergeErrata"></a><a class="link" href="#apidoc-channel_software-mergeErrata">Method: mergeErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4018,8 +4143,10 @@ errata into</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-mergePackages"><a class="anchor" href="#channel_software-mergePackages"></a><a class="link" href="#channel_software-mergePackages">Method: mergePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-mergePackages"><a class="anchor" href="#apidoc-channel_software-mergePackages"></a><a class="link" href="#apidoc-channel_software-mergePackages">Method: mergePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4094,8 +4221,10 @@ resides</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-regenerateNeededCache"><a class="anchor" href="#channel_software-regenerateNeededCache"></a><a class="link" href="#channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-regenerateNeededCache"><a class="anchor" href="#apidoc-channel_software-regenerateNeededCache"></a><a class="link" href="#apidoc-channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4132,8 +4261,10 @@ channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-regenerateNeededCache"><a class="anchor" href="#channel_software-regenerateNeededCache"></a><a class="link" href="#channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-regenerateNeededCache"><a class="anchor" href="#apidoc-channel_software-regenerateNeededCache"></a><a class="link" href="#apidoc-channel_software-regenerateNeededCache">Method: regenerateNeededCache</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4165,8 +4296,10 @@ channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-regenerateYumCache"><a class="anchor" href="#channel_software-regenerateYumCache"></a><a class="link" href="#channel_software-regenerateYumCache">Method: regenerateYumCache</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-regenerateYumCache"><a class="anchor" href="#apidoc-channel_software-regenerateYumCache"></a><a class="link" href="#apidoc-channel_software-regenerateYumCache">Method: regenerateYumCache</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4202,8 +4335,10 @@ channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-removeErrata"><a class="anchor" href="#channel_software-removeErrata"></a><a class="link" href="#channel_software-removeErrata">Method: removeErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-removeErrata"><a class="anchor" href="#apidoc-channel_software-removeErrata"></a><a class="link" href="#apidoc-channel_software-removeErrata">Method: removeErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4248,8 +4383,10 @@ channel</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-removePackages"><a class="anchor" href="#channel_software-removePackages"></a><a class="link" href="#channel_software-removePackages">Method: removePackages</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-removePackages"><a class="anchor" href="#apidoc-channel_software-removePackages"></a><a class="link" href="#apidoc-channel_software-removePackages">Method: removePackages</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4292,8 +4429,10 @@ remove from the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-removeRepo"><a class="anchor" href="#channel_software-removeRepo"></a><a class="link" href="#channel_software-removeRepo">Method: removeRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-removeRepo"><a class="anchor" href="#apidoc-channel_software-removeRepo"></a><a class="link" href="#apidoc-channel_software-removeRepo">Method: removeRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4325,8 +4464,10 @@ remove from the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-removeRepo"><a class="anchor" href="#channel_software-removeRepo"></a><a class="link" href="#channel_software-removeRepo">Method: removeRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-removeRepo"><a class="anchor" href="#apidoc-channel_software-removeRepo"></a><a class="link" href="#apidoc-channel_software-removeRepo">Method: removeRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4358,8 +4499,10 @@ remove from the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-removeRepoFilter"><a class="anchor" href="#channel_software-removeRepoFilter"></a><a class="link" href="#channel_software-removeRepoFilter">Method: removeRepoFilter</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-removeRepoFilter"><a class="anchor" href="#apidoc-channel_software-removeRepoFilter"></a><a class="link" href="#apidoc-channel_software-removeRepoFilter">Method: removeRepoFilter</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4401,8 +4544,10 @@ remove from the channel.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setContactDetails"><a class="anchor" href="#channel_software-setContactDetails"></a><a class="link" href="#channel_software-setContactDetails">Method: setContactDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setContactDetails"><a class="anchor" href="#apidoc-channel_software-setContactDetails"></a><a class="link" href="#apidoc-channel_software-setContactDetails">Method: setContactDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4449,8 +4594,10 @@ maintainer</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setDetails"><a class="anchor" href="#channel_software-setDetails"></a><a class="link" href="#channel_software-setDetails">Method: setDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setDetails"><a class="anchor" href="#apidoc-channel_software-setDetails"></a><a class="link" href="#apidoc-channel_software-setDetails">Method: setDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4527,8 +4674,10 @@ maintainer</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setDetails"><a class="anchor" href="#channel_software-setDetails"></a><a class="link" href="#channel_software-setDetails">Method: setDetails</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setDetails"><a class="anchor" href="#apidoc-channel_software-setDetails"></a><a class="link" href="#apidoc-channel_software-setDetails">Method: setDetails</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4602,8 +4751,10 @@ maintainer</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setGloballySubscribable"><a class="anchor" href="#channel_software-setGloballySubscribable"></a><a class="link" href="#channel_software-setGloballySubscribable">Method: setGloballySubscribable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setGloballySubscribable"><a class="anchor" href="#apidoc-channel_software-setGloballySubscribable"></a><a class="link" href="#apidoc-channel_software-setGloballySubscribable">Method: setGloballySubscribable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4639,8 +4790,10 @@ globally subscribable.  False otherwise.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setRepoFilters"><a class="anchor" href="#channel_software-setRepoFilters"></a><a class="link" href="#channel_software-setRepoFilters">Method: setRepoFilters</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setRepoFilters"><a class="anchor" href="#apidoc-channel_software-setRepoFilters"></a><a class="link" href="#apidoc-channel_software-setRepoFilters">Method: setRepoFilters</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4687,8 +4840,10 @@ globally subscribable.  False otherwise.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setSystemChannels"><a class="anchor" href="#channel_software-setSystemChannels"></a><a class="link" href="#channel_software-setSystemChannels">Method: setSystemChannels (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setSystemChannels"><a class="anchor" href="#apidoc-channel_software-setSystemChannels"></a><a class="link" href="#apidoc-channel_software-setSystemChannels">Method: setSystemChannels (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4736,8 +4891,10 @@ subscribe the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setUserManageable"><a class="anchor" href="#channel_software-setUserManageable"></a><a class="link" href="#channel_software-setUserManageable">Method: setUserManageable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setUserManageable"><a class="anchor" href="#apidoc-channel_software-setUserManageable"></a><a class="link" href="#apidoc-channel_software-setUserManageable">Method: setUserManageable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4777,8 +4934,10 @@ subscribe the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-setUserSubscribable"><a class="anchor" href="#channel_software-setUserSubscribable"></a><a class="link" href="#channel_software-setUserSubscribable">Method: setUserSubscribable</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-setUserSubscribable"><a class="anchor" href="#apidoc-channel_software-setUserSubscribable"></a><a class="link" href="#apidoc-channel_software-setUserSubscribable">Method: setUserSubscribable</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4818,8 +4977,10 @@ subscribe the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-subscribeSystem"><a class="anchor" href="#channel_software-subscribeSystem"></a><a class="link" href="#channel_software-subscribeSystem">Method: subscribeSystem (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-subscribeSystem"><a class="anchor" href="#apidoc-channel_software-subscribeSystem"></a><a class="link" href="#apidoc-channel_software-subscribeSystem">Method: subscribeSystem (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4871,8 +5032,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncErrata"><a class="anchor" href="#channel_software-syncErrata"></a><a class="link" href="#channel_software-syncErrata">Method: syncErrata</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncErrata"><a class="anchor" href="#apidoc-channel_software-syncErrata"></a><a class="link" href="#apidoc-channel_software-syncErrata">Method: syncErrata</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4911,8 +5074,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncRepo"><a class="anchor" href="#apidoc-channel_software-syncRepo"></a><a class="link" href="#apidoc-channel_software-syncRepo">Method: syncRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4951,8 +5116,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncRepo"><a class="anchor" href="#apidoc-channel_software-syncRepo"></a><a class="link" href="#apidoc-channel_software-syncRepo">Method: syncRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -4984,8 +5151,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncRepo"><a class="anchor" href="#apidoc-channel_software-syncRepo"></a><a class="link" href="#apidoc-channel_software-syncRepo">Method: syncRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5033,8 +5202,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncRepo"><a class="anchor" href="#apidoc-channel_software-syncRepo"></a><a class="link" href="#apidoc-channel_software-syncRepo">Method: syncRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5069,8 +5240,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-syncRepo"><a class="anchor" href="#channel_software-syncRepo"></a><a class="link" href="#channel_software-syncRepo">Method: syncRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-syncRepo"><a class="anchor" href="#apidoc-channel_software-syncRepo"></a><a class="link" href="#apidoc-channel_software-syncRepo">Method: syncRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5121,8 +5294,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-unsubscribeChannels"><a class="anchor" href="#channel_software-unsubscribeChannels"></a><a class="link" href="#channel_software-unsubscribeChannels">Method: unsubscribeChannels (Deprecated)</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-unsubscribeChannels"><a class="anchor" href="#apidoc-channel_software-unsubscribeChannels"></a><a class="link" href="#apidoc-channel_software-unsubscribeChannels">Method: unsubscribeChannels (Deprecated)</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5184,8 +5359,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepo"><a class="anchor" href="#channel_software-updateRepo"></a><a class="link" href="#channel_software-updateRepo">Method: updateRepo</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepo"><a class="anchor" href="#apidoc-channel_software-updateRepo"></a><a class="link" href="#apidoc-channel_software-updateRepo">Method: updateRepo</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5260,8 +5437,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoLabel"><a class="anchor" href="#channel_software-updateRepoLabel"></a><a class="link" href="#channel_software-updateRepoLabel">Method: updateRepoLabel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoLabel"><a class="anchor" href="#apidoc-channel_software-updateRepoLabel"></a><a class="link" href="#apidoc-channel_software-updateRepoLabel">Method: updateRepoLabel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5333,8 +5512,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoLabel"><a class="anchor" href="#channel_software-updateRepoLabel"></a><a class="link" href="#channel_software-updateRepoLabel">Method: updateRepoLabel</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoLabel"><a class="anchor" href="#apidoc-channel_software-updateRepoLabel"></a><a class="link" href="#apidoc-channel_software-updateRepoLabel">Method: updateRepoLabel</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5406,8 +5587,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoSsl"><a class="anchor" href="#channel_software-updateRepoSsl"></a><a class="link" href="#channel_software-updateRepoSsl">Method: updateRepoSsl</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoSsl"><a class="anchor" href="#apidoc-channel_software-updateRepoSsl"></a><a class="link" href="#apidoc-channel_software-updateRepoSsl">Method: updateRepoSsl</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5485,8 +5668,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoSsl"><a class="anchor" href="#channel_software-updateRepoSsl"></a><a class="link" href="#channel_software-updateRepoSsl">Method: updateRepoSsl</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoSsl"><a class="anchor" href="#apidoc-channel_software-updateRepoSsl"></a><a class="link" href="#apidoc-channel_software-updateRepoSsl">Method: updateRepoSsl</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5564,8 +5749,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoUrl"><a class="anchor" href="#channel_software-updateRepoUrl"></a><a class="link" href="#channel_software-updateRepoUrl">Method: updateRepoUrl</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoUrl"><a class="anchor" href="#apidoc-channel_software-updateRepoUrl"></a><a class="link" href="#apidoc-channel_software-updateRepoUrl">Method: updateRepoUrl</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5637,8 +5824,10 @@ the system to.</p>
 </div>
 <hr>
 </div>
-<div class="sect2">
-<h3 id="channel_software-updateRepoUrl"><a class="anchor" href="#channel_software-updateRepoUrl"></a><a class="link" href="#channel_software-updateRepoUrl">Method: updateRepoUrl</a></h3>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-updateRepoUrl"><a class="anchor" href="#apidoc-channel_software-updateRepoUrl"></a><a class="link" href="#apidoc-channel_software-updateRepoUrl">Method: updateRepoUrl</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
@@ -5709,14 +5898,33 @@ the system to.</p>
 </ul>
 </div>
 <hr>
-</div>
 </div>
 </div>
 
 <div class="cedents grid" role="navigation">
 
+  <div class="prev">
+      <a href="channel.org.html" title="channel.org">
+        <div class="change-page">
+          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
+        <span class="label">Previous</span>
+        <br/>
+        <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">channel.org</span>
+        </div>
+      </a>
   </div>
 
+  <div class="next">
+      <a href="configchannel.html" title="configchannel">
+        <div class="change-page">
+          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
+        <span class="label">Next</span>
+        <br/>
+       <!-- <span class="label title"><strong>:</strong></span> -->
+        <span class="title">configchannel</span>
+        </div>
+      </a>
   </div>
 </div>
 </article>
@@ -5810,8 +6018,7 @@ tippy('#submitPR', {
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
-<script>hljs.initHighlighting()</script>
+
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -5827,5 +6034,8 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
+
+
+<script src="../../_/js/prism.js"></script>
   </body>
 </html>
