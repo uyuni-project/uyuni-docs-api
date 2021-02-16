@@ -1,0 +1,608 @@
+[#apidoc-maintenance]
+= maintenance
+
+
+== Available methods
+
+* <<apidoc-maintenance-assignScheduleToSystems-1526694407,assignScheduleToSystems>>
+* <<apidoc-maintenance-createCalendar-1161542555,createCalendar>>
+* <<apidoc-maintenance-createCalendarWithUrl-386607015,createCalendarWithUrl>>
+* <<apidoc-maintenance-createSchedule-1784116580,createSchedule>>
+* <<apidoc-maintenance-createSchedule-1737577556,createSchedule>>
+* <<apidoc-maintenance-deleteCalendar-336050495,deleteCalendar>>
+* <<apidoc-maintenance-deleteSchedule-1511067261,deleteSchedule>>
+* <<apidoc-maintenance-getCalendarDetails-1726118601,getCalendarDetails>>
+* <<apidoc-maintenance-getScheduleDetails-1600366322,getScheduleDetails>>
+* <<apidoc-maintenance-listCalendarLabels-188529678,listCalendarLabels>>
+* <<apidoc-maintenance-listScheduleNames-568055377,listScheduleNames>>
+* <<apidoc-maintenance-listSystemsWithSchedule-663613990,listSystemsWithSchedule>>
+* <<apidoc-maintenance-refreshCalendar-217590872,refreshCalendar>>
+* <<apidoc-maintenance-retractScheduleFromSystems-1784322521,retractScheduleFromSystems>>
+* <<apidoc-maintenance-updateCalendar-2033788292,updateCalendar>>
+* <<apidoc-maintenance-updateSchedule-411529129,updateSchedule>>
+
+== Description
+
+Provides methods to access and modify Maintenance Schedules related entities
+
+*Namespace*:
+
+maintenance
+
+
+[#apidoc-maintenance-assignScheduleToSystems-1526694407]
+== Method: assignScheduleToSystems 
+
+Description:
+
+Assign schedule with given name to systems with given IDs.
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+ Throws a InvalidParameterException when some of the systems have pending actions that are not allowed in the
+ maintenance mode.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  scheduleName - The schedule name
+ 
+* [.array]#array# :
+** [.int]#int#  - system IDs
+ 
+* [.array]#array# :
+                 ** [.string]#string#  "rescheduleStrategy" - Available:
+                   
+                     ** Cancel - Cancel actions which are outside of the maintenance windows
+                     ** Fail - Let assignment fail. No operation will be performed
+                   
+                
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - number of involved systems
+ 
+
+
+
+[#apidoc-maintenance-createCalendar-1161542555]
+== Method: createCalendar 
+
+Description:
+
+Create a new Maintenance Calendar
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+* [.string]#string#  ical - ICal Calendar Data
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+
+
+
+[#apidoc-maintenance-createCalendarWithUrl-386607015]
+== Method: createCalendarWithUrl 
+
+Description:
+
+Create a new Maintenance Calendar
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+* [.string]#string#  url - download URL for ICal Calendar Data
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+
+
+
+[#apidoc-maintenance-createSchedule-1784116580]
+== Method: createSchedule 
+
+Description:
+
+Create a new Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Maintenance Schedule Name
+ 
+* [.string]#string#  type - Schedule type: single, multi
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Schedule information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "type"
+   * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+  
+
+
+
+[#apidoc-maintenance-createSchedule-1737577556]
+== Method: createSchedule 
+
+Description:
+
+Create a new Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Maintenance Schedule Name
+ 
+* [.string]#string#  type - Schedule type: single, multi
+ 
+* [.string]#string#  calendar - Maintenance Calendar Label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Schedule information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "type"
+   * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+  
+
+
+
+[#apidoc-maintenance-deleteCalendar-336050495]
+== Method: deleteCalendar 
+
+Description:
+
+Remove a Maintenance Calendar
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+* [.boolean]#boolean#  cancelScheduledActions - Cancel Actions of affected Schedules
+ 
+
+Returns:
+
+* [.array]#array# :
+       * [.struct]#struct#  - Reschedule information
+   ** [.string]#string#  "strategy" - selected strategy
+   ** [.string]#string#  "for_schedule_name"
+   ** [.boolean]#boolean#  "status"
+   ** [.string]#string#  "message"
+   ** [.array]#array#  "actions"
+     *** [.struct]#struct#  - Action information
+       **** [.int]#int#  "id" - Action Id.
+       **** [.string]#string#  "name" - Action name.
+       **** [.string]#string#  "type" - Action type.
+       **** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+       **** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+       will be performed
+       **** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+       **** [.array]#array#  "affected_system_ids"
+***** int - affected System Ids
+       **** [.string]#string#  "details" - Action details string
+          
+      
+
+
+
+[#apidoc-maintenance-deleteSchedule-1511067261]
+== Method: deleteSchedule 
+
+Description:
+
+Remove a Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Maintenance Schedule Name
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-maintenance-getCalendarDetails-1726118601]
+== Method: getCalendarDetails 
+
+Description:
+
+Lookup a specific Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+
+
+
+[#apidoc-maintenance-getScheduleDetails-1600366322]
+== Method: getScheduleDetails 
+
+Description:
+
+Lookup a specific Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Maintenance Schedule Name
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Maintenance Schedule information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "type"
+   * [.struct]#struct#  - Maintenance Calendar information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "url" - calendar url if present
+   ** [.string]#string#  "ical"
+  
+  
+  
+
+
+
+[#apidoc-maintenance-listCalendarLabels-188529678]
+== Method: listCalendarLabels 
+
+Description:
+
+List Schedule Names visible to user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - maintenance calendar labels
+ 
+
+
+
+[#apidoc-maintenance-listScheduleNames-568055377]
+== Method: listScheduleNames 
+
+Description:
+
+List Schedule Names visible to user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - maintenance schedule names
+ 
+
+
+
+[#apidoc-maintenance-listSystemsWithSchedule-663613990]
+== Method: listSystemsWithSchedule 
+
+Description:
+
+List IDs of systems that have given schedule assigned
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  scheduleName - The schedule name
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - system IDs
+ 
+
+
+
+[#apidoc-maintenance-refreshCalendar-217590872]
+== Method: refreshCalendar 
+
+Description:
+
+Refresh Maintenance Calendar Data using the configured URL
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+* [.array]#array# :
+                 ** [.string]#string#  "rescheduleStrategy" - Available:
+                   
+                     ** Cancel - Cancel actions which are outside of the maintenance windows
+                     ** Fail - Let update fail. The calendar stay untouched
+                   
+                
+
+Returns:
+
+* [.array]#array# :
+       * [.struct]#struct#  - Reschedule information
+   ** [.string]#string#  "strategy" - selected strategy
+   ** [.string]#string#  "for_schedule_name"
+   ** [.boolean]#boolean#  "status"
+   ** [.string]#string#  "message"
+   ** [.array]#array#  "actions"
+     *** [.struct]#struct#  - Action information
+       **** [.int]#int#  "id" - Action Id.
+       **** [.string]#string#  "name" - Action name.
+       **** [.string]#string#  "type" - Action type.
+       **** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+       **** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+       will be performed
+       **** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+       **** [.array]#array#  "affected_system_ids"
+***** int - affected System Ids
+       **** [.string]#string#  "details" - Action details string
+          
+      
+
+
+
+[#apidoc-maintenance-retractScheduleFromSystems-1784322521]
+== Method: retractScheduleFromSystems 
+
+Description:
+
+Retract schedule with given name from systems with given IDs
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** [.int]#int#  - system IDs
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - number of involved systems
+ 
+
+
+
+[#apidoc-maintenance-updateCalendar-2033788292]
+== Method: updateCalendar 
+
+Description:
+
+Update a Maintenance Calendar
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Maintenance Calendar Label
+ 
+* [.struct]#struct#  - Maintenance Calendar Details
+         ** [.string]#string#  "ical" - new ical Calendar data
+         ** [.string]#string#  "url" - new Calendar URL
+      
+* [.array]#array# :
+                 ** [.string]#string#  "rescheduleStrategy" - Available:
+                   
+                     ** Cancel - Cancel actions which are outside of the maintenance windows
+                     ** Fail - Let update fail. The calendar stay untouched
+                   
+                
+
+Returns:
+
+* [.array]#array# :
+       * [.struct]#struct#  - Reschedule information
+   ** [.string]#string#  "strategy" - selected strategy
+   ** [.string]#string#  "for_schedule_name"
+   ** [.boolean]#boolean#  "status"
+   ** [.string]#string#  "message"
+   ** [.array]#array#  "actions"
+     *** [.struct]#struct#  - Action information
+       **** [.int]#int#  "id" - Action Id.
+       **** [.string]#string#  "name" - Action name.
+       **** [.string]#string#  "type" - Action type.
+       **** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+       **** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+       will be performed
+       **** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+       **** [.array]#array#  "affected_system_ids"
+***** int - affected System Ids
+       **** [.string]#string#  "details" - Action details string
+          
+      
+
+
+
+[#apidoc-maintenance-updateSchedule-411529129]
+== Method: updateSchedule 
+
+Description:
+
+Update a Maintenance Schedule
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Maintenance Schedule Name
+ 
+* [.struct]#struct#  - Maintenance Schedule Details
+         ** [.string]#string#  "type" - new Schedule Type
+           
+               ** single
+               ** multi
+           
+         ** [.string]#string#  "calendar" - new calendar label
+      
+* [.array]#array# :
+                 ** [.string]#string#  "rescheduleStrategy" - Available:
+                   
+                     ** Cancel - Cancel actions which are outside of the maintenance windows
+                     ** Fail - Let update fail. The calendar stay untouched
+                   
+                
+
+Returns:
+
+* * [.struct]#struct#  - Reschedule information
+   ** [.string]#string#  "strategy" - selected strategy
+   ** [.string]#string#  "for_schedule_name"
+   ** [.boolean]#boolean#  "status"
+   ** [.string]#string#  "message"
+   ** [.array]#array#  "actions"
+     *** [.struct]#struct#  - Action information
+       **** [.int]#int#  "id" - Action Id.
+       **** [.string]#string#  "name" - Action name.
+       **** [.string]#string#  "type" - Action type.
+       **** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+       **** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+       will be performed
+       **** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+       **** [.array]#array#  "affected_system_ids"
+***** int - affected System Ids
+       **** [.string]#string#  "details" - Action details string
+           
+ 
+
+

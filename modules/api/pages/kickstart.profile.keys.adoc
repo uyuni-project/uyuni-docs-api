@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_keys-addActivationKey,addActivationKey>>
-* <<apidoc-kickstart_profile_keys-getActivationKeys,getActivationKeys>>
-* <<apidoc-kickstart_profile_keys-removeActivationKey,removeActivationKey>>
+* <<apidoc-kickstart_profile_keys-addActivationKey-1293177207,addActivationKey>>
+* <<apidoc-kickstart_profile_keys-getActivationKeys-144699459,getActivationKeys>>
+* <<apidoc-kickstart_profile_keys-removeActivationKey-525859363,removeActivationKey>>
 
 == Description
 
@@ -17,10 +17,8 @@ Provides methods to access and modify the list of activation keys
 
 kickstart.profile.keys
 
-'''
 
-
-[#apidoc-kickstart_profile_keys-addActivationKey]
+[#apidoc-kickstart_profile_keys-addActivationKey-1293177207]
 == Method: addActivationKey 
 
 Description:
@@ -45,10 +43,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_profile_keys-getActivationKeys]
+[#apidoc-kickstart_profile_keys-getActivationKeys-144699459]
 == Method: getActivationKeys 
 
 Description:
@@ -70,42 +66,36 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  - activation key
-     * [.string]#string#  "key"
-     * [.string]#string#  "description"
-     * [.int]#int#  "usage_limit"
-     * [.string]#string#  "base_channel_label"
-     * [.array]#array#  "child_channel_labels"
-** string - childChannelLabel
-     * [.array]#array#  "entitlements"
-** string - entitlementLabel
-     * [.array]#array#  "server_group_ids"
-** string - serverGroupId
-     * [.array]#array#  "package_names"
-** string - packageName - (deprecated by packages)
-     * [.array]#array#  "packages"
-       * [.struct]#struct#  - package
-         * [.string]#string#  "name" - packageName
-         * [.string]#string#  "arch" - archLabel - optional
-       // no end needed
-     // no end needed
-     * [.boolean]#boolean#  "universal_default"
-     * [.boolean]#boolean#  "disabled"
-     * [.string]#string#  "contact_method" - One of the following:
-       // no end needed
-         * default
-         * ssh-push
-         * ssh-push-tunnel
-       // no end needed
-   // no end needed
- 
-   // no end needed
- 
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+    
+    
 
 
-'''
 
-
-[#apidoc-kickstart_profile_keys-removeActivationKey]
+[#apidoc-kickstart_profile_keys-removeActivationKey-525859363]
 == Method: removeActivationKey 
 
 Description:
@@ -129,6 +119,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

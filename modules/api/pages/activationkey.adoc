@@ -4,32 +4,32 @@
 
 == Available methods
 
-* <<apidoc-activationkey-addChildChannels,addChildChannels>>
-* <<apidoc-activationkey-addConfigChannels,addConfigChannels>>
-* <<apidoc-activationkey-addEntitlements,addEntitlements>>
-* <<apidoc-activationkey-addPackageNames,addPackageNames>>
-* <<apidoc-activationkey-addPackages,addPackages>>
-* <<apidoc-activationkey-addServerGroups,addServerGroups>>
-* <<apidoc-activationkey-checkConfigDeployment,checkConfigDeployment>>
-* <<apidoc-activationkey-clone,clone>>
-* <<apidoc-activationkey-create,create>>
-* <<apidoc-activationkey-create,create>>
-* <<apidoc-activationkey-delete,delete>>
-* <<apidoc-activationkey-disableConfigDeployment,disableConfigDeployment>>
-* <<apidoc-activationkey-enableConfigDeployment,enableConfigDeployment>>
-* <<apidoc-activationkey-getDetails,getDetails>>
-* <<apidoc-activationkey-listActivatedSystems,listActivatedSystems>>
-* <<apidoc-activationkey-listActivationKeys,listActivationKeys>>
-* <<apidoc-activationkey-listChannels,listChannels>>
-* <<apidoc-activationkey-listConfigChannels,listConfigChannels>>
-* <<apidoc-activationkey-removeChildChannels,removeChildChannels>>
-* <<apidoc-activationkey-removeConfigChannels,removeConfigChannels>>
-* <<apidoc-activationkey-removeEntitlements,removeEntitlements>>
-* <<apidoc-activationkey-removePackageNames,removePackageNames>>
-* <<apidoc-activationkey-removePackages,removePackages>>
-* <<apidoc-activationkey-removeServerGroups,removeServerGroups>>
-* <<apidoc-activationkey-setConfigChannels,setConfigChannels>>
-* <<apidoc-activationkey-setDetails,setDetails>>
+* <<apidoc-activationkey-addChildChannels-1568507411,addChildChannels>>
+* <<apidoc-activationkey-addConfigChannels-317880757,addConfigChannels>>
+* <<apidoc-activationkey-addEntitlements-1644155208,addEntitlements>>
+* <<apidoc-activationkey-addPackageNames-180017308,addPackageNames>>
+* <<apidoc-activationkey-addPackages-1112569408,addPackages>>
+* <<apidoc-activationkey-addServerGroups-1901752553,addServerGroups>>
+* <<apidoc-activationkey-checkConfigDeployment-2145001473,checkConfigDeployment>>
+* <<apidoc-activationkey-clone-1710180594,clone>>
+* <<apidoc-activationkey-create-1305194069,create>>
+* <<apidoc-activationkey-create-906397479,create>>
+* <<apidoc-activationkey-delete-1918121287,delete>>
+* <<apidoc-activationkey-disableConfigDeployment-2120532393,disableConfigDeployment>>
+* <<apidoc-activationkey-enableConfigDeployment-1607278346,enableConfigDeployment>>
+* <<apidoc-activationkey-getDetails-1756064432,getDetails>>
+* <<apidoc-activationkey-listActivatedSystems-219396780,listActivatedSystems>>
+* <<apidoc-activationkey-listActivationKeys-299684908,listActivationKeys>>
+* <<apidoc-activationkey-listChannels-1801756410,listChannels>>
+* <<apidoc-activationkey-listConfigChannels-1974379194,listConfigChannels>>
+* <<apidoc-activationkey-removeChildChannels-1857063398,removeChildChannels>>
+* <<apidoc-activationkey-removeConfigChannels-1610014012,removeConfigChannels>>
+* <<apidoc-activationkey-removeEntitlements-1479691423,removeEntitlements>>
+* <<apidoc-activationkey-removePackageNames-1613729684,removePackageNames>>
+* <<apidoc-activationkey-removePackages-1308527415,removePackages>>
+* <<apidoc-activationkey-removeServerGroups-1002872041,removeServerGroups>>
+* <<apidoc-activationkey-setConfigChannels-44332439,setConfigChannels>>
+* <<apidoc-activationkey-setDetails-1032382137,setDetails>>
 
 == Description
 
@@ -40,10 +40,8 @@ Contains methods to access common activation key functions
 
 activationkey
 
-'''
 
-
-[#apidoc-activationkey-addChildChannels]
+[#apidoc-activationkey-addChildChannels-1568507411]
 == Method: addChildChannels 
 
 Description:
@@ -60,7 +58,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** string - childChannelLabel
+** [.string]#string#  - childChannelLabel
  
 
 Returns:
@@ -69,10 +67,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-addConfigChannels]
+[#apidoc-activationkey-addConfigChannels-317880757]
 == Method: addConfigChannels 
 
 Description:
@@ -94,18 +90,18 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.array]#array# :
-** string - activationKey
+** [.string]#string#  - activationKey
  
 * [.array]#array# :
-** string - List of configuration channel labels in the ranked order.
+** [.string]#string#  - List of configuration channel labels in the ranked order.
  
 * [.boolean]#boolean#  addToTop
-      // no end needed
+      
           * true - To prepend the given channels to the beginning of
                                  the activation key's config channel list
           * false - To append the given channels to the end of
                                      the activation key's config channel list
-      // no end needed
+      
  
 
 Returns:
@@ -114,16 +110,13 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-addEntitlements]
+[#apidoc-activationkey-addEntitlements-1644155208]
 == Method: addEntitlements 
 
 Description:
 
-Add entitlements to an activation key. Currently only
- virtualization_host add-on entitlement is permitted.
+Add add-on System Types to an activation key.
 
 
 
@@ -134,12 +127,15 @@ Parameters:
  
 * [.string]#string#  key
  
-* [.array]#array#  string - entitlement label
-   // no end needed
-     * virtualization_host
-   // no end needed
- // no end needed
- 
+* [.array]#array#  string - Add-on system type labels to associate with the
+ key.
+   
+     ** container_build_host
+     ** monitoring_entitled
+     ** osimage_build_host
+     ** virtualization_host
+   
+  
 
 Returns:
 
@@ -147,10 +143,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-addPackageNames]
+[#apidoc-activationkey-addPackageNames-180017308]
 == Method: addPackageNames (Deprecated)
 
 Description:
@@ -169,7 +163,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** string - packageName
+** [.string]#string#  - packageName
  
 
 Returns:
@@ -179,10 +173,8 @@ Returns:
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-activationkey-addPackages]
+[#apidoc-activationkey-addPackages-1112569408]
 == Method: addPackages 
 
 Description:
@@ -199,12 +191,10 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-      * [.struct]#struct#  - packages
-          * [.string]#string#  "name" - Package name
-          * [.string]#string#  "arch" - Arch label - Optional
-     // no end needed
-   // no end needed
- 
+      ** [.struct]#struct#  - packages
+          *** [.string]#string#  "name" - Package name
+          *** [.string]#string#  "arch" - Arch label - Optional
+         
 
 Returns:
 
@@ -212,10 +202,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-addServerGroups]
+[#apidoc-activationkey-addServerGroups-1901752553]
 == Method: addServerGroups 
 
 Description:
@@ -232,7 +220,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** int - serverGroupId
+** [.int]#int#  - serverGroupId
  
 
 Returns:
@@ -241,10 +229,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-checkConfigDeployment]
+[#apidoc-activationkey-checkConfigDeployment-2145001473]
 == Method: checkConfigDeployment 
 
 Description:
@@ -264,14 +250,12 @@ Parameters:
 
 Returns:
 
-* 1 if enabled, 0 if disabled, exception thrown otherwise. 
+* [.int]#int#  status - 1 if enabled, 0 if disabled, exception thrown otherwise
  
 
 
-'''
 
-
-[#apidoc-activationkey-clone]
+[#apidoc-activationkey-clone-1710180594]
 == Method: clone 
 
 Description:
@@ -292,14 +276,12 @@ Parameters:
 
 Returns:
 
-* string - The new activation key. 
+* [.string]#string#  The new activation key
  
 
 
-'''
 
-
-[#apidoc-activationkey-create]
+[#apidoc-activationkey-create-1305194069]
 == Method: create 
 
 Description:
@@ -333,26 +315,26 @@ Parameters:
 * [.int]#int#  usageLimit - If unlimited usage is desired,
  use the create API that does not include the parameter.
  
-* [.array]#array#  string - Add-on entitlement label to associate with the
+* [.array]#array#  string - Add-on system type labels to associate with the
  key.
-   // no end needed
-     * virtualization_host
-   // no end needed
- // no end needed
- 
+   
+     ** container_build_host
+     ** monitoring_entitled
+     ** osimage_build_host
+     ** virtualization_host
+   
+  
 * [.boolean]#boolean#  universalDefault
  
 
 Returns:
 
-* string - The new activation key. 
+* [.string]#string#  The new activation key
  
 
 
-'''
 
-
-[#apidoc-activationkey-create]
+[#apidoc-activationkey-create-906397479]
 == Method: create 
 
 Description:
@@ -381,24 +363,21 @@ Parameters:
  
 * [.array]#array#  string - Add-on entitlement label to associate with the
  key.
-   // no end needed
-     * virtualization_host
-   // no end needed
- // no end needed
- 
+   
+     ** virtualization_host
+   
+  
 * [.boolean]#boolean#  universalDefault
  
 
 Returns:
 
-* string - The new activation key. 
+* [.string]#string#  The new activation key
  
 
 
-'''
 
-
-[#apidoc-activationkey-delete]
+[#apidoc-activationkey-delete-1918121287]
 == Method: delete 
 
 Description:
@@ -421,10 +400,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-disableConfigDeployment]
+[#apidoc-activationkey-disableConfigDeployment-2120532393]
 == Method: disableConfigDeployment 
 
 Description:
@@ -447,10 +424,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-enableConfigDeployment]
+[#apidoc-activationkey-enableConfigDeployment-1607278346]
 == Method: enableConfigDeployment 
 
 Description:
@@ -473,10 +448,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-getDetails]
+[#apidoc-activationkey-getDetails-1756064432]
 == Method: getDetails 
 
 Description:
@@ -496,42 +469,37 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - activation key
-     * [.string]#string#  "key"
-     * [.string]#string#  "description"
-     * [.int]#int#  "usage_limit"
-     * [.string]#string#  "base_channel_label"
-     * [.array]#array#  "child_channel_labels"
-** string - childChannelLabel
-     * [.array]#array#  "entitlements"
-** string - entitlementLabel
-     * [.array]#array#  "server_group_ids"
-** string - serverGroupId
-     * [.array]#array#  "package_names"
-** string - packageName - (deprecated by packages)
-     * [.array]#array#  "packages"
-       * [.struct]#struct#  - package
-         * [.string]#string#  "name" - packageName
-         * [.string]#string#  "arch" - archLabel - optional
-       // no end needed
-     // no end needed
-     * [.boolean]#boolean#  "universal_default"
-     * [.boolean]#boolean#  "disabled"
-     * [.string]#string#  "contact_method" - One of the following:
-       // no end needed
-         * default
-         * ssh-push
-         * ssh-push-tunnel
-       // no end needed
-   // no end needed
-  
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+     
  
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-activationkey-listActivatedSystems]
+[#apidoc-activationkey-listActivatedSystems-219396780]
 == Method: listActivatedSystems 
 
 Description:
@@ -551,20 +519,16 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-       * [.struct]#struct#  - system structure
-           * [.int]#int#  "id" - System id
-           * [.string]#string#  "hostname"
-           * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+       ** [.struct]#struct#  - system structure
+           *** [.int]#int#  "id" - System id
+           *** [.string]#string#  "hostname"
+           *** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
                successfully checked in
-       // no end needed
-   // no end needed
- 
+           
 
 
-'''
 
-
-[#apidoc-activationkey-listActivationKeys]
+[#apidoc-activationkey-listActivationKeys-299684908]
 == Method: listActivationKeys 
 
 Description:
@@ -584,43 +548,37 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  - activation key
-     * [.string]#string#  "key"
-     * [.string]#string#  "description"
-     * [.int]#int#  "usage_limit"
-     * [.string]#string#  "base_channel_label"
-     * [.array]#array#  "child_channel_labels"
-** string - childChannelLabel
-     * [.array]#array#  "entitlements"
-** string - entitlementLabel
-     * [.array]#array#  "server_group_ids"
-** string - serverGroupId
-     * [.array]#array#  "package_names"
-** string - packageName - (deprecated by packages)
-     * [.array]#array#  "packages"
-       * [.struct]#struct#  - package
-         * [.string]#string#  "name" - packageName
-         * [.string]#string#  "arch" - archLabel - optional
-       // no end needed
-     // no end needed
-     * [.boolean]#boolean#  "universal_default"
-     * [.boolean]#boolean#  "disabled"
-     * [.string]#string#  "contact_method" - One of the following:
-       // no end needed
-         * default
-         * ssh-push
-         * ssh-push-tunnel
-       // no end needed
-   // no end needed
- 
-   // no end needed
- 
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+    
+    
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-activationkey-listChannels]
+[#apidoc-activationkey-listChannels-1801756410]
 == Method: listChannels 
 
 Description:
@@ -645,20 +603,16 @@ Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  - channelInfo
-       * [.string]#string#  "label" - Channel label
-       * [.string]#string#  "name" - Channel name
-       * [.string]#string#  "url" - Channel url
-       * [.string]#string#  "token" - Channel access token
-  // no end needed
- 
-     // no end needed
- 
+       ** [.string]#string#  "label" - Channel label
+       ** [.string]#string#  "name" - Channel name
+       ** [.string]#string#  "url" - Channel url
+       ** [.string]#string#  "token" - Channel access token
+   
+      
 
 
-'''
 
-
-[#apidoc-activationkey-listConfigChannels]
+[#apidoc-activationkey-listConfigChannels-1974379194]
 == Method: listConfigChannels 
 
 Description:
@@ -680,29 +634,24 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
- 
-   // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+    
 
 
-'''
 
-
-[#apidoc-activationkey-removeChildChannels]
+[#apidoc-activationkey-removeChildChannels-1857063398]
 == Method: removeChildChannels 
 
 Description:
@@ -719,7 +668,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** string - childChannelLabel
+** [.string]#string#  - childChannelLabel
  
 
 Returns:
@@ -728,10 +677,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-removeConfigChannels]
+[#apidoc-activationkey-removeConfigChannels-1610014012]
 == Method: removeConfigChannels 
 
 Description:
@@ -746,10 +693,10 @@ Parameters:
 * [.string]#string#  sessionKey 
  
 * [.array]#array# :
-** string - activationKey
+** [.string]#string#  - activationKey
  
 * [.array]#array# :
-** string - configChannelLabel
+** [.string]#string#  - configChannelLabel
  
 
 Returns:
@@ -758,10 +705,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-removeEntitlements]
+[#apidoc-activationkey-removeEntitlements-1479691423]
 == Method: removeEntitlements 
 
 Description:
@@ -779,11 +724,10 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array#  string - entitlement label
-   // no end needed
-     * virtualization_host
-   // no end needed
- // no end needed
- 
+   
+     ** virtualization_host
+   
+  
 
 Returns:
 
@@ -791,10 +735,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-removePackageNames]
+[#apidoc-activationkey-removePackageNames-1613729684]
 == Method: removePackageNames (Deprecated)
 
 Description:
@@ -813,7 +755,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** string - packageName
+** [.string]#string#  - packageName
  
 
 Returns:
@@ -823,10 +765,8 @@ Returns:
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-activationkey-removePackages]
+[#apidoc-activationkey-removePackages-1308527415]
 == Method: removePackages 
 
 Description:
@@ -843,12 +783,10 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-      * [.struct]#struct#  - packages
-          * [.string]#string#  "name" - Package name
-          * [.string]#string#  "arch" - Arch label - Optional
-     // no end needed
-   // no end needed
- 
+      ** [.struct]#struct#  - packages
+          *** [.string]#string#  "name" - Package name
+          *** [.string]#string#  "arch" - Arch label - Optional
+         
 
 Returns:
 
@@ -856,10 +794,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-removeServerGroups]
+[#apidoc-activationkey-removeServerGroups-1002872041]
 == Method: removeServerGroups 
 
 Description:
@@ -876,7 +812,7 @@ Parameters:
 * [.string]#string#  key
  
 * [.array]#array# :
-** int - serverGroupId
+** [.int]#int#  - serverGroupId
  
 
 Returns:
@@ -885,10 +821,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-setConfigChannels]
+[#apidoc-activationkey-setConfigChannels-44332439]
 == Method: setConfigChannels 
 
 Description:
@@ -905,10 +839,10 @@ Parameters:
 * [.string]#string#  sessionKey 
  
 * [.array]#array# :
-** string - activationKey
+** [.string]#string#  - activationKey
  
 * [.array]#array# :
-** string - configChannelLabel
+** [.string]#string#  - configChannelLabel
  
 
 Returns:
@@ -917,10 +851,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-activationkey-setDetails]
+[#apidoc-activationkey-setDetails-1032382137]
 == Method: setDetails 
 
 Description:
@@ -937,28 +869,25 @@ Parameters:
 * [.string]#string#  key
  
 * [.struct]#struct#  - activation key
-   * [.string]#string#  "description" - optional
-   * [.string]#string#  "base_channel_label" - optional -
+   ** [.string]#string#  "description" - optional
+   ** [.string]#string#  "base_channel_label" - optional -
    to set default base channel set to empty string or 'none'
-   * [.int]#int#  "usage_limit" - optional
-   * [.boolean]#boolean#  "unlimited_usage_limit" - Set true
+   ** [.int]#int#  "usage_limit" - optional
+   ** [.boolean]#boolean#  "unlimited_usage_limit" - Set true
    for unlimited usage and to override usage_limit
-   * [.boolean]#boolean#  "universal_default" - optional
-   * [.boolean]#boolean#  "disabled" - optional
-   * [.string]#string#  "contact_method" - One of the following:
-     // no end needed
-       * default
-       * ssh-push
-       * ssh-push-tunnel
-     // no end needed
- // no end needed
- 
+   ** [.boolean]#boolean#  "universal_default" - optional
+   ** [.boolean]#boolean#  "disabled" - optional
+   ** [.string]#string#  "contact_method" - One of the following:
+     
+       ** default
+       ** ssh-push
+       ** ssh-push-tunnel
+     
+  
 
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

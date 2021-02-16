@@ -4,16 +4,17 @@
 
 == Available methods
 
-* <<apidoc-formula-getCombinedFormulasByServerId,getCombinedFormulasByServerId>>
-* <<apidoc-formula-getFormulasByGroupId,getFormulasByGroupId>>
-* <<apidoc-formula-getFormulasByServerId,getFormulasByServerId>>
-* <<apidoc-formula-getGroupFormulaData,getGroupFormulaData>>
-* <<apidoc-formula-getSystemFormulaData,getSystemFormulaData>>
-* <<apidoc-formula-listFormulas,listFormulas>>
-* <<apidoc-formula-setFormulasOfGroup,setFormulasOfGroup>>
-* <<apidoc-formula-setFormulasOfServer,setFormulasOfServer>>
-* <<apidoc-formula-setGroupFormulaData,setGroupFormulaData>>
-* <<apidoc-formula-setSystemFormulaData,setSystemFormulaData>>
+* <<apidoc-formula-getCombinedFormulaDataByServerIds-860892414,getCombinedFormulaDataByServerIds>>
+* <<apidoc-formula-getCombinedFormulasByServerId-1957398032,getCombinedFormulasByServerId>>
+* <<apidoc-formula-getFormulasByGroupId-1085888709,getFormulasByGroupId>>
+* <<apidoc-formula-getFormulasByServerId-2102001207,getFormulasByServerId>>
+* <<apidoc-formula-getGroupFormulaData-1922896936,getGroupFormulaData>>
+* <<apidoc-formula-getSystemFormulaData-467903124,getSystemFormulaData>>
+* <<apidoc-formula-listFormulas-1525789217,listFormulas>>
+* <<apidoc-formula-setFormulasOfGroup-589058590,setFormulasOfGroup>>
+* <<apidoc-formula-setFormulasOfServer-694766024,setFormulasOfServer>>
+* <<apidoc-formula-setGroupFormulaData-388551431,setGroupFormulaData>>
+* <<apidoc-formula-setSystemFormulaData-291054778,setSystemFormulaData>>
 
 == Description
 
@@ -23,10 +24,40 @@ Provides methods to access and modify formulas.
 
 formula
 
-'''
+
+[#apidoc-formula-getCombinedFormulaDataByServerIds-860892414]
+== Method: getCombinedFormulaDataByServerIds 
+
+Description:
+
+Return the list of formulas a server and all his groups have.
 
 
-[#apidoc-formula-getCombinedFormulasByServerId]
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  formulaName
+ 
+* [.array]#array# :
+** [.int]#int#  - systemID
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - formula_data
+     ** [.int]#int#  "system_id"
+     ** [.string]#string#  "minion_id"
+     ** [.struct with saved formula values]#struct with saved formula values#  "formula_values"
+  
+    
+
+
+
+[#apidoc-formula-getCombinedFormulasByServerId-1957398032]
 == Method: getCombinedFormulasByServerId 
 
 Description:
@@ -46,14 +77,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - (formulas)
+** [.string]#string#  - (formulas)
  
 
 
-'''
 
-
-[#apidoc-formula-getFormulasByGroupId]
+[#apidoc-formula-getFormulasByGroupId-1085888709]
 == Method: getFormulasByGroupId 
 
 Description:
@@ -73,14 +102,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - (formulas)
+** [.string]#string#  - (formulas)
  
 
 
-'''
 
-
-[#apidoc-formula-getFormulasByServerId]
+[#apidoc-formula-getFormulasByServerId-2102001207]
 == Method: getFormulasByServerId 
 
 Description:
@@ -100,14 +127,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - (formulas)
+** [.string]#string#  - (formulas)
  
 
 
-'''
 
-
-[#apidoc-formula-getGroupFormulaData]
+[#apidoc-formula-getGroupFormulaData-1922896936]
 == Method: getGroupFormulaData 
 
 Description:
@@ -132,10 +157,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-formula-getSystemFormulaData]
+[#apidoc-formula-getSystemFormulaData-467903124]
 == Method: getSystemFormulaData 
 
 Description:
@@ -160,10 +183,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-formula-listFormulas]
+[#apidoc-formula-listFormulas-1525789217]
 == Method: listFormulas 
 
 Description:
@@ -181,14 +202,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - (formulas)
+** [.string]#string#  - (formulas)
  
 
 
-'''
 
-
-[#apidoc-formula-setFormulasOfGroup]
+[#apidoc-formula-setFormulasOfGroup-589058590]
 == Method: setFormulasOfGroup 
 
 Description:
@@ -205,7 +224,7 @@ Parameters:
 * [.int]#int#  systemGroupId
  
 * [.array]#array# :
-** string - formulaName
+** [.string]#string#  - formulaName
  
 
 Returns:
@@ -214,10 +233,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-formula-setFormulasOfServer]
+[#apidoc-formula-setFormulasOfServer-694766024]
 == Method: setFormulasOfServer 
 
 Description:
@@ -234,7 +251,7 @@ Parameters:
 * [.int]#int#  systemId
  
 * [.array]#array# :
-** string - formulaName
+** [.string]#string#  - formulaName
  
 
 Returns:
@@ -243,10 +260,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-formula-setGroupFormulaData]
+[#apidoc-formula-setGroupFormulaData-388551431]
 == Method: setGroupFormulaData 
 
 Description:
@@ -273,10 +288,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-formula-setSystemFormulaData]
+[#apidoc-formula-setSystemFormulaData-291054778]
 == Method: setSystemFormulaData 
 
 Description:
@@ -302,6 +315,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

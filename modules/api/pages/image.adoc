@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-image-delete,delete>>
-* <<apidoc-image-getCustomValues,getCustomValues>>
-* <<apidoc-image-getDetails,getDetails>>
-* <<apidoc-image-getRelevantErrata,getRelevantErrata>>
-* <<apidoc-image-importImage,importImage>>
-* <<apidoc-image-listImages,listImages>>
-* <<apidoc-image-listPackages,listPackages>>
-* <<apidoc-image-scheduleImageBuild,scheduleImageBuild>>
+* <<apidoc-image-delete-896185192,delete>>
+* <<apidoc-image-getCustomValues-96594432,getCustomValues>>
+* <<apidoc-image-getDetails-1546706639,getDetails>>
+* <<apidoc-image-getRelevantErrata-433321211,getRelevantErrata>>
+* <<apidoc-image-importImage-2015874556,importImage>>
+* <<apidoc-image-listImages-1525668766,listImages>>
+* <<apidoc-image-listPackages-1137678248,listPackages>>
+* <<apidoc-image-scheduleImageBuild-1242514050,scheduleImageBuild>>
 
 == Description
 
@@ -21,10 +21,8 @@ Provides methods to access and modify images.
 
 image
 
-'''
 
-
-[#apidoc-image-delete]
+[#apidoc-image-delete-896185192]
 == Method: delete 
 
 Description:
@@ -47,10 +45,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image-getCustomValues]
+[#apidoc-image-getCustomValues-96594432]
 == Method: getCustomValues 
 
 Description:
@@ -70,16 +66,13 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - Map of custom labels to custom values
-      * [.string]#string#  "custom info label"
-      * [.string]#string#  "value"
-    // no end needed
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 
-'''
 
-
-[#apidoc-image-getDetails]
+[#apidoc-image-getDetails-1546706639]
 == Method: getDetails 
 
 Description:
@@ -99,44 +92,41 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Image Overview information
-   * [.int]#int#  "id"
-   * [.string]#string#  "name" - image name
-   * [.string]#string#  "version" - image tag/version
-   * [.int]#int#  "revision" - image build revision number
-   * [.string]#string#  "arch" - image architecture
-   * [.boolean]#boolean#  "external" - true if the image is built externally,
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name" - image name
+   ** [.string]#string#  "version" - image tag/version
+   ** [.int]#int#  "revision" - image build revision number
+   ** [.string]#string#  "arch" - image architecture
+   ** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-   * [.string]#string#  "checksum"
-   * [.string]#string#  "profileLabel"
-   * [.string]#string#  "buildStatus" - One of:
-            // no end needed
-              * queued
-              * picked up
-              * completed
-              * failed
-            // no end needed
-   * [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
-            // no end needed
-              * queued
-              * picked up
-              * completed
-              * failed
-            // no end needed
-   * [.int]#int#  "buildServerId"
-   * [.int]#int#  "securityErrata"
-   * [.int]#int#  "bugErrata"
-   * [.int]#int#  "enhancementErrata"
-   * [.int]#int#  "outdatedPackages"
-   * [.int]#int#  "installedPackages"
- // no end needed
-  
+   ** [.string]#string#  "checksum"
+   ** [.string]#string#  "profileLabel"
+   ** [.string]#string#  "buildStatus" - One of:
+            
+              ** queued
+              ** picked up
+              ** completed
+              ** failed
+            
+   ** [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
+            
+              ** queued
+              ** picked up
+              ** completed
+              ** failed
+            
+   ** [.int]#int#  "buildServerId"
+   ** [.int]#int#  "securityErrata"
+   ** [.int]#int#  "bugErrata"
+   ** [.int]#int#  "enhancementErrata"
+   ** [.int]#int#  "outdatedPackages"
+   ** [.int]#int#  "installedPackages"
+   
  
 
 
-'''
 
-
-[#apidoc-image-getRelevantErrata]
+[#apidoc-image-getRelevantErrata-433321211]
 == Method: getRelevantErrata 
 
 Description:
@@ -157,22 +147,18 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  - errata
-          * [.int]#int#  "id" - Errata ID.
-          * [.string]#string#  "date" - Date erratum was created.
-          * [.string]#string#  "update_date" - Date erratum was updated.
-          * [.string]#string#  "advisory_synopsis" - Summary of the erratum.
-          * [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
-          * [.string]#string#  "advisory_name" - Name such as RHSA, etc
-      // no end needed
- 
-      // no end needed
- 
+          ** [.int]#int#  "id" - Errata ID.
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "update_date" - Date erratum was updated.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+          ** [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
+          ** [.string]#string#  "advisory_name" - Name such as RHSA, etc
+       
+       
 
 
-'''
 
-
-[#apidoc-image-importImage]
+[#apidoc-image-importImage-2015874556]
 == Method: importImage 
 
 Description:
@@ -205,14 +191,12 @@ Parameters:
 
 Returns:
 
-* int - ID of the inspect action created 
+* [.int]#int#  id - ID of the inspect action created
  
 
 
-'''
 
-
-[#apidoc-image-listImages]
+[#apidoc-image-listImages-1525668766]
 == Method: listImages 
 
 Description:
@@ -231,24 +215,20 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Image information
-   * [.int]#int#  "id"
-   * [.string]#string#  "name" - image name
-   * [.string]#string#  "version" - image tag/version
-   * [.int]#int#  "revision" - image build revision number
-   * [.string]#string#  "arch" - image architecture
-   * [.boolean]#boolean#  "external" - true if the image is built externally,
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name" - image name
+   ** [.string]#string#  "version" - image tag/version
+   ** [.int]#int#  "revision" - image build revision number
+   ** [.string]#string#  "arch" - image architecture
+   ** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-   * [.string]#string#  "storeLabel"
-   * [.string]#string#  "checksum"
- // no end needed
-  // no end needed
- 
+   ** [.string]#string#  "storeLabel"
+   ** [.string]#string#  "checksum"
+    
 
 
-'''
 
-
-[#apidoc-image-listPackages]
+[#apidoc-image-listPackages-1137678248]
 == Method: listPackages 
 
 Description:
@@ -268,21 +248,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  - package
-                 * [.string]#string#  "name"
-                 * [.string]#string#  "version"
-                 * [.string]#string#  "release"
-                 * [.string]#string#  "epoch"
-                 * [.string]#string#  "arch"
-          // no end needed
-      // no end needed
- 
+          ** [.struct]#struct#  - package
+                 *** [.string]#string#  "name"
+                 *** [.string]#string#  "version"
+                 *** [.string]#string#  "release"
+                 *** [.string]#string#  "epoch"
+                 *** [.string]#string#  "arch"
+                 
 
 
-'''
 
-
-[#apidoc-image-scheduleImageBuild]
+[#apidoc-image-scheduleImageBuild-1242514050]
 == Method: scheduleImageBuild 
 
 Description:
@@ -307,9 +283,7 @@ Parameters:
 
 Returns:
 
-* int - ID of the build action created. 
+* [.int]#int#  id - ID of the build action created
  
 
-
-'''
 

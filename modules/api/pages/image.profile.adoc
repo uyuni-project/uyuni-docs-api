@@ -4,15 +4,15 @@
 
 == Available methods
 
-* <<apidoc-image_profile-create,create>>
-* <<apidoc-image_profile-delete,delete>>
-* <<apidoc-image_profile-deleteCustomValues,deleteCustomValues>>
-* <<apidoc-image_profile-getCustomValues,getCustomValues>>
-* <<apidoc-image_profile-getDetails,getDetails>>
-* <<apidoc-image_profile-listImageProfileTypes,listImageProfileTypes>>
-* <<apidoc-image_profile-listImageProfiles,listImageProfiles>>
-* <<apidoc-image_profile-setCustomValues,setCustomValues>>
-* <<apidoc-image_profile-setDetails,setDetails>>
+* <<apidoc-image_profile-create-2078827576,create>>
+* <<apidoc-image_profile-delete-100550728,delete>>
+* <<apidoc-image_profile-deleteCustomValues-1089411380,deleteCustomValues>>
+* <<apidoc-image_profile-getCustomValues-265668598,getCustomValues>>
+* <<apidoc-image_profile-getDetails-1425418950,getDetails>>
+* <<apidoc-image_profile-listImageProfileTypes-1228340166,listImageProfileTypes>>
+* <<apidoc-image_profile-listImageProfiles-189565366,listImageProfiles>>
+* <<apidoc-image_profile-setCustomValues-925150096,setCustomValues>>
+* <<apidoc-image_profile-setDetails-1787846776,setDetails>>
 
 == Description
 
@@ -22,10 +22,8 @@ Provides methods to access and modify image profiles.
 
 image.profile
 
-'''
 
-
-[#apidoc-image_profile-create]
+[#apidoc-image_profile-create-2078827576]
 == Method: create 
 
 Description:
@@ -56,10 +54,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_profile-delete]
+[#apidoc-image_profile-delete-100550728]
 == Method: delete 
 
 Description:
@@ -82,10 +78,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_profile-deleteCustomValues]
+[#apidoc-image_profile-deleteCustomValues-1089411380]
 == Method: deleteCustomValues 
 
 Description:
@@ -104,7 +98,7 @@ Parameters:
 * [.string]#string#  label
  
 * [.array]#array# :
-** string - customDataKeys
+** [.string]#string#  - customDataKeys
  
 
 Returns:
@@ -113,10 +107,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_profile-getCustomValues]
+[#apidoc-image_profile-getCustomValues-265668598]
 == Method: getCustomValues 
 
 Description:
@@ -136,16 +128,13 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - Map of custom labels to custom values
-      * [.string]#string#  "custom info label"
-      * [.string]#string#  "value"
-    // no end needed
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 
-'''
 
-
-[#apidoc-image_profile-getDetails]
+[#apidoc-image_profile-getDetails-1425418950]
 == Method: getDetails 
 
 Description:
@@ -165,20 +154,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Image Profile information
-   * [.string]#string#  "label"
-   * [.string]#string#  "imageType"
-   * [.string]#string#  "imageStore"
-   * [.string]#string#  "activationKey"
-   * [.string]#string#  "path" - in case type support path
- // no end needed
-  
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "imageType"
+   ** [.string]#string#  "imageStore"
+   ** [.string]#string#  "activationKey"
+   ** [.string]#string#  "path" - in case type support path
+   
  
 
 
-'''
 
-
-[#apidoc-image_profile-listImageProfileTypes]
+[#apidoc-image_profile-listImageProfileTypes-1228340166]
 == Method: listImageProfileTypes 
 
 Description:
@@ -196,14 +182,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - imageProfileTypes
+** [.string]#string#  - imageProfileTypes
  
 
 
-'''
 
-
-[#apidoc-image_profile-listImageProfiles]
+[#apidoc-image_profile-listImageProfiles-189565366]
 == Method: listImageProfiles 
 
 Description:
@@ -222,20 +206,16 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Image Profile information
-   * [.string]#string#  "label"
-   * [.string]#string#  "imageType"
-   * [.string]#string#  "imageStore"
-   * [.string]#string#  "activationKey"
-   * [.string]#string#  "path" - in case type support path
- // no end needed
-  // no end needed
- 
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "imageType"
+   ** [.string]#string#  "imageStore"
+   ** [.string]#string#  "activationKey"
+   ** [.string]#string#  "path" - in case type support path
+    
 
 
-'''
 
-
-[#apidoc-image_profile-setCustomValues]
+[#apidoc-image_profile-setCustomValues-925150096]
 == Method: setCustomValues 
 
 Description:
@@ -252,10 +232,9 @@ Parameters:
 * [.string]#string#  label
  
 * [.struct]#struct#  - Map of custom labels to custom values
-      * [.string]#string#  "custom info label"
-      * [.string]#string#  "value"
-    // no end needed
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 Returns:
 
@@ -263,10 +242,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_profile-setDetails]
+[#apidoc-image_profile-setDetails-1787846776]
 == Method: setDetails 
 
 Description:
@@ -283,17 +260,14 @@ Parameters:
 * [.string]#string#  label
  
 * [.struct]#struct#  - image profile details
-     * [.string]#string#  "storeLabel"
-     * [.string]#string#  "path"
-     * [.string]#string#  "activationKey" - set empty string to unset
-   // no end needed
- 
+     ** [.string]#string#  "storeLabel"
+     ** [.string]#string#  "path"
+     ** [.string]#string#  "activationKey" - set empty string to unset
+    
 
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

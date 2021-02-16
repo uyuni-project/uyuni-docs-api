@@ -1,6 +1,6 @@
 = Uyuni API Documentation
 Uyuni
-4.0
+API version: 25
 :homepage: https://www.uyuni-project.org/
 
 Wecome to the Uyuni API. By using the included API calls, you can easily automate many of
@@ -19,58 +19,59 @@ if not, see http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 Red Hat trademarks are not licensed under GPLv2. No permission is granted to use or replicate Red Hat
 trademarks that are incorporated in this software or its documentation.
 
-* <<handlers/actionchain.adoc#apidoc-actionchain>>
-* <<handlers/activationkey.adoc#apidoc-activationkey>>
-* <<handlers/admin.monitoring.adoc#apidoc-admin_monitoring>>
-* <<handlers/api.adoc#apidoc-api>>
-* <<handlers/audit.adoc#apidoc-audit>>
-* <<handlers/auth.adoc#apidoc-auth>>
-* <<handlers/channel.adoc#apidoc-channel>>
-* <<handlers/channel.access.adoc#apidoc-channel_access>>
-* <<handlers/channel.org.adoc#apidoc-channel_org>>
-* <<handlers/channel.software.adoc#apidoc-channel_software>>
-* <<handlers/configchannel.adoc#apidoc-configchannel>>
-* <<handlers/contentmanagement.adoc#apidoc-contentmanagement>>
-* <<handlers/distchannel.adoc#apidoc-distchannel>>
-* <<handlers/errata.adoc#apidoc-errata>>
-* <<handlers/formula.adoc#apidoc-formula>>
-* <<handlers/image.adoc#apidoc-image>>
-* <<handlers/image.profile.adoc#apidoc-image_profile>>
-* <<handlers/image.store.adoc#apidoc-image_store>>
-* <<handlers/kickstart.adoc#apidoc-kickstart>>
-* <<handlers/kickstart.filepreservation.adoc#apidoc-kickstart_filepreservation>>
-* <<handlers/kickstart.keys.adoc#apidoc-kickstart_keys>>
-* <<handlers/kickstart.profile.adoc#apidoc-kickstart_profile>>
-* <<handlers/kickstart.profile.keys.adoc#apidoc-kickstart_profile_keys>>
-* <<handlers/kickstart.profile.software.adoc#apidoc-kickstart_profile_software>>
-* <<handlers/kickstart.profile.system.adoc#apidoc-kickstart_profile_system>>
-* <<handlers/kickstart.snippet.adoc#apidoc-kickstart_snippet>>
-* <<handlers/kickstart.tree.adoc#apidoc-kickstart_tree>>
-* <<handlers/org.adoc#apidoc-org>>
-* <<handlers/org.trusts.adoc#apidoc-org_trusts>>
-* <<handlers/packages.adoc#apidoc-packages>>
-* <<handlers/packages.provider.adoc#apidoc-packages_provider>>
-* <<handlers/packages.search.adoc#apidoc-packages_search>>
-* <<handlers/preferences.locale.adoc#apidoc-preferences_locale>>
-* <<handlers/proxy.adoc#apidoc-proxy>>
-* <<handlers/recurringaction.adoc#apidoc-recurringaction>>
-* <<handlers/saltkey.adoc#apidoc-saltkey>>
-* <<handlers/satellite.adoc#apidoc-satellite>>
-* <<handlers/schedule.adoc#apidoc-schedule>>
-* <<handlers/subscriptionmatching.pinnedsubscription.adoc#apidoc-subscriptionmatching_pinnedsubscription>>
-* <<handlers/sync.content.adoc#apidoc-sync_content>>
-* <<handlers/sync.master.adoc#apidoc-sync_master>>
-* <<handlers/sync.slave.adoc#apidoc-sync_slave>>
-* <<handlers/system.adoc#apidoc-system>>
-* <<handlers/system.config.adoc#apidoc-system_config>>
-* <<handlers/system.crash.adoc#apidoc-system_crash>>
-* <<handlers/system.custominfo.adoc#apidoc-system_custominfo>>
-* <<handlers/system.provisioning.snapshot.adoc#apidoc-system_provisioning_snapshot>>
-* <<handlers/system.scap.adoc#apidoc-system_scap>>
-* <<handlers/system.search.adoc#apidoc-system_search>>
-* <<handlers/systemgroup.adoc#apidoc-systemgroup>>
-* <<handlers/user.adoc#apidoc-user>>
-* <<handlers/user.external.adoc#apidoc-user_external>>
-* <<handlers/virtualhostmanager.adoc#apidoc-virtualhostmanager>>
+* <<actionchain.adoc#apidoc-actionchain>>
+* <<activationkey.adoc#apidoc-activationkey>>
+* <<admin.monitoring.adoc#apidoc-admin_monitoring>>
+* <<api.adoc#apidoc-api>>
+* <<audit.adoc#apidoc-audit>>
+* <<auth.adoc#apidoc-auth>>
+* <<channel.adoc#apidoc-channel>>
+* <<channel.access.adoc#apidoc-channel_access>>
+* <<channel.org.adoc#apidoc-channel_org>>
+* <<channel.software.adoc#apidoc-channel_software>>
+* <<cluster.adoc#apidoc-cluster>>
+* <<configchannel.adoc#apidoc-configchannel>>
+* <<contentmanagement.adoc#apidoc-contentmanagement>>
+* <<distchannel.adoc#apidoc-distchannel>>
+* <<errata.adoc#apidoc-errata>>
+* <<formula.adoc#apidoc-formula>>
+* <<image.adoc#apidoc-image>>
+* <<image.profile.adoc#apidoc-image_profile>>
+* <<image.store.adoc#apidoc-image_store>>
+* <<kickstart.adoc#apidoc-kickstart>>
+* <<kickstart.filepreservation.adoc#apidoc-kickstart_filepreservation>>
+* <<kickstart.keys.adoc#apidoc-kickstart_keys>>
+* <<kickstart.profile.adoc#apidoc-kickstart_profile>>
+* <<kickstart.profile.keys.adoc#apidoc-kickstart_profile_keys>>
+* <<kickstart.profile.software.adoc#apidoc-kickstart_profile_software>>
+* <<kickstart.profile.system.adoc#apidoc-kickstart_profile_system>>
+* <<kickstart.snippet.adoc#apidoc-kickstart_snippet>>
+* <<kickstart.tree.adoc#apidoc-kickstart_tree>>
+* <<maintenance.adoc#apidoc-maintenance>>
+* <<org.adoc#apidoc-org>>
+* <<org.trusts.adoc#apidoc-org_trusts>>
+* <<packages.adoc#apidoc-packages>>
+* <<packages.provider.adoc#apidoc-packages_provider>>
+* <<packages.search.adoc#apidoc-packages_search>>
+* <<preferences.locale.adoc#apidoc-preferences_locale>>
+* <<proxy.adoc#apidoc-proxy>>
+* <<recurringaction.adoc#apidoc-recurringaction>>
+* <<saltkey.adoc#apidoc-saltkey>>
+* <<schedule.adoc#apidoc-schedule>>
+* <<subscriptionmatching.pinnedsubscription.adoc#apidoc-subscriptionmatching_pinnedsubscription>>
+* <<sync.content.adoc#apidoc-sync_content>>
+* <<sync.master.adoc#apidoc-sync_master>>
+* <<sync.slave.adoc#apidoc-sync_slave>>
+* <<system.adoc#apidoc-system>>
+* <<system.config.adoc#apidoc-system_config>>
+* <<system.custominfo.adoc#apidoc-system_custominfo>>
+* <<system.provisioning.powermanagement.adoc#apidoc-system_provisioning_powermanagement>>
+* <<system.provisioning.snapshot.adoc#apidoc-system_provisioning_snapshot>>
+* <<system.scap.adoc#apidoc-system_scap>>
+* <<system.search.adoc#apidoc-system_search>>
+* <<systemgroup.adoc#apidoc-systemgroup>>
+* <<user.adoc#apidoc-user>>
+* <<user.external.adoc#apidoc-user_external>>
+* <<virtualhostmanager.adoc#apidoc-virtualhostmanager>>
 
-Generated on: 4/13/2020
+Generated on: 2/8/2021

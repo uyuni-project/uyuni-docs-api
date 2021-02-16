@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-distchannel-listDefaultMaps,listDefaultMaps>>
-* <<apidoc-distchannel-listMapsForOrg,listMapsForOrg>>
-* <<apidoc-distchannel-listMapsForOrg,listMapsForOrg>>
-* <<apidoc-distchannel-setMapForOrg,setMapForOrg>>
+* <<apidoc-distchannel-listDefaultMaps-1944468301,listDefaultMaps>>
+* <<apidoc-distchannel-listMapsForOrg-145423728,listMapsForOrg>>
+* <<apidoc-distchannel-listMapsForOrg-1014071026,listMapsForOrg>>
+* <<apidoc-distchannel-setMapForOrg-2090905694,setMapForOrg>>
 
 == Description
 
@@ -17,10 +17,8 @@ Provides methods to access and modify distribution channel information
 
 distchannel
 
-'''
 
-
-[#apidoc-distchannel-listDefaultMaps]
+[#apidoc-distchannel-listDefaultMaps-1944468301]
 == Method: listDefaultMaps 
 
 Description:
@@ -39,21 +37,17 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  - distChannelMap
-          * [.string]#string#  "os" - Operationg System
-          * [.string]#string#  "release" - OS Relase
-          * [.string]#string#  "arch_name" - Channel architecture
-          * [.string]#string#  "channel_label" - Channel label
-          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
-     // no end needed
- 
-   // no end needed
- 
+          ** [.string]#string#  "os" - Operationg System
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - Channel architecture
+          ** [.string]#string#  "channel_label" - Channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
-'''
 
-
-[#apidoc-distchannel-listMapsForOrg]
+[#apidoc-distchannel-listMapsForOrg-145423728]
 == Method: listMapsForOrg 
 
 Description:
@@ -72,27 +66,23 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  - distChannelMap
-          * [.string]#string#  "os" - Operationg System
-          * [.string]#string#  "release" - OS Relase
-          * [.string]#string#  "arch_name" - Channel architecture
-          * [.string]#string#  "channel_label" - Channel label
-          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
-     // no end needed
- 
-   // no end needed
- 
+          ** [.string]#string#  "os" - Operationg System
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - Channel architecture
+          ** [.string]#string#  "channel_label" - Channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
-'''
 
-
-[#apidoc-distchannel-listMapsForOrg]
+[#apidoc-distchannel-listMapsForOrg-1014071026]
 == Method: listMapsForOrg 
 
 Description:
 
 Lists distribution channel maps valid for an organization,
- satellite admin right needed
+ Uyuni admin rights needed.
 
 
 
@@ -108,21 +98,17 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  - distChannelMap
-          * [.string]#string#  "os" - Operationg System
-          * [.string]#string#  "release" - OS Relase
-          * [.string]#string#  "arch_name" - Channel architecture
-          * [.string]#string#  "channel_label" - Channel label
-          * [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
-     // no end needed
- 
-   // no end needed
- 
+          ** [.string]#string#  "os" - Operationg System
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - Channel architecture
+          ** [.string]#string#  "channel_label" - Channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
-'''
 
-
-[#apidoc-distchannel-setMapForOrg]
+[#apidoc-distchannel-setMapForOrg-2090905694]
 == Method: setMapForOrg 
 
 Description:
@@ -151,6 +137,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

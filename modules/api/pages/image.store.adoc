@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-image_store-create,create>>
-* <<apidoc-image_store-delete,delete>>
-* <<apidoc-image_store-getDetails,getDetails>>
-* <<apidoc-image_store-listImageStoreTypes,listImageStoreTypes>>
-* <<apidoc-image_store-listImageStores,listImageStores>>
-* <<apidoc-image_store-setDetails,setDetails>>
+* <<apidoc-image_store-create-439679202,create>>
+* <<apidoc-image_store-delete-1654094587,delete>>
+* <<apidoc-image_store-getDetails-1599695386,getDetails>>
+* <<apidoc-image_store-listImageStoreTypes-573207593,listImageStoreTypes>>
+* <<apidoc-image_store-listImageStores-581486647,listImageStores>>
+* <<apidoc-image_store-setDetails-334348732,setDetails>>
 
 == Description
 
@@ -19,10 +19,8 @@ Provides methods to access and modify image stores.
 
 image.store
 
-'''
 
-
-[#apidoc-image_store-create]
+[#apidoc-image_store-create-439679202]
 == Method: create 
 
 Description:
@@ -43,10 +41,9 @@ Parameters:
 * [.string]#string#  storeType
  
 * [.struct]#struct#  - credentials optional
-   * [.string]#string#  "username"
-   * [.string]#string#  "password"
- // no end needed
- 
+   ** [.string]#string#  "username"
+   ** [.string]#string#  "password"
+  
 
 Returns:
 
@@ -54,10 +51,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_store-delete]
+[#apidoc-image_store-delete-1654094587]
 == Method: delete 
 
 Description:
@@ -80,10 +75,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-image_store-getDetails]
+[#apidoc-image_store-getDetails-1599695386]
 == Method: getDetails 
 
 Description:
@@ -103,20 +96,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Image Store information
-   * [.string]#string#  "label"
-   * [.string]#string#  "uri"
-   * [.string]#string#  "storetype"
-   * [.boolean]#boolean#  "hasCredentials"
-   * [.string]#string#  "username"
- // no end needed
-  
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "uri"
+   ** [.string]#string#  "storetype"
+   ** [.boolean]#boolean#  "hasCredentials"
+   ** [.string]#string#  "username"
+   
  
 
 
-'''
 
-
-[#apidoc-image_store-listImageStoreTypes]
+[#apidoc-image_store-listImageStoreTypes-573207593]
 == Method: listImageStoreTypes 
 
 Description:
@@ -135,18 +125,14 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Image Store Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
- // no end needed
-  // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+    
 
 
-'''
 
-
-[#apidoc-image_store-listImageStores]
+[#apidoc-image_store-listImageStores-581486647]
 == Method: listImageStores 
 
 Description:
@@ -165,20 +151,16 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Image Store information
-   * [.string]#string#  "label"
-   * [.string]#string#  "uri"
-   * [.string]#string#  "storetype"
-   * [.boolean]#boolean#  "hasCredentials"
-   * [.string]#string#  "username"
- // no end needed
-  // no end needed
- 
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "uri"
+   ** [.string]#string#  "storetype"
+   ** [.boolean]#boolean#  "hasCredentials"
+   ** [.string]#string#  "username"
+    
 
 
-'''
 
-
-[#apidoc-image_store-setDetails]
+[#apidoc-image_store-setDetails-334348732]
 == Method: setDetails 
 
 Description:
@@ -195,17 +177,14 @@ Parameters:
 * [.string]#string#  label
  
 * [.struct]#struct#  - image store details
-     * [.string]#string#  "uri"
-     * [.string]#string#  "username" - pass empty string to unset credentials
-     * [.string]#string#  "password"
-   // no end needed
- 
+     ** [.string]#string#  "uri"
+     ** [.string]#string#  "username" - pass empty string to unset credentials
+     ** [.string]#string#  "password"
+    
 
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

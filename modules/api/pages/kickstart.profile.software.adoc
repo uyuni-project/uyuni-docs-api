@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_software-appendToSoftwareList,appendToSoftwareList>>
-* <<apidoc-kickstart_profile_software-getSoftwareDetails,getSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-getSoftwareList,getSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareDetails,setSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-setSoftwareList,setSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareList,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-appendToSoftwareList-1171120083,appendToSoftwareList>>
+* <<apidoc-kickstart_profile_software-getSoftwareDetails-466262884,getSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-getSoftwareList-1369080285,getSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareDetails-819132906,setSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-1443422804,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-1032560110,setSoftwareList>>
 
 == Description
 
@@ -20,10 +20,8 @@ Provides methods to access and modify the software list
 
 kickstart.profile.software
 
-'''
 
-
-[#apidoc-kickstart_profile_software-appendToSoftwareList]
+[#apidoc-kickstart_profile_software-appendToSoftwareList-1171120083]
 == Method: appendToSoftwareList 
 
 Description:
@@ -51,10 +49,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_profile_software-getSoftwareDetails]
+[#apidoc-kickstart_profile_software-getSoftwareDetails-466262884]
 == Method: getSoftwareDetails 
 
 Description:
@@ -74,16 +70,13 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - Kickstart packages info
-              * [.string]#string#  "noBase" - Install @Base package group
-              * [.string]#string#  "ignoreMissing" - Ignore missing packages
-          // no end needed
- 
+              ** [.string]#string#  "noBase" - Install @Base package group
+              ** [.string]#string#  "ignoreMissing" - Ignore missing packages
+           
 
 
-'''
 
-
-[#apidoc-kickstart_profile_software-getSoftwareList]
+[#apidoc-kickstart_profile_software-getSoftwareList-1369080285]
 == Method: getSoftwareList 
 
 Description:
@@ -103,15 +96,13 @@ Parameters:
 
 Returns:
 
-* string[] - Get a list of a kickstart profile's
- software packages. 
+* [.array]#array# :
+** [.string]#string#  - Get a list of a kickstart profile's software packages
  
 
 
-'''
 
-
-[#apidoc-kickstart_profile_software-setSoftwareDetails]
+[#apidoc-kickstart_profile_software-setSoftwareDetails-819132906]
 == Method: setSoftwareDetails 
 
 Description:
@@ -128,10 +119,9 @@ Parameters:
 * [.string]#string#  ksLabel - Label of the kickstart profile
  
 * [.struct]#struct#  - Kickstart packages info
-              * [.string]#string#  "noBase" - Install @Base package group
-              * [.string]#string#  "ignoreMissing" - Ignore missing packages
-          // no end needed
- 
+              ** [.string]#string#  "noBase" - Install @Base package group
+              ** [.string]#string#  "ignoreMissing" - Ignore missing packages
+           
 
 Returns:
 
@@ -139,10 +129,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_profile_software-setSoftwareList]
+[#apidoc-kickstart_profile_software-setSoftwareList-1443422804]
 == Method: setSoftwareList 
 
 Description:
@@ -169,10 +157,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_profile_software-setSoftwareList]
+[#apidoc-kickstart_profile_software-setSoftwareList-1032560110]
 == Method: setSoftwareList 
 
 Description:
@@ -204,6 +190,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

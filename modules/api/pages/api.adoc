@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-api-getApiCallList,getApiCallList>>
-* <<apidoc-api-getApiNamespaceCallList,getApiNamespaceCallList>>
-* <<apidoc-api-getApiNamespaces,getApiNamespaces>>
-* <<apidoc-api-getVersion,getVersion>>
-* <<apidoc-api-systemVersion,systemVersion>>
+* <<apidoc-api-getApiCallList-2020702385,getApiCallList>>
+* <<apidoc-api-getApiNamespaceCallList-614785733,getApiNamespaceCallList>>
+* <<apidoc-api-getApiNamespaces-1131577797,getApiNamespaces>>
+* <<apidoc-api-getVersion-1298780808,getVersion>>
+* <<apidoc-api-systemVersion-157990006,systemVersion>>
 
 == Description
 
@@ -18,10 +18,8 @@ Methods providing information about the API.
 
 api
 
-'''
 
-
-[#apidoc-api-getApiCallList]
+[#apidoc-api-getApiCallList-2020702385]
 == Method: getApiCallList 
 
 Description:
@@ -39,18 +37,15 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - method_info
-       * [.string]#string#  "name" - method name
-       * [.string]#string#  "parameters" - method parameters
-       * [.string]#string#  "exceptions" - method exceptions
-       * [.string]#string#  "return" - method return type
-   // no end needed
- 
+       ** [.string]#string#  "name" - method name
+       ** [.string]#string#  "parameters" - method parameters
+       ** [.string]#string#  "exceptions" - method exceptions
+       ** [.string]#string#  "return" - method return type
+    
 
 
-'''
 
-
-[#apidoc-api-getApiNamespaceCallList]
+[#apidoc-api-getApiNamespaceCallList-614785733]
 == Method: getApiNamespaceCallList 
 
 Description:
@@ -70,18 +65,15 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - method_info
-        * [.string]#string#  "name" - method name
-        * [.string]#string#  "parameters" - method parameters
-        * [.string]#string#  "exceptions" - method exceptions
-        * [.string]#string#  "return" - method return type
-   // no end needed
- 
+        ** [.string]#string#  "name" - method name
+        ** [.string]#string#  "parameters" - method parameters
+        ** [.string]#string#  "exceptions" - method exceptions
+        ** [.string]#string#  "return" - method return type
+    
 
 
-'''
 
-
-[#apidoc-api-getApiNamespaces]
+[#apidoc-api-getApiNamespaces-1131577797]
 == Method: getApiNamespaces 
 
 Description:
@@ -99,22 +91,18 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - namespace
-        * [.string]#string#  "namespace" - API namespace
-        * [.string]#string#  "handler" - API Handler
-   // no end needed
- 
+        ** [.string]#string#  "namespace" - API namespace
+        ** [.string]#string#  "handler" - API Handler
+    
 
 
-'''
 
-
-[#apidoc-api-getVersion]
+[#apidoc-api-getVersion-1298780808]
 == Method: getVersion 
 
 Description:
 
-Returns the version of the API. Since Spacewalk 0.4
- (Satellite 5.3) it is no more related to server version.
+Returns the version of the API.
 
 
 
@@ -124,14 +112,12 @@ Parameters:
 
 Returns:
 
-* string 
+* [.string]#string#  version
  
 
 
-'''
 
-
-[#apidoc-api-systemVersion]
+[#apidoc-api-systemVersion-157990006]
 == Method: systemVersion 
 
 Description:
@@ -146,9 +132,7 @@ Parameters:
 
 Returns:
 
-* string 
+* [.string]#string#  version
  
 
-
-'''
 

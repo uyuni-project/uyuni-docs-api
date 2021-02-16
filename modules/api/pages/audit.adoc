@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-audit-listImagesByPatchStatus,listImagesByPatchStatus>>
-* <<apidoc-audit-listImagesByPatchStatus,listImagesByPatchStatus>>
-* <<apidoc-audit-listSystemsByPatchStatus,listSystemsByPatchStatus>>
-* <<apidoc-audit-listSystemsByPatchStatus,listSystemsByPatchStatus>>
+* <<apidoc-audit-listImagesByPatchStatus-1915040171,listImagesByPatchStatus>>
+* <<apidoc-audit-listImagesByPatchStatus-150306380,listImagesByPatchStatus>>
+* <<apidoc-audit-listSystemsByPatchStatus-1962629977,listSystemsByPatchStatus>>
+* <<apidoc-audit-listSystemsByPatchStatus-319450809,listSystemsByPatchStatus>>
 
 == Description
 
@@ -17,10 +17,8 @@ Methods to audit systems.
 
 audit
 
-'''
 
-
-[#apidoc-audit-listImagesByPatchStatus]
+[#apidoc-audit-listImagesByPatchStatus-1915040171]
 == Method: listImagesByPatchStatus 
 
 Description:
@@ -43,27 +41,23 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - cve_audit_image
-     * [.int]#int#  "image_id"
-     * [.string]#string#  "patch_status"
-         // no end needed
-             * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
-             * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
-             * NOT_AFFECTED - Not affected
-             * PATCHED - Patched
-         // no end needed
-     * [.array]#array#  "string"
-** channel_labels - Labels of channels that contain an unapplied patch
-     * [.array]#array#  "string"
-** errata_advisories - Advisories of erratas that patch the specified vulnerability
- // no end needed
-  // no end needed
- 
+     ** [.int]#int#  "image_id"
+     ** [.string]#string#  "patch_status"
+         
+             ** AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
+             ** AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
+             ** NOT_AFFECTED - Not affected
+             ** PATCHED - Patched
+         
+     ** [.array]#array#  "string"
+*** channel_labels - Labels of channels that contain an unapplied patch
+     ** [.array]#array#  "string"
+*** errata_advisories - Advisories of erratas that patch the specified vulnerability
+    
 
 
-'''
 
-
-[#apidoc-audit-listImagesByPatchStatus]
+[#apidoc-audit-listImagesByPatchStatus-150306380]
 == Method: listImagesByPatchStatus 
 
 Description:
@@ -83,40 +77,36 @@ Parameters:
 * [.string]#string#  cveIdentifier
  
 * [.array]#array# :
-** string - patchStatusLabel
-  // no end needed
+** [.string]#string#  - patchStatusLabel
+  
       * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
       * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
       * NOT_AFFECTED - Not affected
       * PATCHED - Patched
-  // no end needed
+  
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - cve_audit_image
-     * [.int]#int#  "image_id"
-     * [.string]#string#  "patch_status"
-         // no end needed
-             * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
-             * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
-             * NOT_AFFECTED - Not affected
-             * PATCHED - Patched
-         // no end needed
-     * [.array]#array#  "string"
-** channel_labels - Labels of channels that contain an unapplied patch
-     * [.array]#array#  "string"
-** errata_advisories - Advisories of erratas that patch the specified vulnerability
- // no end needed
-  // no end needed
- 
+     ** [.int]#int#  "image_id"
+     ** [.string]#string#  "patch_status"
+         
+             ** AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
+             ** AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
+             ** NOT_AFFECTED - Not affected
+             ** PATCHED - Patched
+         
+     ** [.array]#array#  "string"
+*** channel_labels - Labels of channels that contain an unapplied patch
+     ** [.array]#array#  "string"
+*** errata_advisories - Advisories of erratas that patch the specified vulnerability
+    
 
 
-'''
 
-
-[#apidoc-audit-listSystemsByPatchStatus]
+[#apidoc-audit-listSystemsByPatchStatus-1962629977]
 == Method: listSystemsByPatchStatus 
 
 Description:
@@ -139,27 +129,23 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - cve_audit_system
-     * [.int]#int#  "system_id"
-     * [.string]#string#  "patch_status"
-         // no end needed
-             * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
-             * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
-             * NOT_AFFECTED - Not affected
-             * PATCHED - Patched
-         // no end needed
-     * [.array]#array#  "string"
-** channel_labels - Labels of channels that contain an unapplied patch
-     * [.array]#array#  "string"
-** errata_advisories - Advisories of erratas that patch the specified vulnerability
- // no end needed
-  // no end needed
- 
+     ** [.int]#int#  "system_id"
+     ** [.string]#string#  "patch_status"
+         
+             ** AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
+             ** AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
+             ** NOT_AFFECTED - Not affected
+             ** PATCHED - Patched
+         
+     ** [.array]#array#  "string"
+*** channel_labels - Labels of channels that contain an unapplied patch
+     ** [.array]#array#  "string"
+*** errata_advisories - Advisories of erratas that patch the specified vulnerability
+    
 
 
-'''
 
-
-[#apidoc-audit-listSystemsByPatchStatus]
+[#apidoc-audit-listSystemsByPatchStatus-319450809]
 == Method: listSystemsByPatchStatus 
 
 Description:
@@ -179,35 +165,31 @@ Parameters:
 * [.string]#string#  cveIdentifier
  
 * [.array]#array# :
-** string - patchStatusLabel
-  // no end needed
+** [.string]#string#  - patchStatusLabel
+  
       * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
       * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
       * NOT_AFFECTED - Not affected
       * PATCHED - Patched
-  // no end needed
+  
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - cve_audit_system
-     * [.int]#int#  "system_id"
-     * [.string]#string#  "patch_status"
-         // no end needed
-             * AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
-             * AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
-             * NOT_AFFECTED - Not affected
-             * PATCHED - Patched
-         // no end needed
-     * [.array]#array#  "string"
-** channel_labels - Labels of channels that contain an unapplied patch
-     * [.array]#array#  "string"
-** errata_advisories - Advisories of erratas that patch the specified vulnerability
- // no end needed
-  // no end needed
- 
+     ** [.int]#int#  "system_id"
+     ** [.string]#string#  "patch_status"
+         
+             ** AFFECTED_PATCH_INAPPLICABLE - Affected, patch available in unassigned channel
+             ** AFFECTED_PATCH_APPLICABLE - Affected, patch available in assigned channel
+             ** NOT_AFFECTED - Not affected
+             ** PATCHED - Patched
+         
+     ** [.array]#array#  "string"
+*** channel_labels - Labels of channels that contain an unapplied patch
+     ** [.array]#array#  "string"
+*** errata_advisories - Advisories of erratas that patch the specified vulnerability
+    
 
-
-'''
 

@@ -4,32 +4,33 @@
 
 == Available methods
 
-* <<apidoc-configchannel-channelExists,channelExists>>
-* <<apidoc-configchannel-create,create>>
-* <<apidoc-configchannel-create,create>>
-* <<apidoc-configchannel-createOrUpdatePath,createOrUpdatePath>>
-* <<apidoc-configchannel-createOrUpdateSymlink,createOrUpdateSymlink>>
-* <<apidoc-configchannel-deleteChannels,deleteChannels>>
-* <<apidoc-configchannel-deleteFileRevisions,deleteFileRevisions>>
-* <<apidoc-configchannel-deleteFiles,deleteFiles>>
-* <<apidoc-configchannel-deployAllSystems,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems,deployAllSystems>>
-* <<apidoc-configchannel-getDetails,getDetails>>
-* <<apidoc-configchannel-getDetails,getDetails>>
-* <<apidoc-configchannel-getEncodedFileRevision,getEncodedFileRevision>>
-* <<apidoc-configchannel-getFileRevision,getFileRevision>>
-* <<apidoc-configchannel-getFileRevisions,getFileRevisions>>
-* <<apidoc-configchannel-listFiles,listFiles>>
-* <<apidoc-configchannel-listGlobals,listGlobals>>
-* <<apidoc-configchannel-listSubscribedSystems,listSubscribedSystems>>
-* <<apidoc-configchannel-lookupChannelInfo,lookupChannelInfo>>
-* <<apidoc-configchannel-lookupFileInfo,lookupFileInfo>>
-* <<apidoc-configchannel-lookupFileInfo,lookupFileInfo>>
-* <<apidoc-configchannel-scheduleFileComparisons,scheduleFileComparisons>>
-* <<apidoc-configchannel-update,update>>
-* <<apidoc-configchannel-updateInitSls,updateInitSls>>
+* <<apidoc-configchannel-channelExists-1563149382,channelExists>>
+* <<apidoc-configchannel-create-1074791118,create>>
+* <<apidoc-configchannel-create-1752213359,create>>
+* <<apidoc-configchannel-create-1109753335,create>>
+* <<apidoc-configchannel-createOrUpdatePath-2106959639,createOrUpdatePath>>
+* <<apidoc-configchannel-createOrUpdateSymlink-1544507531,createOrUpdateSymlink>>
+* <<apidoc-configchannel-deleteChannels-1704641164,deleteChannels>>
+* <<apidoc-configchannel-deleteFileRevisions-2064777114,deleteFileRevisions>>
+* <<apidoc-configchannel-deleteFiles-1617463959,deleteFiles>>
+* <<apidoc-configchannel-deployAllSystems-1855386573,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-1242489018,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-462965669,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-403879268,deployAllSystems>>
+* <<apidoc-configchannel-getDetails-1263257405,getDetails>>
+* <<apidoc-configchannel-getDetails-1287200676,getDetails>>
+* <<apidoc-configchannel-getEncodedFileRevision-1070731890,getEncodedFileRevision>>
+* <<apidoc-configchannel-getFileRevision-1450248078,getFileRevision>>
+* <<apidoc-configchannel-getFileRevisions-1003983940,getFileRevisions>>
+* <<apidoc-configchannel-listFiles-1136085369,listFiles>>
+* <<apidoc-configchannel-listGlobals-452431415,listGlobals>>
+* <<apidoc-configchannel-listSubscribedSystems-1094923568,listSubscribedSystems>>
+* <<apidoc-configchannel-lookupChannelInfo-1036316015,lookupChannelInfo>>
+* <<apidoc-configchannel-lookupFileInfo-2049964811,lookupFileInfo>>
+* <<apidoc-configchannel-lookupFileInfo-332065032,lookupFileInfo>>
+* <<apidoc-configchannel-scheduleFileComparisons-607042875,scheduleFileComparisons>>
+* <<apidoc-configchannel-update-313142474,update>>
+* <<apidoc-configchannel-updateInitSls-1548134743,updateInitSls>>
 
 == Description
 
@@ -40,10 +41,8 @@ Provides methods to access and modify many aspects of
 
 configchannel
 
-'''
 
-
-[#apidoc-configchannel-channelExists]
+[#apidoc-configchannel-channelExists-1563149382]
 == Method: channelExists 
 
 Description:
@@ -62,14 +61,12 @@ Parameters:
 
 Returns:
 
-* 1 if exists, 0 otherwise. 
+* [.int]#int#  existence - 1 if exists, 0 otherwise
  
 
 
-'''
 
-
-[#apidoc-configchannel-create]
+[#apidoc-configchannel-create-1074791118]
 == Method: create 
 
 Description:
@@ -94,28 +91,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
   
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-create]
+[#apidoc-configchannel-create-1752213359]
 == Method: create 
 
 Description:
@@ -142,28 +135,72 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
   
+   
  
 
 
-'''
+
+[#apidoc-configchannel-create-1109753335]
+== Method: create 
+
+Description:
+
+Create a new global config channel. Caller must be at least a
+ config admin or an organization admin.
 
 
-[#apidoc-configchannel-createOrUpdatePath]
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel
+ 
+* [.string]#string#  channelName
+ 
+* [.string]#string#  channelDescription
+ 
+* [.string]#string#  channelType - The channel type either 'normal' or 'state'.
+ 
+* [.struct]#struct#  - path info
+      ** [.string]#string#  "contents" - Contents of the init.sls file
+      ** [.boolean]#boolean#  "contents_enc64" - Identifies base64 encoded content(default: disabled)
+   
+
+Returns:
+
+* * [.struct]#struct#  - Configuration Channel information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
+   * [.struct]#struct#  - Configuration Channel Type information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+   
+ 
+
+
+
+[#apidoc-configchannel-createOrUpdatePath-2106959639]
 == Method: createOrUpdatePath 
 
 Description:
@@ -185,65 +222,61 @@ Parameters:
 * [.boolean]#boolean#  isDir - True if the path is a directory, False if it is a file.
  
 * [.struct]#struct#  - path info
-      * [.string]#string#  "contents" - Contents of the file (text or base64 encoded if binary or want to preserve
+      ** [.string]#string#  "contents" - Contents of the file (text or base64 encoded if binary or want to preserve
                          control characters like LF, CR etc.)(only for non-directories)
-      * [.boolean]#boolean#  "contents_enc64" - Identifies base64 encoded content
+      ** [.boolean]#boolean#  "contents_enc64" - Identifies base64 encoded content
                    (default: disabled, only for non-directories)
-      * [.string]#string#  "owner" - Owner of the file/directory.
-      * [.string]#string#  "group" - Group name of the file/directory.
-      * [.string]#string#  "permissions" - Octal file/directory permissions (eg: 644)
-      * [.string]#string#  "selinux_ctx" - SELinux Security context (optional)
-      * [.string]#string#  "macro-start-delimiter" - Config file macro start delimiter. Use null or empty
+      ** [.string]#string#  "owner" - Owner of the file/directory.
+      ** [.string]#string#  "group" - Group name of the file/directory.
+      ** [.string]#string#  "permissions" - Octal file/directory permissions (eg: 644)
+      ** [.string]#string#  "selinux_ctx" - SELinux Security context (optional)
+      ** [.string]#string#  "macro-start-delimiter" - Config file macro start delimiter. Use null or empty
                   string to accept the default. (only for non-directories)
-      * [.string]#string#  "macro-end-delimiter" - Config file macro end delimiter. Use null or
+      ** [.string]#string#  "macro-end-delimiter" - Config file macro end delimiter. Use null or
   empty string to accept the default. (only for non-directories)
-      * [.int]#int#  "revision" - next revision number, auto increment for null
-      * [.boolean]#boolean#  "binary" - mark the binary content, if True,
+      ** [.int]#int#  "revision" - next revision number, auto increment for null
+      ** [.boolean]#boolean#  "binary" - mark the binary content, if True,
       base64 encoded content is expected (only for non-directories)
 
-  // no end needed
- 
+   
 
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-configchannel-createOrUpdateSymlink]
+[#apidoc-configchannel-createOrUpdateSymlink-1544507531]
 == Method: createOrUpdateSymlink 
 
 Description:
@@ -263,53 +296,49 @@ Parameters:
 * [.string]#string#  path
  
 * [.struct]#struct#  - path info
-      * [.string]#string#  "target_path" - The target path for the symbolic link
-      * [.string]#string#  "selinux_ctx" - SELinux Security context (optional)
-      * [.int]#int#  "revision" - next revision number,
+      ** [.string]#string#  "target_path" - The target path for the symbolic link
+      ** [.string]#string#  "selinux_ctx" - SELinux Security context (optional)
+      ** [.int]#int#  "revision" - next revision number,
        skip this field for automatic revision number assignment
-  // no end needed
- 
+   
 
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-configchannel-deleteChannels]
+[#apidoc-configchannel-deleteChannels-1704641164]
 == Method: deleteChannels 
 
 Description:
@@ -325,7 +354,7 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.array]#array# :
-** string - configuration channel labels to delete.
+** [.string]#string#  - configuration channel labels to delete.
  
 
 Returns:
@@ -334,10 +363,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deleteFileRevisions]
+[#apidoc-configchannel-deleteFileRevisions-2064777114]
 == Method: deleteFileRevisions 
 
 Description:
@@ -356,7 +383,7 @@ Parameters:
 * [.string]#string#  filePath - Configuration file path.
  
 * [.array]#array# :
-** int - List of revisions to delete
+** [.int]#int#  - List of revisions to delete
  
 
 Returns:
@@ -365,10 +392,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deleteFiles]
+[#apidoc-configchannel-deleteFiles-1617463959]
 == Method: deleteFiles 
 
 Description:
@@ -385,7 +410,7 @@ Parameters:
 * [.string]#string#  channelLabel - Channel to remove the files from.
  
 * [.array]#array# :
-** string - file paths to remove.
+** [.string]#string#  - file paths to remove.
  
 
 Returns:
@@ -394,10 +419,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deployAllSystems]
+[#apidoc-configchannel-deployAllSystems-1855386573]
 == Method: deployAllSystems 
 
 Description:
@@ -421,10 +444,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deployAllSystems]
+[#apidoc-configchannel-deployAllSystems-1242489018]
 == Method: deployAllSystems 
 
 Description:
@@ -450,10 +471,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deployAllSystems]
+[#apidoc-configchannel-deployAllSystems-462965669]
 == Method: deployAllSystems 
 
 Description:
@@ -479,10 +498,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-deployAllSystems]
+[#apidoc-configchannel-deployAllSystems-403879268]
 == Method: deployAllSystems 
 
 Description:
@@ -510,10 +527,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-configchannel-getDetails]
+[#apidoc-configchannel-getDetails-1263257405]
 == Method: getDetails 
 
 Description:
@@ -533,28 +548,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
   
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-getDetails]
+[#apidoc-configchannel-getDetails-1287200676]
 == Method: getDetails 
 
 Description:
@@ -574,28 +585,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
   
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-getEncodedFileRevision]
+[#apidoc-configchannel-getEncodedFileRevision-1070731890]
 == Method: getEncodedFileRevision 
 
 Description:
@@ -620,42 +627,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-getFileRevision]
+[#apidoc-configchannel-getFileRevision-1450248078]
 == Method: getFileRevision 
 
 Description:
@@ -679,42 +683,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-getFileRevisions]
+[#apidoc-configchannel-getFileRevisions-1003983940]
 == Method: getFileRevisions 
 
 Description:
@@ -737,43 +738,39 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
- 
- // no end needed
- 
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+  
+  
 
 
-'''
 
-
-[#apidoc-configchannel-listFiles]
+[#apidoc-configchannel-listFiles-1136085369]
 == Method: listFiles 
 
 Description:
@@ -794,24 +791,20 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Configuration File information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified" - Last Modified Date
- // no end needed
- 
- // no end needed
- 
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified" - Last Modified Date
+  
+  
 
 
-'''
 
-
-[#apidoc-configchannel-listGlobals]
+[#apidoc-configchannel-listGlobals-452431415]
 == Method: listGlobals 
 
 Description:
@@ -830,30 +823,25 @@ Returns:
 
 * [.array]#array# :
   * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.string]#string#  "type"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "type"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
- 
- // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+  
 
 
-'''
 
-
-[#apidoc-configchannel-listSubscribedSystems]
+[#apidoc-configchannel-listSubscribedSystems-1094923568]
 == Method: listSubscribedSystems 
 
 Description:
@@ -874,18 +862,14 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - system
-   * [.int]#int#  "id"
-   * [.string]#string#  "name"
- // no end needed
- 
- // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+  
+  
 
 
-'''
 
-
-[#apidoc-configchannel-lookupChannelInfo]
+[#apidoc-configchannel-lookupChannelInfo-1036316015]
 == Method: lookupChannelInfo 
 
 Description:
@@ -900,36 +884,31 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.array]#array# :
-** string - configuration channel label
+** [.string]#string#  - configuration channel label
  
 
 Returns:
 
 * [.array]#array# :
   * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
- 
- // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+  
 
 
-'''
 
-
-[#apidoc-configchannel-lookupFileInfo]
+[#apidoc-configchannel-lookupFileInfo-2049964811]
 == Method: lookupFileInfo 
 
 Description:
@@ -947,51 +926,47 @@ Parameters:
 * [.string]#string#  channelLabel - label of config channel to lookup on
  
 * [.array]#array# :
-** string - List of paths to examine.
+** [.string]#string#  - List of paths to examine.
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
- 
- // no end needed
- 
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+  
+  
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-configchannel-lookupFileInfo]
+[#apidoc-configchannel-lookupFileInfo-332065032]
 == Method: lookupFileInfo 
 
 Description:
@@ -1016,43 +991,40 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
 Available since API version: 10.12
 
-'''
 
-
-[#apidoc-configchannel-scheduleFileComparisons]
+[#apidoc-configchannel-scheduleFileComparisons-607042875]
 == Method: scheduleFileComparisons 
 
 Description:
@@ -1072,20 +1044,18 @@ Parameters:
 * [.string]#string#  path - File path
  
 * [.array]#array# :
-** long - The list of server id that the
+** [.long]#long#  - The list of server id that the
  comparison will be performed on
  
 
 Returns:
 
-* int actionId - The action id of the scheduled action 
+* [.int]#int#  actionId - The action id of the scheduled action
  
 
 
-'''
 
-
-[#apidoc-configchannel-update]
+[#apidoc-configchannel-update-313142474]
 == Method: update 
 
 Description:
@@ -1111,28 +1081,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - Configuration Channel information
-   * [.int]#int#  "id"
-   * [.int]#int#  "orgId"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.string]#string#  "description"
-   * [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  - Configuration Channel Type information
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
-   * [.int]#int#  "priority"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
   
+   
  
 
 
-'''
 
-
-[#apidoc-configchannel-updateInitSls]
+[#apidoc-configchannel-updateInitSls-1548134743]
 == Method: updateInitSls 
 
 Description:
@@ -1149,45 +1115,42 @@ Parameters:
 * [.string]#string#  configChannelLabel
  
 * [.struct]#struct#  - path info
-      * [.string]#string#  "contents" - Contents of the init.sls file
-      * [.boolean]#boolean#  "contents_enc64" - Identifies base64 encoded content(default: disabled)
-  // no end needed
- 
+      ** [.string]#string#  "contents" - Contents of the init.sls file
+      ** [.boolean]#boolean#  "contents_enc64" - Identifies base64 encoded content(default: disabled)
+      ** [.int]#int#  "revision" - next revision number, auto increment for null
+   
 
 Returns:
 
 * * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
-  
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+   
  
 
-
-'''
 

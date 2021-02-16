@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-sync_slave-create,create>>
-* <<apidoc-sync_slave-delete,delete>>
-* <<apidoc-sync_slave-getAllowedOrgs,getAllowedOrgs>>
-* <<apidoc-sync_slave-getSlave,getSlave>>
-* <<apidoc-sync_slave-getSlaveByName,getSlaveByName>>
-* <<apidoc-sync_slave-getSlaves,getSlaves>>
-* <<apidoc-sync_slave-setAllowedOrgs,setAllowedOrgs>>
-* <<apidoc-sync_slave-update,update>>
+* <<apidoc-sync_slave-create-565678786,create>>
+* <<apidoc-sync_slave-delete-856511870,delete>>
+* <<apidoc-sync_slave-getAllowedOrgs-994372924,getAllowedOrgs>>
+* <<apidoc-sync_slave-getSlave-179672552,getSlave>>
+* <<apidoc-sync_slave-getSlaveByName-386480126,getSlaveByName>>
+* <<apidoc-sync_slave-getSlaves-1648091808,getSlaves>>
+* <<apidoc-sync_slave-setAllowedOrgs-502805865,setAllowedOrgs>>
+* <<apidoc-sync_slave-update-1644361919,update>>
 
 == Description
 
@@ -22,10 +22,8 @@ Contains methods to set up information about allowed-"slaves", for use
 
 sync.slave
 
-'''
 
-
-[#apidoc-sync_slave-create]
+[#apidoc-sync_slave-create-565678786]
 == Method: create 
 
 Description:
@@ -49,19 +47,16 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - IssSlave info
-   * [.int]#int#  "id"
-   * [.string]#string#  "slave"
-   * [.boolean]#boolean#  "enabled"
-   * [.boolean]#boolean#  "allowAllOrgs"
- // no end needed
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
  
 
 
-'''
 
-
-[#apidoc-sync_slave-delete]
+[#apidoc-sync_slave-delete-856511870]
 == Method: delete 
 
 Description:
@@ -84,10 +79,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-sync_slave-getAllowedOrgs]
+[#apidoc-sync_slave-getAllowedOrgs-994372924]
 == Method: getAllowedOrgs 
 
 Description:
@@ -107,14 +100,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** int - ids of allowed organizations
+** [.int]#int#  - ids of allowed organizations
  
 
 
-'''
 
-
-[#apidoc-sync_slave-getSlave]
+[#apidoc-sync_slave-getSlave-179672552]
 == Method: getSlave 
 
 Description:
@@ -134,19 +125,16 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - IssSlave info
-   * [.int]#int#  "id"
-   * [.string]#string#  "slave"
-   * [.boolean]#boolean#  "enabled"
-   * [.boolean]#boolean#  "allowAllOrgs"
- // no end needed
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
  
 
 
-'''
 
-
-[#apidoc-sync_slave-getSlaveByName]
+[#apidoc-sync_slave-getSlaveByName-386480126]
 == Method: getSlaveByName 
 
 Description:
@@ -166,19 +154,16 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - IssSlave info
-   * [.int]#int#  "id"
-   * [.string]#string#  "slave"
-   * [.boolean]#boolean#  "enabled"
-   * [.boolean]#boolean#  "allowAllOrgs"
- // no end needed
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
  
 
 
-'''
 
-
-[#apidoc-sync_slave-getSlaves]
+[#apidoc-sync_slave-getSlaves-1648091808]
 == Method: getSlaves 
 
 Description:
@@ -197,20 +182,16 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  - IssSlave info
-   * [.int]#int#  "id"
-   * [.string]#string#  "slave"
-   * [.boolean]#boolean#  "enabled"
-   * [.boolean]#boolean#  "allowAllOrgs"
- // no end needed
- 
-      // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+  
+       
 
 
-'''
 
-
-[#apidoc-sync_slave-setAllowedOrgs]
+[#apidoc-sync_slave-setAllowedOrgs-502805865]
 == Method: setAllowedOrgs 
 
 Description:
@@ -227,7 +208,7 @@ Parameters:
 * [.int]#int#  id - Id of the desired Slave
  
 * [.array]#array# :
-** int - List of org-ids we're willing to export
+** [.int]#int#  - List of org-ids we're willing to export
  
 
 Returns:
@@ -236,10 +217,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-sync_slave-update]
+[#apidoc-sync_slave-update-1644361919]
 == Method: update 
 
 Description:
@@ -265,14 +244,11 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - IssSlave info
-   * [.int]#int#  "id"
-   * [.string]#string#  "slave"
-   * [.boolean]#boolean#  "enabled"
-   * [.boolean]#boolean#  "allowAllOrgs"
- // no end needed
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
  
 
-
-'''
 

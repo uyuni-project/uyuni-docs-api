@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-virtualhostmanager-create,create>>
-* <<apidoc-virtualhostmanager-delete,delete>>
-* <<apidoc-virtualhostmanager-getDetail,getDetail>>
-* <<apidoc-virtualhostmanager-getModuleParameters,getModuleParameters>>
-* <<apidoc-virtualhostmanager-listAvailableVirtualHostGathererModules,listAvailableVirtualHostGathererModules>>
-* <<apidoc-virtualhostmanager-listVirtualHostManagers,listVirtualHostManagers>>
+* <<apidoc-virtualhostmanager-create-1825558106,create>>
+* <<apidoc-virtualhostmanager-delete-1755823122,delete>>
+* <<apidoc-virtualhostmanager-getDetail-21955570,getDetail>>
+* <<apidoc-virtualhostmanager-getModuleParameters-838139333,getModuleParameters>>
+* <<apidoc-virtualhostmanager-listAvailableVirtualHostGathererModules-593185514,listAvailableVirtualHostGathererModules>>
+* <<apidoc-virtualhostmanager-listVirtualHostManagers-1724420046,listVirtualHostManagers>>
 
 == Description
 
@@ -19,10 +19,8 @@ Provides the namespace for the Virtual Host Manager methods.
 
 virtualhostmanager
 
-'''
 
-
-[#apidoc-virtualhostmanager-create]
+[#apidoc-virtualhostmanager-create-1825558106]
 == Method: create 
 
 Description:
@@ -49,10 +47,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-virtualhostmanager-delete]
+[#apidoc-virtualhostmanager-delete-1755823122]
 == Method: delete 
 
 Description:
@@ -75,10 +71,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-virtualhostmanager-getDetail]
+[#apidoc-virtualhostmanager-getDetail-21955570]
 == Method: getDetail 
 
 Description:
@@ -98,19 +92,16 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - virtual host manager
-      * [.string]#string#  "label"
-      * [.int]#int#  "org_id"
-      * [.string]#string#  "gatherer_module"
-      * [.struct]#struct#  "configs"
-  // no end needed
-  
+      ** [.string]#string#  "label"
+      ** [.int]#int#  "org_id"
+      ** [.string]#string#  "gatherer_module"
+      ** [.struct]#struct#  "configs"
+    
  
 
 
-'''
 
-
-[#apidoc-virtualhostmanager-getModuleParameters]
+[#apidoc-virtualhostmanager-getModuleParameters-838139333]
 == Method: getModuleParameters 
 
 Description:
@@ -130,14 +121,12 @@ Parameters:
 
 Returns:
 
-* map 
+* [.map]#map#  module_params - module parameters
  
 
 
-'''
 
-
-[#apidoc-virtualhostmanager-listAvailableVirtualHostGathererModules]
+[#apidoc-virtualhostmanager-listAvailableVirtualHostGathererModules-593185514]
 == Method: listAvailableVirtualHostGathererModules 
 
 Description:
@@ -155,14 +144,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - moduleName
+** [.string]#string#  - moduleName
  
 
 
-'''
 
-
-[#apidoc-virtualhostmanager-listVirtualHostManagers]
+[#apidoc-virtualhostmanager-listVirtualHostManagers-1724420046]
 == Method: listVirtualHostManagers 
 
 Description:
@@ -181,15 +168,11 @@ Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  - virtual host manager
-      * [.string]#string#  "label"
-      * [.int]#int#  "org_id"
-      * [.string]#string#  "gatherer_module"
-      * [.struct]#struct#  "configs"
-  // no end needed
- 
-     // no end needed
- 
+      ** [.string]#string#  "label"
+      ** [.int]#int#  "org_id"
+      ** [.string]#string#  "gatherer_module"
+      ** [.struct]#struct#  "configs"
+   
+      
 
-
-'''
 

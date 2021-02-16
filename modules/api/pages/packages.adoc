@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-packages-findByNvrea,findByNvrea>>
-* <<apidoc-packages-getDetails,getDetails>>
-* <<apidoc-packages-getPackage,getPackage>>
-* <<apidoc-packages-getPackageUrl,getPackageUrl>>
-* <<apidoc-packages-listChangelog,listChangelog>>
-* <<apidoc-packages-listDependencies,listDependencies>>
-* <<apidoc-packages-listFiles,listFiles>>
-* <<apidoc-packages-listProvidingChannels,listProvidingChannels>>
-* <<apidoc-packages-listProvidingErrata,listProvidingErrata>>
-* <<apidoc-packages-listSourcePackages,listSourcePackages>>
-* <<apidoc-packages-removePackage,removePackage>>
-* <<apidoc-packages-removeSourcePackage,removeSourcePackage>>
+* <<apidoc-packages-findByNvrea-193750022,findByNvrea>>
+* <<apidoc-packages-getDetails-1922949345,getDetails>>
+* <<apidoc-packages-getPackage-334563687,getPackage>>
+* <<apidoc-packages-getPackageUrl-1810711373,getPackageUrl>>
+* <<apidoc-packages-listChangelog-1892322930,listChangelog>>
+* <<apidoc-packages-listDependencies-887606755,listDependencies>>
+* <<apidoc-packages-listFiles-1833824722,listFiles>>
+* <<apidoc-packages-listProvidingChannels-46711852,listProvidingChannels>>
+* <<apidoc-packages-listProvidingErrata-84093742,listProvidingErrata>>
+* <<apidoc-packages-listSourcePackages-243130253,listSourcePackages>>
+* <<apidoc-packages-removePackage-673307146,removePackage>>
+* <<apidoc-packages-removeSourcePackage-719355325,removeSourcePackage>>
 
 == Description
 
@@ -26,10 +26,8 @@ Methods to retrieve information about the Packages contained
 
 packages
 
-'''
 
-
-[#apidoc-packages-findByNvrea]
+[#apidoc-packages-findByNvrea-193750022]
 == Method: findByNvrea 
 
 Description:
@@ -62,27 +60,23 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  - package
-      * [.string]#string#  "name"
-      * [.string]#string#  "version"
-      * [.string]#string#  "release"
-      * [.string]#string#  "epoch"
-      * [.int]#int#  "id"
-      * [.string]#string#  "arch_label"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-      * [.string]#string#  "path" - The path on that file system that the package
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "path" - The path on that file system that the package
              resides
-      * [.string]#string#  "provider" - The provider of the package, determined by
+      ** [.string]#string#  "provider" - The provider of the package, determined by
               the gpg key it was signed with.
-  // no end needed
- 
-   // no end needed
- 
+   
+    
 
 
-'''
 
-
-[#apidoc-packages-getDetails]
+[#apidoc-packages-getDetails-1922949345]
 == Method: getDetails 
 
 Description:
@@ -102,37 +96,34 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - package
-       * [.int]#int#  "id"
-       * [.string]#string#  "name"
-       * [.string]#string#  "epoch"
-       * [.string]#string#  "version"
-       * [.string]#string#  "release"
-       * [.string]#string#  "arch_label"
-       * [.array]#array#  "providing_channels"
-** string - Channel label providing this package.
-       * [.string]#string#  "build_host"
-       * [.string]#string#  "description"
-       * [.string]#string#  "checksum"
-       * [.string]#string#  "checksum_type"
-       * [.string]#string#  "vendor"
-       * [.string]#string#  "summary"
-       * [.string]#string#  "cookie"
-       * [.string]#string#  "license"
-       * [.string]#string#  "file"
-       * [.string]#string#  "build_date"
-       * [.string]#string#  "last_modified_date"
-       * [.string]#string#  "size"
-       * [.string]#string#  "path" - The path on the Satellite's file system that
+       ** [.int]#int#  "id"
+       ** [.string]#string#  "name"
+       ** [.string]#string#  "epoch"
+       ** [.string]#string#  "version"
+       ** [.string]#string#  "release"
+       ** [.string]#string#  "arch_label"
+       ** [.array]#array#  "providing_channels"
+*** string - Channel label providing this package.
+       ** [.string]#string#  "build_host"
+       ** [.string]#string#  "description"
+       ** [.string]#string#  "checksum"
+       ** [.string]#string#  "checksum_type"
+       ** [.string]#string#  "vendor"
+       ** [.string]#string#  "summary"
+       ** [.string]#string#  "cookie"
+       ** [.string]#string#  "license"
+       ** [.string]#string#  "file"
+       ** [.string]#string#  "build_date"
+       ** [.string]#string#  "last_modified_date"
+       ** [.string]#string#  "size"
+       ** [.string]#string#  "path" - The path on the Uyuni server's file system that
               the package resides.
-       * [.string]#string#  "payload_size"
-    // no end needed
- 
+       ** [.string]#string#  "payload_size"
+     
 
 
-'''
 
-
-[#apidoc-packages-getPackage]
+[#apidoc-packages-getPackage-334563687]
 == Method: getPackage 
 
 Description:
@@ -153,14 +144,13 @@ Parameters:
 
 Returns:
 
-* binary object - package file 
+* [.array]#array# :
+** [.byte]#byte#  - binary object - package file
  
 
 
-'''
 
-
-[#apidoc-packages-getPackageUrl]
+[#apidoc-packages-getPackageUrl-1810711373]
 == Method: getPackageUrl 
 
 Description:
@@ -184,10 +174,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-packages-listChangelog]
+[#apidoc-packages-listChangelog-1892322930]
 == Method: listChangelog 
 
 Description:
@@ -210,10 +198,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-packages-listDependencies]
+[#apidoc-packages-listDependencies-887606755]
 == Method: listDependencies 
 
 Description:
@@ -233,31 +219,27 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - dependency
-       * [.string]#string#  "dependency"
-       * [.string]#string#  "dependency_type" - One of the following:
-         // no end needed
-           * requires
-           * conflicts
-           * obsoletes
-           * provides
-           * recommends
-           * suggests
-           * supplements
-           * enhances
-           * predepends
-           * breaks
-         // no end needed
-       * [.string]#string#  "dependency_modifier"
-     // no end needed
-   // no end needed
- 
+     ** [.struct]#struct#  - dependency
+       *** [.string]#string#  "dependency"
+       *** [.string]#string#  "dependency_type" - One of the following:
+         
+           *** requires
+           *** conflicts
+           *** obsoletes
+           *** provides
+           *** recommends
+           *** suggests
+           *** supplements
+           *** enhances
+           *** predepends
+           *** breaks
+         
+       *** [.string]#string#  "dependency_modifier"
+         
 
 
-'''
 
-
-[#apidoc-packages-listFiles]
+[#apidoc-packages-listFiles-1833824722]
 == Method: listFiles 
 
 Description:
@@ -277,23 +259,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - file info
-       * [.string]#string#  "path"
-       * [.string]#string#  "type"
-       * [.string]#string#  "last_modified_date"
-       * [.string]#string#  "checksum"
-       * [.string]#string#  "checksum_type"
-       * [.int]#int#  "size"
-       * [.string]#string#  "linkto"
-     // no end needed
-   // no end needed
- 
+     ** [.struct]#struct#  - file info
+       *** [.string]#string#  "path"
+       *** [.string]#string#  "type"
+       *** [.string]#string#  "last_modified_date"
+       *** [.string]#string#  "checksum"
+       *** [.string]#string#  "checksum_type"
+       *** [.int]#int#  "size"
+       *** [.string]#string#  "linkto"
+         
 
 
-'''
 
-
-[#apidoc-packages-listProvidingChannels]
+[#apidoc-packages-listProvidingChannels-46711852]
 == Method: listProvidingChannels 
 
 Description:
@@ -313,19 +291,15 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - channel
-     * [.string]#string#  "label"
-     * [.string]#string#  "parent_label"
-     * [.string]#string#  "name"
-   // no end needed
- // no end needed
- 
+   ** [.struct]#struct#  - channel
+     *** [.string]#string#  "label"
+     *** [.string]#string#  "parent_label"
+     *** [.string]#string#  "name"
+     
 
 
-'''
 
-
-[#apidoc-packages-listProvidingErrata]
+[#apidoc-packages-listProvidingErrata-84093742]
 == Method: listProvidingErrata 
 
 Description:
@@ -345,22 +319,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - errata
-     * [.string]#string#  "advisory"
-     * [.string]#string#  "issue_date"
-     * [.string]#string#  "last_modified_date"
-     * [.string]#string#  "update_date"
-     * [.string]#string#  "synopsis"
-     * [.string]#string#  "type"
-   // no end needed
- // no end needed
- 
+   ** [.struct]#struct#  - errata
+     *** [.string]#string#  "advisory"
+     *** [.string]#string#  "issue_date"
+     *** [.string]#string#  "last_modified_date"
+     *** [.string]#string#  "update_date"
+     *** [.string]#string#  "synopsis"
+     *** [.string]#string#  "type"
+     
 
 
-'''
 
-
-[#apidoc-packages-listSourcePackages]
+[#apidoc-packages-listSourcePackages-243130253]
 == Method: listSourcePackages 
 
 Description:
@@ -378,23 +348,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - source_package
-     * [.int]#int#  "id"
-     * [.string]#string#  "name"
-   // no end needed
- // no end needed
- 
+   ** [.struct]#struct#  - source_package
+     *** [.int]#int#  "id"
+     *** [.string]#string#  "name"
+     
 
 
-'''
 
-
-[#apidoc-packages-removePackage]
+[#apidoc-packages-removePackage-673307146]
 == Method: removePackage 
 
 Description:
 
-Remove a package from the satellite.
+Remove a package from Uyuni.
 
 
 
@@ -412,10 +378,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-packages-removeSourcePackage]
+[#apidoc-packages-removeSourcePackage-719355325]
 == Method: removeSourcePackage 
 
 Description:
@@ -437,6 +401,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-system_custominfo-createKey,createKey>>
-* <<apidoc-system_custominfo-deleteKey,deleteKey>>
-* <<apidoc-system_custominfo-listAllKeys,listAllKeys>>
-* <<apidoc-system_custominfo-updateKey,updateKey>>
+* <<apidoc-system_custominfo-createKey-1689316426,createKey>>
+* <<apidoc-system_custominfo-deleteKey-696321613,deleteKey>>
+* <<apidoc-system_custominfo-listAllKeys-499770578,listAllKeys>>
+* <<apidoc-system_custominfo-updateKey-462724580,updateKey>>
 
 == Description
 
@@ -17,10 +17,8 @@ Provides methods to access and modify custom system information.
 
 system.custominfo
 
-'''
 
-
-[#apidoc-system_custominfo-createKey]
+[#apidoc-system_custominfo-createKey-1689316426]
 == Method: createKey 
 
 Description:
@@ -45,10 +43,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_custominfo-deleteKey]
+[#apidoc-system_custominfo-deleteKey-696321613]
 == Method: deleteKey 
 
 Description:
@@ -71,10 +67,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_custominfo-listAllKeys]
+[#apidoc-system_custominfo-listAllKeys-499770578]
 == Method: listAllKeys 
 
 Description:
@@ -93,21 +87,17 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  - custom info
-          * [.int]#int#  "id"
-          * [.string]#string#  "label"
-          * [.string]#string#  "description"
-          * [.int]#int#  "system_count"
-          * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-      // no end needed
- 
-      // no end needed
- 
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "label"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "system_count"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+       
+       
 
 
-'''
 
-
-[#apidoc-system_custominfo-updateKey]
+[#apidoc-system_custominfo-updateKey-462724580]
 == Method: updateKey 
 
 Description:
@@ -131,6 +121,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

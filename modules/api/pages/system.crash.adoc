@@ -4,17 +4,17 @@
 
 == Available methods
 
-* <<apidoc-system_crash-createCrashNote,createCrashNote>>
-* <<apidoc-system_crash-deleteCrash,deleteCrash>>
-* <<apidoc-system_crash-deleteCrashNote,deleteCrashNote>>
-* <<apidoc-system_crash-getCrashCountInfo,getCrashCountInfo>>
-* <<apidoc-system_crash-getCrashFile,getCrashFile>>
-* <<apidoc-system_crash-getCrashFileUrl,getCrashFileUrl>>
-* <<apidoc-system_crash-getCrashNotesForCrash,getCrashNotesForCrash>>
-* <<apidoc-system_crash-getCrashOverview,getCrashOverview>>
-* <<apidoc-system_crash-getCrashesByUuid,getCrashesByUuid>>
-* <<apidoc-system_crash-listSystemCrashFiles,listSystemCrashFiles>>
-* <<apidoc-system_crash-listSystemCrashes,listSystemCrashes>>
+* <<apidoc-system_crash-createCrashNote-90023615,createCrashNote>>
+* <<apidoc-system_crash-deleteCrash-1082126943,deleteCrash>>
+* <<apidoc-system_crash-deleteCrashNote-974082369,deleteCrashNote>>
+* <<apidoc-system_crash-getCrashCountInfo-1401226549,getCrashCountInfo>>
+* <<apidoc-system_crash-getCrashFile-289049029,getCrashFile>>
+* <<apidoc-system_crash-getCrashFileUrl-1000930248,getCrashFileUrl>>
+* <<apidoc-system_crash-getCrashNotesForCrash-1174772595,getCrashNotesForCrash>>
+* <<apidoc-system_crash-getCrashOverview-62146263,getCrashOverview>>
+* <<apidoc-system_crash-getCrashesByUuid-1806983232,getCrashesByUuid>>
+* <<apidoc-system_crash-listSystemCrashFiles-717735555,listSystemCrashFiles>>
+* <<apidoc-system_crash-listSystemCrashes-26568117,listSystemCrashes>>
 
 == Description
 
@@ -24,10 +24,8 @@ Provides methods to access and modify software crash information.
 
 system.crash
 
-'''
 
-
-[#apidoc-system_crash-createCrashNote]
+[#apidoc-system_crash-createCrashNote-90023615]
 == Method: createCrashNote 
 
 Description:
@@ -54,10 +52,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_crash-deleteCrash]
+[#apidoc-system_crash-deleteCrash-1082126943]
 == Method: deleteCrash 
 
 Description:
@@ -80,10 +76,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_crash-deleteCrashNote]
+[#apidoc-system_crash-deleteCrashNote-974082369]
 == Method: deleteCrashNote 
 
 Description:
@@ -106,10 +100,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashCountInfo]
+[#apidoc-system_crash-getCrashCountInfo-1401226549]
 == Method: getCrashCountInfo 
 
 Description:
@@ -129,17 +121,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - Crash Count Information
-         * [.int]#int#  "total_count" - Total number of software crashes for a system
-         * [.int]#int#  "unique_count" - Number of unique software crashes for a system
-         * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Date of the last software crash report
-     // no end needed
- 
+         ** [.int]#int#  "total_count" - Total number of software crashes for a system
+         ** [.int]#int#  "unique_count" - Number of unique software crashes for a system
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Date of the last software crash report
+      
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashFile]
+[#apidoc-system_crash-getCrashFile-289049029]
 == Method: getCrashFile 
 
 Description:
@@ -158,14 +147,13 @@ Parameters:
 
 Returns:
 
-* base64 - base64 encoded crash file. 
+* [.array]#array# :
+** [.byte]#byte#  - base64 encoded crash file
  
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashFileUrl]
+[#apidoc-system_crash-getCrashFileUrl-1000930248]
 == Method: getCrashFileUrl 
 
 Description:
@@ -184,14 +172,12 @@ Parameters:
 
 Returns:
 
-* string - The crash file download url 
+* [.string]#string#  url - The crash file download url
  
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashNotesForCrash]
+[#apidoc-system_crash-getCrashNotesForCrash-1174772595]
 == Method: getCrashNotesForCrash 
 
 Description:
@@ -211,20 +197,16 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - crashNote
-             * [.int]#int#  "id"
-             * [.string]#string#  "subject"
-             * [.string]#string#  "details"
-             * [.string]#string#  "updated"
-         // no end needed
-     // no end needed
- 
+         ** [.struct]#struct#  - crashNote
+             *** [.int]#int#  "id"
+             *** [.string]#string#  "subject"
+             *** [.string]#string#  "details"
+             *** [.string]#string#  "updated"
+               
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashOverview]
+[#apidoc-system_crash-getCrashOverview-62146263]
 == Method: getCrashOverview 
 
 Description:
@@ -242,21 +224,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - crash
-             * [.string]#string#  "uuid" - Crash UUID
-             * [.string]#string#  "component" - Package component (set if unique and non empty)
-             * [.int]#int#  "crash_count" - Number of crashes occurred
-             * [.int]#int#  "system_count" - Number of systems affected
-             * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
-         // no end needed
-     // no end needed
- 
+         ** [.struct]#struct#  - crash
+             *** [.string]#string#  "uuid" - Crash UUID
+             *** [.string]#string#  "component" - Package component (set if unique and non empty)
+             *** [.int]#int#  "crash_count" - Number of crashes occurred
+             *** [.int]#int#  "system_count" - Number of systems affected
+             *** [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
+               
 
 
-'''
 
-
-[#apidoc-system_crash-getCrashesByUuid]
+[#apidoc-system_crash-getCrashesByUuid-1806983232]
 == Method: getCrashesByUuid 
 
 Description:
@@ -276,22 +254,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - crash
-             * [.int]#int#  "server_id" - ID of the server the crash occurred on
-             * [.string]#string#  "server_name" - Name of the server the crash occurred on
-             * [.int]#int#  "crash_id" - ID of the crash with given UUID
-             * [.int]#int#  "crash_count" - Number of times the crash with given UUID occurred
-             * [.string]#string#  "crash_component" - Crash component
-             * [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
-         // no end needed
-     // no end needed
- 
+         ** [.struct]#struct#  - crash
+             *** [.int]#int#  "server_id" - ID of the server the crash occurred on
+             *** [.string]#string#  "server_name" - Name of the server the crash occurred on
+             *** [.int]#int#  "crash_id" - ID of the crash with given UUID
+             *** [.int]#int#  "crash_count" - Number of times the crash with given UUID occurred
+             *** [.string]#string#  "crash_component" - Crash component
+             *** [.dateTime.iso8601]#dateTime.iso8601#  "last_report" - Last crash occurence
+               
 
 
-'''
 
-
-[#apidoc-system_crash-listSystemCrashFiles]
+[#apidoc-system_crash-listSystemCrashFiles-717735555]
 == Method: listSystemCrashFiles 
 
 Description:
@@ -311,23 +285,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - crashFile
-             * [.int]#int#  "id"
-             * [.string]#string#  "filename"
-             * [.string]#string#  "path"
-             * [.int]#int#  "filesize"
-             * [.boolean]#boolean#  "is_uploaded"
-             * [.date]#date#  "created"
-             * [.date]#date#  "modified"
-         // no end needed
-     // no end needed
- 
+         ** [.struct]#struct#  - crashFile
+             *** [.int]#int#  "id"
+             *** [.string]#string#  "filename"
+             *** [.string]#string#  "path"
+             *** [.int]#int#  "filesize"
+             *** [.boolean]#boolean#  "is_uploaded"
+             *** [.date]#date#  "created"
+             *** [.date]#date#  "modified"
+               
 
 
-'''
 
-
-[#apidoc-system_crash-listSystemCrashes]
+[#apidoc-system_crash-listSystemCrashes-26568117]
 == Method: listSystemCrashes 
 
 Description:
@@ -347,26 +317,22 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - crash
-             * [.int]#int#  "id"
-             * [.string]#string#  "crash"
-             * [.string]#string#  "path"
-             * [.int]#int#  "count"
-             * [.string]#string#  "uuid"
-             * [.string]#string#  "analyzer"
-             * [.string]#string#  "architecture"
-             * [.string]#string#  "cmdline"
-             * [.string]#string#  "component"
-             * [.string]#string#  "executable"
-             * [.string]#string#  "kernel"
-             * [.string]#string#  "reason"
-             * [.string]#string#  "username"
-             * [.date]#date#  "created"
-             * [.date]#date#  "modified"
-         // no end needed
-     // no end needed
- 
+         ** [.struct]#struct#  - crash
+             *** [.int]#int#  "id"
+             *** [.string]#string#  "crash"
+             *** [.string]#string#  "path"
+             *** [.int]#int#  "count"
+             *** [.string]#string#  "uuid"
+             *** [.string]#string#  "analyzer"
+             *** [.string]#string#  "architecture"
+             *** [.string]#string#  "cmdline"
+             *** [.string]#string#  "component"
+             *** [.string]#string#  "executable"
+             *** [.string]#string#  "kernel"
+             *** [.string]#string#  "reason"
+             *** [.string]#string#  "username"
+             *** [.date]#date#  "created"
+             *** [.date]#date#  "modified"
+               
 
-
-'''
 

@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-actionchain-addConfigurationDeployment,addConfigurationDeployment>>
-* <<apidoc-actionchain-addErrataUpdate,addErrataUpdate>>
-* <<apidoc-actionchain-addPackageInstall,addPackageInstall>>
-* <<apidoc-actionchain-addPackageRemoval,addPackageRemoval>>
-* <<apidoc-actionchain-addPackageUpgrade,addPackageUpgrade>>
-* <<apidoc-actionchain-addPackageVerify,addPackageVerify>>
-* <<apidoc-actionchain-addScriptRun,addScriptRun>>
-* <<apidoc-actionchain-addScriptRun,addScriptRun>>
-* <<apidoc-actionchain-addSystemReboot,addSystemReboot>>
-* <<apidoc-actionchain-createChain,createChain>>
-* <<apidoc-actionchain-deleteChain,deleteChain>>
-* <<apidoc-actionchain-listChainActions,listChainActions>>
-* <<apidoc-actionchain-listChains,listChains>>
-* <<apidoc-actionchain-removeAction,removeAction>>
-* <<apidoc-actionchain-renameChain,renameChain>>
-* <<apidoc-actionchain-scheduleChain,scheduleChain>>
+* <<apidoc-actionchain-addConfigurationDeployment-1518037877,addConfigurationDeployment>>
+* <<apidoc-actionchain-addErrataUpdate-404051835,addErrataUpdate>>
+* <<apidoc-actionchain-addPackageInstall-1899404826,addPackageInstall>>
+* <<apidoc-actionchain-addPackageRemoval-1901494067,addPackageRemoval>>
+* <<apidoc-actionchain-addPackageUpgrade-250177638,addPackageUpgrade>>
+* <<apidoc-actionchain-addPackageVerify-1022713356,addPackageVerify>>
+* <<apidoc-actionchain-addScriptRun-1275339119,addScriptRun>>
+* <<apidoc-actionchain-addScriptRun-159883451,addScriptRun>>
+* <<apidoc-actionchain-addSystemReboot-655183968,addSystemReboot>>
+* <<apidoc-actionchain-createChain-1671200668,createChain>>
+* <<apidoc-actionchain-deleteChain-1332009419,deleteChain>>
+* <<apidoc-actionchain-listChainActions-1428303593,listChainActions>>
+* <<apidoc-actionchain-listChains-2072701904,listChains>>
+* <<apidoc-actionchain-removeAction-830592222,removeAction>>
+* <<apidoc-actionchain-renameChain-924399116,renameChain>>
+* <<apidoc-actionchain-scheduleChain-529832633,scheduleChain>>
 
 == Description
 
@@ -29,10 +29,8 @@ Provides the namespace for the Action Chain methods.
 
 actionchain
 
-'''
 
-
-[#apidoc-actionchain-addConfigurationDeployment]
+[#apidoc-actionchain-addConfigurationDeployment-1518037877]
 == Method: addConfigurationDeployment 
 
 Description:
@@ -51,13 +49,11 @@ Parameters:
 * [.int]#int#  System ID - System ID
  
 * [.array]#array# :
-                   * [.struct]#struct#  - config revision specifier
-                       * [.string]#string#  "channelLabel" - Channel label
-                       * [.string]#string#  "filePath" - Path of the configuration file
-                       * [.int]#int#  "revision" - Revision number
-                   // no end needed
-               // no end needed
- 
+                   ** [.struct]#struct#  - config revision specifier
+                       *** [.string]#string#  "channelLabel" - Channel label
+                       *** [.string]#string#  "filePath" - Path of the configuration file
+                       *** [.int]#int#  "revision" - Revision number
+                                   
 
 Returns:
 
@@ -65,10 +61,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-actionchain-addErrataUpdate]
+[#apidoc-actionchain-addErrataUpdate-404051835]
 == Method: addErrataUpdate 
 
 Description:
@@ -85,21 +79,19 @@ Parameters:
 * [.int]#int#  serverId - System ID
  
 * [.array]#array# :
-** int - Errata ID
+** [.int]#int#  - Errata ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
 
 Returns:
 
-* int actionId - The action id of the scheduled action 
+* [.int]#int#  actionId - The action id of the scheduled action
  
 
 
-'''
 
-
-[#apidoc-actionchain-addPackageInstall]
+[#apidoc-actionchain-addPackageInstall-1899404826]
 == Method: addPackageInstall 
 
 Description:
@@ -116,7 +108,7 @@ Parameters:
 * [.int]#int#  serverId - System ID
  
 * [.array]#array# :
-** int - Package ID
+** [.int]#int#  - Package ID
  
 * [.string]#string#  chainLabel
  
@@ -127,10 +119,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-actionchain-addPackageRemoval]
+[#apidoc-actionchain-addPackageRemoval-1901494067]
 == Method: addPackageRemoval 
 
 Description:
@@ -148,21 +138,19 @@ Parameters:
 * [.int]#int#  serverId - System ID
  
 * [.array]#array# :
-** int - Package ID
+** [.int]#int#  - Package ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
 
 Returns:
 
-* int actionId - The action id of the scheduled action or exception 
+* [.int]#int#  actionId - The action id of the scheduled action or exception
  
 
 
-'''
 
-
-[#apidoc-actionchain-addPackageUpgrade]
+[#apidoc-actionchain-addPackageUpgrade-250177638]
 == Method: addPackageUpgrade 
 
 Description:
@@ -180,21 +168,19 @@ Parameters:
 * [.int]#int#  serverId - System ID
  
 * [.array]#array# :
-** int - packageId
+** [.int]#int#  - packageId
  
 * [.string]#string#  chainLabel - Label of the chain
  
 
 Returns:
 
-* int actionId - The id of the action or throw an exception 
+* [.int]#int#  actionId - The id of the action or throw an exception
  
 
 
-'''
 
-
-[#apidoc-actionchain-addPackageVerify]
+[#apidoc-actionchain-addPackageVerify-1022713356]
 == Method: addPackageVerify 
 
 Description:
@@ -212,7 +198,7 @@ Parameters:
 * [.int]#int#  serverId - System ID
  
 * [.array]#array# :
-** int - packageId
+** [.int]#int#  - packageId
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -223,10 +209,45 @@ Returns:
  
 
 
-'''
+
+[#apidoc-actionchain-addScriptRun-1275339119]
+== Method: addScriptRun 
+
+Description:
+
+Add an action with label to run a script to an Action Chain.
+ NOTE: The script body must be Base64 encoded!
 
 
-[#apidoc-actionchain-addScriptRun]
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.int]#int#  serverId - System ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+* [.string]#string#  scriptLabel - Label of the script
+ 
+* [.string]#string#  uid - User ID on the particular system
+ 
+* [.string]#string#  gid - Group ID on the particular system
+ 
+* [.int]#int#  timeout - Timeout
+ 
+* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The id of the action or throw an exception
+ 
+
+
+
+[#apidoc-actionchain-addScriptRun-159883451]
 == Method: addScriptRun 
 
 Description:
@@ -256,53 +277,12 @@ Parameters:
 
 Returns:
 
-* int actionId - The id of the action or throw an
- exception 
+* [.int]#int#  actionId - The id of the action or throw an exception
  
 
 
-'''
 
-
-[#apidoc-actionchain-addScriptRun]
-== Method: addScriptRun 
-
-Description:
-
-Add an action to run a script to an Action Chain.
- NOTE: The script body must be Base64 encoded!
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey - Session token, issued at login
- 
-* [.int]#int#  serverId - System ID
- 
-* [.string]#string#  chainLabel - Label of the chain
- 
-* [.string]#string#  uid - User ID on the particular system
- 
-* [.string]#string#  gid - Group ID on the particular system
- 
-* [.int]#int#  timeout - Timeout
- 
-* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
- 
-
-Returns:
-
-* int actionId - The id of the action or throw an
- exception 
- 
-
-
-'''
-
-
-[#apidoc-actionchain-addSystemReboot]
+[#apidoc-actionchain-addSystemReboot-655183968]
 == Method: addSystemReboot 
 
 Description:
@@ -323,14 +303,12 @@ Parameters:
 
 Returns:
 
-* int actionId - The action id of the scheduled action 
+* [.int]#int#  actionId - The action id of the scheduled action
  
 
 
-'''
 
-
-[#apidoc-actionchain-createChain]
+[#apidoc-actionchain-createChain-1671200668]
 == Method: createChain 
 
 Description:
@@ -349,14 +327,12 @@ Parameters:
 
 Returns:
 
-* int actionId - The ID of the created action chain 
+* [.int]#int#  actionId - The ID of the created action chain
  
 
 
-'''
 
-
-[#apidoc-actionchain-deleteChain]
+[#apidoc-actionchain-deleteChain-1332009419]
 == Method: deleteChain 
 
 Description:
@@ -379,10 +355,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-actionchain-listChainActions]
+[#apidoc-actionchain-listChainActions-1428303593]
 == Method: listChainActions 
 
 Description:
@@ -402,23 +376,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                      * [.struct]#struct#  - entry
-                        * [.int]#int#  "id" - Action ID
-                        * [.string]#string#  "label" - Label of an Action
-                        * [.string]#string#  "created" - Created date/time
-                        * [.string]#string#  "earliest" - Earliest scheduled date/time
-                        * [.string]#string#  "type" - Type of the action
-                        * [.string]#string#  "modified" - Modified date/time
-                        * [.string]#string#  "cuid" - Creator UID
-                      // no end needed
-                    // no end needed
- 
+                      ** [.struct]#struct#  - entry
+                        *** [.int]#int#  "id" - Action ID
+                        *** [.string]#string#  "label" - Label of an Action
+                        *** [.string]#string#  "created" - Created date/time
+                        *** [.string]#string#  "earliest" - Earliest scheduled date/time
+                        *** [.string]#string#  "type" - Type of the action
+                        *** [.string]#string#  "modified" - Modified date/time
+                        *** [.string]#string#  "cuid" - Creator UID
+                                           
 
 
-'''
 
-
-[#apidoc-actionchain-listChains]
+[#apidoc-actionchain-listChains-2072701904]
 == Method: listChains 
 
 Description:
@@ -436,18 +406,14 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                      * [.struct]#struct#  - chain
-                        * [.string]#string#  "label" - Label of an Action Chain
-                        * [.string]#string#  "entrycount" - Number of entries in the Action Chain
-                      // no end needed
-                    // no end needed
- 
+                      ** [.struct]#struct#  - chain
+                        *** [.string]#string#  "label" - Label of an Action Chain
+                        *** [.string]#string#  "entrycount" - Number of entries in the Action Chain
+                                           
 
 
-'''
 
-
-[#apidoc-actionchain-removeAction]
+[#apidoc-actionchain-removeAction-830592222]
 == Method: removeAction 
 
 Description:
@@ -472,10 +438,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-actionchain-renameChain]
+[#apidoc-actionchain-renameChain-924399116]
 == Method: renameChain 
 
 Description:
@@ -500,10 +464,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-actionchain-scheduleChain]
+[#apidoc-actionchain-scheduleChain-529832633]
 == Method: scheduleChain 
 
 Description:
@@ -527,6 +489,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-kickstart_keys-create,create>>
-* <<apidoc-kickstart_keys-delete,delete>>
-* <<apidoc-kickstart_keys-getDetails,getDetails>>
-* <<apidoc-kickstart_keys-listAllKeys,listAllKeys>>
-* <<apidoc-kickstart_keys-update,update>>
+* <<apidoc-kickstart_keys-create-1953044087,create>>
+* <<apidoc-kickstart_keys-delete-857010553,delete>>
+* <<apidoc-kickstart_keys-getDetails-88573335,getDetails>>
+* <<apidoc-kickstart_keys-listAllKeys-1961718033,listAllKeys>>
+* <<apidoc-kickstart_keys-update-448600616,update>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to manipulate kickstart keys.
 
 kickstart.keys
 
-'''
 
-
-[#apidoc-kickstart_keys-create]
+[#apidoc-kickstart_keys-create-1953044087]
 == Method: create 
 
 Description:
@@ -48,10 +46,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_keys-delete]
+[#apidoc-kickstart_keys-delete-857010553]
 == Method: delete 
 
 Description:
@@ -74,10 +70,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_keys-getDetails]
+[#apidoc-kickstart_keys-getDetails-88573335]
 == Method: getDetails 
 
 Description:
@@ -97,17 +91,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  - key
-          * [.string]#string#  "description"
-          * [.string]#string#  "type"
-          * [.string]#string#  "content"
-      // no end needed
- 
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "type"
+          ** [.string]#string#  "content"
+       
 
 
-'''
 
-
-[#apidoc-kickstart_keys-listAllKeys]
+[#apidoc-kickstart_keys-listAllKeys-1961718033]
 == Method: listAllKeys 
 
 Description:
@@ -126,18 +117,14 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  - key
-              * [.string]#string#  "description"
-              * [.string]#string#  "type"
-          // no end needed
-      // no end needed
- 
+          ** [.struct]#struct#  - key
+              *** [.string]#string#  "description"
+              *** [.string]#string#  "type"
+                 
 
 
-'''
 
-
-[#apidoc-kickstart_keys-update]
+[#apidoc-kickstart_keys-update-448600616]
 == Method: update 
 
 Description:
@@ -163,6 +150,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

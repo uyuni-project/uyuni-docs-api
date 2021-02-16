@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-satellite-isMonitoringEnabled,isMonitoringEnabled>>
-* <<apidoc-satellite-isMonitoringEnabledBySystemId,isMonitoringEnabledBySystemId>>
-* <<apidoc-satellite-listProxies,listProxies>>
+* <<apidoc-satellite-isMonitoringEnabled-779538643,isMonitoringEnabled>>
+* <<apidoc-satellite-isMonitoringEnabledBySystemId-1674086804,isMonitoringEnabledBySystemId>>
+* <<apidoc-satellite-listProxies-36315889,listProxies>>
 
 == Description
 
@@ -16,10 +16,8 @@ Provides methods to obtain details on the Satellite.
 
 satellite
 
-'''
 
-
-[#apidoc-satellite-isMonitoringEnabled]
+[#apidoc-satellite-isMonitoringEnabled-779538643]
 == Method: isMonitoringEnabled (Deprecated)
 
 Description:
@@ -41,10 +39,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-satellite-isMonitoringEnabledBySystemId]
+[#apidoc-satellite-isMonitoringEnabledBySystemId-1674086804]
 == Method: isMonitoringEnabledBySystemId (Deprecated)
 
 Description:
@@ -66,10 +62,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-satellite-listProxies]
+[#apidoc-satellite-listProxies-36315889]
 == Method: listProxies (Deprecated)
 
 Description:
@@ -89,20 +83,16 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  - system
-     * [.int]#int#  "id"
-     * [.string]#string#  "name"
-     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
              successfully checked in
-     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
-     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     ** [.int]#int#  "extra_pkg_count" - Number of packages not belonging
              to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
- // no end needed
- 
- // no end needed
- 
+     ** [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+  
+  
 
-
-'''
 

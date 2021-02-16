@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-system_scap-deleteXccdfScan,deleteXccdfScan>>
-* <<apidoc-system_scap-getXccdfScanDetails,getXccdfScanDetails>>
-* <<apidoc-system_scap-getXccdfScanRuleResults,getXccdfScanRuleResults>>
-* <<apidoc-system_scap-listXccdfScans,listXccdfScans>>
-* <<apidoc-system_scap-scheduleXccdfScan,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan,scheduleXccdfScan>>
+* <<apidoc-system_scap-deleteXccdfScan-708590084,deleteXccdfScan>>
+* <<apidoc-system_scap-getXccdfScanDetails-1653316341,getXccdfScanDetails>>
+* <<apidoc-system_scap-getXccdfScanRuleResults-327004479,getXccdfScanRuleResults>>
+* <<apidoc-system_scap-listXccdfScans-448233725,listXccdfScans>>
+* <<apidoc-system_scap-scheduleXccdfScan-2026537560,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1177088902,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-941770293,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1938138927,scheduleXccdfScan>>
 
 == Description
 
@@ -21,15 +21,13 @@ Provides methods to schedule SCAP scans and access the results.
 
 system.scap
 
-'''
 
-
-[#apidoc-system_scap-deleteXccdfScan]
+[#apidoc-system_scap-deleteXccdfScan-708590084]
 == Method: deleteXccdfScan 
 
 Description:
 
-Delete OpenSCAP XCCDF Scan from Spacewalk database. Note that
+Delete OpenSCAP XCCDF Scan from the Uyuni database. Note that
  only those SCAP Scans can be deleted which have passed their retention period.
 
 
@@ -44,14 +42,12 @@ Parameters:
 
 Returns:
 
-* boolean - indicates success of the operation. 
+* [.boolean]#boolean#  status - indicates success of the operation
  
 
 
-'''
 
-
-[#apidoc-system_scap-getXccdfScanDetails]
+[#apidoc-system_scap-getXccdfScanDetails-1653316341]
 == Method: getXccdfScanDetails 
 
 Description:
@@ -71,29 +67,26 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - OpenSCAP XCCDF Scan
-   * [.int]#int#  "xid" - XCCDF TestResult id
-   * [.int]#int#  "sid" - serverId
-   * [.int]#int#  "action_id" - Id of the parent action.
-   * [.string]#string#  "path" - Path to XCCDF document
-   * [.string]#string#  "oscap_parameters" - oscap command-line arguments.
-   * [.string]#string#  "test_result" - Identifier of XCCDF TestResult.
-   * [.string]#string#  "benchmark" - Identifier of XCCDF Benchmark.
-   * [.string]#string#  "benchmark_version" - Version of the Benchmark.
-   * [.string]#string#  "profile" - Identifier of XCCDF Profile.
-   * [.string]#string#  "profile_title" - Title of XCCDF Profile.
-   * [.dateTime.iso8601]#dateTime.iso8601#  "start_time" - Client machine time of scan start.
-   * [.dateTime.iso8601]#dateTime.iso8601#  "end_time" - Client machine time of scan completion.
-   * [.string]#string#  "errors" - Stderr output of scan.
-   * [.boolean]#boolean#  "deletable" - Indicates whether the scan can be deleted.
- // no end needed
-  
+   ** [.int]#int#  "xid" - XCCDF TestResult id
+   ** [.int]#int#  "sid" - serverId
+   ** [.int]#int#  "action_id" - Id of the parent action.
+   ** [.string]#string#  "path" - Path to XCCDF document
+   ** [.string]#string#  "oscap_parameters" - oscap command-line arguments.
+   ** [.string]#string#  "test_result" - Identifier of XCCDF TestResult.
+   ** [.string]#string#  "benchmark" - Identifier of XCCDF Benchmark.
+   ** [.string]#string#  "benchmark_version" - Version of the Benchmark.
+   ** [.string]#string#  "profile" - Identifier of XCCDF Profile.
+   ** [.string]#string#  "profile_title" - Title of XCCDF Profile.
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "start_time" - Client machine time of scan start.
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "end_time" - Client machine time of scan completion.
+   ** [.string]#string#  "errors" - Stderr output of scan.
+   ** [.boolean]#boolean#  "deletable" - Indicates whether the scan can be deleted.
+   
  
 
 
-'''
 
-
-[#apidoc-system_scap-getXccdfScanRuleResults]
+[#apidoc-system_scap-getXccdfScanRuleResults-327004479]
 == Method: getXccdfScanRuleResults 
 
 Description:
@@ -114,19 +107,15 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  - OpenSCAP XCCDF RuleResult
-   * [.string]#string#  "idref" - idref from XCCDF document.
-   * [.string]#string#  "result" - Result of evaluation.
-   * [.string]#string#  "idents" - Comma separated list of XCCDF idents.
- // no end needed
- 
- // no end needed
- 
+   ** [.string]#string#  "idref" - idref from XCCDF document.
+   ** [.string]#string#  "result" - Result of evaluation.
+   ** [.string]#string#  "idents" - Comma separated list of XCCDF idents.
+  
+  
 
 
-'''
 
-
-[#apidoc-system_scap-listXccdfScans]
+[#apidoc-system_scap-listXccdfScans-448233725]
 == Method: listXccdfScans 
 
 Description:
@@ -147,20 +136,16 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  - OpenSCAP XCCDF Scan
-   * [.int]#int#  "xid" - XCCDF TestResult ID
-   * [.string]#string#  "profile" - XCCDF Profile
-   * [.string]#string#  "path" - Path to XCCDF document
-   * [.dateTime.iso8601]#dateTime.iso8601#  "completed" - Scan completion time
- // no end needed
- 
- // no end needed
- 
+   ** [.int]#int#  "xid" - XCCDF TestResult ID
+   ** [.string]#string#  "profile" - XCCDF Profile
+   ** [.string]#string#  "path" - Path to XCCDF document
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "completed" - Scan completion time
+  
+  
 
 
-'''
 
-
-[#apidoc-system_scap-scheduleXccdfScan]
+[#apidoc-system_scap-scheduleXccdfScan-2026537560]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -175,7 +160,7 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.array]#array# :
-** int - serverId
+** [.int]#int#  - serverId
  
 * [.string]#string#  Path to xccdf content on targeted systems.
  
@@ -184,14 +169,12 @@ Parameters:
 
 Returns:
 
-* int - ID if SCAP action created. 
+* [.int]#int#  id - ID if SCAP action created
  
 
 
-'''
 
-
-[#apidoc-system_scap-scheduleXccdfScan]
+[#apidoc-system_scap-scheduleXccdfScan-1177088902]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -206,7 +189,7 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.array]#array# :
-** int - serverId
+** [.int]#int#  - serverId
  
 * [.string]#string#  Path to xccdf content on targeted systems.
  
@@ -217,14 +200,12 @@ Parameters:
 
 Returns:
 
-* int - ID if SCAP action created. 
+* [.int]#int#  id - ID if SCAP action created
  
 
 
-'''
 
-
-[#apidoc-system_scap-scheduleXccdfScan]
+[#apidoc-system_scap-scheduleXccdfScan-941770293]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -247,14 +228,12 @@ Parameters:
 
 Returns:
 
-* int - ID of the scap action created. 
+* [.int]#int#  id - ID of the scap action created
  
 
 
-'''
 
-
-[#apidoc-system_scap-scheduleXccdfScan]
+[#apidoc-system_scap-scheduleXccdfScan-1938138927]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -279,9 +258,7 @@ Parameters:
 
 Returns:
 
-* int - ID of the scap action created. 
+* [.int]#int#  id - ID of the scap action created
  
 
-
-'''
 

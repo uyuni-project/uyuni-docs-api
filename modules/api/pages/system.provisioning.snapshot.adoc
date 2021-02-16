@@ -4,16 +4,16 @@
 
 == Available methods
 
-* <<apidoc-system_provisioning_snapshot-addTagToSnapshot,addTagToSnapshot>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshot,deleteSnapshot>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-listSnapshotConfigFiles,listSnapshotConfigFiles>>
-* <<apidoc-system_provisioning_snapshot-listSnapshotPackages,listSnapshotPackages>>
-* <<apidoc-system_provisioning_snapshot-listSnapshots,listSnapshots>>
-* <<apidoc-system_provisioning_snapshot-rollbackToSnapshot,rollbackToSnapshot>>
-* <<apidoc-system_provisioning_snapshot-rollbackToTag,rollbackToTag>>
-* <<apidoc-system_provisioning_snapshot-rollbackToTag,rollbackToTag>>
+* <<apidoc-system_provisioning_snapshot-addTagToSnapshot-807166509,addTagToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshot-1816294278,deleteSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-626010908,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-1571547080,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-1194550829,listSnapshotConfigFiles>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotPackages-409286572,listSnapshotPackages>>
+* <<apidoc-system_provisioning_snapshot-listSnapshots-186540981,listSnapshots>>
+* <<apidoc-system_provisioning_snapshot-rollbackToSnapshot-987234822,rollbackToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-726037979,rollbackToTag>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-24344628,rollbackToTag>>
 
 == Description
 
@@ -23,10 +23,8 @@ Provides methods to access and delete system snapshots.
 
 system.provisioning.snapshot
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-addTagToSnapshot]
+[#apidoc-system_provisioning_snapshot-addTagToSnapshot-807166509]
 == Method: addTagToSnapshot 
 
 Description:
@@ -51,10 +49,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-deleteSnapshot]
+[#apidoc-system_provisioning_snapshot-deleteSnapshot-1816294278]
 == Method: deleteSnapshot 
 
 Description:
@@ -78,10 +74,8 @@ Returns:
 
 Available since API version: 10.1
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-deleteSnapshots]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-626010908]
 == Method: deleteSnapshots 
 
 Description:
@@ -105,11 +99,10 @@ Parameters:
   * [.string]#string#  sessionKey
  
 * [.struct]#struct#  - date details
-         * [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
          is provided.
-         * [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
-     // no end needed
- 
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
 
 Returns:
 
@@ -118,10 +111,8 @@ Returns:
 
 Available since API version: 10.1
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-deleteSnapshots]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-1571547080]
 == Method: deleteSnapshots 
 
 Description:
@@ -148,11 +139,10 @@ Parameters:
           snapshots for
  
 * [.struct]#struct#  - date details
-         * [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
          is provided.
-         * [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
-     // no end needed
- 
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
 
 Returns:
 
@@ -161,10 +151,8 @@ Returns:
 
 Available since API version: 10.1
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles]
+[#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-1194550829]
 == Method: listSnapshotConfigFiles 
 
 Description:
@@ -185,44 +173,40 @@ Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  - Configuration Revision information
-   * [.string]#string#  "type"
-              // no end needed
-                  * file
-                  * directory
-                  * symlink
-              // no end needed
-   * [.string]#string#  "path" - File Path
-   * [.string]#string#  "target_path" - Symbolic link Target File Path.
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
                               Present for Symbolic links only.
-   * [.string]#string#  "channel" - Channel Name
-   * [.string]#string#  "contents" - File contents (base64 encoded according
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
                 to the contents_enc64 attribute)
-   * [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
-   * [.int]#int#  "revision" - File Revision
-   * [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
-   * [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
-   * [.string]#string#  "owner" - File Owner. Present for files or directories only.
-   * [.string]#string#  "group" - File Group. Present for files or directories only.
-   * [.int]#int#  "permissions" - File Permissions (Deprecated).
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
                                   Present for files or directories only.
-   * [.string]#string#  "permissions_mode" - File Permissions.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
                                       Present for files or directories only.
-   * [.string]#string#  "selinux_ctx" - SELinux Context (optional).
-   * [.boolean]#boolean#  "binary" - true/false , Present for files only.
-   * [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
-   * [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
-   * [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
- // no end needed
- 
-     // no end needed
- 
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+  
+      
 
 Available since API version: 10.2
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-listSnapshotPackages]
+[#apidoc-system_provisioning_snapshot-listSnapshotPackages-409286572]
 == Method: listSnapshotPackages 
 
 Description:
@@ -243,22 +227,18 @@ Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  - package nvera
-      * [.string]#string#  "name"
-      * [.string]#string#  "epoch"
-      * [.string]#string#  "version"
-      * [.string]#string#  "release"
-      * [.string]#string#  "arch"
-  // no end needed
- 
-     // no end needed
- 
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "epoch"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "arch"
+   
+      
 
 Available since API version: 10.1
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-listSnapshots]
+[#apidoc-system_provisioning_snapshot-listSnapshots-186540981]
 == Method: listSnapshots 
 
 Description:
@@ -285,46 +265,41 @@ Parameters:
 * [.int]#int#  serverId
  
 * [.struct]#struct#  - date details
-         * [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
          is provided.
-         * [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
-     // no end needed
- 
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
 
 Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  - server snapshot
-      * [.int]#int#  "id"
-      * [.string]#string#  "reason" - the reason for the snapshot's existence
-      * [.dateTime.iso8601]#dateTime.iso8601#  "created"
-      * [.array]#array#  "channels"
-** string - labels of channels associated with the
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "reason" - the reason for the snapshot's existence
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+      ** [.array]#array#  "channels"
+*** string - labels of channels associated with the
               snapshot
-      * [.array]#array#  "groups"
-** string - Names of server groups associated with
+      ** [.array]#array#  "groups"
+*** string - Names of server groups associated with
               the snapshot
-      * [.array]#array#  "entitlements"
-** string - Names of system entitlements associated
+      ** [.array]#array#  "entitlements"
+*** string - Names of system entitlements associated
               with the snapshot
-       * [.array]#array#  "config_channels"
-** string - Labels of config channels the snapshot
+       ** [.array]#array#  "config_channels"
+*** string - Labels of config channels the snapshot
                   is associated with.
-      * [.array]#array#  "tags"
-** string - Tag names associated with this snapshot.
-      * [.string]#string#  "Invalid_reason" - If the snapshot is invalid, this is the
+      ** [.array]#array#  "tags"
+*** string - Tag names associated with this snapshot.
+      ** [.string]#string#  "Invalid_reason" - If the snapshot is invalid, this is the
                   reason (optional).
-  // no end needed
- 
-  // no end needed
- 
+   
+   
 
 Available since API version: 10.1
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-rollbackToSnapshot]
+[#apidoc-system_provisioning_snapshot-rollbackToSnapshot-987234822]
 == Method: rollbackToSnapshot 
 
 Description:
@@ -349,10 +324,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-rollbackToTag]
+[#apidoc-system_provisioning_snapshot-rollbackToTag-726037979]
 == Method: rollbackToTag 
 
 Description:
@@ -377,10 +350,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-system_provisioning_snapshot-rollbackToTag]
+[#apidoc-system_provisioning_snapshot-rollbackToTag-24344628]
 == Method: rollbackToTag 
 
 Description:
@@ -402,6 +373,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

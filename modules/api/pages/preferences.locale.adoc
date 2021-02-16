@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-preferences_locale-listLocales,listLocales>>
-* <<apidoc-preferences_locale-listTimeZones,listTimeZones>>
-* <<apidoc-preferences_locale-setLocale,setLocale>>
-* <<apidoc-preferences_locale-setTimeZone,setTimeZone>>
+* <<apidoc-preferences_locale-listLocales-343446206,listLocales>>
+* <<apidoc-preferences_locale-listTimeZones-1621023573,listTimeZones>>
+* <<apidoc-preferences_locale-setLocale-547525391,setLocale>>
+* <<apidoc-preferences_locale-setTimeZone-442627636,setTimeZone>>
 
 == Description
 
@@ -17,10 +17,8 @@ Provides methods to access and modify user locale information
 
 preferences.locale
 
-'''
 
-
-[#apidoc-preferences_locale-listLocales]
+[#apidoc-preferences_locale-listLocales-343446206]
 == Method: listLocales 
 
 Description:
@@ -37,14 +35,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - Locale code.
+** [.string]#string#  - Locale code.
  
 
 
-'''
 
-
-[#apidoc-preferences_locale-listTimeZones]
+[#apidoc-preferences_locale-listTimeZones-1621023573]
 == Method: listTimeZones 
 
 Description:
@@ -62,18 +58,14 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  - timezone
-   * [.int]#int#  "time_zone_id" - Unique identifier for timezone.
-   * [.string]#string#  "olson_name" - Name as identified by the Olson database.
- // no end needed
- 
- // no end needed
- 
+   ** [.int]#int#  "time_zone_id" - Unique identifier for timezone.
+   ** [.string]#string#  "olson_name" - Name as identified by the Olson database.
+  
+  
 
 
-'''
 
-
-[#apidoc-preferences_locale-setLocale]
+[#apidoc-preferences_locale-setLocale-547525391]
 == Method: setLocale 
 
 Description:
@@ -98,10 +90,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-preferences_locale-setTimeZone]
+[#apidoc-preferences_locale-setTimeZone-442627636]
 == Method: setTimeZone 
 
 Description:
@@ -125,6 +115,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

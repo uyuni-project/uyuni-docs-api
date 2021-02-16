@@ -4,26 +4,26 @@
 
 == Available methods
 
-* <<apidoc-kickstart-cloneProfile,cloneProfile>>
-* <<apidoc-kickstart-createProfile,createProfile>>
-* <<apidoc-kickstart-createProfile,createProfile>>
-* <<apidoc-kickstart-createProfileWithCustomUrl,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-createProfileWithCustomUrl,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-deleteProfile,deleteProfile>>
-* <<apidoc-kickstart-disableProfile,disableProfile>>
-* <<apidoc-kickstart-findKickstartForIp,findKickstartForIp>>
-* <<apidoc-kickstart-importFile,importFile>>
-* <<apidoc-kickstart-importFile,importFile>>
-* <<apidoc-kickstart-importFile,importFile>>
-* <<apidoc-kickstart-importRawFile,importRawFile>>
-* <<apidoc-kickstart-importRawFile,importRawFile>>
-* <<apidoc-kickstart-isProfileDisabled,isProfileDisabled>>
-* <<apidoc-kickstart-listAllIpRanges,listAllIpRanges>>
-* <<apidoc-kickstart-listAutoinstallableChannels,listAutoinstallableChannels>>
-* <<apidoc-kickstart-listKickstartableChannels,listKickstartableChannels>>
-* <<apidoc-kickstart-listKickstartableTrees,listKickstartableTrees>>
-* <<apidoc-kickstart-listKickstarts,listKickstarts>>
-* <<apidoc-kickstart-renameProfile,renameProfile>>
+* <<apidoc-kickstart-cloneProfile-1779082722,cloneProfile>>
+* <<apidoc-kickstart-createProfile-1258139742,createProfile>>
+* <<apidoc-kickstart-createProfile-560321707,createProfile>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-2140898588,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-1787476367,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-deleteProfile-727867010,deleteProfile>>
+* <<apidoc-kickstart-disableProfile-577076657,disableProfile>>
+* <<apidoc-kickstart-findKickstartForIp-128026509,findKickstartForIp>>
+* <<apidoc-kickstart-importFile-2046967348,importFile>>
+* <<apidoc-kickstart-importFile-638518766,importFile>>
+* <<apidoc-kickstart-importFile-1711152967,importFile>>
+* <<apidoc-kickstart-importRawFile-1661720039,importRawFile>>
+* <<apidoc-kickstart-importRawFile-596243782,importRawFile>>
+* <<apidoc-kickstart-isProfileDisabled-1488129598,isProfileDisabled>>
+* <<apidoc-kickstart-listAllIpRanges-1593084680,listAllIpRanges>>
+* <<apidoc-kickstart-listAutoinstallableChannels-554817465,listAutoinstallableChannels>>
+* <<apidoc-kickstart-listKickstartableChannels-1666456788,listKickstartableChannels>>
+* <<apidoc-kickstart-listKickstartableTrees-205135231,listKickstartableTrees>>
+* <<apidoc-kickstart-listKickstarts-1628242023,listKickstarts>>
+* <<apidoc-kickstart-renameProfile-1394960202,renameProfile>>
 
 == Description
 
@@ -33,10 +33,8 @@ Provides methods to create kickstart files
 
 kickstart
 
-'''
 
-
-[#apidoc-kickstart-cloneProfile]
+[#apidoc-kickstart-cloneProfile-1779082722]
 == Method: cloneProfile 
 
 Description:
@@ -62,10 +60,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-createProfile]
+[#apidoc-kickstart-createProfile-1258139742]
 == Method: createProfile 
 
 Description:
@@ -89,7 +85,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a satellite or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -105,10 +101,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-createProfile]
+[#apidoc-kickstart-createProfile-560321707]
 == Method: createProfile 
 
 Description:
@@ -132,7 +126,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a satellite or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -144,10 +138,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-createProfileWithCustomUrl]
+[#apidoc-kickstart-createProfileWithCustomUrl-2140898588]
 == Method: createProfileWithCustomUrl 
 
 Description:
@@ -182,10 +174,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-createProfileWithCustomUrl]
+[#apidoc-kickstart-createProfileWithCustomUrl-1787476367]
 == Method: createProfileWithCustomUrl 
 
 Description:
@@ -224,10 +214,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-deleteProfile]
+[#apidoc-kickstart-deleteProfile-727867010]
 == Method: deleteProfile 
 
 Description:
@@ -251,10 +239,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-disableProfile]
+[#apidoc-kickstart-disableProfile-577076657]
 == Method: disableProfile 
 
 Description:
@@ -280,10 +266,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-findKickstartForIp]
+[#apidoc-kickstart-findKickstartForIp-128026509]
 == Method: findKickstartForIp 
 
 Description:
@@ -303,15 +287,12 @@ Parameters:
 
 Returns:
 
-* string - label of the kickstart. Empty string ("") if
- not found. 
+* [.string]#string#  label - label of the kickstart. Empty string if not found
  
 
 
-'''
 
-
-[#apidoc-kickstart-importFile]
+[#apidoc-kickstart-importFile-2046967348]
 == Method: importFile 
 
 Description:
@@ -344,52 +325,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-importFile]
-== Method: importFile 
-
-Description:
-
-Import a kickstart profile.
-
-
-
-
-Parameters:
-
-  * [.string]#string#  sessionKey
- 
-* [.string]#string#  profileLabel - Label for the new
- kickstart profile.
- 
-* [.string]#string#  virtualizationType - none, para_host,
- qemu, xenfv or xenpv.
- 
-* [.string]#string#  kickstartableTreeLabel - Label of a
- kickstartable tree to associate the new profile with.
- 
-* [.string]#string#  kickstartHost - Kickstart hostname
- (of a satellite or proxy) used to construct the default download URL for
- the new kickstart profile. Using this option signifies that this default
- URL will be used instead of any url/nfs/cdrom/harddrive commands in the
- kickstart file itself.
- 
-* [.string]#string#  kickstartFileContents - Contents of
- the kickstart file to import.
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-'''
-
-
-[#apidoc-kickstart-importFile]
+[#apidoc-kickstart-importFile-638518766]
 == Method: importFile 
 
 Description:
@@ -413,7 +350,47 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a satellite or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
+ the new kickstart profile. Using this option signifies that this default
+ URL will be used instead of any url/nfs/cdrom/harddrive commands in the
+ kickstart file itself.
+ 
+* [.string]#string#  kickstartFileContents - Contents of
+ the kickstart file to import.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart-importFile-1711152967]
+== Method: importFile 
+
+Description:
+
+Import a kickstart profile.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  profileLabel - Label for the new
+ kickstart profile.
+ 
+* [.string]#string#  virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ 
+* [.string]#string#  kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ 
+* [.string]#string#  kickstartHost - Kickstart hostname
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile. Using this option signifies that this default
  URL will be used instead of any url/nfs/cdrom/harddrive commands in the
  kickstart file itself.
@@ -432,15 +409,13 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-importRawFile]
+[#apidoc-kickstart-importRawFile-1661720039]
 == Method: importRawFile 
 
 Description:
 
-Import a raw kickstart file into satellite.
+Import a raw kickstart file into Uyuni.
 
 
 
@@ -468,15 +443,13 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-importRawFile]
+[#apidoc-kickstart-importRawFile-596243782]
 == Method: importRawFile 
 
 Description:
 
-Import a raw kickstart file into satellite.
+Import a raw kickstart file into Uyuni.
 
 
 
@@ -508,10 +481,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart-isProfileDisabled]
+[#apidoc-kickstart-isProfileDisabled-1488129598]
 == Method: isProfileDisabled 
 
 Description:
@@ -530,14 +501,12 @@ Parameters:
 
 Returns:
 
-* true if profile is disabled 
+* [.boolean]#boolean#  disabled - true if profile is disabled
  
 
 
-'''
 
-
-[#apidoc-kickstart-listAllIpRanges]
+[#apidoc-kickstart-listAllIpRanges-1593084680]
 == Method: listAllIpRanges 
 
 Description:
@@ -557,18 +526,14 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - Kickstart Ip Range
-     * [.string]#string#  "ksLabel" - The kickstart label associated with the ip range
-     * [.string]#string#  "max" - The max ip of the range
-     * [.string]#string#  "min" - The min ip of the range
-   // no end needed
-  // no end needed
- 
+     ** [.string]#string#  "ksLabel" - The kickstart label associated with the ip range
+     ** [.string]#string#  "max" - The max ip of the range
+     ** [.string]#string#  "min" - The min ip of the range
+      
 
 
-'''
 
-
-[#apidoc-kickstart-listAutoinstallableChannels]
+[#apidoc-kickstart-listAutoinstallableChannels-554817465]
 == Method: listAutoinstallableChannels 
 
 Description:
@@ -587,43 +552,37 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - channel
-      * [.int]#int#  "id"
-      * [.string]#string#  "name"
-      * [.string]#string#  "label"
-      * [.string]#string#  "arch_name"
-      * [.string]#string#  "arch_label"
-      * [.string]#string#  "summary"
-      * [.string]#string#  "description"
-      * [.string]#string#  "checksum_label"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-      * [.string]#string#  "maintainer_name"
-      * [.string]#string#  "maintainer_email"
-      * [.string]#string#  "maintainer_phone"
-      * [.string]#string#  "support_policy"
-      * [.string]#string#  "gpg_key_url"
-      * [.string]#string#  "gpg_key_id"
-      * [.string]#string#  "gpg_key_fp"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-      * [.string]#string#  "end_of_life"
-      * [.string]#string#  "parent_channel_label"
-      * [.string]#string#  "clone_original"
-      * [.array]#array# :
-          * [.struct]#struct#  - contentSources
-              * [.int]#int#  "id"
-              * [.string]#string#  "label"
-              * [.string]#string#  "sourceUrl"
-              * [.string]#string#  "type"
-          // no end needed
-      // no end needed
-  // no end needed
-  // no end needed
- 
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array# :
+          *** [.struct]#struct#  - contentSources
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                     
 
 
-'''
 
-
-[#apidoc-kickstart-listKickstartableChannels]
+[#apidoc-kickstart-listKickstartableChannels-1666456788]
 == Method: listKickstartableChannels 
 
 Description:
@@ -642,43 +601,37 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - channel
-      * [.int]#int#  "id"
-      * [.string]#string#  "name"
-      * [.string]#string#  "label"
-      * [.string]#string#  "arch_name"
-      * [.string]#string#  "arch_label"
-      * [.string]#string#  "summary"
-      * [.string]#string#  "description"
-      * [.string]#string#  "checksum_label"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-      * [.string]#string#  "maintainer_name"
-      * [.string]#string#  "maintainer_email"
-      * [.string]#string#  "maintainer_phone"
-      * [.string]#string#  "support_policy"
-      * [.string]#string#  "gpg_key_url"
-      * [.string]#string#  "gpg_key_id"
-      * [.string]#string#  "gpg_key_fp"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-      * [.string]#string#  "end_of_life"
-      * [.string]#string#  "parent_channel_label"
-      * [.string]#string#  "clone_original"
-      * [.array]#array# :
-          * [.struct]#struct#  - contentSources
-              * [.int]#int#  "id"
-              * [.string]#string#  "label"
-              * [.string]#string#  "sourceUrl"
-              * [.string]#string#  "type"
-          // no end needed
-      // no end needed
-  // no end needed
-  // no end needed
- 
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array# :
+          *** [.struct]#struct#  - contentSources
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                     
 
 
-'''
 
-
-[#apidoc-kickstart-listKickstartableTrees]
+[#apidoc-kickstart-listKickstartableTrees-205135231]
 == Method: listKickstartableTrees (Deprecated)
 
 Description:
@@ -702,19 +655,15 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - kickstartable tree
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "base_path"
-   * [.int]#int#  "channel_id"
- // no end needed
-  // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "base_path"
+   ** [.int]#int#  "channel_id"
+    
 
 
-'''
 
-
-[#apidoc-kickstart-listKickstarts]
+[#apidoc-kickstart-listKickstarts-1628242023]
 == Method: listKickstarts 
 
 Description:
@@ -734,27 +683,23 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - kickstart
-          * [.string]#string#  "label"
-          * [.string]#string#  "tree_label"
-          * [.string]#string#  "name"
-          * [.boolean]#boolean#  "advanced_mode"
-          * [.boolean]#boolean#  "org_default"
-          * [.boolean]#boolean#  "active"
-          * [.string]#string#  "update_type"
-   // no end needed
-  // no end needed
- 
+          ** [.string]#string#  "label"
+          ** [.string]#string#  "tree_label"
+          ** [.string]#string#  "name"
+          ** [.boolean]#boolean#  "advanced_mode"
+          ** [.boolean]#boolean#  "org_default"
+          ** [.boolean]#boolean#  "active"
+          ** [.string]#string#  "update_type"
+      
 
 
-'''
 
-
-[#apidoc-kickstart-renameProfile]
+[#apidoc-kickstart-renameProfile-1394960202]
 == Method: renameProfile 
 
 Description:
 
-Rename a Kickstart Profile in Satellite
+Rename a kickstart profile in Uyuni.
 
 
 
@@ -774,6 +719,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 

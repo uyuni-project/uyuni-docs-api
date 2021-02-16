@@ -4,13 +4,13 @@
 
 == Available methods
 
-* <<apidoc-proxy-activateProxy,activateProxy>>
-* <<apidoc-proxy-createMonitoringScout,createMonitoringScout>>
-* <<apidoc-proxy-deactivateProxy,deactivateProxy>>
-* <<apidoc-proxy-isProxy,isProxy>>
-* <<apidoc-proxy-listAvailableProxyChannels,listAvailableProxyChannels>>
-* <<apidoc-proxy-listProxies,listProxies>>
-* <<apidoc-proxy-listProxyClients,listProxyClients>>
+* <<apidoc-proxy-activateProxy-873546155,activateProxy>>
+* <<apidoc-proxy-createMonitoringScout-132416701,createMonitoringScout>>
+* <<apidoc-proxy-deactivateProxy-1040580772,deactivateProxy>>
+* <<apidoc-proxy-isProxy-2115692179,isProxy>>
+* <<apidoc-proxy-listAvailableProxyChannels-393476856,listAvailableProxyChannels>>
+* <<apidoc-proxy-listProxies-1056221435,listProxies>>
+* <<apidoc-proxy-listProxyClients-821664929,listProxyClients>>
 
 == Description
 
@@ -21,10 +21,8 @@ Provides methods to activate/deactivate a proxy
 
 proxy
 
-'''
 
-
-[#apidoc-proxy-activateProxy]
+[#apidoc-proxy-activateProxy-873546155]
 == Method: activateProxy 
 
 Description:
@@ -49,10 +47,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-proxy-createMonitoringScout]
+[#apidoc-proxy-createMonitoringScout-132416701]
 == Method: createMonitoringScout 
 
 Description:
@@ -69,15 +65,13 @@ Parameters:
 
 Returns:
 
-* string 
+* [.string]#string#  
  
 
 Available since API version: 10.7
 
-'''
 
-
-[#apidoc-proxy-deactivateProxy]
+[#apidoc-proxy-deactivateProxy-1040580772]
 == Method: deactivateProxy 
 
 Description:
@@ -99,10 +93,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-proxy-isProxy]
+[#apidoc-proxy-isProxy-2115692179]
 == Method: isProxy 
 
 Description:
@@ -124,10 +116,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-proxy-listAvailableProxyChannels]
+[#apidoc-proxy-listAvailableProxyChannels-393476856]
 == Method: listAvailableProxyChannels 
 
 Description:
@@ -146,15 +136,13 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** string - version
+** [.string]#string#  - version
  
 
 Available since API version: 10.5
 
-'''
 
-
-[#apidoc-proxy-listProxies]
+[#apidoc-proxy-listProxies-1056221435]
 == Method: listProxies 
 
 Description:
@@ -173,25 +161,21 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  - system
-     * [.int]#int#  "id"
-     * [.string]#string#  "name"
-     * [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
              successfully checked in
-     * [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
-     * [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     * [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     ** [.int]#int#  "extra_pkg_count" - Number of packages not belonging
              to any assigned channel
-     * [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
- // no end needed
- 
- // no end needed
- 
+     ** [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+  
+  
 
 
-'''
 
-
-[#apidoc-proxy-listProxyClients]
+[#apidoc-proxy-listProxyClients-821664929]
 == Method: listProxyClients 
 
 Description:
@@ -205,14 +189,13 @@ Parameters:
 
   * [.string]#string#  sessionKey
  
-*  
+* [.int]#int#  proxyId
+ 
 
 Returns:
 
 * [.array]#array# :
-** int - clientId
+** [.int]#int#  - clientId
  
 
-
-'''
 

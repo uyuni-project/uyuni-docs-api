@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-kickstart_filepreservation-create,create>>
-* <<apidoc-kickstart_filepreservation-delete,delete>>
-* <<apidoc-kickstart_filepreservation-getDetails,getDetails>>
-* <<apidoc-kickstart_filepreservation-listAllFilePreservations,listAllFilePreservations>>
+* <<apidoc-kickstart_filepreservation-create-353562601,create>>
+* <<apidoc-kickstart_filepreservation-delete-2093474881,delete>>
+* <<apidoc-kickstart_filepreservation-getDetails-196196466,getDetails>>
+* <<apidoc-kickstart_filepreservation-listAllFilePreservations-1938005794,listAllFilePreservations>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to retrieve and manipulate kickstart file
 
 kickstart.filepreservation
 
-'''
 
-
-[#apidoc-kickstart_filepreservation-create]
+[#apidoc-kickstart_filepreservation-create-353562601]
 == Method: create 
 
 Description:
@@ -38,7 +36,7 @@ Parameters:
 * [.string]#string#  name - name of the file list to create
  
 * [.array]#array# :
-** string - name - file names to include
+** [.string]#string#  - name - file names to include
  
 
 Returns:
@@ -47,10 +45,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_filepreservation-delete]
+[#apidoc-kickstart_filepreservation-delete-2093474881]
 == Method: delete 
 
 Description:
@@ -73,10 +69,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_filepreservation-getDetails]
+[#apidoc-kickstart_filepreservation-getDetails-196196466]
 == Method: getDetails 
 
 Description:
@@ -98,18 +92,15 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - file list
-     * [.string]#string#  "name"
-     * [.array]#array#  "file_names"
-** string - name
-   // no end needed
-  
+     ** [.string]#string#  "name"
+     ** [.array]#array#  "file_names"
+*** string - name
+     
  
 
 
-'''
 
-
-[#apidoc-kickstart_filepreservation-listAllFilePreservations]
+[#apidoc-kickstart_filepreservation-listAllFilePreservations-1938005794]
 == Method: listAllFilePreservations 
 
 Description:
@@ -129,15 +120,11 @@ Returns:
 
 * [.array]#array# :
         * [.struct]#struct#  - file preservation
-      * [.int]#int#  "id"
-      * [.string]#string#  "name"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "created"
-      * [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-   // no end needed
- 
-      // no end needed
- 
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+    
+       
 
-
-'''
 

@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-kickstart_tree-create,create>>
-* <<apidoc-kickstart_tree-delete,delete>>
-* <<apidoc-kickstart_tree-deleteTreeAndProfiles,deleteTreeAndProfiles>>
-* <<apidoc-kickstart_tree-getDetails,getDetails>>
-* <<apidoc-kickstart_tree-list,list>>
-* <<apidoc-kickstart_tree-listInstallTypes,listInstallTypes>>
-* <<apidoc-kickstart_tree-rename,rename>>
-* <<apidoc-kickstart_tree-update,update>>
+* <<apidoc-kickstart_tree-create-8238713,create>>
+* <<apidoc-kickstart_tree-delete-2110370842,delete>>
+* <<apidoc-kickstart_tree-deleteTreeAndProfiles-798483422,deleteTreeAndProfiles>>
+* <<apidoc-kickstart_tree-getDetails-1590977463,getDetails>>
+* <<apidoc-kickstart_tree-list-451480761,list>>
+* <<apidoc-kickstart_tree-listInstallTypes-996328734,listInstallTypes>>
+* <<apidoc-kickstart_tree-rename-1867721054,rename>>
+* <<apidoc-kickstart_tree-update-49322247,update>>
 
 == Description
 
@@ -21,15 +21,13 @@ Provides methods to access and modify the kickstart trees.
 
 kickstart.tree
 
-'''
 
-
-[#apidoc-kickstart_tree-create]
+[#apidoc-kickstart_tree-create-8238713]
 == Method: create 
 
 Description:
 
-Create a Kickstart Tree (Distribution) in Satellite.
+Create a Kickstart Tree (Distribution) in Uyuni.
 
 
 
@@ -56,15 +54,13 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_tree-delete]
+[#apidoc-kickstart_tree-delete-2110370842]
 == Method: delete 
 
 Description:
 
-Delete a Kickstart Tree (Distribution) in Satellite.
+Delete a Kickstart Tree (Distribution) from Uyuni.
 
 
 
@@ -83,10 +79,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_tree-deleteTreeAndProfiles]
+[#apidoc-kickstart_tree-deleteTreeAndProfiles-798483422]
 == Method: deleteTreeAndProfiles 
 
 Description:
@@ -112,10 +106,8 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_tree-getDetails]
+[#apidoc-kickstart_tree-getDetails-1590977463]
 == Method: getDetails 
 
 Description:
@@ -136,25 +128,21 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  - kickstartable tree
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "abs_path"
-   * [.int]#int#  "channel_id"
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "abs_path"
+   ** [.int]#int#  "channel_id"
    * [.struct]#struct#  - kickstart install type
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
- // no end needed
- 
- // no end needed
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
   
+   
  
 
 
-'''
 
-
-[#apidoc-kickstart_tree-list]
+[#apidoc-kickstart_tree-list-451480761]
 == Method: list 
 
 Description:
@@ -176,19 +164,15 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - kickstartable tree
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "base_path"
-   * [.int]#int#  "channel_id"
- // no end needed
-  // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "base_path"
+   ** [.int]#int#  "channel_id"
+    
 
 
-'''
 
-
-[#apidoc-kickstart_tree-listInstallTypes]
+[#apidoc-kickstart_tree-listInstallTypes-996328734]
 == Method: listInstallTypes 
 
 Description:
@@ -208,23 +192,19 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  - kickstart install type
-   * [.int]#int#  "id"
-   * [.string]#string#  "label"
-   * [.string]#string#  "name"
- // no end needed
-  // no end needed
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+    
 
 
-'''
 
-
-[#apidoc-kickstart_tree-rename]
+[#apidoc-kickstart_tree-rename-1867721054]
 == Method: rename 
 
 Description:
 
-Rename a Kickstart Tree (Distribution) in Satellite.
+Rename a Kickstart Tree (Distribution) in Uyuni.
 
 
 
@@ -245,15 +225,13 @@ Returns:
  
 
 
-'''
 
-
-[#apidoc-kickstart_tree-update]
+[#apidoc-kickstart_tree-update-49322247]
 == Method: update 
 
 Description:
 
-Edit a Kickstart Tree (Distribution) in Satellite.
+Edit a Kickstart Tree (Distribution) in Uyuni.
 
 
 
@@ -279,6 +257,4 @@ Returns:
 * [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
-
-'''
 
