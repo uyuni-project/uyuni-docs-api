@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>configchannel :: Uyuni API</title>
+    <title>configchannel :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/configchannel.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="configchannel.html">configchannel</a></li>
   </ul>
 </nav>
@@ -301,17 +324,15 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="channel.software.html">
+      <a href="cluster.html">
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
       <a href="contentmanagement.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/configchannel.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/configchannel.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,82 +343,85 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-configchannel-channelExists">channelExists</a></p>
+<p><a href="#apidoc-configchannel-channelExists-1563149382">channelExists</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-create">create</a></p>
+<p><a href="#apidoc-configchannel-create-1074791118">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-create">create</a></p>
+<p><a href="#apidoc-configchannel-create-1752213359">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-createOrUpdatePath">createOrUpdatePath</a></p>
+<p><a href="#apidoc-configchannel-create-1109753335">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-createOrUpdateSymlink">createOrUpdateSymlink</a></p>
+<p><a href="#apidoc-configchannel-createOrUpdatePath-2106959639">createOrUpdatePath</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deleteChannels">deleteChannels</a></p>
+<p><a href="#apidoc-configchannel-createOrUpdateSymlink-1544507531">createOrUpdateSymlink</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deleteFileRevisions">deleteFileRevisions</a></p>
+<p><a href="#apidoc-configchannel-deleteChannels-1704641164">deleteChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deleteFiles">deleteFiles</a></p>
+<p><a href="#apidoc-configchannel-deleteFileRevisions-2064777114">deleteFileRevisions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deployAllSystems">deployAllSystems</a></p>
+<p><a href="#apidoc-configchannel-deleteFiles-1617463959">deleteFiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deployAllSystems">deployAllSystems</a></p>
+<p><a href="#apidoc-configchannel-deployAllSystems-1855386573">deployAllSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deployAllSystems">deployAllSystems</a></p>
+<p><a href="#apidoc-configchannel-deployAllSystems-1242489018">deployAllSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-deployAllSystems">deployAllSystems</a></p>
+<p><a href="#apidoc-configchannel-deployAllSystems-462965669">deployAllSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-getDetails">getDetails</a></p>
+<p><a href="#apidoc-configchannel-deployAllSystems-403879268">deployAllSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-getDetails">getDetails</a></p>
+<p><a href="#apidoc-configchannel-getDetails-1263257405">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-getEncodedFileRevision">getEncodedFileRevision</a></p>
+<p><a href="#apidoc-configchannel-getDetails-1287200676">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-getFileRevision">getFileRevision</a></p>
+<p><a href="#apidoc-configchannel-getEncodedFileRevision-1070731890">getEncodedFileRevision</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-getFileRevisions">getFileRevisions</a></p>
+<p><a href="#apidoc-configchannel-getFileRevision-1450248078">getFileRevision</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-listFiles">listFiles</a></p>
+<p><a href="#apidoc-configchannel-getFileRevisions-1003983940">getFileRevisions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-listGlobals">listGlobals</a></p>
+<p><a href="#apidoc-configchannel-listFiles-1136085369">listFiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-listSubscribedSystems">listSubscribedSystems</a></p>
+<p><a href="#apidoc-configchannel-listGlobals-452431415">listGlobals</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-lookupChannelInfo">lookupChannelInfo</a></p>
+<p><a href="#apidoc-configchannel-listSubscribedSystems-1094923568">listSubscribedSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-lookupFileInfo">lookupFileInfo</a></p>
+<p><a href="#apidoc-configchannel-lookupChannelInfo-1036316015">lookupChannelInfo</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-lookupFileInfo">lookupFileInfo</a></p>
+<p><a href="#apidoc-configchannel-lookupFileInfo-2049964811">lookupFileInfo</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-scheduleFileComparisons">scheduleFileComparisons</a></p>
+<p><a href="#apidoc-configchannel-lookupFileInfo-332065032">lookupFileInfo</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-update">update</a></p>
+<p><a href="#apidoc-configchannel-scheduleFileComparisons-607042875">scheduleFileComparisons</a></p>
 </li>
 <li>
-<p><a href="#apidoc-configchannel-updateInitSls">updateInitSls</a></p>
+<p><a href="#apidoc-configchannel-update-313142474">update</a></p>
+</li>
+<li>
+<p><a href="#apidoc-configchannel-updateInitSls-1548134743">updateInitSls</a></p>
 </li>
 </ul>
 </div>
@@ -416,11 +440,10 @@
 <div class="paragraph">
 <p>configchannel</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-channelExists"><a class="anchor" href="#apidoc-configchannel-channelExists"></a><a class="link" href="#apidoc-configchannel-channelExists">Method: channelExists</a></h2>
+<h2 id="apidoc-configchannel-channelExists-1563149382"><a class="anchor" href="#apidoc-configchannel-channelExists-1563149382"></a><a class="link" href="#apidoc-configchannel-channelExists-1563149382">Method: channelExists</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -447,15 +470,14 @@
 <div class="ulist">
 <ul>
 <li>
-<p>1 if exists, 0 otherwise.</p>
+<p><span class="int">int</span>  existence - 1 if exists, 0 otherwise</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-create"><a class="anchor" href="#apidoc-configchannel-create"></a><a class="link" href="#apidoc-configchannel-create">Method: create</a></h2>
+<h2 id="apidoc-configchannel-create-1074791118"><a class="anchor" href="#apidoc-configchannel-create-1074791118"></a><a class="link" href="#apidoc-configchannel-create-1074791118">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -490,7 +512,8 @@
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -509,9 +532,13 @@
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -522,21 +549,17 @@
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-create"><a class="anchor" href="#apidoc-configchannel-create"></a><a class="link" href="#apidoc-configchannel-create">Method: create</a></h2>
+<h2 id="apidoc-configchannel-create-1752213359"><a class="anchor" href="#apidoc-configchannel-create-1752213359"></a><a class="link" href="#apidoc-configchannel-create-1752213359">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -574,7 +597,8 @@
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -593,9 +617,13 @@
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -606,21 +634,115 @@
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-createOrUpdatePath"><a class="anchor" href="#apidoc-configchannel-createOrUpdatePath"></a><a class="link" href="#apidoc-configchannel-createOrUpdatePath">Method: createOrUpdatePath</a></h2>
+<h2 id="apidoc-configchannel-create-1109753335"><a class="anchor" href="#apidoc-configchannel-create-1109753335"></a><a class="link" href="#apidoc-configchannel-create-1109753335">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new global config channel. Caller must be at least a
+ config admin or an organization admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelName</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelDescription</p>
+</li>
+<li>
+<p><span class="string">string</span>  channelType - The channel type either 'normal' or 'state'.</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - path info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "contents" - Contents of the init.sls file</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "contents_enc64" - Identifies base64 encoded content(default: disabled)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - Configuration Channel information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  - Configuration Channel Type information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-configchannel-createOrUpdatePath-2106959639"><a class="anchor" href="#apidoc-configchannel-createOrUpdatePath-2106959639"></a><a class="link" href="#apidoc-configchannel-createOrUpdatePath-2106959639">Method: createOrUpdatePath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -648,7 +770,8 @@
 </li>
 <li>
 <p><span class="struct">struct</span>  - path info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "contents" - Contents of the file (text or base64 encoded if binary or want to preserve
 control characters like LF, CR etc.)(only for non-directories)</p>
@@ -683,10 +806,8 @@ empty string to accept the default. (only for non-directories)</p>
 <li>
 <p><span class="boolean">boolean</span>  "binary" - mark the binary content, if True,
 base64 encoded content is expected (only for non-directories)</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -698,10 +819,10 @@ base64 encoded content is expected (only for non-directories)</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -710,8 +831,7 @@ base64 encoded content is expected (only for non-directories)</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -766,19 +886,20 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-createOrUpdateSymlink"><a class="anchor" href="#apidoc-configchannel-createOrUpdateSymlink"></a><a class="link" href="#apidoc-configchannel-createOrUpdateSymlink">Method: createOrUpdateSymlink</a></h2>
+<h2 id="apidoc-configchannel-createOrUpdateSymlink-1544507531"><a class="anchor" href="#apidoc-configchannel-createOrUpdateSymlink-1544507531"></a><a class="link" href="#apidoc-configchannel-createOrUpdateSymlink-1544507531">Method: createOrUpdateSymlink</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -803,7 +924,8 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - path info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "target_path" - The target path for the symbolic link</p>
 </li>
@@ -812,8 +934,10 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="int">int</span>  "revision" - next revision number,
-     skip this field for automatic revision number assignment
-// no end needed</p>
+skip this field for automatic revision number assignment</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -824,10 +948,10 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -836,8 +960,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -892,19 +1015,20 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deleteChannels"><a class="anchor" href="#apidoc-configchannel-deleteChannels"></a><a class="link" href="#apidoc-configchannel-deleteChannels">Method: deleteChannels</a></h2>
+<h2 id="apidoc-configchannel-deleteChannels-1704641164"><a class="anchor" href="#apidoc-configchannel-deleteChannels-1704641164"></a><a class="link" href="#apidoc-configchannel-deleteChannels-1704641164">Method: deleteChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -926,7 +1050,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - configuration channel labels to delete.</p>
+<p><span class="string">string</span>  - configuration channel labels to delete.</p>
 </li>
 </ul>
 </div>
@@ -943,11 +1067,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deleteFileRevisions"><a class="anchor" href="#apidoc-configchannel-deleteFileRevisions"></a><a class="link" href="#apidoc-configchannel-deleteFileRevisions">Method: deleteFileRevisions</a></h2>
+<h2 id="apidoc-configchannel-deleteFileRevisions-2064777114"><a class="anchor" href="#apidoc-configchannel-deleteFileRevisions-2064777114"></a><a class="link" href="#apidoc-configchannel-deleteFileRevisions-2064777114">Method: deleteFileRevisions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -974,7 +1097,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - List of revisions to delete</p>
+<p><span class="int">int</span>  - List of revisions to delete</p>
 </li>
 </ul>
 </div>
@@ -991,11 +1114,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deleteFiles"><a class="anchor" href="#apidoc-configchannel-deleteFiles"></a><a class="link" href="#apidoc-configchannel-deleteFiles">Method: deleteFiles</a></h2>
+<h2 id="apidoc-configchannel-deleteFiles-1617463959"><a class="anchor" href="#apidoc-configchannel-deleteFiles-1617463959"></a><a class="link" href="#apidoc-configchannel-deleteFiles-1617463959">Method: deleteFiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1019,7 +1141,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - file paths to remove.</p>
+<p><span class="string">string</span>  - file paths to remove.</p>
 </li>
 </ul>
 </div>
@@ -1036,11 +1158,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deployAllSystems"><a class="anchor" href="#apidoc-configchannel-deployAllSystems"></a><a class="link" href="#apidoc-configchannel-deployAllSystems">Method: deployAllSystems</a></h2>
+<h2 id="apidoc-configchannel-deployAllSystems-1855386573"><a class="anchor" href="#apidoc-configchannel-deployAllSystems-1855386573"></a><a class="link" href="#apidoc-configchannel-deployAllSystems-1855386573">Method: deployAllSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1072,11 +1193,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deployAllSystems"><a class="anchor" href="#apidoc-configchannel-deployAllSystems"></a><a class="link" href="#apidoc-configchannel-deployAllSystems">Method: deployAllSystems</a></h2>
+<h2 id="apidoc-configchannel-deployAllSystems-1242489018"><a class="anchor" href="#apidoc-configchannel-deployAllSystems-1242489018"></a><a class="link" href="#apidoc-configchannel-deployAllSystems-1242489018">Method: deployAllSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1111,11 +1231,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deployAllSystems"><a class="anchor" href="#apidoc-configchannel-deployAllSystems"></a><a class="link" href="#apidoc-configchannel-deployAllSystems">Method: deployAllSystems</a></h2>
+<h2 id="apidoc-configchannel-deployAllSystems-462965669"><a class="anchor" href="#apidoc-configchannel-deployAllSystems-462965669"></a><a class="link" href="#apidoc-configchannel-deployAllSystems-462965669">Method: deployAllSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1150,11 +1269,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-deployAllSystems"><a class="anchor" href="#apidoc-configchannel-deployAllSystems"></a><a class="link" href="#apidoc-configchannel-deployAllSystems">Method: deployAllSystems</a></h2>
+<h2 id="apidoc-configchannel-deployAllSystems-403879268"><a class="anchor" href="#apidoc-configchannel-deployAllSystems-403879268"></a><a class="link" href="#apidoc-configchannel-deployAllSystems-403879268">Method: deployAllSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1192,11 +1310,10 @@ Present for files or directories only.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-getDetails"><a class="anchor" href="#apidoc-configchannel-getDetails"></a><a class="link" href="#apidoc-configchannel-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-configchannel-getDetails-1263257405"><a class="anchor" href="#apidoc-configchannel-getDetails-1263257405"></a><a class="link" href="#apidoc-configchannel-getDetails-1263257405">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1224,7 +1341,8 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1243,9 +1361,13 @@ Present for files or directories only.</p>
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1256,21 +1378,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-getDetails"><a class="anchor" href="#apidoc-configchannel-getDetails"></a><a class="link" href="#apidoc-configchannel-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-configchannel-getDetails-1287200676"><a class="anchor" href="#apidoc-configchannel-getDetails-1287200676"></a><a class="link" href="#apidoc-configchannel-getDetails-1287200676">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1298,7 +1416,8 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1317,9 +1436,13 @@ Present for files or directories only.</p>
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1330,21 +1453,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-getEncodedFileRevision"><a class="anchor" href="#apidoc-configchannel-getEncodedFileRevision"></a><a class="link" href="#apidoc-configchannel-getEncodedFileRevision">Method: getEncodedFileRevision</a></h2>
+<h2 id="apidoc-configchannel-getEncodedFileRevision-1070731890"><a class="anchor" href="#apidoc-configchannel-getEncodedFileRevision-1070731890"></a><a class="link" href="#apidoc-configchannel-getEncodedFileRevision-1070731890">Method: getEncodedFileRevision</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1379,10 +1498,10 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -1391,8 +1510,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -1447,16 +1565,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-getFileRevision"><a class="anchor" href="#apidoc-configchannel-getFileRevision"></a><a class="link" href="#apidoc-configchannel-getFileRevision">Method: getFileRevision</a></h2>
+<h2 id="apidoc-configchannel-getFileRevision-1450248078"><a class="anchor" href="#apidoc-configchannel-getFileRevision-1450248078"></a><a class="link" href="#apidoc-configchannel-getFileRevision-1450248078">Method: getFileRevision</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1490,10 +1609,10 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -1502,8 +1621,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -1558,16 +1676,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-getFileRevisions"><a class="anchor" href="#apidoc-configchannel-getFileRevisions"></a><a class="link" href="#apidoc-configchannel-getFileRevisions">Method: getFileRevisions</a></h2>
+<h2 id="apidoc-configchannel-getFileRevisions-1003983940"><a class="anchor" href="#apidoc-configchannel-getFileRevisions-1003983940"></a><a class="link" href="#apidoc-configchannel-getFileRevisions-1003983940">Method: getFileRevisions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1601,10 +1720,10 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -1613,8 +1732,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -1669,21 +1787,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-listFiles"><a class="anchor" href="#apidoc-configchannel-listFiles"></a><a class="link" href="#apidoc-configchannel-listFiles">Method: listFiles</a></h2>
+<h2 id="apidoc-configchannel-listFiles-1136085369"><a class="anchor" href="#apidoc-configchannel-listFiles-1136085369"></a><a class="link" href="#apidoc-configchannel-listFiles-1136085369">Method: listFiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1714,10 +1828,10 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration File information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -1726,28 +1840,23 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
 </li>
 <li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified" - Last Modified Date
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified" - Last Modified Date</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-listGlobals"><a class="anchor" href="#apidoc-configchannel-listGlobals"></a><a class="link" href="#apidoc-configchannel-listGlobals">Method: listGlobals</a></h2>
+<h2 id="apidoc-configchannel-listGlobals-452431415"><a class="anchor" href="#apidoc-configchannel-listGlobals-452431415"></a><a class="link" href="#apidoc-configchannel-listGlobals-452431415">Method: listGlobals</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1775,7 +1884,8 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1797,9 +1907,13 @@ Present for files or directories only.</p>
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1810,26 +1924,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-listSubscribedSystems"><a class="anchor" href="#apidoc-configchannel-listSubscribedSystems"></a><a class="link" href="#apidoc-configchannel-listSubscribedSystems">Method: listSubscribedSystems</a></h2>
+<h2 id="apidoc-configchannel-listSubscribedSystems-1094923568"><a class="anchor" href="#apidoc-configchannel-listSubscribedSystems-1094923568"></a><a class="link" href="#apidoc-configchannel-listSubscribedSystems-1094923568">Method: listSubscribedSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1860,26 +1965,23 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - system</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "name"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "name"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-lookupChannelInfo"><a class="anchor" href="#apidoc-configchannel-lookupChannelInfo"></a><a class="link" href="#apidoc-configchannel-lookupChannelInfo">Method: lookupChannelInfo</a></h2>
+<h2 id="apidoc-configchannel-lookupChannelInfo-1036316015"><a class="anchor" href="#apidoc-configchannel-lookupChannelInfo-1036316015"></a><a class="link" href="#apidoc-configchannel-lookupChannelInfo-1036316015">Method: lookupChannelInfo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1900,7 +2002,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - configuration channel label</p>
+<p><span class="string">string</span>  - configuration channel label</p>
 </li>
 </ul>
 </div>
@@ -1917,7 +2019,8 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1936,9 +2039,13 @@ Present for files or directories only.</p>
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1949,26 +2056,17 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-lookupFileInfo"><a class="anchor" href="#apidoc-configchannel-lookupFileInfo"></a><a class="link" href="#apidoc-configchannel-lookupFileInfo">Method: lookupFileInfo</a></h2>
+<h2 id="apidoc-configchannel-lookupFileInfo-2049964811"><a class="anchor" href="#apidoc-configchannel-lookupFileInfo-2049964811"></a><a class="link" href="#apidoc-configchannel-lookupFileInfo-2049964811">Method: lookupFileInfo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1993,7 +2091,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - List of paths to examine.</p>
+<p><span class="string">string</span>  - List of paths to examine.</p>
 </li>
 </ul>
 </div>
@@ -2010,10 +2108,10 @@ Present for files or directories only.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -2022,8 +2120,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -2078,12 +2175,9 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -2091,11 +2185,10 @@ Present for files or directories only.</p>
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-lookupFileInfo"><a class="anchor" href="#apidoc-configchannel-lookupFileInfo"></a><a class="link" href="#apidoc-configchannel-lookupFileInfo">Method: lookupFileInfo</a></h2>
+<h2 id="apidoc-configchannel-lookupFileInfo-332065032"><a class="anchor" href="#apidoc-configchannel-lookupFileInfo-332065032"></a><a class="link" href="#apidoc-configchannel-lookupFileInfo-332065032">Method: lookupFileInfo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2130,10 +2223,10 @@ Present for files or directories only.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -2142,8 +2235,7 @@ Present for files or directories only.</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -2198,19 +2290,20 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Available since API version: 10.12</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-scheduleFileComparisons"><a class="anchor" href="#apidoc-configchannel-scheduleFileComparisons"></a><a class="link" href="#apidoc-configchannel-scheduleFileComparisons">Method: scheduleFileComparisons</a></h2>
+<h2 id="apidoc-configchannel-scheduleFileComparisons-607042875"><a class="anchor" href="#apidoc-configchannel-scheduleFileComparisons-607042875"></a><a class="link" href="#apidoc-configchannel-scheduleFileComparisons-607042875">Method: scheduleFileComparisons</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2238,7 +2331,7 @@ Present for files or directories only.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>long - The list of server id that the
+<p><span class="long">long</span>  - The list of server id that the
 comparison will be performed on</p>
 </li>
 </ul>
@@ -2252,15 +2345,14 @@ comparison will be performed on</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int actionId - The action id of the scheduled action</p>
+<p><span class="int">int</span>  actionId - The action id of the scheduled action</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-update"><a class="anchor" href="#apidoc-configchannel-update"></a><a class="link" href="#apidoc-configchannel-update">Method: update</a></h2>
+<h2 id="apidoc-configchannel-update-313142474"><a class="anchor" href="#apidoc-configchannel-update-313142474"></a><a class="link" href="#apidoc-configchannel-update-313142474">Method: update</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2296,7 +2388,8 @@ comparison will be performed on</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -2315,9 +2408,13 @@ comparison will be performed on</p>
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -2328,21 +2425,17 @@ comparison will be performed on</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-configchannel-updateInitSls"><a class="anchor" href="#apidoc-configchannel-updateInitSls"></a><a class="link" href="#apidoc-configchannel-updateInitSls">Method: updateInitSls</a></h2>
+<h2 id="apidoc-configchannel-updateInitSls-1548134743"><a class="anchor" href="#apidoc-configchannel-updateInitSls-1548134743"></a><a class="link" href="#apidoc-configchannel-updateInitSls-1548134743">Method: updateInitSls</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2363,13 +2456,19 @@ comparison will be performed on</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - path info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "contents" - Contents of the init.sls file</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "contents_enc64" - Identifies base64 encoded content(default: disabled)
-// no end needed</p>
+<p><span class="boolean">boolean</span>  "contents_enc64" - Identifies base64 encoded content(default: disabled)</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - next revision number, auto increment for null</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -2380,10 +2479,10 @@ comparison will be performed on</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - Configuration Revision information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "type"
-// no end needed</p>
+<p><span class="string">string</span>  "type"</p>
 </li>
 <li>
 <p>file</p>
@@ -2392,8 +2491,7 @@ comparison will be performed on</p>
 <p>directory</p>
 </li>
 <li>
-<p>symlink
-// no end needed</p>
+<p>symlink</p>
 </li>
 <li>
 <p><span class="string">string</span>  "path" - File Path</p>
@@ -2448,25 +2546,26 @@ Present for files or directories only.</p>
 <p><span class="string">string</span>  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
-// no end needed</p>
+<p><span class="string">string</span>  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
 <div class="cedents grid" role="navigation">
 
   <div class="prev">
-      <a href="channel.software.html" title="channel.software">
+      <a href="cluster.html" title="cluster">
         <div class="change-page">
           <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
         <span class="label">Previous</span>
         <br/>
         <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">channel.software</span>
+        <span class="title">cluster</span>
         </div>
       </a>
   </div>
@@ -2489,6 +2588,8 @@ Present for files or directories only.</p>
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -2505,6 +2606,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -2532,37 +2637,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -2571,10 +2645,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/configchannel.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -2590,8 +2664,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>

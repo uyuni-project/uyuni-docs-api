@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Page Not Found :: Uyuni API</title>
+    <title>Page Not Found :: Uyuni API Documentation</title>
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="/uyuni-docs-api/_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="/uyuni-docs-api/_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="/uyuni-docs-api/_/css/search.css">
 <link rel="icon" href="/uyuni-docs-api/_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/uyuni-docs-api/_/css/font-styles.css">
@@ -15,15 +14,13 @@
 <link rel="stylesheet" href="/uyuni-docs-api/_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/uyuni-docs-api/_/css/vendor/light.css">
-
-
   </head>
   <body class="status-404">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="/uyuni-docs-api/_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -46,18 +43,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="/uyuni-docs-api/_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="/uyuni-docs-api/_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="/uyuni-docs-api/_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="/uyuni-docs-api/_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
 <div class="nav-panel-explore is-active" data-panel="explore">
   <ul class="components">
     <li class="component">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-latest">
           <a href="/uyuni/index.html">master</a>
@@ -105,12 +114,14 @@
 &nbsp;
 <span class="next-caret">
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!--  -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
 <h1 class="page">Page Not Found</h1>
+<div class="svg-container">
+<img class="errorsvg" src="/uyuni-docs-api/_/img/error404.svg">
+</div>
 <div class="paragraph">
 <p>The page you&#8217;re looking for does not exist. It may have been moved.</p>
 </div>
@@ -130,6 +141,8 @@ If you typed the URL of this page manually, please double check that you entered
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -146,6 +159,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -173,37 +190,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -212,10 +198,10 @@ tippy('#submitPR', {
     window.antora.pagePath = ''
 </script>
 <script src="/uyuni-docs-api/_/js/site.js"></script>
+
     <script src="/uyuni-docs-api/_/js/vendor/lunr.js"></script>
     <script src="/uyuni-docs-api/_/js/vendor/search.js"></script>
     <script async src="/uyuni-docs-api/_/../search-index.js"></script>
-
 <script src="/uyuni-docs-api/_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -231,8 +217,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="/uyuni-docs-api/_/js/prism.js"></script>
   </body>
 </html>

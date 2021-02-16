@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>user :: Uyuni API</title>
+    <title>user :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/user.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="user.html">user</a></li>
   </ul>
 </nav>
@@ -308,10 +331,8 @@
       <a href="user.external.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/user.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/user.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,88 +343,88 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-user-addAssignedSystemGroup">addAssignedSystemGroup</a></p>
+<p><a href="#apidoc-user-addAssignedSystemGroup-1778913597">addAssignedSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addAssignedSystemGroups">addAssignedSystemGroups</a></p>
+<p><a href="#apidoc-user-addAssignedSystemGroups-1208989446">addAssignedSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addDefaultSystemGroup">addDefaultSystemGroup</a></p>
+<p><a href="#apidoc-user-addDefaultSystemGroup-576149775">addDefaultSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addDefaultSystemGroups">addDefaultSystemGroups</a></p>
+<p><a href="#apidoc-user-addDefaultSystemGroups-205413948">addDefaultSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addRole">addRole</a></p>
+<p><a href="#apidoc-user-addRole-583093520">addRole</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-create">create</a></p>
+<p><a href="#apidoc-user-create-942106216">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-create">create</a></p>
+<p><a href="#apidoc-user-create-235521954">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-delete">delete</a></p>
+<p><a href="#apidoc-user-delete-646492862">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-disable">disable</a></p>
+<p><a href="#apidoc-user-disable-819197315">disable</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-enable">enable</a></p>
+<p><a href="#apidoc-user-enable-860144087">enable</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-getCreateDefaultSystemGroup">getCreateDefaultSystemGroup</a></p>
+<p><a href="#apidoc-user-getCreateDefaultSystemGroup-1725392569">getCreateDefaultSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-getDetails">getDetails</a></p>
+<p><a href="#apidoc-user-getDetails-1574257199">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-getLoggedInTime">getLoggedInTime</a></p>
+<p><a href="#apidoc-user-getLoggedInTime-324419172">getLoggedInTime</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listAssignableRoles">listAssignableRoles</a></p>
+<p><a href="#apidoc-user-listAssignableRoles-1433988478">listAssignableRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listAssignedSystemGroups">listAssignedSystemGroups</a></p>
+<p><a href="#apidoc-user-listAssignedSystemGroups-941392492">listAssignedSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listDefaultSystemGroups">listDefaultSystemGroups</a></p>
+<p><a href="#apidoc-user-listDefaultSystemGroups-1177414443">listDefaultSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listRoles">listRoles</a></p>
+<p><a href="#apidoc-user-listRoles-1281024621">listRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listUsers">listUsers</a></p>
+<p><a href="#apidoc-user-listUsers-1262516935">listUsers</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeAssignedSystemGroup">removeAssignedSystemGroup</a></p>
+<p><a href="#apidoc-user-removeAssignedSystemGroup-920386152">removeAssignedSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeAssignedSystemGroups">removeAssignedSystemGroups</a></p>
+<p><a href="#apidoc-user-removeAssignedSystemGroups-520498704">removeAssignedSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeDefaultSystemGroup">removeDefaultSystemGroup</a></p>
+<p><a href="#apidoc-user-removeDefaultSystemGroup-301421265">removeDefaultSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeDefaultSystemGroups">removeDefaultSystemGroups</a></p>
+<p><a href="#apidoc-user-removeDefaultSystemGroups-1588219600">removeDefaultSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeRole">removeRole</a></p>
+<p><a href="#apidoc-user-removeRole-1723731570">removeRole</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-setCreateDefaultSystemGroup">setCreateDefaultSystemGroup</a></p>
+<p><a href="#apidoc-user-setCreateDefaultSystemGroup-255248561">setCreateDefaultSystemGroup</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-setDetails">setDetails</a></p>
+<p><a href="#apidoc-user-setDetails-361467152">setDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-setErrataNotifications">setErrataNotifications</a></p>
+<p><a href="#apidoc-user-setErrataNotifications-278894001">setErrataNotifications</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-setReadOnly">setReadOnly</a></p>
+<p><a href="#apidoc-user-setReadOnly-622702995">setReadOnly</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-usePamAuthentication">usePamAuthentication</a></p>
+<p><a href="#apidoc-user-usePamAuthentication-1940927690">usePamAuthentication</a></p>
 </li>
 </ul>
 </div>
@@ -422,11 +443,10 @@
 <div class="paragraph">
 <p>user</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addAssignedSystemGroup"><a class="anchor" href="#apidoc-user-addAssignedSystemGroup"></a><a class="link" href="#apidoc-user-addAssignedSystemGroup">Method: addAssignedSystemGroup</a></h2>
+<h2 id="apidoc-user-addAssignedSystemGroup-1778913597"><a class="anchor" href="#apidoc-user-addAssignedSystemGroup-1778913597"></a><a class="link" href="#apidoc-user-addAssignedSystemGroup-1778913597">Method: addAssignedSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -464,11 +484,10 @@ added to user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addAssignedSystemGroups"><a class="anchor" href="#apidoc-user-addAssignedSystemGroups"></a><a class="link" href="#apidoc-user-addAssignedSystemGroups">Method: addAssignedSystemGroups</a></h2>
+<h2 id="apidoc-user-addAssignedSystemGroups-1208989446"><a class="anchor" href="#apidoc-user-addAssignedSystemGroups-1208989446"></a><a class="link" href="#apidoc-user-addAssignedSystemGroups-1208989446">Method: addAssignedSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -492,7 +511,7 @@ added to user&#8217;s list of default system groups.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - serverGroupName</p>
+<p><span class="string">string</span>  - serverGroupName</p>
 </li>
 </ul>
 </div>
@@ -513,11 +532,10 @@ added to user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addDefaultSystemGroup"><a class="anchor" href="#apidoc-user-addDefaultSystemGroup"></a><a class="link" href="#apidoc-user-addDefaultSystemGroup">Method: addDefaultSystemGroup</a></h2>
+<h2 id="apidoc-user-addDefaultSystemGroup-576149775"><a class="anchor" href="#apidoc-user-addDefaultSystemGroup-576149775"></a><a class="link" href="#apidoc-user-addDefaultSystemGroup-576149775">Method: addDefaultSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -551,11 +569,10 @@ added to user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addDefaultSystemGroups"><a class="anchor" href="#apidoc-user-addDefaultSystemGroups"></a><a class="link" href="#apidoc-user-addDefaultSystemGroups">Method: addDefaultSystemGroups</a></h2>
+<h2 id="apidoc-user-addDefaultSystemGroups-205413948"><a class="anchor" href="#apidoc-user-addDefaultSystemGroups-205413948"></a><a class="link" href="#apidoc-user-addDefaultSystemGroups-205413948">Method: addDefaultSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -579,7 +596,7 @@ added to user&#8217;s list of default system groups.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - serverGroupName</p>
+<p><span class="string">string</span>  - serverGroupName</p>
 </li>
 </ul>
 </div>
@@ -596,11 +613,10 @@ added to user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addRole"><a class="anchor" href="#apidoc-user-addRole"></a><a class="link" href="#apidoc-user-addRole">Method: addRole</a></h2>
+<h2 id="apidoc-user-addRole-583093520"><a class="anchor" href="#apidoc-user-addRole-583093520"></a><a class="link" href="#apidoc-user-addRole-583093520">Method: addRole</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -636,11 +652,10 @@ activation_key_admin.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-create"><a class="anchor" href="#apidoc-user-create"></a><a class="link" href="#apidoc-user-create">Method: create</a></h2>
+<h2 id="apidoc-user-create-942106216"><a class="anchor" href="#apidoc-user-create-942106216"></a><a class="link" href="#apidoc-user-create-942106216">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -684,11 +699,10 @@ already in use.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-create"><a class="anchor" href="#apidoc-user-create"></a><a class="link" href="#apidoc-user-create">Method: create</a></h2>
+<h2 id="apidoc-user-create-235521954"><a class="anchor" href="#apidoc-user-create-235521954"></a><a class="link" href="#apidoc-user-create-235521954">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -736,11 +750,10 @@ authentication for this user, 0 otherwise.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-delete"><a class="anchor" href="#apidoc-user-delete"></a><a class="link" href="#apidoc-user-delete">Method: delete</a></h2>
+<h2 id="apidoc-user-delete-646492862"><a class="anchor" href="#apidoc-user-delete-646492862"></a><a class="link" href="#apidoc-user-delete-646492862">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -771,11 +784,10 @@ authentication for this user, 0 otherwise.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-disable"><a class="anchor" href="#apidoc-user-disable"></a><a class="link" href="#apidoc-user-disable">Method: disable</a></h2>
+<h2 id="apidoc-user-disable-819197315"><a class="anchor" href="#apidoc-user-disable-819197315"></a><a class="link" href="#apidoc-user-disable-819197315">Method: disable</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -806,11 +818,10 @@ authentication for this user, 0 otherwise.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-enable"><a class="anchor" href="#apidoc-user-enable"></a><a class="link" href="#apidoc-user-enable">Method: enable</a></h2>
+<h2 id="apidoc-user-enable-860144087"><a class="anchor" href="#apidoc-user-enable-860144087"></a><a class="link" href="#apidoc-user-enable-860144087">Method: enable</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -841,11 +852,10 @@ authentication for this user, 0 otherwise.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-getCreateDefaultSystemGroup"><a class="anchor" href="#apidoc-user-getCreateDefaultSystemGroup"></a><a class="link" href="#apidoc-user-getCreateDefaultSystemGroup">Method: getCreateDefaultSystemGroup</a></h2>
+<h2 id="apidoc-user-getCreateDefaultSystemGroup-1725392569"><a class="anchor" href="#apidoc-user-getCreateDefaultSystemGroup-1725392569"></a><a class="link" href="#apidoc-user-getCreateDefaultSystemGroup-1725392569">Method: getCreateDefaultSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -880,11 +890,10 @@ authentication for this user, 0 otherwise.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-getDetails"><a class="anchor" href="#apidoc-user-getDetails"></a><a class="link" href="#apidoc-user-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-user-getDetails-1574257199"><a class="anchor" href="#apidoc-user-getDetails-1574257199"></a><a class="link" href="#apidoc-user-getDetails-1574257199">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -912,7 +921,8 @@ authentication for this user, 0 otherwise.</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - user details</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
 </li>
@@ -953,16 +963,17 @@ PAM authentication</p>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "errata_notification" - true if errata e-mail notification
-  is enabled for the user
-// no end needed</p>
+is enabled for the user</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-getLoggedInTime"><a class="anchor" href="#apidoc-user-getLoggedInTime"></a><a class="link" href="#apidoc-user-getLoggedInTime">Method: getLoggedInTime (Deprecated)</a></h2>
+<h2 id="apidoc-user-getLoggedInTime-324419172"><a class="anchor" href="#apidoc-user-getLoggedInTime-324419172"></a><a class="link" href="#apidoc-user-getLoggedInTime-324419172">Method: getLoggedInTime (Deprecated)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -992,15 +1003,14 @@ PAM authentication</p>
 <div class="ulist">
 <ul>
 <li>
-<p>dateTime.iso8601</p>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-listAssignableRoles"><a class="anchor" href="#apidoc-user-listAssignableRoles"></a><a class="link" href="#apidoc-user-listAssignableRoles">Method: listAssignableRoles</a></h2>
+<h2 id="apidoc-user-listAssignableRoles-1433988478"><a class="anchor" href="#apidoc-user-listAssignableRoles-1433988478"></a><a class="link" href="#apidoc-user-listAssignableRoles-1433988478">Method: listAssignableRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1028,18 +1038,17 @@ PAM authentication</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - (role label)</p>
+<p><span class="string">string</span>  - (role label)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-listAssignedSystemGroups"><a class="anchor" href="#apidoc-user-listAssignedSystemGroups"></a><a class="link" href="#apidoc-user-listAssignedSystemGroups">Method: listAssignedSystemGroups</a></h2>
+<h2 id="apidoc-user-listAssignedSystemGroups-941392492"><a class="anchor" href="#apidoc-user-listAssignedSystemGroups-941392492"></a><a class="link" href="#apidoc-user-listAssignedSystemGroups-941392492">Method: listAssignedSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1067,10 +1076,12 @@ PAM authentication</p>
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - system group</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1084,17 +1095,20 @@ PAM authentication</p>
 <p><span class="int">int</span>  "system_count"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "org_id" - Organization ID for this system group.
-  // no end needed
-// no end needed</p>
+<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-listDefaultSystemGroups"><a class="anchor" href="#apidoc-user-listDefaultSystemGroups"></a><a class="link" href="#apidoc-user-listDefaultSystemGroups">Method: listDefaultSystemGroups</a></h2>
+<h2 id="apidoc-user-listDefaultSystemGroups-1177414443"><a class="anchor" href="#apidoc-user-listDefaultSystemGroups-1177414443"></a><a class="link" href="#apidoc-user-listDefaultSystemGroups-1177414443">Method: listDefaultSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1122,10 +1136,12 @@ PAM authentication</p>
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - system group</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1139,17 +1155,20 @@ PAM authentication</p>
 <p><span class="int">int</span>  "system_count"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "org_id" - Organization ID for this system group.
-  // no end needed
-// no end needed</p>
+<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-listRoles"><a class="anchor" href="#apidoc-user-listRoles"></a><a class="link" href="#apidoc-user-listRoles">Method: listRoles</a></h2>
+<h2 id="apidoc-user-listRoles-1281024621"><a class="anchor" href="#apidoc-user-listRoles-1281024621"></a><a class="link" href="#apidoc-user-listRoles-1281024621">Method: listRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1180,18 +1199,17 @@ PAM authentication</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - (role label)</p>
+<p><span class="string">string</span>  - (role label)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-listUsers"><a class="anchor" href="#apidoc-user-listUsers"></a><a class="link" href="#apidoc-user-listUsers">Method: listUsers</a></h2>
+<h2 id="apidoc-user-listUsers-1262516935"><a class="anchor" href="#apidoc-user-listUsers-1262516935"></a><a class="link" href="#apidoc-user-listUsers-1262516935">Method: listUsers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1219,7 +1237,8 @@ PAM authentication</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - user</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1231,21 +1250,17 @@ PAM authentication</p>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "enabled" - true if user is enabled,
-                   false if the user is disabled
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+false if the user is disabled</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeAssignedSystemGroup"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroup"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroup">Method: removeAssignedSystemGroup</a></h2>
+<h2 id="apidoc-user-removeAssignedSystemGroup-920386152"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroup-920386152"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroup-920386152">Method: removeAssignedSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1283,11 +1298,10 @@ be removed from the user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeAssignedSystemGroups"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroups"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroups">Method: removeAssignedSystemGroups</a></h2>
+<h2 id="apidoc-user-removeAssignedSystemGroups-520498704"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroups-520498704"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroups-520498704">Method: removeAssignedSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1311,7 +1325,7 @@ be removed from the user&#8217;s list of default system groups.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - serverGroupName</p>
+<p><span class="string">string</span>  - serverGroupName</p>
 </li>
 </ul>
 </div>
@@ -1332,11 +1346,10 @@ removed from the user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeDefaultSystemGroup"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroup"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroup">Method: removeDefaultSystemGroup</a></h2>
+<h2 id="apidoc-user-removeDefaultSystemGroup-301421265"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroup-301421265"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroup-301421265">Method: removeDefaultSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1370,11 +1383,10 @@ removed from the user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeDefaultSystemGroups"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroups"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroups">Method: removeDefaultSystemGroups</a></h2>
+<h2 id="apidoc-user-removeDefaultSystemGroups-1588219600"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroups-1588219600"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroups-1588219600">Method: removeDefaultSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1398,7 +1410,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - serverGroupName</p>
+<p><span class="string">string</span>  - serverGroupName</p>
 </li>
 </ul>
 </div>
@@ -1415,11 +1427,10 @@ removed from the user&#8217;s list of default system groups.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeRole"><a class="anchor" href="#apidoc-user-removeRole"></a><a class="link" href="#apidoc-user-removeRole">Method: removeRole</a></h2>
+<h2 id="apidoc-user-removeRole-1723731570"><a class="anchor" href="#apidoc-user-removeRole-1723731570"></a><a class="link" href="#apidoc-user-removeRole-1723731570">Method: removeRole</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1455,11 +1466,10 @@ activation_key_admin.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setCreateDefaultSystemGroup"><a class="anchor" href="#apidoc-user-setCreateDefaultSystemGroup"></a><a class="link" href="#apidoc-user-setCreateDefaultSystemGroup">Method: setCreateDefaultSystemGroup</a></h2>
+<h2 id="apidoc-user-setCreateDefaultSystemGroup-255248561"><a class="anchor" href="#apidoc-user-setCreateDefaultSystemGroup-255248561"></a><a class="link" href="#apidoc-user-setCreateDefaultSystemGroup-255248561">Method: setCreateDefaultSystemGroup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1497,11 +1507,10 @@ activation_key_admin.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setDetails"><a class="anchor" href="#apidoc-user-setDetails"></a><a class="link" href="#apidoc-user-setDetails">Method: setDetails</a></h2>
+<h2 id="apidoc-user-setDetails-361467152"><a class="anchor" href="#apidoc-user-setDetails-361467152"></a><a class="link" href="#apidoc-user-setDetails-361467152">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1522,7 +1531,8 @@ activation_key_admin.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - user details</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
 </li>
@@ -1539,8 +1549,10 @@ activation_key_admin.</p>
 <p><span class="string">string</span>  "prefix"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "password"
-// no end needed</p>
+<p><span class="string">string</span>  "password"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1554,11 +1566,10 @@ activation_key_admin.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setErrataNotifications"><a class="anchor" href="#apidoc-user-setErrataNotifications"></a><a class="link" href="#apidoc-user-setErrataNotifications">Method: setErrataNotifications</a></h2>
+<h2 id="apidoc-user-setErrataNotifications-278894001"><a class="anchor" href="#apidoc-user-setErrataNotifications-278894001"></a><a class="link" href="#apidoc-user-setErrataNotifications-278894001">Method: setErrataNotifications</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1593,11 +1604,10 @@ errata notifications, False for disabling</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setReadOnly"><a class="anchor" href="#apidoc-user-setReadOnly"></a><a class="link" href="#apidoc-user-setReadOnly">Method: setReadOnly</a></h2>
+<h2 id="apidoc-user-setReadOnly-622702995"><a class="anchor" href="#apidoc-user-setReadOnly-622702995"></a><a class="link" href="#apidoc-user-setReadOnly-622702995">Method: setReadOnly</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1633,18 +1643,17 @@ have only read-only API access or standard full scale access.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-usePamAuthentication"><a class="anchor" href="#apidoc-user-usePamAuthentication"></a><a class="link" href="#apidoc-user-usePamAuthentication">Method: usePamAuthentication</a></h2>
+<h2 id="apidoc-user-usePamAuthentication-1940927690"><a class="anchor" href="#apidoc-user-usePamAuthentication-1940927690"></a><a class="link" href="#apidoc-user-usePamAuthentication-1940927690">Method: usePamAuthentication</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Toggles whether or not a user uses PAM authentication or
- basic Satellite authentication.</p>
+ basic Uyuni authentication.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1658,15 +1667,13 @@ have only read-only API access or standard full scale access.</p>
 <p><span class="string">string</span>  login - User&#8217;s login name.</p>
 </li>
 <li>
-<p><span class="int">int</span>  pam_value
-// no end needed</p>
+<p><span class="int">int</span>  pam_value</p>
 </li>
 <li>
 <p>1 to enable PAM authentication</p>
 </li>
 <li>
-<p>0 to disable.
-// no end needed</p>
+<p>0 to disable.</p>
 </li>
 </ul>
 </div>
@@ -1680,7 +1687,6 @@ have only read-only API access or standard full scale access.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 
@@ -1716,6 +1722,8 @@ have only read-only API access or standard full scale access.</p>
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -1732,6 +1740,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -1759,37 +1771,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -1798,10 +1779,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/user.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -1817,8 +1798,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>

@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>org :: Uyuni API</title>
+    <title>org :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/org.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="org.html">org</a></li>
   </ul>
 </nav>
@@ -301,17 +324,15 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="kickstart.tree.html">
+      <a href="maintenance.html">
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
       <a href="org.trusts.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/org.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/org.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,76 +343,58 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-org-create">create</a></p>
+<p><a href="#apidoc-org-create-817880261">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-delete">delete</a></p>
+<p><a href="#apidoc-org-delete-1290911050">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-getCrashFileSizeLimit">getCrashFileSizeLimit</a></p>
+<p><a href="#apidoc-org-getDetails-1782724863">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-getDetails">getDetails</a></p>
+<p><a href="#apidoc-org-getDetails-731431696">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-getDetails">getDetails</a></p>
+<p><a href="#apidoc-org-getPolicyForScapFileUpload-807771233">getPolicyForScapFileUpload</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-getPolicyForScapFileUpload">getPolicyForScapFileUpload</a></p>
+<p><a href="#apidoc-org-getPolicyForScapResultDeletion-626754729">getPolicyForScapResultDeletion</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-getPolicyForScapResultDeletion">getPolicyForScapResultDeletion</a></p>
+<p><a href="#apidoc-org-isContentStagingEnabled-391915263">isContentStagingEnabled</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-isContentStagingEnabled">isContentStagingEnabled</a></p>
+<p><a href="#apidoc-org-isErrataEmailNotifsForOrg-295064445">isErrataEmailNotifsForOrg</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-isCrashReportingEnabled">isCrashReportingEnabled</a></p>
+<p><a href="#apidoc-org-isOrgConfigManagedByOrgAdmin-645018917">isOrgConfigManagedByOrgAdmin</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-isCrashfileUploadEnabled">isCrashfileUploadEnabled</a></p>
+<p><a href="#apidoc-org-listOrgs-1543420346">listOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-isErrataEmailNotifsForOrg">isErrataEmailNotifsForOrg</a></p>
+<p><a href="#apidoc-org-listUsers-1147103911">listUsers</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-isOrgConfigManagedByOrgAdmin">isOrgConfigManagedByOrgAdmin</a></p>
+<p><a href="#apidoc-org-migrateSystems-1573405835">migrateSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-listOrgs">listOrgs</a></p>
+<p><a href="#apidoc-org-setContentStaging-1648090182">setContentStaging</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-listUsers">listUsers</a></p>
+<p><a href="#apidoc-org-setErrataEmailNotifsForOrg-645564279">setErrataEmailNotifsForOrg</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-migrateSystems">migrateSystems</a></p>
+<p><a href="#apidoc-org-setOrgConfigManagedByOrgAdmin-298060389">setOrgConfigManagedByOrgAdmin</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-setContentStaging">setContentStaging</a></p>
+<p><a href="#apidoc-org-setPolicyForScapFileUpload-869304868">setPolicyForScapFileUpload</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-setCrashFileSizeLimit">setCrashFileSizeLimit</a></p>
+<p><a href="#apidoc-org-setPolicyForScapResultDeletion-975724693">setPolicyForScapResultDeletion</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-setCrashReporting">setCrashReporting</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-setCrashfileUpload">setCrashfileUpload</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-setErrataEmailNotifsForOrg">setErrataEmailNotifsForOrg</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-setOrgConfigManagedByOrgAdmin">setOrgConfigManagedByOrgAdmin</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-setPolicyForScapFileUpload">setPolicyForScapFileUpload</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-setPolicyForScapResultDeletion">setPolicyForScapResultDeletion</a></p>
-</li>
-<li>
-<p><a href="#apidoc-org-updateName">updateName</a></p>
+<p><a href="#apidoc-org-updateName-428035767">updateName</a></p>
 </li>
 </ul>
 </div>
@@ -410,11 +413,10 @@
 <div class="paragraph">
 <p>org</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-create"><a class="anchor" href="#apidoc-org-create"></a><a class="link" href="#apidoc-org-create">Method: create</a></h2>
+<h2 id="apidoc-org-create-817880261"><a class="anchor" href="#apidoc-org-create-817880261"></a><a class="link" href="#apidoc-org-create-817880261">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -466,7 +468,8 @@ should be used for the new administrator account.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - organization info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -495,16 +498,17 @@ should be used for the new administrator account.</p>
 <p><span class="int">int</span>  "configuration_channels" - Number of configuration channels in the organization. (optional)</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)
-// no end needed</p>
+<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-delete"><a class="anchor" href="#apidoc-org-delete"></a><a class="link" href="#apidoc-org-delete">Method: delete</a></h2>
+<h2 id="apidoc-org-delete-1290911050"><a class="anchor" href="#apidoc-org-delete-1290911050"></a><a class="link" href="#apidoc-org-delete-1290911050">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -536,47 +540,10 @@ should be used for the new administrator account.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-getCrashFileSizeLimit"><a class="anchor" href="#apidoc-org-getCrashFileSizeLimit"></a><a class="link" href="#apidoc-org-getCrashFileSizeLimit">Method: getCrashFileSizeLimit</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get the organization wide crash file size limit. The limit value
- must be a non-negative number, zero means no limit.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>int - Crash file size limit.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-getDetails"><a class="anchor" href="#apidoc-org-getDetails"></a><a class="link" href="#apidoc-org-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-org-getDetails-1782724863"><a class="anchor" href="#apidoc-org-getDetails-1782724863"></a><a class="link" href="#apidoc-org-getDetails-1782724863">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -605,7 +572,8 @@ should be used for the new administrator account.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - organization info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -634,16 +602,17 @@ should be used for the new administrator account.</p>
 <p><span class="int">int</span>  "configuration_channels" - Number of configuration channels in the organization. (optional)</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)
-// no end needed</p>
+<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-getDetails"><a class="anchor" href="#apidoc-org-getDetails"></a><a class="link" href="#apidoc-org-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-org-getDetails-731431696"><a class="anchor" href="#apidoc-org-getDetails-731431696"></a><a class="link" href="#apidoc-org-getDetails-731431696">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -672,7 +641,8 @@ should be used for the new administrator account.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - organization info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -701,16 +671,17 @@ should be used for the new administrator account.</p>
 <p><span class="int">int</span>  "configuration_channels" - Number of configuration channels in the organization. (optional)</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)
-// no end needed</p>
+<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-getPolicyForScapFileUpload"><a class="anchor" href="#apidoc-org-getPolicyForScapFileUpload"></a><a class="link" href="#apidoc-org-getPolicyForScapFileUpload">Method: getPolicyForScapFileUpload</a></h2>
+<h2 id="apidoc-org-getPolicyForScapFileUpload-807771233"><a class="anchor" href="#apidoc-org-getPolicyForScapFileUpload-807771233"></a><a class="link" href="#apidoc-org-getPolicyForScapFileUpload-807771233">Method: getPolicyForScapFileUpload</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -739,21 +710,23 @@ should be used for the new administrator account.</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - scap_upload_info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="boolean">boolean</span>  "enabled" - Aggregation of detailed SCAP results is enabled.</p>
 </li>
 <li>
-<p><span class="int">int</span>  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
-// no end needed</p>
+<p><span class="int">int</span>  "size_limit" - Limit (in Bytes) for a single SCAP file upload.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-getPolicyForScapResultDeletion"><a class="anchor" href="#apidoc-org-getPolicyForScapResultDeletion"></a><a class="link" href="#apidoc-org-getPolicyForScapResultDeletion">Method: getPolicyForScapResultDeletion</a></h2>
+<h2 id="apidoc-org-getPolicyForScapResultDeletion-626754729"><a class="anchor" href="#apidoc-org-getPolicyForScapResultDeletion-626754729"></a><a class="link" href="#apidoc-org-getPolicyForScapResultDeletion-626754729">Method: getPolicyForScapResultDeletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -782,21 +755,23 @@ should be used for the new administrator account.</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - scap_deletion_info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="boolean">boolean</span>  "enabled" - Deletion of SCAP results is enabled</p>
 </li>
 <li>
-<p><span class="int">int</span>  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
-// no end needed</p>
+<p><span class="int">int</span>  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-isContentStagingEnabled"><a class="anchor" href="#apidoc-org-isContentStagingEnabled"></a><a class="link" href="#apidoc-org-isContentStagingEnabled">Method: isContentStagingEnabled</a></h2>
+<h2 id="apidoc-org-isContentStagingEnabled-391915263"><a class="anchor" href="#apidoc-org-isContentStagingEnabled-391915263"></a><a class="link" href="#apidoc-org-isContentStagingEnabled-391915263">Method: isContentStagingEnabled</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -824,87 +799,14 @@ should be used for the new administrator account.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>boolean - Get the status of content staging settings.</p>
+<p><span class="boolean">boolean</span>  status - Get the status of content staging settings</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-isCrashReportingEnabled"><a class="anchor" href="#apidoc-org-isCrashReportingEnabled"></a><a class="link" href="#apidoc-org-isCrashReportingEnabled">Method: isCrashReportingEnabled</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get the status of crash reporting settings for the given organization.
- Returns true if enabled, false otherwise.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean - Get the status of crash reporting settings.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-isCrashfileUploadEnabled"><a class="anchor" href="#apidoc-org-isCrashfileUploadEnabled"></a><a class="link" href="#apidoc-org-isCrashfileUploadEnabled">Method: isCrashfileUploadEnabled</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get the status of crash file upload settings for the given organization.
- Returns true if enabled, false otherwise.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>boolean - Get the status of crash file upload settings.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-isErrataEmailNotifsForOrg"><a class="anchor" href="#apidoc-org-isErrataEmailNotifsForOrg"></a><a class="link" href="#apidoc-org-isErrataEmailNotifsForOrg">Method: isErrataEmailNotifsForOrg</a></h2>
+<h2 id="apidoc-org-isErrataEmailNotifsForOrg-295064445"><a class="anchor" href="#apidoc-org-isErrataEmailNotifsForOrg-295064445"></a><a class="link" href="#apidoc-org-isErrataEmailNotifsForOrg-295064445">Method: isErrataEmailNotifsForOrg</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -932,24 +834,22 @@ should be used for the new administrator account.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>boolean - Returns the status of the errata e-mail notification
+<p><span class="boolean">boolean</span>  status - Returns the status of the errata e-mail notification
 setting for the organization</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-isOrgConfigManagedByOrgAdmin"><a class="anchor" href="#apidoc-org-isOrgConfigManagedByOrgAdmin"></a><a class="link" href="#apidoc-org-isOrgConfigManagedByOrgAdmin">Method: isOrgConfigManagedByOrgAdmin</a></h2>
+<h2 id="apidoc-org-isOrgConfigManagedByOrgAdmin-645018917"><a class="anchor" href="#apidoc-org-isOrgConfigManagedByOrgAdmin-645018917"></a><a class="link" href="#apidoc-org-isOrgConfigManagedByOrgAdmin-645018917">Method: isOrgConfigManagedByOrgAdmin</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Returns whether Organization Administrator is able to manage his
- organization configuration. This organization configuration may have a high impact
- on the whole Spacewalk/Satellite performance</p>
+ organization configuration. This may have a high impact on general Uyuni performance.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -970,15 +870,14 @@ setting for the organization</p>
 <div class="ulist">
 <ul>
 <li>
-<p>boolean - Returns the status org admin management setting</p>
+<p><span class="boolean">boolean</span>  status - Returns the status org admin management setting</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-listOrgs"><a class="anchor" href="#apidoc-org-listOrgs"></a><a class="link" href="#apidoc-org-listOrgs">Method: listOrgs</a></h2>
+<h2 id="apidoc-org-listOrgs-1543420346"><a class="anchor" href="#apidoc-org-listOrgs-1543420346"></a><a class="link" href="#apidoc-org-listOrgs-1543420346">Method: listOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1006,7 +905,8 @@ setting for the organization</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - organization info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1035,21 +935,17 @@ setting for the organization</p>
 <p><span class="int">int</span>  "configuration_channels" - Number of configuration channels in the organization. (optional)</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-listUsers"><a class="anchor" href="#apidoc-org-listUsers"></a><a class="link" href="#apidoc-org-listUsers">Method: listUsers</a></h2>
+<h2 id="apidoc-org-listUsers-1147103911"><a class="anchor" href="#apidoc-org-listUsers-1147103911"></a><a class="link" href="#apidoc-org-listUsers-1147103911">Method: listUsers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1080,7 +976,8 @@ setting for the organization</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - user</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "login"</p>
 </li>
@@ -1094,28 +991,24 @@ setting for the organization</p>
 <p><span class="string">string</span>  "email"</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "is_org_admin"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="boolean">boolean</span>  "is_org_admin"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-migrateSystems"><a class="anchor" href="#apidoc-org-migrateSystems"></a><a class="link" href="#apidoc-org-migrateSystems">Method: migrateSystems</a></h2>
+<h2 id="apidoc-org-migrateSystems-1573405835"><a class="anchor" href="#apidoc-org-migrateSystems-1573405835"></a><a class="link" href="#apidoc-org-migrateSystems-1573405835">Method: migrateSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Migrate systems from one organization to another.  If executed by
- a Satellite administrator, the systems will be migrated from their current
+ a Uyuni administrator, the systems will be migrated from their current
  organization to the organization specified by the toOrgId.  If executed by
  an organization administrator, the systems must exist in the same organization
  as that administrator and the systems will be migrated to the organization
@@ -1139,7 +1032,7 @@ system(s) will be migrated to.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - systemId</p>
+<p><span class="int">int</span>  - systemId</p>
 </li>
 </ul>
 </div>
@@ -1156,18 +1049,17 @@ system(s) will be migrated to.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - serverIdMigrated</p>
+<p><span class="int">int</span>  - serverIdMigrated</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-setContentStaging"><a class="anchor" href="#apidoc-org-setContentStaging"></a><a class="link" href="#apidoc-org-setContentStaging">Method: setContentStaging</a></h2>
+<h2 id="apidoc-org-setContentStaging-1648090182"><a class="anchor" href="#apidoc-org-setContentStaging-1648090182"></a><a class="link" href="#apidoc-org-setContentStaging-1648090182">Method: setContentStaging</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1201,128 +1093,10 @@ system(s) will be migrated to.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-setCrashFileSizeLimit"><a class="anchor" href="#apidoc-org-setCrashFileSizeLimit"></a><a class="link" href="#apidoc-org-setCrashFileSizeLimit">Method: setCrashFileSizeLimit</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the organization wide crash file size limit. The limit value
- must be non-negative, zero means no limit.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-<li>
-<p><span class="int">int</span>  limit - The limit to set (non-negative value).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-setCrashReporting"><a class="anchor" href="#apidoc-org-setCrashReporting"></a><a class="link" href="#apidoc-org-setCrashReporting">Method: setCrashReporting</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the status of crash reporting settings for the given organization.
- Disabling crash reporting will automatically disable crash file upload.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  enable - Use true/false to enable/disable</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-setCrashfileUpload"><a class="anchor" href="#apidoc-org-setCrashfileUpload"></a><a class="link" href="#apidoc-org-setCrashfileUpload">Method: setCrashfileUpload</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the status of crash file upload settings for the given organization.
- Modifying the settings is possible as long as crash reporting is enabled.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  orgId</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  enable - Use true/false to enable/disable</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-setErrataEmailNotifsForOrg"><a class="anchor" href="#apidoc-org-setErrataEmailNotifsForOrg"></a><a class="link" href="#apidoc-org-setErrataEmailNotifsForOrg">Method: setErrataEmailNotifsForOrg</a></h2>
+<h2 id="apidoc-org-setErrataEmailNotifsForOrg-645564279"><a class="anchor" href="#apidoc-org-setErrataEmailNotifsForOrg-645564279"></a><a class="link" href="#apidoc-org-setErrataEmailNotifsForOrg-645564279">Method: setErrataEmailNotifsForOrg</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1356,19 +1130,17 @@ system(s) will be migrated to.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-setOrgConfigManagedByOrgAdmin"><a class="anchor" href="#apidoc-org-setOrgConfigManagedByOrgAdmin"></a><a class="link" href="#apidoc-org-setOrgConfigManagedByOrgAdmin">Method: setOrgConfigManagedByOrgAdmin</a></h2>
+<h2 id="apidoc-org-setOrgConfigManagedByOrgAdmin-298060389"><a class="anchor" href="#apidoc-org-setOrgConfigManagedByOrgAdmin-298060389"></a><a class="link" href="#apidoc-org-setOrgConfigManagedByOrgAdmin-298060389">Method: setOrgConfigManagedByOrgAdmin</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Sets whether Organization Administrator can manage his organization
- configuration. This organization configuration may have a high impact
- on the whole Spacewalk/Satellite performance</p>
+ configuration. This may have a high impact on general Uyuni performance.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1396,11 +1168,10 @@ system(s) will be migrated to.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-setPolicyForScapFileUpload"><a class="anchor" href="#apidoc-org-setPolicyForScapFileUpload"></a><a class="link" href="#apidoc-org-setPolicyForScapFileUpload">Method: setPolicyForScapFileUpload</a></h2>
+<h2 id="apidoc-org-setPolicyForScapFileUpload-869304868"><a class="anchor" href="#apidoc-org-setPolicyForScapFileUpload-869304868"></a><a class="link" href="#apidoc-org-setPolicyForScapFileUpload-869304868">Method: setPolicyForScapFileUpload</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1422,13 +1193,16 @@ system(s) will be migrated to.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - scap_upload_info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="boolean">boolean</span>  "enabled" - Aggregation of detailed SCAP results is enabled.</p>
 </li>
 <li>
-<p><span class="int">int</span>  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
-// no end needed</p>
+<p><span class="int">int</span>  "size_limit" - Limit (in Bytes) for a single SCAP file upload.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1442,11 +1216,10 @@ system(s) will be migrated to.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-setPolicyForScapResultDeletion"><a class="anchor" href="#apidoc-org-setPolicyForScapResultDeletion"></a><a class="link" href="#apidoc-org-setPolicyForScapResultDeletion">Method: setPolicyForScapResultDeletion</a></h2>
+<h2 id="apidoc-org-setPolicyForScapResultDeletion-975724693"><a class="anchor" href="#apidoc-org-setPolicyForScapResultDeletion-975724693"></a><a class="link" href="#apidoc-org-setPolicyForScapResultDeletion-975724693">Method: setPolicyForScapResultDeletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1468,13 +1241,16 @@ system(s) will be migrated to.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - scap_deletion_info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="boolean">boolean</span>  "enabled" - Deletion of SCAP results is enabled</p>
 </li>
 <li>
-<p><span class="int">int</span>  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
-// no end needed</p>
+<p><span class="int">int</span>  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1488,11 +1264,10 @@ system(s) will be migrated to.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org-updateName"><a class="anchor" href="#apidoc-org-updateName"></a><a class="link" href="#apidoc-org-updateName">Method: updateName</a></h2>
+<h2 id="apidoc-org-updateName-428035767"><a class="anchor" href="#apidoc-org-updateName-428035767"></a><a class="link" href="#apidoc-org-updateName-428035767">Method: updateName</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1524,7 +1299,8 @@ criteria as in the web UI.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - organization info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1553,25 +1329,26 @@ criteria as in the web UI.</p>
 <p><span class="int">int</span>  "configuration_channels" - Number of configuration channels in the organization. (optional)</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)
-// no end needed</p>
+<p><span class="boolean">boolean</span>  "staging_content_enabled" - Is staging content enabled in organization. (optional)</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
 <div class="cedents grid" role="navigation">
 
   <div class="prev">
-      <a href="kickstart.tree.html" title="kickstart.tree">
+      <a href="maintenance.html" title="maintenance">
         <div class="change-page">
           <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
         <span class="label">Previous</span>
         <br/>
         <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">kickstart.tree</span>
+        <span class="title">maintenance</span>
         </div>
       </a>
   </div>
@@ -1594,6 +1371,8 @@ criteria as in the web UI.</p>
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -1610,6 +1389,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -1637,37 +1420,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -1676,10 +1428,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/org.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -1695,8 +1447,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>

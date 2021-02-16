@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>activationkey :: Uyuni API</title>
+    <title>activationkey :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/activationkey.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="activationkey.html">activationkey</a></li>
   </ul>
 </nav>
@@ -308,10 +331,8 @@
       <a href="admin.monitoring.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/activationkey.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/activationkey.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,82 +343,82 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-activationkey-addChildChannels">addChildChannels</a></p>
+<p><a href="#apidoc-activationkey-addChildChannels-1568507411">addChildChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-addConfigChannels">addConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-addConfigChannels-317880757">addConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-addEntitlements">addEntitlements</a></p>
+<p><a href="#apidoc-activationkey-addEntitlements-1644155208">addEntitlements</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-addPackageNames">addPackageNames</a></p>
+<p><a href="#apidoc-activationkey-addPackageNames-180017308">addPackageNames</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-addPackages">addPackages</a></p>
+<p><a href="#apidoc-activationkey-addPackages-1112569408">addPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-addServerGroups">addServerGroups</a></p>
+<p><a href="#apidoc-activationkey-addServerGroups-1901752553">addServerGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-checkConfigDeployment">checkConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-checkConfigDeployment-2145001473">checkConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-clone">clone</a></p>
+<p><a href="#apidoc-activationkey-clone-1710180594">clone</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-create">create</a></p>
+<p><a href="#apidoc-activationkey-create-1305194069">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-create">create</a></p>
+<p><a href="#apidoc-activationkey-create-906397479">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-delete">delete</a></p>
+<p><a href="#apidoc-activationkey-delete-1918121287">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-disableConfigDeployment">disableConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-disableConfigDeployment-2120532393">disableConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-enableConfigDeployment">enableConfigDeployment</a></p>
+<p><a href="#apidoc-activationkey-enableConfigDeployment-1607278346">enableConfigDeployment</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-getDetails">getDetails</a></p>
+<p><a href="#apidoc-activationkey-getDetails-1756064432">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-listActivatedSystems">listActivatedSystems</a></p>
+<p><a href="#apidoc-activationkey-listActivatedSystems-219396780">listActivatedSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-listActivationKeys">listActivationKeys</a></p>
+<p><a href="#apidoc-activationkey-listActivationKeys-299684908">listActivationKeys</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-listChannels">listChannels</a></p>
+<p><a href="#apidoc-activationkey-listChannels-1801756410">listChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-listConfigChannels">listConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-listConfigChannels-1974379194">listConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removeChildChannels">removeChildChannels</a></p>
+<p><a href="#apidoc-activationkey-removeChildChannels-1857063398">removeChildChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removeConfigChannels">removeConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-removeConfigChannels-1610014012">removeConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removeEntitlements">removeEntitlements</a></p>
+<p><a href="#apidoc-activationkey-removeEntitlements-1479691423">removeEntitlements</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removePackageNames">removePackageNames</a></p>
+<p><a href="#apidoc-activationkey-removePackageNames-1613729684">removePackageNames</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removePackages">removePackages</a></p>
+<p><a href="#apidoc-activationkey-removePackages-1308527415">removePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-removeServerGroups">removeServerGroups</a></p>
+<p><a href="#apidoc-activationkey-removeServerGroups-1002872041">removeServerGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-setConfigChannels">setConfigChannels</a></p>
+<p><a href="#apidoc-activationkey-setConfigChannels-44332439">setConfigChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-activationkey-setDetails">setDetails</a></p>
+<p><a href="#apidoc-activationkey-setDetails-1032382137">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -416,11 +437,10 @@
 <div class="paragraph">
 <p>activationkey</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addChildChannels"><a class="anchor" href="#apidoc-activationkey-addChildChannels"></a><a class="link" href="#apidoc-activationkey-addChildChannels">Method: addChildChannels</a></h2>
+<h2 id="apidoc-activationkey-addChildChannels-1568507411"><a class="anchor" href="#apidoc-activationkey-addChildChannels-1568507411"></a><a class="link" href="#apidoc-activationkey-addChildChannels-1568507411">Method: addChildChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -444,7 +464,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>string - childChannelLabel</p>
+<p><span class="string">string</span>  - childChannelLabel</p>
 </li>
 </ul>
 </div>
@@ -461,11 +481,10 @@
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addConfigChannels"><a class="anchor" href="#apidoc-activationkey-addConfigChannels"></a><a class="link" href="#apidoc-activationkey-addConfigChannels">Method: addConfigChannels</a></h2>
+<h2 id="apidoc-activationkey-addConfigChannels-317880757"><a class="anchor" href="#apidoc-activationkey-addConfigChannels-317880757"></a><a class="link" href="#apidoc-activationkey-addConfigChannels-317880757">Method: addConfigChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -493,7 +512,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>string - activationKey</p>
+<p><span class="string">string</span>  - activationKey</p>
 </li>
 </ul>
 </div>
@@ -503,14 +522,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>string - List of configuration channel labels in the ranked order.</p>
+<p><span class="string">string</span>  - List of configuration channel labels in the ranked order.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  addToTop
-// no end needed</p>
+<p><span class="boolean">boolean</span>  addToTop</p>
 </li>
 <li>
 <p>true - To prepend the given channels to the beginning of
@@ -518,8 +536,7 @@ the activation key&#8217;s config channel list</p>
 </li>
 <li>
 <p>false - To append the given channels to the end of
-                               the activation key&#8217;s config channel list
-// no end needed</p>
+the activation key&#8217;s config channel list</p>
 </li>
 </ul>
 </div>
@@ -533,18 +550,16 @@ the activation key&#8217;s config channel list</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addEntitlements"><a class="anchor" href="#apidoc-activationkey-addEntitlements"></a><a class="link" href="#apidoc-activationkey-addEntitlements">Method: addEntitlements</a></h2>
+<h2 id="apidoc-activationkey-addEntitlements-1644155208"><a class="anchor" href="#apidoc-activationkey-addEntitlements-1644155208"></a><a class="link" href="#apidoc-activationkey-addEntitlements-1644155208">Method: addEntitlements</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Add entitlements to an activation key. Currently only
- virtualization_host add-on entitlement is permitted.</p>
+<p>Add add-on System Types to an activation key.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -558,13 +573,24 @@ the activation key&#8217;s config channel list</p>
 <p><span class="string">string</span>  key</p>
 </li>
 <li>
-<p><span class="array">array</span>  string - entitlement label
-// no end needed</p>
+<p><span class="array">array</span>  string - Add-on system type labels to associate with the
+key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>container_build_host</p>
 </li>
 <li>
-<p>virtualization_host
-  // no end needed
-// no end needed</p>
+<p>monitoring_entitled</p>
+</li>
+<li>
+<p>osimage_build_host</p>
+</li>
+<li>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -578,11 +604,10 @@ the activation key&#8217;s config channel list</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addPackageNames"><a class="anchor" href="#apidoc-activationkey-addPackageNames"></a><a class="link" href="#apidoc-activationkey-addPackageNames">Method: addPackageNames (Deprecated)</a></h2>
+<h2 id="apidoc-activationkey-addPackageNames-180017308"><a class="anchor" href="#apidoc-activationkey-addPackageNames-180017308"></a><a class="link" href="#apidoc-activationkey-addPackageNames-180017308">Method: addPackageNames (Deprecated)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -610,7 +635,7 @@ the activation key&#8217;s config channel list</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - packageName</p>
+<p><span class="string">string</span>  - packageName</p>
 </li>
 </ul>
 </div>
@@ -630,11 +655,10 @@ the activation key&#8217;s config channel list</p>
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addPackages"><a class="anchor" href="#apidoc-activationkey-addPackages"></a><a class="link" href="#apidoc-activationkey-addPackages">Method: addPackages</a></h2>
+<h2 id="apidoc-activationkey-addPackages-1112569408"><a class="anchor" href="#apidoc-activationkey-addPackages-1112569408"></a><a class="link" href="#apidoc-activationkey-addPackages-1112569408">Method: addPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -655,17 +679,23 @@ the activation key&#8217;s config channel list</p>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - packages</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - Package name</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch" - Arch label - Optional
-  // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arch" - Arch label - Optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -679,11 +709,10 @@ the activation key&#8217;s config channel list</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-addServerGroups"><a class="anchor" href="#apidoc-activationkey-addServerGroups"></a><a class="link" href="#apidoc-activationkey-addServerGroups">Method: addServerGroups</a></h2>
+<h2 id="apidoc-activationkey-addServerGroups-1901752553"><a class="anchor" href="#apidoc-activationkey-addServerGroups-1901752553"></a><a class="link" href="#apidoc-activationkey-addServerGroups-1901752553">Method: addServerGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -707,7 +736,7 @@ the activation key&#8217;s config channel list</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - serverGroupId</p>
+<p><span class="int">int</span>  - serverGroupId</p>
 </li>
 </ul>
 </div>
@@ -724,11 +753,10 @@ the activation key&#8217;s config channel list</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-checkConfigDeployment"><a class="anchor" href="#apidoc-activationkey-checkConfigDeployment"></a><a class="link" href="#apidoc-activationkey-checkConfigDeployment">Method: checkConfigDeployment</a></h2>
+<h2 id="apidoc-activationkey-checkConfigDeployment-2145001473"><a class="anchor" href="#apidoc-activationkey-checkConfigDeployment-2145001473"></a><a class="link" href="#apidoc-activationkey-checkConfigDeployment-2145001473">Method: checkConfigDeployment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -756,15 +784,14 @@ the activation key&#8217;s config channel list</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1 if enabled, 0 if disabled, exception thrown otherwise.</p>
+<p><span class="int">int</span>  status - 1 if enabled, 0 if disabled, exception thrown otherwise</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-clone"><a class="anchor" href="#apidoc-activationkey-clone"></a><a class="link" href="#apidoc-activationkey-clone">Method: clone</a></h2>
+<h2 id="apidoc-activationkey-clone-1710180594"><a class="anchor" href="#apidoc-activationkey-clone-1710180594"></a><a class="link" href="#apidoc-activationkey-clone-1710180594">Method: clone</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -794,15 +821,14 @@ the activation key&#8217;s config channel list</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - The new activation key.</p>
+<p><span class="string">string</span>  The new activation key</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-create"><a class="anchor" href="#apidoc-activationkey-create"></a><a class="link" href="#apidoc-activationkey-create">Method: create</a></h2>
+<h2 id="apidoc-activationkey-create-1305194069"><a class="anchor" href="#apidoc-activationkey-create-1305194069"></a><a class="link" href="#apidoc-activationkey-create-1305194069">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -849,14 +875,24 @@ default.</p>
 use the create API that does not include the parameter.</p>
 </li>
 <li>
-<p><span class="array">array</span>  string - Add-on entitlement label to associate with the
-key.
-  // no end needed</p>
+<p><span class="array">array</span>  string - Add-on system type labels to associate with the
+key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>container_build_host</p>
 </li>
 <li>
-<p>virtualization_host
-  // no end needed
-// no end needed</p>
+<p>monitoring_entitled</p>
+</li>
+<li>
+<p>osimage_build_host</p>
+</li>
+<li>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  universalDefault</p>
@@ -869,15 +905,14 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - The new activation key.</p>
+<p><span class="string">string</span>  The new activation key</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-create"><a class="anchor" href="#apidoc-activationkey-create"></a><a class="link" href="#apidoc-activationkey-create">Method: create</a></h2>
+<h2 id="apidoc-activationkey-create-906397479"><a class="anchor" href="#apidoc-activationkey-create-906397479"></a><a class="link" href="#apidoc-activationkey-create-906397479">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -914,13 +949,14 @@ default.</p>
 </li>
 <li>
 <p><span class="array">array</span>  string - Add-on entitlement label to associate with the
-key.
-  // no end needed</p>
-</li>
+key.</p>
+<div class="ulist">
+<ul>
 <li>
-<p>virtualization_host
-  // no end needed
-// no end needed</p>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  universalDefault</p>
@@ -933,15 +969,14 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - The new activation key.</p>
+<p><span class="string">string</span>  The new activation key</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-delete"><a class="anchor" href="#apidoc-activationkey-delete"></a><a class="link" href="#apidoc-activationkey-delete">Method: delete</a></h2>
+<h2 id="apidoc-activationkey-delete-1918121287"><a class="anchor" href="#apidoc-activationkey-delete-1918121287"></a><a class="link" href="#apidoc-activationkey-delete-1918121287">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -972,11 +1007,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-disableConfigDeployment"><a class="anchor" href="#apidoc-activationkey-disableConfigDeployment"></a><a class="link" href="#apidoc-activationkey-disableConfigDeployment">Method: disableConfigDeployment</a></h2>
+<h2 id="apidoc-activationkey-disableConfigDeployment-2120532393"><a class="anchor" href="#apidoc-activationkey-disableConfigDeployment-2120532393"></a><a class="link" href="#apidoc-activationkey-disableConfigDeployment-2120532393">Method: disableConfigDeployment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1007,11 +1041,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-enableConfigDeployment"><a class="anchor" href="#apidoc-activationkey-enableConfigDeployment"></a><a class="link" href="#apidoc-activationkey-enableConfigDeployment">Method: enableConfigDeployment</a></h2>
+<h2 id="apidoc-activationkey-enableConfigDeployment-1607278346"><a class="anchor" href="#apidoc-activationkey-enableConfigDeployment-1607278346"></a><a class="link" href="#apidoc-activationkey-enableConfigDeployment-1607278346">Method: enableConfigDeployment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1042,11 +1075,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-getDetails"><a class="anchor" href="#apidoc-activationkey-getDetails"></a><a class="link" href="#apidoc-activationkey-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-activationkey-getDetails-1756064432"><a class="anchor" href="#apidoc-activationkey-getDetails-1756064432"></a><a class="link" href="#apidoc-activationkey-getDetails-1756064432">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1074,7 +1106,8 @@ key.
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - activation key</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "key"</p>
 </li>
@@ -1129,17 +1162,23 @@ key.
 </li>
 <li>
 <p><span class="array">array</span>  "packages"</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - package</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - packageName</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch" - archLabel - optional
-  // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "universal_default"</p>
@@ -1148,8 +1187,7 @@ key.
 <p><span class="boolean">boolean</span>  "disabled"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "contact_method" - One of the following:
-// no end needed</p>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
 </li>
 <li>
 <p>default</p>
@@ -1158,20 +1196,20 @@ key.
 <p>ssh-push</p>
 </li>
 <li>
-<p>ssh-push-tunnel
-    // no end needed
-// no end needed</p>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-listActivatedSystems"><a class="anchor" href="#apidoc-activationkey-listActivatedSystems"></a><a class="link" href="#apidoc-activationkey-listActivatedSystems">Method: listActivatedSystems</a></h2>
+<h2 id="apidoc-activationkey-listActivatedSystems-219396780"><a class="anchor" href="#apidoc-activationkey-listActivatedSystems-219396780"></a><a class="link" href="#apidoc-activationkey-listActivatedSystems-219396780">Method: listActivatedSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1199,10 +1237,12 @@ key.
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - system structure</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - System id</p>
 </li>
@@ -1211,17 +1251,20 @@ key.
 </li>
 <li>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_checkin" - Last time server
-            successfully checked in
-    // no end needed
-// no end needed</p>
+successfully checked in</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-listActivationKeys"><a class="anchor" href="#apidoc-activationkey-listActivationKeys"></a><a class="link" href="#apidoc-activationkey-listActivationKeys">Method: listActivationKeys</a></h2>
+<h2 id="apidoc-activationkey-listActivationKeys-299684908"><a class="anchor" href="#apidoc-activationkey-listActivationKeys-299684908"></a><a class="link" href="#apidoc-activationkey-listActivationKeys-299684908">Method: listActivationKeys</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1250,7 +1293,8 @@ key.
 </li>
 <li>
 <p><span class="struct">struct</span>  - activation key</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "key"</p>
 </li>
@@ -1305,17 +1349,23 @@ key.
 </li>
 <li>
 <p><span class="array">array</span>  "packages"</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - package</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - packageName</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch" - archLabel - optional
-  // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "universal_default"</p>
@@ -1324,8 +1374,7 @@ key.
 <p><span class="boolean">boolean</span>  "disabled"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "contact_method" - One of the following:
-// no end needed</p>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
 </li>
 <li>
 <p>default</p>
@@ -1334,13 +1383,9 @@ key.
 <p>ssh-push</p>
 </li>
 <li>
-<p>ssh-push-tunnel
-    // no end needed
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -1348,11 +1393,10 @@ key.
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-listChannels"><a class="anchor" href="#apidoc-activationkey-listChannels"></a><a class="link" href="#apidoc-activationkey-listChannels">Method: listChannels</a></h2>
+<h2 id="apidoc-activationkey-listChannels-1801756410"><a class="anchor" href="#apidoc-activationkey-listChannels-1801756410"></a><a class="link" href="#apidoc-activationkey-listChannels-1801756410">Method: listChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1388,7 +1432,8 @@ key.
 </li>
 <li>
 <p><span class="struct">struct</span>  - channelInfo</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "label" - Channel label</p>
 </li>
@@ -1399,21 +1444,17 @@ key.
 <p><span class="string">string</span>  "url" - Channel url</p>
 </li>
 <li>
-<p><span class="string">string</span>  "token" - Channel access token
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "token" - Channel access token</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-listConfigChannels"><a class="anchor" href="#apidoc-activationkey-listConfigChannels"></a><a class="link" href="#apidoc-activationkey-listConfigChannels">Method: listConfigChannels</a></h2>
+<h2 id="apidoc-activationkey-listConfigChannels-1974379194"><a class="anchor" href="#apidoc-activationkey-listConfigChannels-1974379194"></a><a class="link" href="#apidoc-activationkey-listConfigChannels-1974379194">Method: listConfigChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1445,7 +1486,8 @@ key.
 </li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1464,9 +1506,13 @@ key.
 <li>
 <p><span class="struct">struct</span>  "configChannelType"</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - Configuration Channel Type information</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1477,26 +1523,17 @@ key.
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="int">int</span>  "priority"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removeChildChannels"><a class="anchor" href="#apidoc-activationkey-removeChildChannels"></a><a class="link" href="#apidoc-activationkey-removeChildChannels">Method: removeChildChannels</a></h2>
+<h2 id="apidoc-activationkey-removeChildChannels-1857063398"><a class="anchor" href="#apidoc-activationkey-removeChildChannels-1857063398"></a><a class="link" href="#apidoc-activationkey-removeChildChannels-1857063398">Method: removeChildChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1520,7 +1557,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - childChannelLabel</p>
+<p><span class="string">string</span>  - childChannelLabel</p>
 </li>
 </ul>
 </div>
@@ -1537,11 +1574,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removeConfigChannels"><a class="anchor" href="#apidoc-activationkey-removeConfigChannels"></a><a class="link" href="#apidoc-activationkey-removeConfigChannels">Method: removeConfigChannels</a></h2>
+<h2 id="apidoc-activationkey-removeConfigChannels-1610014012"><a class="anchor" href="#apidoc-activationkey-removeConfigChannels-1610014012"></a><a class="link" href="#apidoc-activationkey-removeConfigChannels-1610014012">Method: removeConfigChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1562,7 +1598,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - activationKey</p>
+<p><span class="string">string</span>  - activationKey</p>
 </li>
 </ul>
 </div>
@@ -1572,7 +1608,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - configChannelLabel</p>
+<p><span class="string">string</span>  - configChannelLabel</p>
 </li>
 </ul>
 </div>
@@ -1589,11 +1625,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removeEntitlements"><a class="anchor" href="#apidoc-activationkey-removeEntitlements"></a><a class="link" href="#apidoc-activationkey-removeEntitlements">Method: removeEntitlements</a></h2>
+<h2 id="apidoc-activationkey-removeEntitlements-1479691423"><a class="anchor" href="#apidoc-activationkey-removeEntitlements-1479691423"></a><a class="link" href="#apidoc-activationkey-removeEntitlements-1479691423">Method: removeEntitlements</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1614,13 +1649,14 @@ key.
 <p><span class="string">string</span>  key</p>
 </li>
 <li>
-<p><span class="array">array</span>  string - entitlement label
-// no end needed</p>
-</li>
+<p><span class="array">array</span>  string - entitlement label</p>
+<div class="ulist">
+<ul>
 <li>
-<p>virtualization_host
-  // no end needed
-// no end needed</p>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1634,11 +1670,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removePackageNames"><a class="anchor" href="#apidoc-activationkey-removePackageNames"></a><a class="link" href="#apidoc-activationkey-removePackageNames">Method: removePackageNames (Deprecated)</a></h2>
+<h2 id="apidoc-activationkey-removePackageNames-1613729684"><a class="anchor" href="#apidoc-activationkey-removePackageNames-1613729684"></a><a class="link" href="#apidoc-activationkey-removePackageNames-1613729684">Method: removePackageNames (Deprecated)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1666,7 +1701,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - packageName</p>
+<p><span class="string">string</span>  - packageName</p>
 </li>
 </ul>
 </div>
@@ -1686,11 +1721,10 @@ key.
 <div class="paragraph">
 <p>Available since API version: 10.2</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removePackages"><a class="anchor" href="#apidoc-activationkey-removePackages"></a><a class="link" href="#apidoc-activationkey-removePackages">Method: removePackages</a></h2>
+<h2 id="apidoc-activationkey-removePackages-1308527415"><a class="anchor" href="#apidoc-activationkey-removePackages-1308527415"></a><a class="link" href="#apidoc-activationkey-removePackages-1308527415">Method: removePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1711,17 +1745,23 @@ key.
 </li>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - packages</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - Package name</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch" - Arch label - Optional
-  // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arch" - Arch label - Optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1735,11 +1775,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-removeServerGroups"><a class="anchor" href="#apidoc-activationkey-removeServerGroups"></a><a class="link" href="#apidoc-activationkey-removeServerGroups">Method: removeServerGroups</a></h2>
+<h2 id="apidoc-activationkey-removeServerGroups-1002872041"><a class="anchor" href="#apidoc-activationkey-removeServerGroups-1002872041"></a><a class="link" href="#apidoc-activationkey-removeServerGroups-1002872041">Method: removeServerGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1763,7 +1802,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>int - serverGroupId</p>
+<p><span class="int">int</span>  - serverGroupId</p>
 </li>
 </ul>
 </div>
@@ -1780,11 +1819,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-setConfigChannels"><a class="anchor" href="#apidoc-activationkey-setConfigChannels"></a><a class="link" href="#apidoc-activationkey-setConfigChannels">Method: setConfigChannels</a></h2>
+<h2 id="apidoc-activationkey-setConfigChannels-44332439"><a class="anchor" href="#apidoc-activationkey-setConfigChannels-44332439"></a><a class="link" href="#apidoc-activationkey-setConfigChannels-44332439">Method: setConfigChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1807,7 +1845,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - activationKey</p>
+<p><span class="string">string</span>  - activationKey</p>
 </li>
 </ul>
 </div>
@@ -1817,7 +1855,7 @@ key.
 <div class="ulist">
 <ul>
 <li>
-<p>string - configChannelLabel</p>
+<p><span class="string">string</span>  - configChannelLabel</p>
 </li>
 </ul>
 </div>
@@ -1834,11 +1872,10 @@ key.
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-activationkey-setDetails"><a class="anchor" href="#apidoc-activationkey-setDetails"></a><a class="link" href="#apidoc-activationkey-setDetails">Method: setDetails</a></h2>
+<h2 id="apidoc-activationkey-setDetails-1032382137"><a class="anchor" href="#apidoc-activationkey-setDetails-1032382137"></a><a class="link" href="#apidoc-activationkey-setDetails-1032382137">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1859,7 +1896,8 @@ key.
 </li>
 <li>
 <p><span class="struct">struct</span>  - activation key</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "description" - optional</p>
 </li>
@@ -1881,8 +1919,7 @@ for unlimited usage and to override usage_limit</p>
 <p><span class="boolean">boolean</span>  "disabled" - optional</p>
 </li>
 <li>
-<p><span class="string">string</span>  "contact_method" - One of the following:
-// no end needed</p>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
 </li>
 <li>
 <p>default</p>
@@ -1891,9 +1928,10 @@ for unlimited usage and to override usage_limit</p>
 <p>ssh-push</p>
 </li>
 <li>
-<p>ssh-push-tunnel
-    // no end needed
-// no end needed</p>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1907,7 +1945,6 @@ for unlimited usage and to override usage_limit</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 
@@ -1926,13 +1963,13 @@ for unlimited usage and to override usage_limit</p>
   </div>
 
   <div class="next">
-      <a href="admin.monitoring.html" title="admin.monitoring">
+      <a href="admin.monitoring.html" title="admin_monitoring">
         <div class="change-page">
           <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
         <span class="label">Next</span>
         <br/>
        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">admin.monitoring</span>
+        <span class="title">admin_monitoring</span>
         </div>
       </a>
   </div>
@@ -1942,6 +1979,8 @@ for unlimited usage and to override usage_limit</p>
   <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
   <div id="article-toc"></div>
 </aside>
+
+
 
 </main>
 </div>
@@ -1959,6 +1998,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -1986,37 +2029,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -2025,10 +2037,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/activationkey.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -2044,8 +2056,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>

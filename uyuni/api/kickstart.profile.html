@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>kickstart.profile :: Uyuni API</title>
+    <title>kickstart.profile :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/kickstart.profile.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="kickstart.profile.html">kickstart.profile</a></li>
   </ul>
 </nav>
@@ -308,10 +331,8 @@
       <a href="kickstart.profile.keys.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/kickstart.profile.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/kickstart.profile.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,106 +343,106 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-kickstart_profile-addIpRange">addIpRange</a></p>
+<p><a href="#apidoc-kickstart_profile-addIpRange-119445056">addIpRange</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-addScript">addScript</a></p>
+<p><a href="#apidoc-kickstart_profile-addScript-1446762148">addScript</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-addScript">addScript</a></p>
+<p><a href="#apidoc-kickstart_profile-addScript-894025840">addScript</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-addScript">addScript</a></p>
+<p><a href="#apidoc-kickstart_profile-addScript-593341655">addScript</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-compareActivationKeys">compareActivationKeys</a></p>
+<p><a href="#apidoc-kickstart_profile-compareActivationKeys-628502276">compareActivationKeys</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-compareAdvancedOptions">compareAdvancedOptions</a></p>
+<p><a href="#apidoc-kickstart_profile-compareAdvancedOptions-1682431013">compareAdvancedOptions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-comparePackages">comparePackages</a></p>
+<p><a href="#apidoc-kickstart_profile-comparePackages-691171870">comparePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-downloadKickstart">downloadKickstart</a></p>
+<p><a href="#apidoc-kickstart_profile-downloadKickstart-2088857414">downloadKickstart</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-downloadRenderedKickstart">downloadRenderedKickstart</a></p>
+<p><a href="#apidoc-kickstart_profile-downloadRenderedKickstart-120617702">downloadRenderedKickstart</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getAdvancedOptions">getAdvancedOptions</a></p>
+<p><a href="#apidoc-kickstart_profile-getAdvancedOptions-1237669315">getAdvancedOptions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getAvailableRepositories">getAvailableRepositories</a></p>
+<p><a href="#apidoc-kickstart_profile-getAvailableRepositories-1053106531">getAvailableRepositories</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getCfgPreservation">getCfgPreservation</a></p>
+<p><a href="#apidoc-kickstart_profile-getCfgPreservation-1912973495">getCfgPreservation</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getChildChannels">getChildChannels</a></p>
+<p><a href="#apidoc-kickstart_profile-getChildChannels-435030575">getChildChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getCustomOptions">getCustomOptions</a></p>
+<p><a href="#apidoc-kickstart_profile-getCustomOptions-1982708114">getCustomOptions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getKickstartTree">getKickstartTree</a></p>
+<p><a href="#apidoc-kickstart_profile-getKickstartTree-1631298894">getKickstartTree</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getRepositories">getRepositories</a></p>
+<p><a href="#apidoc-kickstart_profile-getRepositories-1528622589">getRepositories</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getUpdateType">getUpdateType</a></p>
+<p><a href="#apidoc-kickstart_profile-getUpdateType-658645383">getUpdateType</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getVariables">getVariables</a></p>
+<p><a href="#apidoc-kickstart_profile-getVariables-2063059370">getVariables</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-getVirtualizationType">getVirtualizationType</a></p>
+<p><a href="#apidoc-kickstart_profile-getVirtualizationType-1664401624">getVirtualizationType</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-listIpRanges">listIpRanges</a></p>
+<p><a href="#apidoc-kickstart_profile-listIpRanges-92350773">listIpRanges</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-listScripts">listScripts</a></p>
+<p><a href="#apidoc-kickstart_profile-listScripts-1019562230">listScripts</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-orderScripts">orderScripts</a></p>
+<p><a href="#apidoc-kickstart_profile-orderScripts-1072499716">orderScripts</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-removeIpRange">removeIpRange</a></p>
+<p><a href="#apidoc-kickstart_profile-removeIpRange-484728344">removeIpRange</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-removeScript">removeScript</a></p>
+<p><a href="#apidoc-kickstart_profile-removeScript-1946618260">removeScript</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setAdvancedOptions">setAdvancedOptions</a></p>
+<p><a href="#apidoc-kickstart_profile-setAdvancedOptions-88256198">setAdvancedOptions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setCfgPreservation">setCfgPreservation</a></p>
+<p><a href="#apidoc-kickstart_profile-setCfgPreservation-518072030">setCfgPreservation</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setChildChannels">setChildChannels</a></p>
+<p><a href="#apidoc-kickstart_profile-setChildChannels-679046414">setChildChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setCustomOptions">setCustomOptions</a></p>
+<p><a href="#apidoc-kickstart_profile-setCustomOptions-363172313">setCustomOptions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setKickstartTree">setKickstartTree</a></p>
+<p><a href="#apidoc-kickstart_profile-setKickstartTree-1269555311">setKickstartTree</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setLogging">setLogging</a></p>
+<p><a href="#apidoc-kickstart_profile-setLogging-583852441">setLogging</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setRepositories">setRepositories</a></p>
+<p><a href="#apidoc-kickstart_profile-setRepositories-534955437">setRepositories</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setUpdateType">setUpdateType</a></p>
+<p><a href="#apidoc-kickstart_profile-setUpdateType-1550575634">setUpdateType</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setVariables">setVariables</a></p>
+<p><a href="#apidoc-kickstart_profile-setVariables-546014245">setVariables</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_profile-setVirtualizationType">setVirtualizationType</a></p>
+<p><a href="#apidoc-kickstart_profile-setVirtualizationType-1961704420">setVirtualizationType</a></p>
 </li>
 </ul>
 </div>
@@ -440,11 +461,10 @@
 <div class="paragraph">
 <p>kickstart.profile</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-addIpRange"><a class="anchor" href="#apidoc-kickstart_profile-addIpRange"></a><a class="link" href="#apidoc-kickstart_profile-addIpRange">Method: addIpRange</a></h2>
+<h2 id="apidoc-kickstart_profile-addIpRange-119445056"><a class="anchor" href="#apidoc-kickstart_profile-addIpRange-119445056"></a><a class="link" href="#apidoc-kickstart_profile-addIpRange-119445056">Method: addIpRange</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -484,11 +504,10 @@ maximum of the range (i.e. 192.168.0.254)</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-addScript"><a class="anchor" href="#apidoc-kickstart_profile-addScript"></a><a class="link" href="#apidoc-kickstart_profile-addScript">Method: addScript</a></h2>
+<h2 id="apidoc-kickstart_profile-addScript-1446762148"><a class="anchor" href="#apidoc-kickstart_profile-addScript-1446762148"></a><a class="link" href="#apidoc-kickstart_profile-addScript-1446762148">Method: addScript</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -536,15 +555,14 @@ in the chrooted install location (recommended) or not.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int id - the id of the added script</p>
+<p><span class="int">int</span>  id - the id of the added script</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-addScript"><a class="anchor" href="#apidoc-kickstart_profile-addScript"></a><a class="link" href="#apidoc-kickstart_profile-addScript">Method: addScript</a></h2>
+<h2 id="apidoc-kickstart_profile-addScript-894025840"><a class="anchor" href="#apidoc-kickstart_profile-addScript-894025840"></a><a class="link" href="#apidoc-kickstart_profile-addScript-894025840">Method: addScript</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -595,15 +613,14 @@ in the chrooted install location (recommended) or not.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int id - the id of the added script</p>
+<p><span class="int">int</span>  id - the id of the added script</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-addScript"><a class="anchor" href="#apidoc-kickstart_profile-addScript"></a><a class="link" href="#apidoc-kickstart_profile-addScript">Method: addScript</a></h2>
+<h2 id="apidoc-kickstart_profile-addScript-593341655"><a class="anchor" href="#apidoc-kickstart_profile-addScript-593341655"></a><a class="link" href="#apidoc-kickstart_profile-addScript-593341655">Method: addScript</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -658,15 +675,14 @@ error if the script fails or not</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int id - the id of the added script</p>
+<p><span class="int">int</span>  id - the id of the added script</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-compareActivationKeys"><a class="anchor" href="#apidoc-kickstart_profile-compareActivationKeys"></a><a class="link" href="#apidoc-kickstart_profile-compareActivationKeys">Method: compareActivationKeys</a></h2>
+<h2 id="apidoc-kickstart_profile-compareActivationKeys-628502276"><a class="anchor" href="#apidoc-kickstart_profile-compareActivationKeys-628502276"></a><a class="link" href="#apidoc-kickstart_profile-compareActivationKeys-628502276">Method: compareActivationKeys</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -698,7 +714,8 @@ error if the script fails or not</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - Comparison Info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="array">array</span>  "kickstartLabel1" - Actual label of the first kickstart
 profile is the key into the struct</p>
@@ -706,9 +723,13 @@ profile is the key into the struct</p>
 <li>
 <p><span class="array">array</span> :</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - activation key</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "key"</p>
 </li>
@@ -763,17 +784,23 @@ profile is the key into the struct</p>
 </li>
 <li>
 <p><span class="array">array</span>  "packages"</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - package</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - packageName</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch" - archLabel - optional
-  // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "universal_default"</p>
@@ -782,8 +809,7 @@ profile is the key into the struct</p>
 <p><span class="boolean">boolean</span>  "disabled"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "contact_method" - One of the following:
-// no end needed</p>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
 </li>
 <li>
 <p>default</p>
@@ -792,59 +818,121 @@ profile is the key into the struct</p>
 <p>ssh-push</p>
 </li>
 <li>
-<p>ssh-push-tunnel
-    // no end needed
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>          // no end needed
-      * [.array]#array#  "kickstartLabel2" - Actual label of the second kickstart
-                 profile is the key into the struct
-          * [.array]#array# :
-              * [.struct]#struct#  - activation key
-     * [.string]#string#  "key"
-     * [.string]#string#  "description"
-     * [.int]#int#  "usage_limit"
-     * [.string]#string#  "base_channel_label"
-     * [.array]#array#  "child_channel_labels"
-** string - childChannelLabel
-     * [.array]#array#  "entitlements"
-** string - entitlementLabel
-     * [.array]#array#  "server_group_ids"
-** string - serverGroupId
-     * [.array]#array#  "package_names"
-** string - packageName - (deprecated by packages)
-     * [.array]#array#  "packages"
-       * [.struct]#struct#  - package
-         * [.string]#string#  "name" - packageName
-         * [.string]#string#  "arch" - archLabel - optional
-       // no end needed
-     // no end needed
-     * [.boolean]#boolean#  "universal_default"
-     * [.boolean]#boolean#  "disabled"
-     * [.string]#string#  "contact_method" - One of the following:
-       // no end needed
-         * default
-         * ssh-push
-         * ssh-push-tunnel
-       // no end needed
-   // no end needed</pre>
+<p>ssh-push-tunnel</p>
+</li>
+<li>
+<p><span class="array">array</span>  "kickstartLabel2" - Actual label of the second kickstart
+profile is the key into the struct</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><span class="struct">struct</span>  - activation key</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "usage_limit"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "base_channel_label"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "child_channel_labels"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - childChannelLabel</p>
+</li>
+</ul>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>        // no end needed
-// no end needed</pre>
+</li>
+<li>
+<p><span class="array">array</span>  "entitlements"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - entitlementLabel</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><span class="array">array</span>  "server_group_ids"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - serverGroupId</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="array">array</span>  "package_names"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>string - packageName - (deprecated by packages)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="array">array</span>  "packages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name" - packageName</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "universal_default"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "disabled"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
+</li>
+<li>
+<p>default</p>
+</li>
+<li>
+<p>ssh-push</p>
+</li>
+<li>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-compareAdvancedOptions"><a class="anchor" href="#apidoc-kickstart_profile-compareAdvancedOptions"></a><a class="link" href="#apidoc-kickstart_profile-compareAdvancedOptions">Method: compareAdvancedOptions</a></h2>
+<h2 id="apidoc-kickstart_profile-compareAdvancedOptions-1682431013"><a class="anchor" href="#apidoc-kickstart_profile-compareAdvancedOptions-1682431013"></a><a class="link" href="#apidoc-kickstart_profile-compareAdvancedOptions-1682431013">Method: compareAdvancedOptions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -877,7 +965,8 @@ profile is the key into the struct</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - Comparison Info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="array">array</span>  "kickstartLabel1" - Actual label of the first kickstart
 profile is the key into the struct</p>
@@ -885,9 +974,13 @@ profile is the key into the struct</p>
 <li>
 <p><span class="array">array</span> :</p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p><span class="struct">struct</span>  - value</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name"</p>
 </li>
@@ -895,35 +988,40 @@ profile is the key into the struct</p>
 <p><span class="string">string</span>  "value"</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "enabled"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>    // no end needed
-* [.array]#array#  "kickstartLabel2" - Actual label of the second kickstart
-           profile is the key into the struct
-    * [.array]#array# :
-        * [.struct]#struct#  - value
-    * [.string]#string#  "name"
-    * [.string]#string#  "value"
-    * [.boolean]#boolean#  "enabled"
-// no end needed</pre>
+<p><span class="boolean">boolean</span>  "enabled"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "kickstartLabel2" - Actual label of the second kickstart
+profile is the key into the struct</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>        // no end needed
-// no end needed</pre>
-</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  - value</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "value"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "enabled"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-comparePackages"><a class="anchor" href="#apidoc-kickstart_profile-comparePackages"></a><a class="link" href="#apidoc-kickstart_profile-comparePackages">Method: comparePackages</a></h2>
+<h2 id="apidoc-kickstart_profile-comparePackages-691171870"><a class="anchor" href="#apidoc-kickstart_profile-comparePackages-691171870"></a><a class="link" href="#apidoc-kickstart_profile-comparePackages-691171870">Method: comparePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -955,7 +1053,8 @@ profile is the key into the struct</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - Comparison Info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="array">array</span>  "kickstartLabel1" - Actual label of the first kickstart
 profile is the key into the struct</p>
@@ -965,7 +1064,7 @@ profile is the key into the struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - package name</p>
+<p><span class="string">string</span>  - package name</p>
 </li>
 </ul>
 </div>
@@ -979,19 +1078,20 @@ profile is the key into the struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - package name
-// no end needed</p>
+<p><span class="string">string</span>  - package name</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-downloadKickstart"><a class="anchor" href="#apidoc-kickstart_profile-downloadKickstart"></a><a class="link" href="#apidoc-kickstart_profile-downloadKickstart">Method: downloadKickstart</a></h2>
+<h2 id="apidoc-kickstart_profile-downloadKickstart-2088857414"><a class="anchor" href="#apidoc-kickstart_profile-downloadKickstart-2088857414"></a><a class="link" href="#apidoc-kickstart_profile-downloadKickstart-2088857414">Method: downloadKickstart</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1013,8 +1113,8 @@ kickstart to download.</p>
 </li>
 <li>
 <p><span class="string">string</span>  host - The host to use when
-referring to the satellite itself (Usually this should be the FQDN of the
-satellite, but could be the ip address or shortname of it as well.</p>
+referring to the Uyuni server. Usually this should be the FQDN,
+but could be the ip address or shortname as well.</p>
 </li>
 </ul>
 </div>
@@ -1024,18 +1124,17 @@ satellite, but could be the ip address or shortname of it as well.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - The contents of the kickstart file. Note: if
+<p><span class="string">string</span>  ks - The contents of the kickstart file. Note: if
 an activation key is not associated with the kickstart file, registration
-will not occur in the satellite generated %post section. If one is
-associated, it will be used for registration.</p>
+will not occur in the generated %post section. If one is
+associated, it will be used for registration</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-downloadRenderedKickstart"><a class="anchor" href="#apidoc-kickstart_profile-downloadRenderedKickstart"></a><a class="link" href="#apidoc-kickstart_profile-downloadRenderedKickstart">Method: downloadRenderedKickstart</a></h2>
+<h2 id="apidoc-kickstart_profile-downloadRenderedKickstart-120617702"><a class="anchor" href="#apidoc-kickstart_profile-downloadRenderedKickstart-120617702"></a><a class="link" href="#apidoc-kickstart_profile-downloadRenderedKickstart-120617702">Method: downloadRenderedKickstart</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1063,15 +1162,14 @@ kickstart to download.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - The contents of the kickstart file.</p>
+<p><span class="string">string</span>  ks - The contents of the kickstart file</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getAdvancedOptions"><a class="anchor" href="#apidoc-kickstart_profile-getAdvancedOptions"></a><a class="link" href="#apidoc-kickstart_profile-getAdvancedOptions">Method: getAdvancedOptions</a></h2>
+<h2 id="apidoc-kickstart_profile-getAdvancedOptions-1237669315"><a class="anchor" href="#apidoc-kickstart_profile-getAdvancedOptions-1237669315"></a><a class="link" href="#apidoc-kickstart_profile-getAdvancedOptions-1237669315">Method: getAdvancedOptions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1103,26 +1201,23 @@ profile to be changed.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - option</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arguments"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "arguments"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getAvailableRepositories"><a class="anchor" href="#apidoc-kickstart_profile-getAvailableRepositories"></a><a class="link" href="#apidoc-kickstart_profile-getAvailableRepositories">Method: getAvailableRepositories</a></h2>
+<h2 id="apidoc-kickstart_profile-getAvailableRepositories-1053106531"><a class="anchor" href="#apidoc-kickstart_profile-getAvailableRepositories-1053106531"></a><a class="link" href="#apidoc-kickstart_profile-getAvailableRepositories-1053106531">Method: getAvailableRepositories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1154,18 +1249,17 @@ profile to be changed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - repositoryLabel</p>
+<p><span class="string">string</span>  - repositoryLabel</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getCfgPreservation"><a class="anchor" href="#apidoc-kickstart_profile-getCfgPreservation"></a><a class="link" href="#apidoc-kickstart_profile-getCfgPreservation">Method: getCfgPreservation</a></h2>
+<h2 id="apidoc-kickstart_profile-getCfgPreservation-1912973495"><a class="anchor" href="#apidoc-kickstart_profile-getCfgPreservation-1912973495"></a><a class="link" href="#apidoc-kickstart_profile-getCfgPreservation-1912973495">Method: getCfgPreservation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1193,16 +1287,15 @@ profile to be changed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>boolean - The value of the option. True means that
-ks.cfg will be copied to /root, false means that it will not.</p>
+<p><span class="boolean">boolean</span>  preserve - The value of the option.
+True means that ks.cfg will be copied to /root, false means that it will not</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getChildChannels"><a class="anchor" href="#apidoc-kickstart_profile-getChildChannels"></a><a class="link" href="#apidoc-kickstart_profile-getChildChannels">Method: getChildChannels</a></h2>
+<h2 id="apidoc-kickstart_profile-getChildChannels-435030575"><a class="anchor" href="#apidoc-kickstart_profile-getChildChannels-435030575"></a><a class="link" href="#apidoc-kickstart_profile-getChildChannels-435030575">Method: getChildChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1234,18 +1327,17 @@ profile.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - channelLabel</p>
+<p><span class="string">string</span>  - channelLabel</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getCustomOptions"><a class="anchor" href="#apidoc-kickstart_profile-getCustomOptions"></a><a class="link" href="#apidoc-kickstart_profile-getCustomOptions">Method: getCustomOptions</a></h2>
+<h2 id="apidoc-kickstart_profile-getCustomOptions-1982708114"><a class="anchor" href="#apidoc-kickstart_profile-getCustomOptions-1982708114"></a><a class="link" href="#apidoc-kickstart_profile-getCustomOptions-1982708114">Method: getCustomOptions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1276,26 +1368,23 @@ profile.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - option</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arguments"
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "arguments"</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getKickstartTree"><a class="anchor" href="#apidoc-kickstart_profile-getKickstartTree"></a><a class="link" href="#apidoc-kickstart_profile-getKickstartTree">Method: getKickstartTree</a></h2>
+<h2 id="apidoc-kickstart_profile-getKickstartTree-1631298894"><a class="anchor" href="#apidoc-kickstart_profile-getKickstartTree-1631298894"></a><a class="link" href="#apidoc-kickstart_profile-getKickstartTree-1631298894">Method: getKickstartTree</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1327,11 +1416,10 @@ profile to be changed.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getRepositories"><a class="anchor" href="#apidoc-kickstart_profile-getRepositories"></a><a class="link" href="#apidoc-kickstart_profile-getRepositories">Method: getRepositories</a></h2>
+<h2 id="apidoc-kickstart_profile-getRepositories-1528622589"><a class="anchor" href="#apidoc-kickstart_profile-getRepositories-1528622589"></a><a class="link" href="#apidoc-kickstart_profile-getRepositories-1528622589">Method: getRepositories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1362,18 +1450,17 @@ profile to be changed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - repositoryLabel</p>
+<p><span class="string">string</span>  - repositoryLabel</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getUpdateType"><a class="anchor" href="#apidoc-kickstart_profile-getUpdateType"></a><a class="link" href="#apidoc-kickstart_profile-getUpdateType">Method: getUpdateType</a></h2>
+<h2 id="apidoc-kickstart_profile-getUpdateType-658645383"><a class="anchor" href="#apidoc-kickstart_profile-getUpdateType-658645383"></a><a class="link" href="#apidoc-kickstart_profile-getUpdateType-658645383">Method: getUpdateType</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1405,11 +1492,10 @@ profile.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getVariables"><a class="anchor" href="#apidoc-kickstart_profile-getVariables"></a><a class="link" href="#apidoc-kickstart_profile-getVariables">Method: getVariables</a></h2>
+<h2 id="apidoc-kickstart_profile-getVariables-2063059370"><a class="anchor" href="#apidoc-kickstart_profile-getVariables-2063059370"></a><a class="link" href="#apidoc-kickstart_profile-getVariables-2063059370">Method: getVariables</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1438,21 +1524,23 @@ profile.</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - kickstart variable</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "key"</p>
 </li>
 <li>
-<p><span class="string or int">string or int</span>  "value"
-// no end needed</p>
+<p><span class="string or int">string or int</span>  "value"</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-getVirtualizationType"><a class="anchor" href="#apidoc-kickstart_profile-getVirtualizationType"></a><a class="link" href="#apidoc-kickstart_profile-getVirtualizationType">Method: getVirtualizationType</a></h2>
+<h2 id="apidoc-kickstart_profile-getVirtualizationType-1664401624"><a class="anchor" href="#apidoc-kickstart_profile-getVirtualizationType-1664401624"></a><a class="link" href="#apidoc-kickstart_profile-getVirtualizationType-1664401624">Method: getVirtualizationType</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1484,11 +1572,10 @@ profile.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-listIpRanges"><a class="anchor" href="#apidoc-kickstart_profile-listIpRanges"></a><a class="link" href="#apidoc-kickstart_profile-listIpRanges">Method: listIpRanges</a></h2>
+<h2 id="apidoc-kickstart_profile-listIpRanges-92350773"><a class="anchor" href="#apidoc-kickstart_profile-listIpRanges-92350773"></a><a class="link" href="#apidoc-kickstart_profile-listIpRanges-92350773">Method: listIpRanges</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1520,7 +1607,8 @@ kickstart</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - Kickstart Ip Range</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "ksLabel" - The kickstart label associated with the ip range</p>
 </li>
@@ -1528,17 +1616,17 @@ kickstart</p>
 <p><span class="string">string</span>  "max" - The max ip of the range</p>
 </li>
 <li>
-<p><span class="string">string</span>  "min" - The min ip of the range
- // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "min" - The min ip of the range</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-listScripts"><a class="anchor" href="#apidoc-kickstart_profile-listScripts"></a><a class="link" href="#apidoc-kickstart_profile-listScripts">Method: listScripts</a></h2>
+<h2 id="apidoc-kickstart_profile-listScripts-1019562230"><a class="anchor" href="#apidoc-kickstart_profile-listScripts-1019562230"></a><a class="link" href="#apidoc-kickstart_profile-listScripts-1019562230">Method: listScripts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1571,7 +1659,8 @@ kickstart</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - kickstart script</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1602,17 +1691,17 @@ it fails.</p>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  "beforeRegistration" - True if script will run before the
-                server registers and performs server actions.
-   // no end needed
-// no end needed</p>
+server registers and performs server actions.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-orderScripts"><a class="anchor" href="#apidoc-kickstart_profile-orderScripts"></a><a class="link" href="#apidoc-kickstart_profile-orderScripts">Method: orderScripts</a></h2>
+<h2 id="apidoc-kickstart_profile-orderScripts-1072499716"><a class="anchor" href="#apidoc-kickstart_profile-orderScripts-1072499716"></a><a class="link" href="#apidoc-kickstart_profile-orderScripts-1072499716">Method: orderScripts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1643,7 +1732,7 @@ kickstart</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - IDs of the ordered pre scripts</p>
+<p><span class="int">int</span>  - IDs of the ordered pre scripts</p>
 </li>
 </ul>
 </div>
@@ -1653,7 +1742,7 @@ kickstart</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - IDs of the ordered post scripts that will run
+<p><span class="int">int</span>  - IDs of the ordered post scripts that will run
 before registration</p>
 </li>
 </ul>
@@ -1664,7 +1753,7 @@ before registration</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - IDs of the ordered post scripts that will run
+<p><span class="int">int</span>  - IDs of the ordered post scripts that will run
 after registration</p>
 </li>
 </ul>
@@ -1682,11 +1771,10 @@ after registration</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-removeIpRange"><a class="anchor" href="#apidoc-kickstart_profile-removeIpRange"></a><a class="link" href="#apidoc-kickstart_profile-removeIpRange">Method: removeIpRange</a></h2>
+<h2 id="apidoc-kickstart_profile-removeIpRange-484728344"><a class="anchor" href="#apidoc-kickstart_profile-removeIpRange-484728344"></a><a class="link" href="#apidoc-kickstart_profile-removeIpRange-484728344">Method: removeIpRange</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1719,16 +1807,15 @@ the range will work.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - 1 on successful removal, 0 if range wasn&#8217;t found
-for the specified kickstart, exception otherwise.</p>
+<p><span class="int">int</span>  status - 1 on successful removal, 0 if range wasn&#8217;t found
+for the specified kickstart, exception otherwise</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-removeScript"><a class="anchor" href="#apidoc-kickstart_profile-removeScript"></a><a class="link" href="#apidoc-kickstart_profile-removeScript">Method: removeScript</a></h2>
+<h2 id="apidoc-kickstart_profile-removeScript-1946618260"><a class="anchor" href="#apidoc-kickstart_profile-removeScript-1946618260"></a><a class="link" href="#apidoc-kickstart_profile-removeScript-1946618260">Method: removeScript</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1764,11 +1851,10 @@ remove.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setAdvancedOptions"><a class="anchor" href="#apidoc-kickstart_profile-setAdvancedOptions"></a><a class="link" href="#apidoc-kickstart_profile-setAdvancedOptions">Method: setAdvancedOptions</a></h2>
+<h2 id="apidoc-kickstart_profile-setAdvancedOptions-88256198"><a class="anchor" href="#apidoc-kickstart_profile-setAdvancedOptions-88256198"></a><a class="link" href="#apidoc-kickstart_profile-setAdvancedOptions-88256198">Method: setAdvancedOptions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1792,10 +1878,12 @@ remove.</p>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - advanced options</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "name" - Name of the advanced option.
 Valid Option names: autostep, interactive, install, upgrade, text,
@@ -1807,9 +1895,13 @@ iscsiname, logging, monitor, multipath, poweroff, halt, services,
 shutdown, user, vnc, zfcp, driverdisk, md5_crypt_rootpw</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arguments" - Arguments of the option
-   // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "arguments" - Arguments of the option</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1823,11 +1915,10 @@ shutdown, user, vnc, zfcp, driverdisk, md5_crypt_rootpw</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setCfgPreservation"><a class="anchor" href="#apidoc-kickstart_profile-setCfgPreservation"></a><a class="link" href="#apidoc-kickstart_profile-setCfgPreservation">Method: setCfgPreservation</a></h2>
+<h2 id="apidoc-kickstart_profile-setCfgPreservation-518072030"><a class="anchor" href="#apidoc-kickstart_profile-setCfgPreservation-518072030"></a><a class="link" href="#apidoc-kickstart_profile-setCfgPreservation-518072030">Method: setCfgPreservation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1863,11 +1954,10 @@ ks.cfg and all %include fragments will be copied to /root.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setChildChannels"><a class="anchor" href="#apidoc-kickstart_profile-setChildChannels"></a><a class="link" href="#apidoc-kickstart_profile-setChildChannels">Method: setChildChannels</a></h2>
+<h2 id="apidoc-kickstart_profile-setChildChannels-679046414"><a class="anchor" href="#apidoc-kickstart_profile-setChildChannels-679046414"></a><a class="link" href="#apidoc-kickstart_profile-setChildChannels-679046414">Method: setChildChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1902,11 +1992,10 @@ profile to be changed.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setCustomOptions"><a class="anchor" href="#apidoc-kickstart_profile-setCustomOptions"></a><a class="link" href="#apidoc-kickstart_profile-setCustomOptions">Method: setCustomOptions</a></h2>
+<h2 id="apidoc-kickstart_profile-setCustomOptions-363172313"><a class="anchor" href="#apidoc-kickstart_profile-setCustomOptions-363172313"></a><a class="link" href="#apidoc-kickstart_profile-setCustomOptions-363172313">Method: setCustomOptions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1940,11 +2029,10 @@ profile to be changed.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setKickstartTree"><a class="anchor" href="#apidoc-kickstart_profile-setKickstartTree"></a><a class="link" href="#apidoc-kickstart_profile-setKickstartTree">Method: setKickstartTree</a></h2>
+<h2 id="apidoc-kickstart_profile-setKickstartTree-1269555311"><a class="anchor" href="#apidoc-kickstart_profile-setKickstartTree-1269555311"></a><a class="link" href="#apidoc-kickstart_profile-setKickstartTree-1269555311">Method: setKickstartTree</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1980,11 +2068,10 @@ kickstart tree.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setLogging"><a class="anchor" href="#apidoc-kickstart_profile-setLogging"></a><a class="link" href="#apidoc-kickstart_profile-setLogging">Method: setLogging</a></h2>
+<h2 id="apidoc-kickstart_profile-setLogging-583852441"><a class="anchor" href="#apidoc-kickstart_profile-setLogging-583852441"></a><a class="link" href="#apidoc-kickstart_profile-setLogging-583852441">Method: setLogging</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2024,11 +2111,10 @@ the post section of a kickstart to /root/ks-post.log</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setRepositories"><a class="anchor" href="#apidoc-kickstart_profile-setRepositories"></a><a class="link" href="#apidoc-kickstart_profile-setRepositories">Method: setRepositories</a></h2>
+<h2 id="apidoc-kickstart_profile-setRepositories-534955437"><a class="anchor" href="#apidoc-kickstart_profile-setRepositories-534955437"></a><a class="link" href="#apidoc-kickstart_profile-setRepositories-534955437">Method: setRepositories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2052,7 +2138,7 @@ the post section of a kickstart to /root/ks-post.log</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - repositoryLabel</p>
+<p><span class="string">string</span>  - repositoryLabel</p>
 </li>
 </ul>
 </div>
@@ -2069,11 +2155,10 @@ the post section of a kickstart to /root/ks-post.log</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setUpdateType"><a class="anchor" href="#apidoc-kickstart_profile-setUpdateType"></a><a class="link" href="#apidoc-kickstart_profile-setUpdateType">Method: setUpdateType</a></h2>
+<h2 id="apidoc-kickstart_profile-setUpdateType-1550575634"><a class="anchor" href="#apidoc-kickstart_profile-setUpdateType-1550575634"></a><a class="link" href="#apidoc-kickstart_profile-setUpdateType-1550575634">Method: setUpdateType</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2109,11 +2194,10 @@ to set. Possible values are 'all' and 'none'.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setVariables"><a class="anchor" href="#apidoc-kickstart_profile-setVariables"></a><a class="link" href="#apidoc-kickstart_profile-setVariables">Method: setVariables</a></h2>
+<h2 id="apidoc-kickstart_profile-setVariables-546014245"><a class="anchor" href="#apidoc-kickstart_profile-setVariables-546014245"></a><a class="link" href="#apidoc-kickstart_profile-setVariables-546014245">Method: setVariables</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2135,13 +2219,16 @@ to set. Possible values are 'all' and 'none'.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - kickstart variable</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "key"</p>
 </li>
 <li>
-<p><span class="string or int">string or int</span>  "value"
-// no end needed</p>
+<p><span class="string or int">string or int</span>  "value"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -2155,11 +2242,10 @@ to set. Possible values are 'all' and 'none'.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_profile-setVirtualizationType"><a class="anchor" href="#apidoc-kickstart_profile-setVirtualizationType"></a><a class="link" href="#apidoc-kickstart_profile-setVirtualizationType">Method: setVirtualizationType</a></h2>
+<h2 id="apidoc-kickstart_profile-setVirtualizationType-1961704420"><a class="anchor" href="#apidoc-kickstart_profile-setVirtualizationType-1961704420"></a><a class="link" href="#apidoc-kickstart_profile-setVirtualizationType-1961704420">Method: setVirtualizationType</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -2194,7 +2280,6 @@ to set. Possible values are 'all' and 'none'.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 
@@ -2230,6 +2315,8 @@ to set. Possible values are 'all' and 'none'.</p>
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -2246,6 +2333,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -2273,37 +2364,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -2312,10 +2372,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/kickstart.profile.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -2331,8 +2391,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>

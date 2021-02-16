@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>errata :: Uyuni API</title>
+    <title>errata :: Uyuni API Documentation</title>
     <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/errata.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
-<link href="../../_/css/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../_/css/font-styles.css">
@@ -16,15 +15,13 @@
 <link rel="stylesheet" href="../../_/css/site-extra.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
-
-
   </head>
   <body class="article">
 <header class="header" role="banner">
     <nav class="navbar">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <a class=" navbar-logo" href="http://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html"><img
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index-uyuni.html"><img
                         class="logo" src="../../_/img/uyuni_logo.png"/></a>
                 <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
         <span class="separator">//</span>
@@ -47,18 +44,30 @@
                     <div class="navbar-link">Resources</div>
                     <div class="navbar-dropdown">
                         <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api"><i
-                                class="fab fa-github"></i>&nbsp API Repository</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
                                 class="fab fa-github"></i>&nbsp;Report Issue</a>
                         <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs-api/wiki"><i
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
                                 class="fas fa-user-edit"></i>&nbsp;Contribute</a>
                     </div>
                 </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
 
             </div>
-        </div>
+
+
         <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
           <span class="icon">
             <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +87,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni</a></h3>
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -93,172 +102,187 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="scripts.html">Scripts</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Handlers</span>
+    <span class="nav-text">Script Examples</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="actionchain.html">actionchain</a>
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="activationkey.html">activationkey</a>
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="api.html">api</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="audit.html">audit</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="auth.html">auth</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.html">channel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.access.html">channel.access</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.org.html">channel.org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="channel.software.html">channel.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="configchannel.html">configchannel</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="distchannel.html">distchannel</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="errata.html">errata</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="formula.html">formula</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.html">image</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.profile.html">image.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="image.store.html">image.store</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.html">kickstart</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.html">org</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="org.trusts.html">org.trusts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.html">packages</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.provider.html">packages.provider</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="packages.search.html">packages.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="proxy.html">proxy</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="saltkey.html">saltkey</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="satellite.html">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="schedule.html">schedule</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.html">system</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.crash.html">system.crash</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.scap.html">system.scap</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="system.search.html">system.search</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="systemgroup.html">systemgroup</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.html">user</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="user.external.html">user.external</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster.html">cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="satellite.html">satellite</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.crash.html">system.crash</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
   </li>
@@ -267,12 +291,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni</span>
+    <span class="title">Uyuni API</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni</span>
+      <span class="title">Uyuni API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
@@ -291,8 +315,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni</a></li>
-    <li>API Handlers</li>
+    <li><a href="../index.html">Uyuni API</a></li>
     <li><a href="errata.html">errata</a></li>
   </ul>
 </nav>
@@ -308,10 +331,8 @@
       <a href="formula.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs-api/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
- <!-- 
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/errata.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-   -->
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/poc-uyuni-docs-api/edit/master/modules/api/pages/errata.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -322,67 +343,64 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-errata-addPackages">addPackages</a></p>
+<p><a href="#apidoc-errata-addPackages-1910857288">addPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-applicableToChannels">applicableToChannels</a></p>
+<p><a href="#apidoc-errata-applicableToChannels-1372771126">applicableToChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-bugzillaFixes">bugzillaFixes</a></p>
+<p><a href="#apidoc-errata-bugzillaFixes-1300216352">bugzillaFixes</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-clone">clone</a></p>
+<p><a href="#apidoc-errata-clone-760646911">clone</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsOriginal">cloneAsOriginal</a></p>
+<p><a href="#apidoc-errata-cloneAsOriginal-1026553658">cloneAsOriginal</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsOriginalAsync">cloneAsOriginalAsync</a></p>
+<p><a href="#apidoc-errata-cloneAsOriginalAsync-1936362218">cloneAsOriginalAsync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsync">cloneAsync</a></p>
+<p><a href="#apidoc-errata-cloneAsync-1342423316">cloneAsync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-create">create</a></p>
+<p><a href="#apidoc-errata-create-1231345665">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-delete">delete</a></p>
+<p><a href="#apidoc-errata-delete-187723824">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-findByCve">findByCve</a></p>
+<p><a href="#apidoc-errata-findByCve-1681552378">findByCve</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-getDetails">getDetails</a></p>
+<p><a href="#apidoc-errata-getDetails-2068113806">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listAffectedSystems">listAffectedSystems</a></p>
+<p><a href="#apidoc-errata-listAffectedSystems-1412536057">listAffectedSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listByDate">listByDate</a></p>
+<p><a href="#apidoc-errata-listByDate-967635335">listByDate</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listCves">listCves</a></p>
+<p><a href="#apidoc-errata-listCves-151781803">listCves</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listKeywords">listKeywords</a></p>
+<p><a href="#apidoc-errata-listKeywords-288043672">listKeywords</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listPackages">listPackages</a></p>
+<p><a href="#apidoc-errata-listPackages-965874704">listPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listUnpublishedErrata">listUnpublishedErrata</a></p>
+<p><a href="#apidoc-errata-publish-749377126">publish</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-publish">publish</a></p>
+<p><a href="#apidoc-errata-publishAsOriginal-641691286">publishAsOriginal</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-publishAsOriginal">publishAsOriginal</a></p>
+<p><a href="#apidoc-errata-removePackages-912877601">removePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-removePackages">removePackages</a></p>
-</li>
-<li>
-<p><a href="#apidoc-errata-setDetails">setDetails</a></p>
+<p><a href="#apidoc-errata-setDetails-506184257">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -400,11 +418,10 @@
 <div class="paragraph">
 <p>errata</p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-addPackages"><a class="anchor" href="#apidoc-errata-addPackages"></a><a class="link" href="#apidoc-errata-addPackages">Method: addPackages</a></h2>
+<h2 id="apidoc-errata-addPackages-1910857288"><a class="anchor" href="#apidoc-errata-addPackages-1910857288"></a><a class="link" href="#apidoc-errata-addPackages-1910857288">Method: addPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -430,7 +447,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>int - packageId</p>
+<p><span class="int">int</span>  - packageId</p>
 </li>
 </ul>
 </div>
@@ -443,16 +460,14 @@
 <div class="ulist">
 <ul>
 <li>
-<p>int - representing the number of packages added,
-exception otherwise</p>
+<p><span class="int">int</span>  count - representing the number of packages added, exception otherwise</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-applicableToChannels"><a class="anchor" href="#apidoc-errata-applicableToChannels"></a><a class="link" href="#apidoc-errata-applicableToChannels">Method: applicableToChannels</a></h2>
+<h2 id="apidoc-errata-applicableToChannels-1372771126"><a class="anchor" href="#apidoc-errata-applicableToChannels-1372771126"></a><a class="link" href="#apidoc-errata-applicableToChannels-1372771126">Method: applicableToChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -483,10 +498,12 @@ exception otherwise</p>
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - channel</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "channel_id"</p>
 </li>
@@ -497,17 +514,20 @@ exception otherwise</p>
 <p><span class="string">string</span>  "name"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "parent_channel_label"
-   // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "parent_channel_label"</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-bugzillaFixes"><a class="anchor" href="#apidoc-errata-bugzillaFixes"></a><a class="link" href="#apidoc-errata-bugzillaFixes">Method: bugzillaFixes</a></h2>
+<h2 id="apidoc-errata-bugzillaFixes-1300216352"><a class="anchor" href="#apidoc-errata-bugzillaFixes-1300216352"></a><a class="link" href="#apidoc-errata-bugzillaFixes-1300216352">Method: bugzillaFixes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -540,22 +560,24 @@ exception otherwise</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - Bugzilla info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "bugzilla_id" - actual bug number is the key into the
 struct</p>
 </li>
 <li>
-<p><span class="string">string</span>  "bug_summary" - summary who&#8217;s key is the bug id
-// no end needed</p>
+<p><span class="string">string</span>  "bug_summary" - summary who&#8217;s key is the bug id</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-clone"><a class="anchor" href="#apidoc-errata-clone"></a><a class="link" href="#apidoc-errata-clone">Method: clone</a></h2>
+<h2 id="apidoc-errata-clone-760646911"><a class="anchor" href="#apidoc-errata-clone-760646911"></a><a class="link" href="#apidoc-errata-clone-760646911">Method: clone</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -579,7 +601,7 @@ struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string -  advisory - The advisory name of the errata to clone.</p>
+<p><span class="string">string</span>  -  advisory - The advisory name of the errata to clone.</p>
 </li>
 </ul>
 </div>
@@ -596,7 +618,8 @@ struct</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -610,21 +633,17 @@ struct</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsOriginal"><a class="anchor" href="#apidoc-errata-cloneAsOriginal"></a><a class="link" href="#apidoc-errata-cloneAsOriginal">Method: cloneAsOriginal</a></h2>
+<h2 id="apidoc-errata-cloneAsOriginal-1026553658"><a class="anchor" href="#apidoc-errata-cloneAsOriginal-1026553658"></a><a class="link" href="#apidoc-errata-cloneAsOriginal-1026553658">Method: cloneAsOriginal</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -649,7 +668,7 @@ struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string -  advisory - The advisory name of the errata to clone.</p>
+<p><span class="string">string</span>  -  advisory - The advisory name of the errata to clone.</p>
 </li>
 </ul>
 </div>
@@ -666,7 +685,8 @@ struct</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -680,21 +700,17 @@ struct</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsOriginalAsync"><a class="anchor" href="#apidoc-errata-cloneAsOriginalAsync"></a><a class="link" href="#apidoc-errata-cloneAsOriginalAsync">Method: cloneAsOriginalAsync</a></h2>
+<h2 id="apidoc-errata-cloneAsOriginalAsync-1936362218"><a class="anchor" href="#apidoc-errata-cloneAsOriginalAsync-1936362218"></a><a class="link" href="#apidoc-errata-cloneAsOriginalAsync-1936362218">Method: cloneAsOriginalAsync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -719,7 +735,7 @@ struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string -  advisory - The advisory name of the errata to clone.</p>
+<p><span class="string">string</span>  -  advisory - The advisory name of the errata to clone.</p>
 </li>
 </ul>
 </div>
@@ -736,11 +752,10 @@ struct</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsync"><a class="anchor" href="#apidoc-errata-cloneAsync"></a><a class="link" href="#apidoc-errata-cloneAsync">Method: cloneAsync</a></h2>
+<h2 id="apidoc-errata-cloneAsync-1342423316"><a class="anchor" href="#apidoc-errata-cloneAsync-1342423316"></a><a class="link" href="#apidoc-errata-cloneAsync-1342423316">Method: cloneAsync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -764,7 +779,7 @@ struct</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string -  advisory - The advisory name of the errata to clone.</p>
+<p><span class="string">string</span>  -  advisory - The advisory name of the errata to clone.</p>
 </li>
 </ul>
 </div>
@@ -781,18 +796,16 @@ struct</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-create"><a class="anchor" href="#apidoc-errata-create"></a><a class="link" href="#apidoc-errata-create">Method: create</a></h2>
+<h2 id="apidoc-errata-create-1231345665"><a class="anchor" href="#apidoc-errata-create-1231345665"></a><a class="link" href="#apidoc-errata-create-1231345665">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Create a custom errata.  If "publish" is set to true,
-      the errata will be published as well</p>
+<p>Create a custom errata</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -804,7 +817,8 @@ struct</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata info</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "synopsis"</p>
 </li>
@@ -842,16 +856,20 @@ or 'Bug Fix Advisory'</p>
 </li>
 <li>
 <p><span class="string">string</span>  "severity" - Severity of advisory (one of the
-           following: 'Low', 'Moderate', 'Important', 'Critical'
-           or 'Unspecified'
-// no end needed</p>
+following: 'Low', 'Moderate', 'Important', 'Critical'
+or 'Unspecified'</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - bug</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Bug Id</p>
 </li>
@@ -859,16 +877,20 @@ or 'Bug Fix Advisory'</p>
 <p><span class="string">string</span>  "summary"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "url"
-        // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "url"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - keyword - List of keywords to associate
+<p><span class="string">string</span>  - keyword - List of keywords to associate
 with the errata.</p>
 </li>
 </ul>
@@ -879,21 +901,18 @@ with the errata.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - packageId</p>
+<p><span class="int">int</span>  - packageId</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  publish - Should the errata be published.</p>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - channelLabel - list of channels the errata should be
-published too, ignored if publish is set to false</p>
+<p><span class="string">string</span>  - channelLabel - list of channels the errata should be
+published to</p>
 </li>
 </ul>
 </div>
@@ -907,7 +926,8 @@ published too, ignored if publish is set to false</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -921,16 +941,17 @@ published too, ignored if publish is set to false</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-delete"><a class="anchor" href="#apidoc-errata-delete"></a><a class="link" href="#apidoc-errata-delete">Method: delete</a></h2>
+<h2 id="apidoc-errata-delete-187723824"><a class="anchor" href="#apidoc-errata-delete-187723824"></a><a class="link" href="#apidoc-errata-delete-187723824">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -962,11 +983,10 @@ published too, ignored if publish is set to false</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-findByCve"><a class="anchor" href="#apidoc-errata-findByCve"></a><a class="link" href="#apidoc-errata-findByCve">Method: findByCve</a></h2>
+<h2 id="apidoc-errata-findByCve-1681552378"><a class="anchor" href="#apidoc-errata-findByCve-1681552378"></a><a class="link" href="#apidoc-errata-findByCve-1681552378">Method: findByCve</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -998,7 +1018,8 @@ published too, ignored if publish is set to false</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -1012,21 +1033,17 @@ published too, ignored if publish is set to false</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-getDetails"><a class="anchor" href="#apidoc-errata-getDetails"></a><a class="link" href="#apidoc-errata-getDetails">Method: getDetails</a></h2>
+<h2 id="apidoc-errata-getDetails-2068113806"><a class="anchor" href="#apidoc-errata-getDetails-2068113806"></a><a class="link" href="#apidoc-errata-getDetails-2068113806">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1055,7 +1072,8 @@ published too, ignored if publish is set to false</p>
 <ul>
 <li>
 <p><span class="struct">struct</span>  - erratum</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1066,9 +1084,7 @@ published too, ignored if publish is set to false</p>
 <p><span class="string">string</span>  "update_date"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "last_modified_date" - This date is only included for
-published erratum and it represents the last time the erratum was
-modified.</p>
+<p><span class="string">string</span>  "last_modified_date" - last time the erratum was modified.</p>
 </li>
 <li>
 <p><span class="string">string</span>  "synopsis"</p>
@@ -1098,16 +1114,17 @@ modified.</p>
 <p><span class="string">string</span>  "notes"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "solution"
-// no end needed</p>
+<p><span class="string">string</span>  "solution"</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listAffectedSystems"><a class="anchor" href="#apidoc-errata-listAffectedSystems"></a><a class="link" href="#apidoc-errata-listAffectedSystems">Method: listAffectedSystems</a></h2>
+<h2 id="apidoc-errata-listAffectedSystems-1412536057"><a class="anchor" href="#apidoc-errata-listAffectedSystems-1412536057"></a><a class="link" href="#apidoc-errata-listAffectedSystems-1412536057">Method: listAffectedSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1140,7 +1157,8 @@ modified.</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - system</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1162,21 +1180,17 @@ successfully checked in</p>
 to any assigned channel</p>
 </li>
 <li>
-<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="int">int</span>  "outdated_pkg_count" - Number of out-of-date packages</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listByDate"><a class="anchor" href="#apidoc-errata-listByDate"></a><a class="link" href="#apidoc-errata-listByDate">Method: listByDate (Deprecated)</a></h2>
+<h2 id="apidoc-errata-listByDate-967635335"><a class="anchor" href="#apidoc-errata-listByDate-967635335"></a><a class="link" href="#apidoc-errata-listByDate-967635335">Method: listByDate (Deprecated)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1211,7 +1225,8 @@ to any assigned channel</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -1225,21 +1240,17 @@ to any assigned channel</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
-<div class="literalblock">
-<div class="content">
-<pre>// no end needed</pre>
-</div>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listCves"><a class="anchor" href="#apidoc-errata-listCves"></a><a class="link" href="#apidoc-errata-listCves">Method: listCves</a></h2>
+<h2 id="apidoc-errata-listCves-151781803"><a class="anchor" href="#apidoc-errata-listCves-151781803"></a><a class="link" href="#apidoc-errata-listCves-151781803">Method: listCves</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1247,8 +1258,7 @@ to any assigned channel</p>
 <div class="paragraph">
 <p>Returns a list of
  CVEs
- applicable to the errata with the given advisory name. CVEs may be associated
- only with published errata.
+ applicable to the errata with the given advisory name.
  For those errata that are present in both vendor and user organizations under the same advisory name,
  this method retrieves the list of CVEs of both of them.</p>
 </div>
@@ -1275,18 +1285,17 @@ to any assigned channel</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - cveName</p>
+<p><span class="string">string</span>  - cveName</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listKeywords"><a class="anchor" href="#apidoc-errata-listKeywords"></a><a class="link" href="#apidoc-errata-listKeywords">Method: listKeywords</a></h2>
+<h2 id="apidoc-errata-listKeywords-288043672"><a class="anchor" href="#apidoc-errata-listKeywords-288043672"></a><a class="link" href="#apidoc-errata-listKeywords-288043672">Method: listKeywords</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1320,18 +1329,17 @@ to any assigned channel</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - Keyword associated with erratum.</p>
+<p><span class="string">string</span>  - Keyword associated with erratum.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listPackages"><a class="anchor" href="#apidoc-errata-listPackages"></a><a class="link" href="#apidoc-errata-listPackages">Method: listPackages</a></h2>
+<h2 id="apidoc-errata-listPackages-965874704"><a class="anchor" href="#apidoc-errata-listPackages-965874704"></a><a class="link" href="#apidoc-errata-listPackages-965874704">Method: listPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1362,10 +1370,12 @@ to any assigned channel</p>
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - package</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id"</p>
 </li>
@@ -1435,84 +1445,26 @@ providing this package.</p>
 <p><span class="string">string</span>  "size"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "payload_size"
-    // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "payload_size"</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listUnpublishedErrata"><a class="anchor" href="#apidoc-errata-listUnpublishedErrata"></a><a class="link" href="#apidoc-errata-listUnpublishedErrata">Method: listUnpublishedErrata</a></h2>
+<h2 id="apidoc-errata-publish-749377126"><a class="anchor" href="#apidoc-errata-publish-749377126"></a><a class="link" href="#apidoc-errata-publish-749377126">Method: publish</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Returns a list of unpublished errata</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - erratum</p>
-</li>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "published"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "advisory"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "advisory_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "advisory_type"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "synopsis"</p>
-</li>
-<li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "created"</p>
-</li>
-<li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  "update_date"
-    // no end needed
-// no end needed</p>
-</li>
-</ul>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-errata-publish"><a class="anchor" href="#apidoc-errata-publish"></a><a class="link" href="#apidoc-errata-publish">Method: publish</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Publish an existing (unpublished) errata to a set of channels.</p>
+<p>Adds an existing errata to a set of channels.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1530,7 +1482,7 @@ providing this package.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - channelLabel - list of channel labels to publish to</p>
+<p><span class="string">string</span>  - channelLabel - list of channel labels to add to</p>
 </li>
 </ul>
 </div>
@@ -1544,7 +1496,8 @@ providing this package.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -1558,22 +1511,23 @@ providing this package.</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-publishAsOriginal"><a class="anchor" href="#apidoc-errata-publishAsOriginal"></a><a class="link" href="#apidoc-errata-publishAsOriginal">Method: publishAsOriginal</a></h2>
+<h2 id="apidoc-errata-publishAsOriginal-641691286"><a class="anchor" href="#apidoc-errata-publishAsOriginal-641691286"></a><a class="link" href="#apidoc-errata-publishAsOriginal-641691286">Method: publishAsOriginal</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Publishes an existing (unpublished) cloned errata to a set of cloned
+<p>Adds an existing cloned errata to a set of cloned
  channels according to its original erratum</p>
 </div>
 <div class="paragraph">
@@ -1592,7 +1546,7 @@ providing this package.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - channelLabel - list of channel labels to publish to</p>
+<p><span class="string">string</span>  - channelLabel - list of channel labels to add to</p>
 </li>
 </ul>
 </div>
@@ -1606,7 +1560,8 @@ providing this package.</p>
 <ul>
 <li>
 <p>* <span class="struct">struct</span>  - errata</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Errata Id</p>
 </li>
@@ -1620,16 +1575,17 @@ providing this package.</p>
 <p><span class="string">string</span>  "advisory_name" - Name of the advisory.</p>
 </li>
 <li>
-<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.
-// no end needed</p>
+<p><span class="string">string</span>  "advisory_synopsis" - Summary of the erratum.</p>
 </li>
 </ul>
 </div>
-<hr>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-removePackages"><a class="anchor" href="#apidoc-errata-removePackages"></a><a class="link" href="#apidoc-errata-removePackages">Method: removePackages</a></h2>
+<h2 id="apidoc-errata-removePackages-912877601"><a class="anchor" href="#apidoc-errata-removePackages-912877601"></a><a class="link" href="#apidoc-errata-removePackages-912877601">Method: removePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1655,7 +1611,7 @@ providing this package.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - packageId</p>
+<p><span class="int">int</span>  - packageId</p>
 </li>
 </ul>
 </div>
@@ -1668,16 +1624,14 @@ providing this package.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>int - representing the number of packages removed,
-exception otherwise</p>
+<p><span class="int">int</span>  count - representing the number of packages removed, exception otherwise</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-setDetails"><a class="anchor" href="#apidoc-errata-setDetails"></a><a class="link" href="#apidoc-errata-setDetails">Method: setDetails</a></h2>
+<h2 id="apidoc-errata-setDetails-506184257"><a class="anchor" href="#apidoc-errata-setDetails-506184257"></a><a class="link" href="#apidoc-errata-setDetails-506184257">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1700,7 +1654,8 @@ exception otherwise</p>
 </li>
 <li>
 <p><span class="struct">struct</span>  - errata details</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="string">string</span>  "synopsis"</p>
 </li>
@@ -1752,10 +1707,12 @@ or 'Unspecified'</p>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="struct">struct</span>  - bug</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><span class="int">int</span>  "id" - Bug Id</p>
 </li>
@@ -1763,9 +1720,13 @@ or 'Unspecified'</p>
 <p><span class="string">string</span>  "summary"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "url"
-   // no end needed
-// no end needed</p>
+<p><span class="string">string</span>  "url"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="array">array</span>  "keywords" - 'keywords' is the key into the struct</p>
@@ -1775,7 +1736,7 @@ or 'Unspecified'</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - keyword - List of keywords to associate
+<p><span class="string">string</span>  - keyword - List of keywords to associate
 with the errata.</p>
 </li>
 </ul>
@@ -1789,9 +1750,11 @@ with the errata.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>string - cves - List of CVEs to associate
-             with the errata. (valid only for published errata)
-// no end needed</p>
+<p><span class="string">string</span>  - cves - List of CVEs to associate
+with the errata</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1808,7 +1771,6 @@ with the errata.</p>
 </li>
 </ul>
 </div>
-<hr>
 </div>
 </div>
 
@@ -1844,6 +1806,8 @@ with the errata.</p>
   <div id="article-toc"></div>
 </aside>
 
+
+
 </main>
 </div>
 <script>tippy('#previousPage', {
@@ -1860,6 +1824,10 @@ tippy('#submitPR', {
   placement: 'bottom', // or 'left', 'right', ...
 })
 </script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
 <script>
@@ -1887,37 +1855,6 @@ tippy('#submitPR', {
         content: "Edit this page and submit a pull request",
     });
 
-    /* Testing tooltips for terms */
-    tippy('#ubuntu', {
-        content: "Ubuntu is an open-source operating system (OS) based on the Debian GNU/Linux distribution.",
-
-    });
-
-    tippy('#salt', {
-        content: "Salt is a Python-based, open-source software for event-driven IT automation, remote task execution, and configuration management.",
-
-    });
-
-    tippy('#sle', {
-        content: "SUSE Linux Enterprise, or SLE, is the enterprise-grade version of SUSE's open source Linux operating system distribution.",
-
-    });
-
-    tippy('#rhel', {
-        content: "Red Hat Enterprise Linux, or RHEL, is the enterprise-grade version of Red Hat's open source Linux operating system distribution. ",
-
-    });
-
-    tippy('#centos', {
-        content: "Community Enterprise Operating System, or CentOS, is a distribution of the Linux operating system based on RHEL (Red Hat Enterprise Linux).",
-
-    });
-
-    tippy('#sl', {
-        content: "Scientific Linux (SL) is a Linux distribution produced by Fermilab, CERN, DESY and by ETH Zurich.",
-
-
-    });
 
 </script>
 <script type="text/javascript">
@@ -1926,10 +1863,10 @@ tippy('#submitPR', {
     window.antora.pagePath = '/uyuni/api/errata.html'
 </script>
 <script src="../../_/js/site.js"></script>
+
     <script src="../../_/js/vendor/lunr.js"></script>
     <script src="../../_/js/vendor/search.js"></script>
     <script async src="../../_/../search-index.js"></script>
-
 <script src="../../_/js/vendor/tocbot.min.js"></script>
 <script>
     tocbot.init( {
@@ -1945,8 +1882,5 @@ tippy('#submitPR', {
         document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
     }
 </script>
-
-
-<script src="../../_/js/prism.js"></script>
   </body>
 </html>
