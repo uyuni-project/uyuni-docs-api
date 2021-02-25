@@ -15,13 +15,6 @@ i.fa[title='Warning'] {
   float: right;
 }
 
-span.string {
-  color: #2FBA77;
-  font-family: monospace;
-  font-size: inherit;
-  font-weight: 900;
-}
-
 h1.page {
   font-size: 27px;
   font-weight: 500;
@@ -39,6 +32,19 @@ h1.page {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 32px;
+}
+
+span.int, span.string, span.struct, span.array {
+  color: #FE7C3F;
+  font-weight: 600;
+}
+
+/*
+span.string {
+  color: #2FBA77;
+  font-family: monospace;
+  font-size: inherit;
+  font-weight: 900;
 }
 
 span.int {
@@ -61,6 +67,7 @@ span.struct {
   font-size: inherit;
   font-weight: 900;
 }
+*/
 
 .navbar {
   background-color: #f1f1f2;
@@ -162,7 +169,7 @@ html, body {
 /* Paragraph text color */
 .doc {
   color: #3b3b3b;
-  background-color: #f5f7f9;
+  /*background-color: #f5f7f9; */
 }
 
 .navbar-end .navbar-link:hover, .navbar-end>a.navbar-item:hover {
