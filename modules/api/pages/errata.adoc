@@ -4,26 +4,25 @@
 
 == Available methods
 
-* <<apidoc-errata-addPackages-1910857288,addPackages>>
-* <<apidoc-errata-applicableToChannels-1372771126,applicableToChannels>>
-* <<apidoc-errata-bugzillaFixes-1300216352,bugzillaFixes>>
-* <<apidoc-errata-clone-760646911,clone>>
-* <<apidoc-errata-cloneAsOriginal-1026553658,cloneAsOriginal>>
-* <<apidoc-errata-cloneAsOriginalAsync-1936362218,cloneAsOriginalAsync>>
-* <<apidoc-errata-cloneAsync-1342423316,cloneAsync>>
-* <<apidoc-errata-create-1231345665,create>>
-* <<apidoc-errata-delete-187723824,delete>>
-* <<apidoc-errata-findByCve-1681552378,findByCve>>
-* <<apidoc-errata-getDetails-2068113806,getDetails>>
-* <<apidoc-errata-listAffectedSystems-1412536057,listAffectedSystems>>
-* <<apidoc-errata-listByDate-967635335,listByDate>>
-* <<apidoc-errata-listCves-151781803,listCves>>
-* <<apidoc-errata-listKeywords-288043672,listKeywords>>
-* <<apidoc-errata-listPackages-965874704,listPackages>>
-* <<apidoc-errata-publish-749377126,publish>>
-* <<apidoc-errata-publishAsOriginal-641691286,publishAsOriginal>>
-* <<apidoc-errata-removePackages-912877601,removePackages>>
-* <<apidoc-errata-setDetails-506184257,setDetails>>
+* <<apidoc-errata-addPackages-1966075071,addPackages>>
+* <<apidoc-errata-applicableToChannels-1100176029,applicableToChannels>>
+* <<apidoc-errata-bugzillaFixes-1433607373,bugzillaFixes>>
+* <<apidoc-errata-clone-783759938,clone>>
+* <<apidoc-errata-cloneAsOriginal-1243911696,cloneAsOriginal>>
+* <<apidoc-errata-cloneAsOriginalAsync-247184928,cloneAsOriginalAsync>>
+* <<apidoc-errata-cloneAsync-411802142,cloneAsync>>
+* <<apidoc-errata-create-1286968216,create>>
+* <<apidoc-errata-delete-583997448,delete>>
+* <<apidoc-errata-findByCve-1585358875,findByCve>>
+* <<apidoc-errata-getDetails-66348462,getDetails>>
+* <<apidoc-errata-listAffectedSystems-814565761,listAffectedSystems>>
+* <<apidoc-errata-listCves-453562991,listCves>>
+* <<apidoc-errata-listKeywords-1963645656,listKeywords>>
+* <<apidoc-errata-listPackages-1448095927,listPackages>>
+* <<apidoc-errata-publish-1901525199,publish>>
+* <<apidoc-errata-publishAsOriginal-573872851,publishAsOriginal>>
+* <<apidoc-errata-removePackages-783488821,removePackages>>
+* <<apidoc-errata-setDetails-209128279,setDetails>>
 
 == Description
 
@@ -34,7 +33,7 @@ Provides methods to access and modify errata.
 errata
 
 
-[#apidoc-errata-addPackages-1910857288]
+[#apidoc-errata-addPackages-1966075071]
 == Method: addPackages 
 
 Description:
@@ -63,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-errata-applicableToChannels-1372771126]
+[#apidoc-errata-applicableToChannels-1100176029]
 == Method: applicableToChannels 
 
 Description:
@@ -95,7 +94,7 @@ Returns:
 
 
 
-[#apidoc-errata-bugzillaFixes-1300216352]
+[#apidoc-errata-bugzillaFixes-1433607373]
 == Method: bugzillaFixes 
 
 Description:
@@ -127,7 +126,7 @@ Returns:
 
 
 
-[#apidoc-errata-clone-760646911]
+[#apidoc-errata-clone-783759938]
 == Method: clone 
 
 Description:
@@ -154,6 +153,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
       
@@ -161,7 +161,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsOriginal-1026553658]
+[#apidoc-errata-cloneAsOriginal-1243911696]
 == Method: cloneAsOriginal 
 
 Description:
@@ -189,6 +189,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
       
@@ -196,7 +197,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsOriginalAsync-1936362218]
+[#apidoc-errata-cloneAsOriginalAsync-247184928]
 == Method: cloneAsOriginalAsync 
 
 Description:
@@ -224,7 +225,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsync-1342423316]
+[#apidoc-errata-cloneAsync-411802142]
 == Method: cloneAsync 
 
 Description:
@@ -251,7 +252,7 @@ Returns:
 
 
 
-[#apidoc-errata-create-1231345665]
+[#apidoc-errata-create-1286968216]
 == Method: create 
 
 Description:
@@ -272,6 +273,8 @@ Parameters:
           ** [.string]#string#  "advisory_type" - Type of advisory (one of the
                   following: 'Security Advisory', 'Product Enhancement Advisory',
                   or 'Bug Fix Advisory'
+          ** [.string]#string#  "advisory_status" - Status of advisory (one of the
+                  following: 'final', 'testing', 'stable' or 'retracted'
           ** [.string]#string#  "product"
           ** [.string]#string#  "errataFrom"
           ** [.string]#string#  "topic"
@@ -307,6 +310,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
        
@@ -314,7 +318,7 @@ Returns:
 
 
 
-[#apidoc-errata-delete-187723824]
+[#apidoc-errata-delete-583997448]
 == Method: delete 
 
 Description:
@@ -339,7 +343,7 @@ Returns:
 
 
 
-[#apidoc-errata-findByCve-1681552378]
+[#apidoc-errata-findByCve-1585358875]
 == Method: findByCve 
 
 Description:
@@ -364,6 +368,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
       
@@ -371,7 +376,7 @@ Returns:
 
 
 
-[#apidoc-errata-getDetails-2068113806]
+[#apidoc-errata-getDetails-66348462]
 == Method: getDetails 
 
 Description:
@@ -398,6 +403,7 @@ Returns:
           ** [.string]#string#  "last_modified_date" - last time the erratum was modified.
           ** [.string]#string#  "synopsis"
           ** [.int]#int#  "release"
+          ** [.string]#string#  "advisory_status"
           ** [.string]#string#  "type"
           ** [.string]#string#  "product"
           ** [.string]#string#  "errataFrom"
@@ -410,7 +416,7 @@ Returns:
 
 
 
-[#apidoc-errata-listAffectedSystems-1412536057]
+[#apidoc-errata-listAffectedSystems-814565761]
 == Method: listAffectedSystems 
 
 Description:
@@ -447,40 +453,7 @@ Returns:
 
 
 
-[#apidoc-errata-listByDate-967635335]
-== Method: listByDate (Deprecated)
-
-Description:
-
-List errata that have been applied to a particular channel by date.
-
-
-Deprecated - being replaced by channel.software.listErrata(User LoggedInUser,
- string channelLabel)
-
-
-Parameters:
-
-  * [.string]#string#  sessionKey
- 
-* [.string]#string#  channelLabel
- 
-
-Returns:
-
-* [.array]#array# :
-              * [.struct]#struct#  - errata
-          ** [.int]#int#  "id" - Errata Id
-          ** [.string]#string#  "date" - Date erratum was created.
-          ** [.string]#string#  "advisory_type" - Type of the advisory.
-          ** [.string]#string#  "advisory_name" - Name of the advisory.
-          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
-      
-           
-
-
-
-[#apidoc-errata-listCves-151781803]
+[#apidoc-errata-listCves-453562991]
 == Method: listCves 
 
 Description:
@@ -509,7 +482,7 @@ Returns:
 
 
 
-[#apidoc-errata-listKeywords-288043672]
+[#apidoc-errata-listKeywords-1963645656]
 == Method: listKeywords 
 
 Description:
@@ -537,7 +510,7 @@ Returns:
 
 
 
-[#apidoc-errata-listPackages-965874704]
+[#apidoc-errata-listPackages-1448095927]
 == Method: listPackages 
 
 Description:
@@ -588,7 +561,7 @@ Returns:
 
 
 
-[#apidoc-errata-publish-749377126]
+[#apidoc-errata-publish-1901525199]
 == Method: publish 
 
 Description:
@@ -614,6 +587,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
        
@@ -621,7 +595,7 @@ Returns:
 
 
 
-[#apidoc-errata-publishAsOriginal-641691286]
+[#apidoc-errata-publishAsOriginal-573872851]
 == Method: publishAsOriginal 
 
 Description:
@@ -648,6 +622,7 @@ Returns:
           ** [.int]#int#  "id" - Errata Id
           ** [.string]#string#  "date" - Date erratum was created.
           ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
           ** [.string]#string#  "advisory_name" - Name of the advisory.
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
        
@@ -655,7 +630,7 @@ Returns:
 
 
 
-[#apidoc-errata-removePackages-912877601]
+[#apidoc-errata-removePackages-783488821]
 == Method: removePackages 
 
 Description:
@@ -684,7 +659,7 @@ Returns:
 
 
 
-[#apidoc-errata-setDetails-506184257]
+[#apidoc-errata-setDetails-209128279]
 == Method: setDetails 
 
 Description:

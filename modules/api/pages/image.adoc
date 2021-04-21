@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-image-delete-896185192,delete>>
-* <<apidoc-image-getCustomValues-96594432,getCustomValues>>
-* <<apidoc-image-getDetails-1546706639,getDetails>>
-* <<apidoc-image-getRelevantErrata-433321211,getRelevantErrata>>
-* <<apidoc-image-importImage-2015874556,importImage>>
-* <<apidoc-image-listImages-1525668766,listImages>>
-* <<apidoc-image-listPackages-1137678248,listPackages>>
-* <<apidoc-image-scheduleImageBuild-1242514050,scheduleImageBuild>>
+* <<apidoc-image-delete-1885192614,delete>>
+* <<apidoc-image-getCustomValues-1682431013,getCustomValues>>
+* <<apidoc-image-getDetails-119445056,getDetails>>
+* <<apidoc-image-getRelevantErrata-691171870,getRelevantErrata>>
+* <<apidoc-image-importImage-484728344,importImage>>
+* <<apidoc-image-listImages-1982708114,listImages>>
+* <<apidoc-image-listPackages-1517112814,listPackages>>
+* <<apidoc-image-scheduleImageBuild-628502276,scheduleImageBuild>>
 
 == Description
 
@@ -22,7 +22,7 @@ Provides methods to access and modify images.
 image
 
 
-[#apidoc-image-delete-896185192]
+[#apidoc-image-delete-1885192614]
 == Method: delete 
 
 Description:
@@ -46,7 +46,7 @@ Returns:
 
 
 
-[#apidoc-image-getCustomValues-96594432]
+[#apidoc-image-getCustomValues-1682431013]
 == Method: getCustomValues 
 
 Description:
@@ -72,7 +72,7 @@ Returns:
 
 
 
-[#apidoc-image-getDetails-1546706639]
+[#apidoc-image-getDetails-119445056]
 == Method: getDetails 
 
 Description:
@@ -126,7 +126,7 @@ Returns:
 
 
 
-[#apidoc-image-getRelevantErrata-433321211]
+[#apidoc-image-getRelevantErrata-691171870]
 == Method: getRelevantErrata 
 
 Description:
@@ -148,17 +148,19 @@ Returns:
 * [.array]#array# :
           * [.struct]#struct#  - errata
           ** [.int]#int#  "id" - Errata ID.
-          ** [.string]#string#  "date" - Date erratum was created.
-          ** [.string]#string#  "update_date" - Date erratum was updated.
+          ** [.string]#string#  "issue_date" - Date erratum was updated. (Deprecated)
+          ** [.string]#string#  "date" - Date erratum was created. (Deprecated)
+          ** [.string]#string#  "update_date" - Date erratum was updated. (Deprecated)
           ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
           ** [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
+          ** [.string]#string#  "advisory_status" - Status label such as final, testing, retracted
           ** [.string]#string#  "advisory_name" - Name such as RHSA, etc
        
        
 
 
 
-[#apidoc-image-importImage-2015874556]
+[#apidoc-image-importImage-484728344]
 == Method: importImage 
 
 Description:
@@ -196,7 +198,7 @@ Returns:
 
 
 
-[#apidoc-image-listImages-1525668766]
+[#apidoc-image-listImages-1982708114]
 == Method: listImages 
 
 Description:
@@ -228,7 +230,7 @@ Returns:
 
 
 
-[#apidoc-image-listPackages-1137678248]
+[#apidoc-image-listPackages-1517112814]
 == Method: listPackages 
 
 Description:
@@ -258,7 +260,7 @@ Returns:
 
 
 
-[#apidoc-image-scheduleImageBuild-1242514050]
+[#apidoc-image-scheduleImageBuild-628502276]
 == Method: scheduleImageBuild 
 
 Description:
