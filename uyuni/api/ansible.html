@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>image.store :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/image.store.html">
+    <title>ansible :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/ansible.html">
     <meta name="generator" content="Antora 2.1.1">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -173,7 +173,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="image.profile.html">image.profile</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="image.store.html">image.store</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -316,7 +316,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="image.store.html">image.store</a></li>
+    <li><a href="ansible.html">ansible</a></li>
   </ul>
 </nav>
 
@@ -324,41 +324,46 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="image.profile.html">
-        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="kickstart.html">
-        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="file:///tmp/uyuni-docs-api/modules/api/pages/image.store.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="file:///tmp/uyuni-docs-api/modules/api/pages/ansible.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">image.store</h1>
+<h1 class="page">ansible</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-image_store-create-1335077110">create</a></p>
+<p><a href="#apidoc-ansible-createAnsiblePath-471835796">createAnsiblePath</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_store-delete-1670283668">delete</a></p>
+<p><a href="#apidoc-ansible-discoverPlaybooks-468002913">discoverPlaybooks</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_store-getDetails-831019851">getDetails</a></p>
+<p><a href="#apidoc-ansible-fetchPlaybookContents-2050951350">fetchPlaybookContents</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_store-listImageStoreTypes-1227700386">listImageStoreTypes</a></p>
+<p><a href="#apidoc-ansible-introspectInventory-1605741888">introspectInventory</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_store-listImageStores-1069736192">listImageStores</a></p>
+<p><a href="#apidoc-ansible-listAnsiblePaths-1440268996">listAnsiblePaths</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_store-setDetails-1137069423">setDetails</a></p>
+<p><a href="#apidoc-ansible-lookupAnsiblePathById-2039281362">lookupAnsiblePathById</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-removeAnsiblePath-1687902353">removeAnsiblePath</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-1787450654">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-updateAnsiblePath-2009492047">updateAnsiblePath</a></p>
 </li>
 </ul>
 </div>
@@ -368,24 +373,24 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to access and modify image stores.</p>
+<p>Provides methods to manage Ansible systems</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>image.store</p>
+<p>ansible</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-create-1335077110"><a class="anchor" href="#apidoc-image_store-create-1335077110"></a><a class="link" href="#apidoc-image_store-create-1335077110">Method: create</a></h2>
+<h2 id="apidoc-ansible-createAnsiblePath-471835796"><a class="anchor" href="#apidoc-ansible-createAnsiblePath-471835796"></a><a class="link" href="#apidoc-ansible-createAnsiblePath-471835796">Method: createAnsiblePath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Create a new Image Store</p>
+<p>Create ansible path</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -396,23 +401,20 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  label</p>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
 <li>
-<p><span class="string">string</span>  uri</p>
-</li>
-<li>
-<p><span class="string">string</span>  storeType</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - credentials optional</p>
+<p><span class="struct">struct</span>  - props</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  "username"</p>
+<p><span class="string">string</span>  "type" - The ansible path type: 'inventory' or 'playbook'</p>
 </li>
 <li>
-<p><span class="string">string</span>  "password"</p>
+<p><span class="int">int</span>  "server_id" - ID of control node server</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
 </li>
 </ul>
 </div>
@@ -425,20 +427,36 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p>* <span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-delete-1670283668"><a class="anchor" href="#apidoc-image_store-delete-1670283668"></a><a class="link" href="#apidoc-image_store-delete-1670283668">Method: delete</a></h2>
+<h2 id="apidoc-ansible-discoverPlaybooks-468002913"><a class="anchor" href="#apidoc-ansible-discoverPlaybooks-468002913"></a><a class="link" href="#apidoc-ansible-discoverPlaybooks-468002913">Method: discoverPlaybooks</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Delete an Image Store</p>
+<p>Discover playbooks under given playbook path with given pathId</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -449,7 +467,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  label</p>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
 </ul>
 </div>
@@ -459,20 +477,46 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p><span class="struct">struct</span>  - playbooks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - playbook</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-getDetails-831019851"><a class="anchor" href="#apidoc-image_store-getDetails-831019851"></a><a class="link" href="#apidoc-image_store-getDetails-831019851">Method: getDetails</a></h2>
+<h2 id="apidoc-ansible-fetchPlaybookContents-2050951350"><a class="anchor" href="#apidoc-ansible-fetchPlaybookContents-2050951350"></a><a class="link" href="#apidoc-ansible-fetchPlaybookContents-2050951350">Method: fetchPlaybookContents</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Get details of an Image Store</p>
+<p>Fetch the playbook content from the control node using a synchronous salt call.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -483,7 +527,11 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  label</p>
+<p><span class="int">int</span>  pathId - playbook path id</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookRelPath - relative path of playbook (inside path specified by
+pathId)</p>
 </li>
 </ul>
 </div>
@@ -493,23 +541,45 @@
 <div class="ulist">
 <ul>
 <li>
-<p>* <span class="struct">struct</span>  - Image Store information</p>
+<p><span class="string">string</span>  contents - Text contents of the playbook</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-introspectInventory-1605741888"><a class="anchor" href="#apidoc-ansible-introspectInventory-1605741888"></a><a class="link" href="#apidoc-ansible-introspectInventory-1605741888">Method: introspectInventory</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Introspect inventory under given inventory path with given pathId and return it in a structured way</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  "label"</p>
+<p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  "uri"</p>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="string">string</span>  "storetype"</p>
-</li>
+<p><span class="struct">struct</span>  - Inventory in a nested structure</p>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="boolean">boolean</span>  "hasCredentials"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "username"</p>
+<p><span class="object">object</span>  Inventory item - Inventory item (can be nested)</p>
 </li>
 </ul>
 </div>
@@ -519,13 +589,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-listImageStoreTypes-1227700386"><a class="anchor" href="#apidoc-image_store-listImageStoreTypes-1227700386"></a><a class="link" href="#apidoc-image_store-listImageStoreTypes-1227700386">Method: listImageStoreTypes</a></h2>
+<h2 id="apidoc-ansible-listAnsiblePaths-1440268996"><a class="anchor" href="#apidoc-ansible-listAnsiblePaths-1440268996"></a><a class="link" href="#apidoc-ansible-listAnsiblePaths-1440268996">Method: listAnsiblePaths</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List available Image Store Types</p>
+<p>List ansible paths for server (control node)</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -534,6 +604,9 @@
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - id of ansible control node server</p>
 </li>
 </ul>
 </div>
@@ -546,17 +619,20 @@
 <p><span class="array">array</span> :</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  - Image Store Type information</p>
+<p><span class="struct">struct</span>  - ansible path</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  "id"</p>
+<p><span class="int">int</span>  "path id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "label"</p>
+<p><span class="string">string</span>  "type label"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "name"</p>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
 </li>
 </ul>
 </div>
@@ -566,13 +642,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-listImageStores-1069736192"><a class="anchor" href="#apidoc-image_store-listImageStores-1069736192"></a><a class="link" href="#apidoc-image_store-listImageStores-1069736192">Method: listImageStores</a></h2>
+<h2 id="apidoc-ansible-lookupAnsiblePathById-2039281362"><a class="anchor" href="#apidoc-ansible-lookupAnsiblePathById-2039281362"></a><a class="link" href="#apidoc-ansible-lookupAnsiblePathById-2039281362">Method: lookupAnsiblePathById</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List available Image Stores</p>
+<p>Lookup ansible path by path id</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -581,6 +657,9 @@
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
 </ul>
 </div>
@@ -590,26 +669,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - Image Store information</p>
+<p>* <span class="struct">struct</span>  - ansible path</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  "label"</p>
+<p><span class="int">int</span>  "path id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "uri"</p>
+<p><span class="string">string</span>  "type label"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "storetype"</p>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "hasCredentials"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "username"</p>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
 </li>
 </ul>
 </div>
@@ -619,13 +692,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_store-setDetails-1137069423"><a class="anchor" href="#apidoc-image_store-setDetails-1137069423"></a><a class="link" href="#apidoc-image_store-setDetails-1137069423">Method: setDetails</a></h2>
+<h2 id="apidoc-ansible-removeAnsiblePath-1687902353"><a class="anchor" href="#apidoc-ansible-removeAnsiblePath-1687902353"></a><a class="link" href="#apidoc-ansible-removeAnsiblePath-1687902353">Method: removeAnsiblePath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Set details of an Image Store</p>
+<p>Create ansible path</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -636,23 +709,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  label</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - image store details</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "uri"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "username" - pass empty string to unset credentials</p>
-</li>
-<li>
-<p><span class="string">string</span>  "password"</p>
-</li>
-</ul>
-</div>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
 </ul>
 </div>
@@ -663,6 +720,112 @@
 <ul>
 <li>
 <p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook-1787450654"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-1787450654"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-1787450654">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-updateAnsiblePath-2009492047"><a class="anchor" href="#apidoc-ansible-updateAnsiblePath-2009492047"></a><a class="link" href="#apidoc-ansible-updateAnsiblePath-2009492047">Method: updateAnsiblePath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create ansible path</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - props</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -671,28 +834,8 @@
 
 <div class="cedents grid" role="navigation">
 
-  <div class="prev">
-      <a href="image.profile.html" title="image.profile">
-        <div class="change-page">
-          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
-        <span class="label">Previous</span>
-        <br/>
-        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">image.profile</span>
-        </div>
-      </a>
   </div>
 
-  <div class="next">
-      <a href="kickstart.html" title="kickstart">
-        <div class="change-page">
-          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
-        <span class="label">Next</span>
-        <br/>
-       <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">kickstart</span>
-        </div>
-      </a>
   </div>
 </div>
 </article>
@@ -755,7 +898,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/image.store.html'
+    window.antora.pagePath = '/uyuni/api/ansible.html'
 </script>
 <script src="../../_/js/site.js"></script>
 
