@@ -129,6 +129,9 @@
     <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html#apidoc-ansible">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -343,28 +346,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-org_trusts-addTrust-1914683944">addTrust</a></p>
+<p><a href="#apidoc-org_trusts-addTrust-31874125">addTrust</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-getDetails-1874140695">getDetails</a></p>
+<p><a href="#apidoc-org_trusts-getDetails-1989092248">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-listChannelsConsumed-1575043618">listChannelsConsumed</a></p>
+<p><a href="#apidoc-org_trusts-listChannelsConsumed-1731311293">listChannelsConsumed</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-listChannelsProvided-1340734309">listChannelsProvided</a></p>
+<p><a href="#apidoc-org_trusts-listChannelsProvided-127083661">listChannelsProvided</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-listOrgs-1880990481">listOrgs</a></p>
+<p><a href="#apidoc-org_trusts-listOrgs-598294540">listOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-listSystemsAffected-1648003357">listSystemsAffected</a></p>
+<p><a href="#apidoc-org_trusts-listSystemsAffected-1679092632">listSystemsAffected</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-listTrusts-1915567579">listTrusts</a></p>
+<p><a href="#apidoc-org_trusts-listTrusts-525313125">listTrusts</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org_trusts-removeTrust-632847899">removeTrust</a></p>
+<p><a href="#apidoc-org_trusts-removeTrust-1804109458">removeTrust</a></p>
 </li>
 </ul>
 </div>
@@ -386,7 +389,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-addTrust-1914683944"><a class="anchor" href="#apidoc-org_trusts-addTrust-1914683944"></a><a class="link" href="#apidoc-org_trusts-addTrust-1914683944">Method: addTrust</a></h2>
+<h2 id="apidoc-org_trusts-addTrust-31874125"><a class="anchor" href="#apidoc-org_trusts-addTrust-31874125"></a><a class="link" href="#apidoc-org_trusts-addTrust-31874125">Method: addTrust</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -423,7 +426,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-getDetails-1874140695"><a class="anchor" href="#apidoc-org_trusts-getDetails-1874140695"></a><a class="link" href="#apidoc-org_trusts-getDetails-1874140695">Method: getDetails</a></h2>
+<h2 id="apidoc-org_trusts-getDetails-1989092248"><a class="anchor" href="#apidoc-org_trusts-getDetails-1989092248"></a><a class="link" href="#apidoc-org_trusts-getDetails-1989092248">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -471,11 +474,19 @@ the organization.</p>
 the organization.</p>
 </li>
 <li>
-<p><span class="int">int</span>  "systems_migrated_to" - Number of systems migrated to
+<p><span class="int">int</span>  "systems_migrated_to" - (Deprecated by systems_transferred_to) Number
+of systems transferred to the organization.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "systems_migrated_from" - (Deprecated by systems_transferred_from) Number
+of systems transferred from the organization.</p>
+</li>
+<li>
+<p><span class="int">int</span>  "systems_transferred_to" - Number of systems transferred to
 the organization.</p>
 </li>
 <li>
-<p><span class="int">int</span>  "systems_migrated_from" - Number of systems migrated
+<p><span class="int">int</span>  "systems_transferred_from" - Number of systems transferred
 from the organization.</p>
 </li>
 </ul>
@@ -486,7 +497,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-listChannelsConsumed-1575043618"><a class="anchor" href="#apidoc-org_trusts-listChannelsConsumed-1575043618"></a><a class="link" href="#apidoc-org_trusts-listChannelsConsumed-1575043618">Method: listChannelsConsumed</a></h2>
+<h2 id="apidoc-org_trusts-listChannelsConsumed-1731311293"><a class="anchor" href="#apidoc-org_trusts-listChannelsConsumed-1731311293"></a><a class="link" href="#apidoc-org_trusts-listChannelsConsumed-1731311293">Method: listChannelsConsumed</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -544,7 +555,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-listChannelsProvided-1340734309"><a class="anchor" href="#apidoc-org_trusts-listChannelsProvided-1340734309"></a><a class="link" href="#apidoc-org_trusts-listChannelsProvided-1340734309">Method: listChannelsProvided</a></h2>
+<h2 id="apidoc-org_trusts-listChannelsProvided-127083661"><a class="anchor" href="#apidoc-org_trusts-listChannelsProvided-127083661"></a><a class="link" href="#apidoc-org_trusts-listChannelsProvided-127083661">Method: listChannelsProvided</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -602,7 +613,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-listOrgs-1880990481"><a class="anchor" href="#apidoc-org_trusts-listOrgs-1880990481"></a><a class="link" href="#apidoc-org_trusts-listOrgs-1880990481">Method: listOrgs</a></h2>
+<h2 id="apidoc-org_trusts-listOrgs-598294540"><a class="anchor" href="#apidoc-org_trusts-listOrgs-598294540"></a><a class="link" href="#apidoc-org_trusts-listOrgs-598294540">Method: listOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -649,7 +660,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-listSystemsAffected-1648003357"><a class="anchor" href="#apidoc-org_trusts-listSystemsAffected-1648003357"></a><a class="link" href="#apidoc-org_trusts-listSystemsAffected-1648003357">Method: listSystemsAffected</a></h2>
+<h2 id="apidoc-org_trusts-listSystemsAffected-1679092632"><a class="anchor" href="#apidoc-org_trusts-listSystemsAffected-1679092632"></a><a class="link" href="#apidoc-org_trusts-listSystemsAffected-1679092632">Method: listSystemsAffected</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -705,7 +716,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-listTrusts-1915567579"><a class="anchor" href="#apidoc-org_trusts-listTrusts-1915567579"></a><a class="link" href="#apidoc-org_trusts-listTrusts-1915567579">Method: listTrusts</a></h2>
+<h2 id="apidoc-org_trusts-listTrusts-525313125"><a class="anchor" href="#apidoc-org_trusts-listTrusts-525313125"></a><a class="link" href="#apidoc-org_trusts-listTrusts-525313125">Method: listTrusts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -759,7 +770,7 @@ from the organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-org_trusts-removeTrust-632847899"><a class="anchor" href="#apidoc-org_trusts-removeTrust-632847899"></a><a class="link" href="#apidoc-org_trusts-removeTrust-632847899">Method: removeTrust</a></h2>
+<h2 id="apidoc-org_trusts-removeTrust-1804109458"><a class="anchor" href="#apidoc-org_trusts-removeTrust-1804109458"></a><a class="link" href="#apidoc-org_trusts-removeTrust-1804109458">Method: removeTrust</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
