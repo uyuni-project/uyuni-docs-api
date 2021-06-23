@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>channel.access :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/channel.access.html">
+    <title>ansible :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/ansible.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -129,7 +129,7 @@
     <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="ansible.html#apidoc-ansible">ansible</a>
+    <a class="nav-link" href="#apidoc-ansible">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
@@ -143,7 +143,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="channel.html">channel</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="channel.access.html">channel_access</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -319,7 +319,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="channel.access.html">channel_access</a></li>
+    <li><a href="#apidoc-ansible">ansible</a></li>
   </ul>
 </nav>
 
@@ -327,35 +327,50 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="channel.html">
+      <a href="admin.monitoring.html">
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="channel.org.html">
+      <a href="api.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/channel.access.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/ansible.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">channel.access</h1>
+<h1 class="page">ansible</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-channel_access-disableUserRestrictions-1528099970">disableUserRestrictions</a></p>
+<p><a href="#apidoc-ansible-createAnsiblePath-178371348">createAnsiblePath</a></p>
 </li>
 <li>
-<p><a href="#apidoc-channel_access-enableUserRestrictions-1296277943">enableUserRestrictions</a></p>
+<p><a href="#apidoc-ansible-discoverPlaybooks-1169933615">discoverPlaybooks</a></p>
 </li>
 <li>
-<p><a href="#apidoc-channel_access-getOrgSharing-444096469">getOrgSharing</a></p>
+<p><a href="#apidoc-ansible-fetchPlaybookContents-1111867240">fetchPlaybookContents</a></p>
 </li>
 <li>
-<p><a href="#apidoc-channel_access-setOrgSharing-426792528">setOrgSharing</a></p>
+<p><a href="#apidoc-ansible-introspectInventory-1787450654">introspectInventory</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-listAnsiblePaths-588389652">listAnsiblePaths</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-lookupAnsiblePathById-1924108520">lookupAnsiblePathById</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-removeAnsiblePath-1281580764">removeAnsiblePath</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-1837581973">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-updateAnsiblePath-2141849216">updateAnsiblePath</a></p>
 </li>
 </ul>
 </div>
@@ -365,25 +380,24 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to retrieve and alter channel access restrictions.</p>
+<p>Provides methods to manage Ansible systems</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>channel.access</p>
+<p>ansible</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-channel_access-disableUserRestrictions-1528099970"><a class="anchor" href="#apidoc-channel_access-disableUserRestrictions-1528099970"></a><a class="link" href="#apidoc-channel_access-disableUserRestrictions-1528099970">Method: disableUserRestrictions</a></h2>
+<h2 id="apidoc-ansible-createAnsiblePath-178371348"><a class="anchor" href="#apidoc-ansible-createAnsiblePath-178371348"></a><a class="link" href="#apidoc-ansible-createAnsiblePath-178371348">Method: createAnsiblePath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Disable user restrictions for the given channel.  If disabled,
- all users within the organization may subscribe to the channel.</p>
+<p>Create ansible path</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -394,7 +408,315 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  channelLabel - label of the channel</p>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - props</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "type" - The ansible path type: 'inventory' or 'playbook'</p>
+</li>
+<li>
+<p><span class="int">int</span>  "server_id" - ID of control node server</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-discoverPlaybooks-1169933615"><a class="anchor" href="#apidoc-ansible-discoverPlaybooks-1169933615"></a><a class="link" href="#apidoc-ansible-discoverPlaybooks-1169933615">Method: discoverPlaybooks</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Discover playbooks under given playbook path with given pathId</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - playbooks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - playbook</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-fetchPlaybookContents-1111867240"><a class="anchor" href="#apidoc-ansible-fetchPlaybookContents-1111867240"></a><a class="link" href="#apidoc-ansible-fetchPlaybookContents-1111867240">Method: fetchPlaybookContents</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Fetch the playbook content from the control node using a synchronous salt call.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - playbook path id</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookRelPath - relative path of playbook (inside path specified by
+pathId)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  contents - Text contents of the playbook</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-introspectInventory-1787450654"><a class="anchor" href="#apidoc-ansible-introspectInventory-1787450654"></a><a class="link" href="#apidoc-ansible-introspectInventory-1787450654">Method: introspectInventory</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Introspect inventory under given inventory path with given pathId and return it in a structured way</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  - Inventory in a nested structure</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="object">object</span>  Inventory item - Inventory item (can be nested)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-listAnsiblePaths-588389652"><a class="anchor" href="#apidoc-ansible-listAnsiblePaths-588389652"></a><a class="link" href="#apidoc-ansible-listAnsiblePaths-588389652">Method: listAnsiblePaths</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List ansible paths for server (control node)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - id of ansible control node server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-lookupAnsiblePathById-1924108520"><a class="anchor" href="#apidoc-ansible-lookupAnsiblePathById-1924108520"></a><a class="link" href="#apidoc-ansible-lookupAnsiblePathById-1924108520">Method: lookupAnsiblePathById</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup ansible path by path id</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  - ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-removeAnsiblePath-1281580764"><a class="anchor" href="#apidoc-ansible-removeAnsiblePath-1281580764"></a><a class="link" href="#apidoc-ansible-removeAnsiblePath-1281580764">Method: removeAnsiblePath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create ansible path</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
 </li>
 </ul>
 </div>
@@ -411,14 +733,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-channel_access-enableUserRestrictions-1296277943"><a class="anchor" href="#apidoc-channel_access-enableUserRestrictions-1296277943"></a><a class="link" href="#apidoc-channel_access-enableUserRestrictions-1296277943">Method: enableUserRestrictions</a></h2>
+<h2 id="apidoc-ansible-schedulePlaybook-1837581973"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-1837581973"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-1837581973">Method: schedulePlaybook</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Enable user restrictions for the given channel. If enabled, only
- selected users within the organization may subscribe to the channel.</p>
+<p>Schedule a playbook execution</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -429,7 +750,19 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  channelLabel - label of the channel</p>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
 </li>
 </ul>
 </div>
@@ -439,20 +772,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-channel_access-getOrgSharing-444096469"><a class="anchor" href="#apidoc-channel_access-getOrgSharing-444096469"></a><a class="link" href="#apidoc-channel_access-getOrgSharing-444096469">Method: getOrgSharing</a></h2>
+<h2 id="apidoc-ansible-updateAnsiblePath-2141849216"><a class="anchor" href="#apidoc-ansible-updateAnsiblePath-2141849216"></a><a class="link" href="#apidoc-ansible-updateAnsiblePath-2141849216">Method: updateAnsiblePath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Get organization sharing access control.</p>
+<p>Create ansible path</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -463,7 +796,17 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  channelLabel - label of the channel</p>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  - props</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -473,45 +816,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  access - The access value (one of the following: 'public', 'private', or 'protected'</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-channel_access-setOrgSharing-426792528"><a class="anchor" href="#apidoc-channel_access-setOrgSharing-426792528"></a><a class="link" href="#apidoc-channel_access-setOrgSharing-426792528">Method: setOrgSharing</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set organization sharing access control.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
+<p>* <span class="struct">struct</span>  - ansible path</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><span class="int">int</span>  "path id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  channelLabel - label of the channel</p>
+<p><span class="string">string</span>  "type label"</p>
 </li>
 <li>
-<p><span class="string">string</span>  access - Access (one of the
-following: 'public', 'private', or 'protected'</p>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
@@ -521,25 +842,25 @@ following: 'public', 'private', or 'protected'</p>
 <div class="cedents grid" role="navigation">
 
   <div class="prev">
-      <a href="channel.html" title="channel">
+      <a href="admin.monitoring.html" title="admin_monitoring">
         <div class="change-page">
           <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
         <span class="label">Previous</span>
         <br/>
         <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">channel</span>
+        <span class="title">admin_monitoring</span>
         </div>
       </a>
   </div>
 
   <div class="next">
-      <a href="channel.org.html" title="channel.org">
+      <a href="api.html" title="api">
         <div class="change-page">
           <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
         <span class="label">Next</span>
         <br/>
        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">channel.org</span>
+        <span class="title">api</span>
         </div>
       </a>
   </div>
@@ -604,7 +925,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/channel.access.html'
+    window.antora.pagePath = '/uyuni/api/ansible.html'
 </script>
 <script src="../../_/js/site.js"></script>
 
