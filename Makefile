@@ -169,19 +169,17 @@ antora-suma: clean pdf-all-suma ## Build the SUMA Antora static site (See README
 obs-packages-suma: clean antora-suma #pdf-all-suma ## Generate SUMA OBS tar files
 	$(call obs-packages-product,$(HTML_OUTPUT_SUMA),$(PDF_OUTPUT_SUMA))
 
+.PHONY: pdf-all-suma
+pdf-all-suma: pdf-api-suma ## Generate PDF version of the UYUNI API Documentation
 
-# Generate PDF versions of all SUMA books
-#.PHONY: pdf-all-suma
-#pdf-all-suma: pdf-api-suma
+.PHONY: modules/api/nav-api-guide.pdf.adoc
+modules/api/nav-api-guide.pdf.adoc:
+	$(call pdf-book-create-index,api)
 
-#.PHONY: modules/api/nav-api-guide.pdf.adoc
-#modules/api/nav-api-guide.pdf.adoc:
-#	$(call pdf-book-create-index,api)
-
-#.PHONY: pdf-api-suma
-## Generate PDF version of the SUMA Quickstart Guide for Public Cloud
-#pdf-api-suma: modules/api/nav-api-guide.pdf.adoc
-#	$(call pdf-api-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
+.PHONY: pdf-api-suma
+## Generate PDF version of the UYUNI API
+pdf-api-suma: modules/api/nav-api-guide.pdf.adoc
+	$(call pdf-api-product,$(PDF_THEME_SUMA),$(PRODUCTNAME_SUMA),$(SUMA_CONTENT),$(FILENAME_SUMA))
 
 
 # UYUNI DOCUMENTATION BUILD COMMANDS
