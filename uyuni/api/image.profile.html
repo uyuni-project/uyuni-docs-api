@@ -129,7 +129,7 @@
     <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="ansible.html#apidoc-ansible">ansible</a>
+    <a class="nav-link" href="ansible.html">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
@@ -237,9 +237,6 @@
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#satellite.adoc">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="schedule.html">schedule</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -259,9 +256,6 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system.crash.adoc">system.crash</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
@@ -346,31 +340,34 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-image_profile-create-1916766608">create</a></p>
+<p><a href="#apidoc-image_profile-create-1173151026">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-delete-1004308853">delete</a></p>
+<p><a href="#apidoc-image_profile-create-1082753194">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-deleteCustomValues-736233691">deleteCustomValues</a></p>
+<p><a href="#apidoc-image_profile-delete-1759914811">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-getCustomValues-2052572633">getCustomValues</a></p>
+<p><a href="#apidoc-image_profile-deleteCustomValues-1107476456">deleteCustomValues</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-getDetails-1703353597">getDetails</a></p>
+<p><a href="#apidoc-image_profile-getCustomValues-400867034">getCustomValues</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-listImageProfileTypes-428475414">listImageProfileTypes</a></p>
+<p><a href="#apidoc-image_profile-getDetails-336141860">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-listImageProfiles-522219842">listImageProfiles</a></p>
+<p><a href="#apidoc-image_profile-listImageProfileTypes-1682716048">listImageProfileTypes</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-setCustomValues-1948950538">setCustomValues</a></p>
+<p><a href="#apidoc-image_profile-listImageProfiles-778097908">listImageProfiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-image_profile-setDetails-669668653">setDetails</a></p>
+<p><a href="#apidoc-image_profile-setCustomValues-467988572">setCustomValues</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image_profile-setDetails-885186621">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -391,7 +388,56 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-create-1916766608"><a class="anchor" href="#apidoc-image_profile-create-1916766608"></a><a class="link" href="#apidoc-image_profile-create-1916766608">Method: create</a></h2>
+<h2 id="apidoc-image_profile-create-1173151026"><a class="anchor" href="#apidoc-image_profile-create-1173151026"></a><a class="link" href="#apidoc-image_profile-create-1173151026">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new Image Profile</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label</p>
+</li>
+<li>
+<p><span class="string">string</span>  type</p>
+</li>
+<li>
+<p><span class="string">string</span>  storeLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  path</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - Optional</p>
+</li>
+<li>
+<p><span class="string">string</span>  kiwiOptions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image_profile-create-1082753194"><a class="anchor" href="#apidoc-image_profile-create-1082753194"></a><a class="link" href="#apidoc-image_profile-create-1082753194">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -437,7 +483,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-delete-1004308853"><a class="anchor" href="#apidoc-image_profile-delete-1004308853"></a><a class="link" href="#apidoc-image_profile-delete-1004308853">Method: delete</a></h2>
+<h2 id="apidoc-image_profile-delete-1759914811"><a class="anchor" href="#apidoc-image_profile-delete-1759914811"></a><a class="link" href="#apidoc-image_profile-delete-1759914811">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -471,7 +517,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-deleteCustomValues-736233691"><a class="anchor" href="#apidoc-image_profile-deleteCustomValues-736233691"></a><a class="link" href="#apidoc-image_profile-deleteCustomValues-736233691">Method: deleteCustomValues</a></h2>
+<h2 id="apidoc-image_profile-deleteCustomValues-1107476456"><a class="anchor" href="#apidoc-image_profile-deleteCustomValues-1107476456"></a><a class="link" href="#apidoc-image_profile-deleteCustomValues-1107476456">Method: deleteCustomValues</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -517,7 +563,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-getCustomValues-2052572633"><a class="anchor" href="#apidoc-image_profile-getCustomValues-2052572633"></a><a class="link" href="#apidoc-image_profile-getCustomValues-2052572633">Method: getCustomValues</a></h2>
+<h2 id="apidoc-image_profile-getCustomValues-400867034"><a class="anchor" href="#apidoc-image_profile-getCustomValues-400867034"></a><a class="link" href="#apidoc-image_profile-getCustomValues-400867034">Method: getCustomValues</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -561,7 +607,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-getDetails-1703353597"><a class="anchor" href="#apidoc-image_profile-getDetails-1703353597"></a><a class="link" href="#apidoc-image_profile-getDetails-1703353597">Method: getDetails</a></h2>
+<h2 id="apidoc-image_profile-getDetails-336141860"><a class="anchor" href="#apidoc-image_profile-getDetails-336141860"></a><a class="link" href="#apidoc-image_profile-getDetails-336141860">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -614,7 +660,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-listImageProfileTypes-428475414"><a class="anchor" href="#apidoc-image_profile-listImageProfileTypes-428475414"></a><a class="link" href="#apidoc-image_profile-listImageProfileTypes-428475414">Method: listImageProfileTypes</a></h2>
+<h2 id="apidoc-image_profile-listImageProfileTypes-1682716048"><a class="anchor" href="#apidoc-image_profile-listImageProfileTypes-1682716048"></a><a class="link" href="#apidoc-image_profile-listImageProfileTypes-1682716048">Method: listImageProfileTypes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -652,7 +698,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-listImageProfiles-522219842"><a class="anchor" href="#apidoc-image_profile-listImageProfiles-522219842"></a><a class="link" href="#apidoc-image_profile-listImageProfiles-522219842">Method: listImageProfiles</a></h2>
+<h2 id="apidoc-image_profile-listImageProfiles-778097908"><a class="anchor" href="#apidoc-image_profile-listImageProfiles-778097908"></a><a class="link" href="#apidoc-image_profile-listImageProfiles-778097908">Method: listImageProfiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -705,7 +751,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-setCustomValues-1948950538"><a class="anchor" href="#apidoc-image_profile-setCustomValues-1948950538"></a><a class="link" href="#apidoc-image_profile-setCustomValues-1948950538">Method: setCustomValues</a></h2>
+<h2 id="apidoc-image_profile-setCustomValues-467988572"><a class="anchor" href="#apidoc-image_profile-setCustomValues-467988572"></a><a class="link" href="#apidoc-image_profile-setCustomValues-467988572">Method: setCustomValues</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -752,7 +798,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-image_profile-setDetails-669668653"><a class="anchor" href="#apidoc-image_profile-setDetails-669668653"></a><a class="link" href="#apidoc-image_profile-setDetails-669668653">Method: setDetails</a></h2>
+<h2 id="apidoc-image_profile-setDetails-885186621"><a class="anchor" href="#apidoc-image_profile-setDetails-885186621"></a><a class="link" href="#apidoc-image_profile-setDetails-885186621">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>

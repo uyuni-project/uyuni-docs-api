@@ -129,7 +129,7 @@
     <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="ansible.html#apidoc-ansible">ansible</a>
+    <a class="nav-link" href="ansible.html">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
@@ -237,9 +237,6 @@
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#satellite.adoc">satellite</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="schedule.html">schedule</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -259,9 +256,6 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.config.html">system.config</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#system.crash.adoc">system.crash</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
@@ -346,40 +340,40 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-packages-findByNvrea-49250603">findByNvrea</a></p>
+<p><a href="#apidoc-packages-findByNvrea-816288886">findByNvrea</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getDetails-937593632">getDetails</a></p>
+<p><a href="#apidoc-packages-getDetails-1561387702">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getPackage-445013695">getPackage</a></p>
+<p><a href="#apidoc-packages-getPackage-938539778">getPackage</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getPackageUrl-1577452287">getPackageUrl</a></p>
+<p><a href="#apidoc-packages-getPackageUrl-929803808">getPackageUrl</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listChangelog-1677690398">listChangelog</a></p>
+<p><a href="#apidoc-packages-listChangelog-1899408794">listChangelog</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listDependencies-1189317672">listDependencies</a></p>
+<p><a href="#apidoc-packages-listDependencies-1337208570">listDependencies</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listFiles-1088925353">listFiles</a></p>
+<p><a href="#apidoc-packages-listFiles-728366867">listFiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listProvidingChannels-826445686">listProvidingChannels</a></p>
+<p><a href="#apidoc-packages-listProvidingChannels-645073399">listProvidingChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listProvidingErrata-1113003583">listProvidingErrata</a></p>
+<p><a href="#apidoc-packages-listProvidingErrata-1183285782">listProvidingErrata</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listSourcePackages-1581276847">listSourcePackages</a></p>
+<p><a href="#apidoc-packages-listSourcePackages-355618597">listSourcePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-removePackage-1014991909">removePackage</a></p>
+<p><a href="#apidoc-packages-removePackage-895062568">removePackage</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-removeSourcePackage-1091633125">removeSourcePackage</a></p>
+<p><a href="#apidoc-packages-removeSourcePackage-1370256119">removeSourcePackage</a></p>
 </li>
 </ul>
 </div>
@@ -401,7 +395,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-findByNvrea-49250603"><a class="anchor" href="#apidoc-packages-findByNvrea-49250603"></a><a class="link" href="#apidoc-packages-findByNvrea-49250603">Method: findByNvrea</a></h2>
+<h2 id="apidoc-packages-findByNvrea-816288886"><a class="anchor" href="#apidoc-packages-findByNvrea-816288886"></a><a class="link" href="#apidoc-packages-findByNvrea-816288886">Method: findByNvrea</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -476,6 +470,9 @@ NVRA combination, it will be returned.  (Empty string is recommended.)</p>
 resides</p>
 </li>
 <li>
+<p><span class="boolean">boolean</span>  "part_of_retracted_patch" - True if the package is a part of a retracted patch</p>
+</li>
+<li>
 <p><span class="string">string</span>  "provider" - The provider of the package, determined by
 the gpg key it was signed with.</p>
 </li>
@@ -487,7 +484,7 @@ the gpg key it was signed with.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getDetails-937593632"><a class="anchor" href="#apidoc-packages-getDetails-937593632"></a><a class="link" href="#apidoc-packages-getDetails-937593632">Method: getDetails</a></h2>
+<h2 id="apidoc-packages-getDetails-1561387702"><a class="anchor" href="#apidoc-packages-getDetails-1561387702"></a><a class="link" href="#apidoc-packages-getDetails-1561387702">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -582,7 +579,7 @@ the gpg key it was signed with.</p>
 <p><span class="string">string</span>  "size"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "path" - The path on the SUSE Manager server&#8217;s file system that
+<p><span class="string">string</span>  "path" - The path on the Uyuni server&#8217;s file system that
 the package resides.</p>
 </li>
 <li>
@@ -596,7 +593,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getPackage-445013695"><a class="anchor" href="#apidoc-packages-getPackage-445013695"></a><a class="link" href="#apidoc-packages-getPackage-445013695">Method: getPackage</a></h2>
+<h2 id="apidoc-packages-getPackage-938539778"><a class="anchor" href="#apidoc-packages-getPackage-938539778"></a><a class="link" href="#apidoc-packages-getPackage-938539778">Method: getPackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -639,7 +636,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getPackageUrl-1577452287"><a class="anchor" href="#apidoc-packages-getPackageUrl-1577452287"></a><a class="link" href="#apidoc-packages-getPackageUrl-1577452287">Method: getPackageUrl</a></h2>
+<h2 id="apidoc-packages-getPackageUrl-929803808"><a class="anchor" href="#apidoc-packages-getPackageUrl-929803808"></a><a class="link" href="#apidoc-packages-getPackageUrl-929803808">Method: getPackageUrl</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -674,7 +671,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listChangelog-1677690398"><a class="anchor" href="#apidoc-packages-listChangelog-1677690398"></a><a class="link" href="#apidoc-packages-listChangelog-1677690398">Method: listChangelog</a></h2>
+<h2 id="apidoc-packages-listChangelog-1899408794"><a class="anchor" href="#apidoc-packages-listChangelog-1899408794"></a><a class="link" href="#apidoc-packages-listChangelog-1899408794">Method: listChangelog</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -708,7 +705,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listDependencies-1189317672"><a class="anchor" href="#apidoc-packages-listDependencies-1189317672"></a><a class="link" href="#apidoc-packages-listDependencies-1189317672">Method: listDependencies</a></h2>
+<h2 id="apidoc-packages-listDependencies-1337208570"><a class="anchor" href="#apidoc-packages-listDependencies-1337208570"></a><a class="link" href="#apidoc-packages-listDependencies-1337208570">Method: listDependencies</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -792,7 +789,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listFiles-1088925353"><a class="anchor" href="#apidoc-packages-listFiles-1088925353"></a><a class="link" href="#apidoc-packages-listFiles-1088925353">Method: listFiles</a></h2>
+<h2 id="apidoc-packages-listFiles-728366867"><a class="anchor" href="#apidoc-packages-listFiles-728366867"></a><a class="link" href="#apidoc-packages-listFiles-728366867">Method: listFiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -858,7 +855,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listProvidingChannels-826445686"><a class="anchor" href="#apidoc-packages-listProvidingChannels-826445686"></a><a class="link" href="#apidoc-packages-listProvidingChannels-826445686">Method: listProvidingChannels</a></h2>
+<h2 id="apidoc-packages-listProvidingChannels-645073399"><a class="anchor" href="#apidoc-packages-listProvidingChannels-645073399"></a><a class="link" href="#apidoc-packages-listProvidingChannels-645073399">Method: listProvidingChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -912,7 +909,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listProvidingErrata-1113003583"><a class="anchor" href="#apidoc-packages-listProvidingErrata-1113003583"></a><a class="link" href="#apidoc-packages-listProvidingErrata-1113003583">Method: listProvidingErrata</a></h2>
+<h2 id="apidoc-packages-listProvidingErrata-1183285782"><a class="anchor" href="#apidoc-packages-listProvidingErrata-1183285782"></a><a class="link" href="#apidoc-packages-listProvidingErrata-1183285782">Method: listProvidingErrata</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -975,7 +972,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listSourcePackages-1581276847"><a class="anchor" href="#apidoc-packages-listSourcePackages-1581276847"></a><a class="link" href="#apidoc-packages-listSourcePackages-1581276847">Method: listSourcePackages</a></h2>
+<h2 id="apidoc-packages-listSourcePackages-355618597"><a class="anchor" href="#apidoc-packages-listSourcePackages-355618597"></a><a class="link" href="#apidoc-packages-listSourcePackages-355618597">Method: listSourcePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1023,13 +1020,13 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-removePackage-1014991909"><a class="anchor" href="#apidoc-packages-removePackage-1014991909"></a><a class="link" href="#apidoc-packages-removePackage-1014991909">Method: removePackage</a></h2>
+<h2 id="apidoc-packages-removePackage-895062568"><a class="anchor" href="#apidoc-packages-removePackage-895062568"></a><a class="link" href="#apidoc-packages-removePackage-895062568">Method: removePackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove a package from SUSE Manager.</p>
+<p>Remove a package from Uyuni.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1057,7 +1054,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-removeSourcePackage-1091633125"><a class="anchor" href="#apidoc-packages-removeSourcePackage-1091633125"></a><a class="link" href="#apidoc-packages-removeSourcePackage-1091633125">Method: removeSourcePackage</a></h2>
+<h2 id="apidoc-packages-removeSourcePackage-1370256119"><a class="anchor" href="#apidoc-packages-removeSourcePackage-1370256119"></a><a class="link" href="#apidoc-packages-removeSourcePackage-1370256119">Method: removeSourcePackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
