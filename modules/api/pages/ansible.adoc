@@ -4,15 +4,16 @@
 
 == Available methods
 
-* <<apidoc-ansible-createAnsiblePath-178371348,createAnsiblePath>>
-* <<apidoc-ansible-discoverPlaybooks-1169933615,discoverPlaybooks>>
-* <<apidoc-ansible-fetchPlaybookContents-1111867240,fetchPlaybookContents>>
-* <<apidoc-ansible-introspectInventory-1787450654,introspectInventory>>
-* <<apidoc-ansible-listAnsiblePaths-588389652,listAnsiblePaths>>
-* <<apidoc-ansible-lookupAnsiblePathById-1924108520,lookupAnsiblePathById>>
-* <<apidoc-ansible-removeAnsiblePath-1281580764,removeAnsiblePath>>
-* <<apidoc-ansible-schedulePlaybook-1837581973,schedulePlaybook>>
-* <<apidoc-ansible-updateAnsiblePath-2141849216,updateAnsiblePath>>
+* <<apidoc-ansible-createAnsiblePath-2050951350,createAnsiblePath>>
+* <<apidoc-ansible-discoverPlaybooks-1663891411,discoverPlaybooks>>
+* <<apidoc-ansible-fetchPlaybookContents-1632909815,fetchPlaybookContents>>
+* <<apidoc-ansible-introspectInventory-1371045367,introspectInventory>>
+* <<apidoc-ansible-listAnsiblePaths-2009492047,listAnsiblePaths>>
+* <<apidoc-ansible-lookupAnsiblePathById-1687902353,lookupAnsiblePathById>>
+* <<apidoc-ansible-removeAnsiblePath-1605741888,removeAnsiblePath>>
+* <<apidoc-ansible-schedulePlaybook-1402479907,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-1217466562,schedulePlaybook>>
+* <<apidoc-ansible-updateAnsiblePath-468002913,updateAnsiblePath>>
 
 == Description
 
@@ -23,7 +24,7 @@ Provides methods to manage Ansible systems
 ansible
 
 
-[#apidoc-ansible-createAnsiblePath-178371348]
+[#apidoc-ansible-createAnsiblePath-2050951350]
 == Method: createAnsiblePath 
 
 Description:
@@ -57,7 +58,7 @@ Returns:
 
 
 
-[#apidoc-ansible-discoverPlaybooks-1169933615]
+[#apidoc-ansible-discoverPlaybooks-1663891411]
 == Method: discoverPlaybooks 
 
 Description:
@@ -88,7 +89,7 @@ Returns:
 
 
 
-[#apidoc-ansible-fetchPlaybookContents-1111867240]
+[#apidoc-ansible-fetchPlaybookContents-1632909815]
 == Method: fetchPlaybookContents 
 
 Description:
@@ -115,7 +116,7 @@ Returns:
 
 
 
-[#apidoc-ansible-introspectInventory-1787450654]
+[#apidoc-ansible-introspectInventory-1371045367]
 == Method: introspectInventory 
 
 Description:
@@ -140,7 +141,7 @@ Returns:
 
 
 
-[#apidoc-ansible-listAnsiblePaths-588389652]
+[#apidoc-ansible-listAnsiblePaths-2009492047]
 == Method: listAnsiblePaths 
 
 Description:
@@ -170,7 +171,7 @@ Returns:
 
 
 
-[#apidoc-ansible-lookupAnsiblePathById-1924108520]
+[#apidoc-ansible-lookupAnsiblePathById-1687902353]
 == Method: lookupAnsiblePathById 
 
 Description:
@@ -199,7 +200,7 @@ Returns:
 
 
 
-[#apidoc-ansible-removeAnsiblePath-1281580764]
+[#apidoc-ansible-removeAnsiblePath-1605741888]
 == Method: removeAnsiblePath 
 
 Description:
@@ -223,7 +224,7 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-1837581973]
+[#apidoc-ansible-schedulePlaybook-1402479907]
 == Method: schedulePlaybook 
 
 Description:
@@ -255,7 +256,41 @@ Returns:
 
 
 
-[#apidoc-ansible-updateAnsiblePath-2141849216]
+[#apidoc-ansible-schedulePlaybook-1217466562]
+== Method: schedulePlaybook 
+
+Description:
+
+Schedule a playbook execution
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  playbookPath
+ 
+* [.string]#string#  inventoryPath - path to Ansible inventory or empty
+ 
+* [.int]#int#  controlNodeId - system ID of the control node
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used
+ 
+* [.string]#string#  actionChainLabel - label of an action chain to use, or None
+ 
+* [.boolean]#boolean#  testMode - 'true' if the playbook shall be executed in test mode
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the playbook execution action created
+ 
+
+
+
+[#apidoc-ansible-updateAnsiblePath-468002913]
 == Method: updateAnsiblePath 
 
 Description:

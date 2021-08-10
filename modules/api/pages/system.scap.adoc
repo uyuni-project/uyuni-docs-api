@@ -4,14 +4,15 @@
 
 == Available methods
 
-* <<apidoc-system_scap-deleteXccdfScan-1768580358,deleteXccdfScan>>
-* <<apidoc-system_scap-getXccdfScanDetails-677558982,getXccdfScanDetails>>
-* <<apidoc-system_scap-getXccdfScanRuleResults-1390783857,getXccdfScanRuleResults>>
-* <<apidoc-system_scap-listXccdfScans-1783130875,listXccdfScans>>
-* <<apidoc-system_scap-scheduleXccdfScan-288663860,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-750617950,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-1397504925,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-1773418151,scheduleXccdfScan>>
+* <<apidoc-system_scap-deleteXccdfScan-472019958,deleteXccdfScan>>
+* <<apidoc-system_scap-getXccdfScanDetails-1700614789,getXccdfScanDetails>>
+* <<apidoc-system_scap-getXccdfScanRuleResults-921812350,getXccdfScanRuleResults>>
+* <<apidoc-system_scap-listXccdfScans-255248561,listXccdfScans>>
+* <<apidoc-system_scap-scheduleXccdfScan-1092507262,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1314450850,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1979294554,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-2060178384,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1238746961,scheduleXccdfScan>>
 
 == Description
 
@@ -22,12 +23,12 @@ Provides methods to schedule SCAP scans and access the results.
 system.scap
 
 
-[#apidoc-system_scap-deleteXccdfScan-1768580358]
+[#apidoc-system_scap-deleteXccdfScan-472019958]
 == Method: deleteXccdfScan 
 
 Description:
 
-Delete OpenSCAP XCCDF Scan from the SUSE Manager database. Note that
+Delete OpenSCAP XCCDF Scan from the Uyuni database. Note that
  only those SCAP Scans can be deleted which have passed their retention period.
 
 
@@ -47,7 +48,7 @@ Returns:
 
 
 
-[#apidoc-system_scap-getXccdfScanDetails-677558982]
+[#apidoc-system_scap-getXccdfScanDetails-1700614789]
 == Method: getXccdfScanDetails 
 
 Description:
@@ -71,6 +72,7 @@ Returns:
    ** [.int]#int#  "sid" - serverId
    ** [.int]#int#  "action_id" - Id of the parent action.
    ** [.string]#string#  "path" - Path to XCCDF document
+   ** [.string]#string#  "ovalfiles" - Optional OVAL Files
    ** [.string]#string#  "oscap_parameters" - oscap command-line arguments.
    ** [.string]#string#  "test_result" - Identifier of XCCDF TestResult.
    ** [.string]#string#  "benchmark" - Identifier of XCCDF Benchmark.
@@ -86,7 +88,7 @@ Returns:
 
 
 
-[#apidoc-system_scap-getXccdfScanRuleResults-1390783857]
+[#apidoc-system_scap-getXccdfScanRuleResults-921812350]
 == Method: getXccdfScanRuleResults 
 
 Description:
@@ -115,7 +117,7 @@ Returns:
 
 
 
-[#apidoc-system_scap-listXccdfScans-1783130875]
+[#apidoc-system_scap-listXccdfScans-255248561]
 == Method: listXccdfScans 
 
 Description:
@@ -139,13 +141,14 @@ Returns:
    ** [.int]#int#  "xid" - XCCDF TestResult ID
    ** [.string]#string#  "profile" - XCCDF Profile
    ** [.string]#string#  "path" - Path to XCCDF document
+   ** [.string]#string#  "ovalfiles" - Optional OVAL files
    ** [.dateTime.iso8601]#dateTime.iso8601#  "completed" - Scan completion time
   
   
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-288663860]
+[#apidoc-system_scap-scheduleXccdfScan-1092507262]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -174,7 +177,7 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-750617950]
+[#apidoc-system_scap-scheduleXccdfScan-1314450850]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -205,7 +208,40 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-1397504925]
+[#apidoc-system_scap-scheduleXccdfScan-1979294554]
+== Method: scheduleXccdfScan 
+
+Description:
+
+Schedule OpenSCAP scan.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** [.int]#int#  - serverId
+ 
+* [.string]#string#  Path to xccdf content on targeted systems.
+ 
+* [.string]#string#  Additional parameters for oscap tool.
+ 
+* [.string]#string#  Additional OVAL files for oscap tool.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
+ 
+
+Returns:
+
+* [.int]#int#  id - ID if SCAP action created
+ 
+
+
+
+[#apidoc-system_scap-scheduleXccdfScan-2060178384]
 == Method: scheduleXccdfScan 
 
 Description:
@@ -233,7 +269,7 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-1773418151]
+[#apidoc-system_scap-scheduleXccdfScan-1238746961]
 == Method: scheduleXccdfScan 
 
 Description:
