@@ -4,20 +4,22 @@
 
 == Available methods
 
-* <<apidoc-schedule-archiveActions-165296236,archiveActions>>
-* <<apidoc-schedule-cancelActions-484124940,cancelActions>>
-* <<apidoc-schedule-deleteActions-1227497998,deleteActions>>
-* <<apidoc-schedule-failSystemAction-2012831257,failSystemAction>>
-* <<apidoc-schedule-failSystemAction-1174916066,failSystemAction>>
-* <<apidoc-schedule-listAllActions-2146698020,listAllActions>>
-* <<apidoc-schedule-listArchivedActions-537136238,listArchivedActions>>
-* <<apidoc-schedule-listCompletedActions-975361695,listCompletedActions>>
-* <<apidoc-schedule-listCompletedSystems-213819615,listCompletedSystems>>
-* <<apidoc-schedule-listFailedActions-2134297999,listFailedActions>>
-* <<apidoc-schedule-listFailedSystems-1895617509,listFailedSystems>>
-* <<apidoc-schedule-listInProgressActions-118902356,listInProgressActions>>
-* <<apidoc-schedule-listInProgressSystems-963591154,listInProgressSystems>>
-* <<apidoc-schedule-rescheduleActions-1880872680,rescheduleActions>>
+* <<apidoc-schedule-archiveActions-1445905688,archiveActions>>
+* <<apidoc-schedule-cancelActions-1737176902,cancelActions>>
+* <<apidoc-schedule-deleteActions-1552771166,deleteActions>>
+* <<apidoc-schedule-failSystemAction-1164481922,failSystemAction>>
+* <<apidoc-schedule-failSystemAction-121483686,failSystemAction>>
+* <<apidoc-schedule-listAllActions-312955227,listAllActions>>
+* <<apidoc-schedule-listAllArchivedActions-6267871,listAllArchivedActions>>
+* <<apidoc-schedule-listAllCompletedActions-991572261,listAllCompletedActions>>
+* <<apidoc-schedule-listArchivedActions-1873983858,listArchivedActions>>
+* <<apidoc-schedule-listCompletedActions-740844878,listCompletedActions>>
+* <<apidoc-schedule-listCompletedSystems-1157136713,listCompletedSystems>>
+* <<apidoc-schedule-listFailedActions-1203180886,listFailedActions>>
+* <<apidoc-schedule-listFailedSystems-1017472170,listFailedSystems>>
+* <<apidoc-schedule-listInProgressActions-770519500,listInProgressActions>>
+* <<apidoc-schedule-listInProgressSystems-1100576285,listInProgressSystems>>
+* <<apidoc-schedule-rescheduleActions-1020745918,rescheduleActions>>
 
 == Description
 
@@ -28,7 +30,7 @@ Methods to retrieve information about scheduled actions.
 schedule
 
 
-[#apidoc-schedule-archiveActions-165296236]
+[#apidoc-schedule-archiveActions-1445905688]
 == Method: archiveActions 
 
 Description:
@@ -53,7 +55,7 @@ Returns:
 
 
 
-[#apidoc-schedule-cancelActions-484124940]
+[#apidoc-schedule-cancelActions-1737176902]
 == Method: cancelActions 
 
 Description:
@@ -79,7 +81,7 @@ Returns:
 
 
 
-[#apidoc-schedule-deleteActions-1227497998]
+[#apidoc-schedule-deleteActions-1552771166]
 == Method: deleteActions 
 
 Description:
@@ -104,7 +106,7 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-2012831257]
+[#apidoc-schedule-failSystemAction-1164481922]
 == Method: failSystemAction 
 
 Description:
@@ -130,7 +132,7 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-1174916066]
+[#apidoc-schedule-failSystemAction-121483686]
 == Method: failSystemAction 
 
 Description:
@@ -158,7 +160,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllActions-2146698020]
+[#apidoc-schedule-listAllActions-312955227]
 == Method: listAllActions 
 
 Description:
@@ -193,7 +195,75 @@ Returns:
 
 
 
-[#apidoc-schedule-listArchivedActions-537136238]
+[#apidoc-schedule-listAllArchivedActions-6267871]
+== Method: listAllArchivedActions 
+
+Description:
+
+Returns a list of actions that have been archived.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   ** [.int]#int#  "id" - Action Id.
+   ** [.string]#string#  "name" - Action name.
+   ** [.string]#string#  "type" - Action type.
+   ** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   ** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   ** [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   ** [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   ** [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+  
+  
+
+
+
+[#apidoc-schedule-listAllCompletedActions-991572261]
+== Method: listAllCompletedActions 
+
+Description:
+
+Returns a list of actions that have been completed.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - action
+   ** [.int]#int#  "id" - Action Id.
+   ** [.string]#string#  "name" - Action name.
+   ** [.string]#string#  "type" - Action type.
+   ** [.string]#string#  "scheduler" - The user that scheduled the action. (optional)
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "earliest" - The earliest date and time the action
+   will be performed
+   ** [.int]#int#  "prerequisite" - ID of the prerequisite Action (optional)
+   ** [.int]#int#  "completedSystems" - Number of systems that completed the action.
+   ** [.int]#int#  "failedSystems" - Number of systems that failed the action.
+   ** [.int]#int#  "inProgressSystems" - Number of systems that are in progress.
+  
+  
+
+
+
+[#apidoc-schedule-listArchivedActions-1873983858]
 == Method: listArchivedActions 
 
 Description:
@@ -227,7 +297,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedActions-975361695]
+[#apidoc-schedule-listCompletedActions-740844878]
 == Method: listCompletedActions 
 
 Description:
@@ -261,7 +331,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedSystems-213819615]
+[#apidoc-schedule-listCompletedSystems-1157136713]
 == Method: listCompletedSystems 
 
 Description:
@@ -294,7 +364,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedActions-2134297999]
+[#apidoc-schedule-listFailedActions-1203180886]
 == Method: listFailedActions 
 
 Description:
@@ -328,7 +398,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedSystems-1895617509]
+[#apidoc-schedule-listFailedSystems-1017472170]
 == Method: listFailedSystems 
 
 Description:
@@ -361,7 +431,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressActions-118902356]
+[#apidoc-schedule-listInProgressActions-770519500]
 == Method: listInProgressActions 
 
 Description:
@@ -395,7 +465,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressSystems-963591154]
+[#apidoc-schedule-listInProgressSystems-1100576285]
 == Method: listInProgressSystems 
 
 Description:
@@ -428,7 +498,7 @@ Returns:
 
 
 
-[#apidoc-schedule-rescheduleActions-1880872680]
+[#apidoc-schedule-rescheduleActions-1020745918]
 == Method: rescheduleActions 
 
 Description:
