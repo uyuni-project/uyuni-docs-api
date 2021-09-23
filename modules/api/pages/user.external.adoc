@@ -4,27 +4,27 @@
 
 == Available methods
 
-* <<apidoc-user_external-createExternalGroupToRoleMap-1419194266,createExternalGroupToRoleMap>>
-* <<apidoc-user_external-createExternalGroupToSystemGroupMap-1994458484,createExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-deleteExternalGroupToRoleMap-1012752603,deleteExternalGroupToRoleMap>>
-* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-1295011929,deleteExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getDefaultOrg-242626688,getDefaultOrg>>
-* <<apidoc-user_external-getExternalGroupToRoleMap-448491930,getExternalGroupToRoleMap>>
-* <<apidoc-user_external-getExternalGroupToSystemGroupMap-2083062342,getExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getKeepTemporaryRoles-27975228,getKeepTemporaryRoles>>
-* <<apidoc-user_external-getUseOrgUnit-1990315034,getUseOrgUnit>>
-* <<apidoc-user_external-listExternalGroupToRoleMaps-1364947765,listExternalGroupToRoleMaps>>
-* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-855914030,listExternalGroupToSystemGroupMaps>>
-* <<apidoc-user_external-setDefaultOrg-1501191853,setDefaultOrg>>
-* <<apidoc-user_external-setExternalGroupRoles-117890788,setExternalGroupRoles>>
-* <<apidoc-user_external-setExternalGroupSystemGroups-50470449,setExternalGroupSystemGroups>>
-* <<apidoc-user_external-setKeepTemporaryRoles-242495499,setKeepTemporaryRoles>>
-* <<apidoc-user_external-setUseOrgUnit-2106220231,setUseOrgUnit>>
+* <<apidoc-user_external-createExternalGroupToRoleMap-126560570,createExternalGroupToRoleMap>>
+* <<apidoc-user_external-createExternalGroupToSystemGroupMap-1948338883,createExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-deleteExternalGroupToRoleMap-1227983914,deleteExternalGroupToRoleMap>>
+* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-470729986,deleteExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getDefaultOrg-1419194266,getDefaultOrg>>
+* <<apidoc-user_external-getExternalGroupToRoleMap-342576236,getExternalGroupToRoleMap>>
+* <<apidoc-user_external-getExternalGroupToSystemGroupMap-234932558,getExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getKeepTemporaryRoles-172517457,getKeepTemporaryRoles>>
+* <<apidoc-user_external-getUseOrgUnit-268547125,getUseOrgUnit>>
+* <<apidoc-user_external-listExternalGroupToRoleMaps-397262543,listExternalGroupToRoleMaps>>
+* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-1653072658,listExternalGroupToSystemGroupMaps>>
+* <<apidoc-user_external-setDefaultOrg-500483729,setDefaultOrg>>
+* <<apidoc-user_external-setExternalGroupRoles-1528194080,setExternalGroupRoles>>
+* <<apidoc-user_external-setExternalGroupSystemGroups-187545788,setExternalGroupSystemGroups>>
+* <<apidoc-user_external-setKeepTemporaryRoles-1268303884,setKeepTemporaryRoles>>
+* <<apidoc-user_external-setUseOrgUnit-1381209636,setUseOrgUnit>>
 
 == Description
 
 If you are using IPA integration to allow authentication of users from
- an external IPA server (rare) the users will still need to be created in the SUSE Manager database. Methods in this namespace allow you to configure some specifics of how this
+ an external IPA server (rare) the users will still need to be created in the Uyuni database. Methods in this namespace allow you to configure some specifics of how this
  happens, like what organization they are created in or what roles they will have.
  These options can also be set in the web admin interface.
 
@@ -33,14 +33,14 @@ If you are using IPA integration to allow authentication of users from
 user.external
 
 
-[#apidoc-user_external-createExternalGroupToRoleMap-1419194266]
+[#apidoc-user_external-createExternalGroupToRoleMap-126560570]
 == Method: createExternalGroupToRoleMap 
 
 Description:
 
 Externally authenticated users may be members of external groups. You
  can use these groups to assign additional roles to the users when they log in.
- Can only be called by a SUSE Manager Administrator.
+ Can only be called by a Uyuni Administrator.
 
 
 
@@ -70,7 +70,7 @@ Returns:
 
 
 
-[#apidoc-user_external-createExternalGroupToSystemGroupMap-1994458484]
+[#apidoc-user_external-createExternalGroupToSystemGroupMap-1948338883]
 == Method: createExternalGroupToSystemGroupMap 
 
 Description:
@@ -105,13 +105,13 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToRoleMap-1012752603]
+[#apidoc-user_external-deleteExternalGroupToRoleMap-1227983914]
 == Method: deleteExternalGroupToRoleMap 
 
 Description:
 
 Delete the role map for an external group. Can only be called
- by a SUSE Manager Administrator.
+ by a Uyuni Administrator.
 
 
 
@@ -130,7 +130,7 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-1295011929]
+[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-470729986]
 == Method: deleteExternalGroupToSystemGroupMap 
 
 Description:
@@ -155,13 +155,13 @@ Returns:
 
 
 
-[#apidoc-user_external-getDefaultOrg-242626688]
+[#apidoc-user_external-getDefaultOrg-1419194266]
 == Method: getDefaultOrg 
 
 Description:
 
 Get the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a SUSE Manager Administrator.
+ IPA server isn't found or is disabled. Can only be called by a Uyuni Administrator.
 
 
 
@@ -178,13 +178,13 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToRoleMap-448491930]
+[#apidoc-user_external-getExternalGroupToRoleMap-342576236]
 == Method: getExternalGroupToRoleMap 
 
 Description:
 
 Get a representation of the role mapping for an external group.
- Can only be called by a SUSE Manager Administrator.
+ Can only be called by a Uyuni Administrator.
 
 
 
@@ -207,7 +207,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToSystemGroupMap-2083062342]
+[#apidoc-user_external-getExternalGroupToSystemGroupMap-234932558]
 == Method: getExternalGroupToSystemGroupMap 
 
 Description:
@@ -236,14 +236,14 @@ Returns:
 
 
 
-[#apidoc-user_external-getKeepTemporaryRoles-27975228]
+[#apidoc-user_external-getKeepTemporaryRoles-172517457]
 == Method: getKeepTemporaryRoles 
 
 Description:
 
 Get whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a SUSE Manager Administrator.
+ called by a Uyuni Administrator.
 
 
 
@@ -261,14 +261,14 @@ Returns:
 
 
 
-[#apidoc-user_external-getUseOrgUnit-1990315034]
+[#apidoc-user_external-getUseOrgUnit-268547125]
 == Method: getUseOrgUnit 
 
 Description:
 
 Get whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- SUSE Manager organization name. Can only be called by a SUSE Manager Administrator.
+ Uyuni organization name. Can only be called by a Uyuni Administrator.
 
 
 
@@ -286,13 +286,13 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToRoleMaps-1364947765]
+[#apidoc-user_external-listExternalGroupToRoleMaps-397262543]
 == Method: listExternalGroupToRoleMaps 
 
 Description:
 
 List role mappings for all known external groups. Can only be called
- by a SUSE Manager Administrator.
+ by a Uyuni Administrator.
 
 
 
@@ -314,7 +314,7 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToSystemGroupMaps-855914030]
+[#apidoc-user_external-listExternalGroupToSystemGroupMaps-1653072658]
 == Method: listExternalGroupToSystemGroupMaps 
 
 Description:
@@ -342,13 +342,13 @@ Returns:
 
 
 
-[#apidoc-user_external-setDefaultOrg-1501191853]
+[#apidoc-user_external-setDefaultOrg-500483729]
 == Method: setDefaultOrg 
 
 Description:
 
 Set the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a SUSE Manager Administrator.
+ IPA server isn't found or is disabled. Can only be called by a Uyuni Administrator.
 
 
 
@@ -368,13 +368,13 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupRoles-117890788]
+[#apidoc-user_external-setExternalGroupRoles-1528194080]
 == Method: setExternalGroupRoles 
 
 Description:
 
 Update the roles for an external group. Replace previously set roles
- with the ones passed in here. Can only be called by a SUSE Manager Administrator.
+ with the ones passed in here. Can only be called by a Uyuni Administrator.
 
 
 
@@ -399,7 +399,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupSystemGroups-50470449]
+[#apidoc-user_external-setExternalGroupSystemGroups-187545788]
 == Method: setExternalGroupSystemGroups 
 
 Description:
@@ -428,14 +428,14 @@ Returns:
 
 
 
-[#apidoc-user_external-setKeepTemporaryRoles-242495499]
+[#apidoc-user_external-setKeepTemporaryRoles-1268303884]
 == Method: setKeepTemporaryRoles 
 
 Description:
 
 Set whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a SUSE Manager Administrator.
+ called by a Uyuni Administrator.
 
 
 
@@ -455,14 +455,14 @@ Returns:
 
 
 
-[#apidoc-user_external-setUseOrgUnit-2106220231]
+[#apidoc-user_external-setUseOrgUnit-1381209636]
 == Method: setUseOrgUnit 
 
 Description:
 
 Set whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- SUSE Manager organization name. Can only be called by a SUSE Manager Administrator.
+ Uyuni organization name. Can only be called by a Uyuni Administrator.
 
 
 
