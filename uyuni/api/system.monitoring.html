@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>formula :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/formula.html">
+    <title>system.monitoring :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/system.monitoring.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -167,7 +167,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="errata.html">errata</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="formula.html">formula</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -260,7 +260,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.custominfo.html">System Custominfo</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="system.monitoring.html">System Monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -316,7 +316,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="formula.html">formula</a></li>
+    <li><a href="system.monitoring.html">System Monitoring</a></li>
   </ul>
 </nav>
 
@@ -324,56 +324,26 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="errata.html">
+      <a href="system.custominfo.html">
         <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="image.html">
+      <a href="system.provisioning.snapshot.html">
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/formula.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/system.monitoring.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">formula</h1>
+<h1 class="page">system.monitoring</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-formula-getCombinedFormulaDataByServerIds-493732536">getCombinedFormulaDataByServerIds</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-getCombinedFormulasByServerId-1633989538">getCombinedFormulasByServerId</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-getFormulasByGroupId-1807402813">getFormulasByGroupId</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-getFormulasByServerId-1314113263">getFormulasByServerId</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-getGroupFormulaData-2126991912">getGroupFormulaData</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-getSystemFormulaData-1498452883">getSystemFormulaData</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-listFormulas-1058885327">listFormulas</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-setFormulasOfGroup-878375543">setFormulasOfGroup</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-setFormulasOfServer-157567214">setFormulasOfServer</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-setGroupFormulaData-148802311">setGroupFormulaData</a></p>
-</li>
-<li>
-<p><a href="#apidoc-formula-setSystemFormulaData-1439651366">setSystemFormulaData</a></p>
+<p><a href="#apidoc-system_monitoring-listEndpoints-1084946006">listEndpoints</a></p>
 </li>
 </ul>
 </div>
@@ -383,24 +353,25 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to access and modify formulas.</p>
+<p>Provides methods to access information about managed systems, applications and formulas which can be
+ relevant for Prometheus monitoring</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>formula</p>
+<p>system.monitoring</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-formula-getCombinedFormulaDataByServerIds-493732536"><a class="anchor" href="#apidoc-formula-getCombinedFormulaDataByServerIds-493732536"></a><a class="link" href="#apidoc-formula-getCombinedFormulaDataByServerIds-493732536">Method: getCombinedFormulaDataByServerIds</a></h2>
+<h2 id="apidoc-system_monitoring-listEndpoints-1084946006"><a class="anchor" href="#apidoc-system_monitoring-listEndpoints-1084946006"></a><a class="link" href="#apidoc-system_monitoring-listEndpoints-1084946006">Method: listEndpoints</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Return the list of formulas a server and all his groups have.</p>
+<p>Get the list of monitoring endpoint details.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -409,9 +380,6 @@
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  formulaName</p>
 </li>
 <li>
 <p><span class="array">array</span> :</p>
@@ -434,423 +402,32 @@
 <p><span class="array">array</span> :</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  - formula_data</p>
+<p><span class="struct">struct</span>  - endpoint_info</p>
 <div class="ulist">
 <ul>
 <li>
 <p><span class="int">int</span>  "system_id"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "minion_id"</p>
+<p><span class="string">string</span>  "endpoint_name"</p>
 </li>
 <li>
-<p><span class="struct with saved formula values">struct with saved formula values</span>  "formula_values"</p>
+<p><span class="string">string</span>  "exporter_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "port"</p>
+</li>
+<li>
+<p><span class="bool">bool</span>  "tls_enabled"</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-getCombinedFormulasByServerId-1633989538"><a class="anchor" href="#apidoc-formula-getCombinedFormulasByServerId-1633989538"></a><a class="link" href="#apidoc-formula-getCombinedFormulasByServerId-1633989538">Method: getCombinedFormulasByServerId</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return the list of formulas a server and all his groups have.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - (formulas)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-getFormulasByGroupId-1807402813"><a class="anchor" href="#apidoc-formula-getFormulasByGroupId-1807402813"></a><a class="link" href="#apidoc-formula-getFormulasByGroupId-1807402813">Method: getFormulasByGroupId</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return the list of formulas a server group has.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemGroupId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - (formulas)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-getFormulasByServerId-1314113263"><a class="anchor" href="#apidoc-formula-getFormulasByServerId-1314113263"></a><a class="link" href="#apidoc-formula-getFormulasByServerId-1314113263">Method: getFormulasByServerId</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return the list of formulas directly applied to a server.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemId</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - (formulas)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-getGroupFormulaData-2126991912"><a class="anchor" href="#apidoc-formula-getGroupFormulaData-2126991912"></a><a class="link" href="#apidoc-formula-getGroupFormulaData-2126991912">Method: getGroupFormulaData</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get the saved data for the specific formula against specific group</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  groupId</p>
-</li>
-<li>
-<p><span class="string">string</span>  formulaName</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>struct with saved formula data</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-getSystemFormulaData-1498452883"><a class="anchor" href="#apidoc-formula-getSystemFormulaData-1498452883"></a><a class="link" href="#apidoc-formula-getSystemFormulaData-1498452883">Method: getSystemFormulaData</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get the saved data for the specific formula against specific server</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemId</p>
-</li>
-<li>
-<p><span class="string">string</span>  formulaName</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>struct with saved formula data</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-listFormulas-1058885327"><a class="anchor" href="#apidoc-formula-listFormulas-1058885327"></a><a class="link" href="#apidoc-formula-listFormulas-1058885327">Method: listFormulas</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return the list of formulas currently installed.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - (formulas)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-setFormulasOfGroup-878375543"><a class="anchor" href="#apidoc-formula-setFormulasOfGroup-878375543"></a><a class="link" href="#apidoc-formula-setFormulasOfGroup-878375543">Method: setFormulasOfGroup</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the formulas of a server group.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemGroupId</p>
-</li>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - formulaName</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-setFormulasOfServer-157567214"><a class="anchor" href="#apidoc-formula-setFormulasOfServer-157567214"></a><a class="link" href="#apidoc-formula-setFormulasOfServer-157567214">Method: setFormulasOfServer</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the formulas of a server.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemId</p>
-</li>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  - formulaName</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-setGroupFormulaData-148802311"><a class="anchor" href="#apidoc-formula-setGroupFormulaData-148802311"></a><a class="link" href="#apidoc-formula-setGroupFormulaData-148802311">Method: setGroupFormulaData</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the formula form for the specified group.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  groupId</p>
-</li>
-<li>
-<p><span class="string">string</span>  formulaName</p>
-</li>
-<li>
-<p>struct containing the values for each field in the form</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-formula-setSystemFormulaData-1439651366"><a class="anchor" href="#apidoc-formula-setSystemFormulaData-1439651366"></a><a class="link" href="#apidoc-formula-setSystemFormulaData-1439651366">Method: setSystemFormulaData</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the formula form for the specified server.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  systemId</p>
-</li>
-<li>
-<p><span class="string">string</span>  formulaName</p>
-</li>
-<li>
-<p>struct content with the values for each field in the form</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
@@ -860,25 +437,25 @@
 <div class="cedents grid" role="navigation">
 
   <div class="prev">
-      <a href="errata.html" title="errata">
+      <a href="system.custominfo.html" title="System Custominfo">
         <div class="change-page">
           <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
         <span class="label">Previous</span>
         <br/>
         <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">errata</span>
+        <span class="title">System Custominfo</span>
         </div>
       </a>
   </div>
 
   <div class="next">
-      <a href="image.html" title="image">
+      <a href="system.provisioning.snapshot.html" title="system.provisioning.snapshot">
         <div class="change-page">
           <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
         <span class="label">Next</span>
         <br/>
        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">image</span>
+        <span class="title">system.provisioning.snapshot</span>
         </div>
       </a>
   </div>
@@ -943,7 +520,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/formula.html'
+    window.antora.pagePath = '/uyuni/api/system.monitoring.html'
 </script>
 <script src="../../_/js/site.js"></script>
 
