@@ -1,0 +1,130 @@
+[#apidoc-kickstart_filepreservation]
+= kickstart.filepreservation
+
+
+== Available methods
+
+* <<apidoc-kickstart_filepreservation-create-975069095,create>>
+* <<apidoc-kickstart_filepreservation-delete-2020015678,delete>>
+* <<apidoc-kickstart_filepreservation-getDetails-1234116451,getDetails>>
+* <<apidoc-kickstart_filepreservation-listAllFilePreservations-1497258319,listAllFilePreservations>>
+
+== Description
+
+Provides methods to retrieve and manipulate kickstart file
+ preservation lists.
+
+*Namespace*:
+
+kickstart.filepreservation
+
+
+[#apidoc-kickstart_filepreservation-create-975069095]
+== Method: create 
+
+Description:
+
+Create a new file preservation list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to create
+ 
+* [.array]#array# :
+** [.string]#string#  - name - file names to include
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_filepreservation-delete-2020015678]
+== Method: delete 
+
+Description:
+
+Delete a file preservation list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to delete
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_filepreservation-getDetails-1234116451]
+== Method: getDetails 
+
+Description:
+
+Returns all of the data associated with the given file preservation
+ list.
+
+
+
+
+Parameters:
+
+* [.string]#string#  session_key
+ 
+* [.string]#string#  name - name of the file list to retrieve
+ details for
+ 
+
+Returns:
+
+* * [.struct]#struct#  - file list
+     ** [.string]#string#  "name"
+     ** [.array]#array#  "file_names"
+*** string - name
+     
+ 
+
+
+
+[#apidoc-kickstart_filepreservation-listAllFilePreservations-1497258319]
+== Method: listAllFilePreservations 
+
+Description:
+
+List all file preservation lists for the organization
+ associated with the user logged into the given session
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+        * [.struct]#struct#  - file preservation
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+    
+       
+
+

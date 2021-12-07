@@ -1,0 +1,833 @@
+[#apidoc-activationkey]
+= activationkey
+
+
+== Available methods
+
+* <<apidoc-activationkey-addChildChannels-1872905355,addChildChannels>>
+* <<apidoc-activationkey-addConfigChannels-1500820019,addConfigChannels>>
+* <<apidoc-activationkey-addEntitlements-1740328397,addEntitlements>>
+* <<apidoc-activationkey-addPackages-989896315,addPackages>>
+* <<apidoc-activationkey-addServerGroups-1549005458,addServerGroups>>
+* <<apidoc-activationkey-checkConfigDeployment-160867654,checkConfigDeployment>>
+* <<apidoc-activationkey-clone-1610853733,clone>>
+* <<apidoc-activationkey-create-1252165500,create>>
+* <<apidoc-activationkey-create-784961589,create>>
+* <<apidoc-activationkey-delete-1618230491,delete>>
+* <<apidoc-activationkey-disableConfigDeployment-1963943166,disableConfigDeployment>>
+* <<apidoc-activationkey-enableConfigDeployment-1776180205,enableConfigDeployment>>
+* <<apidoc-activationkey-getDetails-202395890,getDetails>>
+* <<apidoc-activationkey-listActivatedSystems-1609565447,listActivatedSystems>>
+* <<apidoc-activationkey-listActivationKeys-1106510750,listActivationKeys>>
+* <<apidoc-activationkey-listChannels-1597400455,listChannels>>
+* <<apidoc-activationkey-listConfigChannels-1744457797,listConfigChannels>>
+* <<apidoc-activationkey-removeChildChannels-1639652941,removeChildChannels>>
+* <<apidoc-activationkey-removeConfigChannels-1544765522,removeConfigChannels>>
+* <<apidoc-activationkey-removeEntitlements-1938634748,removeEntitlements>>
+* <<apidoc-activationkey-removePackages-40936992,removePackages>>
+* <<apidoc-activationkey-removeServerGroups-1190857779,removeServerGroups>>
+* <<apidoc-activationkey-setConfigChannels-116606935,setConfigChannels>>
+* <<apidoc-activationkey-setDetails-201484047,setDetails>>
+
+== Description
+
+Contains methods to access common activation key functions
+ available from the web interface.
+
+*Namespace*:
+
+activationkey
+
+
+[#apidoc-activationkey-addChildChannels-1872905355]
+== Method: addChildChannels 
+
+Description:
+
+Add child channels to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** [.string]#string#  - childChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-addConfigChannels-1500820019]
+== Method: addConfigChannels 
+
+Description:
+
+Given a list of activation keys and configuration channels,
+ this method adds given configuration channels to either the top or
+ the bottom (whichever you specify) of an activation key's
+ configuration channels list. The ordering of the configuration channels
+ provided in the add list is maintained while adding.
+ If one of the configuration channels in the 'add' list
+ already exists in an activation key, the
+ configuration  channel will be re-ranked to the appropriate place.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** [.string]#string#  - activationKey
+ 
+* [.array]#array# :
+** [.string]#string#  - List of configuration channel labels in the ranked order.
+ 
+* [.boolean]#boolean#  addToTop
+      
+          * true - To prepend the given channels to the beginning of
+                                 the activation key's config channel list
+          * false - To append the given channels to the end of
+                                     the activation key's config channel list
+      
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-addEntitlements-1740328397]
+== Method: addEntitlements 
+
+Description:
+
+Add add-on System Types to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  string - Add-on system type labels to associate with the
+ key.
+   
+     ** container_build_host
+     ** monitoring_entitled
+     ** osimage_build_host
+     ** virtualization_host
+     ** ansible_control_node
+   
+  
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-addPackages-989896315]
+== Method: addPackages 
+
+Description:
+
+Add packages to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+      ** [.struct]#struct#  - packages
+          *** [.string]#string#  "name" - Package name
+          *** [.string]#string#  "arch" - Arch label - Optional
+         
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-addServerGroups-1549005458]
+== Method: addServerGroups 
+
+Description:
+
+Add server groups to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** [.int]#int#  - serverGroupId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-checkConfigDeployment-160867654]
+== Method: checkConfigDeployment 
+
+Description:
+
+Check configuration file deployment status for the
+ activation key specified.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  status - 1 if enabled, 0 if disabled, exception thrown otherwise
+ 
+
+
+
+[#apidoc-activationkey-clone-1610853733]
+== Method: clone 
+
+Description:
+
+Clone an existing activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Key to be cloned.
+ 
+* [.string]#string#  cloneDescription - Description of the cloned key.
+ 
+
+Returns:
+
+* [.string]#string#  The new activation key
+ 
+
+
+
+[#apidoc-activationkey-create-1252165500]
+== Method: create 
+
+Description:
+
+Create a new activation key.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.
+
+ Eg. If the caller passes in the key "foo" and belong to an organization with
+ the ID 100, the actual activation key will be "100-foo".
+
+ This call allows for the setting of a usage limit on this activation key.
+ If unlimited usage is desired see the similarly named API method with no
+ usage limit argument.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Leave empty to have new key autogenerated.
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  baseChannelLabel - Leave empty to accept
+ default.
+ 
+* [.int]#int#  usageLimit - If unlimited usage is desired,
+ use the create API that does not include the parameter.
+ 
+* [.array]#array#  string - Add-on system type labels to associate with the
+ key.
+   
+     ** container_build_host
+     ** monitoring_entitled
+     ** osimage_build_host
+     ** virtualization_host
+     ** ansible_control_node
+   
+  
+* [.boolean]#boolean#  universalDefault
+ 
+
+Returns:
+
+* [.string]#string#  The new activation key
+ 
+
+
+
+[#apidoc-activationkey-create-784961589]
+== Method: create 
+
+Description:
+
+Create a new activation key with unlimited usage.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.
+
+ Eg. If the caller passes in the key "foo" and belong to an organization with
+ the ID 100, the actual activation key will be "100-foo".
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key - Leave empty to have new key autogenerated.
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  baseChannelLabel - Leave empty to accept
+ default.
+ 
+* [.array]#array#  string - Add-on entitlement label to associate with the
+ key.
+   
+     ** virtualization_host
+   
+  
+* [.boolean]#boolean#  universalDefault
+ 
+
+Returns:
+
+* [.string]#string#  The new activation key
+ 
+
+
+
+[#apidoc-activationkey-delete-1618230491]
+== Method: delete 
+
+Description:
+
+Delete an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-disableConfigDeployment-1963943166]
+== Method: disableConfigDeployment 
+
+Description:
+
+Disable configuration file deployment for the specified activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-enableConfigDeployment-1776180205]
+== Method: enableConfigDeployment 
+
+Description:
+
+Enable configuration file deployment for the specified activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-getDetails-202395890]
+== Method: getDetails 
+
+Description:
+
+Lookup an activation key's details.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* * [.struct]#struct#  - activation key
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+     
+ 
+
+Available since API version: 10.2
+
+
+[#apidoc-activationkey-listActivatedSystems-1609565447]
+== Method: listActivatedSystems 
+
+Description:
+
+List the systems activated with the key provided.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.array]#array# :
+       ** [.struct]#struct#  - system structure
+           *** [.int]#int#  "id" - System id
+           *** [.string]#string#  "hostname"
+           *** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+               successfully checked in
+           
+
+
+
+[#apidoc-activationkey-listActivationKeys-1106510750]
+== Method: listActivationKeys 
+
+Description:
+
+List activation keys that are visible to the
+ user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - activation key
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+    
+    
+
+Available since API version: 10.2
+
+
+[#apidoc-activationkey-listChannels-1597400455]
+== Method: listChannels 
+
+Description:
+
+List the channels for the given activation key
+ with temporary authentication tokens to access them.
+ Authentication is done via a machine specific password.
+
+
+
+
+Parameters:
+
+* [.string]#string#  minionId - The id of the minion to authenticate with.
+ 
+* [.string]#string#  machinePassword - password specific to a machine.
+ 
+* [.string]#string#  activationKey - activation key to use channels from.
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - channelInfo
+       ** [.string]#string#  "label" - Channel label
+       ** [.string]#string#  "name" - Channel name
+       ** [.string]#string#  "url" - Channel url
+       ** [.string]#string#  "token" - Channel access token
+   
+      
+
+
+
+[#apidoc-activationkey-listConfigChannels-1744457797]
+== Method: listConfigChannels 
+
+Description:
+
+List configuration channels
+ associated to an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - Configuration Channel information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
+   * [.struct]#struct#  - Configuration Channel Type information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+    
+
+
+
+[#apidoc-activationkey-removeChildChannels-1639652941]
+== Method: removeChildChannels 
+
+Description:
+
+Remove child channels from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** [.string]#string#  - childChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-removeConfigChannels-1544765522]
+== Method: removeConfigChannels 
+
+Description:
+
+Remove configuration channels from the given activation keys.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey 
+ 
+* [.array]#array# :
+** [.string]#string#  - activationKey
+ 
+* [.array]#array# :
+** [.string]#string#  - configChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-removeEntitlements-1938634748]
+== Method: removeEntitlements 
+
+Description:
+
+Remove entitlements (by label) from an activation key.
+ Currently only virtualization_host add-on entitlement is permitted.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  string - entitlement label
+   
+     ** virtualization_host
+   
+  
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-removePackages-40936992]
+== Method: removePackages 
+
+Description:
+
+Remove package names from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+      ** [.struct]#struct#  - packages
+          *** [.string]#string#  "name" - Package name
+          *** [.string]#string#  "arch" - Arch label - Optional
+         
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-removeServerGroups-1190857779]
+== Method: removeServerGroups 
+
+Description:
+
+Remove server groups from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array# :
+** [.int]#int#  - serverGroupId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-setConfigChannels-116606935]
+== Method: setConfigChannels 
+
+Description:
+
+Replace the existing set of
+ configuration channels on the given activation keys.
+ Channels are ranked by their order in the array.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey 
+ 
+* [.array]#array# :
+** [.string]#string#  - activationKey
+ 
+* [.array]#array# :
+** [.string]#string#  - configChannelLabel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-activationkey-setDetails-201484047]
+== Method: setDetails 
+
+Description:
+
+Update the details of an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.struct]#struct#  - activation key
+   ** [.string]#string#  "description" - optional
+   ** [.string]#string#  "base_channel_label" - optional -
+   to set default base channel set to empty string or 'none'
+   ** [.int]#int#  "usage_limit" - optional
+   ** [.boolean]#boolean#  "unlimited_usage_limit" - Set true
+   for unlimited usage and to override usage_limit
+   ** [.boolean]#boolean#  "universal_default" - optional
+   ** [.boolean]#boolean#  "disabled" - optional
+   ** [.string]#string#  "contact_method" - One of the following:
+     
+       ** default
+       ** ssh-push
+       ** ssh-push-tunnel
+     
+  
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

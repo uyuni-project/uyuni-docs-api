@@ -1,0 +1,957 @@
+[#apidoc-contentmanagement]
+= contentmanagement
+
+
+== Available methods
+
+* <<apidoc-contentmanagement-attachFilter-436661284,attachFilter>>
+* <<apidoc-contentmanagement-attachSource-1633161534,attachSource>>
+* <<apidoc-contentmanagement-attachSource-1631018495,attachSource>>
+* <<apidoc-contentmanagement-buildProject-526339400,buildProject>>
+* <<apidoc-contentmanagement-buildProject-788684446,buildProject>>
+* <<apidoc-contentmanagement-createEnvironment-1294083676,createEnvironment>>
+* <<apidoc-contentmanagement-createFilter-904396018,createFilter>>
+* <<apidoc-contentmanagement-createProject-1367661099,createProject>>
+* <<apidoc-contentmanagement-detachFilter-387258687,detachFilter>>
+* <<apidoc-contentmanagement-detachSource-1535875885,detachSource>>
+* <<apidoc-contentmanagement-listFilterCriteria-131354283,listFilterCriteria>>
+* <<apidoc-contentmanagement-listFilters-2026237784,listFilters>>
+* <<apidoc-contentmanagement-listProjectEnvironments-1138657523,listProjectEnvironments>>
+* <<apidoc-contentmanagement-listProjectFilters-788790720,listProjectFilters>>
+* <<apidoc-contentmanagement-listProjectSources-2126940193,listProjectSources>>
+* <<apidoc-contentmanagement-listProjects-1981418429,listProjects>>
+* <<apidoc-contentmanagement-lookupEnvironment-880564001,lookupEnvironment>>
+* <<apidoc-contentmanagement-lookupFilter-533622452,lookupFilter>>
+* <<apidoc-contentmanagement-lookupProject-2054033212,lookupProject>>
+* <<apidoc-contentmanagement-lookupSource-571101539,lookupSource>>
+* <<apidoc-contentmanagement-promoteProject-46719126,promoteProject>>
+* <<apidoc-contentmanagement-removeEnvironment-676665173,removeEnvironment>>
+* <<apidoc-contentmanagement-removeFilter-950410369,removeFilter>>
+* <<apidoc-contentmanagement-removeProject-1237547288,removeProject>>
+* <<apidoc-contentmanagement-updateEnvironment-528190809,updateEnvironment>>
+* <<apidoc-contentmanagement-updateFilter-1645181497,updateFilter>>
+* <<apidoc-contentmanagement-updateProject-1872941234,updateProject>>
+
+== Description
+
+Provides methods to access and modify Content Lifecycle Management related entities
+ (Projects, Environments, Filters, Sources).
+
+*Namespace*:
+
+contentmanagement
+
+
+[#apidoc-contentmanagement-attachFilter-436661284]
+== Method: attachFilter 
+
+Description:
+
+Attach a Filter to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.int]#int#  id - Filter id to attach
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+      
+ 
+
+
+
+[#apidoc-contentmanagement-attachSource-1633161534]
+== Method: attachSource 
+
+Description:
+
+Attach a Source to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+* [.int]#int#  sourcePosition - Project Source position
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "type"
+   ** [.string]#string#  "state"
+     ** [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+   
+ 
+
+
+
+[#apidoc-contentmanagement-attachSource-1631018495]
+== Method: attachSource 
+
+Description:
+
+Attach a Source to a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "type"
+   ** [.string]#string#  "state"
+     ** [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+   
+ 
+
+
+
+[#apidoc-contentmanagement-buildProject-526339400]
+== Method: buildProject 
+
+Description:
+
+Build a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-buildProject-788684446]
+== Method: buildProject 
+
+Description:
+
+Build a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.string]#string#  message - Log message to be assigned to the build
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-createEnvironment-1294083676]
+== Method: createEnvironment 
+
+Description:
+
+Create a Content Environment and appends it behind given Content Environment
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  predecessorLabel - Predecessor Environment label
+ 
+* [.string]#string#  label - new Content Environment label
+ 
+* [.string]#string#  name - new Content Environment name
+ 
+* [.string]#string#  description - new Content Environment description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.int]#int#  "version"
+   ** [.string]#string#  "status"
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "previousEnvironmentLabel"
+   ** [.string]#string#  "nextEnvironmentLabel"
+   
+ 
+
+
+
+[#apidoc-contentmanagement-createFilter-904396018]
+== Method: createFilter 
+
+Description:
+
+Create a Content Filter
+  
+  
+ The following filters are available (you can get the list in machine-readable format using
+ the listFilterCriteria() endpoint):
+  
+  
+ Package filtering:
+ 
+    by name - field: name; matchers: contains or matches
+    by name, epoch, version, release and architecture - field: nevr or nevra; matcher: equals
+  
+  
+  
+ Errata/Patch filtering:
+ 
+    by advisory name - field: advisory_name; matcher: equals or matches
+    by type - field: advisory_type (e.g. 'Security Advisory'); matcher: equals
+    by synopsis - field: synopsis; matcher: equals, contains or matches
+    by keyword - field: keyword; matcher: contains
+    by date - field: issue_date; matcher: greater or greatereq
+    by affected package name - field: package_name; matcher: contains_pkg_name or matches_pkg_name
+    by affected package with version - field: package_nevr; matcher: contains_pkg_lt_evr,
+   contains_pkg_le_evr, contains_pkg_eq_evr, contains_pkg_ge_evr or contains_pkg_gt_evr
+ 
+  
+  
+ Appstream module/stream filtering:
+ 
+    by module name, stream - field: module_stream; matcher: equals; value: modulaneme:stream
+ 
+ Note: Only 'allow' rule is supported for appstream filters.
+  
+  
+
+ Note: The 'matches' matcher works on Java regular expressions.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Filter name
+ 
+* [.string]#string#  rule - Filter rule ('deny' or 'allow')
+ 
+* [.string]#string#  entityType - Filter entityType ('package' or 'erratum')
+ 
+* [.struct]#struct#  - criteria
+      ** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+      ** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+      ** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+      
+ 
+
+
+
+[#apidoc-contentmanagement-createProject-1367661099]
+== Method: createProject 
+
+Description:
+
+Create Content Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+* [.string]#string#  name - Content Project name
+ 
+* [.string]#string#  description - Content Project description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "lastBuildDate"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "firstEnvironment label"
+   
+ 
+
+
+
+[#apidoc-contentmanagement-detachFilter-387258687]
+== Method: detachFilter 
+
+Description:
+
+Detach a Filter from a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.int]#int#  id - Filter id to detach
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-detachSource-1535875885]
+== Method: detachSource 
+
+Description:
+
+Detach a Source from a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-listFilterCriteria-131354283]
+== Method: listFilterCriteria 
+
+Description:
+
+List of available filter criteria
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ ** [.struct]#struct#  - Filter Criteria
+ *** [.string]#string#  "type"
+ *** [.string]#string#  "matcher"
+ *** [.string]#string#  "field"
+   
+
+
+
+[#apidoc-contentmanagement-listFilters-2026237784]
+== Method: listFilters 
+
+Description:
+
+List all Content Filters visible to given user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+     
+  
+
+
+
+[#apidoc-contentmanagement-listProjectEnvironments-1138657523]
+== Method: listProjectEnvironments 
+
+Description:
+
+List Environments in a Content Project with the respect to their ordering
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Environment information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.int]#int#  "version"
+   ** [.string]#string#  "status"
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "previousEnvironmentLabel"
+   ** [.string]#string#  "nextEnvironmentLabel"
+  
+  
+
+
+
+[#apidoc-contentmanagement-listProjectFilters-788790720]
+== Method: listProjectFilters 
+
+Description:
+
+List all Filters associated with a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Assigned Content Filter information
+   ** [.string]#string#  "state"
+   * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+     
+  
+  
+
+
+
+[#apidoc-contentmanagement-listProjectSources-2126940193]
+== Method: listProjectSources 
+
+Description:
+
+List Content Project Sources
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Project Source information
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "type"
+   ** [.string]#string#  "state"
+     ** [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+  
+  
+
+
+
+[#apidoc-contentmanagement-listProjects-1981418429]
+== Method: listProjects 
+
+Description:
+
+List Content Projects visible to user
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Content Project information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "lastBuildDate"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "firstEnvironment label"
+  
+  
+
+
+
+[#apidoc-contentmanagement-lookupEnvironment-880564001]
+== Method: lookupEnvironment 
+
+Description:
+
+Look up Content Environment based on Content Project and Content Environment label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.int]#int#  "version"
+   ** [.string]#string#  "status"
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "previousEnvironmentLabel"
+   ** [.string]#string#  "nextEnvironmentLabel"
+   
+ 
+
+
+
+[#apidoc-contentmanagement-lookupFilter-533622452]
+== Method: lookupFilter 
+
+Description:
+
+Lookup a Content Filter by id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Filter id
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+      
+ 
+
+
+
+[#apidoc-contentmanagement-lookupProject-2054033212]
+== Method: lookupProject 
+
+Description:
+
+Look up Content Project with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "lastBuildDate"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "firstEnvironment label"
+   
+ 
+
+
+
+[#apidoc-contentmanagement-lookupSource-571101539]
+== Method: lookupSource 
+
+Description:
+
+Look up Content Project Source
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  sourceType - Project Source type, e.g. 'software'
+ 
+* [.string]#string#  sourceLabel - Project Source label
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Content Project Source information
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "type"
+   ** [.string]#string#  "state"
+     ** [.string]#string#  "channelLabel" - (If type is SW_CHANNEL) The label of channel associated with the source
+   
+ 
+
+
+
+[#apidoc-contentmanagement-promoteProject-46719126]
+== Method: promoteProject 
+
+Description:
+
+Promote an Environment in a Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.string]#string#  envLabel - Environment label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-removeEnvironment-676665173]
+== Method: removeEnvironment 
+
+Description:
+
+Remove a Content Environment
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-removeFilter-950410369]
+== Method: removeFilter 
+
+Description:
+
+Remove a Content Filter
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Filter id
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-removeProject-1237547288]
+== Method: removeProject 
+
+Description:
+
+Remove Content Project
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-updateEnvironment-528190809]
+== Method: updateEnvironment 
+
+Description:
+
+Update Content Environment with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+* [.struct]#struct#  - data
+      ** [.string]#string#  "name" - Content Environment name
+      ** [.string]#string#  "description" - Content Environment description
+   
+
+Returns:
+
+* * [.struct]#struct#  - Content Environment information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.int]#int#  "version"
+   ** [.string]#string#  "status"
+   ** [.string]#string#  "contentProjectLabel"
+   ** [.string]#string#  "previousEnvironmentLabel"
+   ** [.string]#string#  "nextEnvironmentLabel"
+   
+ 
+
+
+
+[#apidoc-contentmanagement-updateFilter-1645181497]
+== Method: updateFilter 
+
+Description:
+
+Update a Content Filter
+  
+  
+ See also: createFilter(), listFilterCriteria()
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  filterId - Filter id
+ 
+* [.string]#string#  name - New filter name
+ 
+* [.string]#string#  rule - New filter rule ('deny' or 'allow')
+ 
+* [.struct]#struct#  - criteria
+      ** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+      ** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+      ** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+   
+
+Returns:
+
+* * [.struct]#struct#  - Content Filter information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "orgId"
+   ** [.entityType]#entityType#  "Entity type (e.g. 'package')"
+   ** [.rule]#rule#  "Rule (e.g. 'deny')"
+   ** [.struct]#struct#  - criteria
+       *** [.string]#string#  "matcher" - The matcher type of the filter (e.g. 'contains')
+       *** [.string]#string#  "field" - The entity field to match (e.g. 'name'
+       *** [.string]#string#  "value" - The field value to match (e.g. 'kernel')
+      
+ 
+
+
+
+[#apidoc-contentmanagement-updateProject-1872941234]
+== Method: updateProject 
+
+Description:
+
+Update Content Project with given label
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - Content Project label
+ 
+* [.struct]#struct#  - data
+      ** [.string]#string#  "name" - Content Project name
+      ** [.string]#string#  "description" - Content Project description
+   
+
+Returns:
+
+* * [.struct]#struct#  - Content Project information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "lastBuildDate"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "firstEnvironment label"
+   
+ 
+
+

@@ -1,0 +1,254 @@
+[#apidoc-sync_slave]
+= sync.slave
+
+
+== Available methods
+
+* <<apidoc-sync_slave-create-7025284,create>>
+* <<apidoc-sync_slave-delete-1742961957,delete>>
+* <<apidoc-sync_slave-getAllowedOrgs-1390178738,getAllowedOrgs>>
+* <<apidoc-sync_slave-getSlave-2027198777,getSlave>>
+* <<apidoc-sync_slave-getSlaveByName-569539509,getSlaveByName>>
+* <<apidoc-sync_slave-getSlaves-774515463,getSlaves>>
+* <<apidoc-sync_slave-setAllowedOrgs-236791681,setAllowedOrgs>>
+* <<apidoc-sync_slave-update-1342958495,update>>
+
+== Description
+
+Contains methods to set up information about allowed-"slaves", for use
+ on the "master" side of ISS
+
+*Namespace*:
+
+sync.slave
+
+
+[#apidoc-sync_slave-create-7025284]
+== Method: create 
+
+Description:
+
+Create a new Slave, known to this Master.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  slave - Slave's fully-qualified domain name
+ 
+* [.boolean]#boolean#  enabled - Let this slave talk to us?
+ 
+* [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this slave?
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
+ 
+
+
+
+[#apidoc-sync_slave-delete-1742961957]
+== Method: delete 
+
+Description:
+
+Remove the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Slave to remove
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_slave-getAllowedOrgs-1390178738]
+== Method: getAllowedOrgs 
+
+Description:
+
+Get all orgs this Master is willing to export to the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - ids of allowed organizations
+ 
+
+
+
+[#apidoc-sync_slave-getSlave-2027198777]
+== Method: getSlave 
+
+Description:
+
+Find a Slave by specifying its ID
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
+ 
+
+
+
+[#apidoc-sync_slave-getSlaveByName-569539509]
+== Method: getSlaveByName 
+
+Description:
+
+Find a Slave by specifying its Fully-Qualified Domain Name
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - Domain-name of the desired Slave
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
+ 
+
+
+
+[#apidoc-sync_slave-getSlaves-774515463]
+== Method: getSlaves 
+
+Description:
+
+Get all the Slaves this Master knows about
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - IssSlave info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+  
+       
+
+
+
+[#apidoc-sync_slave-setAllowedOrgs-236791681]
+== Method: setAllowedOrgs 
+
+Description:
+
+Set the orgs this Master is willing to export to the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the desired Slave
+ 
+* [.array]#array# :
+** [.int]#int#  - List of org-ids we're willing to export
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_slave-update-1342958495]
+== Method: update 
+
+Description:
+
+Updates attributes of the specified Slave
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  id - Id of the Slave to update
+ 
+* [.string]#string#  slave - Slave's fully-qualified domain name
+ 
+* [.boolean]#boolean#  enabled - Let this slave talk to us?
+ 
+* [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this Slave?
+ 
+
+Returns:
+
+* * [.struct]#struct#  - IssSlave info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "slave"
+   ** [.boolean]#boolean#  "enabled"
+   ** [.boolean]#boolean#  "allowAllOrgs"
+   
+ 
+
+

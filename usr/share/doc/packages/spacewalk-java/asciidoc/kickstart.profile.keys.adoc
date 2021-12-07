@@ -1,0 +1,122 @@
+[#apidoc-kickstart_profile_keys]
+= kickstart.profile.keys
+
+
+== Available methods
+
+* <<apidoc-kickstart_profile_keys-addActivationKey-1336822843,addActivationKey>>
+* <<apidoc-kickstart_profile_keys-getActivationKeys-1241568657,getActivationKeys>>
+* <<apidoc-kickstart_profile_keys-removeActivationKey-572706092,removeActivationKey>>
+
+== Description
+
+Provides methods to access and modify the list of activation keys
+ associated with a kickstart profile.
+
+*Namespace*:
+
+kickstart.profile.keys
+
+
+[#apidoc-kickstart_profile_keys-addActivationKey-1336822843]
+== Method: addActivationKey 
+
+Description:
+
+Add an activation key association to the kickstart profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+* [.string]#string#  key - the activation key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_profile_keys-getActivationKeys-1241568657]
+== Method: getActivationKeys 
+
+Description:
+
+Lookup the activation keys associated with the kickstart
+ profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - activation key
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#array#  "child_channel_labels"
+*** string - childChannelLabel
+     ** [.array]#array#  "entitlements"
+*** string - entitlementLabel
+     ** [.array]#array#  "server_group_ids"
+*** string - serverGroupId
+     ** [.array]#array#  "package_names"
+*** string - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  - package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+       
+         ** default
+         ** ssh-push
+         ** ssh-push-tunnel
+       
+    
+    
+
+
+
+[#apidoc-kickstart_profile_keys-removeActivationKey-572706092]
+== Method: removeActivationKey 
+
+Description:
+
+Remove an activation key association from the kickstart profile
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  ksLabel - the kickstart profile label
+ 
+* [.string]#string#  key - the activation key
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

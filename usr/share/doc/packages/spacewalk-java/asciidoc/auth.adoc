@@ -1,0 +1,93 @@
+[#apidoc-auth]
+= auth
+
+
+== Available methods
+
+* <<apidoc-auth-login-1803756881,login>>
+* <<apidoc-auth-login-353201839,login>>
+* <<apidoc-auth-logout-928099543,logout>>
+
+== Description
+
+This namespace provides methods to authenticate with the system's
+ management server.
+
+*Namespace*:
+
+auth
+
+
+[#apidoc-auth-login-1803756881]
+== Method: login 
+
+Description:
+
+Login using a username and password. Returns the session key
+ used by most other API methods.
+
+
+
+
+Parameters:
+
+* [.string]#string#  username
+ 
+* [.string]#string#  password
+ 
+
+Returns:
+
+* [.string]#string#  sessionKey
+ 
+
+
+
+[#apidoc-auth-login-353201839]
+== Method: login 
+
+Description:
+
+Login using a username and password. Returns the session key
+ used by other methods.
+
+
+
+
+Parameters:
+
+* [.string]#string#  username
+ 
+* [.string]#string#  password
+ 
+* [.int]#int#  duration - Length of session.
+ 
+
+Returns:
+
+* [.string]#string#  sessionKey
+ 
+
+
+
+[#apidoc-auth-logout-928099543]
+== Method: logout 
+
+Description:
+
+Logout the user with the given session key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

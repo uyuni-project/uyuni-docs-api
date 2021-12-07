@@ -1,0 +1,167 @@
+[#apidoc-kickstart_snippet]
+= kickstart.snippet
+
+
+== Available methods
+
+* <<apidoc-kickstart_snippet-createOrUpdate-686850477,createOrUpdate>>
+* <<apidoc-kickstart_snippet-delete-1459367146,delete>>
+* <<apidoc-kickstart_snippet-listAll-1826767363,listAll>>
+* <<apidoc-kickstart_snippet-listCustom-1287817936,listCustom>>
+* <<apidoc-kickstart_snippet-listDefault-696327501,listDefault>>
+
+== Description
+
+Provides methods to create kickstart files
+
+*Namespace*:
+
+kickstart.snippet
+
+
+[#apidoc-kickstart_snippet-createOrUpdate-686850477]
+== Method: createOrUpdate 
+
+Description:
+
+Will create a snippet with the given name and contents if it
+      doesn't exist. If it does exist, the existing snippet will be updated.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name
+ 
+* [.string]#string#  contents
+ 
+
+Returns:
+
+* * [.struct]#struct#  - snippet
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - The string to include in a kickstart
+                          file that will generate this snippet.
+     ** [.string]#string#  "file" - The local path to the file containing this snippet.
+     
+ 
+
+
+
+[#apidoc-kickstart_snippet-delete-1459367146]
+== Method: delete 
+
+Description:
+
+Delete the specified snippet.
+      If the snippet is not found, 0 is returned.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_snippet-listAll-1826767363]
+== Method: listAll 
+
+Description:
+
+List all cobbler snippets for the logged in user
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+            * [.struct]#struct#  - snippet
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - The string to include in a kickstart
+                          file that will generate this snippet.
+     ** [.string]#string#  "file" - The local path to the file containing this snippet.
+    
+           
+
+
+
+[#apidoc-kickstart_snippet-listCustom-1287817936]
+== Method: listCustom 
+
+Description:
+
+List only custom snippets for the logged in user.
+    These snipppets are editable.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+            * [.struct]#struct#  - snippet
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - The string to include in a kickstart
+                          file that will generate this snippet.
+     ** [.string]#string#  "file" - The local path to the file containing this snippet.
+    
+           
+
+
+
+[#apidoc-kickstart_snippet-listDefault-696327501]
+== Method: listDefault 
+
+Description:
+
+List only pre-made default snippets for the logged in user.
+    These snipppets are not editable.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+            * [.struct]#struct#  - snippet
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - The string to include in a kickstart
+                          file that will generate this snippet.
+     ** [.string]#string#  "file" - The local path to the file containing this snippet.
+    
+           
+
+

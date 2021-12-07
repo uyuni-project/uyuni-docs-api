@@ -1,0 +1,720 @@
+[#apidoc-errata]
+= errata
+
+
+== Available methods
+
+* <<apidoc-errata-addPackages-1963645656,addPackages>>
+* <<apidoc-errata-applicableToChannels-209128279,applicableToChannels>>
+* <<apidoc-errata-bugzillaFixes-513761429,bugzillaFixes>>
+* <<apidoc-errata-clone-1966075071,clone>>
+* <<apidoc-errata-cloneAsOriginal-783759938,cloneAsOriginal>>
+* <<apidoc-errata-cloneAsOriginalAsync-411802142,cloneAsOriginalAsync>>
+* <<apidoc-errata-cloneAsync-783488821,cloneAsync>>
+* <<apidoc-errata-create-1565967058,create>>
+* <<apidoc-errata-delete-1243911696,delete>>
+* <<apidoc-errata-findByCve-1901525199,findByCve>>
+* <<apidoc-errata-getDetails-687251464,getDetails>>
+* <<apidoc-errata-listAffectedSystems-2141744605,listAffectedSystems>>
+* <<apidoc-errata-listCves-814565761,listCves>>
+* <<apidoc-errata-listKeywords-66348462,listKeywords>>
+* <<apidoc-errata-listPackages-1433607373,listPackages>>
+* <<apidoc-errata-publish-247184928,publish>>
+* <<apidoc-errata-publishAsOriginal-664700395,publishAsOriginal>>
+* <<apidoc-errata-removePackages-1100176029,removePackages>>
+* <<apidoc-errata-setDetails-1910491749,setDetails>>
+
+== Description
+
+Provides methods to access and modify errata.
+
+*Namespace*:
+
+errata
+
+
+[#apidoc-errata-addPackages-1963645656]
+== Method: addPackages 
+
+Description:
+
+Add a set of packages to an erratum
+ with the given advisory name. This method will only allow for modification
+ of custom errata created either through the UI or API.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+* [.array]#array# :
+** [.int]#int#  - packageId
+ 
+
+Returns:
+
+* [.int]#int#  count - representing the number of packages added, exception otherwise
+ 
+
+
+
+[#apidoc-errata-applicableToChannels-209128279]
+== Method: applicableToChannels 
+
+Description:
+
+Returns a list of channels applicable to the errata
+ with the given advisory name.
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the list of channels applicable of both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.array]#array# :
+          ** [.struct]#struct#  - channel
+              *** [.int]#int#  "channel_id"
+              *** [.string]#string#  "label"
+              *** [.string]#string#  "name"
+              *** [.string]#string#  "parent_channel_label"
+                  
+
+
+
+[#apidoc-errata-bugzillaFixes-513761429]
+== Method: bugzillaFixes 
+
+Description:
+
+Get the Bugzilla fixes for an erratum matching the given
+ advisoryName. The bugs will be returned in a struct where the bug id is
+ the key.  i.e. 208144="errata.bugzillaFixes Method Returns different
+ results than docs say"
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the list of Bugzilla fixes of both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.struct]#struct#  - Bugzilla info
+          ** [.string]#string#  "bugzilla_id" - actual bug number is the key into the
+                      struct
+          ** [.string]#string#  "bug_summary" - summary who's key is the bug id
+       
+
+
+
+[#apidoc-errata-clone-1966075071]
+== Method: clone 
+
+Description:
+
+Clone a list of errata into the specified channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channel_label
+ 
+* [.array]#array# :
+** [.string]#string#  -  advisory - The advisory name of the errata to clone.
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+      
+           
+
+
+
+[#apidoc-errata-cloneAsOriginal-783759938]
+== Method: cloneAsOriginal 
+
+Description:
+
+Clones a list of errata into a specified cloned channel
+ according the original erratas.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channel_label
+ 
+* [.array]#array# :
+** [.string]#string#  -  advisory - The advisory name of the errata to clone.
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+      
+           
+
+
+
+[#apidoc-errata-cloneAsOriginalAsync-411802142]
+== Method: cloneAsOriginalAsync 
+
+Description:
+
+Asynchronously clones a list of errata into a specified cloned channel
+ according the original erratas
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channel_label
+ 
+* [.array]#array# :
+** [.string]#string#  -  advisory - The advisory name of the errata to clone.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-errata-cloneAsync-783488821]
+== Method: cloneAsync 
+
+Description:
+
+Asynchronously clone a list of errata into the specified channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channel_label
+ 
+* [.array]#array# :
+** [.string]#string#  -  advisory - The advisory name of the errata to clone.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-errata-create-1565967058]
+== Method: create 
+
+Description:
+
+Create a custom errata
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  - errata info
+          ** [.string]#string#  "synopsis"
+          ** [.string]#string#  "advisory_name"
+          ** [.int]#int#  "advisory_release"
+          ** [.string]#string#  "advisory_type" - Type of advisory (one of the
+                  following: 'Security Advisory', 'Product Enhancement Advisory',
+                  or 'Bug Fix Advisory'
+          ** [.string]#string#  "advisory_status" - Status of advisory (one of the
+                  following: 'final', 'testing', 'stable' or 'retracted'
+          ** [.string]#string#  "product"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+          ** [.string]#string#  "severity" - Severity of advisory (one of the
+                  following: 'Low', 'Moderate', 'Important', 'Critical'
+                  or 'Unspecified'
+        
+* [.array]#array# :
+              ** [.struct]#struct#  - bug
+                  *** [.int]#int#  "id" - Bug Id
+                  *** [.string]#string#  "summary"
+                  *** [.string]#string#  "url"
+                       
+* [.array]#array# :
+** [.string]#string#  - keyword - List of keywords to associate
+              with the errata.
+ 
+* [.array]#array# :
+** [.int]#int#  - packageId
+ 
+* [.array]#array# :
+** [.string]#string#  - channelLabel - list of channels the errata should be
+                  published to
+ 
+
+Returns:
+
+* * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+       
+ 
+
+
+
+[#apidoc-errata-delete-1243911696]
+== Method: delete 
+
+Description:
+
+Delete an erratum.  This method will only allow for deletion
+ of custom errata created either through the UI or API.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-errata-findByCve-1901525199]
+== Method: findByCve 
+
+Description:
+
+Lookup the details for errata associated with the given CVE
+ (e.g. CVE-2008-3270)
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  cveName
+ 
+
+Returns:
+
+* [.array]#array# :
+              * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+      
+           
+
+
+
+[#apidoc-errata-getDetails-687251464]
+== Method: getDetails 
+
+Description:
+
+Retrieves the details for the erratum matching the given
+ advisory name.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.struct]#struct#  - erratum
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "issue_date"
+          ** [.string]#string#  "update_date"
+          ** [.string]#string#  "last_modified_date" - last time the erratum was modified.
+          ** [.string]#string#  "synopsis"
+          ** [.int]#int#  "release"
+          ** [.string]#string#  "advisory_status"
+          ** [.string]#string#  "type"
+          ** [.string]#string#  "product"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+      
+
+
+
+[#apidoc-errata-listAffectedSystems-2141744605]
+== Method: listAffectedSystems 
+
+Description:
+
+Return the list of systems affected by the errata with the given advisory name.
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the affected systems by both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     ** [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     ** [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+  
+       
+
+
+
+[#apidoc-errata-listCves-814565761]
+== Method: listCves 
+
+Description:
+
+Returns a list of
+ CVEs
+ applicable to the errata with the given advisory name.
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the list of CVEs of both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - cveName
+ 
+
+
+
+[#apidoc-errata-listKeywords-66348462]
+== Method: listKeywords 
+
+Description:
+
+Get the keywords associated with an erratum matching the
+ given advisory name.
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the keywords of both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - Keyword associated with erratum.
+ 
+
+
+
+[#apidoc-errata-listPackages-1433607373]
+== Method: listPackages 
+
+Description:
+
+Returns a list of the packages affected by the errata
+ with the given advisory name.
+ For those errata that are present in both vendor and user organizations under the same advisory name,
+ this method retrieves the packages of both of them.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+
+Returns:
+
+* [.array]#array# :
+              ** [.struct]#struct#  - package
+                  *** [.int]#int#  "id"
+                  *** [.string]#string#  "name"
+                  *** [.string]#string#  "epoch"
+                  *** [.string]#string#  "version"
+                  *** [.string]#string#  "release"
+                  *** [.string]#string#  "arch_label"
+                  *** [.array]#array#  "providing_channels"
+**** string - - Channel label
+                              providing this package.
+                  *** [.string]#string#  "build_host"
+                  *** [.string]#string#  "description"
+                  *** [.string]#string#  "checksum"
+                  *** [.string]#string#  "checksum_type"
+                  *** [.string]#string#  "vendor"
+                  *** [.string]#string#  "summary"
+                  *** [.string]#string#  "cookie"
+                  *** [.string]#string#  "license"
+                  *** [.string]#string#  "path"
+                  *** [.string]#string#  "file"
+                  *** [.string]#string#  "build_date"
+                  *** [.string]#string#  "last_modified_date"
+                  *** [.string]#string#  "size"
+                  *** [.string]#string#  "payload_size"
+                           
+
+
+
+[#apidoc-errata-publish-247184928]
+== Method: publish 
+
+Description:
+
+Adds an existing errata to a set of channels.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+* [.array]#array# :
+** [.string]#string#  - channelLabel - list of channel labels to add to
+ 
+
+Returns:
+
+* * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+       
+ 
+
+
+
+[#apidoc-errata-publishAsOriginal-664700395]
+== Method: publishAsOriginal 
+
+Description:
+
+Adds an existing cloned errata to a set of cloned
+ channels according to its original erratum
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+* [.array]#array# :
+** [.string]#string#  - channelLabel - list of channel labels to add to
+ 
+
+Returns:
+
+* * [.struct]#struct#  - errata
+          ** [.int]#int#  "id" - Errata Id
+          ** [.string]#string#  "date" - Date erratum was created.
+          ** [.string]#string#  "advisory_type" - Type of the advisory.
+          ** [.string]#string#  "advisory_status" - Status of the advisory.
+          ** [.string]#string#  "advisory_name" - Name of the advisory.
+          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
+       
+ 
+
+
+
+[#apidoc-errata-removePackages-1100176029]
+== Method: removePackages 
+
+Description:
+
+Remove a set of packages from an erratum
+ with the given advisory name.  This method will only allow for modification
+ of custom errata created either through the UI or API.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+* [.array]#array# :
+** [.int]#int#  - packageId
+ 
+
+Returns:
+
+* [.int]#int#  count - representing the number of packages removed, exception otherwise
+ 
+
+
+
+[#apidoc-errata-setDetails-1910491749]
+== Method: setDetails 
+
+Description:
+
+Set erratum details. All arguments are optional and will only be modified
+ if included in the struct. This method will only allow for modification of custom
+ errata created either through the UI or API.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  advisoryName
+ 
+* [.struct]#struct#  - errata details
+          ** [.string]#string#  "synopsis"
+          ** [.string]#string#  "advisory_name"
+          ** [.int]#int#  "advisory_release"
+          ** [.string]#string#  "advisory_type" - Type of advisory (one of the
+                  following: 'Security Advisory', 'Product Enhancement Advisory',
+                  or 'Bug Fix Advisory'
+          ** [.string]#string#  "product"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "issue_date"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "update_date"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+          ** [.string]#string#  "severity" - Severity of advisory (one of the
+                  following: 'Low', 'Moderate', 'Important', 'Critical'
+                  or 'Unspecified'
+          ** [.array]#array#  "bugs" - 'bugs' is the key into the struct
+              ** [.array]#array# :
+                 *** [.struct]#struct#  - bug
+                    **** [.int]#int#  "id" - Bug Id
+                    **** [.string]#string#  "summary"
+                    **** [.string]#string#  "url"
+                                         ** [.array]#array#  "keywords" - 'keywords' is the key into the struct
+              ** [.array]#array# :
+*** [.string]#string#  - keyword - List of keywords to associate
+                  with the errata.
+          ** [.array]#array#  "CVEs" - 'cves' is the key into the struct
+              ** [.array]#array# :
+*** [.string]#string#  - cves - List of CVEs to associate
+                  with the errata
+      
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

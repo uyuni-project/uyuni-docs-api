@@ -1,0 +1,120 @@
+[#apidoc-channel_access]
+= channel.access
+
+
+== Available methods
+
+* <<apidoc-channel_access-disableUserRestrictions-98550436,disableUserRestrictions>>
+* <<apidoc-channel_access-enableUserRestrictions-1142350221,enableUserRestrictions>>
+* <<apidoc-channel_access-getOrgSharing-2015110295,getOrgSharing>>
+* <<apidoc-channel_access-setOrgSharing-824199517,setOrgSharing>>
+
+== Description
+
+Provides methods to retrieve and alter channel access restrictions.
+
+*Namespace*:
+
+channel.access
+
+
+[#apidoc-channel_access-disableUserRestrictions-98550436]
+== Method: disableUserRestrictions 
+
+Description:
+
+Disable user restrictions for the given channel.  If disabled,
+ all users within the organization may subscribe to the channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-channel_access-enableUserRestrictions-1142350221]
+== Method: enableUserRestrictions 
+
+Description:
+
+Enable user restrictions for the given channel. If enabled, only
+ selected users within the organization may subscribe to the channel.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-channel_access-getOrgSharing-2015110295]
+== Method: getOrgSharing 
+
+Description:
+
+Get organization sharing access control.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.string]#string#  access - The access value (one of the following: 'public', 'private', or 'protected'
+ 
+
+
+
+[#apidoc-channel_access-setOrgSharing-824199517]
+== Method: setOrgSharing 
+
+Description:
+
+Set organization sharing access control.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+* [.string]#string#  access - Access (one of the
+                  following: 'public', 'private', or 'protected'
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

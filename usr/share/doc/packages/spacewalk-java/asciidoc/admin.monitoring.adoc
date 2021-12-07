@@ -1,0 +1,102 @@
+[#apidoc-admin_monitoring]
+= admin.monitoring
+
+
+== Available methods
+
+* <<apidoc-admin_monitoring-disable-1950158148,disable>>
+* <<apidoc-admin_monitoring-enable-2062755811,enable>>
+* <<apidoc-admin_monitoring-getStatus-894844492,getStatus>>
+
+== Description
+
+Provides methods to manage the monitoring of the SUSE Manager server.
+
+*Namespace*:
+
+admin.monitoring
+
+
+[#apidoc-admin_monitoring-disable-1950158148]
+== Method: disable 
+
+Description:
+
+Disable monitoring.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      ** [.struct]#struct#  - Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
+
+
+
+[#apidoc-admin_monitoring-enable-2062755811]
+== Method: enable 
+
+Description:
+
+Enable monitoring.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      ** [.struct]#struct#  - Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
+
+
+
+[#apidoc-admin_monitoring-getStatus-894844492]
+== Method: getStatus 
+
+Description:
+
+Get the status of each Prometheus exporter.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+      ** [.struct]#struct#  - Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
+
+

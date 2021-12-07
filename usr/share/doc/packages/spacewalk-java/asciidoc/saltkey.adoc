@@ -1,0 +1,186 @@
+[#apidoc-saltkey]
+= saltkey
+
+
+== Available methods
+
+* <<apidoc-saltkey-accept-1189317672,accept>>
+* <<apidoc-saltkey-acceptedList-826445686,acceptedList>>
+* <<apidoc-saltkey-delete-1091633125,delete>>
+* <<apidoc-saltkey-deniedList-1677690398,deniedList>>
+* <<apidoc-saltkey-pendingList-1113003583,pendingList>>
+* <<apidoc-saltkey-reject-1014991909,reject>>
+* <<apidoc-saltkey-rejectedList-1088925353,rejectedList>>
+
+== Description
+
+Provides methods to manage salt keys
+
+*Namespace*:
+
+saltkey
+
+
+[#apidoc-saltkey-accept-1189317672]
+== Method: accept 
+
+Description:
+
+Accept a minion key
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+* [. string ]# string #   minionId 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-saltkey-acceptedList-826445686]
+== Method: acceptedList 
+
+Description:
+
+List accepted salt keys
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [. string ]# string #  -  Accepted salt key list 
+ 
+
+
+
+[#apidoc-saltkey-delete-1091633125]
+== Method: delete 
+
+Description:
+
+Delete a minion key
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+* [. string ]# string #   minionId 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-saltkey-deniedList-1677690398]
+== Method: deniedList 
+
+Description:
+
+List of denied salt keys
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [. string ]# string #  -  Denied salt key list 
+ 
+
+
+
+[#apidoc-saltkey-pendingList-1113003583]
+== Method: pendingList 
+
+Description:
+
+List pending salt keys
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [. string ]# string #  -  Pending salt key list 
+ 
+
+
+
+[#apidoc-saltkey-reject-1014991909]
+== Method: reject 
+
+Description:
+
+Reject a minion key
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+* [. string ]# string #   minionId 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-saltkey-rejectedList-1088925353]
+== Method: rejectedList 
+
+Description:
+
+List of rejected salt keys
+
+
+
+
+Parameters:
+
+* [. string ]# string #   loggedInUser 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [. string ]# string #  -  Rejected salt key list 
+ 
+
+

@@ -1,0 +1,261 @@
+[#apidoc-packages_search]
+= packages.search
+
+
+== Available methods
+
+* <<apidoc-packages_search-advanced-90777699,advanced>>
+* <<apidoc-packages_search-advancedWithActKey-1538984485,advancedWithActKey>>
+* <<apidoc-packages_search-advancedWithChannel-2007097165,advancedWithChannel>>
+* <<apidoc-packages_search-name-1934634334,name>>
+* <<apidoc-packages_search-nameAndDescription-1193108849,nameAndDescription>>
+* <<apidoc-packages_search-nameAndSummary-557569642,nameAndSummary>>
+
+== Description
+
+Methods to interface to package search capabilities in search server..
+
+*Namespace*:
+
+packages.search
+
+
+[#apidoc-packages_search-advanced-90777699]
+== Method: advanced 
+
+Description:
+
+Advanced method to search lucene indexes with a passed in query written
+ in Lucene Query Parser syntax.
+ Lucene Query Parser syntax is defined at
+ 
+ lucene.apache.org.
+ Fields searchable for Packages:
+ name, epoch, version, release, arch, description, summary
+ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+    
+
+
+
+[#apidoc-packages_search-advancedWithActKey-1538984485]
+== Method: advancedWithActKey 
+
+Description:
+
+Advanced method to search lucene indexes with a passed in query written
+ in Lucene Query Parser syntax, additionally this method will limit results to those
+ which are associated with a given activation key.
+ Lucene Query Parser syntax is defined at
+ 
+ lucene.apache.org.
+ Fields searchable for Packages:
+ name, epoch, version, release, arch, description, summary
+ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
+ 
+* [.string]#string#  actKey - activation key to look for packages in
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+    
+
+
+
+[#apidoc-packages_search-advancedWithChannel-2007097165]
+== Method: advancedWithChannel 
+
+Description:
+
+Advanced method to search lucene indexes with a passed in query written
+ in Lucene Query Parser syntax, additionally this method will limit results to those
+ which are in the passed in channel label.
+ Lucene Query Parser syntax is defined at
+ 
+ lucene.apache.org.
+ Fields searchable for Packages:
+ name, epoch, version, release, arch, description, summary
+ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
+ 
+* [.string]#string#  channelLabel - Channel Label
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+    
+
+
+
+[#apidoc-packages_search-name-1934634334]
+== Method: name 
+
+Description:
+
+Search the lucene package indexes for all packages which
+          match the given name.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - package name to search for
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+  
+
+
+
+[#apidoc-packages_search-nameAndDescription-1193108849]
+== Method: nameAndDescription 
+
+Description:
+
+Search the lucene package indexes for all packages which
+          match the given query in name or description
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  query - text to match in package name or description
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+  
+
+
+
+[#apidoc-packages_search-nameAndSummary-557569642]
+== Method: nameAndSummary 
+
+Description:
+
+Search the lucene package indexes for all packages which
+          match the given query in name or summary.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  query - text to match in package name or summary
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - package overview
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "summary"
+   ** [.string]#string#  "description"
+   ** [.string]#string#  "version"
+   ** [.string]#string#  "release"
+   ** [.string]#string#  "arch"
+   ** [.string]#string#  "epoch"
+   ** [.string]#string#  "provider"
+    
+  
+
+

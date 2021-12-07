@@ -1,0 +1,819 @@
+[#apidoc-user]
+= user
+
+
+== Available methods
+
+* <<apidoc-user-addAssignedSystemGroup-2003533730,addAssignedSystemGroup>>
+* <<apidoc-user-addAssignedSystemGroups-1065002232,addAssignedSystemGroups>>
+* <<apidoc-user-addDefaultSystemGroup-432371903,addDefaultSystemGroup>>
+* <<apidoc-user-addDefaultSystemGroups-518757980,addDefaultSystemGroups>>
+* <<apidoc-user-addRole-1807861968,addRole>>
+* <<apidoc-user-create-1414992442,create>>
+* <<apidoc-user-create-1183884158,create>>
+* <<apidoc-user-delete-603092020,delete>>
+* <<apidoc-user-disable-1139208287,disable>>
+* <<apidoc-user-enable-801963227,enable>>
+* <<apidoc-user-getCreateDefaultSystemGroup-1836493317,getCreateDefaultSystemGroup>>
+* <<apidoc-user-getDetails-1854154410,getDetails>>
+* <<apidoc-user-listAssignableRoles-1209765203,listAssignableRoles>>
+* <<apidoc-user-listAssignedSystemGroups-779932859,listAssignedSystemGroups>>
+* <<apidoc-user-listDefaultSystemGroups-1814543901,listDefaultSystemGroups>>
+* <<apidoc-user-listRoles-1301992318,listRoles>>
+* <<apidoc-user-listUsers-2104281815,listUsers>>
+* <<apidoc-user-removeAssignedSystemGroup-653130292,removeAssignedSystemGroup>>
+* <<apidoc-user-removeAssignedSystemGroups-1369468885,removeAssignedSystemGroups>>
+* <<apidoc-user-removeDefaultSystemGroup-751467836,removeDefaultSystemGroup>>
+* <<apidoc-user-removeDefaultSystemGroups-1578448352,removeDefaultSystemGroups>>
+* <<apidoc-user-removeRole-2140404961,removeRole>>
+* <<apidoc-user-setCreateDefaultSystemGroup-604225989,setCreateDefaultSystemGroup>>
+* <<apidoc-user-setDetails-1965388767,setDetails>>
+* <<apidoc-user-setErrataNotifications-1653474307,setErrataNotifications>>
+* <<apidoc-user-setReadOnly-146357384,setReadOnly>>
+* <<apidoc-user-usePamAuthentication-1812214031,usePamAuthentication>>
+
+== Description
+
+User namespace contains methods to access common user functions
+ available from the web user interface.
+
+*Namespace*:
+
+user
+
+
+[#apidoc-user-addAssignedSystemGroup-2003533730]
+== Method: addAssignedSystemGroup 
+
+Description:
+
+Add system group to user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system group also be
+ added to user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-addAssignedSystemGroups-1065002232]
+== Method: addAssignedSystemGroups 
+
+Description:
+
+Add system groups to user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** [.string]#string#  - serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system groups also be
+ added to user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-addDefaultSystemGroup-432371903]
+== Method: addDefaultSystemGroup 
+
+Description:
+
+Add system group to user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-addDefaultSystemGroups-518757980]
+== Method: addDefaultSystemGroups 
+
+Description:
+
+Add system groups to user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** [.string]#string#  - serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-addRole-1807861968]
+== Method: addRole 
+
+Description:
+
+Adds a role to a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to update.
+ 
+* [.string]#string#  role - Role label to add.  Can be any of:
+ satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-create-1414992442]
+== Method: create 
+
+Description:
+
+Create a new user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  desiredLogin - Desired login name, will fail if
+ already in use.
+ 
+* [.string]#string#  desiredPassword
+ 
+* [.string]#string#  firstName
+ 
+* [.string]#string#  lastName
+ 
+* [.string]#string#  email - User's e-mail address.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-create-1183884158]
+== Method: create 
+
+Description:
+
+Create a new user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  desiredLogin - Desired login name,
+ will fail if already in use.
+ 
+* [.string]#string#  desiredPassword
+ 
+* [.string]#string#  firstName
+ 
+* [.string]#string#  lastName
+ 
+* [.string]#string#  email - User's e-mail address.
+ 
+* [.int]#int#  usePamAuth - 1 if you wish to use PAM
+ authentication for this user, 0 otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-delete-603092020]
+== Method: delete 
+
+Description:
+
+Delete a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to delete.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-disable-1139208287]
+== Method: disable 
+
+Description:
+
+Disable a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to disable.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-enable-801963227]
+== Method: enable 
+
+Description:
+
+Enable a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to enable.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-getCreateDefaultSystemGroup-1836493317]
+== Method: getCreateDefaultSystemGroup 
+
+Description:
+
+Returns the current value of the CreateDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-getDetails-1854154410]
+== Method: getDetails 
+
+Description:
+
+Returns the details about a given user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.struct]#struct#  - user details
+     ** [.string]#string#  "first_names" - deprecated, use first_name
+     ** [.string]#string#  "first_name"
+     ** [.string]#string#  "last_name"
+     ** [.string]#string#  "email"
+     ** [.int]#int#  "org_id"
+     ** [.string]#string#  "org_name"
+     ** [.string]#string#  "prefix"
+     ** [.string]#string#  "last_login_date"
+     ** [.string]#string#  "created_date"
+     ** [.boolean]#boolean#  "enabled" - true if user is enabled,
+     false if the user is disabled
+     ** [.boolean]#boolean#  "use_pam" - true if user is configured to use
+     PAM authentication
+     ** [.boolean]#boolean#  "read_only" - true if user is readonly
+     ** [.boolean]#boolean#  "errata_notification" - true if errata e-mail notification
+     is enabled for the user
+    
+
+
+
+[#apidoc-user-listAssignableRoles-1209765203]
+== Method: listAssignableRoles 
+
+Description:
+
+Returns a list of user roles that this user can assign to others.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - (role label)
+ 
+
+
+
+[#apidoc-user-listAssignedSystemGroups-779932859]
+== Method: listAssignedSystemGroups 
+
+Description:
+
+Returns the system groups that a user can administer.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+     ** [.struct]#struct#  - system group
+       *** [.int]#int#  "id"
+       *** [.string]#string#  "name"
+       *** [.string]#string#  "description"
+       *** [.int]#int#  "system_count"
+       *** [.int]#int#  "org_id" - Organization ID for this system group.
+         
+
+
+
+[#apidoc-user-listDefaultSystemGroups-1814543901]
+== Method: listDefaultSystemGroups 
+
+Description:
+
+Returns a user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+     ** [.struct]#struct#  - system group
+       *** [.int]#int#  "id"
+       *** [.string]#string#  "name"
+       *** [.string]#string#  "description"
+       *** [.int]#int#  "system_count"
+       *** [.int]#int#  "org_id" - Organization ID for this system group.
+         
+
+
+
+[#apidoc-user-listRoles-1301992318]
+== Method: listRoles 
+
+Description:
+
+Returns a list of the user's roles.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - (role label)
+ 
+
+
+
+[#apidoc-user-listUsers-2104281815]
+== Method: listUsers 
+
+Description:
+
+Returns a list of users in your organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - user
+              ** [.int]#int#  "id"
+              ** [.string]#string#  "login"
+              ** [.string]#string#  "login_uc" - upper case version of the login
+              ** [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+       
+  
+
+
+
+[#apidoc-user-removeAssignedSystemGroup-653130292]
+== Method: removeAssignedSystemGroup 
+
+Description:
+
+Remove system group from the user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system group also
+ be removed from the user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-removeAssignedSystemGroups-1369468885]
+== Method: removeAssignedSystemGroups 
+
+Description:
+
+Remove system groups from a user's list of assigned system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** [.string]#string#  - serverGroupName
+ 
+* [.boolean]#boolean#  setDefault - Should system groups also be
+ removed from the user's list of default system groups.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-removeDefaultSystemGroup-751467836]
+== Method: removeDefaultSystemGroup 
+
+Description:
+
+Remove a system group from user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-removeDefaultSystemGroups-1578448352]
+== Method: removeDefaultSystemGroups 
+
+Description:
+
+Remove system groups from a user's list of default system groups.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.array]#array# :
+** [.string]#string#  - serverGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-removeRole-2140404961]
+== Method: removeRole 
+
+Description:
+
+Remove a role from a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User login name to update.
+ 
+* [.string]#string#  role - Role label to remove.  Can be any of:
+ satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
+ activation_key_admin.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-setCreateDefaultSystemGroup-604225989]
+== Method: setCreateDefaultSystemGroup 
+
+Description:
+
+Sets the value of the CreateDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.boolean]#boolean#  createDefaultSystemGruop - True if we should automatically create system groups, false otherwise.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-setDetails-1965388767]
+== Method: setDetails 
+
+Description:
+
+Updates the details of a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.struct]#struct#  - user details
+     ** [.string]#string#  "first_names" - deprecated, use first_name
+     ** [.string]#string#  "first_name"
+     ** [.string]#string#  "last_name"
+     ** [.string]#string#  "email"
+     ** [.string]#string#  "prefix"
+     ** [.string]#string#  "password"
+    
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-setErrataNotifications-1653474307]
+== Method: setErrataNotifications 
+
+Description:
+
+Enables/disables errata mail notifications for a specific user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.boolean]#boolean#  value - True for enabling
+ errata notifications, False for disabling
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-setReadOnly-146357384]
+== Method: setReadOnly 
+
+Description:
+
+Sets whether the target user should have only read-only API access or
+ standard full scale access.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.boolean]#boolean#  readOnly - Sets whether the target user should
+ have only read-only API access or standard full scale access.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user-usePamAuthentication-1812214031]
+== Method: usePamAuthentication 
+
+Description:
+
+Toggles whether or not a user uses PAM authentication or
+ basic SUSE Manager authentication.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.int]#int#  pam_value
+   
+     * 1 to enable PAM authentication
+     * 0 to disable.
+   
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

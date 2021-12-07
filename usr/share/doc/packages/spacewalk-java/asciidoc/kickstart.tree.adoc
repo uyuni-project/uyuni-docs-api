@@ -1,0 +1,260 @@
+[#apidoc-kickstart_tree]
+= kickstart.tree
+
+
+== Available methods
+
+* <<apidoc-kickstart_tree-create-1975716431,create>>
+* <<apidoc-kickstart_tree-delete-906904117,delete>>
+* <<apidoc-kickstart_tree-deleteTreeAndProfiles-28376203,deleteTreeAndProfiles>>
+* <<apidoc-kickstart_tree-getDetails-869140506,getDetails>>
+* <<apidoc-kickstart_tree-list-226972126,list>>
+* <<apidoc-kickstart_tree-listInstallTypes-1847707373,listInstallTypes>>
+* <<apidoc-kickstart_tree-rename-213560315,rename>>
+* <<apidoc-kickstart_tree-update-1640383742,update>>
+
+== Description
+
+Provides methods to access and modify the kickstart trees.
+
+*Namespace*:
+
+kickstart.tree
+
+
+[#apidoc-kickstart_tree-create-1975716431]
+== Method: create 
+
+Description:
+
+Create a Kickstart Tree (Distribution) in SUSE Manager.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - The new kickstart tree label.
+ 
+* [.string]#string#  basePath - Path to the base or
+ root of the kickstart tree.
+ 
+* [.string]#string#  channelLabel - Label of channel to
+ associate with the kickstart tree. 
+ 
+* [.string]#string#  installType - Label for
+ KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-delete-906904117]
+== Method: delete 
+
+Description:
+
+Delete a Kickstart Tree (Distribution) from SUSE Manager.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - Label for the
+ kickstart tree to delete.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-deleteTreeAndProfiles-28376203]
+== Method: deleteTreeAndProfiles 
+
+Description:
+
+Delete a kickstarttree and any profiles associated with
+ this kickstart tree.  WARNING:  This will delete all profiles
+ associated with this kickstart tree!
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - Label for the
+ kickstart tree to delete.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-getDetails-869140506]
+== Method: getDetails 
+
+Description:
+
+The detailed information about a kickstartable tree given the tree name.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - Label of kickstartable tree to
+ search.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - kickstartable tree
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "abs_path"
+   ** [.int]#int#  "channel_id"
+   * [.struct]#struct#  - kickstart install type
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+  
+   
+ 
+
+
+
+[#apidoc-kickstart_tree-list-226972126]
+== Method: list 
+
+Description:
+
+List the available kickstartable trees for the given channel.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - Label of channel to
+ search.
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - kickstartable tree
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "base_path"
+   ** [.int]#int#  "channel_id"
+    
+
+
+
+[#apidoc-kickstart_tree-listInstallTypes-1847707373]
+== Method: listInstallTypes 
+
+Description:
+
+List the available kickstartable install types (rhel2,3,4,5 and
+ fedora9+).
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - kickstart install type
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+    
+
+
+
+[#apidoc-kickstart_tree-rename-213560315]
+== Method: rename 
+
+Description:
+
+Rename a Kickstart Tree (Distribution) in SUSE Manager.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  originalLabel - Label for the
+ kickstart tree to rename.
+ 
+* [.string]#string#  newLabel - The kickstart tree's new label.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-update-1640383742]
+== Method: update 
+
+Description:
+
+Edit a Kickstart Tree (Distribution) in SUSE Manager.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - Label for the kickstart tree.
+ 
+* [.string]#string#  basePath - Path to the base or
+ root of the kickstart tree.
+ 
+* [.string]#string#  channelLabel - Label of channel to
+ associate with kickstart tree.
+ 
+* [.string]#string#  installType - Label for
+ KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

@@ -1,0 +1,376 @@
+[#apidoc-system_provisioning_snapshot]
+= system.provisioning.snapshot
+
+
+== Available methods
+
+* <<apidoc-system_provisioning_snapshot-addTagToSnapshot-1760459579,addTagToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshot-367559104,deleteSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-1612952911,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-349810210,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-1881258837,listSnapshotConfigFiles>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotPackages-2086649316,listSnapshotPackages>>
+* <<apidoc-system_provisioning_snapshot-listSnapshots-1548028256,listSnapshots>>
+* <<apidoc-system_provisioning_snapshot-rollbackToSnapshot-116449140,rollbackToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-1119605276,rollbackToTag>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-1475476398,rollbackToTag>>
+
+== Description
+
+Provides methods to access and delete system snapshots.
+
+*Namespace*:
+
+system.provisioning.snapshot
+
+
+[#apidoc-system_provisioning_snapshot-addTagToSnapshot-1760459579]
+== Method: addTagToSnapshot 
+
+Description:
+
+Adds tag to snapshot
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  snapshotId - Id of the snapshot
+ 
+* [.string]#string#  tag - Name of the snapshot tag
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system_provisioning_snapshot-deleteSnapshot-367559104]
+== Method: deleteSnapshot 
+
+Description:
+
+Deletes a snapshot with the given snapshot id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  snapshotId - Id of snapshot to delete
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.1
+
+
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-1612952911]
+== Method: deleteSnapshots 
+
+Description:
+
+Deletes all snapshots across multiple systems based on the given date
+ criteria.  For example,
+ 
+ If the user provides startDate only, all snapshots created either on or after
+ the date provided will be removed.
+ If user provides startDate and endDate, all snapshots created on or between the
+ dates provided will be removed.
+ If the user doesn't provide a startDate and endDate, all snapshots will be
+ removed.
+ 
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  - date details
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         is provided.
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.1
+
+
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-349810210]
+== Method: deleteSnapshots 
+
+Description:
+
+Deletes all snapshots for a given system based on the date
+ criteria.  For example,
+ 
+ If the user provides startDate only, all snapshots created either on or after
+ the date provided will be removed.
+ If user provides startDate and endDate, all snapshots created on or between the
+ dates provided will be removed.
+ If the user doesn't provide a startDate and endDate, all snapshots associated
+ with the server will be removed.
+ 
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - system id of system to delete
+          snapshots for
+ 
+* [.struct]#struct#  - date details
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         is provided.
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+Available since API version: 10.1
+
+
+[#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-1881258837]
+== Method: listSnapshotConfigFiles 
+
+Description:
+
+List the config files associated with a snapshot.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  snapId
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - Configuration Revision information
+   ** [.string]#string#  "type"
+              
+                  ** file
+                  ** directory
+                  ** symlink
+              
+   ** [.string]#string#  "path" - File Path
+   ** [.string]#string#  "target_path" - Symbolic link Target File Path.
+                              Present for Symbolic links only.
+   ** [.string]#string#  "channel" - Channel Name
+   ** [.string]#string#  "contents" - File contents (base64 encoded according
+                to the contents_enc64 attribute)
+   ** [.boolean]#boolean#  "contents_enc64" -  Identifies base64 encoded content
+   ** [.int]#int#  "revision" - File Revision
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "creation" - Creation Date
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "modified" - Last Modified Date
+   ** [.string]#string#  "owner" - File Owner. Present for files or directories only.
+   ** [.string]#string#  "group" - File Group. Present for files or directories only.
+   ** [.int]#int#  "permissions" - File Permissions (Deprecated).
+                                  Present for files or directories only.
+   ** [.string]#string#  "permissions_mode" - File Permissions.
+                                      Present for files or directories only.
+   ** [.string]#string#  "selinux_ctx" - SELinux Context (optional).
+   ** [.boolean]#boolean#  "binary" - true/false , Present for files only.
+   ** [.string]#string#  "sha256" - File's sha256 signature. Present for files only.
+   ** [.string]#string#  "macro-start-delimiter" - Macro start delimiter for a config file. Present for text files only.
+   ** [.string]#string#  "macro-end-delimiter" - Macro end delimiter for a config file. Present for text files only.
+  
+      
+
+Available since API version: 10.2
+
+
+[#apidoc-system_provisioning_snapshot-listSnapshotPackages-2086649316]
+== Method: listSnapshotPackages 
+
+Description:
+
+List the packages associated with a snapshot.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  snapId
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  - package nvera
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "epoch"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "arch"
+   
+      
+
+Available since API version: 10.1
+
+
+[#apidoc-system_provisioning_snapshot-listSnapshots-1548028256]
+== Method: listSnapshots 
+
+Description:
+
+List snapshots for a given system.
+ A user may optionally provide a start and end date to narrow the snapshots that
+ will be listed.  For example,
+ 
+ If the user provides startDate only, all snapshots created either on or after
+ the date provided will be returned.
+ If user provides startDate and endDate, all snapshots created on or between the
+ dates provided will be returned.
+ If the user doesn't provide a startDate and endDate, all snapshots associated
+ with the server will be returned.
+ 
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.struct]#struct#  - date details
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "startDate" - Optional, unless endDate
+         is provided.
+         ** [.dateTime.iso8601]#dateTime.iso8601#  "endDate" - Optional.
+      
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - server snapshot
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "reason" - the reason for the snapshot's existence
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+      ** [.array]#array#  "channels"
+*** string - labels of channels associated with the
+              snapshot
+      ** [.array]#array#  "groups"
+*** string - Names of server groups associated with
+              the snapshot
+      ** [.array]#array#  "entitlements"
+*** string - Names of system entitlements associated
+              with the snapshot
+       ** [.array]#array#  "config_channels"
+*** string - Labels of config channels the snapshot
+                  is associated with.
+      ** [.array]#array#  "tags"
+*** string - Tag names associated with this snapshot.
+      ** [.string]#string#  "Invalid_reason" - If the snapshot is invalid, this is the
+                  reason (optional).
+   
+   
+
+Available since API version: 10.1
+
+
+[#apidoc-system_provisioning_snapshot-rollbackToSnapshot-116449140]
+== Method: rollbackToSnapshot 
+
+Description:
+
+Rollbacks server to snapshot
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.int]#int#  snapshotId - Id of the snapshot
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system_provisioning_snapshot-rollbackToTag-1119605276]
+== Method: rollbackToTag 
+
+Description:
+
+Rollbacks server to snapshot
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  serverId
+ 
+* [.string]#string#  tagName - Name of the snapshot tag
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system_provisioning_snapshot-rollbackToTag-1475476398]
+== Method: rollbackToTag 
+
+Description:
+
+Rollbacks server to snapshot
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  tagName - Name of the snapshot tag
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

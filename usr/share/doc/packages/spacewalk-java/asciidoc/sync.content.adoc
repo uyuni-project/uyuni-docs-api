@@ -1,0 +1,389 @@
+[#apidoc-sync_content]
+= sync.content
+
+
+== Available methods
+
+* <<apidoc-sync_content-addChannel-1092083913,addChannel>>
+* <<apidoc-sync_content-addChannels-1452158309,addChannels>>
+* <<apidoc-sync_content-addCredentials-1582466166,addCredentials>>
+* <<apidoc-sync_content-deleteCredentials-1450348360,deleteCredentials>>
+* <<apidoc-sync_content-listChannels-1694924087,listChannels>>
+* <<apidoc-sync_content-listCredentials-673004775,listCredentials>>
+* <<apidoc-sync_content-listProducts-1437978127,listProducts>>
+* <<apidoc-sync_content-synchronizeChannelFamilies-1328154889,synchronizeChannelFamilies>>
+* <<apidoc-sync_content-synchronizeChannels-1962475596,synchronizeChannels>>
+* <<apidoc-sync_content-synchronizeProducts-882144085,synchronizeProducts>>
+* <<apidoc-sync_content-synchronizeRepositories-1584060492,synchronizeRepositories>>
+* <<apidoc-sync_content-synchronizeSubscriptions-1655529269,synchronizeSubscriptions>>
+
+== Description
+
+Provides the namespace for the content synchronization methods.
+
+*Namespace*:
+
+sync.content
+
+
+[#apidoc-sync_content-addChannel-1092083913]
+== Method: addChannel 
+
+Description:
+
+Add a new channel to the SUSE Manager database
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  channelLabel - Label of the channel to add
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-addChannels-1452158309]
+== Method: addChannels 
+
+Description:
+
+Add a new channel to the SUSE Manager database
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  channelLabel - Label of the channel to add
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - enabled channel labels
+ 
+
+
+
+[#apidoc-sync_content-addCredentials-1582466166]
+== Method: addCredentials 
+
+Description:
+
+Add organization credentials (mirror credentials) to SUSE Manager.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  username - Organization credentials
+                                                  (Mirror credentials) username
+ 
+* [.string]#string#  password - Organization credentials
+                                                  (Mirror credentials) password
+ 
+* [.boolean]#boolean#  primary - Make this the primary credentials
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-deleteCredentials-1450348360]
+== Method: deleteCredentials 
+
+Description:
+
+Delete organization credentials (mirror credentials) from SUSE Manager.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  username - Username of credentials to delete
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-listChannels-1694924087]
+== Method: listChannels 
+
+Description:
+
+List all accessible channels.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - channel
+     ** [.string]#string#  "arch" - Architecture of the channel
+     ** [.string]#string#  "description" - Description of the channel
+     ** [.string]#string#  "family" - Channel family label
+     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     ** [.string]#string#  "label" - Label of the channel
+     ** [.string]#string#  "name" - Name of the channel
+     ** [.boolean]#boolean#  "optional" - Channel is optional
+     ** [.string]#string#  "parent" - The label of the parent channel
+     ** [.string]#string#  "product_name" - Product name
+     ** [.string]#string#  "product_version" - Product version
+     ** [.string]#string#  "source_url" - Repository source URL
+     ** [.string]#string#  "status" - Status: available, unavailable or installed
+     ** [.string]#string#  "summary" - Channel summary
+     ** [.string]#string#  "update_tag" - Update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+                     
+
+
+
+[#apidoc-sync_content-listCredentials-673004775]
+== Method: listCredentials 
+
+Description:
+
+List organization credentials (mirror credentials) available in
+             SUSE Manager.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - credentials
+     ** [.int]#int#  "id" - ID of the credentials
+     ** [.string]#string#  "user" - username
+     ** [.boolean]#boolean#  "isPrimary" - primary
+    
+                     
+
+
+
+[#apidoc-sync_content-listProducts-1437978127]
+== Method: listProducts 
+
+Description:
+
+List all accessible products.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.array]#array# :
+                       * [.struct]#struct#  - product
+     ** [.string]#string#  "friendly_name" - Friendly name of the product
+     ** [.string]#string#  "arch" - Architecture
+     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     ** [.array]#array# :
+       * [.struct]#struct#  - channel
+     ** [.string]#string#  "arch" - Architecture of the channel
+     ** [.string]#string#  "description" - Description of the channel
+     ** [.string]#string#  "family" - Channel family label
+     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     ** [.string]#string#  "label" - Label of the channel
+     ** [.string]#string#  "name" - Name of the channel
+     ** [.boolean]#boolean#  "optional" - Channel is optional
+     ** [.string]#string#  "parent" - The label of the parent channel
+     ** [.string]#string#  "product_name" - Product name
+     ** [.string]#string#  "product_version" - Product version
+     ** [.string]#string#  "source_url" - Repository source URL
+     ** [.string]#string#  "status" - Status: available, unavailable or installed
+     ** [.string]#string#  "summary" - Channel summary
+     ** [.string]#string#  "update_tag" - Update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+          ** [.array]#array# :
+       *** [.struct]#struct#  - extension product
+         **** [.string]#string#  "friendly_name" - Friendly name of extension product
+         **** [.string]#string#  "arch" - Architecture
+         **** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+         **** [.array]#array# :
+           * [.struct]#struct#  - channel
+     ** [.string]#string#  "arch" - Architecture of the channel
+     ** [.string]#string#  "description" - Description of the channel
+     ** [.string]#string#  "family" - Channel family label
+     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
+     ** [.string]#string#  "label" - Label of the channel
+     ** [.string]#string#  "name" - Name of the channel
+     ** [.boolean]#boolean#  "optional" - Channel is optional
+     ** [.string]#string#  "parent" - The label of the parent channel
+     ** [.string]#string#  "product_name" - Product name
+     ** [.string]#string#  "product_version" - Product version
+     ** [.string]#string#  "source_url" - Repository source URL
+     ** [.string]#string#  "status" - Status: available, unavailable or installed
+     ** [.string]#string#  "summary" - Channel summary
+     ** [.string]#string#  "update_tag" - Update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+                          ** [.boolean]#boolean#  "recommended" - Recommended
+    
+                     
+
+
+
+[#apidoc-sync_content-synchronizeChannelFamilies-1328154889]
+== Method: synchronizeChannelFamilies 
+
+Description:
+
+Synchronize channel families between the Customer Center
+             and the SUSE Manager database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-synchronizeChannels-1962475596]
+== Method: synchronizeChannels 
+
+Description:
+
+(Deprecated) Synchronize channels between the Customer Center
+             and the SUSE Manager database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-synchronizeProducts-882144085]
+== Method: synchronizeProducts 
+
+Description:
+
+Synchronize SUSE products between the Customer Center
+             and the SUSE Manager database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-synchronizeRepositories-1584060492]
+== Method: synchronizeRepositories 
+
+Description:
+
+Synchronize repositories between the Customer Center
+             and the SUSE Manager database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+* [.string]#string#  mirrorUrl - Optional mirror url or null
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-synchronizeSubscriptions-1655529269]
+== Method: synchronizeSubscriptions 
+
+Description:
+
+Synchronize subscriptions between the Customer Center
+             and the SUSE Manager database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey - Session token, issued at login
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

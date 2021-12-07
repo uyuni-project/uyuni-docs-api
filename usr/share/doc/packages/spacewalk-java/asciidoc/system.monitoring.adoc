@@ -1,0 +1,51 @@
+[#apidoc-system_monitoring]
+= system.monitoring
+
+
+== Available methods
+
+* <<apidoc-system_monitoring-listEndpoints-1084946006,listEndpoints>>
+
+== Description
+
+Provides methods to access information about managed systems, applications and formulas which can be
+ relevant for Prometheus monitoring
+
+*Namespace*:
+
+system.monitoring
+
+
+[#apidoc-system_monitoring-listEndpoints-1084946006]
+== Method: listEndpoints 
+
+Description:
+
+Get the list of monitoring endpoint details.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.array]#array# :
+** [.int]#int#  - systemID
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  - endpoint_info
+   ** [.int]#int#  "system_id"
+   ** [.string]#string#  "endpoint_name"
+   ** [.string]#string#  "exporter_name"
+   ** [.string]#string#  "module"
+   ** [.string]#string#  "path"
+   ** [.int]#int#  "port"
+   ** [.bool]#bool#  "tls_enabled"
+  
+    
+
+

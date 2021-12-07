@@ -1,0 +1,178 @@
+[#apidoc-recurringaction]
+= recurringaction
+
+
+== Available methods
+
+* <<apidoc-recurringaction-create-976783209,create>>
+* <<apidoc-recurringaction-delete-103725336,delete>>
+* <<apidoc-recurringaction-listByEntity-62443122,listByEntity>>
+* <<apidoc-recurringaction-lookupById-1021635394,lookupById>>
+* <<apidoc-recurringaction-update-1968852725,update>>
+
+== Description
+
+Provides methods to handle Recurring Actions for Minions, Groups and Organizations.
+
+*Namespace*:
+
+recurringaction
+
+
+[#apidoc-recurringaction-create-976783209]
+== Method: create 
+
+Description:
+
+Create a new recurring action.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  - actionProps
+      ** [.string]#string#  "entity_type" - The type of the target entity. One of the following:
+        
+          ** MINION
+          ** GROUP
+          ** ORG
+        
+      ** [.int]#int#  "entity_id" - The id of the target entity
+      ** [.string]#string#  "name" - The name of the action
+      ** [.string]#string#  "cron_expr" - The execution frequency of the action
+      ** [.boolean]#boolean#  "test" - Whether the action should be executed in test mode (optional)
+   
+
+Returns:
+
+* [.int]#int#  id - The id of the recurring action
+ 
+
+
+
+[#apidoc-recurringaction-delete-103725336]
+== Method: delete 
+
+Description:
+
+Delete recurring action with given action id.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId - Id of the action
+ 
+
+Returns:
+
+* [.int]#int#  id - The id of the recurring action
+ 
+
+
+
+[#apidoc-recurringaction-listByEntity-62443122]
+== Method: listByEntity 
+
+Description:
+
+Return a list of recurring actions for a given entity.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  entityType - Type of the target entity. Can be MINION, GROUP or ORG.
+ 
+* [.int]#int#  entityId - Id of the target entity
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - Recurring Action information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "entity_id"
+   ** [.string]#string#  "entity_type"
+   ** [.string]#string#  "cron_expr"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+   ** [.string]#string#  "creator"
+   ** [.boolean]#boolean#  "test"
+   ** [.boolean]#boolean#  "active"
+  
+       
+
+
+
+[#apidoc-recurringaction-lookupById-1021635394]
+== Method: lookupById 
+
+Description:
+
+Return recurring action with given action id.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  actionId - Id of the action
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Recurring Action information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "entity_id"
+   ** [.string]#string#  "entity_type"
+   ** [.string]#string#  "cron_expr"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+   ** [.string]#string#  "creator"
+   ** [.boolean]#boolean#  "test"
+   ** [.boolean]#boolean#  "active"
+   
+ 
+
+
+
+[#apidoc-recurringaction-update-1968852725]
+== Method: update 
+
+Description:
+
+Update a recurring action.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  - actionProps
+      ** [.int]#int#  "id" - The id of the action to update
+      ** [.string]#string#  "name" - The name of the action (optional)
+      ** [.string]#string#  "cron_expr" - The execution frequency of the action (optional)
+      ** [.boolean]#boolean#  "test" - Whether the action should be executed in test mode (optional)
+      ** [.boolean]#boolean#  "active" - Whether the action should be active (optional)
+   
+
+Returns:
+
+* [.int]#int#  id - The id of the recurring action
+ 
+
+

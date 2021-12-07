@@ -1,0 +1,118 @@
+[#apidoc-preferences_locale]
+= preferences.locale
+
+
+== Available methods
+
+* <<apidoc-preferences_locale-listLocales-369977528,listLocales>>
+* <<apidoc-preferences_locale-listTimeZones-1614427365,listTimeZones>>
+* <<apidoc-preferences_locale-setLocale-966902272,setLocale>>
+* <<apidoc-preferences_locale-setTimeZone-1969829158,setTimeZone>>
+
+== Description
+
+Provides methods to access and modify user locale information
+
+*Namespace*:
+
+preferences.locale
+
+
+[#apidoc-preferences_locale-listLocales-369977528]
+== Method: listLocales 
+
+Description:
+
+Returns a list of all understood locales. Can be
+ used as input to setLocale.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  - Locale code.
+ 
+
+
+
+[#apidoc-preferences_locale-listTimeZones-1614427365]
+== Method: listTimeZones 
+
+Description:
+
+Returns a list of all understood timezones. Results can be
+ used as input to setTimeZone.
+
+
+
+
+Parameters:
+
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  - timezone
+   ** [.int]#int#  "time_zone_id" - Unique identifier for timezone.
+   ** [.string]#string#  "olson_name" - Name as identified by the Olson database.
+  
+  
+
+
+
+[#apidoc-preferences_locale-setLocale-966902272]
+== Method: setLocale 
+
+Description:
+
+Set a user's locale.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.string]#string#  locale - Locale to set. (from listLocales)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-preferences_locale-setTimeZone-1969829158]
+== Method: setTimeZone 
+
+Description:
+
+Set a user's timezone.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - User's login name.
+ 
+* [.int]#int#  tzid - Timezone ID. (from listTimeZones)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

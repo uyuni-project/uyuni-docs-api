@@ -1,0 +1,736 @@
+[#apidoc-systemgroup]
+= systemgroup
+
+
+== Available methods
+
+* <<apidoc-systemgroup-addOrRemoveAdmins-303127592,addOrRemoveAdmins>>
+* <<apidoc-systemgroup-addOrRemoveSystems-389415616,addOrRemoveSystems>>
+* <<apidoc-systemgroup-create-266267666,create>>
+* <<apidoc-systemgroup-delete-485281961,delete>>
+* <<apidoc-systemgroup-getDetails-1844498480,getDetails>>
+* <<apidoc-systemgroup-getDetails-858889712,getDetails>>
+* <<apidoc-systemgroup-listActiveSystemsInGroup-383717053,listActiveSystemsInGroup>>
+* <<apidoc-systemgroup-listAdministrators-724030931,listAdministrators>>
+* <<apidoc-systemgroup-listAllGroups-400761853,listAllGroups>>
+* <<apidoc-systemgroup-listAssignedConfigChannels-1090642246,listAssignedConfigChannels>>
+* <<apidoc-systemgroup-listAssignedFormuals-215600758,listAssignedFormuals>>
+* <<apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-1873149031,listGroupsWithNoAssociatedAdmins>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup-1653282104,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup-916019076,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listSystems-214170716,listSystems>>
+* <<apidoc-systemgroup-listSystemsMinimal-44746251,listSystemsMinimal>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-1490885900,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-121656075,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-1037612046,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-subscribeConfigChannel-1896132887,subscribeConfigChannel>>
+* <<apidoc-systemgroup-unsubscribeConfigChannel-1952021559,unsubscribeConfigChannel>>
+* <<apidoc-systemgroup-update-1210242977,update>>
+
+== Description
+
+Provides methods to access and modify system groups.
+
+*Namespace*:
+
+systemgroup
+
+
+[#apidoc-systemgroup-addOrRemoveAdmins-303127592]
+== Method: addOrRemoveAdmins 
+
+Description:
+
+Add or remove administrators to/from the given group. SUSE Manager and
+ Organization administrators are granted access to groups within their organization
+ by default; therefore, users with those roles should not be included in the array
+ provided. Caller must be an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.string]#string#  - loginName - User's loginName
+ 
+* [.int]#int#  add - 1 to add administrators, 0 to remove.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-systemgroup-addOrRemoveSystems-389415616]
+== Method: addOrRemoveSystems 
+
+Description:
+
+Add/remove the given servers to a system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.int]#int#  - serverId
+ 
+* [.boolean]#boolean#  add - True to add to the group,
+              False to remove.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-systemgroup-create-266267666]
+== Method: create 
+
+Description:
+
+Create a new system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - Name of the system group.
+ 
+* [.string]#string#  description - Description of the
+                  system group.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
+ 
+
+
+
+[#apidoc-systemgroup-delete-485281961]
+== Method: delete 
+
+Description:
+
+Delete a system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-systemgroup-getDetails-1844498480]
+== Method: getDetails 
+
+Description:
+
+Retrieve details of a ServerGroup based on it's id
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemGroupId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
+ 
+
+
+
+[#apidoc-systemgroup-getDetails-858889712]
+== Method: getDetails 
+
+Description:
+
+Retrieve details of a ServerGroup based on it's name
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
+ 
+
+
+
+[#apidoc-systemgroup-listActiveSystemsInGroup-383717053]
+== Method: listActiveSystemsInGroup 
+
+Description:
+
+Lists active systems within a server group
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - server_id
+ 
+
+
+
+[#apidoc-systemgroup-listAdministrators-724030931]
+== Method: listAdministrators 
+
+Description:
+
+Returns the list of users who can administer the given group.
+ Caller must be a system group admin or an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* string systemGroupName 
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  - user
+              ** [.int]#int#  "id"
+              ** [.string]#string#  "login"
+              ** [.string]#string#  "login_uc" - upper case version of the login
+              ** [.boolean]#boolean#  "enabled" - true if user is enabled,
+                         false if the user is disabled
+       
+    
+
+
+
+[#apidoc-systemgroup-listAllGroups-400761853]
+== Method: listAllGroups 
+
+Description:
+
+Retrieve a list of system groups that are accessible by the logged
+      in user.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+       
+       
+
+
+
+[#apidoc-systemgroup-listAssignedConfigChannels-1090642246]
+== Method: listAssignedConfigChannels 
+
+Description:
+
+List all Configuration Channels assigned to a system group
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Configuration Channel information
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
+   * [.struct]#struct#  - Configuration Channel Type information
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+  
+
+Available since API version: 25
+
+
+[#apidoc-systemgroup-listAssignedFormuals-215600758]
+== Method: listAssignedFormuals 
+
+Description:
+
+List all Configuration Channels assigned to a system group
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - formula
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "description"
+     ** [.string]#string#  "formula_group"
+  
+  
+
+Available since API version: 25
+
+
+[#apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-1873149031]
+== Method: listGroupsWithNoAssociatedAdmins 
+
+Description:
+
+Returns a list of system groups that do not have an administrator.
+ (who is not an organization administrator, as they have implicit access to
+ system groups) Caller must be an organization administrator.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+       
+       
+
+
+
+[#apidoc-systemgroup-listInactiveSystemsInGroup-1653282104]
+== Method: listInactiveSystemsInGroup 
+
+Description:
+
+Lists inactive systems within a server group using a
+          specified inactivity time.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.int]#int#  daysInactive - Number of days a system
+           must not check in to be considered inactive.
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - server_id
+ 
+
+
+
+[#apidoc-systemgroup-listInactiveSystemsInGroup-916019076]
+== Method: listInactiveSystemsInGroup 
+
+Description:
+
+Lists inactive systems within a server group using the default
+          1 day threshold.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - server_id
+ 
+
+
+
+[#apidoc-systemgroup-listSystems-214170716]
+== Method: listSystems 
+
+Description:
+
+Return a list of systems associated with this system group.
+ User must have access to this system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - server details
+         ** [.int]#int#  "id" - System id
+         ** [.string]#string#  "profile_name"
+         ** [.string]#string#  "machine_id"
+         ** [.string]#string#  "minion_id"
+         ** [.string]#string#  "base_entitlement" - System's base entitlement label
+
+         ** [.array]#array#  "string"
+*** addon_entitlements - System's addon entitlements labels,
+                       currently only 'virtualization_host'
+          ** [.boolean]#boolean#  "auto_update" - True if system has auto errata updates
+                                          enabled.
+          ** [.string]#string#  "release" - The Operating System release (i.e. 4AS,
+                      5Server
+          ** [.string]#string#  "address1"
+          ** [.string]#string#  "address2"
+          ** [.string]#string#  "city"
+          ** [.string]#string#  "state"
+          ** [.string]#string#  "country"
+          ** [.string]#string#  "building"
+          ** [.string]#string#  "room"
+          ** [.string]#string#  "rack"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "hostname"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot"
+          ** [.string]#string#  "osa_status" - Either 'unknown', 'offline', or 'online'.
+          ** [.boolean]#boolean#  "lock_status" - True indicates that the system is locked.
+           False indicates that the system is unlocked.
+          ** [.string]#string#  "virtualization" - Virtualization type -
+           for virtual guests only (optional)
+          ** [.string]#string#  "contact_method" - One of the following:
+            
+              ** default
+              ** ssh-push
+              ** ssh-push-tunnel
+            
+   
+       
+
+
+
+[#apidoc-systemgroup-listSystemsMinimal-44746251]
+== Method: listSystemsMinimal 
+
+Description:
+
+Return a list of systems associated with this system group.
+ User must have access to this system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+
+Returns:
+
+* [.array]#array# :
+          * [.struct]#struct#  - system
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+             successfully checked in
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
+     ** [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+             to any assigned channel
+     ** [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
+  
+       
+
+
+
+[#apidoc-systemgroup-scheduleApplyErrataToActive-1490885900]
+== Method: scheduleApplyErrataToActive 
+
+Description:
+
+Schedules an action to apply errata updates to active systems
+ from a group.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.int]#int#  - errataId
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - actionId
+ 
+
+Available since API version: 13.0
+
+
+[#apidoc-systemgroup-scheduleApplyErrataToActive-121656075]
+== Method: scheduleApplyErrataToActive 
+
+Description:
+
+Schedules an action to apply errata updates to active systems
+ from a group at a given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.int]#int#  - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - actionId
+ 
+
+Available since API version: 13.0
+
+
+[#apidoc-systemgroup-scheduleApplyErrataToActive-1037612046]
+== Method: scheduleApplyErrataToActive 
+
+Description:
+
+Schedules an action to apply errata updates to active systems
+ from a group at a given date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.int]#int#  - errataId
+ 
+* dateTime.iso8601 earliestOccurrence 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.int]#int#  - actionId
+ 
+
+Available since API version: 24
+
+
+[#apidoc-systemgroup-subscribeConfigChannel-1896132887]
+== Method: subscribeConfigChannel 
+
+Description:
+
+Subscribe given config channels to a system group
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.string]#string#  - configChannelLabels
+ 
+
+Returns:
+
+* 1 on success, exception on failure 
+ 
+
+
+
+[#apidoc-systemgroup-unsubscribeConfigChannel-1952021559]
+== Method: unsubscribeConfigChannel 
+
+Description:
+
+Unsubscribe given config channels to a system group
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.array]#array# :
+** [.string]#string#  - configChannelLabels
+ 
+
+Returns:
+
+* 1 on success, exception on failure 
+ 
+
+
+
+[#apidoc-systemgroup-update-1210242977]
+== Method: update 
+
+Description:
+
+Update an existing system group.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  systemGroupName
+ 
+* [.string]#string#  description
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Server Group
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
+ 
+
+
