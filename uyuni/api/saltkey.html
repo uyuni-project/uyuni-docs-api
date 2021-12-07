@@ -332,7 +332,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/saltkey.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2021.12-api-update/modules/api/pages/saltkey.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -343,7 +343,25 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-saltkey-delete-1091633125">delete</a></p>
+<p><a href="#apidoc-saltkey-accept-1520596362">accept</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-acceptedList-406952631">acceptedList</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-delete-762522842">delete</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-deniedList-1310907099">deniedList</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-pendingList-1603529730">pendingList</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-reject-445735200">reject</a></p>
+</li>
+<li>
+<p><a href="#apidoc-saltkey-rejectedList-1472987955">rejectedList</a></p>
 </li>
 </ul>
 </div>
@@ -364,7 +382,79 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-delete-1091633125"><a class="anchor" href="#apidoc-saltkey-delete-1091633125"></a><a class="link" href="#apidoc-saltkey-delete-1091633125">Method: delete</a></h2>
+<h2 id="apidoc-saltkey-accept-1520596362"><a class="anchor" href="#apidoc-saltkey-accept-1520596362"></a><a class="link" href="#apidoc-saltkey-accept-1520596362">Method: accept</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Accept a minion key</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+<li>
+<p>[. string ]# string #   minionId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-acceptedList-406952631"><a class="anchor" href="#apidoc-saltkey-acceptedList-406952631"></a><a class="link" href="#apidoc-saltkey-acceptedList-406952631">Method: acceptedList</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List accepted salt keys</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #  -  Accepted salt key list</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-delete-762522842"><a class="anchor" href="#apidoc-saltkey-delete-762522842"></a><a class="link" href="#apidoc-saltkey-delete-762522842">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -378,10 +468,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  sessionKey</p>
+<p>[. string ]# string #   loggedInUser</p>
 </li>
 <li>
-<p><span class="string">string</span>  minionId</p>
+<p>[. string ]# string #   minionId</p>
 </li>
 </ul>
 </div>
@@ -392,6 +482,154 @@
 <ul>
 <li>
 <p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-deniedList-1310907099"><a class="anchor" href="#apidoc-saltkey-deniedList-1310907099"></a><a class="link" href="#apidoc-saltkey-deniedList-1310907099">Method: deniedList</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List of denied salt keys</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #  -  Denied salt key list</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-pendingList-1603529730"><a class="anchor" href="#apidoc-saltkey-pendingList-1603529730"></a><a class="link" href="#apidoc-saltkey-pendingList-1603529730">Method: pendingList</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List pending salt keys</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #  -  Pending salt key list</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-reject-445735200"><a class="anchor" href="#apidoc-saltkey-reject-445735200"></a><a class="link" href="#apidoc-saltkey-reject-445735200">Method: reject</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Reject a minion key</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+<li>
+<p>[. string ]# string #   minionId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-saltkey-rejectedList-1472987955"><a class="anchor" href="#apidoc-saltkey-rejectedList-1472987955"></a><a class="link" href="#apidoc-saltkey-rejectedList-1472987955">Method: rejectedList</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List of rejected salt keys</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #   loggedInUser</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[. string ]# string #  -  Rejected salt key list</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
