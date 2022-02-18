@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>packages.search :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/packages.search.html">
+    <title>Uyuni API Documentation :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/apilist.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -218,7 +218,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -313,7 +313,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="packages.search.html">packages.search</a></li>
+    <li><a href="apilist.html">Uyuni API Documentation</a></li>
   </ul>
 </nav>
 
@@ -321,534 +321,222 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="packages.provider.html">
-        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="preferences.locale.html">
-        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/packages.search.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/apilist.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">packages.search</h1>
-<div class="sect1">
-<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<h1 class="page">Uyuni API Documentation</h1>
+<div id="preamble">
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#apidoc-packages_search-advanced-1476625795">advanced</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-advancedWithActKey-1123757033">advancedWithActKey</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-advancedWithChannel-105451526">advancedWithChannel</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-name-1501618847">name</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-nameAndDescription-752686443">nameAndDescription</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-nameAndSummary-1216070398">nameAndSummary</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Wecome to the Uyuni API. By using the included API calls, you can easily automate many of
+the tasks you perform everyday. All API calls are grouped by common functionality.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<h2 id="_legal_notice"><a class="anchor" href="#_legal_notice"></a><a class="link" href="#_legal_notice">Legal Notice</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Methods to interface to package search capabilities in search server..</p>
+<p>Copyright (c) 2014 Red Hat, Inc.
+Copyright (c) 2019 SUSE LLC</p>
 </div>
 <div class="paragraph">
-<p><strong>Namespace</strong>:</p>
+<p>This software is licensed to you under the GNU General Public License, version 2 (GPLv2). There is
+NO WARRANTY for this software, express or implied, including the implied warranties of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2 along with this software;
+if not, see <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" class="bare">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
 </div>
 <div class="paragraph">
-<p>packages.search</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advanced-1476625795"><a class="anchor" href="#apidoc-packages_search-advanced-1476625795"></a><a class="link" href="#apidoc-packages_search-advanced-1476625795">Method: advanced</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
+<p>Red Hat trademarks are not licensed under GPLv2. No permission is granted to use or replicate Red Hat
+trademarks that are incorporated in this software or its documentation.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><a href="actionchain.html#apidoc-actionchain" class="page">actionchain.adoc#apidoc-actionchain</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
+<p><a href="activationkey.html#apidoc-activationkey" class="page">activationkey.adoc#apidoc-activationkey</a></p>
 </li>
 <li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
+<p><a href="admin.html#apidoc-admin" class="page">admin.adoc#apidoc-admin</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "name"</p>
+<p><a href="admin.monitoring.html#apidoc-admin_monitoring" class="page">admin.monitoring.adoc#apidoc-admin_monitoring</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "summary"</p>
+<p><a href="ansible.html#apidoc-ansible" class="page">ansible.adoc#apidoc-ansible</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "description"</p>
+<p><a href="api.html#apidoc-api" class="page">api.adoc#apidoc-api</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "version"</p>
+<p><a href="audit.html#apidoc-audit" class="page">audit.adoc#apidoc-audit</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "release"</p>
+<p><a href="auth.html#apidoc-auth" class="page">auth.adoc#apidoc-auth</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch"</p>
+<p><a href="channel.html#apidoc-channel" class="page">channel.adoc#apidoc-channel</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "epoch"</p>
+<p><a href="channel.access.html#apidoc-channel_access" class="page">channel.access.adoc#apidoc-channel_access</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithActKey-1123757033"><a class="anchor" href="#apidoc-packages_search-advancedWithActKey-1123757033"></a><a class="link" href="#apidoc-packages_search-advancedWithActKey-1123757033">Method: advancedWithActKey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are associated with a given activation key.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><a href="channel.org.html#apidoc-channel_org" class="page">channel.org.adoc#apidoc-channel_org</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
+<p><a href="channel.software.html#apidoc-channel_software" class="page">channel.software.adoc#apidoc-channel_software</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  actKey - activation key to look for packages in</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
+<p><a href="configchannel.html#apidoc-configchannel" class="page">configchannel.adoc#apidoc-configchannel</a></p>
 </li>
 <li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
+<p><a href="contentmanagement.html#apidoc-contentmanagement" class="page">contentmanagement.adoc#apidoc-contentmanagement</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "name"</p>
+<p><a href="distchannel.html#apidoc-distchannel" class="page">distchannel.adoc#apidoc-distchannel</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "summary"</p>
+<p><a href="errata.html#apidoc-errata" class="page">errata.adoc#apidoc-errata</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "description"</p>
+<p><a href="formula.html#apidoc-formula" class="page">formula.adoc#apidoc-formula</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "version"</p>
+<p><a href="image.html#apidoc-image" class="page">image.adoc#apidoc-image</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "release"</p>
+<p><a href="image.profile.html#apidoc-image_profile" class="page">image.profile.adoc#apidoc-image_profile</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch"</p>
+<p><a href="image.store.html#apidoc-image_store" class="page">image.store.adoc#apidoc-image_store</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "epoch"</p>
+<p><a href="kickstart.html#apidoc-kickstart" class="page">kickstart.adoc#apidoc-kickstart</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithChannel-105451526"><a class="anchor" href="#apidoc-packages_search-advancedWithChannel-105451526"></a><a class="link" href="#apidoc-packages_search-advancedWithChannel-105451526">Method: advancedWithChannel</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are in the passed in channel label.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><a href="kickstart.filepreservation.html#apidoc-kickstart_filepreservation" class="page">kickstart.filepreservation.adoc#apidoc-kickstart_filepreservation</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
+<p><a href="kickstart.keys.html#apidoc-kickstart_keys" class="page">kickstart.keys.adoc#apidoc-kickstart_keys</a></p>
 </li>
 <li>
-<p><span class="string">string</span>  channelLabel - Channel Label</p>
+<p><a href="kickstart.profile.html#apidoc-kickstart_profile" class="page">kickstart.profile.adoc#apidoc-kickstart_profile</a></p>
+</li>
+<li>
+<p><a href="kickstart.profile.keys.html#apidoc-kickstart_profile_keys" class="page">kickstart.profile.keys.adoc#apidoc-kickstart_profile_keys</a></p>
+</li>
+<li>
+<p><a href="kickstart.profile.software.html#apidoc-kickstart_profile_software" class="page">kickstart.profile.software.adoc#apidoc-kickstart_profile_software</a></p>
+</li>
+<li>
+<p><a href="kickstart.profile.system.html#apidoc-kickstart_profile_system" class="page">kickstart.profile.system.adoc#apidoc-kickstart_profile_system</a></p>
+</li>
+<li>
+<p><a href="kickstart.snippet.html#apidoc-kickstart_snippet" class="page">kickstart.snippet.adoc#apidoc-kickstart_snippet</a></p>
+</li>
+<li>
+<p><a href="kickstart.tree.html#apidoc-kickstart_tree" class="page">kickstart.tree.adoc#apidoc-kickstart_tree</a></p>
+</li>
+<li>
+<p><a href="maintenance.html#apidoc-maintenance" class="page">maintenance.adoc#apidoc-maintenance</a></p>
+</li>
+<li>
+<p><a href="org.html#apidoc-org" class="page">org.adoc#apidoc-org</a></p>
+</li>
+<li>
+<p><a href="org.trusts.html#apidoc-org_trusts" class="page">org.trusts.adoc#apidoc-org_trusts</a></p>
+</li>
+<li>
+<p><a href="packages.html#apidoc-packages" class="page">packages.adoc#apidoc-packages</a></p>
+</li>
+<li>
+<p><a href="packages.provider.html#apidoc-packages_provider" class="page">packages.provider.adoc#apidoc-packages_provider</a></p>
+</li>
+<li>
+<p><a href="packages.search.html#apidoc-packages_search" class="page">packages.search.adoc#apidoc-packages_search</a></p>
+</li>
+<li>
+<p><a href="preferences.locale.html#apidoc-preferences_locale" class="page">preferences.locale.adoc#apidoc-preferences_locale</a></p>
+</li>
+<li>
+<p><a href="proxy.html#apidoc-proxy" class="page">proxy.adoc#apidoc-proxy</a></p>
+</li>
+<li>
+<p><a href="recurringaction.html#apidoc-recurringaction" class="page">recurringaction.adoc#apidoc-recurringaction</a></p>
+</li>
+<li>
+<p><a href="saltkey.html#apidoc-saltkey" class="page">saltkey.adoc#apidoc-saltkey</a></p>
+</li>
+<li>
+<p><a href="schedule.html#apidoc-schedule" class="page">schedule.adoc#apidoc-schedule</a></p>
+</li>
+<li>
+<p><a href="subscriptionmatching.pinnedsubscription.html#apidoc-subscriptionmatching_pinnedsubscription" class="page">subscriptionmatching.pinnedsubscription.adoc#apidoc-subscriptionmatching_pinnedsubscription</a></p>
+</li>
+<li>
+<p><a href="sync.content.html#apidoc-sync_content" class="page">sync.content.adoc#apidoc-sync_content</a></p>
+</li>
+<li>
+<p><a href="sync.master.html#apidoc-sync_master" class="page">sync.master.adoc#apidoc-sync_master</a></p>
+</li>
+<li>
+<p><a href="sync.slave.html#apidoc-sync_slave" class="page">sync.slave.adoc#apidoc-sync_slave</a></p>
+</li>
+<li>
+<p><a href="system.html#apidoc-system" class="page">system.adoc#apidoc-system</a></p>
+</li>
+<li>
+<p><a href="system.config.html#apidoc-system_config" class="page">system.config.adoc#apidoc-system_config</a></p>
+</li>
+<li>
+<p><a href="system.custominfo.html#apidoc-system_custominfo" class="page">system.custominfo.adoc#apidoc-system_custominfo</a></p>
+</li>
+<li>
+<p><a href="system.monitoring.html#apidoc-system_monitoring" class="page">system.monitoring.adoc#apidoc-system_monitoring</a></p>
+</li>
+<li>
+<p><a href="system.provisioning.powermanagement.html#apidoc-system_provisioning_powermanagement" class="page">system.provisioning.powermanagement.adoc#apidoc-system_provisioning_powermanagement</a></p>
+</li>
+<li>
+<p><a href="system.provisioning.snapshot.html#apidoc-system_provisioning_snapshot" class="page">system.provisioning.snapshot.adoc#apidoc-system_provisioning_snapshot</a></p>
+</li>
+<li>
+<p><a href="system.scap.html#apidoc-system_scap" class="page">system.scap.adoc#apidoc-system_scap</a></p>
+</li>
+<li>
+<p><a href="system.search.html#apidoc-system_search" class="page">system.search.adoc#apidoc-system_search</a></p>
+</li>
+<li>
+<p><a href="systemgroup.html#apidoc-systemgroup" class="page">systemgroup.adoc#apidoc-systemgroup</a></p>
+</li>
+<li>
+<p><a href="user.html#apidoc-user" class="page">user.adoc#apidoc-user</a></p>
+</li>
+<li>
+<p><a href="user.external.html#apidoc-user_external" class="page">user.external.adoc#apidoc-user_external</a></p>
+</li>
+<li>
+<p><a href="virtualhostmanager.html#apidoc-virtualhostmanager" class="page">virtualhostmanager.adoc#apidoc-virtualhostmanager</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-name-1501618847"><a class="anchor" href="#apidoc-packages_search-name-1501618847"></a><a class="link" href="#apidoc-packages_search-name-1501618847">Method: name</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given name.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name - package name to search for</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-nameAndDescription-752686443"><a class="anchor" href="#apidoc-packages_search-nameAndDescription-752686443"></a><a class="link" href="#apidoc-packages_search-nameAndDescription-752686443">Method: nameAndDescription</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or description</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or description</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-nameAndSummary-1216070398"><a class="anchor" href="#apidoc-packages_search-nameAndSummary-1216070398"></a><a class="link" href="#apidoc-packages_search-nameAndSummary-1216070398">Method: nameAndSummary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or summary.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or summary</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>Generated on: 2/18/2022</p>
 </div>
 </div>
 </div>
 
 <div class="cedents grid" role="navigation">
 
-  <div class="prev">
-      <a href="packages.provider.html" title="packages.provider">
-        <div class="change-page">
-          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
-        <span class="label">Previous</span>
-        <br/>
-        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">packages.provider</span>
-        </div>
-      </a>
   </div>
 
-  <div class="next">
-      <a href="preferences.locale.html" title="preferences.locale">
-        <div class="change-page">
-          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
-        <span class="label">Next</span>
-        <br/>
-       <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">preferences.locale</span>
-        </div>
-      </a>
   </div>
 </div>
 </article>
@@ -911,7 +599,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/packages.search.html'
+    window.antora.pagePath = '/uyuni/api/apilist.html'
 </script>
 <script src="../../_/js/site.js"></script>
 
