@@ -1,0 +1,246 @@
+[#apidoc-admin]
+= admin
+
+
+== Available methods
+
+* <<apidoc-admin-create-1821332066,create>>
+* <<apidoc-admin-create-1808428108,create>>
+* <<apidoc-admin-delete-1934897224,delete>>
+* <<apidoc-admin-getDetails-1271176560,getDetails>>
+* <<apidoc-admin-list-1573832937,list>>
+* <<apidoc-admin-setDetails-2112012700,setDetails>>
+
+== Description
+
+Provides methods to access and modify pay-as-you-go ssh connection data
+
+*Namespace*:
+
+admin
+
+
+[#apidoc-admin-create-1821332066]
+== Method: create 
+
+Description:
+
+Create a new ssh connection data to extract data from
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  host - hostname or IP address to the instance, will fail if
+ already in use.
+ 
+* [.int]#int#  port
+ 
+* [.string]#string#  username
+ 
+* [.string]#string#  password
+ 
+* [.string]#string#  key - private key to use in authentication
+ 
+* [.string]#string#  keyPassword
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-admin-create-1808428108]
+== Method: create 
+
+Description:
+
+Create a new ssh connection data to extract data from
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  description
+ 
+* [.string]#string#  host - hostname or IP address to the instance, will fail if
+ already in use.
+ 
+* [.int]#int#  port
+ 
+* [.string]#string#  username
+ 
+* [.string]#string#  password
+ 
+* [.string]#string#  key - private key to use in authentication
+ 
+* [.string]#string#  keyPassword
+ 
+* [.string]#string#  bastionHost - hostname or IP address to a bastion host
+ 
+* [.int]#int#  bastionPort
+ 
+* [.string]#string#  bastionUsername
+ 
+* [.string]#string#  bastionPassword
+ 
+* [.string]#string#  bastionKey - private key to use in bastion authentication
+ 
+* [.string]#string#  bastionKeyPassword
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-admin-delete-1934897224]
+== Method: delete 
+
+Description:
+
+Returns a list of ssh connection data registered.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - hostname or IP address of the instance
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-admin-getDetails-1271176560]
+== Method: getDetails 
+
+Description:
+
+Returns a list of ssh connection data registered.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - hostname or IP address of the instance, will fail if
+ host doesn't exist.
+ 
+
+Returns:
+
+* * [.struct]#struct#  -  sshData 
+              ** [.string]#string#  "description"
+              ** [.string]#string#  "hostname"
+              ** [.int]#int#  "port"
+              ** [.string]#string#  "username"
+              ** [.string]#string#  "password"
+              ** [.string]#string#  "key"
+              ** [.string]#string#  "key_password"
+              ** [.string]#string#  "bastion_hostname"
+              ** [.int]#int#  "bastion_port"
+              ** [.string]#string#  "bastion_username"
+              ** [.string]#string#  "bastion_password"
+              ** [.string]#string#  "bastion_key"
+              ** [.string]#string#  "bastion_key_password"
+        
+ 
+
+
+
+[#apidoc-admin-list-1573832937]
+== Method: list 
+
+Description:
+
+Returns a list of ssh connection data registered.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  -  sshData 
+              ** [.string]#string#  "description"
+              ** [.string]#string#  "hostname"
+              ** [.int]#int#  "port"
+              ** [.string]#string#  "username"
+              ** [.string]#string#  "password"
+              ** [.string]#string#  "key"
+              ** [.string]#string#  "key_password"
+              ** [.string]#string#  "bastion_hostname"
+              ** [.int]#int#  "bastion_port"
+              ** [.string]#string#  "bastion_username"
+              ** [.string]#string#  "bastion_password"
+              ** [.string]#string#  "bastion_key"
+              ** [.string]#string#  "bastion_key_password"
+       
+  
+
+
+
+[#apidoc-admin-setDetails-2112012700]
+== Method: setDetails 
+
+Description:
+
+Updates the details of a ssh connection data
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  host - hostname or IP address to the instance, will fail if
+ host doesn't exist.
+ 
+* [.struct]#struct#  - user details
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "port"
+     ** [.string]#string#  "username"
+     ** [.string]#string#  "password"
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "key_password"
+     ** [.string]#string#  "bastion_host"
+     ** [.int]#int#  "bastion_port"
+     ** [.string]#string#  "bastion_username"
+     ** [.string]#string#  "bastion_password"
+     ** [.string]#string#  "bastion_key"
+     ** [.string]#string#  "bastion_key_password"
+    
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
