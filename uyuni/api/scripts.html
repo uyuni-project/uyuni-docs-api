@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>packages.search :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/packages.search.html">
+    <title>Sample Scripts :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/scripts.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -218,7 +218,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -313,7 +313,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="packages.search.html">packages.search</a></li>
+    <li><a href="scripts.html">Sample Scripts</a></li>
   </ul>
 </nav>
 
@@ -321,534 +321,183 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="packages.provider.html">
-        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="preferences.locale.html">
-        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/packages.search.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/scripts.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">packages.search</h1>
+<h1 class="page">Sample Scripts</h1>
 <div class="sect1">
-<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#apidoc-packages_search-advanced-1476625795">advanced</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-advancedWithActKey-1123757033">advancedWithActKey</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-advancedWithChannel-105451526">advancedWithChannel</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-name-1501618847">name</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-nameAndDescription-752686443">nameAndDescription</a></p>
-</li>
-<li>
-<p><a href="#apidoc-packages_search-nameAndSummary-1216070398">nameAndSummary</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<h2 id="_perl_example"><a class="anchor" href="#_perl_example"></a><a class="link" href="#_perl_example">Perl Example</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Methods to interface to package search capabilities in search server..</p>
+<p>This Perl example shows the <code>system.listUserSystems</code> call being used to get a
+list of systems a user has access to. In the example below, the name of each system will be printed.</p>
 </div>
-<div class="paragraph">
-<p><strong>Namespace</strong>:</p>
-</div>
-<div class="paragraph">
-<p>packages.search</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advanced-1476625795"><a class="anchor" href="#apidoc-packages_search-advanced-1476625795"></a><a class="link" href="#apidoc-packages_search-advanced-1476625795">Method: advanced</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
+<pre class="highlightjs highlight"><code class="language-perl hljs" data-lang="perl">#!/usr/bin/perl
+use Frontier::Client;
+
+my $HOST = 'manager.example.com';
+my $user = 'username';
+my $pass = 'password';
+
+my $client = new Frontier::Client(url =&gt; "http://$HOST/rpc/api");
+my $session = $client-&gt;call('auth.login',$user, $pass);
+
+my $systems = $client-&gt;call('system.listUserSystems', $session);
+foreach my $system (@$systems) {
+   print $system-&gt;{'name'}."\n";
+}
+$client-&gt;call('auth.logout', $session);</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithActKey-1123757033"><a class="anchor" href="#apidoc-packages_search-advancedWithActKey-1123757033"></a><a class="link" href="#apidoc-packages_search-advancedWithActKey-1123757033">Method: advancedWithActKey</a></h2>
+<h2 id="_python_2_example"><a class="anchor" href="#_python_2_example"></a><a class="link" href="#_python_2_example">Python 2 Example</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Description:</p>
+<p>Below is an example of the <code>user.listUsers</code> call being used. Only the login of each
+user is printed.</p>
 </div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are associated with a given activation key.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
+import xmlrpclib
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = xmlrpclib.Server(MANAGER_URL, verbose=0)
+
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+list = client.user.list_users(key)
+for user in list:
+  print user.get('login')
+
+client.auth.logout(key)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Parameters:</p>
+<p>The following code shows how to use date-time parameters. This code will schedule immediate installation of package rhnlib-2.5.22.9.el6.noarch to system with id 1000000001.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
-</li>
-<li>
-<p><span class="string">string</span>  actKey - activation key to look for packages in</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithChannel-105451526"><a class="anchor" href="#apidoc-packages_search-advancedWithChannel-105451526"></a><a class="link" href="#apidoc-packages_search-advancedWithChannel-105451526">Method: advancedWithChannel</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are in the passed in channel label.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
+from datetime import datetime
+import time
+import xmlrpclib
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = xmlrpclib.Server(MANAGER_URL, verbose=0)
+
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+package_list = client.packages.findByNvrea(key, 'rhnlib', '2.5.22', '9.el6', '', 'noarch')
+today = datetime.today()
+earliest_occurrence = xmlrpclib.DateTime(today)
+client.system.schedulePackageInstall(key, 1000000001, package_list[0]['id'], earliest_occurrence)
+
+client.auth.logout(key)</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
-</li>
-<li>
-<p><span class="string">string</span>  channelLabel - Channel Label</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-name-1501618847"><a class="anchor" href="#apidoc-packages_search-name-1501618847"></a><a class="link" href="#apidoc-packages_search-name-1501618847">Method: name</a></h2>
+<h2 id="_python_3_with_ssl_example"><a class="anchor" href="#_python_3_with_ssl_example"></a><a class="link" href="#_python_3_with_ssl_example">Python 3 with SSL Example</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Description:</p>
+<p>Below is an example of the <code>user.listUsers</code> call being called.</p>
 </div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given name.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+from xmlrpc.client import ServerProxy
+import ssl
+
+MANAGER_URL = "https://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+# You might need to set to set other options depending on your
+# server SSL configuartion and your local SSL configuration
+context = ssl.create_default_context()
+client = ServerProxy(MANAGER_URL, context=context)
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+
+print(client.user.list_users(key))
+
+client.auth.logout(key)</code></pre>
 </div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name - package name to search for</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-nameAndDescription-752686443"><a class="anchor" href="#apidoc-packages_search-nameAndDescription-752686443"></a><a class="link" href="#apidoc-packages_search-nameAndDescription-752686443">Method: nameAndDescription</a></h2>
+<h2 id="_python_3_example"><a class="anchor" href="#_python_3_example"></a><a class="link" href="#_python_3_example">Python 3 Example</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Description:</p>
+<p>Below is an example of the <code>user.listUsers</code> call being called.</p>
 </div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or description</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+from xmlrpc.client import ServerProxy
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = ServerProxy(MANAGER_URL)
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+
+print(client.user.list_users(key))
+
+client.auth.logout(key)</code></pre>
 </div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or description</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-nameAndSummary-1216070398"><a class="anchor" href="#apidoc-packages_search-nameAndSummary-1216070398"></a><a class="link" href="#apidoc-packages_search-nameAndSummary-1216070398">Method: nameAndSummary</a></h2>
+<h2 id="_ruby_example"><a class="anchor" href="#_ruby_example"></a><a class="link" href="#_ruby_example">Ruby Example</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Description:</p>
+<p>Below is an example of the <code>channel.listAllChannels</code> API call. List of channel labels is printed.</p>
 </div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or summary.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">#!/usr/bin/ruby
+require "xmlrpc/client"
+
+@MANAGER_URL = "http://manager.example.com/rpc/api"
+@MANAGER_LOGIN = "username"
+@MANAGER_PASSWORD = "password"
+
+@client = XMLRPC::Client.new2(@MANAGER_URL)
+
+@key = @client.call('auth.login', @MANAGER_LOGIN, @MANAGER_PASSWORD)
+channels = @client.call('channel.listAllChannels', @key)
+for channel in channels do
+   p channel["label"]
+end
+
+@client.call('auth.logout', @key)</code></pre>
 </div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or summary</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 
 <div class="cedents grid" role="navigation">
 
-  <div class="prev">
-      <a href="packages.provider.html" title="packages.provider">
-        <div class="change-page">
-          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
-        <span class="label">Previous</span>
-        <br/>
-        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">packages.provider</span>
-        </div>
-      </a>
   </div>
 
-  <div class="next">
-      <a href="preferences.locale.html" title="preferences.locale">
-        <div class="change-page">
-          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
-        <span class="label">Next</span>
-        <br/>
-       <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">preferences.locale</span>
-        </div>
-      </a>
   </div>
 </div>
 </article>
@@ -911,7 +560,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/packages.search.html'
+    window.antora.pagePath = '/uyuni/api/scripts.html'
 </script>
 <script src="../../_/js/site.js"></script>
 

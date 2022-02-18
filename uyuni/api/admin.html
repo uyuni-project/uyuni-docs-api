@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>packages.search :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/packages.search.html">
+    <title>admin :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/admin.html">
     <meta name="generator" content="Antora 2.2.0">
     <link rel="stylesheet" href="../../_/css/site.css">
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
@@ -218,7 +218,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.provider.html">packages.provider</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="packages.search.html">packages.search</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -313,7 +313,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="packages.search.html">packages.search</a></li>
+    <li><a href="admin.html">admin</a></li>
   </ul>
 </nav>
 
@@ -321,41 +321,37 @@
 
   <div class="edit-this-page">
     <span class="prev-caret">
-      <a href="packages.provider.html">
-        <i class="fas fa-arrow-left custom-color" data-tippy="Previous page" id="previousPage"></i></a></span>
 &nbsp;
 <span class="next-caret">
-      <a href="preferences.locale.html">
-        <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/packages.search.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/admin.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
-<h1 class="page">packages.search</h1>
+<h1 class="page">admin</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-packages_search-advanced-1476625795">advanced</a></p>
+<p><a href="#apidoc-admin-create-1821332066">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages_search-advancedWithActKey-1123757033">advancedWithActKey</a></p>
+<p><a href="#apidoc-admin-create-1808428108">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages_search-advancedWithChannel-105451526">advancedWithChannel</a></p>
+<p><a href="#apidoc-admin-delete-1934897224">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages_search-name-1501618847">name</a></p>
+<p><a href="#apidoc-admin-getDetails-1271176560">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages_search-nameAndDescription-752686443">nameAndDescription</a></p>
+<p><a href="#apidoc-admin-list-1573832937">list</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages_search-nameAndSummary-1216070398">nameAndSummary</a></p>
+<p><a href="#apidoc-admin-setDetails-2112012700">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -365,34 +361,24 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Methods to interface to package search capabilities in search server..</p>
+<p>Provides methods to access and modify pay-as-you-go ssh connection data</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>packages.search</p>
+<p>admin</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-advanced-1476625795"><a class="anchor" href="#apidoc-packages_search-advanced-1476625795"></a><a class="link" href="#apidoc-packages_search-advanced-1476625795">Method: advanced</a></h2>
+<h2 id="apidoc-admin-create-1821332066"><a class="anchor" href="#apidoc-admin-create-1821332066"></a><a class="link" href="#apidoc-admin-create-1821332066">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
+<p>Create a new ssh connection data to extract data from</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -403,7 +389,240 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+already in use.</p>
+</li>
+<li>
+<p><span class="int">int</span>  port</p>
+</li>
+<li>
+<p><span class="string">string</span>  username</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - private key to use in authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  keyPassword</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-admin-create-1808428108"><a class="anchor" href="#apidoc-admin-create-1808428108"></a><a class="link" href="#apidoc-admin-create-1808428108">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new ssh connection data to extract data from</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+already in use.</p>
+</li>
+<li>
+<p><span class="int">int</span>  port</p>
+</li>
+<li>
+<p><span class="string">string</span>  username</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - private key to use in authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  keyPassword</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionHost - hostname or IP address to a bastion host</p>
+</li>
+<li>
+<p><span class="int">int</span>  bastionPort</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionUsername</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionPassword</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionKey - private key to use in bastion authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionKeyPassword</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-admin-delete-1934897224"><a class="anchor" href="#apidoc-admin-delete-1934897224"></a><a class="link" href="#apidoc-admin-delete-1934897224">Method: delete</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of ssh connection data registered.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address of the instance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-admin-getDetails-1271176560"><a class="anchor" href="#apidoc-admin-getDetails-1271176560"></a><a class="link" href="#apidoc-admin-getDetails-1271176560">Method: getDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of ssh connection data registered.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address of the instance, will fail if
+host doesn&#8217;t exist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  -  sshData</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "key_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bastion_port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key_password"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-admin-list-1573832937"><a class="anchor" href="#apidoc-admin-list-1573832937"></a><a class="link" href="#apidoc-admin-list-1573832937">Method: list</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of ssh connection data registered.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
 </li>
 </ul>
 </div>
@@ -416,35 +635,47 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 <p><span class="array">array</span> :</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  - package overview</p>
+<p><span class="struct">struct</span>  -  sshData</p>
 <div class="ulist">
 <ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
 <li>
 <p><span class="string">string</span>  "description"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "version"</p>
+<p><span class="string">string</span>  "hostname"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "release"</p>
+<p><span class="int">int</span>  "port"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "arch"</p>
+<p><span class="string">string</span>  "username"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "epoch"</p>
+<p><span class="string">string</span>  "password"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "provider"</p>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "key_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bastion_port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key_password"</p>
 </li>
 </ul>
 </div>
@@ -454,24 +685,13 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithActKey-1123757033"><a class="anchor" href="#apidoc-packages_search-advancedWithActKey-1123757033"></a><a class="link" href="#apidoc-packages_search-advancedWithActKey-1123757033">Method: advancedWithActKey</a></h2>
+<h2 id="apidoc-admin-setDetails-2112012700"><a class="anchor" href="#apidoc-admin-setDetails-2112012700"></a><a class="link" href="#apidoc-admin-setDetails-2112012700">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are associated with a given activation key.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
+<p>Updates the details of a ssh connection data</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -482,10 +702,51 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+host doesn&#8217;t exist.</p>
 </li>
 <li>
-<p><span class="string">string</span>  actKey - activation key to look for packages in</p>
+<p><span class="struct">struct</span>  - user details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "key_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_host"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bastion_port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_password"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_key_password"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -495,330 +756,7 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 <div class="ulist">
 <ul>
 <li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-advancedWithChannel-105451526"><a class="anchor" href="#apidoc-packages_search-advancedWithChannel-105451526"></a><a class="link" href="#apidoc-packages_search-advancedWithChannel-105451526">Method: advancedWithChannel</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Advanced method to search lucene indexes with a passed in query written
- in Lucene Query Parser syntax, additionally this method will limit results to those
- which are in the passed in channel label.
- Lucene Query Parser syntax is defined at</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>lucene.apache.org.
-Fields searchable for Packages:
-name, epoch, version, release, arch, description, summary
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  luceneQuery - a query written in the form of Lucene QueryParser Syntax</p>
-</li>
-<li>
-<p><span class="string">string</span>  channelLabel - Channel Label</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-name-1501618847"><a class="anchor" href="#apidoc-packages_search-name-1501618847"></a><a class="link" href="#apidoc-packages_search-name-1501618847">Method: name</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given name.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name - package name to search for</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-nameAndDescription-752686443"><a class="anchor" href="#apidoc-packages_search-nameAndDescription-752686443"></a><a class="link" href="#apidoc-packages_search-nameAndDescription-752686443">Method: nameAndDescription</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or description</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or description</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-packages_search-nameAndSummary-1216070398"><a class="anchor" href="#apidoc-packages_search-nameAndSummary-1216070398"></a><a class="link" href="#apidoc-packages_search-nameAndSummary-1216070398">Method: nameAndSummary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Search the lucene package indexes for all packages which
-          match the given query in name or summary.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  query - text to match in package name or summary</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  - package overview</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "summary"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "version"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "release"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "arch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "epoch"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "provider"</p>
-</li>
-</ul>
-</div>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
@@ -827,28 +765,8 @@ Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"</p
 
 <div class="cedents grid" role="navigation">
 
-  <div class="prev">
-      <a href="packages.provider.html" title="packages.provider">
-        <div class="change-page">
-          <div class="arrow-prev"><i class="fas fa-arrow-left"></i></div>
-        <span class="label">Previous</span>
-        <br/>
-        <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">packages.provider</span>
-        </div>
-      </a>
   </div>
 
-  <div class="next">
-      <a href="preferences.locale.html" title="preferences.locale">
-        <div class="change-page">
-          <div class="arrow-next"><i class="fas fa-arrow-right"></i></div>
-        <span class="label">Next</span>
-        <br/>
-       <!-- <span class="label title"><strong>:</strong></span> -->
-        <span class="title">preferences.locale</span>
-        </div>
-      </a>
   </div>
 </div>
 </article>
@@ -911,7 +829,7 @@ tippy('#submitPR', {
 <script type="text/javascript">
     window.antora = window.antora || {}
     window.antora.basePath = '../..'
-    window.antora.pagePath = '/uyuni/api/packages.search.html'
+    window.antora.pagePath = '/uyuni/api/admin.html'
 </script>
 <script src="../../_/js/site.js"></script>
 
