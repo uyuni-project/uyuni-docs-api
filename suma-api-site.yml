@@ -5,15 +5,15 @@ site:
 
   # site.url should be adjusted before building depending on the desired target.
   # Docserv Production https://documentation.suse.com/suma/4.2/api
-  url: https://documentation.suse.com/suma/4.3/api/
+  url: https://documentation.suse.com/suma/4.2/api
 
 asciidoc:
   attributes:
 
     # Included products and versions
     productname: 'SUSE Manager'
-    productnumber: '4.3'
-    docversion: '4.3'
+    productnumber: '4.2'
+    docversion: '4.2'
 
     # Asciidoc Configuration Attributes
     linkattrs: true
@@ -24,11 +24,11 @@ asciidoc:
 content:
   sources:
   # Uncomment to build from your local git clone
-    - url: .
-      start_path: .
+    #- url: .
+    #  start_path: .
 
   # build from remote github repository.
-  #- url: https://github.com/uyuni-project/uyuni-docs-api.git
+    - url: https://github.com/uyuni-project/uyuni-docs-api.git
       branches:
         - '.'
 
