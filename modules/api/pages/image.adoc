@@ -4,14 +4,15 @@
 
 == Available methods
 
-* <<apidoc-image-delete-1388117264,delete>>
-* <<apidoc-image-getCustomValues-448206835,getCustomValues>>
-* <<apidoc-image-getDetails-1393284987,getDetails>>
-* <<apidoc-image-getRelevantErrata-437475,getRelevantErrata>>
-* <<apidoc-image-importImage-1487529549,importImage>>
-* <<apidoc-image-listImages-1450945109,listImages>>
-* <<apidoc-image-listPackages-221971351,listPackages>>
-* <<apidoc-image-scheduleImageBuild-1985467039,scheduleImageBuild>>
+* <<apidoc-image-delete-589058590,delete>>
+* <<apidoc-image-getCustomValues-1957398032,getCustomValues>>
+* <<apidoc-image-getDetails-1762556809,getDetails>>
+* <<apidoc-image-getPillar-391463702,getPillar>>
+* <<apidoc-image-getRelevantErrata-1085888709,getRelevantErrata>>
+* <<apidoc-image-importImage-1368067090,importImage>>
+* <<apidoc-image-listImages-1562669118,listImages>>
+* <<apidoc-image-listPackages-2102001207,listPackages>>
+* <<apidoc-image-scheduleImageBuild-1525789217,scheduleImageBuild>>
 
 == Description
 
@@ -22,7 +23,7 @@ Provides methods to access and modify images.
 image
 
 
-[#apidoc-image-delete-1388117264]
+[#apidoc-image-delete-589058590]
 == Method: delete 
 
 Description:
@@ -46,7 +47,7 @@ Returns:
 
 
 
-[#apidoc-image-getCustomValues-448206835]
+[#apidoc-image-getCustomValues-1957398032]
 == Method: getCustomValues 
 
 Description:
@@ -72,7 +73,7 @@ Returns:
 
 
 
-[#apidoc-image-getDetails-1393284987]
+[#apidoc-image-getDetails-1762556809]
 == Method: getDetails 
 
 Description:
@@ -126,7 +127,31 @@ Returns:
 
 
 
-[#apidoc-image-getRelevantErrata-437475]
+[#apidoc-image-getPillar-391463702]
+== Method: getPillar 
+
+Description:
+
+Get pillar of an Image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+
+Returns:
+
+* struct 
+ 
+
+
+
+[#apidoc-image-getRelevantErrata-1085888709]
 == Method: getRelevantErrata 
 
 Description:
@@ -160,7 +185,7 @@ Returns:
 
 
 
-[#apidoc-image-importImage-1487529549]
+[#apidoc-image-importImage-1368067090]
 == Method: importImage 
 
 Description:
@@ -198,7 +223,7 @@ Returns:
 
 
 
-[#apidoc-image-listImages-1450945109]
+[#apidoc-image-listImages-1562669118]
 == Method: listImages 
 
 Description:
@@ -230,7 +255,7 @@ Returns:
 
 
 
-[#apidoc-image-listPackages-221971351]
+[#apidoc-image-listPackages-2102001207]
 == Method: listPackages 
 
 Description:
@@ -260,7 +285,7 @@ Returns:
 
 
 
-[#apidoc-image-scheduleImageBuild-1985467039]
+[#apidoc-image-scheduleImageBuild-1525789217]
 == Method: scheduleImageBuild 
 
 Description:

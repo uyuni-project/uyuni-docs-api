@@ -4,13 +4,15 @@
 
 == Available methods
 
-* <<apidoc-proxy-activateProxy-1501084178,activateProxy>>
-* <<apidoc-proxy-createMonitoringScout-224591535,createMonitoringScout>>
-* <<apidoc-proxy-deactivateProxy-1940424465,deactivateProxy>>
-* <<apidoc-proxy-isProxy-814945818,isProxy>>
-* <<apidoc-proxy-listAvailableProxyChannels-1140174868,listAvailableProxyChannels>>
-* <<apidoc-proxy-listProxies-1803439542,listProxies>>
-* <<apidoc-proxy-listProxyClients-1549393863,listProxyClients>>
+* <<apidoc-proxy-activateProxy-573424492,activateProxy>>
+* <<apidoc-proxy-containerConfig-1834041945,containerConfig>>
+* <<apidoc-proxy-containerConfig-2011281484,containerConfig>>
+* <<apidoc-proxy-createMonitoringScout-1788841007,createMonitoringScout>>
+* <<apidoc-proxy-deactivateProxy-979865152,deactivateProxy>>
+* <<apidoc-proxy-isProxy-107131289,isProxy>>
+* <<apidoc-proxy-listAvailableProxyChannels-876994034,listAvailableProxyChannels>>
+* <<apidoc-proxy-listProxies-666389658,listProxies>>
+* <<apidoc-proxy-listProxyClients-564908963,listProxyClients>>
 
 == Description
 
@@ -22,7 +24,7 @@ Provides methods to activate/deactivate a proxy
 proxy
 
 
-[#apidoc-proxy-activateProxy-1501084178]
+[#apidoc-proxy-activateProxy-573424492]
 == Method: activateProxy 
 
 Description:
@@ -48,7 +50,98 @@ Returns:
 
 
 
-[#apidoc-proxy-createMonitoringScout-224591535]
+[#apidoc-proxy-containerConfig-1834041945]
+== Method: containerConfig 
+
+Description:
+
+Compute and download the configuration for proxy containers
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  proxyName
+ 
+* [.string]#string#  server
+ 
+* [.int]#int#  maxCache
+ 
+* [.string]#string#  email
+ 
+* [.string]#string#  rootCA
+ 
+* [.array]#array# :
+** [.string]#string#  - intermediate CAs used to sign the SSL certificate in PEM format
+ 
+* [.string]#string#  proxyCrt
+ 
+* [.string]#string#  proxyKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.byte]#byte#  - binary object - package file
+ 
+
+
+
+[#apidoc-proxy-containerConfig-2011281484]
+== Method: containerConfig 
+
+Description:
+
+Compute and download the configuration for proxy containers
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  proxyName
+ 
+* [.string]#string#  server
+ 
+* [.int]#int#  maxCache
+ 
+* [.string]#string#  email
+ 
+* [.string]#string#  caCrt
+ 
+* [.string]#string#  caKey
+ 
+* [.string]#string#  caPassword
+ 
+* [.string]#string#  cnames
+ 
+* [.string]#string#  country
+ 
+* [.string]#string#  state
+ 
+* [.string]#string#  city
+ 
+* [.string]#string#  org
+ 
+* [.string]#string#  orgUnit
+ 
+* [.string]#string#  sslEmail
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.byte]#byte#  - binary object - package file
+ 
+
+
+
+[#apidoc-proxy-createMonitoringScout-1788841007]
 == Method: createMonitoringScout 
 
 Description:
@@ -71,7 +164,7 @@ Returns:
 Available since API version: 10.7
 
 
-[#apidoc-proxy-deactivateProxy-1940424465]
+[#apidoc-proxy-deactivateProxy-979865152]
 == Method: deactivateProxy 
 
 Description:
@@ -94,7 +187,7 @@ Returns:
 
 
 
-[#apidoc-proxy-isProxy-814945818]
+[#apidoc-proxy-isProxy-107131289]
 == Method: isProxy 
 
 Description:
@@ -117,7 +210,7 @@ Returns:
 
 
 
-[#apidoc-proxy-listAvailableProxyChannels-1140174868]
+[#apidoc-proxy-listAvailableProxyChannels-876994034]
 == Method: listAvailableProxyChannels 
 
 Description:
@@ -142,7 +235,7 @@ Returns:
 Available since API version: 10.5
 
 
-[#apidoc-proxy-listProxies-1803439542]
+[#apidoc-proxy-listProxies-666389658]
 == Method: listProxies 
 
 Description:
@@ -175,7 +268,7 @@ Returns:
 
 
 
-[#apidoc-proxy-listProxyClients-1549393863]
+[#apidoc-proxy-listProxyClients-564908963]
 == Method: listProxyClients 
 
 Description:

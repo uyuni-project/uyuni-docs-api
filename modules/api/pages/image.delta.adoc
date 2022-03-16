@@ -1,0 +1,106 @@
+[#apidoc-image_delta]
+= image.delta
+
+
+== Available methods
+
+* <<apidoc-image_delta-createDeltaImage-921452657,createDeltaImage>>
+* <<apidoc-image_delta-getDetails-379671137,getDetails>>
+* <<apidoc-image_delta-listDeltas-595319755,listDeltas>>
+
+== Description
+
+Provides methods to access and modify delta images.
+
+*Namespace*:
+
+image.delta
+
+
+[#apidoc-image_delta-createDeltaImage-921452657]
+== Method: createDeltaImage 
+
+Description:
+
+Import an image and schedule an inspect afterwards
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sourceImageId
+ 
+* [.int]#int#  targetImageId
+ 
+* [.string]#string#  file
+ 
+* [.struct]#struct#  pillar
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the inspect action created
+ 
+
+
+
+[#apidoc-image_delta-getDetails-379671137]
+== Method: getDetails 
+
+Description:
+
+Get details of an Image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sourceImageId
+ 
+* [.int]#int#  targetImageId
+ 
+
+Returns:
+
+* * [.struct]#struct#  - Delta Image information
+   ** [.int]#int#  "source_id"
+   ** [.int]#int#  "target_id"
+   ** [.string]#string#  "file" - file path
+   ** [.struct]#struct#  "pillar" - pillar data
+   
+ 
+
+
+
+[#apidoc-image_delta-listDeltas-595319755]
+== Method: listDeltas 
+
+Description:
+
+List available DeltaImages
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  - Delta Image information
+   ** [.int]#int#  "source_id"
+   ** [.int]#int#  "target_id"
+   ** [.string]#string#  "file" - file path
+   ** [.struct]#struct#  "pillar" - pillar data
+    
+
+

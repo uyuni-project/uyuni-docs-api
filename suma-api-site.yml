@@ -4,16 +4,16 @@ site:
   start_page: suse-manager::index
 
   # site.url should be adjusted before building depending on the desired target.
-  # Docserv Production https://documentation.suse.com/suma/4.2/api
-  url: https://documentation.suse.com/suma/4.2/api
+  # Docserv Production https://documentation.suse.com/suma/4.3/api
+  url: https://documentation.suse.com/suma/4.3/api
 
 asciidoc:
   attributes:
 
     # Included products and versions
     productname: 'SUSE Manager'
-    productnumber: '4.2'
-    docversion: '4.2'
+    productnumber: '4.3'
+    docversion: '4.3'
 
     # Asciidoc Configuration Attributes
     linkattrs: true
@@ -30,7 +30,7 @@ content:
   # build from remote github repository.
     - url: https://github.com/uyuni-project/uyuni-docs-api.git
       branches:
-        - '.'
+        - 'manager-4.3-api-beta2'
 
 ui:
   bundle:
