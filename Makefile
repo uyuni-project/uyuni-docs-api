@@ -5,7 +5,7 @@ SHELL = bash
 
 
 # SUMA Productname and file replacement
-PRODUCTNAME_SUMA ?= 'SUSE Manager API'
+PRODUCTNAME_SUMA ?= 'SUSE Manager'
 FILENAME_SUMA ?= suse_manager
 SUMA_CONTENT ?= true
 
