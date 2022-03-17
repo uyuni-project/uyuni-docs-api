@@ -4,27 +4,28 @@
 
 == Available methods
 
-* <<apidoc-org-create-332151172,create>>
-* <<apidoc-org-delete-1203500109,delete>>
-* <<apidoc-org-getClmSyncPatchesConfig-885186621,getClmSyncPatchesConfig>>
-* <<apidoc-org-getDetails-1159675750,getDetails>>
-* <<apidoc-org-getDetails-1562292756,getDetails>>
-* <<apidoc-org-getPolicyForScapFileUpload-1477312973,getPolicyForScapFileUpload>>
-* <<apidoc-org-getPolicyForScapResultDeletion-591211382,getPolicyForScapResultDeletion>>
-* <<apidoc-org-isContentStagingEnabled-1082753194,isContentStagingEnabled>>
-* <<apidoc-org-isErrataEmailNotifsForOrg-336141860,isErrataEmailNotifsForOrg>>
-* <<apidoc-org-isOrgConfigManagedByOrgAdmin-715093362,isOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-listOrgs-90332066,listOrgs>>
-* <<apidoc-org-listUsers-1387774425,listUsers>>
-* <<apidoc-org-migrateSystems-2005488238,migrateSystems>>
-* <<apidoc-org-setClmSyncPatchesConfig-400867034,setClmSyncPatchesConfig>>
-* <<apidoc-org-setContentStaging-1759914811,setContentStaging>>
-* <<apidoc-org-setErrataEmailNotifsForOrg-1173151026,setErrataEmailNotifsForOrg>>
-* <<apidoc-org-setOrgConfigManagedByOrgAdmin-1682716048,setOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-setPolicyForScapFileUpload-513413353,setPolicyForScapFileUpload>>
-* <<apidoc-org-setPolicyForScapResultDeletion-37162128,setPolicyForScapResultDeletion>>
-* <<apidoc-org-transferSystems-1605357721,transferSystems>>
-* <<apidoc-org-updateName-662967389,updateName>>
+* <<apidoc-org-create-168703427,create>>
+* <<apidoc-org-createFirst-2021357462,createFirst>>
+* <<apidoc-org-delete-289304070,delete>>
+* <<apidoc-org-getClmSyncPatchesConfig-2052572633,getClmSyncPatchesConfig>>
+* <<apidoc-org-getDetails-1851947704,getDetails>>
+* <<apidoc-org-getDetails-214853420,getDetails>>
+* <<apidoc-org-getPolicyForScapFileUpload-1186984840,getPolicyForScapFileUpload>>
+* <<apidoc-org-getPolicyForScapResultDeletion-1799201343,getPolicyForScapResultDeletion>>
+* <<apidoc-org-isContentStagingEnabled-1004308853,isContentStagingEnabled>>
+* <<apidoc-org-isErrataEmailNotifsForOrg-1703353597,isErrataEmailNotifsForOrg>>
+* <<apidoc-org-isOrgConfigManagedByOrgAdmin-1348009723,isOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-listOrgs-844789788,listOrgs>>
+* <<apidoc-org-listUsers-261716431,listUsers>>
+* <<apidoc-org-migrateSystems-1882802109,migrateSystems>>
+* <<apidoc-org-setClmSyncPatchesConfig-1948950538,setClmSyncPatchesConfig>>
+* <<apidoc-org-setContentStaging-669668653,setContentStaging>>
+* <<apidoc-org-setErrataEmailNotifsForOrg-1916766608,setErrataEmailNotifsForOrg>>
+* <<apidoc-org-setOrgConfigManagedByOrgAdmin-428475414,setOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-setPolicyForScapFileUpload-1367544605,setPolicyForScapFileUpload>>
+* <<apidoc-org-setPolicyForScapResultDeletion-1774347256,setPolicyForScapResultDeletion>>
+* <<apidoc-org-transferSystems-254917009,transferSystems>>
+* <<apidoc-org-updateName-1231029475,updateName>>
 
 == Description
 
@@ -36,7 +37,7 @@ Contains methods to access common organization management
 org
 
 
-[#apidoc-org-create-332151172]
+[#apidoc-org-create-168703427]
 == Method: create 
 
 Description:
@@ -88,7 +89,51 @@ Returns:
 
 
 
-[#apidoc-org-delete-1203500109]
+[#apidoc-org-createFirst-2021357462]
+== Method: createFirst 
+
+Description:
+
+Create first organization and user after initial setup without authentication
+
+
+
+
+Parameters:
+
+* [.string]#string#  orgName - Organization name. Must meet same
+ criteria as in the web UI.
+ 
+* [.string]#string#  adminLogin - New administrator login name.
+ 
+* [.string]#string#  adminPassword - New administrator password.
+ 
+* [.string]#string#  firstName - New administrator's first name.
+ 
+* [.string]#string#  lastName - New administrator's first name.
+ 
+* [.string]#string#  email - New administrator's e-mail.
+ 
+
+Returns:
+
+* * [.struct]#struct#  - organization info
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - Number of active users in the organization.
+   ** [.int]#int#  "systems" - Number of systems in the organization.
+   ** [.int]#int#  "trusts" - Number of trusted organizations.
+   ** [.int]#int#  "system_groups" - Number of system groups in the organization. (optional)
+   ** [.int]#int#  "activation_keys" - Number of activation keys in the organization. (optional)
+   ** [.int]#int#  "kickstart_profiles" - Number of kickstart profiles in the organization. (optional)
+   ** [.int]#int#  "configuration_channels" - Number of configuration channels in the organization. (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - Is staging content enabled in organization. (optional)
+   
+ 
+
+
+
+[#apidoc-org-delete-289304070]
 == Method: delete 
 
 Description:
@@ -113,7 +158,7 @@ Returns:
 
 
 
-[#apidoc-org-getClmSyncPatchesConfig-885186621]
+[#apidoc-org-getClmSyncPatchesConfig-2052572633]
 == Method: getClmSyncPatchesConfig 
 
 Description:
@@ -137,7 +182,7 @@ Returns:
 
 
 
-[#apidoc-org-getDetails-1159675750]
+[#apidoc-org-getDetails-1851947704]
 == Method: getDetails 
 
 Description:
@@ -173,7 +218,7 @@ Returns:
 
 
 
-[#apidoc-org-getDetails-1562292756]
+[#apidoc-org-getDetails-214853420]
 == Method: getDetails 
 
 Description:
@@ -209,7 +254,7 @@ Returns:
 
 
 
-[#apidoc-org-getPolicyForScapFileUpload-1477312973]
+[#apidoc-org-getPolicyForScapFileUpload-1186984840]
 == Method: getPolicyForScapFileUpload 
 
 Description:
@@ -236,7 +281,7 @@ Returns:
 
 
 
-[#apidoc-org-getPolicyForScapResultDeletion-591211382]
+[#apidoc-org-getPolicyForScapResultDeletion-1799201343]
 == Method: getPolicyForScapResultDeletion 
 
 Description:
@@ -263,7 +308,7 @@ Returns:
 
 
 
-[#apidoc-org-isContentStagingEnabled-1082753194]
+[#apidoc-org-isContentStagingEnabled-1004308853]
 == Method: isContentStagingEnabled 
 
 Description:
@@ -288,7 +333,7 @@ Returns:
 
 
 
-[#apidoc-org-isErrataEmailNotifsForOrg-336141860]
+[#apidoc-org-isErrataEmailNotifsForOrg-1703353597]
 == Method: isErrataEmailNotifsForOrg 
 
 Description:
@@ -314,13 +359,13 @@ Returns:
 
 
 
-[#apidoc-org-isOrgConfigManagedByOrgAdmin-715093362]
+[#apidoc-org-isOrgConfigManagedByOrgAdmin-1348009723]
 == Method: isOrgConfigManagedByOrgAdmin 
 
 Description:
 
 Returns whether Organization Administrator is able to manage his
- organization configuration. This may have a high impact on general Uyuni performance.
+ organization configuration. This may have a high impact on general #product() performance.
 
 
 
@@ -339,7 +384,7 @@ Returns:
 
 
 
-[#apidoc-org-listOrgs-90332066]
+[#apidoc-org-listOrgs-844789788]
 == Method: listOrgs 
 
 Description:
@@ -373,7 +418,7 @@ Returns:
 
 
 
-[#apidoc-org-listUsers-1387774425]
+[#apidoc-org-listUsers-261716431]
 == Method: listUsers 
 
 Description:
@@ -404,13 +449,13 @@ Returns:
 
 
 
-[#apidoc-org-migrateSystems-2005488238]
+[#apidoc-org-migrateSystems-1882802109]
 == Method: migrateSystems (Deprecated)
 
 Description:
 
 Transfer systems from one organization to another.  If executed by
- a Uyuni administrator, the systems will be transferred from their current
+ a #product() administrator, the systems will be transferred from their current
  organization to the organization specified by the toOrgId.  If executed by
  an organization administrator, the systems must exist in the same organization
  as that administrator and the systems will be transferred to the organization
@@ -444,7 +489,7 @@ Returns:
 
 
 
-[#apidoc-org-setClmSyncPatchesConfig-400867034]
+[#apidoc-org-setClmSyncPatchesConfig-1948950538]
 == Method: setClmSyncPatchesConfig 
 
 Description:
@@ -470,7 +515,7 @@ Returns:
 
 
 
-[#apidoc-org-setContentStaging-1759914811]
+[#apidoc-org-setContentStaging-669668653]
 == Method: setContentStaging 
 
 Description:
@@ -496,7 +541,7 @@ Returns:
 
 
 
-[#apidoc-org-setErrataEmailNotifsForOrg-1173151026]
+[#apidoc-org-setErrataEmailNotifsForOrg-1916766608]
 == Method: setErrataEmailNotifsForOrg 
 
 Description:
@@ -522,13 +567,13 @@ Returns:
 
 
 
-[#apidoc-org-setOrgConfigManagedByOrgAdmin-1682716048]
+[#apidoc-org-setOrgConfigManagedByOrgAdmin-428475414]
 == Method: setOrgConfigManagedByOrgAdmin 
 
 Description:
 
 Sets whether Organization Administrator can manage his organization
- configuration. This may have a high impact on general Uyuni performance.
+ configuration. This may have a high impact on general #product() performance.
 
 
 
@@ -549,7 +594,7 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapFileUpload-513413353]
+[#apidoc-org-setPolicyForScapFileUpload-1367544605]
 == Method: setPolicyForScapFileUpload 
 
 Description:
@@ -578,7 +623,7 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapResultDeletion-37162128]
+[#apidoc-org-setPolicyForScapResultDeletion-1774347256]
 == Method: setPolicyForScapResultDeletion 
 
 Description:
@@ -607,13 +652,13 @@ Returns:
 
 
 
-[#apidoc-org-transferSystems-1605357721]
+[#apidoc-org-transferSystems-254917009]
 == Method: transferSystems 
 
 Description:
 
 Transfer systems from one organization to another.  If executed by
- a Uyuni administrator, the systems will be transferred from their current
+ a #product() administrator, the systems will be transferred from their current
  organization to the organization specified by the toOrgId.  If executed by
  an organization administrator, the systems must exist in the same organization
  as that administrator and the systems will be transferred to the organization
@@ -642,7 +687,7 @@ Returns:
 
 
 
-[#apidoc-org-updateName-662967389]
+[#apidoc-org-updateName-1231029475]
 == Method: updateName 
 
 Description:
