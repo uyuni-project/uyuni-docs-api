@@ -329,7 +329,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/proxy.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/proxy.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -340,25 +340,31 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-proxy-activateProxy-1501084178">activateProxy</a></p>
+<p><a href="#apidoc-proxy-activateProxy-573424492">activateProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-createMonitoringScout-224591535">createMonitoringScout</a></p>
+<p><a href="#apidoc-proxy-containerConfig-1834041945">containerConfig</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-deactivateProxy-1940424465">deactivateProxy</a></p>
+<p><a href="#apidoc-proxy-containerConfig-2011281484">containerConfig</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-isProxy-814945818">isProxy</a></p>
+<p><a href="#apidoc-proxy-createMonitoringScout-1788841007">createMonitoringScout</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listAvailableProxyChannels-1140174868">listAvailableProxyChannels</a></p>
+<p><a href="#apidoc-proxy-deactivateProxy-979865152">deactivateProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listProxies-1803439542">listProxies</a></p>
+<p><a href="#apidoc-proxy-isProxy-107131289">isProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listProxyClients-1549393863">listProxyClients</a></p>
+<p><a href="#apidoc-proxy-listAvailableProxyChannels-876994034">listAvailableProxyChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-listProxies-666389658">listProxies</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-listProxyClients-564908963">listProxyClients</a></p>
 </li>
 </ul>
 </div>
@@ -380,7 +386,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-activateProxy-1501084178"><a class="anchor" href="#apidoc-proxy-activateProxy-1501084178"></a><a class="link" href="#apidoc-proxy-activateProxy-1501084178">Method: activateProxy</a></h2>
+<h2 id="apidoc-proxy-activateProxy-573424492"><a class="anchor" href="#apidoc-proxy-activateProxy-573424492"></a><a class="link" href="#apidoc-proxy-activateProxy-573424492">Method: activateProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -416,7 +422,156 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-createMonitoringScout-224591535"><a class="anchor" href="#apidoc-proxy-createMonitoringScout-224591535"></a><a class="link" href="#apidoc-proxy-createMonitoringScout-224591535">Method: createMonitoringScout</a></h2>
+<h2 id="apidoc-proxy-containerConfig-1834041945"><a class="anchor" href="#apidoc-proxy-containerConfig-1834041945"></a><a class="link" href="#apidoc-proxy-containerConfig-1834041945">Method: containerConfig</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Compute and download the configuration for proxy containers</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyName</p>
+</li>
+<li>
+<p><span class="string">string</span>  server</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache</p>
+</li>
+<li>
+<p><span class="string">string</span>  email</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA</p>
+</li>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  - intermediate CAs used to sign the SSL certificate in PEM format</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="string">string</span>  proxyCrt</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="byte">byte</span>  - binary object - package file</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-containerConfig-2011281484"><a class="anchor" href="#apidoc-proxy-containerConfig-2011281484"></a><a class="link" href="#apidoc-proxy-containerConfig-2011281484">Method: containerConfig</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Compute and download the configuration for proxy containers</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyName</p>
+</li>
+<li>
+<p><span class="string">string</span>  server</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache</p>
+</li>
+<li>
+<p><span class="string">string</span>  email</p>
+</li>
+<li>
+<p><span class="string">string</span>  caCrt</p>
+</li>
+<li>
+<p><span class="string">string</span>  caKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  caPassword</p>
+</li>
+<li>
+<p><span class="string">string</span>  cnames</p>
+</li>
+<li>
+<p><span class="string">string</span>  country</p>
+</li>
+<li>
+<p><span class="string">string</span>  state</p>
+</li>
+<li>
+<p><span class="string">string</span>  city</p>
+</li>
+<li>
+<p><span class="string">string</span>  org</p>
+</li>
+<li>
+<p><span class="string">string</span>  orgUnit</p>
+</li>
+<li>
+<p><span class="string">string</span>  sslEmail</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="byte">byte</span>  - binary object - package file</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-createMonitoringScout-1788841007"><a class="anchor" href="#apidoc-proxy-createMonitoringScout-1788841007"></a><a class="link" href="#apidoc-proxy-createMonitoringScout-1788841007">Method: createMonitoringScout</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -450,7 +605,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-deactivateProxy-1940424465"><a class="anchor" href="#apidoc-proxy-deactivateProxy-1940424465"></a><a class="link" href="#apidoc-proxy-deactivateProxy-1940424465">Method: deactivateProxy</a></h2>
+<h2 id="apidoc-proxy-deactivateProxy-979865152"><a class="anchor" href="#apidoc-proxy-deactivateProxy-979865152"></a><a class="link" href="#apidoc-proxy-deactivateProxy-979865152">Method: deactivateProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -482,7 +637,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-isProxy-814945818"><a class="anchor" href="#apidoc-proxy-isProxy-814945818"></a><a class="link" href="#apidoc-proxy-isProxy-814945818">Method: isProxy</a></h2>
+<h2 id="apidoc-proxy-isProxy-107131289"><a class="anchor" href="#apidoc-proxy-isProxy-107131289"></a><a class="link" href="#apidoc-proxy-isProxy-107131289">Method: isProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -514,7 +669,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listAvailableProxyChannels-1140174868"><a class="anchor" href="#apidoc-proxy-listAvailableProxyChannels-1140174868"></a><a class="link" href="#apidoc-proxy-listAvailableProxyChannels-1140174868">Method: listAvailableProxyChannels</a></h2>
+<h2 id="apidoc-proxy-listAvailableProxyChannels-876994034"><a class="anchor" href="#apidoc-proxy-listAvailableProxyChannels-876994034"></a><a class="link" href="#apidoc-proxy-listAvailableProxyChannels-876994034">Method: listAvailableProxyChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -556,7 +711,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listProxies-1803439542"><a class="anchor" href="#apidoc-proxy-listProxies-1803439542"></a><a class="link" href="#apidoc-proxy-listProxies-1803439542">Method: listProxies</a></h2>
+<h2 id="apidoc-proxy-listProxies-666389658"><a class="anchor" href="#apidoc-proxy-listProxies-666389658"></a><a class="link" href="#apidoc-proxy-listProxies-666389658">Method: listProxies</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -617,7 +772,7 @@ to any assigned channel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listProxyClients-1549393863"><a class="anchor" href="#apidoc-proxy-listProxyClients-1549393863"></a><a class="link" href="#apidoc-proxy-listProxyClients-1549393863">Method: listProxyClients</a></h2>
+<h2 id="apidoc-proxy-listProxyClients-564908963"><a class="anchor" href="#apidoc-proxy-listProxyClients-564908963"></a><a class="link" href="#apidoc-proxy-listProxyClients-564908963">Method: listProxyClients</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>

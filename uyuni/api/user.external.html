@@ -329,7 +329,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.02-apiupdate/modules/api/pages/user.external.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/user.external.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -340,52 +340,52 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-user_external-createExternalGroupToRoleMap-938872020">createExternalGroupToRoleMap</a></p>
+<p><a href="#apidoc-user_external-createExternalGroupToRoleMap-1187025844">createExternalGroupToRoleMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-createExternalGroupToSystemGroupMap-1469692066">createExternalGroupToSystemGroupMap</a></p>
+<p><a href="#apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611">createExternalGroupToSystemGroupMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-deleteExternalGroupToRoleMap-1107677641">deleteExternalGroupToRoleMap</a></p>
+<p><a href="#apidoc-user_external-deleteExternalGroupToRoleMap-1088692104">deleteExternalGroupToRoleMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-1980418100">deleteExternalGroupToSystemGroupMap</a></p>
+<p><a href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751">deleteExternalGroupToSystemGroupMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-getDefaultOrg-837596001">getDefaultOrg</a></p>
+<p><a href="#apidoc-user_external-getDefaultOrg-1119605276">getDefaultOrg</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-getExternalGroupToRoleMap-1291085172">getExternalGroupToRoleMap</a></p>
+<p><a href="#apidoc-user_external-getExternalGroupToRoleMap-1341130820">getExternalGroupToRoleMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-getExternalGroupToSystemGroupMap-100033245">getExternalGroupToSystemGroupMap</a></p>
+<p><a href="#apidoc-user_external-getExternalGroupToSystemGroupMap-655954847">getExternalGroupToSystemGroupMap</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-getKeepTemporaryRoles-334648813">getKeepTemporaryRoles</a></p>
+<p><a href="#apidoc-user_external-getKeepTemporaryRoles-362427044">getKeepTemporaryRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-getUseOrgUnit-1113967597">getUseOrgUnit</a></p>
+<p><a href="#apidoc-user_external-getUseOrgUnit-500979799">getUseOrgUnit</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-listExternalGroupToRoleMaps-1158870513">listExternalGroupToRoleMaps</a></p>
+<p><a href="#apidoc-user_external-listExternalGroupToRoleMaps-41646355">listExternalGroupToRoleMaps</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-1816933119">listExternalGroupToSystemGroupMaps</a></p>
+<p><a href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126">listExternalGroupToSystemGroupMaps</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-setDefaultOrg-816895399">setDefaultOrg</a></p>
+<p><a href="#apidoc-user_external-setDefaultOrg-116449140">setDefaultOrg</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-setExternalGroupRoles-2006768185">setExternalGroupRoles</a></p>
+<p><a href="#apidoc-user_external-setExternalGroupRoles-552494603">setExternalGroupRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-setExternalGroupSystemGroups-945195126">setExternalGroupSystemGroups</a></p>
+<p><a href="#apidoc-user_external-setExternalGroupSystemGroups-1576827711">setExternalGroupSystemGroups</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-setKeepTemporaryRoles-585763255">setKeepTemporaryRoles</a></p>
+<p><a href="#apidoc-user_external-setKeepTemporaryRoles-1760459579">setKeepTemporaryRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user_external-setUseOrgUnit-916936815">setUseOrgUnit</a></p>
+<p><a href="#apidoc-user_external-setUseOrgUnit-1290483339">setUseOrgUnit</a></p>
 </li>
 </ul>
 </div>
@@ -396,7 +396,8 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you are using IPA integration to allow authentication of users from
- an external IPA server (rare) the users will still need to be created in the Uyuni database. Methods in this namespace allow you to configure some specifics of how this
+ an external IPA server (rare) the users will still need to be created in the #product()
+ database. Methods in this namespace allow you to configure some specifics of how this
  happens, like what organization they are created in or what roles they will have.
  These options can also be set in the web admin interface.</p>
 </div>
@@ -409,7 +410,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-createExternalGroupToRoleMap-938872020"><a class="anchor" href="#apidoc-user_external-createExternalGroupToRoleMap-938872020"></a><a class="link" href="#apidoc-user_external-createExternalGroupToRoleMap-938872020">Method: createExternalGroupToRoleMap</a></h2>
+<h2 id="apidoc-user_external-createExternalGroupToRoleMap-1187025844"><a class="anchor" href="#apidoc-user_external-createExternalGroupToRoleMap-1187025844"></a><a class="link" href="#apidoc-user_external-createExternalGroupToRoleMap-1187025844">Method: createExternalGroupToRoleMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -417,7 +418,7 @@
 <div class="paragraph">
 <p>Externally authenticated users may be members of external groups. You
  can use these groups to assign additional roles to the users when they log in.
- Can only be called by a Uyuni Administrator.</p>
+ Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -476,7 +477,7 @@ activation_key_admin.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-createExternalGroupToSystemGroupMap-1469692066"><a class="anchor" href="#apidoc-user_external-createExternalGroupToSystemGroupMap-1469692066"></a><a class="link" href="#apidoc-user_external-createExternalGroupToSystemGroupMap-1469692066">Method: createExternalGroupToSystemGroupMap</a></h2>
+<h2 id="apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611"><a class="anchor" href="#apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611"></a><a class="link" href="#apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611">Method: createExternalGroupToSystemGroupMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -541,14 +542,14 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-deleteExternalGroupToRoleMap-1107677641"><a class="anchor" href="#apidoc-user_external-deleteExternalGroupToRoleMap-1107677641"></a><a class="link" href="#apidoc-user_external-deleteExternalGroupToRoleMap-1107677641">Method: deleteExternalGroupToRoleMap</a></h2>
+<h2 id="apidoc-user_external-deleteExternalGroupToRoleMap-1088692104"><a class="anchor" href="#apidoc-user_external-deleteExternalGroupToRoleMap-1088692104"></a><a class="link" href="#apidoc-user_external-deleteExternalGroupToRoleMap-1088692104">Method: deleteExternalGroupToRoleMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Delete the role map for an external group. Can only be called
- by a Uyuni Administrator.</p>
+ by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -576,7 +577,7 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-deleteExternalGroupToSystemGroupMap-1980418100"><a class="anchor" href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-1980418100"></a><a class="link" href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-1980418100">Method: deleteExternalGroupToSystemGroupMap</a></h2>
+<h2 id="apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751"><a class="anchor" href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751"></a><a class="link" href="#apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751">Method: deleteExternalGroupToSystemGroupMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -611,14 +612,14 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-getDefaultOrg-837596001"><a class="anchor" href="#apidoc-user_external-getDefaultOrg-837596001"></a><a class="link" href="#apidoc-user_external-getDefaultOrg-837596001">Method: getDefaultOrg</a></h2>
+<h2 id="apidoc-user_external-getDefaultOrg-1119605276"><a class="anchor" href="#apidoc-user_external-getDefaultOrg-1119605276"></a><a class="link" href="#apidoc-user_external-getDefaultOrg-1119605276">Method: getDefaultOrg</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Get the default org that users should be added in if orgunit from
- IPA server isn&#8217;t found or is disabled. Can only be called by a Uyuni Administrator.</p>
+ IPA server isn&#8217;t found or is disabled. Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -643,14 +644,14 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-getExternalGroupToRoleMap-1291085172"><a class="anchor" href="#apidoc-user_external-getExternalGroupToRoleMap-1291085172"></a><a class="link" href="#apidoc-user_external-getExternalGroupToRoleMap-1291085172">Method: getExternalGroupToRoleMap</a></h2>
+<h2 id="apidoc-user_external-getExternalGroupToRoleMap-1341130820"><a class="anchor" href="#apidoc-user_external-getExternalGroupToRoleMap-1341130820"></a><a class="link" href="#apidoc-user_external-getExternalGroupToRoleMap-1341130820">Method: getExternalGroupToRoleMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Get a representation of the role mapping for an external group.
- Can only be called by a Uyuni Administrator.</p>
+ Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -695,7 +696,7 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-getExternalGroupToSystemGroupMap-100033245"><a class="anchor" href="#apidoc-user_external-getExternalGroupToSystemGroupMap-100033245"></a><a class="link" href="#apidoc-user_external-getExternalGroupToSystemGroupMap-100033245">Method: getExternalGroupToSystemGroupMap</a></h2>
+<h2 id="apidoc-user_external-getExternalGroupToSystemGroupMap-655954847"><a class="anchor" href="#apidoc-user_external-getExternalGroupToSystemGroupMap-655954847"></a><a class="link" href="#apidoc-user_external-getExternalGroupToSystemGroupMap-655954847">Method: getExternalGroupToSystemGroupMap</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -747,7 +748,7 @@ groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-getKeepTemporaryRoles-334648813"><a class="anchor" href="#apidoc-user_external-getKeepTemporaryRoles-334648813"></a><a class="link" href="#apidoc-user_external-getKeepTemporaryRoles-334648813">Method: getKeepTemporaryRoles</a></h2>
+<h2 id="apidoc-user_external-getKeepTemporaryRoles-362427044"><a class="anchor" href="#apidoc-user_external-getKeepTemporaryRoles-362427044"></a><a class="link" href="#apidoc-user_external-getKeepTemporaryRoles-362427044">Method: getKeepTemporaryRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -755,7 +756,7 @@ groups to grant access to.</p>
 <div class="paragraph">
 <p>Get whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a Uyuni Administrator.</p>
+ called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -781,7 +782,7 @@ after users log in through non-IPA method, false otherwise</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-getUseOrgUnit-1113967597"><a class="anchor" href="#apidoc-user_external-getUseOrgUnit-1113967597"></a><a class="link" href="#apidoc-user_external-getUseOrgUnit-1113967597">Method: getUseOrgUnit</a></h2>
+<h2 id="apidoc-user_external-getUseOrgUnit-500979799"><a class="anchor" href="#apidoc-user_external-getUseOrgUnit-500979799"></a><a class="link" href="#apidoc-user_external-getUseOrgUnit-500979799">Method: getUseOrgUnit</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -789,7 +790,7 @@ after users log in through non-IPA method, false otherwise</p>
 <div class="paragraph">
 <p>Get whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- Uyuni organization name. Can only be called by a Uyuni Administrator.</p>
+ #product() organization name. Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -815,14 +816,14 @@ orgunit to determine which organization to create the user in, false otherwise</
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-listExternalGroupToRoleMaps-1158870513"><a class="anchor" href="#apidoc-user_external-listExternalGroupToRoleMaps-1158870513"></a><a class="link" href="#apidoc-user_external-listExternalGroupToRoleMaps-1158870513">Method: listExternalGroupToRoleMaps</a></h2>
+<h2 id="apidoc-user_external-listExternalGroupToRoleMaps-41646355"><a class="anchor" href="#apidoc-user_external-listExternalGroupToRoleMaps-41646355"></a><a class="link" href="#apidoc-user_external-listExternalGroupToRoleMaps-41646355">Method: listExternalGroupToRoleMaps</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>List role mappings for all known external groups. Can only be called
- by a Uyuni Administrator.</p>
+ by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -867,7 +868,7 @@ orgunit to determine which organization to create the user in, false otherwise</
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-listExternalGroupToSystemGroupMaps-1816933119"><a class="anchor" href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-1816933119"></a><a class="link" href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-1816933119">Method: listExternalGroupToSystemGroupMaps</a></h2>
+<h2 id="apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126"><a class="anchor" href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126"></a><a class="link" href="#apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126">Method: listExternalGroupToSystemGroupMaps</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -919,14 +920,14 @@ orgunit to determine which organization to create the user in, false otherwise</
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-setDefaultOrg-816895399"><a class="anchor" href="#apidoc-user_external-setDefaultOrg-816895399"></a><a class="link" href="#apidoc-user_external-setDefaultOrg-816895399">Method: setDefaultOrg</a></h2>
+<h2 id="apidoc-user_external-setDefaultOrg-116449140"><a class="anchor" href="#apidoc-user_external-setDefaultOrg-116449140"></a><a class="link" href="#apidoc-user_external-setDefaultOrg-116449140">Method: setDefaultOrg</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Set the default org that users should be added in if orgunit from
- IPA server isn&#8217;t found or is disabled. Can only be called by a Uyuni Administrator.</p>
+ IPA server isn&#8217;t found or is disabled. Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -955,14 +956,14 @@ as the default org. 0 if there should not be a default organization.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-setExternalGroupRoles-2006768185"><a class="anchor" href="#apidoc-user_external-setExternalGroupRoles-2006768185"></a><a class="link" href="#apidoc-user_external-setExternalGroupRoles-2006768185">Method: setExternalGroupRoles</a></h2>
+<h2 id="apidoc-user_external-setExternalGroupRoles-552494603"><a class="anchor" href="#apidoc-user_external-setExternalGroupRoles-552494603"></a><a class="link" href="#apidoc-user_external-setExternalGroupRoles-552494603">Method: setExternalGroupRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
 <p>Update the roles for an external group. Replace previously set roles
- with the ones passed in here. Can only be called by a Uyuni Administrator.</p>
+ with the ones passed in here. Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1003,7 +1004,7 @@ activation_key_admin.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-setExternalGroupSystemGroups-945195126"><a class="anchor" href="#apidoc-user_external-setExternalGroupSystemGroups-945195126"></a><a class="link" href="#apidoc-user_external-setExternalGroupSystemGroups-945195126">Method: setExternalGroupSystemGroups</a></h2>
+<h2 id="apidoc-user_external-setExternalGroupSystemGroups-1576827711"><a class="anchor" href="#apidoc-user_external-setExternalGroupSystemGroups-1576827711"></a><a class="link" href="#apidoc-user_external-setExternalGroupSystemGroups-1576827711">Method: setExternalGroupSystemGroups</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1049,7 +1050,7 @@ server groups to grant access to.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-setKeepTemporaryRoles-585763255"><a class="anchor" href="#apidoc-user_external-setKeepTemporaryRoles-585763255"></a><a class="link" href="#apidoc-user_external-setKeepTemporaryRoles-585763255">Method: setKeepTemporaryRoles</a></h2>
+<h2 id="apidoc-user_external-setKeepTemporaryRoles-1760459579"><a class="anchor" href="#apidoc-user_external-setKeepTemporaryRoles-1760459579"></a><a class="link" href="#apidoc-user_external-setKeepTemporaryRoles-1760459579">Method: setKeepTemporaryRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1057,7 +1058,7 @@ server groups to grant access to.</p>
 <div class="paragraph">
 <p>Set whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a Uyuni Administrator.</p>
+ called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1086,7 +1087,7 @@ after users log in through non-IPA method, false otherwise.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user_external-setUseOrgUnit-916936815"><a class="anchor" href="#apidoc-user_external-setUseOrgUnit-916936815"></a><a class="link" href="#apidoc-user_external-setUseOrgUnit-916936815">Method: setUseOrgUnit</a></h2>
+<h2 id="apidoc-user_external-setUseOrgUnit-1290483339"><a class="anchor" href="#apidoc-user_external-setUseOrgUnit-1290483339"></a><a class="link" href="#apidoc-user_external-setUseOrgUnit-1290483339">Method: setUseOrgUnit</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Description:</p>
@@ -1094,7 +1095,7 @@ after users log in through non-IPA method, false otherwise.</p>
 <div class="paragraph">
 <p>Set whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- Uyuni organization name. Can only be called by a Uyuni Administrator.</p>
+ #product() organization name. Can only be called by a #product() Administrator.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
