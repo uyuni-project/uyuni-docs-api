@@ -4,21 +4,21 @@
 
 == Available methods
 
-* <<apidoc-sync_master-addToMaster-352580660,addToMaster>>
-* <<apidoc-sync_master-create-1575169536,create>>
-* <<apidoc-sync_master-delete-13484189,delete>>
-* <<apidoc-sync_master-getDefaultMaster-1964320423,getDefaultMaster>>
-* <<apidoc-sync_master-getMaster-900207233,getMaster>>
-* <<apidoc-sync_master-getMasterByLabel-1484954668,getMasterByLabel>>
-* <<apidoc-sync_master-getMasterOrgs-744838086,getMasterOrgs>>
-* <<apidoc-sync_master-getMasters-1693561595,getMasters>>
-* <<apidoc-sync_master-hasMaster-578414535,hasMaster>>
-* <<apidoc-sync_master-makeDefault-834837937,makeDefault>>
-* <<apidoc-sync_master-mapToLocal-2089609733,mapToLocal>>
-* <<apidoc-sync_master-setCaCert-1767121170,setCaCert>>
-* <<apidoc-sync_master-setMasterOrgs-1504469201,setMasterOrgs>>
-* <<apidoc-sync_master-unsetDefaultMaster-1281233469,unsetDefaultMaster>>
-* <<apidoc-sync_master-update-564053174,update>>
+* <<apidoc-sync_master-addToMaster-1940927690,addToMaster>>
+* <<apidoc-sync_master-create-1433988478,create>>
+* <<apidoc-sync_master-delete-361467152,delete>>
+* <<apidoc-sync_master-getDefaultMaster-483939310,getDefaultMaster>>
+* <<apidoc-sync_master-getMaster-942106216,getMaster>>
+* <<apidoc-sync_master-getMasterByLabel-235521954,getMasterByLabel>>
+* <<apidoc-sync_master-getMasterOrgs-819197315,getMasterOrgs>>
+* <<apidoc-sync_master-getMasters-646492862,getMasters>>
+* <<apidoc-sync_master-hasMaster-1802219104,hasMaster>>
+* <<apidoc-sync_master-makeDefault-240733254,makeDefault>>
+* <<apidoc-sync_master-mapToLocal-273573184,mapToLocal>>
+* <<apidoc-sync_master-setCaCert-1723731570,setCaCert>>
+* <<apidoc-sync_master-setMasterOrgs-860144087,setMasterOrgs>>
+* <<apidoc-sync_master-unsetDefaultMaster-583093520,unsetDefaultMaster>>
+* <<apidoc-sync_master-update-1574257199,update>>
 
 == Description
 
@@ -30,8 +30,10 @@ Contains methods to set up information about known-"masters", for use
 sync.master
 
 
-[#apidoc-sync_master-addToMaster-352580660]
-== Method: addToMaster 
+[#apidoc-sync_master-addToMaster-1940927690]
+== Method: addToMaster
+
+HTTP `POST`
 
 Description:
 
@@ -45,13 +47,13 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Master
+* [.int]#int#  masterId - Id of the desired Master
  
-* [.struct]#struct#  - master-org details
-          ** [.int]#int#  "masterOrgId"
-          ** [.string]#string#  "masterOrgName"
-          ** [.int]#int#  "localOrgId"
-      
+* [.struct]#struct#  orgMap
+** [.int]#int#  "masterOrgId"
+** [.string]#string#  "masterOrgName"
+** [.int]#int#  "localOrgId"
+ 
 
 Returns:
 
@@ -60,8 +62,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-create-1575169536]
-== Method: create 
+[#apidoc-sync_master-create-1433988478]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -79,18 +83,20 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-   
+* * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+  
  
 
 
 
-[#apidoc-sync_master-delete-13484189]
-== Method: delete 
+[#apidoc-sync_master-delete-361467152]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -103,7 +109,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Master to remove
+* [.int]#int#  masterId - Id of the Master to remove
  
 
 Returns:
@@ -113,8 +119,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-getDefaultMaster-1964320423]
-== Method: getDefaultMaster 
+[#apidoc-sync_master-getDefaultMaster-483939310]
+== Method: getDefaultMaster
+
+HTTP `GET`
 
 Description:
 
@@ -130,18 +138,20 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-   
+* * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+  
  
 
 
 
-[#apidoc-sync_master-getMaster-900207233]
-== Method: getMaster 
+[#apidoc-sync_master-getMaster-942106216]
+== Method: getMaster
+
+HTTP `GET`
 
 Description:
 
@@ -154,23 +164,25 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Master
+* [.int]#int#  masterId - ID of the desired Master
  
 
 Returns:
 
-* * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-   
+* * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+  
  
 
 
 
-[#apidoc-sync_master-getMasterByLabel-1484954668]
-== Method: getMasterByLabel 
+[#apidoc-sync_master-getMasterByLabel-235521954]
+== Method: getMasterByLabel
+
+HTTP `GET`
 
 Description:
 
@@ -188,18 +200,20 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-   
+* * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+  
  
 
 
 
-[#apidoc-sync_master-getMasterOrgs-744838086]
-== Method: getMasterOrgs 
+[#apidoc-sync_master-getMasterOrgs-819197315]
+== Method: getMasterOrgs
+
+HTTP `GET`
 
 Description:
 
@@ -212,23 +226,25 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Master
+* [.int]#int#  masterId - ID of the desired Master
  
 
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - IssMasterOrg info
-   ** [.int]#int#  "masterOrgId"
-   ** [.string]#string#  "masterOrgName"
-   ** [.int]#int#  "localOrgId"
-  
-    
+     * [.struct]#struct#  IssMasterOrg info
+** [.int]#int#  "masterOrgId"
+** [.string]#string#  "masterOrgName"
+** [.int]#int#  "localOrgId"
+ 
+ 
 
 
 
-[#apidoc-sync_master-getMasters-1693561595]
-== Method: getMasters 
+[#apidoc-sync_master-getMasters-646492862]
+== Method: getMasters
+
+HTTP `GET`
 
 Description:
 
@@ -245,18 +261,20 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-  
-       
+          * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+ 
+ 
 
 
 
-[#apidoc-sync_master-hasMaster-578414535]
-== Method: hasMaster 
+[#apidoc-sync_master-hasMaster-1802219104]
+== Method: hasMaster
+
+HTTP `POST`
 
 Description:
 
@@ -275,8 +293,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-makeDefault-834837937]
-== Method: makeDefault 
+[#apidoc-sync_master-makeDefault-240733254]
+== Method: makeDefault
+
+HTTP `POST`
 
 Description:
 
@@ -289,7 +309,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Master to make the default
+* [.int]#int#  masterId - Id of the Master to make the default
  
 
 Returns:
@@ -299,8 +319,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-mapToLocal-2089609733]
-== Method: mapToLocal 
+[#apidoc-sync_master-mapToLocal-273573184]
+== Method: mapToLocal
+
+HTTP `POST`
 
 Description:
 
@@ -314,11 +336,11 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  masterId - Id of the desired Master
+* [.int]#int#  masterId - ID of the desired Master
  
-* [.int]#int#  masterOrgId - Id of the desired Master
+* [.int]#int#  masterOrgId - ID of the desired Master
  
-* [.int]#int#  localOrgId - Id of the desired Master
+* [.int]#int#  localOrgId - ID of the desired Master
  
 
 Returns:
@@ -328,8 +350,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-setCaCert-1767121170]
-== Method: setCaCert 
+[#apidoc-sync_master-setCaCert-1723731570]
+== Method: setCaCert
+
+HTTP `POST`
 
 Description:
 
@@ -342,7 +366,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Master to affect
+* [.int]#int#  masterId - ID of the Master to affect
  
 * [.string]#string#  caCertFilename - path to specified Master's CA cert
  
@@ -354,8 +378,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-setMasterOrgs-1504469201]
-== Method: setMasterOrgs 
+[#apidoc-sync_master-setMasterOrgs-860144087]
+== Method: setMasterOrgs
+
+HTTP `POST`
 
 Description:
 
@@ -368,14 +394,14 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Master
+* [.int]#int#  masterId - Id of the desired Master
  
-* [.array]#array# :
-      ** [.struct]#struct#  - master-org details
-          *** [.int]#int#  "masterOrgId"
-          *** [.string]#string#  "masterOrgName"
-          *** [.int]#int#  "localOrgId"
-         
+* [.array]#array#  orgMaps
+** [.struct]#struct#  master-org details
+*** [.int]#int#  "masterOrgId"
+*** [.string]#string#  "masterOrgName"
+*** [.int]#int#  "localOrgId"
+ 
 
 Returns:
 
@@ -384,8 +410,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-unsetDefaultMaster-1281233469]
-== Method: unsetDefaultMaster 
+[#apidoc-sync_master-unsetDefaultMaster-583093520]
+== Method: unsetDefaultMaster
+
+HTTP `POST`
 
 Description:
 
@@ -406,8 +434,10 @@ Returns:
 
 
 
-[#apidoc-sync_master-update-564053174]
-== Method: update 
+[#apidoc-sync_master-update-1574257199]
+== Method: update
+
+HTTP `POST`
 
 Description:
 
@@ -420,19 +450,19 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Master to update
+* [.int]#int#  masterId - ID of the Master to update
  
 * [.string]#string#  label - Desired new label
  
 
 Returns:
 
-* * [.struct]#struct#  - IssMaster info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "label"
-   ** [.string]#string#  "caCert"
-   ** [.boolean]#boolean#  "isCurrentMaster"
-   
+* * [.struct]#struct#  IssMaster info
+** [.int]#int#  "id"
+** [.string]#string#  "label"
+** [.string]#string#  "caCert"
+** [.boolean]#boolean#  "isCurrentMaster"
+  
  
 
 

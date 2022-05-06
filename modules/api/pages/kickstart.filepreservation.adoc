@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-kickstart_filepreservation-create-1933826115,create>>
-* <<apidoc-kickstart_filepreservation-delete-698473139,delete>>
-* <<apidoc-kickstart_filepreservation-getDetails-1637577782,getDetails>>
-* <<apidoc-kickstart_filepreservation-listAllFilePreservations-90292273,listAllFilePreservations>>
+* <<apidoc-kickstart_filepreservation-create-2146952019,create>>
+* <<apidoc-kickstart_filepreservation-delete-1885867912,delete>>
+* <<apidoc-kickstart_filepreservation-getDetails-2139051082,getDetails>>
+* <<apidoc-kickstart_filepreservation-listAllFilePreservations-1971275760,listAllFilePreservations>>
 
 == Description
 
@@ -19,8 +19,10 @@ Provides methods to retrieve and manipulate kickstart file
 kickstart.filepreservation
 
 
-[#apidoc-kickstart_filepreservation-create-1933826115]
-== Method: create 
+[#apidoc-kickstart_filepreservation-create-2146952019]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -31,12 +33,11 @@ Create a new file preservation list.
 
 Parameters:
 
-* [.string]#string#  session_key
+* [.string]#string#  sessionKey
  
 * [.string]#string#  name - name of the file list to create
  
-* [.array]#array# :
-** [.string]#string#  - name - file names to include
+* [.array]#string array#  files - file names to include
  
 
 Returns:
@@ -46,8 +47,10 @@ Returns:
 
 
 
-[#apidoc-kickstart_filepreservation-delete-698473139]
-== Method: delete 
+[#apidoc-kickstart_filepreservation-delete-1885867912]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -58,7 +61,7 @@ Delete a file preservation list.
 
 Parameters:
 
-* [.string]#string#  session_key
+* [.string]#string#  sessionKey
  
 * [.string]#string#  name - name of the file list to delete
  
@@ -70,38 +73,39 @@ Returns:
 
 
 
-[#apidoc-kickstart_filepreservation-getDetails-1637577782]
-== Method: getDetails 
+[#apidoc-kickstart_filepreservation-getDetails-2139051082]
+== Method: getDetails
+
+HTTP `GET`
 
 Description:
 
-Returns all of the data associated with the given file preservation
- list.
+Returns all the data associated with the given file preservation list.
 
 
 
 
 Parameters:
 
-* [.string]#string#  session_key
+* [.string]#string#  sessionKey
  
-* [.string]#string#  name - name of the file list to retrieve
- details for
+* [.string]#string#  name - name of the file list to retrieve details for
  
 
 Returns:
 
-* * [.struct]#struct#  - file list
-     ** [.string]#string#  "name"
-     ** [.array]#array#  "file_names"
-*** string - name
-     
+* * [.struct]#struct#  file list
+** [.string]#string#  "name"
+** [.array]#string array#  "file_names" - the list of file names
+  
  
 
 
 
-[#apidoc-kickstart_filepreservation-listAllFilePreservations-90292273]
-== Method: listAllFilePreservations 
+[#apidoc-kickstart_filepreservation-listAllFilePreservations-1971275760]
+== Method: listAllFilePreservations
+
+HTTP `GET`
 
 Description:
 
@@ -113,18 +117,18 @@ List all file preservation lists for the organization
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-        * [.struct]#struct#  - file preservation
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-    
-       
+        * [.struct]#struct#  file preservation
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+ 
+ 
 
 

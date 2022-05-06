@@ -4,15 +4,15 @@
 
 == Available methods
 
-* <<apidoc-proxy-activateProxy-573424492,activateProxy>>
-* <<apidoc-proxy-containerConfig-1834041945,containerConfig>>
-* <<apidoc-proxy-containerConfig-2011281484,containerConfig>>
-* <<apidoc-proxy-createMonitoringScout-1788841007,createMonitoringScout>>
-* <<apidoc-proxy-deactivateProxy-979865152,deactivateProxy>>
-* <<apidoc-proxy-isProxy-107131289,isProxy>>
-* <<apidoc-proxy-listAvailableProxyChannels-876994034,listAvailableProxyChannels>>
-* <<apidoc-proxy-listProxies-666389658,listProxies>>
-* <<apidoc-proxy-listProxyClients-564908963,listProxyClients>>
+* <<apidoc-proxy-activateProxy-1838590101,activateProxy>>
+* <<apidoc-proxy-containerConfig-1788841007,containerConfig>>
+* <<apidoc-proxy-containerConfig-107131289,containerConfig>>
+* <<apidoc-proxy-createMonitoringScout-1605393415,createMonitoringScout>>
+* <<apidoc-proxy-deactivateProxy-422278820,deactivateProxy>>
+* <<apidoc-proxy-isProxy-596403167,isProxy>>
+* <<apidoc-proxy-listAvailableProxyChannels-815497540,listAvailableProxyChannels>>
+* <<apidoc-proxy-listProxies-1892261395,listProxies>>
+* <<apidoc-proxy-listProxyClients-840259832,listProxyClients>>
 
 == Description
 
@@ -24,8 +24,10 @@ Provides methods to activate/deactivate a proxy
 proxy
 
 
-[#apidoc-proxy-activateProxy-573424492]
-== Method: activateProxy 
+[#apidoc-proxy-activateProxy-1838590101]
+== Method: activateProxy
+
+HTTP `POST`
 
 Description:
 
@@ -37,7 +39,7 @@ Activates the proxy identified by the given client
 
 Parameters:
 
-* [.string]#string#  systemid - systemid file
+* [.string]#string#  clientcert - client certificate file
  
 * [.string]#string#  version - Version of proxy to be
  registered.
@@ -50,8 +52,10 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-1834041945]
-== Method: containerConfig 
+[#apidoc-proxy-containerConfig-1788841007]
+== Method: containerConfig
+
+HTTP `POST`
 
 Description:
 
@@ -62,9 +66,11 @@ Compute and download the configuration for proxy containers
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  proxyName
+ 
+* [.int]#int#  proxyPort
  
 * [.string]#string#  server
  
@@ -74,8 +80,7 @@ Parameters:
  
 * [.string]#string#  rootCA
  
-* [.array]#array# :
-** [.string]#string#  - intermediate CAs used to sign the SSL certificate in PEM format
+* [.array]#string array#  intermediateCAs - intermediate CAs used to sign the SSL certificate in PEM format
  
 * [.string]#string#  proxyCrt
  
@@ -84,14 +89,15 @@ Parameters:
 
 Returns:
 
-* [.array]#array# :
-** [.byte]#byte#  - binary object - package file
+* [.array]#byte array#  binary object - package file
  
 
 
 
-[#apidoc-proxy-containerConfig-2011281484]
-== Method: containerConfig 
+[#apidoc-proxy-containerConfig-107131289]
+== Method: containerConfig
+
+HTTP `POST`
 
 Description:
 
@@ -102,9 +108,11 @@ Compute and download the configuration for proxy containers
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  proxyName
+ 
+* [.int]#int#  proxyPort
  
 * [.string]#string#  server
  
@@ -118,7 +126,7 @@ Parameters:
  
 * [.string]#string#  caPassword
  
-* [.string]#string#  cnames
+* [.array]#string array#  cnames - Proxy alternate cnames to set in the SSL certificate
  
 * [.string]#string#  country
  
@@ -135,14 +143,15 @@ Parameters:
 
 Returns:
 
-* [.array]#array# :
-** [.byte]#byte#  - binary object - package file
+* [.array]#byte array#  binary object - package file
  
 
 
 
-[#apidoc-proxy-createMonitoringScout-1788841007]
-== Method: createMonitoringScout 
+[#apidoc-proxy-createMonitoringScout-1605393415]
+== Method: createMonitoringScout
+
+HTTP `POST`
 
 Description:
 
@@ -153,7 +162,7 @@ Create Monitoring Scout for proxy.
 
 Parameters:
 
-* [.string]#string#  systemid - systemid file
+* [.string]#string#  clientcert - client certificate file
  
 
 Returns:
@@ -164,8 +173,10 @@ Returns:
 Available since API version: 10.7
 
 
-[#apidoc-proxy-deactivateProxy-979865152]
-== Method: deactivateProxy 
+[#apidoc-proxy-deactivateProxy-422278820]
+== Method: deactivateProxy
+
+HTTP `POST`
 
 Description:
 
@@ -177,7 +188,7 @@ Deactivates the proxy identified by the given client
 
 Parameters:
 
-* [.string]#string#  systemid - systemid file
+* [.string]#string#  clientcert - client certificate file
  
 
 Returns:
@@ -187,8 +198,10 @@ Returns:
 
 
 
-[#apidoc-proxy-isProxy-107131289]
-== Method: isProxy 
+[#apidoc-proxy-isProxy-596403167]
+== Method: isProxy
+
+HTTP `GET`
 
 Description:
 
@@ -200,7 +213,7 @@ Test, if the system identified by the given client
 
 Parameters:
 
-* [.string]#string#  systemid - systemid file
+* [.string]#string#  clientcert - client certificate file
  
 
 Returns:
@@ -210,8 +223,10 @@ Returns:
 
 
 
-[#apidoc-proxy-listAvailableProxyChannels-876994034]
-== Method: listAvailableProxyChannels 
+[#apidoc-proxy-listAvailableProxyChannels-815497540]
+== Method: listAvailableProxyChannels
+
+HTTP `GET`
 
 Description:
 
@@ -223,20 +238,21 @@ List available version of proxy channel for system
 
 Parameters:
 
-* [.string]#string#  systemid - systemid file
+* [.string]#string#  clientcert - client certificate file
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - version
+* [.array]#string array#  version
  
 
 Available since API version: 10.5
 
 
-[#apidoc-proxy-listProxies-666389658]
-== Method: listProxies 
+[#apidoc-proxy-listProxies-1892261395]
+== Method: listProxies
+
+HTTP `GET`
 
 Description:
 
@@ -253,23 +269,25 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - system
-     ** [.int]#int#  "id"
-     ** [.string]#string#  "name"
-     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+   * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
              successfully checked in
-     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Server registration time
-     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - Last server boot time
-     ** [.int]#int#  "extra_pkg_count" - Number of packages not belonging
+** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
+** [.int]#int#  "extra_pkg_count" - number of packages not belonging
              to any assigned channel
-     ** [.int]#int#  "outdated_pkg_count" - Number of out-of-date packages
-  
-  
+** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
+ 
+ 
 
 
 
-[#apidoc-proxy-listProxyClients-564908963]
-== Method: listProxyClients 
+[#apidoc-proxy-listProxyClients-840259832]
+== Method: listProxyClients
+
+HTTP `GET`
 
 Description:
 
@@ -280,15 +298,14 @@ List the clients directly connected to a given Proxy.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  proxyId
  
 
 Returns:
 
-* [.array]#array# :
-** [.int]#int#  - clientId
+* [.array]#int array#  clientId
  
 
 

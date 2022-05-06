@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-sync_content-addChannel-499911608,addChannel>>
-* <<apidoc-sync_content-addChannels-695628118,addChannels>>
-* <<apidoc-sync_content-addCredentials-1869191350,addCredentials>>
-* <<apidoc-sync_content-deleteCredentials-1615410468,deleteCredentials>>
-* <<apidoc-sync_content-listChannels-1000093805,listChannels>>
-* <<apidoc-sync_content-listCredentials-497378142,listCredentials>>
-* <<apidoc-sync_content-listProducts-467058608,listProducts>>
-* <<apidoc-sync_content-synchronizeChannelFamilies-87487369,synchronizeChannelFamilies>>
-* <<apidoc-sync_content-synchronizeChannels-133900525,synchronizeChannels>>
-* <<apidoc-sync_content-synchronizeProducts-724826016,synchronizeProducts>>
-* <<apidoc-sync_content-synchronizeRepositories-794042208,synchronizeRepositories>>
-* <<apidoc-sync_content-synchronizeSubscriptions-1907813883,synchronizeSubscriptions>>
+* <<apidoc-sync_content-addChannel-1119605276,addChannel>>
+* <<apidoc-sync_content-addChannels-1475476398,addChannels>>
+* <<apidoc-sync_content-addCredentials-680533991,addCredentials>>
+* <<apidoc-sync_content-deleteCredentials-681279230,deleteCredentials>>
+* <<apidoc-sync_content-listChannels-367559104,listChannels>>
+* <<apidoc-sync_content-listCredentials-883716803,listCredentials>>
+* <<apidoc-sync_content-listProducts-349810210,listProducts>>
+* <<apidoc-sync_content-synchronizeChannelFamilies-362427044,synchronizeChannelFamilies>>
+* <<apidoc-sync_content-synchronizeChannels-1760459579,synchronizeChannels>>
+* <<apidoc-sync_content-synchronizeProducts-1290483339,synchronizeProducts>>
+* <<apidoc-sync_content-synchronizeRepositories-116449140,synchronizeRepositories>>
+* <<apidoc-sync_content-synchronizeSubscriptions-500979799,synchronizeSubscriptions>>
 
 == Description
 
@@ -26,8 +26,10 @@ Provides the namespace for the content synchronization methods.
 sync.content
 
 
-[#apidoc-sync_content-addChannel-499911608]
-== Method: addChannel 
+[#apidoc-sync_content-addChannel-1119605276]
+== Method: addChannel
+
+HTTP `POST`
 
 Description:
 
@@ -52,8 +54,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-addChannels-695628118]
-== Method: addChannels 
+[#apidoc-sync_content-addChannels-1475476398]
+== Method: addChannels
+
+HTTP `POST`
 
 Description:
 
@@ -73,14 +77,15 @@ Parameters:
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - enabled channel labels
+* [.array]#string array#  enabled channel labels
  
 
 
 
-[#apidoc-sync_content-addCredentials-1869191350]
-== Method: addCredentials 
+[#apidoc-sync_content-addCredentials-680533991]
+== Method: addCredentials
+
+HTTP `POST`
 
 Description:
 
@@ -109,8 +114,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-deleteCredentials-1615410468]
-== Method: deleteCredentials 
+[#apidoc-sync_content-deleteCredentials-681279230]
+== Method: deleteCredentials
+
+HTTP `POST`
 
 Description:
 
@@ -133,8 +140,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-listChannels-1000093805]
-== Method: listChannels 
+[#apidoc-sync_content-listChannels-367559104]
+== Method: listChannels
+
+HTTP `GET`
 
 Description:
 
@@ -151,29 +160,31 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                       * [.struct]#struct#  - channel
-     ** [.string]#string#  "arch" - Architecture of the channel
-     ** [.string]#string#  "description" - Description of the channel
-     ** [.string]#string#  "family" - Channel family label
-     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
-     ** [.string]#string#  "label" - Label of the channel
-     ** [.string]#string#  "name" - Name of the channel
-     ** [.boolean]#boolean#  "optional" - Channel is optional
-     ** [.string]#string#  "parent" - The label of the parent channel
-     ** [.string]#string#  "product_name" - Product name
-     ** [.string]#string#  "product_version" - Product version
-     ** [.string]#string#  "source_url" - Repository source URL
-     ** [.string]#string#  "status" - Status: available, unavailable or installed
-     ** [.string]#string#  "summary" - Channel summary
-     ** [.string]#string#  "update_tag" - Update tag
-     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
-    
-                     
+                       * [.struct]#struct#  channel
+** [.string]#string#  "arch" - architecture of the channel
+** [.string]#string#  "description" - description of the channel
+** [.string]#string#  "family" - channel family label
+** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+** [.string]#string#  "label" - label of the channel
+** [.string]#string#  "name" - name of the channel
+** [.boolean]#boolean#  "optional" - channel is optional
+** [.string]#string#  "parent" - the label of the parent channel
+** [.string]#string#  "product_name" - product name
+** [.string]#string#  "product_version" - product version
+** [.string]#string#  "source_url" - repository source URL
+** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+** [.string]#string#  "summary" - channel summary
+** [.string]#string#  "update_tag" - update tag
+** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+ 
+ 
 
 
 
-[#apidoc-sync_content-listCredentials-497378142]
-== Method: listCredentials 
+[#apidoc-sync_content-listCredentials-883716803]
+== Method: listCredentials
+
+HTTP `GET`
 
 Description:
 
@@ -191,17 +202,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                       * [.struct]#struct#  - credentials
-     ** [.int]#int#  "id" - ID of the credentials
-     ** [.string]#string#  "user" - username
-     ** [.boolean]#boolean#  "isPrimary" - primary
-    
-                     
+                       * [.struct]#struct#  credentials
+** [.int]#int#  "id" - ID of the credentials
+** [.string]#string#  "user" - username
+** [.boolean]#boolean#  "isPrimary" - primary
+ 
+ 
 
 
 
-[#apidoc-sync_content-listProducts-467058608]
-== Method: listProducts 
+[#apidoc-sync_content-listProducts-349810210]
+== Method: listProducts
+
+HTTP `GET`
 
 Description:
 
@@ -218,59 +231,61 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                       * [.struct]#struct#  - product
-     ** [.string]#string#  "friendly_name" - Friendly name of the product
-     ** [.string]#string#  "arch" - Architecture
-     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-     ** [.array]#array# :
-       * [.struct]#struct#  - channel
-     ** [.string]#string#  "arch" - Architecture of the channel
-     ** [.string]#string#  "description" - Description of the channel
-     ** [.string]#string#  "family" - Channel family label
-     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
-     ** [.string]#string#  "label" - Label of the channel
-     ** [.string]#string#  "name" - Name of the channel
-     ** [.boolean]#boolean#  "optional" - Channel is optional
-     ** [.string]#string#  "parent" - The label of the parent channel
-     ** [.string]#string#  "product_name" - Product name
-     ** [.string]#string#  "product_version" - Product version
-     ** [.string]#string#  "source_url" - Repository source URL
-     ** [.string]#string#  "status" - Status: available, unavailable or installed
-     ** [.string]#string#  "summary" - Channel summary
-     ** [.string]#string#  "update_tag" - Update tag
-     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
-    
-          ** [.array]#array# :
-       *** [.struct]#struct#  - extension product
-         **** [.string]#string#  "friendly_name" - Friendly name of extension product
-         **** [.string]#string#  "arch" - Architecture
-         **** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-         **** [.array]#array# :
-           * [.struct]#struct#  - channel
-     ** [.string]#string#  "arch" - Architecture of the channel
-     ** [.string]#string#  "description" - Description of the channel
-     ** [.string]#string#  "family" - Channel family label
-     ** [.boolean]#boolean#  "is_signed" - Channel has signed metadata
-     ** [.string]#string#  "label" - Label of the channel
-     ** [.string]#string#  "name" - Name of the channel
-     ** [.boolean]#boolean#  "optional" - Channel is optional
-     ** [.string]#string#  "parent" - The label of the parent channel
-     ** [.string]#string#  "product_name" - Product name
-     ** [.string]#string#  "product_version" - Product version
-     ** [.string]#string#  "source_url" - Repository source URL
-     ** [.string]#string#  "status" - Status: available, unavailable or installed
-     ** [.string]#string#  "summary" - Channel summary
-     ** [.string]#string#  "update_tag" - Update tag
-     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
-    
-                          ** [.boolean]#boolean#  "recommended" - Recommended
-    
-                     
+                       * [.struct]#struct#  product
+** [.string]#string#  "friendly_name" - friendly name of the product
+** [.string]#string#  "arch" - architecture
+** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+** [.array]#array#  "channels"
+       * [.struct]#struct#  channel
+** [.string]#string#  "arch" - architecture of the channel
+** [.string]#string#  "description" - description of the channel
+** [.string]#string#  "family" - channel family label
+** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+** [.string]#string#  "label" - label of the channel
+** [.string]#string#  "name" - name of the channel
+** [.boolean]#boolean#  "optional" - channel is optional
+** [.string]#string#  "parent" - the label of the parent channel
+** [.string]#string#  "product_name" - product name
+** [.string]#string#  "product_version" - product version
+** [.string]#string#  "source_url" - repository source URL
+** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+** [.string]#string#  "summary" - channel summary
+** [.string]#string#  "update_tag" - update tag
+** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+ 
+** [.array]#array#  "extensions"
+*** [.struct]#struct#  extension product
+**** [.string]#string#  "friendly_name" - friendly name of extension product
+**** [.string]#string#  "arch" - architecture
+**** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+**** [.array]#array#  "channels"
+           * [.struct]#struct#  channel
+** [.string]#string#  "arch" - architecture of the channel
+** [.string]#string#  "description" - description of the channel
+** [.string]#string#  "family" - channel family label
+** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+** [.string]#string#  "label" - label of the channel
+** [.string]#string#  "name" - name of the channel
+** [.boolean]#boolean#  "optional" - channel is optional
+** [.string]#string#  "parent" - the label of the parent channel
+** [.string]#string#  "product_name" - product name
+** [.string]#string#  "product_version" - product version
+** [.string]#string#  "source_url" - repository source URL
+** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+** [.string]#string#  "summary" - channel summary
+** [.string]#string#  "update_tag" - update tag
+** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+ 
+** [.boolean]#boolean#  "recommended" - recommended
+ 
+ 
 
 
 
-[#apidoc-sync_content-synchronizeChannelFamilies-87487369]
-== Method: synchronizeChannelFamilies 
+[#apidoc-sync_content-synchronizeChannelFamilies-362427044]
+== Method: synchronizeChannelFamilies
+
+HTTP `POST`
 
 Description:
 
@@ -292,8 +307,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeChannels-133900525]
-== Method: synchronizeChannels 
+[#apidoc-sync_content-synchronizeChannels-1760459579]
+== Method: synchronizeChannels
+
+HTTP `POST`
 
 Description:
 
@@ -317,8 +334,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeProducts-724826016]
-== Method: synchronizeProducts 
+[#apidoc-sync_content-synchronizeProducts-1290483339]
+== Method: synchronizeProducts
+
+HTTP `POST`
 
 Description:
 
@@ -340,8 +359,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeRepositories-794042208]
-== Method: synchronizeRepositories 
+[#apidoc-sync_content-synchronizeRepositories-116449140]
+== Method: synchronizeRepositories
+
+HTTP `POST`
 
 Description:
 
@@ -365,8 +386,10 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeSubscriptions-1907813883]
-== Method: synchronizeSubscriptions 
+[#apidoc-sync_content-synchronizeSubscriptions-500979799]
+== Method: synchronizeSubscriptions
+
+HTTP `POST`
 
 Description:
 

@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-user_external-createExternalGroupToRoleMap-1187025844,createExternalGroupToRoleMap>>
-* <<apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611,createExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-deleteExternalGroupToRoleMap-1088692104,deleteExternalGroupToRoleMap>>
-* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751,deleteExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getDefaultOrg-1119605276,getDefaultOrg>>
-* <<apidoc-user_external-getExternalGroupToRoleMap-1341130820,getExternalGroupToRoleMap>>
-* <<apidoc-user_external-getExternalGroupToSystemGroupMap-655954847,getExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getKeepTemporaryRoles-362427044,getKeepTemporaryRoles>>
-* <<apidoc-user_external-getUseOrgUnit-500979799,getUseOrgUnit>>
-* <<apidoc-user_external-listExternalGroupToRoleMaps-41646355,listExternalGroupToRoleMaps>>
-* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126,listExternalGroupToSystemGroupMaps>>
-* <<apidoc-user_external-setDefaultOrg-116449140,setDefaultOrg>>
-* <<apidoc-user_external-setExternalGroupRoles-552494603,setExternalGroupRoles>>
-* <<apidoc-user_external-setExternalGroupSystemGroups-1576827711,setExternalGroupSystemGroups>>
-* <<apidoc-user_external-setKeepTemporaryRoles-1760459579,setKeepTemporaryRoles>>
-* <<apidoc-user_external-setUseOrgUnit-1290483339,setUseOrgUnit>>
+* <<apidoc-user_external-createExternalGroupToRoleMap-1405108810,createExternalGroupToRoleMap>>
+* <<apidoc-user_external-createExternalGroupToSystemGroupMap-1337181808,createExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-deleteExternalGroupToRoleMap-756603373,deleteExternalGroupToRoleMap>>
+* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-148222723,deleteExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getDefaultOrg-603574478,getDefaultOrg>>
+* <<apidoc-user_external-getExternalGroupToRoleMap-762100699,getExternalGroupToRoleMap>>
+* <<apidoc-user_external-getExternalGroupToSystemGroupMap-1802274860,getExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getKeepTemporaryRoles-1947633620,getKeepTemporaryRoles>>
+* <<apidoc-user_external-getUseOrgUnit-962126152,getUseOrgUnit>>
+* <<apidoc-user_external-listExternalGroupToRoleMaps-2090535958,listExternalGroupToRoleMaps>>
+* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-1501852719,listExternalGroupToSystemGroupMaps>>
+* <<apidoc-user_external-setDefaultOrg-1670501199,setDefaultOrg>>
+* <<apidoc-user_external-setExternalGroupRoles-1082789522,setExternalGroupRoles>>
+* <<apidoc-user_external-setExternalGroupSystemGroups-1369857878,setExternalGroupSystemGroups>>
+* <<apidoc-user_external-setKeepTemporaryRoles-1697117834,setKeepTemporaryRoles>>
+* <<apidoc-user_external-setUseOrgUnit-2008088356,setUseOrgUnit>>
 
 == Description
 
@@ -34,8 +34,10 @@ If you are using IPA integration to allow authentication of users from
 user.external
 
 
-[#apidoc-user_external-createExternalGroupToRoleMap-1187025844]
-== Method: createExternalGroupToRoleMap 
+[#apidoc-user_external-createExternalGroupToRoleMap-1405108810]
+== Method: createExternalGroupToRoleMap
+
+HTTP `POST`
 
 Description:
 
@@ -53,8 +55,7 @@ Parameters:
 * [.string]#string#  name - Name of the external group. Must be
  unique.
  
-* [.array]#array# :
-** [.string]#string#  - role - Can be any of:
+* [.array]#string array#  roles - role - Can be any of:
  satellite_admin, org_admin (implies all other roles except for satellite_admin),
  channel_admin, config_admin, system_group_admin, or
  activation_key_admin.
@@ -62,17 +63,18 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-    
+* * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "roles" - role
+  
  
 
 
 
-[#apidoc-user_external-createExternalGroupToSystemGroupMap-2129874611]
-== Method: createExternalGroupToSystemGroupMap 
+[#apidoc-user_external-createExternalGroupToSystemGroupMap-1337181808]
+== Method: createExternalGroupToSystemGroupMap
+
+HTTP `POST`
 
 Description:
 
@@ -90,24 +92,24 @@ Parameters:
 * [.string]#string#  name - Name of the external group. Must be
  unique.
  
-* [.array]#array# :
-** [.string]#string#  - groupName - The names of the server
+* [.array]#string array#  groupNames - the names of the server
  groups to grant access to.
  
 
 Returns:
 
-* * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-    
+* * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "groups" - roles
+  
  
 
 
 
-[#apidoc-user_external-deleteExternalGroupToRoleMap-1088692104]
-== Method: deleteExternalGroupToRoleMap 
+[#apidoc-user_external-deleteExternalGroupToRoleMap-756603373]
+== Method: deleteExternalGroupToRoleMap
+
+HTTP `POST`
 
 Description:
 
@@ -131,8 +133,10 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-459545751]
-== Method: deleteExternalGroupToSystemGroupMap 
+[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-148222723]
+== Method: deleteExternalGroupToSystemGroupMap
+
+HTTP `POST`
 
 Description:
 
@@ -156,8 +160,10 @@ Returns:
 
 
 
-[#apidoc-user_external-getDefaultOrg-1119605276]
-== Method: getDefaultOrg 
+[#apidoc-user_external-getDefaultOrg-603574478]
+== Method: getDefaultOrg
+
+HTTP `GET`
 
 Description:
 
@@ -174,13 +180,15 @@ Parameters:
 
 Returns:
 
-* [.int]#int#  id - Id of the default organization. 0 if there is no default
+* [.int]#int#  id - ID of the default organization. 0 if there is no default
  
 
 
 
-[#apidoc-user_external-getExternalGroupToRoleMap-1341130820]
-== Method: getExternalGroupToRoleMap 
+[#apidoc-user_external-getExternalGroupToRoleMap-762100699]
+== Method: getExternalGroupToRoleMap
+
+HTTP `GET`
 
 Description:
 
@@ -199,17 +207,18 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-    
+* * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "roles" - role
+  
  
 
 
 
-[#apidoc-user_external-getExternalGroupToSystemGroupMap-655954847]
-== Method: getExternalGroupToSystemGroupMap 
+[#apidoc-user_external-getExternalGroupToSystemGroupMap-1802274860]
+== Method: getExternalGroupToSystemGroupMap
+
+HTTP `GET`
 
 Description:
 
@@ -228,17 +237,18 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-    
+* * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "groups" - roles
+  
  
 
 
 
-[#apidoc-user_external-getKeepTemporaryRoles-362427044]
-== Method: getKeepTemporaryRoles 
+[#apidoc-user_external-getKeepTemporaryRoles-1947633620]
+== Method: getKeepTemporaryRoles
+
+HTTP `GET`
 
 Description:
 
@@ -262,8 +272,10 @@ Returns:
 
 
 
-[#apidoc-user_external-getUseOrgUnit-500979799]
-== Method: getUseOrgUnit 
+[#apidoc-user_external-getUseOrgUnit-962126152]
+== Method: getUseOrgUnit
+
+HTTP `GET`
 
 Description:
 
@@ -287,8 +299,10 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToRoleMaps-41646355]
-== Method: listExternalGroupToRoleMaps 
+[#apidoc-user_external-listExternalGroupToRoleMaps-2090535958]
+== Method: listExternalGroupToRoleMaps
+
+HTTP `GET`
 
 Description:
 
@@ -306,17 +320,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-   
-  
+     * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "roles" - role
+ 
+ 
 
 
 
-[#apidoc-user_external-listExternalGroupToSystemGroupMaps-2131124126]
-== Method: listExternalGroupToSystemGroupMaps 
+[#apidoc-user_external-listExternalGroupToSystemGroupMaps-1501852719]
+== Method: listExternalGroupToSystemGroupMaps
+
+HTTP `GET`
 
 Description:
 
@@ -334,17 +349,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - externalGroup
-      ** [.string]#string#  "name"
-      ** [.array]#array#  "roles"
-*** string - role
-   
-  
+     * [.struct]#struct#  external group
+** [.string]#string#  "name"
+** [.array]#string array#  "groups" - roles
+ 
+ 
 
 
 
-[#apidoc-user_external-setDefaultOrg-116449140]
-== Method: setDefaultOrg 
+[#apidoc-user_external-setDefaultOrg-1670501199]
+== Method: setDefaultOrg
+
+HTTP `POST`
 
 Description:
 
@@ -358,7 +374,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  defaultOrg - Id of the organization to set
+* [.int]#int#  orgId - ID of the organization to set
  as the default org. 0 if there should not be a default organization.
  
 
@@ -369,8 +385,10 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupRoles-552494603]
-== Method: setExternalGroupRoles 
+[#apidoc-user_external-setExternalGroupRoles-1082789522]
+== Method: setExternalGroupRoles
+
+HTTP `POST`
 
 Description:
 
@@ -386,8 +404,7 @@ Parameters:
  
 * [.string]#string#  name - Name of the external group.
  
-* [.array]#array# :
-** [.string]#string#  - role - Can be any of:
+* [.array]#string array#  roles - role - Can be any of:
  satellite_admin, org_admin (implies all other roles except for satellite_admin),
  channel_admin, config_admin, system_group_admin, or
  activation_key_admin.
@@ -400,8 +417,10 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupSystemGroups-1576827711]
-== Method: setExternalGroupSystemGroups 
+[#apidoc-user_external-setExternalGroupSystemGroups-1369857878]
+== Method: setExternalGroupSystemGroups
+
+HTTP `POST`
 
 Description:
 
@@ -417,8 +436,7 @@ Parameters:
  
 * [.string]#string#  name - Name of the external group.
  
-* [.array]#array# :
-** [.string]#string#  - groupName - The names of the
+* [.array]#string array#  groupNames - the names of the
  server groups to grant access to.
  
 
@@ -429,8 +447,10 @@ Returns:
 
 
 
-[#apidoc-user_external-setKeepTemporaryRoles-1760459579]
-== Method: setKeepTemporaryRoles 
+[#apidoc-user_external-setKeepTemporaryRoles-1697117834]
+== Method: setKeepTemporaryRoles
+
+HTTP `POST`
 
 Description:
 
@@ -456,8 +476,10 @@ Returns:
 
 
 
-[#apidoc-user_external-setUseOrgUnit-1290483339]
-== Method: setUseOrgUnit 
+[#apidoc-user_external-setUseOrgUnit-2008088356]
+== Method: setUseOrgUnit
+
+HTTP `POST`
 
 Description:
 
@@ -472,7 +494,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.boolean]#boolean#  useOrgUnit - True if we should use the IPA
+* [.boolean]#boolean#  useOrgUnit - tue if we should use the IPA
  orgunit to determine which organization to create the user in, false otherwise.
  
 

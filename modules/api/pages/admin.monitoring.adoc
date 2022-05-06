@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-admin_monitoring-disable-1733902203,disable>>
-* <<apidoc-admin_monitoring-enable-1106840336,enable>>
-* <<apidoc-admin_monitoring-getStatus-661868623,getStatus>>
+* <<apidoc-admin_monitoring-disable-251788397,disable>>
+* <<apidoc-admin_monitoring-enable-348817596,enable>>
+* <<apidoc-admin_monitoring-getStatus-140301331,getStatus>>
 
 == Description
 
@@ -17,8 +17,10 @@ Provides methods to manage the monitoring of the #product() server.
 admin.monitoring
 
 
-[#apidoc-admin_monitoring-disable-1733902203]
-== Method: disable 
+[#apidoc-admin_monitoring-disable-251788397]
+== Method: disable
+
+HTTP `POST`
 
 Description:
 
@@ -35,18 +37,20 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-      ** [.struct]#struct#  - Exporters
-          *** [.string]#string#  "node"
-          *** [.string]#string#  "tomcat"
-          *** [.string]#string#  "taskomatic"
-          *** [.string]#string#  "postgres"
-          *** [.string]#string#  "self_monitoring"
-         
+** [.struct]#struct#  Exporters
+*** [.string]#string#  "node"
+*** [.string]#string#  "tomcat"
+*** [.string]#string#  "taskomatic"
+*** [.string]#string#  "postgres"
+*** [.string]#string#  "self_monitoring"
+ 
 
 
 
-[#apidoc-admin_monitoring-enable-1106840336]
-== Method: enable 
+[#apidoc-admin_monitoring-enable-348817596]
+== Method: enable
+
+HTTP `POST`
 
 Description:
 
@@ -63,18 +67,20 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-      ** [.struct]#struct#  - Exporters
-          *** [.string]#string#  "node"
-          *** [.string]#string#  "tomcat"
-          *** [.string]#string#  "taskomatic"
-          *** [.string]#string#  "postgres"
-          *** [.string]#string#  "self_monitoring"
-         
+** [.struct]#struct#  Exporters
+*** [.string]#string#  "node"
+*** [.string]#string#  "tomcat"
+*** [.string]#string#  "taskomatic"
+*** [.string]#string#  "postgres"
+*** [.string]#string#  "self_monitoring"
+ 
 
 
 
-[#apidoc-admin_monitoring-getStatus-661868623]
-== Method: getStatus 
+[#apidoc-admin_monitoring-getStatus-140301331]
+== Method: getStatus
+
+HTTP `GET`
 
 Description:
 
@@ -91,12 +97,12 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-      ** [.struct]#struct#  - Exporters
-          *** [.string]#string#  "node"
-          *** [.string]#string#  "tomcat"
-          *** [.string]#string#  "taskomatic"
-          *** [.string]#string#  "postgres"
-          *** [.string]#string#  "self_monitoring"
-         
+** [.struct]#struct#  Exporters
+*** [.string]#string#  "node"
+*** [.string]#string#  "tomcat"
+*** [.string]#string#  "taskomatic"
+*** [.string]#string#  "postgres"
+*** [.string]#string#  "self_monitoring"
+ 
 
 

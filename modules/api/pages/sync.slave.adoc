@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-sync_slave-create-965010099,create>>
-* <<apidoc-sync_slave-delete-2139268895,delete>>
-* <<apidoc-sync_slave-getAllowedOrgs-1652216902,getAllowedOrgs>>
-* <<apidoc-sync_slave-getSlave-2047734670,getSlave>>
-* <<apidoc-sync_slave-getSlaveByName-1686247174,getSlaveByName>>
-* <<apidoc-sync_slave-getSlaves-145371155,getSlaves>>
-* <<apidoc-sync_slave-setAllowedOrgs-2013186564,setAllowedOrgs>>
-* <<apidoc-sync_slave-update-901464042,update>>
+* <<apidoc-sync_slave-create-1177414443,create>>
+* <<apidoc-sync_slave-delete-324419172,delete>>
+* <<apidoc-sync_slave-getAllowedOrgs-1208989446,getAllowedOrgs>>
+* <<apidoc-sync_slave-getSlave-520498704,getSlave>>
+* <<apidoc-sync_slave-getSlaveByName-920386152,getSlaveByName>>
+* <<apidoc-sync_slave-getSlaves-1778913597,getSlaves>>
+* <<apidoc-sync_slave-setAllowedOrgs-1725392569,setAllowedOrgs>>
+* <<apidoc-sync_slave-update-941392492,update>>
 
 == Description
 
@@ -23,8 +23,10 @@ Contains methods to set up information about allowed-"slaves", for use
 sync.slave
 
 
-[#apidoc-sync_slave-create-965010099]
-== Method: create 
+[#apidoc-sync_slave-create-1177414443]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -37,27 +39,29 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  slave - Slave's fully-qualified domain name
+* [.string]#string#  slaveFqdn - Slave's fully-qualified domain name
  
-* [.boolean]#boolean#  enabled - Let this slave talk to us?
+* [.boolean]#boolean#  isEnabled - Let this slave talk to us?
  
 * [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this slave?
  
 
 Returns:
 
-* * [.struct]#struct#  - IssSlave info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "slave"
-   ** [.boolean]#boolean#  "enabled"
-   ** [.boolean]#boolean#  "allowAllOrgs"
-   
+* * [.struct]#struct#  IssSlave info
+** [.int]#int#  "id"
+** [.string]#string#  "slave"
+** [.boolean]#boolean#  "enabled"
+** [.boolean]#boolean#  "allowAllOrgs"
+  
  
 
 
 
-[#apidoc-sync_slave-delete-2139268895]
-== Method: delete 
+[#apidoc-sync_slave-delete-324419172]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -70,7 +74,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Slave to remove
+* [.int]#int#  slaveId - ID of the Slave to remove
  
 
 Returns:
@@ -80,8 +84,10 @@ Returns:
 
 
 
-[#apidoc-sync_slave-getAllowedOrgs-1652216902]
-== Method: getAllowedOrgs 
+[#apidoc-sync_slave-getAllowedOrgs-1208989446]
+== Method: getAllowedOrgs
+
+HTTP `GET`
 
 Description:
 
@@ -94,19 +100,20 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Slave
+* [.int]#int#  slaveId - Id of the desired Slave
  
 
 Returns:
 
-* [.array]#array# :
-** [.int]#int#  - ids of allowed organizations
+* [.array]#int array#  ids of allowed organizations
  
 
 
 
-[#apidoc-sync_slave-getSlave-2047734670]
-== Method: getSlave 
+[#apidoc-sync_slave-getSlave-520498704]
+== Method: getSlave
+
+HTTP `GET`
 
 Description:
 
@@ -119,23 +126,25 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Slave
+* [.int]#int#  slaveId - ID of the desired Slave
  
 
 Returns:
 
-* * [.struct]#struct#  - IssSlave info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "slave"
-   ** [.boolean]#boolean#  "enabled"
-   ** [.boolean]#boolean#  "allowAllOrgs"
-   
+* * [.struct]#struct#  IssSlave info
+** [.int]#int#  "id"
+** [.string]#string#  "slave"
+** [.boolean]#boolean#  "enabled"
+** [.boolean]#boolean#  "allowAllOrgs"
+  
  
 
 
 
-[#apidoc-sync_slave-getSlaveByName-1686247174]
-== Method: getSlaveByName 
+[#apidoc-sync_slave-getSlaveByName-920386152]
+== Method: getSlaveByName
+
+HTTP `GET`
 
 Description:
 
@@ -148,23 +157,25 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  fqdn - Domain-name of the desired Slave
+* [.string]#string#  slaveFqdn - Domain-name of the desired Slave
  
 
 Returns:
 
-* * [.struct]#struct#  - IssSlave info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "slave"
-   ** [.boolean]#boolean#  "enabled"
-   ** [.boolean]#boolean#  "allowAllOrgs"
-   
+* * [.struct]#struct#  IssSlave info
+** [.int]#int#  "id"
+** [.string]#string#  "slave"
+** [.boolean]#boolean#  "enabled"
+** [.boolean]#boolean#  "allowAllOrgs"
+  
  
 
 
 
-[#apidoc-sync_slave-getSlaves-145371155]
-== Method: getSlaves 
+[#apidoc-sync_slave-getSlaves-1778913597]
+== Method: getSlaves
+
+HTTP `GET`
 
 Description:
 
@@ -181,18 +192,20 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  - IssSlave info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "slave"
-   ** [.boolean]#boolean#  "enabled"
-   ** [.boolean]#boolean#  "allowAllOrgs"
-  
-       
+          * [.struct]#struct#  IssSlave info
+** [.int]#int#  "id"
+** [.string]#string#  "slave"
+** [.boolean]#boolean#  "enabled"
+** [.boolean]#boolean#  "allowAllOrgs"
+ 
+ 
 
 
 
-[#apidoc-sync_slave-setAllowedOrgs-2013186564]
-== Method: setAllowedOrgs 
+[#apidoc-sync_slave-setAllowedOrgs-1725392569]
+== Method: setAllowedOrgs
+
+HTTP `POST`
 
 Description:
 
@@ -205,10 +218,9 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the desired Slave
+* [.int]#int#  slaveId - ID of the desired Slave
  
-* [.array]#array# :
-** [.int]#int#  - List of org-ids we're willing to export
+* [.array]#int array#  orgIds - List of org-ids we're willing to export
  
 
 Returns:
@@ -218,8 +230,10 @@ Returns:
 
 
 
-[#apidoc-sync_slave-update-901464042]
-== Method: update 
+[#apidoc-sync_slave-update-941392492]
+== Method: update
+
+HTTP `POST`
 
 Description:
 
@@ -232,23 +246,23 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  id - Id of the Slave to update
+* [.int]#int#  slaveId - ID of the Slave to update
  
-* [.string]#string#  slave - Slave's fully-qualified domain name
+* [.string]#string#  slaveFqdn - Slave's fully-qualified domain name
  
-* [.boolean]#boolean#  enabled - Let this slave talk to us?
+* [.boolean]#boolean#  isEnabled - Let this slave talk to us?
  
 * [.boolean]#boolean#  allowAllOrgs - Export all our orgs to this Slave?
  
 
 Returns:
 
-* * [.struct]#struct#  - IssSlave info
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "slave"
-   ** [.boolean]#boolean#  "enabled"
-   ** [.boolean]#boolean#  "allowAllOrgs"
-   
+* * [.struct]#struct#  IssSlave info
+** [.int]#int#  "id"
+** [.string]#string#  "slave"
+** [.boolean]#boolean#  "enabled"
+** [.boolean]#boolean#  "allowAllOrgs"
+  
  
 
 

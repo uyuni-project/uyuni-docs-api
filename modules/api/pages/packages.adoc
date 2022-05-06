@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-packages-findByNvrea-742939450,findByNvrea>>
-* <<apidoc-packages-getDetails-42801967,getDetails>>
-* <<apidoc-packages-getPackage-1336822843,getPackage>>
-* <<apidoc-packages-getPackageUrl-1241568657,getPackageUrl>>
-* <<apidoc-packages-listChangelog-998935228,listChangelog>>
-* <<apidoc-packages-listDependencies-1921324291,listDependencies>>
-* <<apidoc-packages-listFiles-1362405334,listFiles>>
-* <<apidoc-packages-listProvidingChannels-1597169296,listProvidingChannels>>
-* <<apidoc-packages-listProvidingErrata-293687918,listProvidingErrata>>
-* <<apidoc-packages-listSourcePackages-1925356935,listSourcePackages>>
-* <<apidoc-packages-removePackage-1762409247,removePackage>>
-* <<apidoc-packages-removeSourcePackage-494021631,removeSourcePackage>>
+* <<apidoc-packages-findByNvrea-998935228,findByNvrea>>
+* <<apidoc-packages-getDetails-1340283293,getDetails>>
+* <<apidoc-packages-getPackage-1762409247,getPackage>>
+* <<apidoc-packages-getPackageUrl-1921324291,getPackageUrl>>
+* <<apidoc-packages-listChangelog-513310553,listChangelog>>
+* <<apidoc-packages-listDependencies-422243042,listDependencies>>
+* <<apidoc-packages-listFiles-1231075353,listFiles>>
+* <<apidoc-packages-listProvidingChannels-1491860427,listProvidingChannels>>
+* <<apidoc-packages-listProvidingErrata-1755838330,listProvidingErrata>>
+* <<apidoc-packages-listSourcePackages-1597169296,listSourcePackages>>
+* <<apidoc-packages-removePackage-1323418266,removePackage>>
+* <<apidoc-packages-removeSourcePackage-42801967,removeSourcePackage>>
 
 == Description
 
@@ -27,8 +27,10 @@ Methods to retrieve information about the Packages contained
 packages
 
 
-[#apidoc-packages-findByNvrea-742939450]
-== Method: findByNvrea 
+[#apidoc-packages-findByNvrea-998935228]
+== Method: findByNvrea
+
+HTTP `GET`
 
 Description:
 
@@ -40,7 +42,7 @@ Lookup the details for packages with the given name, version,
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -59,26 +61,28 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - package
-      ** [.string]#string#  "name"
-      ** [.string]#string#  "version"
-      ** [.string]#string#  "release"
-      ** [.string]#string#  "epoch"
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "arch_label"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-      ** [.string]#string#  "path" - The path on that file system that the package
+     * [.struct]#struct#  package
+** [.string]#string#  "name"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "epoch"
+** [.int]#int#  "id"
+** [.string]#string#  "arch_label"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+** [.string]#string#  "path" - the path on that file system that the package
              resides
-      ** [.boolean]#boolean#  "part_of_retracted_patch" - True if the package is a part of a retracted patch
-      ** [.string]#string#  "provider" - The provider of the package, determined by
+** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
+** [.string]#string#  "provider" - the provider of the package, determined by
               the gpg key it was signed with.
-   
-    
+ 
+ 
 
 
 
-[#apidoc-packages-getDetails-42801967]
-== Method: getDetails 
+[#apidoc-packages-getDetails-1340283293]
+== Method: getDetails
+
+HTTP `GET`
 
 Description:
 
@@ -89,43 +93,44 @@ Retrieve details for the package with the ID.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
 
-* [.struct]#struct#  - package
-       ** [.int]#int#  "id"
-       ** [.string]#string#  "name"
-       ** [.string]#string#  "epoch"
-       ** [.string]#string#  "version"
-       ** [.string]#string#  "release"
-       ** [.string]#string#  "arch_label"
-       ** [.array]#array#  "providing_channels"
-*** string - Channel label providing this package.
-       ** [.string]#string#  "build_host"
-       ** [.string]#string#  "description"
-       ** [.string]#string#  "checksum"
-       ** [.string]#string#  "checksum_type"
-       ** [.string]#string#  "vendor"
-       ** [.string]#string#  "summary"
-       ** [.string]#string#  "cookie"
-       ** [.string]#string#  "license"
-       ** [.string]#string#  "file"
-       ** [.string]#string#  "build_date"
-       ** [.string]#string#  "last_modified_date"
-       ** [.string]#string#  "size"
-       ** [.string]#string#  "path" - The path on the SUSE Manager server's file system that
+* [.struct]#struct#  package
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "epoch"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch_label"
+** [.array]#string array#  "providing_channels" - Channel label providing this package.
+** [.string]#string#  "build_host"
+** [.string]#string#  "description"
+** [.string]#string#  "checksum"
+** [.string]#string#  "checksum_type"
+** [.string]#string#  "vendor"
+** [.string]#string#  "summary"
+** [.string]#string#  "cookie"
+** [.string]#string#  "license"
+** [.string]#string#  "file"
+** [.string]#string#  "build_date"
+** [.string]#string#  "last_modified_date"
+** [.string]#string#  "size"
+** [.string]#string#  "path" - The path on the SUSE Manager server's file system that
               the package resides.
-       ** [.string]#string#  "payload_size"
-     
+** [.string]#string#  "payload_size"
+ 
 
 
 
-[#apidoc-packages-getPackage-1336822843]
-== Method: getPackage 
+[#apidoc-packages-getPackage-1762409247]
+== Method: getPackage
+
+HTTP `GET`
 
 Description:
 
@@ -138,21 +143,22 @@ Retrieve the package file associated with a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  package_id
+* [.int]#int#  pid
  
 
 Returns:
 
-* [.array]#array# :
-** [.byte]#byte#  - binary object - package file
+* [.array]#byte array#  binary object - package file
  
 
 
 
-[#apidoc-packages-getPackageUrl-1241568657]
-== Method: getPackageUrl 
+[#apidoc-packages-getPackageUrl-1921324291]
+== Method: getPackageUrl
+
+HTTP `GET`
 
 Description:
 
@@ -164,9 +170,9 @@ Retrieve the url that can be used to download a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  package_id
+* [.int]#int#  pid
  
 
 Returns:
@@ -176,8 +182,10 @@ Returns:
 
 
 
-[#apidoc-packages-listChangelog-998935228]
-== Method: listChangelog 
+[#apidoc-packages-listChangelog-513310553]
+== Method: listChangelog
+
+HTTP `GET`
 
 Description:
 
@@ -188,9 +196,9 @@ List the change log for a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
@@ -200,8 +208,10 @@ Returns:
 
 
 
-[#apidoc-packages-listDependencies-1921324291]
-== Method: listDependencies 
+[#apidoc-packages-listDependencies-422243042]
+== Method: listDependencies
+
+HTTP `GET`
 
 Description:
 
@@ -212,36 +222,36 @@ List the dependencies for a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
 
 * [.array]#array# :
-     ** [.struct]#struct#  - dependency
-       *** [.string]#string#  "dependency"
-       *** [.string]#string#  "dependency_type" - One of the following:
-         
-           *** requires
-           *** conflicts
-           *** obsoletes
-           *** provides
-           *** recommends
-           *** suggests
-           *** supplements
-           *** enhances
-           *** predepends
-           *** breaks
-         
-       *** [.string]#string#  "dependency_modifier"
-         
+** [.struct]#struct#  dependency
+*** [.string]#string#  "dependency"
+*** [.string]#string#  "dependency_type" - One of the following:
+**** requires
+**** conflicts
+**** obsoletes
+**** provides
+**** recommends
+**** suggests
+**** supplements
+**** enhances
+**** predepends
+**** breaks
+*** [.string]#string#  "dependency_modifier"
+ 
 
 
 
-[#apidoc-packages-listFiles-1362405334]
-== Method: listFiles 
+[#apidoc-packages-listFiles-1231075353]
+== Method: listFiles
+
+HTTP `GET`
 
 Description:
 
@@ -252,28 +262,30 @@ List the files associated with a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
 
 * [.array]#array# :
-     ** [.struct]#struct#  - file info
-       *** [.string]#string#  "path"
-       *** [.string]#string#  "type"
-       *** [.string]#string#  "last_modified_date"
-       *** [.string]#string#  "checksum"
-       *** [.string]#string#  "checksum_type"
-       *** [.int]#int#  "size"
-       *** [.string]#string#  "linkto"
-         
+** [.struct]#struct#  file info
+*** [.string]#string#  "path"
+*** [.string]#string#  "type"
+*** [.string]#string#  "last_modified_date"
+*** [.string]#string#  "checksum"
+*** [.string]#string#  "checksum_type"
+*** [.int]#int#  "size"
+*** [.string]#string#  "linkto"
+ 
 
 
 
-[#apidoc-packages-listProvidingChannels-1597169296]
-== Method: listProvidingChannels 
+[#apidoc-packages-listProvidingChannels-1491860427]
+== Method: listProvidingChannels
+
+HTTP `GET`
 
 Description:
 
@@ -284,24 +296,26 @@ List the channels that provide the a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
 
 * [.array]#array# :
-   ** [.struct]#struct#  - channel
-     *** [.string]#string#  "label"
-     *** [.string]#string#  "parent_label"
-     *** [.string]#string#  "name"
-     
+** [.struct]#struct#  channel
+*** [.string]#string#  "label"
+*** [.string]#string#  "parent_label"
+*** [.string]#string#  "name"
+ 
 
 
 
-[#apidoc-packages-listProvidingErrata-293687918]
-== Method: listProvidingErrata 
+[#apidoc-packages-listProvidingErrata-1755838330]
+== Method: listProvidingErrata
+
+HTTP `GET`
 
 Description:
 
@@ -312,27 +326,29 @@ List the errata providing the a package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
 
 * [.array]#array# :
-   ** [.struct]#struct#  - errata
-     *** [.string]#string#  "advisory"
-     *** [.string]#string#  "issue_date"
-     *** [.string]#string#  "last_modified_date"
-     *** [.string]#string#  "update_date"
-     *** [.string]#string#  "synopsis"
-     *** [.string]#string#  "type"
-     
+** [.struct]#struct#  errata
+*** [.string]#string#  "advisory"
+*** [.string]#string#  "issue_date"
+*** [.string]#string#  "last_modified_date"
+*** [.string]#string#  "update_date"
+*** [.string]#string#  "synopsis"
+*** [.string]#string#  "type"
+ 
 
 
 
-[#apidoc-packages-listSourcePackages-1925356935]
-== Method: listSourcePackages 
+[#apidoc-packages-listSourcePackages-1597169296]
+== Method: listSourcePackages
+
+HTTP `GET`
 
 Description:
 
@@ -343,21 +359,23 @@ List all source packages in user's organization.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-   ** [.struct]#struct#  - source_package
-     *** [.int]#int#  "id"
-     *** [.string]#string#  "name"
-     
+** [.struct]#struct#  source_package
+*** [.int]#int#  "id"
+*** [.string]#string#  "name"
+ 
 
 
 
-[#apidoc-packages-removePackage-1762409247]
-== Method: removePackage 
+[#apidoc-packages-removePackage-1323418266]
+== Method: removePackage
+
+HTTP `POST`
 
 Description:
 
@@ -368,9 +386,9 @@ Remove a package from #product().
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageId
+* [.int]#int#  pid
  
 
 Returns:
@@ -380,8 +398,10 @@ Returns:
 
 
 
-[#apidoc-packages-removeSourcePackage-494021631]
-== Method: removeSourcePackage 
+[#apidoc-packages-removeSourcePackage-42801967]
+== Method: removeSourcePackage
+
+HTTP `POST`
 
 Description:
 
@@ -392,9 +412,9 @@ Remove a source package.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  packageSourceId
+* [.int]#int#  psid - package source ID
  
 
 Returns:
