@@ -1,0 +1,20 @@
+= Using the request body
+
+The request body must be a top-level JSON object that contains all the parameters as its properties.
+
+[source,bash]
+----
+$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&lt;tokenhash&gt;;" \
+> -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
+> $API/contentmanagement/createProject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}
+----
