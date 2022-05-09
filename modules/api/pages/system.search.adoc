@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-system_search-deviceDescription-1694924087,deviceDescription>>
-* <<apidoc-system_search-deviceDriver-1437978127,deviceDriver>>
-* <<apidoc-system_search-deviceId-299194277,deviceId>>
-* <<apidoc-system_search-deviceVendorId-815017812,deviceVendorId>>
-* <<apidoc-system_search-hostname-14027428,hostname>>
-* <<apidoc-system_search-ip-244926383,ip>>
-* <<apidoc-system_search-nameAndDescription-1962475596,nameAndDescription>>
-* <<apidoc-system_search-uuid-1328154889,uuid>>
+* <<apidoc-system_search-deviceDescription-1511067261,deviceDescription>>
+* <<apidoc-system_search-deviceDriver-411529129,deviceDriver>>
+* <<apidoc-system_search-deviceId-1737577556,deviceId>>
+* <<apidoc-system_search-deviceVendorId-1784116580,deviceVendorId>>
+* <<apidoc-system_search-hostname-1600366322,hostname>>
+* <<apidoc-system_search-ip-568055377,ip>>
+* <<apidoc-system_search-nameAndDescription-188529678,nameAndDescription>>
+* <<apidoc-system_search-uuid-1726118601,uuid>>
 
 == Description
 
@@ -22,8 +22,10 @@ Provides methods to perform system search requests using the search server.
 system.search
 
 
-[#apidoc-system_search-deviceDescription-1694924087]
-== Method: deviceDescription 
+[#apidoc-system_search-deviceDescription-1511067261]
+== Method: deviceDescription
+
+HTTP `GET`
 
 Description:
 
@@ -34,7 +36,7 @@ List the systems which match the device description.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -42,24 +44,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-deviceDriver-1437978127]
-== Method: deviceDriver 
+[#apidoc-system_search-deviceDriver-411529129]
+== Method: deviceDriver
+
+HTTP `GET`
 
 Description:
 
@@ -70,7 +74,7 @@ List the systems which match this device driver.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -78,24 +82,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-deviceId-299194277]
-== Method: deviceId 
+[#apidoc-system_search-deviceId-1737577556]
+== Method: deviceId
+
+HTTP `GET`
 
 Description:
 
@@ -106,7 +112,7 @@ List the systems which match this device id
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -114,24 +120,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-deviceVendorId-815017812]
-== Method: deviceVendorId 
+[#apidoc-system_search-deviceVendorId-1784116580]
+== Method: deviceVendorId
+
+HTTP `GET`
 
 Description:
 
@@ -142,7 +150,7 @@ List the systems which match this device vendor_id
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -150,24 +158,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-hostname-14027428]
-== Method: hostname 
+[#apidoc-system_search-hostname-1600366322]
+== Method: hostname
+
+HTTP `GET`
 
 Description:
 
@@ -178,7 +188,7 @@ List the systems which match this hostname
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -186,24 +196,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-ip-244926383]
-== Method: ip 
+[#apidoc-system_search-ip-568055377]
+== Method: ip
+
+HTTP `GET`
 
 Description:
 
@@ -214,7 +226,7 @@ List the systems which match this ip.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -222,24 +234,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-nameAndDescription-1962475596]
-== Method: nameAndDescription 
+[#apidoc-system_search-nameAndDescription-188529678]
+== Method: nameAndDescription
+
+HTTP `GET`
 
 Description:
 
@@ -250,7 +264,7 @@ List the systems which match this name or description
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -258,24 +272,26 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 
 
-[#apidoc-system_search-uuid-1328154889]
-== Method: uuid 
+[#apidoc-system_search-uuid-1726118601]
+== Method: uuid
+
+HTTP `GET`
 
 Description:
 
@@ -286,7 +302,7 @@ List the systems which match this UUID
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  searchTerm
  
@@ -294,18 +310,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - system
-      ** [.int]#int#  "id"
-      ** [.string]#string#  "name"
-      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server
+         * [.struct]#struct#  system
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
               successfully checked in
-      ** [.string]#string#  "hostname"
-      ** [.string]#string#  "ip"
-      ** [.string]#string#  "hw_description" - hw description if not null
-      ** [.string]#string#  "hw_device_id" - hw device id if not null
-      ** [.string]#string#  "hw_vendor_id" - hw vendor id if not null
-      ** [.string]#string#  "hw_driver" - hw driver if not null
-  
-      
+** [.string]#string#  "hostname"
+** [.string]#string#  "ip"
+** [.string]#string#  "hw_description" - HW description if not null
+** [.string]#string#  "hw_device_id" - HW device id if not null
+** [.string]#string#  "hw_vendor_id" - HW vendor id if not null
+** [.string]#string#  "hw_driver" - HW driver if not null
+ 
+ 
 
 

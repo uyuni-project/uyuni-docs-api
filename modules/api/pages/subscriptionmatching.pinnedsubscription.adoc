@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-subscriptionmatching_pinnedsubscription-create-772065437,create>>
-* <<apidoc-subscriptionmatching_pinnedsubscription-delete-779998468,delete>>
-* <<apidoc-subscriptionmatching_pinnedsubscription-list-748199298,list>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-create-1718173776,create>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-delete-59966374,delete>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-list-213727345,list>>
 
 == Description
 
@@ -17,8 +17,10 @@ Provides the namespace for operations on Pinned Subscriptions
 subscriptionmatching.pinnedsubscription
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-create-772065437]
-== Method: create 
+[#apidoc-subscriptionmatching_pinnedsubscription-create-1718173776]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -31,24 +33,26 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  subscriptionId - Subscription Id
+* [.int]#int#  subscriptionId - Subscription ID
  
-* [.int]#int#  systemId - System Id
+* [.int]#int#  sid - System ID
  
 
 Returns:
 
-* * [.struct]#struct#  - pinned subscription
-      ** [.int]#int#  "id"
-      ** [.int]#int#  "subscription_id"
-      ** [.int]#int#  "system_id"
-    
+* * [.struct]#struct#  pinned subscription
+** [.int]#int#  "id"
+** [.int]#int#  "subscription_id"
+** [.int]#int#  "system_id"
+  
  
 
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-delete-779998468]
-== Method: delete 
+[#apidoc-subscriptionmatching_pinnedsubscription-delete-59966374]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -61,7 +65,7 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  pinnedSubscriptionId - Pinned Subscription id
+* [.int]#int#  subscriptionId - Pinned Subscription ID
  
 
 Returns:
@@ -71,8 +75,10 @@ Returns:
 
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-list-748199298]
-== Method: list 
+[#apidoc-subscriptionmatching_pinnedsubscription-list-213727345]
+== Method: list
+
+HTTP `POST`
 
 Description:
 
@@ -89,11 +95,11 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-         * [.struct]#struct#  - pinned subscription
-      ** [.int]#int#  "id"
-      ** [.int]#int#  "subscription_id"
-      ** [.int]#int#  "system_id"
-   
-      
+         * [.struct]#struct#  pinned subscription
+** [.int]#int#  "id"
+** [.int]#int#  "subscription_id"
+** [.int]#int#  "system_id"
+ 
+ 
 
 

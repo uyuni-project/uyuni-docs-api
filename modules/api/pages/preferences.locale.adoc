@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-preferences_locale-listLocales-1578892902,listLocales>>
-* <<apidoc-preferences_locale-listTimeZones-1307545610,listTimeZones>>
-* <<apidoc-preferences_locale-setLocale-438163691,setLocale>>
-* <<apidoc-preferences_locale-setTimeZone-1545634845,setTimeZone>>
+* <<apidoc-preferences_locale-listLocales-74211793,listLocales>>
+* <<apidoc-preferences_locale-listTimeZones-525199726,listTimeZones>>
+* <<apidoc-preferences_locale-setLocale-515585759,setLocale>>
+* <<apidoc-preferences_locale-setTimeZone-1996476498,setTimeZone>>
 
 == Description
 
@@ -18,8 +18,10 @@ Provides methods to access and modify user locale information
 preferences.locale
 
 
-[#apidoc-preferences_locale-listLocales-1578892902]
-== Method: listLocales 
+[#apidoc-preferences_locale-listLocales-74211793]
+== Method: listLocales
+
+HTTP `GET`
 
 Description:
 
@@ -34,14 +36,15 @@ Parameters:
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - Locale code.
+* [.array]#string array#  Locale code.
  
 
 
 
-[#apidoc-preferences_locale-listTimeZones-1307545610]
-== Method: listTimeZones 
+[#apidoc-preferences_locale-listTimeZones-525199726]
+== Method: listTimeZones
+
+HTTP `GET`
 
 Description:
 
@@ -57,16 +60,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - timezone
-   ** [.int]#int#  "time_zone_id" - Unique identifier for timezone.
-   ** [.string]#string#  "olson_name" - Name as identified by the Olson database.
-  
-  
+   * [.struct]#struct#  timezone
+** [.int]#int#  "time_zone_id" - unique identifier for timezone
+** [.string]#string#  "olson_name" - name as identified by the Olson database
+ 
+ 
 
 
 
-[#apidoc-preferences_locale-setLocale-438163691]
-== Method: setLocale 
+[#apidoc-preferences_locale-setLocale-515585759]
+== Method: setLocale
+
+HTTP `POST`
 
 Description:
 
@@ -91,8 +96,10 @@ Returns:
 
 
 
-[#apidoc-preferences_locale-setTimeZone-1545634845]
-== Method: setTimeZone 
+[#apidoc-preferences_locale-setTimeZone-1996476498]
+== Method: setTimeZone
+
+HTTP `POST`
 
 Description:
 

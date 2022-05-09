@@ -4,15 +4,20 @@
 
 == Available methods
 
-* <<apidoc-image-delete-589058590,delete>>
-* <<apidoc-image-getCustomValues-1957398032,getCustomValues>>
-* <<apidoc-image-getDetails-1762556809,getDetails>>
-* <<apidoc-image-getPillar-391463702,getPillar>>
-* <<apidoc-image-getRelevantErrata-1085888709,getRelevantErrata>>
-* <<apidoc-image-importImage-1368067090,importImage>>
-* <<apidoc-image-listImages-1562669118,listImages>>
-* <<apidoc-image-listPackages-2102001207,listPackages>>
-* <<apidoc-image-scheduleImageBuild-1525789217,scheduleImageBuild>>
+* <<apidoc-image-addImageFile-2021148063,addImageFile>>
+* <<apidoc-image-delete-1762556809,delete>>
+* <<apidoc-image-deleteImageFile-646359041,deleteImageFile>>
+* <<apidoc-image-getCustomValues-1956642247,getCustomValues>>
+* <<apidoc-image-getDetails-641691286,getDetails>>
+* <<apidoc-image-getPillar-1232346752,getPillar>>
+* <<apidoc-image-getRelevantErrata-1562669118,getRelevantErrata>>
+* <<apidoc-image-importContainerImage-1681552378,importContainerImage>>
+* <<apidoc-image-importImage-967635335,importImage>>
+* <<apidoc-image-importOSImage-231989731,importOSImage>>
+* <<apidoc-image-listImages-1231345665,listImages>>
+* <<apidoc-image-listPackages-1324420411,listPackages>>
+* <<apidoc-image-scheduleImageBuild-1332370633,scheduleImageBuild>>
+* <<apidoc-image-setPillar-1095583342,setPillar>>
 
 == Description
 
@@ -23,12 +28,46 @@ Provides methods to access and modify images.
 image
 
 
-[#apidoc-image-delete-589058590]
-== Method: delete 
+[#apidoc-image-addImageFile-2021148063]
+== Method: addImageFile
+
+HTTP `POST`
 
 Description:
 
-Delete an Image
+Delete image file
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId - ID of the image
+ 
+* [.string]#string#  file - the file name, it must exist in the store
+ 
+* [.string]#string#  type - the image type
+ 
+* [.boolean]#boolean#  external - the file is external
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-image-delete-1762556809]
+== Method: delete
+
+HTTP `POST`
+
+Description:
+
+Delete an image
 
 
 
@@ -47,12 +86,42 @@ Returns:
 
 
 
-[#apidoc-image-getCustomValues-1957398032]
-== Method: getCustomValues 
+[#apidoc-image-deleteImageFile-646359041]
+== Method: deleteImageFile
+
+HTTP `POST`
 
 Description:
 
-Get the custom data values defined for the Image.
+Delete image file
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId - ID of the image
+ 
+* [.string]#string#  file - the file name
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-image-getCustomValues-1956642247]
+== Method: getCustomValues
+
+HTTP `GET`
+
+Description:
+
+Get the custom data values defined for the image
 
 
 
@@ -66,19 +135,21 @@ Parameters:
 
 Returns:
 
-* [.struct]#struct#  - Map of custom labels to custom values
-      ** [.string]#string#  "custom info label"
-      ** [.string]#string#  "value"
-     
+* [.struct]#struct#  the map of custom labels to custom values
+** [.string]#string#  "custom info label"
+** [.string]#string#  "value"
+ 
 
 
 
-[#apidoc-image-getDetails-1762556809]
-== Method: getDetails 
+[#apidoc-image-getDetails-641691286]
+== Method: getDetails
+
+HTTP `GET`
 
 Description:
 
-Get details of an Image
+Get details of an image
 
 
 
@@ -92,47 +163,49 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  - Image Overview information
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name" - image name
-   ** [.string]#string#  "version" - image tag/version
-   ** [.int]#int#  "revision" - image build revision number
-   ** [.string]#string#  "arch" - image architecture
-   ** [.boolean]#boolean#  "external" - true if the image is built externally,
+* * [.struct]#struct#  image overview information
+** [.int]#int#  "id"
+** [.string]#string#  "name" - image name
+** [.string]#string#  "type" - image type
+** [.string]#string#  "version" - image tag/version
+** [.int]#int#  "revision" - image build revision number
+** [.string]#string#  "arch" - image architecture
+** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-   ** [.string]#string#  "checksum"
-   ** [.string]#string#  "profileLabel"
-   ** [.string]#string#  "buildStatus" - One of:
-            
-              ** queued
-              ** picked up
-              ** completed
-              ** failed
-            
-   ** [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
-            
-              ** queued
-              ** picked up
-              ** completed
-              ** failed
-            
-   ** [.int]#int#  "buildServerId"
-   ** [.int]#int#  "securityErrata"
-   ** [.int]#int#  "bugErrata"
-   ** [.int]#int#  "enhancementErrata"
-   ** [.int]#int#  "outdatedPackages"
-   ** [.int]#int#  "installedPackages"
-   
+** [.string]#string#  "checksum"
+** [.string]#string#  "profileLabel"
+** [.string]#string#  "storeLabel"
+** [.string]#string#  "buildStatus" - One of:
+*** queued
+*** picked up
+*** completed
+*** failed
+** [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
+*** queued
+*** picked up
+*** completed
+*** failed
+** [.int]#int#  "buildServerId"
+** [.int]#int#  "securityErrata"
+** [.int]#int#  "bugErrata"
+** [.int]#int#  "enhancementErrata"
+** [.int]#int#  "outdatedPackages"
+** [.int]#int#  "installedPackages"
+** [.struct]#struct#  "files" - image files
+** [.boolean]#boolean#  "obsolete" - true if the image has been replaced in the store
+  
  
 
 
 
-[#apidoc-image-getPillar-391463702]
-== Method: getPillar 
+[#apidoc-image-getPillar-1232346752]
+== Method: getPillar
+
+HTTP `GET`
 
 Description:
 
-Get pillar of an Image
+Get pillar data of an image
 
 
 
@@ -146,13 +219,15 @@ Parameters:
 
 Returns:
 
-* struct 
+* [.struct]#struct#  the pillar data
  
 
 
 
-[#apidoc-image-getRelevantErrata-1085888709]
-== Method: getRelevantErrata 
+[#apidoc-image-getRelevantErrata-1562669118]
+== Method: getRelevantErrata
+
+HTTP `GET`
 
 Description:
 
@@ -171,22 +246,24 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  - errata
-          ** [.int]#int#  "id" - Errata ID.
-          ** [.string]#string#  "issue_date" - Date erratum was updated. (Deprecated)
-          ** [.string]#string#  "date" - Date erratum was created. (Deprecated)
-          ** [.string]#string#  "update_date" - Date erratum was updated. (Deprecated)
-          ** [.string]#string#  "advisory_synopsis" - Summary of the erratum.
-          ** [.string]#string#  "advisory_type" - Type label such as Security, Bug Fix
-          ** [.string]#string#  "advisory_status" - Status label such as final, testing, retracted
-          ** [.string]#string#  "advisory_name" - Name such as RHSA, etc
-       
-       
+          * [.struct]#struct#  errata
+** [.int]#int#  "id" - errata ID
+** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+** [.string]#string#  "date" - the date erratum was created (deprecated)
+** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+** [.string]#string#  "advisory_synopsis" - summary of the erratum
+** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+ 
+ 
 
 
 
-[#apidoc-image-importImage-1368067090]
-== Method: importImage 
+[#apidoc-image-importContainerImage-1681552378]
+== Method: importContainerImage
+
+HTTP `POST`
 
 Description:
 
@@ -199,36 +276,101 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  name - image name as specified in the
- store
+* [.string]#string#  name - image name as specified in the store
  
 * [.string]#string#  version - version to import or empty
  
-* [.int]#int#  buildHostId - system ID of the build
- host
+* [.int]#int#  buildHostId - system ID of the build host
  
 * [.string]#string#  storeLabel
  
-* [.string]#string#  activationKey - activation key to get
- the channel data from
+* [.string]#string#  activationKey - activation key to get the channel data from
  
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest
- the following inspect can run
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the following inspect can run
  
 
 Returns:
 
-* [.int]#int#  id - ID of the inspect action created
+* [.int]#int#  the ID of the inspect action created
  
 
 
 
-[#apidoc-image-listImages-1562669118]
-== Method: listImages 
+[#apidoc-image-importImage-967635335]
+== Method: importImage (Deprecated)
+
+HTTP `POST`
 
 Description:
 
-List available Images
+Import an image and schedule an inspect afterwards
+
+
+Deprecated - Schedule a Container image import
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - image name as specified in the store
+ 
+* [.string]#string#  version - version to import or empty
+ 
+* [.int]#int#  buildHostId - system ID of the build host
+ 
+* [.string]#string#  storeLabel
+ 
+* [.string]#string#  activationKey - activation key to get the channel data from
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the following inspect can run
+ 
+
+Returns:
+
+* [.int]#int#  the ID of the inspect action created
+ 
+
+
+
+[#apidoc-image-importOSImage-231989731]
+== Method: importOSImage
+
+HTTP `POST`
+
+Description:
+
+Import an image and schedule an inspect afterwards
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  name - image name as specified in the store
+ 
+* [.string]#string#  version - version to import
+ 
+* [.string]#string#  arch - image architecture
+ 
+
+Returns:
+
+* [.int]#int#  the ID of the image
+ 
+
+
+
+[#apidoc-image-listImages-1231345665]
+== Method: listImages
+
+HTTP `GET`
+
+Description:
+
+List available images
 
 
 
@@ -241,26 +383,30 @@ Parameters:
 Returns:
 
 * [.array]#array# :
- * [.struct]#struct#  - Image information
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name" - image name
-   ** [.string]#string#  "version" - image tag/version
-   ** [.int]#int#  "revision" - image build revision number
-   ** [.string]#string#  "arch" - image architecture
-   ** [.boolean]#boolean#  "external" - true if the image is built externally,
+ * [.struct]#struct#  image information
+** [.int]#int#  "id"
+** [.string]#string#  "name" - image name
+** [.string]#string#  "version" - image tag/version
+** [.int]#int#  "revision" - image build revision number
+** [.string]#string#  "arch" - image architecture
+** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-   ** [.string]#string#  "storeLabel"
-   ** [.string]#string#  "checksum"
-    
+** [.string]#string#  "storeLabel"
+** [.string]#string#  "checksum"
+** [.string]#string#  "obsolete"
+   
+ 
 
 
 
-[#apidoc-image-listPackages-2102001207]
-== Method: listPackages 
+[#apidoc-image-listPackages-1324420411]
+== Method: listPackages
+
+HTTP `GET`
 
 Description:
 
-List the installed packages on the given image.
+List the installed packages on the given image
 
 
 
@@ -275,18 +421,20 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-          ** [.struct]#struct#  - package
-                 *** [.string]#string#  "name"
-                 *** [.string]#string#  "version"
-                 *** [.string]#string#  "release"
-                 *** [.string]#string#  "epoch"
-                 *** [.string]#string#  "arch"
-                 
+** [.struct]#struct#  package
+*** [.string]#string#  "name"
+*** [.string]#string#  "version"
+*** [.string]#string#  "release"
+*** [.string]#string#  "epoch"
+*** [.string]#string#  "arch"
+ 
 
 
 
-[#apidoc-image-scheduleImageBuild-1525789217]
-== Method: scheduleImageBuild 
+[#apidoc-image-scheduleImageBuild-1332370633]
+== Method: scheduleImageBuild
+
+HTTP `POST`
 
 Description:
 
@@ -310,7 +458,35 @@ Parameters:
 
 Returns:
 
-* [.int]#int#  id - ID of the build action created
+* [.int]#int#  the ID of the build action created
+ 
+
+
+
+[#apidoc-image-setPillar-1095583342]
+== Method: setPillar
+
+HTTP `POST`
+
+Description:
+
+Set pillar data of an image
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  imageId
+ 
+* [.struct]#struct#  pillarData
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
 

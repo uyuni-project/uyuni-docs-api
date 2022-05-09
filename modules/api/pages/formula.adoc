@@ -4,17 +4,17 @@
 
 == Available methods
 
-* <<apidoc-formula-getCombinedFormulaDataByServerIds-2089917982,getCombinedFormulaDataByServerIds>>
-* <<apidoc-formula-getCombinedFormulasByServerId-1132068394,getCombinedFormulasByServerId>>
-* <<apidoc-formula-getFormulasByGroupId-555754759,getFormulasByGroupId>>
-* <<apidoc-formula-getFormulasByServerId-1653050748,getFormulasByServerId>>
-* <<apidoc-formula-getGroupFormulaData-199076892,getGroupFormulaData>>
-* <<apidoc-formula-getSystemFormulaData-1888859784,getSystemFormulaData>>
-* <<apidoc-formula-listFormulas-1482861352,listFormulas>>
-* <<apidoc-formula-setFormulasOfGroup-235873926,setFormulasOfGroup>>
-* <<apidoc-formula-setFormulasOfServer-774320733,setFormulasOfServer>>
-* <<apidoc-formula-setGroupFormulaData-1099109905,setGroupFormulaData>>
-* <<apidoc-formula-setSystemFormulaData-478139104,setSystemFormulaData>>
+* <<apidoc-formula-getCombinedFormulaDataByServerIds-848995025,getCombinedFormulaDataByServerIds>>
+* <<apidoc-formula-getCombinedFormulasByServerId-221971351,getCombinedFormulasByServerId>>
+* <<apidoc-formula-getFormulasByGroupId-1985467039,getFormulasByGroupId>>
+* <<apidoc-formula-getFormulasByServerId-437475,getFormulasByServerId>>
+* <<apidoc-formula-getGroupFormulaData-271594494,getGroupFormulaData>>
+* <<apidoc-formula-getSystemFormulaData-1734881808,getSystemFormulaData>>
+* <<apidoc-formula-listFormulas-1487529549,listFormulas>>
+* <<apidoc-formula-setFormulasOfGroup-448206835,setFormulasOfGroup>>
+* <<apidoc-formula-setFormulasOfServer-1388117264,setFormulasOfServer>>
+* <<apidoc-formula-setGroupFormulaData-59725469,setGroupFormulaData>>
+* <<apidoc-formula-setSystemFormulaData-626071701,setSystemFormulaData>>
 
 == Description
 
@@ -25,8 +25,10 @@ Provides methods to access and modify formulas.
 formula
 
 
-[#apidoc-formula-getCombinedFormulaDataByServerIds-2089917982]
-== Method: getCombinedFormulaDataByServerIds 
+[#apidoc-formula-getCombinedFormulaDataByServerIds-848995025]
+== Method: getCombinedFormulaDataByServerIds
+
+HTTP `GET`
 
 Description:
 
@@ -37,28 +39,29 @@ Return the list of formulas a server and all his groups have.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  formulaName
  
-* [.array]#array# :
-** [.int]#int#  - systemID
+* [.array]#int array#  sids
  
 
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - formula_data
-     ** [.int]#int#  "system_id"
-     ** [.string]#string#  "minion_id"
-     ** [.struct with saved formula values]#struct with saved formula values#  "formula_values"
-  
-    
+     * [.struct]#struct#  formula data
+** [.int]#int#  "system_id"
+** [.string]#string#  "minion_id"
+** [.struct]#struct#  "formula_values" - saved formula values
+ 
+ 
 
 
 
-[#apidoc-formula-getCombinedFormulasByServerId-1132068394]
-== Method: getCombinedFormulasByServerId 
+[#apidoc-formula-getCombinedFormulasByServerId-221971351]
+== Method: getCombinedFormulasByServerId
+
+HTTP `GET`
 
 Description:
 
@@ -69,21 +72,22 @@ Return the list of formulas a server and all his groups have.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  systemId
+* [.int]#int#  sid - the system ID
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - (formulas)
+* [.array]#string array#  the list of formulas
  
 
 
 
-[#apidoc-formula-getFormulasByGroupId-555754759]
-== Method: getFormulasByGroupId 
+[#apidoc-formula-getFormulasByGroupId-1985467039]
+== Method: getFormulasByGroupId
+
+HTTP `GET`
 
 Description:
 
@@ -94,21 +98,22 @@ Return the list of formulas a server group has.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  systemGroupId
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - (formulas)
+* [.array]#string array#  the list of formulas
  
 
 
 
-[#apidoc-formula-getFormulasByServerId-1653050748]
-== Method: getFormulasByServerId 
+[#apidoc-formula-getFormulasByServerId-437475]
+== Method: getFormulasByServerId
+
+HTTP `GET`
 
 Description:
 
@@ -119,21 +124,22 @@ Return the list of formulas directly applied to a server.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  systemId
+* [.int]#int#  sid - the system ID
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - (formulas)
+* [.array]#string array#  the list of formulas
  
 
 
 
-[#apidoc-formula-getGroupFormulaData-199076892]
-== Method: getGroupFormulaData 
+[#apidoc-formula-getGroupFormulaData-271594494]
+== Method: getGroupFormulaData
+
+HTTP `GET`
 
 Description:
 
@@ -144,7 +150,7 @@ Get the saved data for the specific formula against specific group
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  groupId
  
@@ -153,13 +159,15 @@ Parameters:
 
 Returns:
 
-* struct with saved formula data 
+* [.struct]#struct#  the saved formula data
  
 
 
 
-[#apidoc-formula-getSystemFormulaData-1888859784]
-== Method: getSystemFormulaData 
+[#apidoc-formula-getSystemFormulaData-1734881808]
+== Method: getSystemFormulaData
+
+HTTP `GET`
 
 Description:
 
@@ -170,22 +178,24 @@ Get the saved data for the specific formula against specific server
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  systemId
+* [.int]#int#  sid - the system ID
  
 * [.string]#string#  formulaName
  
 
 Returns:
 
-* struct with saved formula data 
+* [.struct]#struct#  the saved formula data
  
 
 
 
-[#apidoc-formula-listFormulas-1482861352]
-== Method: listFormulas 
+[#apidoc-formula-listFormulas-1487529549]
+== Method: listFormulas
+
+HTTP `GET`
 
 Description:
 
@@ -196,19 +206,20 @@ Return the list of formulas currently installed.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - (formulas)
+* [.array]#string array#  the list of formulas
  
 
 
 
-[#apidoc-formula-setFormulasOfGroup-235873926]
-== Method: setFormulasOfGroup 
+[#apidoc-formula-setFormulasOfGroup-448206835]
+== Method: setFormulasOfGroup
+
+HTTP `POST`
 
 Description:
 
@@ -219,12 +230,11 @@ Set the formulas of a server group.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  systemGroupId
  
-* [.array]#array# :
-** [.string]#string#  - formulaName
+* [.array]#string array#  formulas
  
 
 Returns:
@@ -234,8 +244,10 @@ Returns:
 
 
 
-[#apidoc-formula-setFormulasOfServer-774320733]
-== Method: setFormulasOfServer 
+[#apidoc-formula-setFormulasOfServer-1388117264]
+== Method: setFormulasOfServer
+
+HTTP `POST`
 
 Description:
 
@@ -246,12 +258,11 @@ Set the formulas of a server.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.int]#int#  systemId
+* [.int]#int#  sid - the system ID
  
-* [.array]#array# :
-** [.string]#string#  - formulaName
+* [.array]#string array#  formulas
  
 
 Returns:
@@ -261,8 +272,10 @@ Returns:
 
 
 
-[#apidoc-formula-setGroupFormulaData-1099109905]
-== Method: setGroupFormulaData 
+[#apidoc-formula-setGroupFormulaData-59725469]
+== Method: setGroupFormulaData
+
+HTTP `POST`
 
 Description:
 
@@ -273,13 +286,13 @@ Set the formula form for the specified group.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  groupId
  
 * [.string]#string#  formulaName
  
-* struct containing the values for each field in the form 
+* [.struct]#struct#  content - struct containing the values for each field in the form
  
 
 Returns:
@@ -289,8 +302,10 @@ Returns:
 
 
 
-[#apidoc-formula-setSystemFormulaData-478139104]
-== Method: setSystemFormulaData 
+[#apidoc-formula-setSystemFormulaData-626071701]
+== Method: setSystemFormulaData
+
+HTTP `POST`
 
 Description:
 
@@ -301,13 +316,13 @@ Set the formula form for the specified server.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.int]#int#  systemId
  
 * [.string]#string#  formulaName
  
-* struct content with the values for each field in the form 
+* [.struct]#struct#  content - struct content with the values for each field in the form
  
 
 Returns:

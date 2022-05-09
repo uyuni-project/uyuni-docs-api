@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-actionchain-addConfigurationDeployment-718150867,addConfigurationDeployment>>
-* <<apidoc-actionchain-addErrataUpdate-1933032750,addErrataUpdate>>
-* <<apidoc-actionchain-addPackageInstall-1161149894,addPackageInstall>>
-* <<apidoc-actionchain-addPackageRemoval-1174724689,addPackageRemoval>>
-* <<apidoc-actionchain-addPackageUpgrade-1845002237,addPackageUpgrade>>
-* <<apidoc-actionchain-addPackageVerify-602433635,addPackageVerify>>
-* <<apidoc-actionchain-addScriptRun-203361403,addScriptRun>>
-* <<apidoc-actionchain-addScriptRun-1680628659,addScriptRun>>
-* <<apidoc-actionchain-addSystemReboot-617107045,addSystemReboot>>
-* <<apidoc-actionchain-createChain-2081421216,createChain>>
-* <<apidoc-actionchain-deleteChain-1881716172,deleteChain>>
-* <<apidoc-actionchain-listChainActions-1519407613,listChainActions>>
-* <<apidoc-actionchain-listChains-269715230,listChains>>
-* <<apidoc-actionchain-removeAction-1981036429,removeAction>>
-* <<apidoc-actionchain-renameChain-1581687077,renameChain>>
-* <<apidoc-actionchain-scheduleChain-82287653,scheduleChain>>
+* <<apidoc-actionchain-addConfigurationDeployment-1268892066,addConfigurationDeployment>>
+* <<apidoc-actionchain-addErrataUpdate-1244989872,addErrataUpdate>>
+* <<apidoc-actionchain-addPackageInstall-224885737,addPackageInstall>>
+* <<apidoc-actionchain-addPackageRemoval-1030952115,addPackageRemoval>>
+* <<apidoc-actionchain-addPackageUpgrade-1836406440,addPackageUpgrade>>
+* <<apidoc-actionchain-addPackageVerify-267368044,addPackageVerify>>
+* <<apidoc-actionchain-addScriptRun-1216741689,addScriptRun>>
+* <<apidoc-actionchain-addScriptRun-2114487283,addScriptRun>>
+* <<apidoc-actionchain-addSystemReboot-1878900463,addSystemReboot>>
+* <<apidoc-actionchain-createChain-474324008,createChain>>
+* <<apidoc-actionchain-deleteChain-43951584,deleteChain>>
+* <<apidoc-actionchain-listChainActions-635097653,listChainActions>>
+* <<apidoc-actionchain-listChains-207766759,listChains>>
+* <<apidoc-actionchain-removeAction-848490487,removeAction>>
+* <<apidoc-actionchain-renameChain-861310502,renameChain>>
+* <<apidoc-actionchain-scheduleChain-212207240,scheduleChain>>
 
 == Description
 
@@ -30,8 +30,10 @@ Provides the namespace for the Action Chain methods.
 actionchain
 
 
-[#apidoc-actionchain-addConfigurationDeployment-718150867]
-== Method: addConfigurationDeployment 
+[#apidoc-actionchain-addConfigurationDeployment-1268892066]
+== Method: addConfigurationDeployment
+
+HTTP `POST`
 
 Description:
 
@@ -46,14 +48,14 @@ Parameters:
  
 * [.string]#string#  chainLabel - Label of the chain
  
-* [.int]#int#  System ID - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-                   ** [.struct]#struct#  - config revision specifier
-                       *** [.string]#string#  "channelLabel" - Channel label
-                       *** [.string]#string#  "filePath" - Path of the configuration file
-                       *** [.int]#int#  "revision" - Revision number
-                                   
+* [.array]#array#  revisionSpecifiers
+** [.struct]#struct#  config revision specifier
+*** [.string]#string#  "channelLabel" - Channel label
+*** [.string]#string#  "filePath" - Path of the configuration file
+*** [.int]#int#  "revision" - Revision number
+ 
 
 Returns:
 
@@ -62,8 +64,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addErrataUpdate-1933032750]
-== Method: addErrataUpdate 
+[#apidoc-actionchain-addErrataUpdate-1244989872]
+== Method: addErrataUpdate
+
+HTTP `POST`
 
 Description:
 
@@ -76,10 +80,9 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-** [.int]#int#  - Errata ID
+* [.array]#int array#  errataIds - Errata ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -91,8 +94,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageInstall-1161149894]
-== Method: addPackageInstall 
+[#apidoc-actionchain-addPackageInstall-224885737]
+== Method: addPackageInstall
+
+HTTP `POST`
 
 Description:
 
@@ -105,10 +110,9 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-** [.int]#int#  - Package ID
+* [.array]#int array#  packageIds
  
 * [.string]#string#  chainLabel
  
@@ -120,8 +124,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageRemoval-1174724689]
-== Method: addPackageRemoval 
+[#apidoc-actionchain-addPackageRemoval-1030952115]
+== Method: addPackageRemoval
+
+HTTP `POST`
 
 Description:
 
@@ -135,10 +141,9 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-** [.int]#int#  - Package ID
+* [.array]#int array#  packageIds
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -150,8 +155,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageUpgrade-1845002237]
-== Method: addPackageUpgrade 
+[#apidoc-actionchain-addPackageUpgrade-1836406440]
+== Method: addPackageUpgrade
+
+HTTP `POST`
 
 Description:
 
@@ -165,10 +172,9 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-** [.int]#int#  - packageId
+* [.array]#int array#  packageIds
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -180,8 +186,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageVerify-602433635]
-== Method: addPackageVerify 
+[#apidoc-actionchain-addPackageVerify-267368044]
+== Method: addPackageVerify
+
+HTTP `POST`
 
 Description:
 
@@ -195,10 +203,9 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
-* [.array]#array# :
-** [.int]#int#  - packageId
+* [.array]#int array#  packageIds
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -210,8 +217,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-203361403]
-== Method: addScriptRun 
+[#apidoc-actionchain-addScriptRun-1216741689]
+== Method: addScriptRun
+
+HTTP `POST`
 
 Description:
 
@@ -225,7 +234,7 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -237,7 +246,7 @@ Parameters:
  
 * [.int]#int#  timeout - Timeout
  
-* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
+* [.string]#string#  scriptBody - Base64 encoded script body
  
 
 Returns:
@@ -247,8 +256,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-1680628659]
-== Method: addScriptRun 
+[#apidoc-actionchain-addScriptRun-2114487283]
+== Method: addScriptRun
+
+HTTP `POST`
 
 Description:
 
@@ -262,7 +273,7 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId - System ID
+* [.int]#int#  sid - System ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -272,7 +283,7 @@ Parameters:
  
 * [.int]#int#  timeout - Timeout
  
-* [.string]#string#  scriptBodyBase64 - Base64 encoded script body
+* [.string]#string#  scriptBody - Base64 encoded script body
  
 
 Returns:
@@ -282,8 +293,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-addSystemReboot-617107045]
-== Method: addSystemReboot 
+[#apidoc-actionchain-addSystemReboot-1878900463]
+== Method: addSystemReboot
+
+HTTP `POST`
 
 Description:
 
@@ -296,7 +309,7 @@ Parameters:
 
 * [.string]#string#  sessionKey - Session token, issued at login
  
-* [.int]#int#  serverId
+* [.int]#int#  sid - System ID
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -308,8 +321,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-createChain-2081421216]
-== Method: createChain 
+[#apidoc-actionchain-createChain-474324008]
+== Method: createChain
+
+HTTP `POST`
 
 Description:
 
@@ -332,8 +347,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-deleteChain-1881716172]
-== Method: deleteChain 
+[#apidoc-actionchain-deleteChain-43951584]
+== Method: deleteChain
+
+HTTP `POST`
 
 Description:
 
@@ -356,8 +373,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-listChainActions-1519407613]
-== Method: listChainActions 
+[#apidoc-actionchain-listChainActions-635097653]
+== Method: listChainActions
+
+HTTP `GET`
 
 Description:
 
@@ -376,20 +395,22 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                      ** [.struct]#struct#  - entry
-                        *** [.int]#int#  "id" - Action ID
-                        *** [.string]#string#  "label" - Label of an Action
-                        *** [.string]#string#  "created" - Created date/time
-                        *** [.string]#string#  "earliest" - Earliest scheduled date/time
-                        *** [.string]#string#  "type" - Type of the action
-                        *** [.string]#string#  "modified" - Modified date/time
-                        *** [.string]#string#  "cuid" - Creator UID
-                                           
+** [.struct]#struct#  entry
+*** [.int]#int#  "id" - Action ID
+*** [.string]#string#  "label" - Label of an Action
+*** [.string]#string#  "created" - Created date/time
+*** [.string]#string#  "earliest" - Earliest scheduled date/time
+*** [.string]#string#  "type" - Type of the action
+*** [.string]#string#  "modified" - Modified date/time
+*** [.string]#string#  "cuid" - Creator UID
+ 
 
 
 
-[#apidoc-actionchain-listChains-269715230]
-== Method: listChains 
+[#apidoc-actionchain-listChains-207766759]
+== Method: listChains
+
+HTTP `GET`
 
 Description:
 
@@ -406,15 +427,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-                      ** [.struct]#struct#  - chain
-                        *** [.string]#string#  "label" - Label of an Action Chain
-                        *** [.string]#string#  "entrycount" - Number of entries in the Action Chain
-                                           
+** [.struct]#struct#  chain
+*** [.string]#string#  "label" - Label of an Action Chain
+*** [.string]#string#  "entrycount" - Number of entries in the Action Chain
+ 
 
 
 
-[#apidoc-actionchain-removeAction-1981036429]
-== Method: removeAction 
+[#apidoc-actionchain-removeAction-848490487]
+== Method: removeAction
+
+HTTP `POST`
 
 Description:
 
@@ -439,8 +462,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-renameChain-1581687077]
-== Method: renameChain 
+[#apidoc-actionchain-renameChain-861310502]
+== Method: renameChain
+
+HTTP `POST`
 
 Description:
 
@@ -465,8 +490,10 @@ Returns:
 
 
 
-[#apidoc-actionchain-scheduleChain-82287653]
-== Method: scheduleChain 
+[#apidoc-actionchain-scheduleChain-212207240]
+== Method: scheduleChain
+
+HTTP `POST`
 
 Description:
 
@@ -481,7 +508,7 @@ Parameters:
  
 * [.string]#string#  chainLabel - Label of the chain
  
-* [.dateTime.iso8601]#dateTime.iso8601#  Earliest date
+* [.dateTime.iso8601]#dateTime.iso8601#  date - Earliest date
  
 
 Returns:

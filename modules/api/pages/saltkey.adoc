@@ -4,13 +4,13 @@
 
 == Available methods
 
-* <<apidoc-saltkey-accept-352382451,accept>>
-* <<apidoc-saltkey-acceptedList-872890697,acceptedList>>
-* <<apidoc-saltkey-delete-684948803,delete>>
-* <<apidoc-saltkey-deniedList-461634243,deniedList>>
-* <<apidoc-saltkey-pendingList-1065087222,pendingList>>
-* <<apidoc-saltkey-reject-1973179365,reject>>
-* <<apidoc-saltkey-rejectedList-1162021415,rejectedList>>
+* <<apidoc-saltkey-accept-238069999,accept>>
+* <<apidoc-saltkey-acceptedList-1287817936,acceptedList>>
+* <<apidoc-saltkey-delete-61585066,delete>>
+* <<apidoc-saltkey-deniedList-1459367146,deniedList>>
+* <<apidoc-saltkey-pendingList-696327501,pendingList>>
+* <<apidoc-saltkey-reject-804955921,reject>>
+* <<apidoc-saltkey-rejectedList-686850477,rejectedList>>
 
 == Description
 
@@ -21,8 +21,10 @@ Provides methods to manage salt keys
 saltkey
 
 
-[#apidoc-saltkey-accept-352382451]
-== Method: accept 
+[#apidoc-saltkey-accept-238069999]
+== Method: accept
+
+HTTP `POST`
 
 Description:
 
@@ -33,9 +35,9 @@ Accept a minion key
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
-* [. string ]# string #   minionId 
+* [.string]#string#  minionId
  
 
 Returns:
@@ -45,8 +47,10 @@ Returns:
 
 
 
-[#apidoc-saltkey-acceptedList-872890697]
-== Method: acceptedList 
+[#apidoc-saltkey-acceptedList-1287817936]
+== Method: acceptedList
+
+HTTP `POST`
 
 Description:
 
@@ -57,19 +61,20 @@ List accepted salt keys
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
 
 Returns:
 
-* [.array]#array# :
-** [. string ]# string #  -  Accepted salt key list 
+* [.array]#string array#  Accepted salt key list
  
 
 
 
-[#apidoc-saltkey-delete-684948803]
-== Method: delete 
+[#apidoc-saltkey-delete-61585066]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -80,9 +85,9 @@ Delete a minion key
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
-* [. string ]# string #   minionId 
+* [.string]#string#  minionId
  
 
 Returns:
@@ -92,8 +97,10 @@ Returns:
 
 
 
-[#apidoc-saltkey-deniedList-461634243]
-== Method: deniedList 
+[#apidoc-saltkey-deniedList-1459367146]
+== Method: deniedList
+
+HTTP `POST`
 
 Description:
 
@@ -104,19 +111,20 @@ List of denied salt keys
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
 
 Returns:
 
-* [.array]#array# :
-** [. string ]# string #  -  Denied salt key list 
+* [.array]#string array#  Denied salt key list
  
 
 
 
-[#apidoc-saltkey-pendingList-1065087222]
-== Method: pendingList 
+[#apidoc-saltkey-pendingList-696327501]
+== Method: pendingList
+
+HTTP `POST`
 
 Description:
 
@@ -127,19 +135,20 @@ List pending salt keys
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
 
 Returns:
 
-* [.array]#array# :
-** [. string ]# string #  -  Pending salt key list 
+* [.array]#string array#  Pending salt key list
  
 
 
 
-[#apidoc-saltkey-reject-1973179365]
-== Method: reject 
+[#apidoc-saltkey-reject-804955921]
+== Method: reject
+
+HTTP `POST`
 
 Description:
 
@@ -150,9 +159,9 @@ Reject a minion key
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
-* [. string ]# string #   minionId 
+* [.string]#string#  minionId
  
 
 Returns:
@@ -162,8 +171,10 @@ Returns:
 
 
 
-[#apidoc-saltkey-rejectedList-1162021415]
-== Method: rejectedList 
+[#apidoc-saltkey-rejectedList-686850477]
+== Method: rejectedList
+
+HTTP `POST`
 
 Description:
 
@@ -174,13 +185,12 @@ List of rejected salt keys
 
 Parameters:
 
-* [. string ]# string #   loggedInUser 
+* [.string]#string#  sessionKey
  
 
 Returns:
 
-* [.array]#array# :
-** [. string ]# string #  -  Rejected salt key list 
+* [.array]#string array#  Rejected salt key list
  
 
 

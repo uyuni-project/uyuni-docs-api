@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_software-appendToSoftwareList-1421965867,appendToSoftwareList>>
-* <<apidoc-kickstart_profile_software-getSoftwareDetails-882371818,getSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-getSoftwareList-1221676704,getSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareDetails-1809367960,setSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-setSoftwareList-556080707,setSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareList-1735554279,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-appendToSoftwareList-1331108878,appendToSoftwareList>>
+* <<apidoc-kickstart_profile_software-getSoftwareDetails-1221676704,getSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-getSoftwareList-1675886984,getSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareDetails-1066504752,setSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-1530669727,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-1398492607,setSoftwareList>>
 
 == Description
 
@@ -21,8 +21,10 @@ Provides methods to access and modify the software list
 kickstart.profile.software
 
 
-[#apidoc-kickstart_profile_software-appendToSoftwareList-1421965867]
-== Method: appendToSoftwareList 
+[#apidoc-kickstart_profile_software-appendToSoftwareList-1331108878]
+== Method: appendToSoftwareList
+
+HTTP `POST`
 
 Description:
 
@@ -34,13 +36,11 @@ Append the list of software packages to a kickstart profile.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - The label of a kickstart
- profile.
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
-* [.string[]]#string[]#  packageList - A list of package
- names to be added to the profile.
+* [.array]#string array#  packageList - the list of package names to be added to the profile
  
 
 Returns:
@@ -50,8 +50,10 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-getSoftwareDetails-882371818]
-== Method: getSoftwareDetails 
+[#apidoc-kickstart_profile_software-getSoftwareDetails-1221676704]
+== Method: getSoftwareDetails
+
+HTTP `GET`
 
 Description:
 
@@ -62,22 +64,24 @@ Gets kickstart profile software details.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - Label of the kickstart profile
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
 
 Returns:
 
-* [.struct]#struct#  - Kickstart packages info
-              ** [.string]#string#  "noBase" - Install @Base package group
-              ** [.string]#string#  "ignoreMissing" - Ignore missing packages
-           
+* [.struct]#struct#  kickstart packages info
+** [.string]#string#  "noBase" - install @Base package group
+** [.string]#string#  "ignoreMissing" - ignore missing packages
+ 
 
 
 
-[#apidoc-kickstart_profile_software-getSoftwareList-1221676704]
-== Method: getSoftwareList 
+[#apidoc-kickstart_profile_software-getSoftwareList-1675886984]
+== Method: getSoftwareList
+
+HTTP `GET`
 
 Description:
 
@@ -88,22 +92,22 @@ Get a list of a kickstart profile's software packages.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - The label of a kickstart
- profile.
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
 
 Returns:
 
-* [.array]#array# :
-** [.string]#string#  - Get a list of a kickstart profile's software packages
+* [.array]#string array#  the list of the kickstart profile's software packages
  
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareDetails-1809367960]
-== Method: setSoftwareDetails 
+[#apidoc-kickstart_profile_software-setSoftwareDetails-1066504752]
+== Method: setSoftwareDetails
+
+HTTP `POST`
 
 Description:
 
@@ -114,14 +118,14 @@ Sets kickstart profile software details.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - Label of the kickstart profile
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
-* [.struct]#struct#  - Kickstart packages info
-              ** [.string]#string#  "noBase" - Install @Base package group
-              ** [.string]#string#  "ignoreMissing" - Ignore missing packages
-           
+* [.struct]#struct#  params - kickstart packages info
+** [.string]#string#  "noBase" - install @Base package group
+** [.string]#string#  "ignoreMissing" - ignore missing packages
+ 
 
 Returns:
 
@@ -130,8 +134,10 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareList-556080707]
-== Method: setSoftwareList 
+[#apidoc-kickstart_profile_software-setSoftwareList-1530669727]
+== Method: setSoftwareList
+
+HTTP `POST`
 
 Description:
 
@@ -142,13 +148,11 @@ Set the list of software packages for a kickstart profile.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - The label of a kickstart
- profile.
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
-* [.string[]]#string[]#  packageList - A list of package
- names to be set on the profile.
+* [.array]#string array#  packageList - the list of package names to be set on the profile
  
 
 Returns:
@@ -158,8 +162,10 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareList-1735554279]
-== Method: setSoftwareList 
+[#apidoc-kickstart_profile_software-setSoftwareList-1398492607]
+== Method: setSoftwareList
+
+HTTP `POST`
 
 Description:
 
@@ -170,19 +176,15 @@ Set the list of software packages for a kickstart profile.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.string]#string#  ksLabel - The label of a kickstart
- profile.
+* [.string]#string#  ksLabel - the label of the kickstart profile
  
-* [.string[]]#string[]#  packageList - A list of package
- names to be set on the profile.
+* [.array]#string array#  packageList - a list of package names to be set on the profile
  
-* [.boolean]#boolean#  ignoremissing - Ignore missing packages
- if true
+* [.boolean]#boolean#  ignoreMissing - ignore missing packages if true
  
-* [.boolean]#boolean#  nobase - Don't install @Base package group
- if true
+* [.boolean]#boolean#  noBase - don't install @Base package group if true
  
 
 Returns:

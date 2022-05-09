@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-packages_provider-associateKey-859361949,associateKey>>
-* <<apidoc-packages_provider-list-711487917,list>>
-* <<apidoc-packages_provider-listKeys-39846973,listKeys>>
+* <<apidoc-packages_provider-associateKey-1121544005,associateKey>>
+* <<apidoc-packages_provider-list-154177822,list>>
+* <<apidoc-packages_provider-listKeys-735140074,listKeys>>
 
 == Description
 
@@ -18,8 +18,10 @@ Methods to retrieve information about Package Providers associated with
 packages.provider
 
 
-[#apidoc-packages_provider-associateKey-859361949]
-== Method: associateKey 
+[#apidoc-packages_provider-associateKey-1121544005]
+== Method: associateKey
+
+HTTP `POST`
 
 Description:
 
@@ -32,7 +34,7 @@ Associate a package security key and with the package provider.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  providerName - The provider name
  
@@ -49,8 +51,10 @@ Returns:
 
 
 
-[#apidoc-packages_provider-list-711487917]
-== Method: list 
+[#apidoc-packages_provider-list-154177822]
+== Method: list
+
+HTTP `POST`
 
 Description:
 
@@ -62,26 +66,28 @@ List all Package Providers.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-      * [.struct]#struct#  - package provider
-   ** [.string]#string#  "name"
-   ** [.array]#array#  "keys"
-      * [.struct]#struct#  - package security key
-     ** [.string]#string#  "key"
-     ** [.string]#string#  "type"
-    
-       
-   
+      * [.struct]#struct#  package provider
+** [.string]#string#  "name"
+** [.array]#array#  "keys"
+      * [.struct]#struct#  package security key
+** [.string]#string#  "key"
+** [.string]#string#  "type"
+ 
+ 
+ 
 
 
 
-[#apidoc-packages_provider-listKeys-39846973]
-== Method: listKeys 
+[#apidoc-packages_provider-listKeys-735140074]
+== Method: listKeys
+
+HTTP `GET`
 
 Description:
 
@@ -93,7 +99,7 @@ List all security keys associated with a package provider.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  providerName - The provider name
  
@@ -101,10 +107,10 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-      * [.struct]#struct#  - package security key
-     ** [.string]#string#  "key"
-     ** [.string]#string#  "type"
-    
-   
+      * [.struct]#struct#  package security key
+** [.string]#string#  "key"
+** [.string]#string#  "type"
+ 
+ 
 
 

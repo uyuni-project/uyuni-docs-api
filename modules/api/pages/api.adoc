@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-api-getApiCallList-1577409761,getApiCallList>>
-* <<apidoc-api-getApiNamespaceCallList-846778469,getApiNamespaceCallList>>
-* <<apidoc-api-getApiNamespaces-1341047172,getApiNamespaces>>
-* <<apidoc-api-getVersion-1248832688,getVersion>>
-* <<apidoc-api-systemVersion-1948456514,systemVersion>>
+* <<apidoc-api-getApiCallList-1151617540,getApiCallList>>
+* <<apidoc-api-getApiNamespaceCallList-1516501617,getApiNamespaceCallList>>
+* <<apidoc-api-getApiNamespaces-82565330,getApiNamespaces>>
+* <<apidoc-api-getVersion-217814269,getVersion>>
+* <<apidoc-api-systemVersion-827715984,systemVersion>>
 
 == Description
 
@@ -19,8 +19,10 @@ Methods providing information about the API.
 api
 
 
-[#apidoc-api-getApiCallList-1577409761]
-== Method: getApiCallList 
+[#apidoc-api-getApiCallList-1151617540]
+== Method: getApiCallList
+
+HTTP `GET`
 
 Description:
 
@@ -36,17 +38,19 @@ Parameters:
 
 Returns:
 
-* [.struct]#struct#  - method_info
-       ** [.string]#string#  "name" - method name
-       ** [.string]#string#  "parameters" - method parameters
-       ** [.string]#string#  "exceptions" - method exceptions
-       ** [.string]#string#  "return" - method return type
-    
+* [.struct]#struct#  method_info
+** [.string]#string#  "name" - method name
+** [.string]#string#  "parameters" - method parameters
+** [.string]#string#  "exceptions" - method exceptions
+** [.string]#string#  "return" - method return type
+ 
 
 
 
-[#apidoc-api-getApiNamespaceCallList-846778469]
-== Method: getApiNamespaceCallList 
+[#apidoc-api-getApiNamespaceCallList-1516501617]
+== Method: getApiNamespaceCallList
+
+HTTP `GET`
 
 Description:
 
@@ -64,17 +68,19 @@ Parameters:
 
 Returns:
 
-* [.struct]#struct#  - method_info
-        ** [.string]#string#  "name" - method name
-        ** [.string]#string#  "parameters" - method parameters
-        ** [.string]#string#  "exceptions" - method exceptions
-        ** [.string]#string#  "return" - method return type
-    
+* [.struct]#struct#  method_info
+** [.string]#string#  "name" - method name
+** [.string]#string#  "parameters" - method parameters
+** [.string]#string#  "exceptions" - method exceptions
+** [.string]#string#  "return" - method return type
+ 
 
 
 
-[#apidoc-api-getApiNamespaces-1341047172]
-== Method: getApiNamespaces 
+[#apidoc-api-getApiNamespaces-82565330]
+== Method: getApiNamespaces
+
+HTTP `GET`
 
 Description:
 
@@ -90,15 +96,17 @@ Parameters:
 
 Returns:
 
-* [.struct]#struct#  - namespace
-        ** [.string]#string#  "namespace" - API namespace
-        ** [.string]#string#  "handler" - API Handler
-    
+* [.struct]#struct#  namespace
+** [.string]#string#  "namespace" - API namespace
+** [.string]#string#  "handler" - API Handler
+ 
 
 
 
-[#apidoc-api-getVersion-1248832688]
-== Method: getVersion 
+[#apidoc-api-getVersion-217814269]
+== Method: getVersion
+
+HTTP `GET`
 
 Description:
 
@@ -117,8 +125,10 @@ Returns:
 
 
 
-[#apidoc-api-systemVersion-1948456514]
-== Method: systemVersion 
+[#apidoc-api-systemVersion-827715984]
+== Method: systemVersion
+
+HTTP `POST`
 
 Description:
 

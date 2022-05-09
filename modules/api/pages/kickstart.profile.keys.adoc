@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_keys-addActivationKey-1530669727,addActivationKey>>
-* <<apidoc-kickstart_profile_keys-getActivationKeys-1675886984,getActivationKeys>>
-* <<apidoc-kickstart_profile_keys-removeActivationKey-1398492607,removeActivationKey>>
+* <<apidoc-kickstart_profile_keys-addActivationKey-839404033,addActivationKey>>
+* <<apidoc-kickstart_profile_keys-getActivationKeys-446264394,getActivationKeys>>
+* <<apidoc-kickstart_profile_keys-removeActivationKey-1725382189,removeActivationKey>>
 
 == Description
 
@@ -18,8 +18,10 @@ Provides methods to access and modify the list of activation keys
 kickstart.profile.keys
 
 
-[#apidoc-kickstart_profile_keys-addActivationKey-1530669727]
-== Method: addActivationKey 
+[#apidoc-kickstart_profile_keys-addActivationKey-839404033]
+== Method: addActivationKey
+
+HTTP `POST`
 
 Description:
 
@@ -44,8 +46,10 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_keys-getActivationKeys-1675886984]
-== Method: getActivationKeys 
+[#apidoc-kickstart_profile_keys-getActivationKeys-446264394]
+== Method: getActivationKeys
+
+HTTP `GET`
 
 Description:
 
@@ -65,38 +69,34 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - activation key
-     ** [.string]#string#  "key"
-     ** [.string]#string#  "description"
-     ** [.int]#int#  "usage_limit"
-     ** [.string]#string#  "base_channel_label"
-     ** [.array]#array#  "child_channel_labels"
-*** string - childChannelLabel
-     ** [.array]#array#  "entitlements"
-*** string - entitlementLabel
-     ** [.array]#array#  "server_group_ids"
-*** string - serverGroupId
-     ** [.array]#array#  "package_names"
-*** string - packageName - (deprecated by packages)
-     ** [.array]#array#  "packages"
-       *** [.struct]#struct#  - package
-         **** [.string]#string#  "name" - packageName
-         **** [.string]#string#  "arch" - archLabel - optional
-                 ** [.boolean]#boolean#  "universal_default"
-     ** [.boolean]#boolean#  "disabled"
-     ** [.string]#string#  "contact_method" - One of the following:
-       
-         ** default
-         ** ssh-push
-         ** ssh-push-tunnel
-       
-    
-    
+     * [.struct]#struct#  activation key
+** [.string]#string#  "key"
+** [.string]#string#  "description"
+** [.int]#int#  "usage_limit"
+** [.string]#string#  "base_channel_label"
+** [.array]#string array#  "child_channel_labels" - childChannelLabel
+** [.array]#string array#  "entitlements" - entitlementLabel
+** [.array]#string array#  "server_group_ids" - serverGroupId
+** [.array]#string array#  "package_names" - packageName - (deprecated by packages)
+** [.array]#array#  "packages"
+*** [.struct]#struct#  package
+**** [.string]#string#  "name" - packageName
+**** [.string]#string#  "arch" - archLabel - optional
+** [.boolean]#boolean#  "universal_default"
+** [.boolean]#boolean#  "disabled"
+** [.string]#string#  "contact_method" - One of the following:
+*** default
+*** ssh-push
+*** ssh-push-tunnel
+ 
+ 
 
 
 
-[#apidoc-kickstart_profile_keys-removeActivationKey-1398492607]
-== Method: removeActivationKey 
+[#apidoc-kickstart_profile_keys-removeActivationKey-1725382189]
+== Method: removeActivationKey
+
+HTTP `POST`
 
 Description:
 

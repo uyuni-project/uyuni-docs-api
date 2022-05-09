@@ -1,0 +1,25 @@
+= HTTP POST example
+
+Below is an example of an HTTP POST call to the `contentmanagement.createProject` API.
+In a POST request, method parameters can be sent as query string key-value pairs, as a JSON object in the request body, or a mix of both. `object` type parameters cannot be represented as a query string element and therefore must be sent in the request body.
+The following examples show both approaches.
+
+_The JSON output is pretty-printed for clarity._
+
+== Using the query string
+
+[source,bash]
+----
+$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&lt;tokenhash&gt;;" -X POST \
+> "$API/contentmanagement/createProject?projectLabel=myproject&name=My%20Project&description="
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}
+----

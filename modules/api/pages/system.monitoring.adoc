@@ -4,7 +4,7 @@
 
 == Available methods
 
-* <<apidoc-system_monitoring-listEndpoints-743891012,listEndpoints>>
+* <<apidoc-system_monitoring-listEndpoints-2101594271,listEndpoints>>
 
 == Description
 
@@ -16,8 +16,10 @@ Provides methods to access information about managed systems, applications and f
 system.monitoring
 
 
-[#apidoc-system_monitoring-listEndpoints-743891012]
-== Method: listEndpoints 
+[#apidoc-system_monitoring-listEndpoints-2101594271]
+== Method: listEndpoints
+
+HTTP `GET`
 
 Description:
 
@@ -28,24 +30,23 @@ Get the list of monitoring endpoint details.
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
-* [.array]#array# :
-** [.int]#int#  - systemID
+* [.array]#int array#  sids
  
 
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  - endpoint_info
-   ** [.int]#int#  "system_id"
-   ** [.string]#string#  "endpoint_name"
-   ** [.string]#string#  "exporter_name"
-   ** [.string]#string#  "module"
-   ** [.string]#string#  "path"
-   ** [.int]#int#  "port"
-   ** [.bool]#bool#  "tls_enabled"
-  
-    
+     * [.struct]#struct#  endpoint info
+** [.int]#int#  "system_id"
+** [.string]#string#  "endpoint_name"
+** [.string]#string#  "exporter_name"
+** [.string]#string#  "module"
+** [.string]#string#  "path"
+** [.int]#int#  "port"
+** [.bool]#bool#  "tls_enabled"
+ 
+ 
 
 

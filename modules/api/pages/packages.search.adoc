@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-packages_search-advanced-1331139970,advanced>>
-* <<apidoc-packages_search-advancedWithActKey-1765040384,advancedWithActKey>>
-* <<apidoc-packages_search-advancedWithChannel-1198122764,advancedWithChannel>>
-* <<apidoc-packages_search-name-1343952313,name>>
-* <<apidoc-packages_search-nameAndDescription-1989877020,nameAndDescription>>
-* <<apidoc-packages_search-nameAndSummary-207517334,nameAndSummary>>
+* <<apidoc-packages_search-advanced-1288731134,advanced>>
+* <<apidoc-packages_search-advancedWithActKey-539710099,advancedWithActKey>>
+* <<apidoc-packages_search-advancedWithChannel-931280002,advancedWithChannel>>
+* <<apidoc-packages_search-name-1443210651,name>>
+* <<apidoc-packages_search-nameAndDescription-1317746351,nameAndDescription>>
+* <<apidoc-packages_search-nameAndSummary-219564344,nameAndSummary>>
 
 == Description
 
@@ -20,8 +20,10 @@ Methods to interface to package search capabilities in search server..
 packages.search
 
 
-[#apidoc-packages_search-advanced-1331139970]
-== Method: advanced 
+[#apidoc-packages_search-advanced-1288731134]
+== Method: advanced
+
+HTTP `GET`
 
 Description:
 
@@ -39,7 +41,7 @@ Advanced method to search lucene indexes with a passed in query written
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
  
@@ -47,23 +49,25 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-      * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-    
+      * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 
 
-[#apidoc-packages_search-advancedWithActKey-1765040384]
-== Method: advancedWithActKey 
+[#apidoc-packages_search-advancedWithActKey-539710099]
+== Method: advancedWithActKey
+
+HTTP `GET`
 
 Description:
 
@@ -82,33 +86,35 @@ Advanced method to search lucene indexes with a passed in query written
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
  
-* [.string]#string#  actKey - activation key to look for packages in
+* [.string]#string#  activationKey - activation key to look for packages in
  
 
 Returns:
 
 * [.array]#array# :
-      * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-    
+      * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 
 
-[#apidoc-packages_search-advancedWithChannel-1198122764]
-== Method: advancedWithChannel 
+[#apidoc-packages_search-advancedWithChannel-931280002]
+== Method: advancedWithChannel
+
+HTTP `GET`
 
 Description:
 
@@ -127,33 +133,35 @@ Advanced method to search lucene indexes with a passed in query written
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  luceneQuery - a query written in the form of Lucene QueryParser Syntax
  
-* [.string]#string#  channelLabel - Channel Label
+* [.string]#string#  channelLabel - the channel Label
  
 
 Returns:
 
 * [.array]#array# :
-      * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-    
+      * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 
 
-[#apidoc-packages_search-name-1343952313]
-== Method: name 
+[#apidoc-packages_search-name-1443210651]
+== Method: name
+
+HTTP `GET`
 
 Description:
 
@@ -165,7 +173,7 @@ Search the lucene package indexes for all packages which
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  name - package name to search for
  
@@ -173,23 +181,25 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-  
+   * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 
 
-[#apidoc-packages_search-nameAndDescription-1989877020]
-== Method: nameAndDescription 
+[#apidoc-packages_search-nameAndDescription-1317746351]
+== Method: nameAndDescription
+
+HTTP `GET`
 
 Description:
 
@@ -201,7 +211,7 @@ Search the lucene package indexes for all packages which
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  query - text to match in package name or description
  
@@ -209,23 +219,25 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-  
+   * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 
 
-[#apidoc-packages_search-nameAndSummary-207517334]
-== Method: nameAndSummary 
+[#apidoc-packages_search-nameAndSummary-219564344]
+== Method: nameAndSummary
+
+HTTP `GET`
 
 Description:
 
@@ -237,7 +249,7 @@ Search the lucene package indexes for all packages which
 
 Parameters:
 
-  * [.string]#string#  sessionKey
+* [.string]#string#  sessionKey
  
 * [.string]#string#  query - text to match in package name or summary
  
@@ -245,17 +257,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-   * [.struct]#struct#  - package overview
-   ** [.int]#int#  "id"
-   ** [.string]#string#  "name"
-   ** [.string]#string#  "summary"
-   ** [.string]#string#  "description"
-   ** [.string]#string#  "version"
-   ** [.string]#string#  "release"
-   ** [.string]#string#  "arch"
-   ** [.string]#string#  "epoch"
-   ** [.string]#string#  "provider"
-    
-  
+   * [.struct]#struct#  package overview
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "arch"
+** [.string]#string#  "epoch"
+** [.string]#string#  "provider"
+ 
+ 
 
 

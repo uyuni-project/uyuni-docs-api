@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-admin-create-1553338212,create>>
-* <<apidoc-admin-create-791707596,create>>
-* <<apidoc-admin-delete-1058118485,delete>>
-* <<apidoc-admin-getDetails-334715128,getDetails>>
-* <<apidoc-admin-list-2138211677,list>>
-* <<apidoc-admin-setDetails-988557145,setDetails>>
+* <<apidoc-admin-create-1328968427,create>>
+* <<apidoc-admin-create-578967394,create>>
+* <<apidoc-admin-delete-400758359,delete>>
+* <<apidoc-admin-getDetails-669678735,getDetails>>
+* <<apidoc-admin-list-1538784312,list>>
+* <<apidoc-admin-setDetails-887596583,setDetails>>
 
 == Description
 
@@ -20,8 +20,10 @@ Provides methods to access and modify pay-as-you-go ssh connection data
 admin
 
 
-[#apidoc-admin-create-1553338212]
-== Method: create 
+[#apidoc-admin-create-1328968427]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -57,8 +59,10 @@ Returns:
 
 
 
-[#apidoc-admin-create-791707596]
-== Method: create 
+[#apidoc-admin-create-578967394]
+== Method: create
+
+HTTP `POST`
 
 Description:
 
@@ -106,8 +110,10 @@ Returns:
 
 
 
-[#apidoc-admin-delete-1058118485]
-== Method: delete 
+[#apidoc-admin-delete-400758359]
+== Method: delete
+
+HTTP `POST`
 
 Description:
 
@@ -130,8 +136,10 @@ Returns:
 
 
 
-[#apidoc-admin-getDetails-334715128]
-== Method: getDetails 
+[#apidoc-admin-getDetails-669678735]
+== Method: getDetails
+
+HTTP `POST`
 
 Description:
 
@@ -150,27 +158,29 @@ Parameters:
 
 Returns:
 
-* * [.struct]#struct#  -  sshData 
-              ** [.string]#string#  "description"
-              ** [.string]#string#  "hostname"
-              ** [.int]#int#  "port"
-              ** [.string]#string#  "username"
-              ** [.string]#string#  "password"
-              ** [.string]#string#  "key"
-              ** [.string]#string#  "key_password"
-              ** [.string]#string#  "bastion_hostname"
-              ** [.int]#int#  "bastion_port"
-              ** [.string]#string#  "bastion_username"
-              ** [.string]#string#  "bastion_password"
-              ** [.string]#string#  "bastion_key"
-              ** [.string]#string#  "bastion_key_password"
-        
+* * [.struct]#struct#  SSH data
+** [.string]#string#  "description"
+** [.string]#string#  "hostname"
+** [.int]#int#  "port"
+** [.string]#string#  "username"
+** [.string]#string#  "password"
+** [.string]#string#  "key"
+** [.string]#string#  "key_password"
+** [.string]#string#  "bastion_hostname"
+** [.int]#int#  "bastion_port"
+** [.string]#string#  "bastion_username"
+** [.string]#string#  "bastion_password"
+** [.string]#string#  "bastion_key"
+** [.string]#string#  "bastion_key_password"
+  
  
 
 
 
-[#apidoc-admin-list-2138211677]
-== Method: list 
+[#apidoc-admin-list-1538784312]
+== Method: list
+
+HTTP `POST`
 
 Description:
 
@@ -187,27 +197,29 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-     * [.struct]#struct#  -  sshData 
-              ** [.string]#string#  "description"
-              ** [.string]#string#  "hostname"
-              ** [.int]#int#  "port"
-              ** [.string]#string#  "username"
-              ** [.string]#string#  "password"
-              ** [.string]#string#  "key"
-              ** [.string]#string#  "key_password"
-              ** [.string]#string#  "bastion_hostname"
-              ** [.int]#int#  "bastion_port"
-              ** [.string]#string#  "bastion_username"
-              ** [.string]#string#  "bastion_password"
-              ** [.string]#string#  "bastion_key"
-              ** [.string]#string#  "bastion_key_password"
-       
-  
+     * [.struct]#struct#  SSH data
+** [.string]#string#  "description"
+** [.string]#string#  "hostname"
+** [.int]#int#  "port"
+** [.string]#string#  "username"
+** [.string]#string#  "password"
+** [.string]#string#  "key"
+** [.string]#string#  "key_password"
+** [.string]#string#  "bastion_hostname"
+** [.int]#int#  "bastion_port"
+** [.string]#string#  "bastion_username"
+** [.string]#string#  "bastion_password"
+** [.string]#string#  "bastion_key"
+** [.string]#string#  "bastion_key_password"
+ 
+ 
 
 
 
-[#apidoc-admin-setDetails-988557145]
-== Method: setDetails 
+[#apidoc-admin-setDetails-887596583]
+== Method: setDetails
+
+HTTP `POST`
 
 Description:
 
@@ -223,20 +235,20 @@ Parameters:
 * [.string]#string#  host - hostname or IP address to the instance, will fail if
  host doesn't exist.
  
-* [.struct]#struct#  - user details
-     ** [.string]#string#  "description"
-     ** [.int]#int#  "port"
-     ** [.string]#string#  "username"
-     ** [.string]#string#  "password"
-     ** [.string]#string#  "key"
-     ** [.string]#string#  "key_password"
-     ** [.string]#string#  "bastion_host"
-     ** [.int]#int#  "bastion_port"
-     ** [.string]#string#  "bastion_username"
-     ** [.string]#string#  "bastion_password"
-     ** [.string]#string#  "bastion_key"
-     ** [.string]#string#  "bastion_key_password"
-    
+* [.struct]#struct#  details - user details
+** [.string]#string#  "description"
+** [.int]#int#  "port"
+** [.string]#string#  "username"
+** [.string]#string#  "password"
+** [.string]#string#  "key"
+** [.string]#string#  "key_password"
+** [.string]#string#  "bastion_host"
+** [.int]#int#  "bastion_port"
+** [.string]#string#  "bastion_username"
+** [.string]#string#  "bastion_password"
+** [.string]#string#  "bastion_key"
+** [.string]#string#  "bastion_key_password"
+ 
 
 Returns:
 
