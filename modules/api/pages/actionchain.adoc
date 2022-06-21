@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-actionchain-addConfigurationDeployment-1268892066,addConfigurationDeployment>>
-* <<apidoc-actionchain-addErrataUpdate-1244989872,addErrataUpdate>>
-* <<apidoc-actionchain-addPackageInstall-224885737,addPackageInstall>>
-* <<apidoc-actionchain-addPackageRemoval-1030952115,addPackageRemoval>>
-* <<apidoc-actionchain-addPackageUpgrade-1836406440,addPackageUpgrade>>
-* <<apidoc-actionchain-addPackageVerify-267368044,addPackageVerify>>
-* <<apidoc-actionchain-addScriptRun-1216741689,addScriptRun>>
-* <<apidoc-actionchain-addScriptRun-2114487283,addScriptRun>>
-* <<apidoc-actionchain-addSystemReboot-1878900463,addSystemReboot>>
-* <<apidoc-actionchain-createChain-474324008,createChain>>
-* <<apidoc-actionchain-deleteChain-43951584,deleteChain>>
-* <<apidoc-actionchain-listChainActions-635097653,listChainActions>>
-* <<apidoc-actionchain-listChains-207766759,listChains>>
-* <<apidoc-actionchain-removeAction-848490487,removeAction>>
-* <<apidoc-actionchain-renameChain-861310502,renameChain>>
-* <<apidoc-actionchain-scheduleChain-212207240,scheduleChain>>
+* <<apidoc-actionchain-addConfigurationDeployment-1303734497,addConfigurationDeployment>>
+* <<apidoc-actionchain-addErrataUpdate-2045314417,addErrataUpdate>>
+* <<apidoc-actionchain-addPackageInstall-1712647370,addPackageInstall>>
+* <<apidoc-actionchain-addPackageRemoval-2102730438,addPackageRemoval>>
+* <<apidoc-actionchain-addPackageUpgrade-1922344580,addPackageUpgrade>>
+* <<apidoc-actionchain-addPackageVerify-1139273988,addPackageVerify>>
+* <<apidoc-actionchain-addScriptRun-660743486,addScriptRun>>
+* <<apidoc-actionchain-addScriptRun-1716645796,addScriptRun>>
+* <<apidoc-actionchain-addSystemReboot-1705512923,addSystemReboot>>
+* <<apidoc-actionchain-createChain-178405137,createChain>>
+* <<apidoc-actionchain-deleteChain-1289292854,deleteChain>>
+* <<apidoc-actionchain-listChainActions-2000880842,listChainActions>>
+* <<apidoc-actionchain-listChains-1623510827,listChains>>
+* <<apidoc-actionchain-removeAction-50592708,removeAction>>
+* <<apidoc-actionchain-renameChain-2076770236,renameChain>>
+* <<apidoc-actionchain-scheduleChain-448945595,scheduleChain>>
 
 == Description
 
@@ -30,7 +30,7 @@ Provides the namespace for the Action Chain methods.
 actionchain
 
 
-[#apidoc-actionchain-addConfigurationDeployment-1268892066]
+[#apidoc-actionchain-addConfigurationDeployment-1303734497]
 == Method: addConfigurationDeployment
 
 HTTP `POST`
@@ -44,7 +44,7 @@ Adds an action to deploy a configuration file to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -64,7 +64,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addErrataUpdate-1244989872]
+[#apidoc-actionchain-addErrataUpdate-2045314417]
 == Method: addErrataUpdate
 
 HTTP `POST`
@@ -78,7 +78,7 @@ Adds Errata update to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -94,7 +94,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageInstall-224885737]
+[#apidoc-actionchain-addPackageInstall-1712647370]
 == Method: addPackageInstall
 
 HTTP `POST`
@@ -108,7 +108,7 @@ Adds package installation action to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -124,7 +124,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageRemoval-1030952115]
+[#apidoc-actionchain-addPackageRemoval-2102730438]
 == Method: addPackageRemoval
 
 HTTP `POST`
@@ -139,7 +139,7 @@ Adds an action to remove installed packages on the system to an Action
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -155,7 +155,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageUpgrade-1836406440]
+[#apidoc-actionchain-addPackageUpgrade-1922344580]
 == Method: addPackageUpgrade
 
 HTTP `POST`
@@ -170,7 +170,7 @@ Adds an action to upgrade installed packages on the system to an Action
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -186,7 +186,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageVerify-267368044]
+[#apidoc-actionchain-addPackageVerify-1139273988]
 == Method: addPackageVerify
 
 HTTP `POST`
@@ -201,7 +201,7 @@ Adds an action to verify installed packages on the system to an Action
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -217,7 +217,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-1216741689]
+[#apidoc-actionchain-addScriptRun-660743486]
 == Method: addScriptRun
 
 HTTP `POST`
@@ -232,7 +232,7 @@ Add an action with label to run a script to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -256,7 +256,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-2114487283]
+[#apidoc-actionchain-addScriptRun-1716645796]
 == Method: addScriptRun
 
 HTTP `POST`
@@ -271,7 +271,7 @@ Add an action to run a script to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -293,7 +293,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addSystemReboot-1878900463]
+[#apidoc-actionchain-addSystemReboot-1705512923]
 == Method: addSystemReboot
 
 HTTP `POST`
@@ -307,7 +307,7 @@ Add system reboot to an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.int]#int#  sid - System ID
  
@@ -321,7 +321,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-createChain-474324008]
+[#apidoc-actionchain-createChain-178405137]
 == Method: createChain
 
 HTTP `POST`
@@ -335,7 +335,7 @@ Create an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -347,7 +347,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-deleteChain-43951584]
+[#apidoc-actionchain-deleteChain-1289292854]
 == Method: deleteChain
 
 HTTP `POST`
@@ -361,7 +361,7 @@ Delete action chain by label.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -373,7 +373,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-listChainActions-635097653]
+[#apidoc-actionchain-listChainActions-2000880842]
 == Method: listChainActions
 
 HTTP `GET`
@@ -387,7 +387,7 @@ List all actions in the particular Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -407,7 +407,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-listChains-207766759]
+[#apidoc-actionchain-listChains-1623510827]
 == Method: listChains
 
 HTTP `GET`
@@ -421,7 +421,7 @@ List currently available action chains.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 
 Returns:
@@ -434,7 +434,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-removeAction-848490487]
+[#apidoc-actionchain-removeAction-50592708]
 == Method: removeAction
 
 HTTP `POST`
@@ -448,7 +448,7 @@ Remove an action from an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
@@ -462,7 +462,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-renameChain-861310502]
+[#apidoc-actionchain-renameChain-2076770236]
 == Method: renameChain
 
 HTTP `POST`
@@ -476,7 +476,7 @@ Rename an Action Chain.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  previousLabel - Previous chain label
  
@@ -490,7 +490,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-scheduleChain-212207240]
+[#apidoc-actionchain-scheduleChain-448945595]
 == Method: scheduleChain
 
 HTTP `POST`
@@ -504,7 +504,7 @@ Schedule the Action Chain so that its actions will actually occur.
 
 Parameters:
 
-* [.string]#string#  sessionKey - Session token, issued at login
+* [.string]#string#  sessionKey
  
 * [.string]#string#  chainLabel - Label of the chain
  
