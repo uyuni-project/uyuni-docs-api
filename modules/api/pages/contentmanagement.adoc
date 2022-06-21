@@ -4,33 +4,34 @@
 
 == Available methods
 
-* <<apidoc-contentmanagement-attachFilter-1115791983,attachFilter>>
-* <<apidoc-contentmanagement-attachSource-795464262,attachSource>>
-* <<apidoc-contentmanagement-attachSource-1543358763,attachSource>>
-* <<apidoc-contentmanagement-buildProject-169760655,buildProject>>
-* <<apidoc-contentmanagement-buildProject-1887123617,buildProject>>
-* <<apidoc-contentmanagement-createEnvironment-1845927081,createEnvironment>>
-* <<apidoc-contentmanagement-createFilter-246024123,createFilter>>
-* <<apidoc-contentmanagement-createProject-1331862180,createProject>>
-* <<apidoc-contentmanagement-detachFilter-119988893,detachFilter>>
-* <<apidoc-contentmanagement-detachSource-1217563479,detachSource>>
-* <<apidoc-contentmanagement-listFilterCriteria-1439007204,listFilterCriteria>>
-* <<apidoc-contentmanagement-listFilters-612928907,listFilters>>
-* <<apidoc-contentmanagement-listProjectEnvironments-1059245610,listProjectEnvironments>>
-* <<apidoc-contentmanagement-listProjectFilters-1720942988,listProjectFilters>>
-* <<apidoc-contentmanagement-listProjectSources-2120859512,listProjectSources>>
-* <<apidoc-contentmanagement-listProjects-965130729,listProjects>>
-* <<apidoc-contentmanagement-lookupEnvironment-1691272400,lookupEnvironment>>
-* <<apidoc-contentmanagement-lookupFilter-1963663371,lookupFilter>>
-* <<apidoc-contentmanagement-lookupProject-1843118011,lookupProject>>
-* <<apidoc-contentmanagement-lookupSource-617650120,lookupSource>>
-* <<apidoc-contentmanagement-promoteProject-1059487259,promoteProject>>
-* <<apidoc-contentmanagement-removeEnvironment-1821576830,removeEnvironment>>
-* <<apidoc-contentmanagement-removeFilter-405975286,removeFilter>>
-* <<apidoc-contentmanagement-removeProject-255102480,removeProject>>
-* <<apidoc-contentmanagement-updateEnvironment-1172953975,updateEnvironment>>
-* <<apidoc-contentmanagement-updateFilter-1856911152,updateFilter>>
-* <<apidoc-contentmanagement-updateProject-66135670,updateProject>>
+* <<apidoc-contentmanagement-attachFilter-559154337,attachFilter>>
+* <<apidoc-contentmanagement-attachSource-840991551,attachSource>>
+* <<apidoc-contentmanagement-attachSource-777790557,attachSource>>
+* <<apidoc-contentmanagement-buildProject-1251438918,buildProject>>
+* <<apidoc-contentmanagement-buildProject-1104950472,buildProject>>
+* <<apidoc-contentmanagement-createAppStreamFilters-1558857633,createAppStreamFilters>>
+* <<apidoc-contentmanagement-createEnvironment-1792932386,createEnvironment>>
+* <<apidoc-contentmanagement-createFilter-1877441175,createFilter>>
+* <<apidoc-contentmanagement-createProject-1691481417,createProject>>
+* <<apidoc-contentmanagement-detachFilter-59879483,detachFilter>>
+* <<apidoc-contentmanagement-detachSource-1690529928,detachSource>>
+* <<apidoc-contentmanagement-listFilterCriteria-283057972,listFilterCriteria>>
+* <<apidoc-contentmanagement-listFilters-1380728404,listFilters>>
+* <<apidoc-contentmanagement-listProjectEnvironments-783927213,listProjectEnvironments>>
+* <<apidoc-contentmanagement-listProjectFilters-522361920,listProjectFilters>>
+* <<apidoc-contentmanagement-listProjectSources-1789861096,listProjectSources>>
+* <<apidoc-contentmanagement-listProjects-2007939739,listProjects>>
+* <<apidoc-contentmanagement-lookupEnvironment-1160316046,lookupEnvironment>>
+* <<apidoc-contentmanagement-lookupFilter-494769804,lookupFilter>>
+* <<apidoc-contentmanagement-lookupProject-498458153,lookupProject>>
+* <<apidoc-contentmanagement-lookupSource-1864820597,lookupSource>>
+* <<apidoc-contentmanagement-promoteProject-1076642142,promoteProject>>
+* <<apidoc-contentmanagement-removeEnvironment-1731160567,removeEnvironment>>
+* <<apidoc-contentmanagement-removeFilter-301667985,removeFilter>>
+* <<apidoc-contentmanagement-removeProject-491652795,removeProject>>
+* <<apidoc-contentmanagement-updateEnvironment-122376732,updateEnvironment>>
+* <<apidoc-contentmanagement-updateFilter-760378182,updateFilter>>
+* <<apidoc-contentmanagement-updateProject-532028852,updateProject>>
 
 == Description
 
@@ -42,7 +43,7 @@ Provides methods to access and modify Content Lifecycle Management related entit
 contentmanagement
 
 
-[#apidoc-contentmanagement-attachFilter-1115791983]
+[#apidoc-contentmanagement-attachFilter-559154337]
 == Method: attachFilter
 
 HTTP `POST`
@@ -80,7 +81,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-attachSource-795464262]
+[#apidoc-contentmanagement-attachSource-840991551]
 == Method: attachSource
 
 HTTP `POST`
@@ -117,7 +118,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-attachSource-1543358763]
+[#apidoc-contentmanagement-attachSource-777790557]
 == Method: attachSource
 
 HTTP `POST`
@@ -152,7 +153,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-buildProject-169760655]
+[#apidoc-contentmanagement-buildProject-1251438918]
 == Method: buildProject
 
 HTTP `POST`
@@ -178,7 +179,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-buildProject-1887123617]
+[#apidoc-contentmanagement-buildProject-1104950472]
 == Method: buildProject
 
 HTTP `POST`
@@ -206,7 +207,48 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createEnvironment-1845927081]
+[#apidoc-contentmanagement-createAppStreamFilters-1558857633]
+== Method: createAppStreamFilters
+
+HTTP `POST`
+
+Description:
+
+Create Filters for AppStream Modular Channel and attach them to CLM Project
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  prefix - Filter name prefix
+ 
+* [.string]#string#  channelLabel - Modular Channel label
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#  content filter information
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.int]#int#  "orgId"
+** [.entityType]#entityType#  "entity type (e.g. 'package')"
+** [.rule]#rule#  "rule (e.g. 'deny')"
+** [.struct]#struct#  criteria
+*** [.string]#string#  "matcher" - the matcher type of the filter (e.g. 'contains')
+*** [.string]#string#  "field" - the entity field to match (e.g. 'name'
+*** [.string]#string#  "value" - the field value to match (e.g. 'kernel')
+   
+ 
+
+
+
+[#apidoc-contentmanagement-createEnvironment-1792932386]
 == Method: createEnvironment
 
 HTTP `POST`
@@ -250,7 +292,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createFilter-246024123]
+[#apidoc-contentmanagement-createFilter-1877441175]
 == Method: createFilter
 
 HTTP `POST`
@@ -258,6 +300,7 @@ HTTP `POST`
 Description:
 
 Create a Content Filter
+ #paragraph_end()
  #paragraph()
  The following filters are available (you can get the list in machine-readable format using
  the listFilterCriteria() endpoint):
@@ -291,7 +334,6 @@ Create a Content Filter
  #paragraph_end()
  #paragraph()
  Note: The 'matches' matcher works on Java regular expressions.
- #paragraph_end()
 
 
 
@@ -329,7 +371,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createProject-1331862180]
+[#apidoc-contentmanagement-createProject-1691481417]
 == Method: createProject
 
 HTTP `POST`
@@ -367,7 +409,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-detachFilter-119988893]
+[#apidoc-contentmanagement-detachFilter-59879483]
 == Method: detachFilter
 
 HTTP `POST`
@@ -395,7 +437,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-detachSource-1217563479]
+[#apidoc-contentmanagement-detachSource-1690529928]
 == Method: detachSource
 
 HTTP `POST`
@@ -425,7 +467,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listFilterCriteria-1439007204]
+[#apidoc-contentmanagement-listFilterCriteria-283057972]
 == Method: listFilterCriteria
 
 HTTP `GET`
@@ -453,7 +495,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listFilters-612928907]
+[#apidoc-contentmanagement-listFilters-1380728404]
 == Method: listFilters
 
 HTTP `GET`
@@ -488,7 +530,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectEnvironments-1059245610]
+[#apidoc-contentmanagement-listProjectEnvironments-783927213]
 == Method: listProjectEnvironments
 
 HTTP `GET`
@@ -525,7 +567,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectFilters-1720942988]
+[#apidoc-contentmanagement-listProjectFilters-522361920]
 == Method: listProjectFilters
 
 HTTP `GET`
@@ -565,7 +607,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectSources-2120859512]
+[#apidoc-contentmanagement-listProjectSources-1789861096]
 == Method: listProjectSources
 
 HTTP `GET`
@@ -597,7 +639,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjects-965130729]
+[#apidoc-contentmanagement-listProjects-2007939739]
 == Method: listProjects
 
 HTTP `GET`
@@ -630,7 +672,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupEnvironment-1691272400]
+[#apidoc-contentmanagement-lookupEnvironment-1160316046]
 == Method: lookupEnvironment
 
 HTTP `GET`
@@ -668,7 +710,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupFilter-1963663371]
+[#apidoc-contentmanagement-lookupFilter-494769804]
 == Method: lookupFilter
 
 HTTP `GET`
@@ -704,7 +746,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupProject-1843118011]
+[#apidoc-contentmanagement-lookupProject-498458153]
 == Method: lookupProject
 
 HTTP `GET`
@@ -738,7 +780,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupSource-617650120]
+[#apidoc-contentmanagement-lookupSource-1864820597]
 == Method: lookupSource
 
 HTTP `GET`
@@ -773,7 +815,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-promoteProject-1059487259]
+[#apidoc-contentmanagement-promoteProject-1076642142]
 == Method: promoteProject
 
 HTTP `POST`
@@ -801,7 +843,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeEnvironment-1821576830]
+[#apidoc-contentmanagement-removeEnvironment-1731160567]
 == Method: removeEnvironment
 
 HTTP `POST`
@@ -829,7 +871,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeFilter-405975286]
+[#apidoc-contentmanagement-removeFilter-301667985]
 == Method: removeFilter
 
 HTTP `POST`
@@ -855,7 +897,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeProject-255102480]
+[#apidoc-contentmanagement-removeProject-491652795]
 == Method: removeProject
 
 HTTP `POST`
@@ -881,7 +923,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateEnvironment-1172953975]
+[#apidoc-contentmanagement-updateEnvironment-122376732]
 == Method: updateEnvironment
 
 HTTP `POST`
@@ -923,7 +965,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateFilter-1856911152]
+[#apidoc-contentmanagement-updateFilter-760378182]
 == Method: updateFilter
 
 HTTP `POST`
@@ -931,9 +973,9 @@ HTTP `POST`
 Description:
 
 Update a Content Filter
+ #paragraph_end()
  #paragraph()
  See also: createFilter(), listFilterCriteria()
- #paragraph_end()
 
 
 
@@ -971,7 +1013,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateProject-66135670]
+[#apidoc-contentmanagement-updateProject-532028852]
 == Method: updateProject
 
 HTTP `POST`
