@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sample Scripts :: Uyuni API Documentation</title>
+    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/scripts.html">
+    <meta name="generator" content="Antora 2.2.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index.html"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+                <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
+        <span class="separator">//</span>
+          <a href="https://www.uyuni-project.org/uyuni-docs-api">Documentation</a> -->
+            </div>
+                <div class="navbar-item">
+                    <!-- <i class="fas fa-search"></i>&nbsp; -->
+                    <input id="search-input" type="text" placeholder="Search...">
+                </div>
+            <button class="navbar-burger" data-target="topbar-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Comment out this section and the twitter section for Product WebUI docs (SUMA) -->
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Resources</div>
+                    <div class="navbar-dropdown">
+                        <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                                class="fab fa-github"></i>&nbsp;Report Issue</a>
+                        <a class="navbar-item"
+                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                    </div>
+                </div>
+<!--
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">Language</div>
+                    <div class="navbar-dropdown">
+
+                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
+                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
+                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
+                    </div> -->
+                </div>
+
+            </div>
+
+
+        <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
+          <span class="icon">
+            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+              <path fill="#57aaee"
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+            </svg>
+          </span>
+        </a>
+    </div>
+        </div>
+    </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="uyuni" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Script Examples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">XMLRPC Scripts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/perl.html">Perl Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/python2.html">Python 2 Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/python3.html">Python 3 Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/ruby.html">Ruby Example</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HTTP over JSON API scripts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/json-http-login.html">JSON HTTP Login</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/json-http-get.html">JSON HTTP Get</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/json-http-post.html">JSON HTTP Post</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scripts/json-using-request-body.html">JSON HTTP Request Body</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel_access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel_software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurringaction.html">recurringaction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.master.html">sync.master</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">System Custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">System Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">System Power Management</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Uyuni API</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Uyuni API</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Uyuni API</a></li>
+    <li><a href="scripts.html">Sample Scripts</a></li>
+  </ul>
+</nav>
+
+
+
+  <div class="edit-this-page">
+    <span class="prev-caret">
+&nbsp;
+<span class="next-caret">
+    &nbsp;
+    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.06/modules/api/pages/scripts.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+</div>
+</div>
+<article class="doc"><a name="section-top"></a>
+<h1 class="page">Sample Scripts</h1>
+<div class="sect1">
+<h2 id="_xmlrpc_scripts"><a class="anchor" href="#_xmlrpc_scripts"></a><a class="link" href="#_xmlrpc_scripts">XMLRPC Scripts</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_perl_example"><a class="anchor" href="#_perl_example"></a><a class="link" href="#_perl_example">Perl Example</a></h3>
+<div class="paragraph">
+<p>This Perl example shows the <code>system.listUserSystems</code> call being used to get a
+list of systems a user has access to. In the example below, the name of each system will be printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-perl hljs" data-lang="perl">#!/usr/bin/perl
+use Frontier::Client;
+
+my $HOST = 'manager.example.com';
+my $user = 'username';
+my $pass = 'password';
+
+my $client = new Frontier::Client(url =&gt; "http://$HOST/rpc/api");
+my $session = $client-&gt;call('auth.login',$user, $pass);
+
+my $systems = $client-&gt;call('system.listUserSystems', $session);
+foreach my $system (@$systems) {
+  print $system-&gt;{'name'}."\n";
+}
+$client-&gt;call('auth.logout', $session);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_python_2_example"><a class="anchor" href="#_python_2_example"></a><a class="link" href="#_python_2_example">Python 2 Example</a></h3>
+<div class="paragraph">
+<p>Below is an example of the <code>user.listUsers</code> call being used. Only the login of each
+user is printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
+import xmlrpclib
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = xmlrpclib.Server(MANAGER_URL, verbose=0)
+
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+list = client.user.list_users(key)
+for user in list:
+  print user.get('login')
+
+client.auth.logout(key)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following code shows how to use date-time parameters. This code will schedule immediate installation of package rhnlib-2.5.22.9.el6.noarch to system with id 1000000001.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
+from datetime import datetime
+import time
+import xmlrpclib
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = xmlrpclib.Server(MANAGER_URL, verbose=0)
+
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+package_list = client.packages.findByNvrea(key, 'rhnlib', '2.5.22', '9.el6', '', 'noarch')
+today = datetime.today()
+earliest_occurrence = xmlrpclib.DateTime(today)
+client.system.schedulePackageInstall(key, 1000000001, package_list[0]['id'], earliest_occurrence)
+
+client.auth.logout(key)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_python_3_with_ssl_example"><a class="anchor" href="#_python_3_with_ssl_example"></a><a class="link" href="#_python_3_with_ssl_example">Python 3 with SSL Example</a></h3>
+<div class="paragraph">
+<p>Below is an example of the <code>user.listUsers</code> call being called.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+from xmlrpc.client import ServerProxy
+import ssl
+
+MANAGER_URL = "https://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+# You might need to set to set other options depending on your
+# server SSL configuartion and your local SSL configuration
+context = ssl.create_default_context()
+client = ServerProxy(MANAGER_URL, context=context)
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+
+print(client.user.list_users(key))
+
+client.auth.logout(key)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_python_3_example"><a class="anchor" href="#_python_3_example"></a><a class="link" href="#_python_3_example">Python 3 Example</a></h3>
+<div class="paragraph">
+<p>Below is an example of the <code>user.listUsers</code> call being called.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+from xmlrpc.client import ServerProxy
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = ServerProxy(MANAGER_URL)
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+
+print(client.user.list_users(key))
+
+client.auth.logout(key)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ruby_example"><a class="anchor" href="#_ruby_example"></a><a class="link" href="#_ruby_example">Ruby Example</a></h3>
+<div class="paragraph">
+<p>Below is an example of the <code>channel.listAllChannels</code> API call. List of channel labels is printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">#!/usr/bin/ruby
+require "xmlrpc/client"
+
+@MANAGER_URL = "http://manager.example.com/rpc/api"
+@MANAGER_LOGIN = "username"
+@MANAGER_PASSWORD = "password"
+
+@client = XMLRPC::Client.new2(@MANAGER_URL)
+
+@key = @client.call('auth.login', @MANAGER_LOGIN, @MANAGER_PASSWORD)
+channels = @client.call('channel.listAllChannels', @key)
+for channel in channels do
+  p channel["label"]
+end
+
+@client.call('auth.logout', @key)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_http_over_json_api_scripts"><a class="anchor" href="#_http_over_json_api_scripts"></a><a class="link" href="#_http_over_json_api_scripts">HTTP over JSON API scripts</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_http_login_with_curl"><a class="anchor" href="#_http_login_with_curl"></a><a class="link" href="#_http_login_with_curl">HTTP login with Curl</a></h3>
+<div class="paragraph">
+<p>Below is an example of the login process using an authentication token with the HTTP over JSON API.</p>
+</div>
+<div class="paragraph">
+<p>The HTTP over JSON API uses authentication tokens for access. The token is sent in a
+cookie called <code>pxt-session-cookie</code> in a response to a call to the <code>auth.login</code> endpoint.
+The <code>auth.login</code> endpoint accepts a POST request with a JSON body that has <code>login</code> and
+<code>password</code> properties in a top-level object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" -d '{"login": "myusername", "password": "mypass"}' -i $API/auth/login
+
+HTTP/1.1 200 200
+...
+Set-Cookie: pxt-session-cookie=&amp;lt;tokenhash&amp;gt;; ...
+...
+{"success":true,"messages":[]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the login is successful, the retrieved cookie must be added to each subsequent request for authenticated access.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_get_example"><a class="anchor" href="#_http_get_example"></a><a class="link" href="#_http_get_example">HTTP GET example</a></h3>
+<div class="paragraph">
+<p>Below is an example of an HTTP GET call to the <code>contentmanagement.lookupProject</code> API.
+In a GET request, method parameters must be sent as query string key-value pairs.</p>
+</div>
+<div class="paragraph">
+<p><em>The JSON output is pretty-printed for clarity.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+&gt; $API/contentmanagement/lookupProject?projectLabel=myproject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "description": "My CLM project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_post_example"><a class="anchor" href="#_http_post_example"></a><a class="link" href="#_http_post_example">HTTP POST example</a></h3>
+<div class="paragraph">
+<p>Below is an example of an HTTP POST call to the <code>contentmanagement.createProject</code> API.
+In a POST request, method parameters can be sent as query string key-value pairs, as a JSON object in the request body, or a mix of both. <code>object</code> type parameters cannot be represented as a query string element and therefore must be sent in the request body.
+The following examples show both approaches.</p>
+</div>
+<div class="paragraph">
+<p><em>The JSON output is pretty-printed for clarity.</em></p>
+</div>
+<div class="sect3">
+<h4 id="_using_the_query_string"><a class="anchor" href="#_using_the_query_string"></a><a class="link" href="#_using_the_query_string">Using the query string</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" -X POST \
+&gt; "$API/contentmanagement/createProject?projectLabel=myproject&amp;name=My%20Project&amp;description="
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_request_body"><a class="anchor" href="#_using_the_request_body"></a><a class="link" href="#_using_the_request_body">Using the request body</a></h4>
+<div class="paragraph">
+<p>The request body must be a top-level JSON object that contains all the parameters as its properties.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+&gt; -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
+&gt; $API/contentmanagement/createProject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>===Python 3 example</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of the <code>system.listActiveSystems</code> call being used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+import requests
+import pprint
+
+MANAGER_URL = "https://manager.example.com/rhn/manager/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+SSLVERIFY = "/path/to/CA" # or False to disable verify;
+
+data = {"login": MANAGER_LOGIN, "password": MANAGER_PASSWORD}
+response = requests.post(MANAGER_URL + '/auth/login', json=data, verify=SSLVERIFY)
+print("LOGIN: {}:{}".format(response.status_code, response.json()))
+
+cookies = response.cookies
+res2 = requests.get(MANAGER_URL + '/system/listActiveSystems', cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+sysinfo = res2.json()['result'][0]
+
+note = {"sid": sysinfo['id'], "subject": "Title", "body": "Content of the Note"}
+res2 = requests.post(MANAGER_URL + '/system/addNote', json=note, cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+res2 = requests.get(MANAGER_URL + '/system/listNotes?sid={}'.format(sysinfo['id']), cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+res2 = requests.post(MANAGER_URL + '/auth/logout', cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cedents grid" role="navigation">
+
+  </div>
+
+  </div>
+</div>
+</article>
+<aside class="article-aside hidden" role="navigation">
+  <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
+  <div id="article-toc"></div>
+</aside>
+
+
+
+</main>
+</div>
+<script>tippy('#previousPage', {
+placement: 'bottom', // or 'left', 'right', ...
+})
+
+tippy('#nextPage', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#createIssue', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+tippy('#submitPR', {
+  placement: 'bottom', // or 'left', 'right', ...
+})
+</script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script>
+    tippy.setDefaults({
+        placement: 'bottom',
+        arrow: true,
+        arrowType: 'sharp',
+        delay: 800,
+        theme: 'light',
+    });
+
+    tippy('#previousPage', {
+        content: "Previous Page",
+    });
+
+    tippy('#nextPage', {
+        content: "Next Page",
+    });
+
+    tippy('#createIssue', {
+        content: "Create Issue",
+    });
+
+    tippy('#submitPR', {
+        content: "Edit this page and submit a pull request",
+    });
+
+
+</script>
+<script type="text/javascript">
+    window.antora = window.antora || {}
+    window.antora.basePath = '../..'
+    window.antora.pagePath = '/uyuni/api/scripts.html'
+</script>
+<script src="../../_/js/site.js"></script>
+
+    <script src="../../_/js/vendor/lunr.js"></script>
+    <script src="../../_/js/vendor/search.js"></script>
+    <script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/tocbot.min.js"></script>
+<script>
+    tocbot.init( {
+        tocSelector: '#article-toc',
+        contentSelector: 'article',
+        headingSelector: 'h2, h3, h4, h5, h6',
+        collapseDepth: 6,
+        positionFixedSelector: '#article-toc',
+        scrollSmooth: false
+    } );
+    var tocList = document.getElementById( 'article-toc' ).getElementsByClassName( 'toc-list' );
+    if ( tocList && tocList.length > 0 && tocList[0].childNodes.length > 0 ) {
+        document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
+    }
+</script>
+  </body>
+</html>
