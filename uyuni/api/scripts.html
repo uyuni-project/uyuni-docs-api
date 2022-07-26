@@ -352,11 +352,165 @@
 <span class="next-caret">
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.06/modules/api/pages/scripts.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.07/modules/api/pages/scripts.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
 <h1 class="page">Sample Scripts</h1>
+<div class="sect1">
+<h2 id="_json_over_http_api_scripts"><a class="anchor" href="#_json_over_http_api_scripts"></a><a class="link" href="#_json_over_http_api_scripts">JSON over HTTP API scripts</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_http_login_with_curl"><a class="anchor" href="#_http_login_with_curl"></a><a class="link" href="#_http_login_with_curl">HTTP login with Curl</a></h3>
+<div class="paragraph">
+<p>Below is an example of the login process using an authentication token with the JSON over HTTP API.</p>
+</div>
+<div class="paragraph">
+<p>The JSON over HTTP API uses authentication tokens for access. The token is sent in a
+cookie called <code>pxt-session-cookie</code> in a response to a call to the <code>auth.login</code> endpoint.
+The <code>auth.login</code> endpoint accepts a POST request with a JSON body that has <code>login</code> and
+<code>password</code> properties in a top-level object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" -d '{"login": "myusername", "password": "mypass"}' -i $API/auth/login
+
+HTTP/1.1 200 200
+...
+Set-Cookie: pxt-session-cookie=&amp;lt;tokenhash&amp;gt;; ...
+...
+{"success":true,"messages":[]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the login is successful, the retrieved cookie must be added to each subsequent request for authenticated access.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_get_example"><a class="anchor" href="#_http_get_example"></a><a class="link" href="#_http_get_example">HTTP GET example</a></h3>
+<div class="paragraph">
+<p>Below is an example of an HTTP GET call to the <code>contentmanagement.lookupProject</code> API.
+In a GET request, method parameters must be sent as query string key-value pairs.</p>
+</div>
+<div class="paragraph">
+<p><em>The JSON output is pretty-printed for clarity.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+&gt; $API/contentmanagement/lookupProject?projectLabel=myproject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "description": "My CLM project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_post_example"><a class="anchor" href="#_http_post_example"></a><a class="link" href="#_http_post_example">HTTP POST example</a></h3>
+<div class="paragraph">
+<p>Below is an example of an HTTP POST call to the <code>contentmanagement.createProject</code> API.
+In a POST request, method parameters can be sent as query string key-value pairs, as a JSON object in the request body, or a mix of both. <code>object</code> type parameters cannot be represented as a query string element and therefore must be sent in the request body.
+The following examples show both approaches.</p>
+</div>
+<div class="paragraph">
+<p><em>The JSON output is pretty-printed for clarity.</em></p>
+</div>
+<div class="sect3">
+<h4 id="_using_the_query_string"><a class="anchor" href="#_using_the_query_string"></a><a class="link" href="#_using_the_query_string">Using the query string</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" -X POST \
+&gt; "$API/contentmanagement/createProject?projectLabel=myproject&amp;name=My%20Project&amp;description="
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_request_body"><a class="anchor" href="#_using_the_request_body"></a><a class="link" href="#_using_the_request_body">Using the request body</a></h4>
+<div class="paragraph">
+<p>The request body must be a top-level JSON object that contains all the parameters as its properties.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+&gt; -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
+&gt; $API/contentmanagement/createProject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>===Python 3 example</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of the <code>system.listActiveSystems</code> call being used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+import requests
+import pprint
+
+MANAGER_URL = "https://manager.example.com/rhn/manager/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+SSLVERIFY = "/path/to/CA" # or False to disable verify;
+
+data = {"login": MANAGER_LOGIN, "password": MANAGER_PASSWORD}
+response = requests.post(MANAGER_URL + '/auth/login', json=data, verify=SSLVERIFY)
+print("LOGIN: {}:{}".format(response.status_code, response.json()))
+
+cookies = response.cookies
+res2 = requests.get(MANAGER_URL + '/system/listActiveSystems', cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+sysinfo = res2.json()['result'][0]
+
+note = {"sid": sysinfo['id'], "subject": "Title", "body": "Content of the Note"}
+res2 = requests.post(MANAGER_URL + '/system/addNote', json=note, cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+res2 = requests.get(MANAGER_URL + '/system/listNotes?sid={}'.format(sysinfo['id']), cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())
+
+res2 = requests.post(MANAGER_URL + '/auth/logout', cookies=cookies, verify=SSLVERIFY)
+print("RETCODE: {}".format(res2.status_code))
+pprint.pprint(res2.json())</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_xmlrpc_scripts"><a class="anchor" href="#_xmlrpc_scripts"></a><a class="link" href="#_xmlrpc_scripts">XMLRPC Scripts</a></h2>
 <div class="sectionbody">
@@ -510,160 +664,6 @@ for channel in channels do
 end
 
 @client.call('auth.logout', @key)</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_http_over_json_api_scripts"><a class="anchor" href="#_http_over_json_api_scripts"></a><a class="link" href="#_http_over_json_api_scripts">HTTP over JSON API scripts</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_http_login_with_curl"><a class="anchor" href="#_http_login_with_curl"></a><a class="link" href="#_http_login_with_curl">HTTP login with Curl</a></h3>
-<div class="paragraph">
-<p>Below is an example of the login process using an authentication token with the HTTP over JSON API.</p>
-</div>
-<div class="paragraph">
-<p>The HTTP over JSON API uses authentication tokens for access. The token is sent in a
-cookie called <code>pxt-session-cookie</code> in a response to a call to the <code>auth.login</code> endpoint.
-The <code>auth.login</code> endpoint accepts a POST request with a JSON body that has <code>login</code> and
-<code>password</code> properties in a top-level object.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" -d '{"login": "myusername", "password": "mypass"}' -i $API/auth/login
-
-HTTP/1.1 200 200
-...
-Set-Cookie: pxt-session-cookie=&amp;lt;tokenhash&amp;gt;; ...
-...
-{"success":true,"messages":[]}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Once the login is successful, the retrieved cookie must be added to each subsequent request for authenticated access.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_http_get_example"><a class="anchor" href="#_http_get_example"></a><a class="link" href="#_http_get_example">HTTP GET example</a></h3>
-<div class="paragraph">
-<p>Below is an example of an HTTP GET call to the <code>contentmanagement.lookupProject</code> API.
-In a GET request, method parameters must be sent as query string key-value pairs.</p>
-</div>
-<div class="paragraph">
-<p><em>The JSON output is pretty-printed for clarity.</em></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
-&gt; $API/contentmanagement/lookupProject?projectLabel=myproject
-{
-  "success": true,
-  "result": {
-    "name": "My Project",
-    "description": "My CLM project",
-    "id": 1,
-    "label": "myproject",
-    "orgId": 1
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_http_post_example"><a class="anchor" href="#_http_post_example"></a><a class="link" href="#_http_post_example">HTTP POST example</a></h3>
-<div class="paragraph">
-<p>Below is an example of an HTTP POST call to the <code>contentmanagement.createProject</code> API.
-In a POST request, method parameters can be sent as query string key-value pairs, as a JSON object in the request body, or a mix of both. <code>object</code> type parameters cannot be represented as a query string element and therefore must be sent in the request body.
-The following examples show both approaches.</p>
-</div>
-<div class="paragraph">
-<p><em>The JSON output is pretty-printed for clarity.</em></p>
-</div>
-<div class="sect3">
-<h4 id="_using_the_query_string"><a class="anchor" href="#_using_the_query_string"></a><a class="link" href="#_using_the_query_string">Using the query string</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" -X POST \
-&gt; "$API/contentmanagement/createProject?projectLabel=myproject&amp;name=My%20Project&amp;description="
-{
-  "success": true,
-  "result": {
-    "name": "My Project",
-    "id": 1,
-    "label": "myproject",
-    "orgId": 1
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_using_the_request_body"><a class="anchor" href="#_using_the_request_body"></a><a class="link" href="#_using_the_request_body">Using the request body</a></h4>
-<div class="paragraph">
-<p>The request body must be a top-level JSON object that contains all the parameters as its properties.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
-&gt; -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
-&gt; $API/contentmanagement/createProject
-{
-  "success": true,
-  "result": {
-    "name": "My Project",
-    "id": 1,
-    "label": "myproject",
-    "orgId": 1
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>===Python 3 example</p>
-</div>
-<div class="paragraph">
-<p>Below is an example of the <code>system.listActiveSystems</code> call being used.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
-import requests
-import pprint
-
-MANAGER_URL = "https://manager.example.com/rhn/manager/api"
-MANAGER_LOGIN = "username"
-MANAGER_PASSWORD = "password"
-SSLVERIFY = "/path/to/CA" # or False to disable verify;
-
-data = {"login": MANAGER_LOGIN, "password": MANAGER_PASSWORD}
-response = requests.post(MANAGER_URL + '/auth/login', json=data, verify=SSLVERIFY)
-print("LOGIN: {}:{}".format(response.status_code, response.json()))
-
-cookies = response.cookies
-res2 = requests.get(MANAGER_URL + '/system/listActiveSystems', cookies=cookies, verify=SSLVERIFY)
-print("RETCODE: {}".format(res2.status_code))
-pprint.pprint(res2.json())
-
-sysinfo = res2.json()['result'][0]
-
-note = {"sid": sysinfo['id'], "subject": "Title", "body": "Content of the Note"}
-res2 = requests.post(MANAGER_URL + '/system/addNote', json=note, cookies=cookies, verify=SSLVERIFY)
-print("RETCODE: {}".format(res2.status_code))
-pprint.pprint(res2.json())
-
-res2 = requests.get(MANAGER_URL + '/system/listNotes?sid={}'.format(sysinfo['id']), cookies=cookies, verify=SSLVERIFY)
-print("RETCODE: {}".format(res2.status_code))
-pprint.pprint(res2.json())
-
-res2 = requests.post(MANAGER_URL + '/auth/logout', cookies=cookies, verify=SSLVERIFY)
-print("RETCODE: {}".format(res2.status_code))
-pprint.pprint(res2.json())</code></pre>
-</div>
 </div>
 </div>
 </div>
