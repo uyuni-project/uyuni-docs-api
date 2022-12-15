@@ -4,25 +4,25 @@
 
 == Available methods
 
-* <<apidoc-kickstart-cloneProfile-845635028,cloneProfile>>
-* <<apidoc-kickstart-createProfile-438448733,createProfile>>
-* <<apidoc-kickstart-createProfile-1012707347,createProfile>>
-* <<apidoc-kickstart-createProfileWithCustomUrl-1600734767,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-createProfileWithCustomUrl-70432899,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-deleteProfile-620462871,deleteProfile>>
-* <<apidoc-kickstart-disableProfile-1831833867,disableProfile>>
-* <<apidoc-kickstart-findKickstartForIp-335204551,findKickstartForIp>>
-* <<apidoc-kickstart-importFile-877809987,importFile>>
-* <<apidoc-kickstart-importFile-309208848,importFile>>
-* <<apidoc-kickstart-importFile-355063092,importFile>>
-* <<apidoc-kickstart-importRawFile-592520538,importRawFile>>
-* <<apidoc-kickstart-importRawFile-83375833,importRawFile>>
-* <<apidoc-kickstart-isProfileDisabled-256186736,isProfileDisabled>>
-* <<apidoc-kickstart-listAllIpRanges-1386612163,listAllIpRanges>>
-* <<apidoc-kickstart-listAutoinstallableChannels-1741494589,listAutoinstallableChannels>>
-* <<apidoc-kickstart-listKickstartableChannels-268630105,listKickstartableChannels>>
-* <<apidoc-kickstart-listKickstarts-1128352648,listKickstarts>>
-* <<apidoc-kickstart-renameProfile-1249676471,renameProfile>>
+* <<apidoc-kickstart-cloneProfile-680072609,cloneProfile>>
+* <<apidoc-kickstart-createProfile-942829525,createProfile>>
+* <<apidoc-kickstart-createProfile-1246132954,createProfile>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-153580963,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-621942110,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-deleteProfile-1076721351,deleteProfile>>
+* <<apidoc-kickstart-disableProfile-665696527,disableProfile>>
+* <<apidoc-kickstart-findKickstartForIp-1386863459,findKickstartForIp>>
+* <<apidoc-kickstart-importFile-1633844381,importFile>>
+* <<apidoc-kickstart-importFile-1405230085,importFile>>
+* <<apidoc-kickstart-importFile-1872257073,importFile>>
+* <<apidoc-kickstart-importRawFile-1655088254,importRawFile>>
+* <<apidoc-kickstart-importRawFile-1178969461,importRawFile>>
+* <<apidoc-kickstart-isProfileDisabled-534213125,isProfileDisabled>>
+* <<apidoc-kickstart-listAllIpRanges-1890131314,listAllIpRanges>>
+* <<apidoc-kickstart-listAutoinstallableChannels-1107476456,listAutoinstallableChannels>>
+* <<apidoc-kickstart-listKickstartableChannels-467988572,listKickstartableChannels>>
+* <<apidoc-kickstart-listKickstarts-1168398461,listKickstarts>>
+* <<apidoc-kickstart-renameProfile-62505055,renameProfile>>
 
 == Description
 
@@ -33,7 +33,7 @@ Provides methods to create kickstart files
 kickstart
 
 
-[#apidoc-kickstart-cloneProfile-845635028]
+[#apidoc-kickstart-cloneProfile-680072609]
 == Method: cloneProfile
 
 HTTP `POST`
@@ -62,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfile-438448733]
+[#apidoc-kickstart-createProfile-942829525]
 == Method: createProfile
 
 HTTP `POST`
@@ -88,7 +88,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a Uyuni server or proxy) used to construct the default download URL for
+ (of a SUSE Manager server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -105,7 +105,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfile-1012707347]
+[#apidoc-kickstart-createProfile-1246132954]
 == Method: createProfile
 
 HTTP `POST`
@@ -131,7 +131,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a Uyuni server or proxy) used to construct the default download URL for
+ (of a SUSE Manager server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -144,7 +144,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfileWithCustomUrl-1600734767]
+[#apidoc-kickstart-createProfileWithCustomUrl-153580963]
 == Method: createProfileWithCustomUrl
 
 HTTP `POST`
@@ -182,7 +182,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfileWithCustomUrl-70432899]
+[#apidoc-kickstart-createProfileWithCustomUrl-621942110]
 == Method: createProfileWithCustomUrl
 
 HTTP `POST`
@@ -224,7 +224,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-deleteProfile-620462871]
+[#apidoc-kickstart-deleteProfile-1076721351]
 == Method: deleteProfile
 
 HTTP `POST`
@@ -251,7 +251,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-disableProfile-1831833867]
+[#apidoc-kickstart-disableProfile-665696527]
 == Method: disableProfile
 
 HTTP `POST`
@@ -280,7 +280,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-findKickstartForIp-335204551]
+[#apidoc-kickstart-findKickstartForIp-1386863459]
 == Method: findKickstartForIp
 
 HTTP `GET`
@@ -307,7 +307,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-877809987]
+[#apidoc-kickstart-importFile-1633844381]
 == Method: importFile
 
 HTTP `POST`
@@ -343,7 +343,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-309208848]
+[#apidoc-kickstart-importFile-1405230085]
 == Method: importFile
 
 HTTP `POST`
@@ -369,7 +369,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a Uyuni server or proxy) used to construct the default download URL for
+ (of a SUSE Manager server or proxy) used to construct the default download URL for
  the new kickstart profile. Using this option signifies that this default
  URL will be used instead of any url/nfs/cdrom/harddrive commands in the
  kickstart file itself.
@@ -385,7 +385,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-355063092]
+[#apidoc-kickstart-importFile-1872257073]
 == Method: importFile
 
 HTTP `POST`
@@ -411,7 +411,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a Uyuni server or proxy) used to construct the default download URL for
+ (of a SUSE Manager server or proxy) used to construct the default download URL for
  the new kickstart profile. Using this option signifies that this default
  URL will be used instead of any url/nfs/cdrom/harddrive commands in the
  kickstart file itself.
@@ -431,7 +431,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importRawFile-592520538]
+[#apidoc-kickstart-importRawFile-1655088254]
 == Method: importRawFile
 
 HTTP `POST`
@@ -467,7 +467,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importRawFile-83375833]
+[#apidoc-kickstart-importRawFile-1178969461]
 == Method: importRawFile
 
 HTTP `POST`
@@ -507,7 +507,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-isProfileDisabled-256186736]
+[#apidoc-kickstart-isProfileDisabled-534213125]
 == Method: isProfileDisabled
 
 HTTP `GET`
@@ -533,7 +533,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listAllIpRanges-1386612163]
+[#apidoc-kickstart-listAllIpRanges-1890131314]
 == Method: listAllIpRanges
 
 HTTP `GET`
@@ -563,7 +563,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listAutoinstallableChannels-1741494589]
+[#apidoc-kickstart-listAutoinstallableChannels-1107476456]
 == Method: listAutoinstallableChannels
 
 HTTP `GET`
@@ -615,7 +615,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listKickstartableChannels-268630105]
+[#apidoc-kickstart-listKickstartableChannels-467988572]
 == Method: listKickstartableChannels
 
 HTTP `GET`
@@ -667,7 +667,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listKickstarts-1128352648]
+[#apidoc-kickstart-listKickstarts-1168398461]
 == Method: listKickstarts
 
 HTTP `GET`
@@ -701,7 +701,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-renameProfile-1249676471]
+[#apidoc-kickstart-renameProfile-62505055]
 == Method: renameProfile
 
 HTTP `POST`
