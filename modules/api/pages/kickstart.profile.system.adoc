@@ -4,26 +4,26 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_system-addFilePreservations-932380376,addFilePreservations>>
-* <<apidoc-kickstart_profile_system-addKeys-39846973,addKeys>>
-* <<apidoc-kickstart_profile_system-checkConfigManagement-1092992060,checkConfigManagement>>
-* <<apidoc-kickstart_profile_system-checkRemoteCommands-1222416720,checkRemoteCommands>>
-* <<apidoc-kickstart_profile_system-disableConfigManagement-1253785665,disableConfigManagement>>
-* <<apidoc-kickstart_profile_system-disableRemoteCommands-1398450119,disableRemoteCommands>>
-* <<apidoc-kickstart_profile_system-enableConfigManagement-682914321,enableConfigManagement>>
-* <<apidoc-kickstart_profile_system-enableRemoteCommands-1131634336,enableRemoteCommands>>
-* <<apidoc-kickstart_profile_system-getLocale-612412611,getLocale>>
-* <<apidoc-kickstart_profile_system-getPartitioningScheme-1755838330,getPartitioningScheme>>
-* <<apidoc-kickstart_profile_system-getRegistrationType-1853194041,getRegistrationType>>
-* <<apidoc-kickstart_profile_system-getSELinux-2076021838,getSELinux>>
-* <<apidoc-kickstart_profile_system-listFilePreservations-1579030959,listFilePreservations>>
-* <<apidoc-kickstart_profile_system-listKeys-711487917,listKeys>>
-* <<apidoc-kickstart_profile_system-removeFilePreservations-902907387,removeFilePreservations>>
-* <<apidoc-kickstart_profile_system-removeKeys-859361949,removeKeys>>
-* <<apidoc-kickstart_profile_system-setLocale-1340283293,setLocale>>
-* <<apidoc-kickstart_profile_system-setPartitioningScheme-1491860427,setPartitioningScheme>>
-* <<apidoc-kickstart_profile_system-setRegistrationType-1082705382,setRegistrationType>>
-* <<apidoc-kickstart_profile_system-setSELinux-585257927,setSELinux>>
+* <<apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations,addFilePreservations>>
+* <<apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions,addKeys>>
+* <<apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel,checkConfigManagement>>
+* <<apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel,checkRemoteCommands>>
+* <<apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel,disableConfigManagement>>
+* <<apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel,disableRemoteCommands>>
+* <<apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel,enableConfigManagement>>
+* <<apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel,enableRemoteCommands>>
+* <<apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel,getLocale>>
+* <<apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel,getPartitioningScheme>>
+* <<apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel,getRegistrationType>>
+* <<apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel,getSELinux>>
+* <<apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel,listFilePreservations>>
+* <<apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel,listKeys>>
+* <<apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations,removeFilePreservations>>
+* <<apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions,removeKeys>>
+* <<apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc,setLocale>>
+* <<apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme,setPartitioningScheme>>
+* <<apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType,setRegistrationType>>
+* <<apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode,setSELinux>>
 
 == Description
 
@@ -34,7 +34,7 @@ Provides methods to set various properties of a kickstart profile.
 kickstart.profile.system
 
 
-[#apidoc-kickstart_profile_system-addFilePreservations-932380376]
+[#apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations]
 == Method: addFilePreservations
 
 HTTP `POST`
@@ -62,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-addKeys-39846973]
+[#apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions]
 == Method: addKeys
 
 HTTP `POST`
@@ -90,7 +90,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-checkConfigManagement-1092992060]
+[#apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel]
 == Method: checkConfigManagement
 
 HTTP `POST`
@@ -116,7 +116,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-checkRemoteCommands-1222416720]
+[#apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel]
 == Method: checkRemoteCommands
 
 HTTP `POST`
@@ -142,7 +142,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-disableConfigManagement-1253785665]
+[#apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel]
 == Method: disableConfigManagement
 
 HTTP `POST`
@@ -169,7 +169,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-disableRemoteCommands-1398450119]
+[#apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel]
 == Method: disableRemoteCommands
 
 HTTP `POST`
@@ -197,7 +197,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-enableConfigManagement-682914321]
+[#apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel]
 == Method: enableConfigManagement
 
 HTTP `POST`
@@ -224,7 +224,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-enableRemoteCommands-1131634336]
+[#apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel]
 == Method: enableRemoteCommands
 
 HTTP `POST`
@@ -252,7 +252,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-getLocale-612412611]
+[#apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel]
 == Method: getLocale
 
 HTTP `GET`
@@ -282,7 +282,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-getPartitioningScheme-1755838330]
+[#apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel]
 == Method: getPartitioningScheme
 
 HTTP `GET`
@@ -309,7 +309,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-getRegistrationType-1853194041]
+[#apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel]
 == Method: getRegistrationType
 
 HTTP `POST`
@@ -341,7 +341,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-getSELinux-2076021838]
+[#apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel]
 == Method: getSELinux
 
 HTTP `GET`
@@ -371,7 +371,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-listFilePreservations-1579030959]
+[#apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel]
 == Method: listFilePreservations
 
 HTTP `GET`
@@ -402,7 +402,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-listKeys-711487917]
+[#apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel]
 == Method: listKeys
 
 HTTP `GET`
@@ -433,7 +433,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-removeFilePreservations-902907387]
+[#apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations]
 == Method: removeFilePreservations
 
 HTTP `POST`
@@ -462,7 +462,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-removeKeys-859361949]
+[#apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions]
 == Method: removeKeys
 
 HTTP `POST`
@@ -490,7 +490,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-setLocale-1340283293]
+[#apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc]
 == Method: setLocale
 
 HTTP `POST`
@@ -522,7 +522,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-setPartitioningScheme-1491860427]
+[#apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme]
 == Method: setPartitioningScheme
 
 HTTP `POST`
@@ -552,7 +552,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-setRegistrationType-1082705382]
+[#apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType]
 == Method: setRegistrationType
 
 HTTP `POST`
@@ -589,7 +589,7 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_system-setSELinux-585257927]
+[#apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode]
 == Method: setSELinux
 
 HTTP `POST`

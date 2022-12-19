@@ -4,25 +4,25 @@
 
 == Available methods
 
-* <<apidoc-kickstart-cloneProfile-680072609,cloneProfile>>
-* <<apidoc-kickstart-createProfile-942829525,createProfile>>
-* <<apidoc-kickstart-createProfile-1246132954,createProfile>>
-* <<apidoc-kickstart-createProfileWithCustomUrl-153580963,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-createProfileWithCustomUrl-621942110,createProfileWithCustomUrl>>
-* <<apidoc-kickstart-deleteProfile-1076721351,deleteProfile>>
-* <<apidoc-kickstart-disableProfile-665696527,disableProfile>>
-* <<apidoc-kickstart-findKickstartForIp-1386863459,findKickstartForIp>>
-* <<apidoc-kickstart-importFile-1633844381,importFile>>
-* <<apidoc-kickstart-importFile-1405230085,importFile>>
-* <<apidoc-kickstart-importFile-1872257073,importFile>>
-* <<apidoc-kickstart-importRawFile-1655088254,importRawFile>>
-* <<apidoc-kickstart-importRawFile-1178969461,importRawFile>>
-* <<apidoc-kickstart-isProfileDisabled-534213125,isProfileDisabled>>
-* <<apidoc-kickstart-listAllIpRanges-1890131314,listAllIpRanges>>
-* <<apidoc-kickstart-listAutoinstallableChannels-1107476456,listAutoinstallableChannels>>
-* <<apidoc-kickstart-listKickstartableChannels-467988572,listKickstartableChannels>>
-* <<apidoc-kickstart-listKickstarts-1168398461,listKickstarts>>
-* <<apidoc-kickstart-renameProfile-62505055,renameProfile>>
+* <<apidoc-kickstart-cloneProfile-loggedInUser-ksLabelToClone-newKsLabel,cloneProfile>>
+* <<apidoc-kickstart-createProfile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-rootPassword-updateType,createProfile>>
+* <<apidoc-kickstart-createProfile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-rootPassword,createProfile>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-downloadUrl-rootPassword,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-createProfileWithCustomUrl-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-downloadUrl-rootPassword-updateType,createProfileWithCustomUrl>>
+* <<apidoc-kickstart-deleteProfile-loggedInUser-ksLabel,deleteProfile>>
+* <<apidoc-kickstart-disableProfile-loggedInUser-profileLabel-disabled,disableProfile>>
+* <<apidoc-kickstart-findKickstartForIp-loggedInUser-ipAddress,findKickstartForIp>>
+* <<apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents,importFile>>
+* <<apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-kickstartFileContents,importFile>>
+* <<apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-kickstartFileContents-updateType,importFile>>
+* <<apidoc-kickstart-importRawFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents,importRawFile>>
+* <<apidoc-kickstart-importRawFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents-updateType,importRawFile>>
+* <<apidoc-kickstart-isProfileDisabled-loggedInUser-profileLabel,isProfileDisabled>>
+* <<apidoc-kickstart-listAllIpRanges-loggedInUser,listAllIpRanges>>
+* <<apidoc-kickstart-listAutoinstallableChannels-loggedInUser,listAutoinstallableChannels>>
+* <<apidoc-kickstart-listKickstartableChannels-loggedInUser,listKickstartableChannels>>
+* <<apidoc-kickstart-listKickstarts-loggedInUser,listKickstarts>>
+* <<apidoc-kickstart-renameProfile-loggedInUser-originalLabel-newLabel,renameProfile>>
 
 == Description
 
@@ -33,7 +33,7 @@ Provides methods to create kickstart files
 kickstart
 
 
-[#apidoc-kickstart-cloneProfile-680072609]
+[#apidoc-kickstart-cloneProfile-loggedInUser-ksLabelToClone-newKsLabel]
 == Method: cloneProfile
 
 HTTP `POST`
@@ -62,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfile-942829525]
+[#apidoc-kickstart-createProfile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-rootPassword-updateType]
 == Method: createProfile
 
 HTTP `POST`
@@ -88,7 +88,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a SUSE Manager server or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -105,7 +105,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfile-1246132954]
+[#apidoc-kickstart-createProfile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-rootPassword]
 == Method: createProfile
 
 HTTP `POST`
@@ -131,7 +131,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a SUSE Manager server or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile.
  
 * [.string]#string#  rootPassword - Root password.
@@ -144,7 +144,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfileWithCustomUrl-153580963]
+[#apidoc-kickstart-createProfileWithCustomUrl-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-downloadUrl-rootPassword]
 == Method: createProfileWithCustomUrl
 
 HTTP `POST`
@@ -182,7 +182,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-createProfileWithCustomUrl-621942110]
+[#apidoc-kickstart-createProfileWithCustomUrl-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-downloadUrl-rootPassword-updateType]
 == Method: createProfileWithCustomUrl
 
 HTTP `POST`
@@ -224,7 +224,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-deleteProfile-1076721351]
+[#apidoc-kickstart-deleteProfile-loggedInUser-ksLabel]
 == Method: deleteProfile
 
 HTTP `POST`
@@ -251,7 +251,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-disableProfile-665696527]
+[#apidoc-kickstart-disableProfile-loggedInUser-profileLabel-disabled]
 == Method: disableProfile
 
 HTTP `POST`
@@ -280,7 +280,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-findKickstartForIp-1386863459]
+[#apidoc-kickstart-findKickstartForIp-loggedInUser-ipAddress]
 == Method: findKickstartForIp
 
 HTTP `GET`
@@ -307,7 +307,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-1633844381]
+[#apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents]
 == Method: importFile
 
 HTTP `POST`
@@ -343,7 +343,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-1405230085]
+[#apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-kickstartFileContents]
 == Method: importFile
 
 HTTP `POST`
@@ -369,7 +369,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a SUSE Manager server or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile. Using this option signifies that this default
  URL will be used instead of any url/nfs/cdrom/harddrive commands in the
  kickstart file itself.
@@ -385,7 +385,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importFile-1872257073]
+[#apidoc-kickstart-importFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartHost-kickstartFileContents-updateType]
 == Method: importFile
 
 HTTP `POST`
@@ -411,7 +411,7 @@ Parameters:
  kickstartable tree to associate the new profile with.
  
 * [.string]#string#  kickstartHost - Kickstart hostname
- (of a SUSE Manager server or proxy) used to construct the default download URL for
+ (of a Uyuni server or proxy) used to construct the default download URL for
  the new kickstart profile. Using this option signifies that this default
  URL will be used instead of any url/nfs/cdrom/harddrive commands in the
  kickstart file itself.
@@ -431,7 +431,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importRawFile-1655088254]
+[#apidoc-kickstart-importRawFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents]
 == Method: importRawFile
 
 HTTP `POST`
@@ -467,7 +467,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-importRawFile-1178969461]
+[#apidoc-kickstart-importRawFile-loggedInUser-profileLabel-virtualizationType-kickstartableTreeLabel-kickstartFileContents-updateType]
 == Method: importRawFile
 
 HTTP `POST`
@@ -507,7 +507,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-isProfileDisabled-534213125]
+[#apidoc-kickstart-isProfileDisabled-loggedInUser-profileLabel]
 == Method: isProfileDisabled
 
 HTTP `GET`
@@ -533,7 +533,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listAllIpRanges-1890131314]
+[#apidoc-kickstart-listAllIpRanges-loggedInUser]
 == Method: listAllIpRanges
 
 HTTP `GET`
@@ -563,7 +563,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listAutoinstallableChannels-1107476456]
+[#apidoc-kickstart-listAutoinstallableChannels-loggedInUser]
 == Method: listAutoinstallableChannels
 
 HTTP `GET`
@@ -615,7 +615,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listKickstartableChannels-467988572]
+[#apidoc-kickstart-listKickstartableChannels-loggedInUser]
 == Method: listKickstartableChannels
 
 HTTP `GET`
@@ -667,7 +667,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-listKickstarts-1168398461]
+[#apidoc-kickstart-listKickstarts-loggedInUser]
 == Method: listKickstarts
 
 HTTP `GET`
@@ -701,7 +701,7 @@ Returns:
 
 
 
-[#apidoc-kickstart-renameProfile-62505055]
+[#apidoc-kickstart-renameProfile-loggedInUser-originalLabel-newLabel]
 == Method: renameProfile
 
 HTTP `POST`

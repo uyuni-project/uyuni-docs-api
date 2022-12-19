@@ -4,25 +4,25 @@
 
 == Available methods
 
-* <<apidoc-errata-addPackages-690419645,addPackages>>
-* <<apidoc-errata-applicableToChannels-1718792426,applicableToChannels>>
-* <<apidoc-errata-bugzillaFixes-416322179,bugzillaFixes>>
-* <<apidoc-errata-clone-508269970,clone>>
-* <<apidoc-errata-cloneAsOriginal-928103158,cloneAsOriginal>>
-* <<apidoc-errata-cloneAsOriginalAsync-669406950,cloneAsOriginalAsync>>
-* <<apidoc-errata-cloneAsync-1133143463,cloneAsync>>
-* <<apidoc-errata-create-1802493587,create>>
-* <<apidoc-errata-delete-1372802818,delete>>
-* <<apidoc-errata-findByCve-205284289,findByCve>>
-* <<apidoc-errata-getDetails-354359092,getDetails>>
-* <<apidoc-errata-listAffectedSystems-210688344,listAffectedSystems>>
-* <<apidoc-errata-listCves-483189093,listCves>>
-* <<apidoc-errata-listKeywords-1964740634,listKeywords>>
-* <<apidoc-errata-listPackages-9714933,listPackages>>
-* <<apidoc-errata-publish-1142383288,publish>>
-* <<apidoc-errata-publishAsOriginal-758113930,publishAsOriginal>>
-* <<apidoc-errata-removePackages-1512109971,removePackages>>
-* <<apidoc-errata-setDetails-1612610711,setDetails>>
+* <<apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds,addPackages>>
+* <<apidoc-errata-applicableToChannels-loggedInUser-advisoryName,applicableToChannels>>
+* <<apidoc-errata-bugzillaFixes-loggedInUser-advisoryName,bugzillaFixes>>
+* <<apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames,clone>>
+* <<apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames,cloneAsOriginal>>
+* <<apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames,cloneAsOriginalAsync>>
+* <<apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames,cloneAsync>>
+* <<apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels,create>>
+* <<apidoc-errata-delete-loggedInUser-advisoryName,delete>>
+* <<apidoc-errata-findByCve-loggedInUser-cveName,findByCve>>
+* <<apidoc-errata-getDetails-loggedInUser-advisoryName,getDetails>>
+* <<apidoc-errata-listAffectedSystems-loggedInUser-advisoryName,listAffectedSystems>>
+* <<apidoc-errata-listCves-loggedInUser-advisoryName,listCves>>
+* <<apidoc-errata-listKeywords-loggedInUser-advisoryName,listKeywords>>
+* <<apidoc-errata-listPackages-loggedInUser-advisoryName,listPackages>>
+* <<apidoc-errata-publish-loggedInUser-advisoryName-channelLabels,publish>>
+* <<apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels,publishAsOriginal>>
+* <<apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds,removePackages>>
+* <<apidoc-errata-setDetails-loggedInUser-advisoryName-details,setDetails>>
 
 == Description
 
@@ -33,7 +33,7 @@ Provides methods to access and modify errata.
 errata
 
 
-[#apidoc-errata-addPackages-690419645]
+[#apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds]
 == Method: addPackages
 
 HTTP `POST`
@@ -62,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-errata-applicableToChannels-1718792426]
+[#apidoc-errata-applicableToChannels-loggedInUser-advisoryName]
 == Method: applicableToChannels
 
 HTTP `GET`
@@ -95,7 +95,7 @@ Returns:
 
 
 
-[#apidoc-errata-bugzillaFixes-416322179]
+[#apidoc-errata-bugzillaFixes-loggedInUser-advisoryName]
 == Method: bugzillaFixes
 
 HTTP `POST`
@@ -129,7 +129,7 @@ Returns:
 
 
 
-[#apidoc-errata-clone-508269970]
+[#apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames]
 == Method: clone
 
 HTTP `POST`
@@ -165,7 +165,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsOriginal-928103158]
+[#apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames]
 == Method: cloneAsOriginal
 
 HTTP `POST`
@@ -201,7 +201,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsOriginalAsync-669406950]
+[#apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames]
 == Method: cloneAsOriginalAsync
 
 HTTP `POST`
@@ -230,7 +230,7 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsync-1133143463]
+[#apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames]
 == Method: cloneAsync
 
 HTTP `POST`
@@ -258,7 +258,7 @@ Returns:
 
 
 
-[#apidoc-errata-create-1802493587]
+[#apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels]
 == Method: create
 
 HTTP `POST`
@@ -321,7 +321,7 @@ Returns:
 
 
 
-[#apidoc-errata-delete-1372802818]
+[#apidoc-errata-delete-loggedInUser-advisoryName]
 == Method: delete
 
 HTTP `POST`
@@ -348,7 +348,7 @@ Returns:
 
 
 
-[#apidoc-errata-findByCve-205284289]
+[#apidoc-errata-findByCve-loggedInUser-cveName]
 == Method: findByCve
 
 HTTP `GET`
@@ -383,7 +383,7 @@ Returns:
 
 
 
-[#apidoc-errata-getDetails-354359092]
+[#apidoc-errata-getDetails-loggedInUser-advisoryName]
 == Method: getDetails
 
 HTTP `GET`
@@ -425,7 +425,7 @@ Returns:
 
 
 
-[#apidoc-errata-listAffectedSystems-210688344]
+[#apidoc-errata-listAffectedSystems-loggedInUser-advisoryName]
 == Method: listAffectedSystems
 
 HTTP `GET`
@@ -464,7 +464,7 @@ Returns:
 
 
 
-[#apidoc-errata-listCves-483189093]
+[#apidoc-errata-listCves-loggedInUser-advisoryName]
 == Method: listCves
 
 HTTP `GET`
@@ -492,7 +492,7 @@ Returns:
 
 
 
-[#apidoc-errata-listKeywords-1964740634]
+[#apidoc-errata-listKeywords-loggedInUser-advisoryName]
 == Method: listKeywords
 
 HTTP `GET`
@@ -520,7 +520,7 @@ Returns:
 
 
 
-[#apidoc-errata-listPackages-9714933]
+[#apidoc-errata-listPackages-loggedInUser-advisoryName]
 == Method: listPackages
 
 HTTP `GET`
@@ -571,7 +571,7 @@ Returns:
 
 
 
-[#apidoc-errata-publish-1142383288]
+[#apidoc-errata-publish-loggedInUser-advisoryName-channelLabels]
 == Method: publish
 
 HTTP `POST`
@@ -606,7 +606,7 @@ Returns:
 
 
 
-[#apidoc-errata-publishAsOriginal-758113930]
+[#apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels]
 == Method: publishAsOriginal
 
 HTTP `POST`
@@ -642,7 +642,7 @@ Returns:
 
 
 
-[#apidoc-errata-removePackages-1512109971]
+[#apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds]
 == Method: removePackages
 
 HTTP `POST`
@@ -671,7 +671,7 @@ Returns:
 
 
 
-[#apidoc-errata-setDetails-1612610711]
+[#apidoc-errata-setDetails-loggedInUser-advisoryName-details]
 == Method: setDetails
 
 HTTP `POST`

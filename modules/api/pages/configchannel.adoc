@@ -4,35 +4,35 @@
 
 == Available methods
 
-* <<apidoc-configchannel-channelExists-187115616,channelExists>>
-* <<apidoc-configchannel-create-248220478,create>>
-* <<apidoc-configchannel-create-2121682524,create>>
-* <<apidoc-configchannel-create-1111849105,create>>
-* <<apidoc-configchannel-createOrUpdatePath-2017577360,createOrUpdatePath>>
-* <<apidoc-configchannel-createOrUpdateSymlink-511033073,createOrUpdateSymlink>>
-* <<apidoc-configchannel-deleteChannels-1535276950,deleteChannels>>
-* <<apidoc-configchannel-deleteFileRevisions-154003348,deleteFileRevisions>>
-* <<apidoc-configchannel-deleteFiles-667428844,deleteFiles>>
-* <<apidoc-configchannel-deployAllSystems-1129435221,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-633366676,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-1546315735,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-1853665306,deployAllSystems>>
-* <<apidoc-configchannel-getDetails-731626152,getDetails>>
-* <<apidoc-configchannel-getDetails-293019606,getDetails>>
-* <<apidoc-configchannel-getEncodedFileRevision-406488308,getEncodedFileRevision>>
-* <<apidoc-configchannel-getFileRevision-396734075,getFileRevision>>
-* <<apidoc-configchannel-getFileRevisions-1542262772,getFileRevisions>>
-* <<apidoc-configchannel-listAssignedSystemGroups-96489160,listAssignedSystemGroups>>
-* <<apidoc-configchannel-listFiles-1756618311,listFiles>>
-* <<apidoc-configchannel-listGlobals-942016720,listGlobals>>
-* <<apidoc-configchannel-listSubscribedSystems-593626872,listSubscribedSystems>>
-* <<apidoc-configchannel-lookupChannelInfo-1293167443,lookupChannelInfo>>
-* <<apidoc-configchannel-lookupFileInfo-379409767,lookupFileInfo>>
-* <<apidoc-configchannel-lookupFileInfo-508074327,lookupFileInfo>>
-* <<apidoc-configchannel-scheduleFileComparisons-2098233443,scheduleFileComparisons>>
-* <<apidoc-configchannel-syncSaltFilesOnDisk-2119032302,syncSaltFilesOnDisk>>
-* <<apidoc-configchannel-update-29692603,update>>
-* <<apidoc-configchannel-updateInitSls-1011254112,updateInitSls>>
+* <<apidoc-configchannel-channelExists-loggedInUser-label,channelExists>>
+* <<apidoc-configchannel-create-loggedInUser-label-name-description,create>>
+* <<apidoc-configchannel-create-user-label-name-description-type,create>>
+* <<apidoc-configchannel-create-user-label-name-description-type-pathInfo,create>>
+* <<apidoc-configchannel-createOrUpdatePath-loggedInUser-label-path-isDir-pathInfo,createOrUpdatePath>>
+* <<apidoc-configchannel-createOrUpdateSymlink-loggedInUser-label-path-pathInfo,createOrUpdateSymlink>>
+* <<apidoc-configchannel-deleteChannels-loggedInUser-labels,deleteChannels>>
+* <<apidoc-configchannel-deleteFileRevisions-loggedInUser-label-filePath-revisions,deleteFileRevisions>>
+* <<apidoc-configchannel-deleteFiles-loggedInUser-label-paths,deleteFiles>>
+* <<apidoc-configchannel-deployAllSystems-loggedInUser-label,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-date,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath-date,deployAllSystems>>
+* <<apidoc-configchannel-getDetails-loggedInUser-label,getDetails>>
+* <<apidoc-configchannel-getDetails-loggedInUser-id,getDetails>>
+* <<apidoc-configchannel-getEncodedFileRevision-loggedInUser-label-filePath-revision,getEncodedFileRevision>>
+* <<apidoc-configchannel-getFileRevision-loggedInUser-label-filePath-revision,getFileRevision>>
+* <<apidoc-configchannel-getFileRevisions-loggedInUser-label-filePath,getFileRevisions>>
+* <<apidoc-configchannel-listAssignedSystemGroups-loggedInUser-label,listAssignedSystemGroups>>
+* <<apidoc-configchannel-listFiles-loggedInUser-label,listFiles>>
+* <<apidoc-configchannel-listGlobals-loggedInUser,listGlobals>>
+* <<apidoc-configchannel-listSubscribedSystems-loggedInUser-label,listSubscribedSystems>>
+* <<apidoc-configchannel-lookupChannelInfo-loggedInUser-labels,lookupChannelInfo>>
+* <<apidoc-configchannel-lookupFileInfo-loggedInUser-label-paths,lookupFileInfo>>
+* <<apidoc-configchannel-lookupFileInfo-loggedInUser-label-path-revision,lookupFileInfo>>
+* <<apidoc-configchannel-scheduleFileComparisons-loggedInUser-label-path-sids,scheduleFileComparisons>>
+* <<apidoc-configchannel-syncSaltFilesOnDisk-loggedInUser-labels,syncSaltFilesOnDisk>>
+* <<apidoc-configchannel-update-loggedInUser-label-name-description,update>>
+* <<apidoc-configchannel-updateInitSls-user-label-pathInfo,updateInitSls>>
 
 == Description
 
@@ -44,7 +44,7 @@ Provides methods to access and modify many aspects of
 configchannel
 
 
-[#apidoc-configchannel-channelExists-187115616]
+[#apidoc-configchannel-channelExists-loggedInUser-label]
 == Method: channelExists
 
 HTTP `POST`
@@ -70,7 +70,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-248220478]
+[#apidoc-configchannel-create-loggedInUser-label-name-description]
 == Method: create
 
 HTTP `POST`
@@ -114,7 +114,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-2121682524]
+[#apidoc-configchannel-create-user-label-name-description-type]
 == Method: create
 
 HTTP `POST`
@@ -160,7 +160,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-1111849105]
+[#apidoc-configchannel-create-user-label-name-description-type-pathInfo]
 == Method: create
 
 HTTP `POST`
@@ -210,7 +210,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-createOrUpdatePath-2017577360]
+[#apidoc-configchannel-createOrUpdatePath-loggedInUser-label-path-isDir-pathInfo]
 == Method: createOrUpdatePath
 
 HTTP `POST`
@@ -286,7 +286,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-createOrUpdateSymlink-511033073]
+[#apidoc-configchannel-createOrUpdateSymlink-loggedInUser-label-path-pathInfo]
 == Method: createOrUpdateSymlink
 
 HTTP `POST`
@@ -348,7 +348,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-deleteChannels-1535276950]
+[#apidoc-configchannel-deleteChannels-loggedInUser-labels]
 == Method: deleteChannels
 
 HTTP `POST`
@@ -375,7 +375,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deleteFileRevisions-154003348]
+[#apidoc-configchannel-deleteFileRevisions-loggedInUser-label-filePath-revisions]
 == Method: deleteFileRevisions
 
 HTTP `POST`
@@ -405,7 +405,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deleteFiles-667428844]
+[#apidoc-configchannel-deleteFiles-loggedInUser-label-paths]
 == Method: deleteFiles
 
 HTTP `POST`
@@ -433,7 +433,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-1129435221]
+[#apidoc-configchannel-deployAllSystems-loggedInUser-label]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -460,7 +460,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-633366676]
+[#apidoc-configchannel-deployAllSystems-loggedInUser-label-date]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -489,7 +489,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-1546315735]
+[#apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -518,7 +518,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-1853665306]
+[#apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath-date]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -549,7 +549,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getDetails-731626152]
+[#apidoc-configchannel-getDetails-loggedInUser-label]
 == Method: getDetails
 
 HTTP `GET`
@@ -588,7 +588,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getDetails-293019606]
+[#apidoc-configchannel-getDetails-loggedInUser-id]
 == Method: getDetails
 
 HTTP `GET`
@@ -627,7 +627,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getEncodedFileRevision-406488308]
+[#apidoc-configchannel-getEncodedFileRevision-loggedInUser-label-filePath-revision]
 == Method: getEncodedFileRevision
 
 HTTP `GET`
@@ -684,7 +684,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getFileRevision-396734075]
+[#apidoc-configchannel-getFileRevision-loggedInUser-label-filePath-revision]
 == Method: getFileRevision
 
 HTTP `GET`
@@ -740,7 +740,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getFileRevisions-1542262772]
+[#apidoc-configchannel-getFileRevisions-loggedInUser-label-filePath]
 == Method: getFileRevisions
 
 HTTP `GET`
@@ -795,7 +795,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-listAssignedSystemGroups-96489160]
+[#apidoc-configchannel-listAssignedSystemGroups-loggedInUser-label]
 == Method: listAssignedSystemGroups
 
 HTTP `GET`
@@ -828,7 +828,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-listFiles-1756618311]
+[#apidoc-configchannel-listFiles-loggedInUser-label]
 == Method: listFiles
 
 HTTP `GET`
@@ -862,7 +862,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-listGlobals-942016720]
+[#apidoc-configchannel-listGlobals-loggedInUser]
 == Method: listGlobals
 
 HTTP `GET`
@@ -901,7 +901,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-listSubscribedSystems-593626872]
+[#apidoc-configchannel-listSubscribedSystems-loggedInUser-label]
 == Method: listSubscribedSystems
 
 HTTP `GET`
@@ -931,7 +931,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-lookupChannelInfo-1293167443]
+[#apidoc-configchannel-lookupChannelInfo-loggedInUser-labels]
 == Method: lookupChannelInfo
 
 HTTP `GET`
@@ -971,7 +971,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-lookupFileInfo-379409767]
+[#apidoc-configchannel-lookupFileInfo-loggedInUser-label-paths]
 == Method: lookupFileInfo
 
 HTTP `GET`
@@ -1028,7 +1028,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-lookupFileInfo-508074327]
+[#apidoc-configchannel-lookupFileInfo-loggedInUser-label-path-revision]
 == Method: lookupFileInfo
 
 HTTP `GET`
@@ -1086,7 +1086,7 @@ Returns:
 Available since API version: 10.12
 
 
-[#apidoc-configchannel-scheduleFileComparisons-2098233443]
+[#apidoc-configchannel-scheduleFileComparisons-loggedInUser-label-path-sids]
 == Method: scheduleFileComparisons
 
 HTTP `POST`
@@ -1117,7 +1117,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-syncSaltFilesOnDisk-2119032302]
+[#apidoc-configchannel-syncSaltFilesOnDisk-loggedInUser-labels]
 == Method: syncSaltFilesOnDisk
 
 HTTP `POST`
@@ -1143,7 +1143,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-update-29692603]
+[#apidoc-configchannel-update-loggedInUser-label-name-description]
 == Method: update
 
 HTTP `POST`
@@ -1188,7 +1188,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-updateInitSls-1011254112]
+[#apidoc-configchannel-updateInitSls-user-label-pathInfo]
 == Method: updateInitSls
 
 HTTP `POST`

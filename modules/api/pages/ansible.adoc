@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-ansible-createAnsiblePath-470610323,createAnsiblePath>>
-* <<apidoc-ansible-discoverPlaybooks-843221108,discoverPlaybooks>>
-* <<apidoc-ansible-fetchPlaybookContents-1228499113,fetchPlaybookContents>>
-* <<apidoc-ansible-introspectInventory-1013313550,introspectInventory>>
-* <<apidoc-ansible-listAnsiblePaths-220371218,listAnsiblePaths>>
-* <<apidoc-ansible-lookupAnsiblePathById-1510403823,lookupAnsiblePathById>>
-* <<apidoc-ansible-removeAnsiblePath-606440276,removeAnsiblePath>>
-* <<apidoc-ansible-schedulePlaybook-355777990,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-1393007334,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-1904923558,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-1614556654,schedulePlaybook>>
-* <<apidoc-ansible-updateAnsiblePath-1037463541,updateAnsiblePath>>
+* <<apidoc-ansible-createAnsiblePath-loggedInUser-props,createAnsiblePath>>
+* <<apidoc-ansible-discoverPlaybooks-loggedInUser-pathId,discoverPlaybooks>>
+* <<apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath,fetchPlaybookContents>>
+* <<apidoc-ansible-introspectInventory-loggedInUser-pathId,introspectInventory>>
+* <<apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId,listAnsiblePaths>>
+* <<apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId,lookupAnsiblePathById>>
+* <<apidoc-ansible-removeAnsiblePath-loggedInUser-pathId,removeAnsiblePath>>
+* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs,schedulePlaybook>>
+* <<apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props,updateAnsiblePath>>
 
 == Description
 
@@ -26,7 +26,7 @@ Provides methods to manage Ansible systems
 ansible
 
 
-[#apidoc-ansible-createAnsiblePath-470610323]
+[#apidoc-ansible-createAnsiblePath-loggedInUser-props]
 == Method: createAnsiblePath
 
 HTTP `POST`
@@ -60,7 +60,7 @@ Returns:
 
 
 
-[#apidoc-ansible-discoverPlaybooks-843221108]
+[#apidoc-ansible-discoverPlaybooks-loggedInUser-pathId]
 == Method: discoverPlaybooks
 
 HTTP `POST`
@@ -93,7 +93,7 @@ Returns:
 
 
 
-[#apidoc-ansible-fetchPlaybookContents-1228499113]
+[#apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath]
 == Method: fetchPlaybookContents
 
 HTTP `POST`
@@ -122,7 +122,7 @@ Returns:
 
 
 
-[#apidoc-ansible-introspectInventory-1013313550]
+[#apidoc-ansible-introspectInventory-loggedInUser-pathId]
 == Method: introspectInventory
 
 HTTP `POST`
@@ -149,7 +149,7 @@ Returns:
 
 
 
-[#apidoc-ansible-listAnsiblePaths-220371218]
+[#apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId]
 == Method: listAnsiblePaths
 
 HTTP `GET`
@@ -181,7 +181,7 @@ Returns:
 
 
 
-[#apidoc-ansible-lookupAnsiblePathById-1510403823]
+[#apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId]
 == Method: lookupAnsiblePathById
 
 HTTP `GET`
@@ -212,7 +212,7 @@ Returns:
 
 
 
-[#apidoc-ansible-removeAnsiblePath-606440276]
+[#apidoc-ansible-removeAnsiblePath-loggedInUser-pathId]
 == Method: removeAnsiblePath
 
 HTTP `POST`
@@ -238,7 +238,7 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-355777990]
+[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel]
 == Method: schedulePlaybook
 
 HTTP `POST`
@@ -272,7 +272,7 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-1393007334]
+[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode]
 == Method: schedulePlaybook
 
 HTTP `POST`
@@ -308,7 +308,7 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-1904923558]
+[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs]
 == Method: schedulePlaybook
 
 HTTP `POST`
@@ -345,7 +345,7 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-1614556654]
+[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs]
 == Method: schedulePlaybook
 
 HTTP `POST`
@@ -384,7 +384,7 @@ Returns:
 
 
 
-[#apidoc-ansible-updateAnsiblePath-1037463541]
+[#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props]
 == Method: updateAnsiblePath
 
 HTTP `POST`

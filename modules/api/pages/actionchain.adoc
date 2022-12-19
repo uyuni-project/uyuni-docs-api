@@ -4,24 +4,24 @@
 
 == Available methods
 
-* <<apidoc-actionchain-addConfigurationDeployment-1893837344,addConfigurationDeployment>>
-* <<apidoc-actionchain-addErrataUpdate-381730363,addErrataUpdate>>
-* <<apidoc-actionchain-addErrataUpdate-564059141,addErrataUpdate>>
-* <<apidoc-actionchain-addErrataUpdate-1660124157,addErrataUpdate>>
-* <<apidoc-actionchain-addPackageInstall-188384341,addPackageInstall>>
-* <<apidoc-actionchain-addPackageRemoval-404279307,addPackageRemoval>>
-* <<apidoc-actionchain-addPackageUpgrade-633776959,addPackageUpgrade>>
-* <<apidoc-actionchain-addPackageVerify-1553141699,addPackageVerify>>
-* <<apidoc-actionchain-addScriptRun-2072030980,addScriptRun>>
-* <<apidoc-actionchain-addScriptRun-608670733,addScriptRun>>
-* <<apidoc-actionchain-addSystemReboot-1956763150,addSystemReboot>>
-* <<apidoc-actionchain-createChain-1111506374,createChain>>
-* <<apidoc-actionchain-deleteChain-82211311,deleteChain>>
-* <<apidoc-actionchain-listChainActions-653395108,listChainActions>>
-* <<apidoc-actionchain-listChains-1631904921,listChains>>
-* <<apidoc-actionchain-removeAction-673797460,removeAction>>
-* <<apidoc-actionchain-renameChain-241685431,renameChain>>
-* <<apidoc-actionchain-scheduleChain-1626241617,scheduleChain>>
+* <<apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers,addConfigurationDeployment>>
+* <<apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel,addErrataUpdate>>
+* <<apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel,addErrataUpdate>>
+* <<apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant,addErrataUpdate>>
+* <<apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel,addPackageInstall>>
+* <<apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel,addPackageRemoval>>
+* <<apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel,addPackageUpgrade>>
+* <<apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel,addPackageVerify>>
+* <<apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout,addScriptRun>>
+* <<apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout,addScriptRun>>
+* <<apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel,addSystemReboot>>
+* <<apidoc-actionchain-createChain-loggedInUser-chainLabel,createChain>>
+* <<apidoc-actionchain-deleteChain-loggedInUser-chainLabel,deleteChain>>
+* <<apidoc-actionchain-listChainActions-loggedInUser-chainLabel,listChainActions>>
+* <<apidoc-actionchain-listChains-loggedInUser,listChains>>
+* <<apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId,removeAction>>
+* <<apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel,renameChain>>
+* <<apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date,scheduleChain>>
 
 == Description
 
@@ -32,7 +32,7 @@ Provides the namespace for the Action Chain methods.
 actionchain
 
 
-[#apidoc-actionchain-addConfigurationDeployment-1893837344]
+[#apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers]
 == Method: addConfigurationDeployment
 
 HTTP `POST`
@@ -66,7 +66,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addErrataUpdate-381730363]
+[#apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel]
 == Method: addErrataUpdate
 
 HTTP `POST`
@@ -96,7 +96,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addErrataUpdate-564059141]
+[#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel]
 == Method: addErrataUpdate
 
 HTTP `POST`
@@ -126,7 +126,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addErrataUpdate-1660124157]
+[#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant]
 == Method: addErrataUpdate
 
 HTTP `POST`
@@ -159,7 +159,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageInstall-188384341]
+[#apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel]
 == Method: addPackageInstall
 
 HTTP `POST`
@@ -189,7 +189,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageRemoval-404279307]
+[#apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel]
 == Method: addPackageRemoval
 
 HTTP `POST`
@@ -220,7 +220,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageUpgrade-633776959]
+[#apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel]
 == Method: addPackageUpgrade
 
 HTTP `POST`
@@ -251,7 +251,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addPackageVerify-1553141699]
+[#apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel]
 == Method: addPackageVerify
 
 HTTP `POST`
@@ -282,7 +282,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-2072030980]
+[#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout]
 == Method: addScriptRun
 
 HTTP `POST`
@@ -321,7 +321,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addScriptRun-608670733]
+[#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout]
 == Method: addScriptRun
 
 HTTP `POST`
@@ -358,7 +358,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-addSystemReboot-1956763150]
+[#apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel]
 == Method: addSystemReboot
 
 HTTP `POST`
@@ -386,7 +386,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-createChain-1111506374]
+[#apidoc-actionchain-createChain-loggedInUser-chainLabel]
 == Method: createChain
 
 HTTP `POST`
@@ -412,7 +412,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-deleteChain-82211311]
+[#apidoc-actionchain-deleteChain-loggedInUser-chainLabel]
 == Method: deleteChain
 
 HTTP `POST`
@@ -438,7 +438,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-listChainActions-653395108]
+[#apidoc-actionchain-listChainActions-loggedInUser-chainLabel]
 == Method: listChainActions
 
 HTTP `GET`
@@ -472,7 +472,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-listChains-1631904921]
+[#apidoc-actionchain-listChains-loggedInUser]
 == Method: listChains
 
 HTTP `GET`
@@ -499,7 +499,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-removeAction-673797460]
+[#apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId]
 == Method: removeAction
 
 HTTP `POST`
@@ -527,7 +527,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-renameChain-241685431]
+[#apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel]
 == Method: renameChain
 
 HTTP `POST`
@@ -555,7 +555,7 @@ Returns:
 
 
 
-[#apidoc-actionchain-scheduleChain-1626241617]
+[#apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date]
 == Method: scheduleChain
 
 HTTP `POST`

@@ -4,17 +4,17 @@
 
 == Available methods
 
-* <<apidoc-formula-getCombinedFormulaDataByServerIds-1965965859,getCombinedFormulaDataByServerIds>>
-* <<apidoc-formula-getCombinedFormulasByServerId-1848939096,getCombinedFormulasByServerId>>
-* <<apidoc-formula-getFormulasByGroupId-1910204163,getFormulasByGroupId>>
-* <<apidoc-formula-getFormulasByServerId-1191890972,getFormulasByServerId>>
-* <<apidoc-formula-getGroupFormulaData-1965557916,getGroupFormulaData>>
-* <<apidoc-formula-getSystemFormulaData-1069720017,getSystemFormulaData>>
-* <<apidoc-formula-listFormulas-2098396037,listFormulas>>
-* <<apidoc-formula-setFormulasOfGroup-68195016,setFormulasOfGroup>>
-* <<apidoc-formula-setFormulasOfServer-777588278,setFormulasOfServer>>
-* <<apidoc-formula-setGroupFormulaData-956331813,setGroupFormulaData>>
-* <<apidoc-formula-setSystemFormulaData-325488817,setSystemFormulaData>>
+* <<apidoc-formula-getCombinedFormulaDataByServerIds-loggedInUser-sids-formulaName,getCombinedFormulaDataByServerIds>>
+* <<apidoc-formula-getCombinedFormulasByServerId-loggedInUser-sid,getCombinedFormulasByServerId>>
+* <<apidoc-formula-getFormulasByGroupId-loggedInUser-systemGroupId,getFormulasByGroupId>>
+* <<apidoc-formula-getFormulasByServerId-loggedInUser-sid,getFormulasByServerId>>
+* <<apidoc-formula-getGroupFormulaData-loggedInUser-formulaName-groupId,getGroupFormulaData>>
+* <<apidoc-formula-getSystemFormulaData-loggedInUser-formulaName-systemId,getSystemFormulaData>>
+* <<apidoc-formula-listFormulas-loggedInUser,listFormulas>>
+* <<apidoc-formula-setFormulasOfGroup-loggedInUser-systemGroupId-formulas,setFormulasOfGroup>>
+* <<apidoc-formula-setFormulasOfServer-loggedInUser-systemId-formulas,setFormulasOfServer>>
+* <<apidoc-formula-setGroupFormulaData-loggedInUser-groupId-formulaName-content,setGroupFormulaData>>
+* <<apidoc-formula-setSystemFormulaData-loggedInUser-systemId-formulaName-content,setSystemFormulaData>>
 
 == Description
 
@@ -25,7 +25,7 @@ Provides methods to access and modify formulas.
 formula
 
 
-[#apidoc-formula-getCombinedFormulaDataByServerIds-1965965859]
+[#apidoc-formula-getCombinedFormulaDataByServerIds-loggedInUser-sids-formulaName]
 == Method: getCombinedFormulaDataByServerIds
 
 HTTP `GET`
@@ -58,7 +58,7 @@ Returns:
 
 
 
-[#apidoc-formula-getCombinedFormulasByServerId-1848939096]
+[#apidoc-formula-getCombinedFormulasByServerId-loggedInUser-sid]
 == Method: getCombinedFormulasByServerId
 
 HTTP `GET`
@@ -84,7 +84,7 @@ Returns:
 
 
 
-[#apidoc-formula-getFormulasByGroupId-1910204163]
+[#apidoc-formula-getFormulasByGroupId-loggedInUser-systemGroupId]
 == Method: getFormulasByGroupId
 
 HTTP `GET`
@@ -110,7 +110,7 @@ Returns:
 
 
 
-[#apidoc-formula-getFormulasByServerId-1191890972]
+[#apidoc-formula-getFormulasByServerId-loggedInUser-sid]
 == Method: getFormulasByServerId
 
 HTTP `GET`
@@ -136,7 +136,7 @@ Returns:
 
 
 
-[#apidoc-formula-getGroupFormulaData-1965557916]
+[#apidoc-formula-getGroupFormulaData-loggedInUser-formulaName-groupId]
 == Method: getGroupFormulaData
 
 HTTP `GET`
@@ -164,7 +164,7 @@ Returns:
 
 
 
-[#apidoc-formula-getSystemFormulaData-1069720017]
+[#apidoc-formula-getSystemFormulaData-loggedInUser-formulaName-systemId]
 == Method: getSystemFormulaData
 
 HTTP `GET`
@@ -192,7 +192,7 @@ Returns:
 
 
 
-[#apidoc-formula-listFormulas-2098396037]
+[#apidoc-formula-listFormulas-loggedInUser]
 == Method: listFormulas
 
 HTTP `GET`
@@ -216,7 +216,7 @@ Returns:
 
 
 
-[#apidoc-formula-setFormulasOfGroup-68195016]
+[#apidoc-formula-setFormulasOfGroup-loggedInUser-systemGroupId-formulas]
 == Method: setFormulasOfGroup
 
 HTTP `POST`
@@ -244,7 +244,7 @@ Returns:
 
 
 
-[#apidoc-formula-setFormulasOfServer-777588278]
+[#apidoc-formula-setFormulasOfServer-loggedInUser-systemId-formulas]
 == Method: setFormulasOfServer
 
 HTTP `POST`
@@ -272,7 +272,7 @@ Returns:
 
 
 
-[#apidoc-formula-setGroupFormulaData-956331813]
+[#apidoc-formula-setGroupFormulaData-loggedInUser-groupId-formulaName-content]
 == Method: setGroupFormulaData
 
 HTTP `POST`
@@ -302,7 +302,7 @@ Returns:
 
 
 
-[#apidoc-formula-setSystemFormulaData-325488817]
+[#apidoc-formula-setSystemFormulaData-loggedInUser-systemId-formulaName-content]
 == Method: setSystemFormulaData
 
 HTTP `POST`

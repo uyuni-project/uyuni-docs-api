@@ -4,33 +4,33 @@
 
 == Available methods
 
-* <<apidoc-user-addAssignedSystemGroup-1990747767,addAssignedSystemGroup>>
-* <<apidoc-user-addAssignedSystemGroups-62415796,addAssignedSystemGroups>>
-* <<apidoc-user-addDefaultSystemGroup-1475886535,addDefaultSystemGroup>>
-* <<apidoc-user-addDefaultSystemGroups-1972599192,addDefaultSystemGroups>>
-* <<apidoc-user-addRole-1859945349,addRole>>
-* <<apidoc-user-create-1892828550,create>>
-* <<apidoc-user-create-1491724370,create>>
-* <<apidoc-user-delete-1378060385,delete>>
-* <<apidoc-user-disable-664683782,disable>>
-* <<apidoc-user-enable-1166203398,enable>>
-* <<apidoc-user-getCreateDefaultSystemGroup-623180223,getCreateDefaultSystemGroup>>
-* <<apidoc-user-getDetails-1451735609,getDetails>>
-* <<apidoc-user-listAssignableRoles-1165871113,listAssignableRoles>>
-* <<apidoc-user-listAssignedSystemGroups-1611841256,listAssignedSystemGroups>>
-* <<apidoc-user-listDefaultSystemGroups-245582109,listDefaultSystemGroups>>
-* <<apidoc-user-listRoles-1924459698,listRoles>>
-* <<apidoc-user-listUsers-61693849,listUsers>>
-* <<apidoc-user-removeAssignedSystemGroup-1658265745,removeAssignedSystemGroup>>
-* <<apidoc-user-removeAssignedSystemGroups-1622720604,removeAssignedSystemGroups>>
-* <<apidoc-user-removeDefaultSystemGroup-1768761582,removeDefaultSystemGroup>>
-* <<apidoc-user-removeDefaultSystemGroups-413354443,removeDefaultSystemGroups>>
-* <<apidoc-user-removeRole-1513484204,removeRole>>
-* <<apidoc-user-setCreateDefaultSystemGroup-2116847138,setCreateDefaultSystemGroup>>
-* <<apidoc-user-setDetails-1069508327,setDetails>>
-* <<apidoc-user-setErrataNotifications-191345497,setErrataNotifications>>
-* <<apidoc-user-setReadOnly-1258478670,setReadOnly>>
-* <<apidoc-user-usePamAuthentication-1379795356,usePamAuthentication>>
+* <<apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault,addAssignedSystemGroup>>
+* <<apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault,addAssignedSystemGroups>>
+* <<apidoc-user-addDefaultSystemGroup-loggedInUser-login-name,addDefaultSystemGroup>>
+* <<apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames,addDefaultSystemGroups>>
+* <<apidoc-user-addRole-loggedInUser-login-role,addRole>>
+* <<apidoc-user-create-loggedInUser-login-password-firstName-lastName-email,create>>
+* <<apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth,create>>
+* <<apidoc-user-delete-loggedInUser-login,delete>>
+* <<apidoc-user-disable-loggedInUser-login,disable>>
+* <<apidoc-user-enable-loggedInUser-login,enable>>
+* <<apidoc-user-getCreateDefaultSystemGroup-loggedInUser,getCreateDefaultSystemGroup>>
+* <<apidoc-user-getDetails-loggedInUser-login,getDetails>>
+* <<apidoc-user-listAssignableRoles-loggedInUser,listAssignableRoles>>
+* <<apidoc-user-listAssignedSystemGroups-loggedInUser-login,listAssignedSystemGroups>>
+* <<apidoc-user-listDefaultSystemGroups-loggedInUser-login,listDefaultSystemGroups>>
+* <<apidoc-user-listRoles-loggedInUser-login,listRoles>>
+* <<apidoc-user-listUsers-loggedInUser,listUsers>>
+* <<apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault,removeAssignedSystemGroup>>
+* <<apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault,removeAssignedSystemGroups>>
+* <<apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName,removeDefaultSystemGroup>>
+* <<apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames,removeDefaultSystemGroups>>
+* <<apidoc-user-removeRole-loggedInUser-login-role,removeRole>>
+* <<apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup,setCreateDefaultSystemGroup>>
+* <<apidoc-user-setDetails-loggedInUser-login-details,setDetails>>
+* <<apidoc-user-setErrataNotifications-loggedInUser-login-value,setErrataNotifications>>
+* <<apidoc-user-setReadOnly-loggedInUser-login-readOnly,setReadOnly>>
+* <<apidoc-user-usePamAuthentication-loggedInUser-login-val,usePamAuthentication>>
 
 == Description
 
@@ -42,7 +42,7 @@ User namespace contains methods to access common user functions
 user
 
 
-[#apidoc-user-addAssignedSystemGroup-1990747767]
+[#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault]
 == Method: addAssignedSystemGroup
 
 HTTP `POST`
@@ -73,7 +73,7 @@ Returns:
 
 
 
-[#apidoc-user-addAssignedSystemGroups-62415796]
+[#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault]
 == Method: addAssignedSystemGroups
 
 HTTP `POST`
@@ -104,7 +104,7 @@ Returns:
 
 
 
-[#apidoc-user-addDefaultSystemGroup-1475886535]
+[#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name]
 == Method: addDefaultSystemGroup
 
 HTTP `POST`
@@ -132,7 +132,7 @@ Returns:
 
 
 
-[#apidoc-user-addDefaultSystemGroups-1972599192]
+[#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames]
 == Method: addDefaultSystemGroups
 
 HTTP `POST`
@@ -160,7 +160,7 @@ Returns:
 
 
 
-[#apidoc-user-addRole-1859945349]
+[#apidoc-user-addRole-loggedInUser-login-role]
 == Method: addRole
 
 HTTP `POST`
@@ -190,7 +190,7 @@ Returns:
 
 
 
-[#apidoc-user-create-1892828550]
+[#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email]
 == Method: create
 
 HTTP `POST`
@@ -225,7 +225,7 @@ Returns:
 
 
 
-[#apidoc-user-create-1491724370]
+[#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth]
 == Method: create
 
 HTTP `POST`
@@ -263,7 +263,7 @@ Returns:
 
 
 
-[#apidoc-user-delete-1378060385]
+[#apidoc-user-delete-loggedInUser-login]
 == Method: delete
 
 HTTP `POST`
@@ -289,7 +289,7 @@ Returns:
 
 
 
-[#apidoc-user-disable-664683782]
+[#apidoc-user-disable-loggedInUser-login]
 == Method: disable
 
 HTTP `POST`
@@ -315,7 +315,7 @@ Returns:
 
 
 
-[#apidoc-user-enable-1166203398]
+[#apidoc-user-enable-loggedInUser-login]
 == Method: enable
 
 HTTP `POST`
@@ -341,7 +341,7 @@ Returns:
 
 
 
-[#apidoc-user-getCreateDefaultSystemGroup-623180223]
+[#apidoc-user-getCreateDefaultSystemGroup-loggedInUser]
 == Method: getCreateDefaultSystemGroup
 
 HTTP `GET`
@@ -372,7 +372,7 @@ Returns:
 
 
 
-[#apidoc-user-getDetails-1451735609]
+[#apidoc-user-getDetails-loggedInUser-login]
 == Method: getDetails
 
 HTTP `GET`
@@ -414,7 +414,7 @@ Returns:
 
 
 
-[#apidoc-user-listAssignableRoles-1165871113]
+[#apidoc-user-listAssignableRoles-loggedInUser]
 == Method: listAssignableRoles
 
 HTTP `GET`
@@ -438,7 +438,7 @@ Returns:
 
 
 
-[#apidoc-user-listAssignedSystemGroups-1611841256]
+[#apidoc-user-listAssignedSystemGroups-loggedInUser-login]
 == Method: listAssignedSystemGroups
 
 HTTP `GET`
@@ -470,7 +470,7 @@ Returns:
 
 
 
-[#apidoc-user-listDefaultSystemGroups-245582109]
+[#apidoc-user-listDefaultSystemGroups-loggedInUser-login]
 == Method: listDefaultSystemGroups
 
 HTTP `GET`
@@ -502,7 +502,7 @@ Returns:
 
 
 
-[#apidoc-user-listRoles-1924459698]
+[#apidoc-user-listRoles-loggedInUser-login]
 == Method: listRoles
 
 HTTP `GET`
@@ -528,7 +528,7 @@ Returns:
 
 
 
-[#apidoc-user-listUsers-61693849]
+[#apidoc-user-listUsers-loggedInUser]
 == Method: listUsers
 
 HTTP `GET`
@@ -559,7 +559,7 @@ Returns:
 
 
 
-[#apidoc-user-removeAssignedSystemGroup-1658265745]
+[#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault]
 == Method: removeAssignedSystemGroup
 
 HTTP `POST`
@@ -590,7 +590,7 @@ Returns:
 
 
 
-[#apidoc-user-removeAssignedSystemGroups-1622720604]
+[#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault]
 == Method: removeAssignedSystemGroups
 
 HTTP `POST`
@@ -621,7 +621,7 @@ Returns:
 
 
 
-[#apidoc-user-removeDefaultSystemGroup-1768761582]
+[#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName]
 == Method: removeDefaultSystemGroup
 
 HTTP `POST`
@@ -649,7 +649,7 @@ Returns:
 
 
 
-[#apidoc-user-removeDefaultSystemGroups-413354443]
+[#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames]
 == Method: removeDefaultSystemGroups
 
 HTTP `POST`
@@ -677,7 +677,7 @@ Returns:
 
 
 
-[#apidoc-user-removeRole-1513484204]
+[#apidoc-user-removeRole-loggedInUser-login-role]
 == Method: removeRole
 
 HTTP `POST`
@@ -707,7 +707,7 @@ Returns:
 
 
 
-[#apidoc-user-setCreateDefaultSystemGroup-2116847138]
+[#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup]
 == Method: setCreateDefaultSystemGroup
 
 HTTP `POST`
@@ -740,7 +740,7 @@ Returns:
 
 
 
-[#apidoc-user-setDetails-1069508327]
+[#apidoc-user-setDetails-loggedInUser-login-details]
 == Method: setDetails
 
 HTTP `POST`
@@ -774,7 +774,7 @@ Returns:
 
 
 
-[#apidoc-user-setErrataNotifications-191345497]
+[#apidoc-user-setErrataNotifications-loggedInUser-login-value]
 == Method: setErrataNotifications
 
 HTTP `POST`
@@ -803,7 +803,7 @@ Returns:
 
 
 
-[#apidoc-user-setReadOnly-1258478670]
+[#apidoc-user-setReadOnly-loggedInUser-login-readOnly]
 == Method: setReadOnly
 
 HTTP `POST`
@@ -833,7 +833,7 @@ Returns:
 
 
 
-[#apidoc-user-usePamAuthentication-1379795356]
+[#apidoc-user-usePamAuthentication-loggedInUser-login-val]
 == Method: usePamAuthentication
 
 HTTP `POST`

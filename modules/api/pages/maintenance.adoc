@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-maintenance-assignScheduleToSystems-789925275,assignScheduleToSystems>>
-* <<apidoc-maintenance-createCalendar-1021778875,createCalendar>>
-* <<apidoc-maintenance-createCalendarWithUrl-1713195473,createCalendarWithUrl>>
-* <<apidoc-maintenance-createSchedule-1155636121,createSchedule>>
-* <<apidoc-maintenance-createSchedule-1233911532,createSchedule>>
-* <<apidoc-maintenance-deleteCalendar-592108514,deleteCalendar>>
-* <<apidoc-maintenance-deleteSchedule-424181011,deleteSchedule>>
-* <<apidoc-maintenance-getCalendarDetails-1205332149,getCalendarDetails>>
-* <<apidoc-maintenance-getScheduleDetails-1864933502,getScheduleDetails>>
-* <<apidoc-maintenance-listCalendarLabels-1371345136,listCalendarLabels>>
-* <<apidoc-maintenance-listScheduleNames-1229356998,listScheduleNames>>
-* <<apidoc-maintenance-listSystemsWithSchedule-26842093,listSystemsWithSchedule>>
-* <<apidoc-maintenance-refreshCalendar-670316132,refreshCalendar>>
-* <<apidoc-maintenance-retractScheduleFromSystems-131646052,retractScheduleFromSystems>>
-* <<apidoc-maintenance-updateCalendar-1595866994,updateCalendar>>
-* <<apidoc-maintenance-updateSchedule-860422228,updateSchedule>>
+* <<apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy,assignScheduleToSystems>>
+* <<apidoc-maintenance-createCalendar-loggedInUser-label-ical,createCalendar>>
+* <<apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url,createCalendarWithUrl>>
+* <<apidoc-maintenance-createSchedule-loggedInUser-name-type,createSchedule>>
+* <<apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar,createSchedule>>
+* <<apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions,deleteCalendar>>
+* <<apidoc-maintenance-deleteSchedule-loggedInUser-name,deleteSchedule>>
+* <<apidoc-maintenance-getCalendarDetails-loggedInUser-label,getCalendarDetails>>
+* <<apidoc-maintenance-getScheduleDetails-loggedInUser-name,getScheduleDetails>>
+* <<apidoc-maintenance-listCalendarLabels-loggedInUser,listCalendarLabels>>
+* <<apidoc-maintenance-listScheduleNames-loggedInUser,listScheduleNames>>
+* <<apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName,listSystemsWithSchedule>>
+* <<apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy,refreshCalendar>>
+* <<apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids,retractScheduleFromSystems>>
+* <<apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy,updateCalendar>>
+* <<apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy,updateSchedule>>
 
 == Description
 
@@ -30,7 +30,7 @@ Provides methods to access and modify Maintenance Schedules related entities
 maintenance
 
 
-[#apidoc-maintenance-assignScheduleToSystems-789925275]
+[#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy]
 == Method: assignScheduleToSystems
 
 HTTP `POST`
@@ -65,7 +65,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-createCalendar-1021778875]
+[#apidoc-maintenance-createCalendar-loggedInUser-label-ical]
 == Method: createCalendar
 
 HTTP `POST`
@@ -100,7 +100,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-createCalendarWithUrl-1713195473]
+[#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url]
 == Method: createCalendarWithUrl
 
 HTTP `POST`
@@ -135,7 +135,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-createSchedule-1155636121]
+[#apidoc-maintenance-createSchedule-loggedInUser-name-type]
 == Method: createSchedule
 
 HTTP `POST`
@@ -176,7 +176,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-createSchedule-1233911532]
+[#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar]
 == Method: createSchedule
 
 HTTP `POST`
@@ -219,7 +219,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-deleteCalendar-592108514]
+[#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions]
 == Method: deleteCalendar
 
 HTTP `POST`
@@ -263,7 +263,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-deleteSchedule-424181011]
+[#apidoc-maintenance-deleteSchedule-loggedInUser-name]
 == Method: deleteSchedule
 
 HTTP `POST`
@@ -289,7 +289,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-getCalendarDetails-1205332149]
+[#apidoc-maintenance-getCalendarDetails-loggedInUser-label]
 == Method: getCalendarDetails
 
 HTTP `POST`
@@ -322,7 +322,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-getScheduleDetails-1864933502]
+[#apidoc-maintenance-getScheduleDetails-loggedInUser-name]
 == Method: getScheduleDetails
 
 HTTP `POST`
@@ -361,7 +361,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-listCalendarLabels-1371345136]
+[#apidoc-maintenance-listCalendarLabels-loggedInUser]
 == Method: listCalendarLabels
 
 HTTP `POST`
@@ -385,7 +385,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-listScheduleNames-1229356998]
+[#apidoc-maintenance-listScheduleNames-loggedInUser]
 == Method: listScheduleNames
 
 HTTP `POST`
@@ -409,7 +409,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-listSystemsWithSchedule-26842093]
+[#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName]
 == Method: listSystemsWithSchedule
 
 HTTP `POST`
@@ -436,7 +436,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-refreshCalendar-670316132]
+[#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy]
 == Method: refreshCalendar
 
 HTTP `POST`
@@ -482,7 +482,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-retractScheduleFromSystems-131646052]
+[#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids]
 == Method: retractScheduleFromSystems
 
 HTTP `POST`
@@ -509,7 +509,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-updateCalendar-1595866994]
+[#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy]
 == Method: updateCalendar
 
 HTTP `POST`
@@ -559,7 +559,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-updateSchedule-860422228]
+[#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy]
 == Method: updateSchedule
 
 HTTP `POST`

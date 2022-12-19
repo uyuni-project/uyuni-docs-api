@@ -4,21 +4,21 @@
 
 == Available methods
 
-* <<apidoc-sync_master-addToMaster-1227792007,addToMaster>>
-* <<apidoc-sync_master-create-1950642510,create>>
-* <<apidoc-sync_master-delete-2009180110,delete>>
-* <<apidoc-sync_master-getDefaultMaster-1128092982,getDefaultMaster>>
-* <<apidoc-sync_master-getMaster-1937107943,getMaster>>
-* <<apidoc-sync_master-getMasterByLabel-380088157,getMasterByLabel>>
-* <<apidoc-sync_master-getMasterOrgs-1043260983,getMasterOrgs>>
-* <<apidoc-sync_master-getMasters-544430253,getMasters>>
-* <<apidoc-sync_master-hasMaster-270447913,hasMaster>>
-* <<apidoc-sync_master-makeDefault-346327277,makeDefault>>
-* <<apidoc-sync_master-mapToLocal-1931608383,mapToLocal>>
-* <<apidoc-sync_master-setCaCert-1523093869,setCaCert>>
-* <<apidoc-sync_master-setMasterOrgs-1658329286,setMasterOrgs>>
-* <<apidoc-sync_master-unsetDefaultMaster-1788579635,unsetDefaultMaster>>
-* <<apidoc-sync_master-update-1798768880,update>>
+* <<apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap,addToMaster>>
+* <<apidoc-sync_master-create-loggedInUser-label,create>>
+* <<apidoc-sync_master-delete-loggedInUser-masterId,delete>>
+* <<apidoc-sync_master-getDefaultMaster-loggedInUser,getDefaultMaster>>
+* <<apidoc-sync_master-getMaster-loggedInUser-masterId,getMaster>>
+* <<apidoc-sync_master-getMasterByLabel-loggedInUser-label,getMasterByLabel>>
+* <<apidoc-sync_master-getMasterOrgs-loggedInUser-masterId,getMasterOrgs>>
+* <<apidoc-sync_master-getMasters-loggedInUser,getMasters>>
+* <<apidoc-sync_master-hasMaster-,hasMaster>>
+* <<apidoc-sync_master-makeDefault-loggedInUser-masterId,makeDefault>>
+* <<apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId,mapToLocal>>
+* <<apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename,setCaCert>>
+* <<apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps,setMasterOrgs>>
+* <<apidoc-sync_master-unsetDefaultMaster-loggedInUser,unsetDefaultMaster>>
+* <<apidoc-sync_master-update-loggedInUser-masterId-label,update>>
 
 == Description
 
@@ -30,7 +30,7 @@ Contains methods to set up information about known-"masters", for use
 sync.master
 
 
-[#apidoc-sync_master-addToMaster-1227792007]
+[#apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap]
 == Method: addToMaster
 
 HTTP `POST`
@@ -62,7 +62,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-create-1950642510]
+[#apidoc-sync_master-create-loggedInUser-label]
 == Method: create
 
 HTTP `POST`
@@ -93,7 +93,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-delete-2009180110]
+[#apidoc-sync_master-delete-loggedInUser-masterId]
 == Method: delete
 
 HTTP `POST`
@@ -119,7 +119,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-getDefaultMaster-1128092982]
+[#apidoc-sync_master-getDefaultMaster-loggedInUser]
 == Method: getDefaultMaster
 
 HTTP `GET`
@@ -148,7 +148,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-getMaster-1937107943]
+[#apidoc-sync_master-getMaster-loggedInUser-masterId]
 == Method: getMaster
 
 HTTP `GET`
@@ -179,7 +179,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-getMasterByLabel-380088157]
+[#apidoc-sync_master-getMasterByLabel-loggedInUser-label]
 == Method: getMasterByLabel
 
 HTTP `GET`
@@ -210,7 +210,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-getMasterOrgs-1043260983]
+[#apidoc-sync_master-getMasterOrgs-loggedInUser-masterId]
 == Method: getMasterOrgs
 
 HTTP `GET`
@@ -241,7 +241,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-getMasters-544430253]
+[#apidoc-sync_master-getMasters-loggedInUser]
 == Method: getMasters
 
 HTTP `GET`
@@ -271,7 +271,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-hasMaster-270447913]
+[#apidoc-sync_master-hasMaster-]
 == Method: hasMaster
 
 HTTP `POST`
@@ -293,7 +293,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-makeDefault-346327277]
+[#apidoc-sync_master-makeDefault-loggedInUser-masterId]
 == Method: makeDefault
 
 HTTP `POST`
@@ -319,7 +319,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-mapToLocal-1931608383]
+[#apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId]
 == Method: mapToLocal
 
 HTTP `POST`
@@ -350,7 +350,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-setCaCert-1523093869]
+[#apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename]
 == Method: setCaCert
 
 HTTP `POST`
@@ -378,7 +378,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-setMasterOrgs-1658329286]
+[#apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps]
 == Method: setMasterOrgs
 
 HTTP `POST`
@@ -410,7 +410,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-unsetDefaultMaster-1788579635]
+[#apidoc-sync_master-unsetDefaultMaster-loggedInUser]
 == Method: unsetDefaultMaster
 
 HTTP `POST`
@@ -434,7 +434,7 @@ Returns:
 
 
 
-[#apidoc-sync_master-update-1798768880]
+[#apidoc-sync_master-update-loggedInUser-masterId-label]
 == Method: update
 
 HTTP `POST`

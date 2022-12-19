@@ -4,28 +4,28 @@
 
 == Available methods
 
-* <<apidoc-org-create-558201620,create>>
-* <<apidoc-org-createFirst-1974910273,createFirst>>
-* <<apidoc-org-delete-1040580772,delete>>
-* <<apidoc-org-getClmSyncPatchesConfig-1153269540,getClmSyncPatchesConfig>>
-* <<apidoc-org-getDetails-1056221435,getDetails>>
-* <<apidoc-org-getDetails-821664929,getDetails>>
-* <<apidoc-org-getPolicyForScapFileUpload-869140506,getPolicyForScapFileUpload>>
-* <<apidoc-org-getPolicyForScapResultDeletion-1847707373,getPolicyForScapResultDeletion>>
-* <<apidoc-org-isContentStagingEnabled-1320400528,isContentStagingEnabled>>
-* <<apidoc-org-isErrataEmailNotifsForOrg-213560315,isErrataEmailNotifsForOrg>>
-* <<apidoc-org-isOrgConfigManagedByOrgAdmin-906904117,isOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-listOrgs-2115692179,listOrgs>>
-* <<apidoc-org-listUsers-393476856,listUsers>>
-* <<apidoc-org-migrateSystems-492815168,migrateSystems>>
-* <<apidoc-org-setClmSyncPatchesConfig-115584215,setClmSyncPatchesConfig>>
-* <<apidoc-org-setContentStaging-486668812,setContentStaging>>
-* <<apidoc-org-setErrataEmailNotifsForOrg-1214336947,setErrataEmailNotifsForOrg>>
-* <<apidoc-org-setOrgConfigManagedByOrgAdmin-28376203,setOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-setPolicyForScapFileUpload-226972126,setPolicyForScapFileUpload>>
-* <<apidoc-org-setPolicyForScapResultDeletion-1975716431,setPolicyForScapResultDeletion>>
-* <<apidoc-org-transferSystems-1631537374,transferSystems>>
-* <<apidoc-org-updateName-249270028,updateName>>
+* <<apidoc-org-create-loggedInUser-orgName-adminLogin-adminPassword-prefix-firstName-lastName-email-usePamAuth,create>>
+* <<apidoc-org-createFirst-orgName-adminLogin-adminPassword-firstName-lastName-email,createFirst>>
+* <<apidoc-org-delete-loggedInUser-orgId,delete>>
+* <<apidoc-org-getClmSyncPatchesConfig-loggedInUser-orgId,getClmSyncPatchesConfig>>
+* <<apidoc-org-getDetails-loggedInUser-orgId,getDetails>>
+* <<apidoc-org-getDetails-loggedInUser-name,getDetails>>
+* <<apidoc-org-getPolicyForScapFileUpload-loggedInUser-orgId,getPolicyForScapFileUpload>>
+* <<apidoc-org-getPolicyForScapResultDeletion-loggedInUser-orgId,getPolicyForScapResultDeletion>>
+* <<apidoc-org-isContentStagingEnabled-loggedInUser-orgId,isContentStagingEnabled>>
+* <<apidoc-org-isErrataEmailNotifsForOrg-loggedInUser-orgId,isErrataEmailNotifsForOrg>>
+* <<apidoc-org-isOrgConfigManagedByOrgAdmin-loggedInUser-orgId,isOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-listOrgs-loggedInUser,listOrgs>>
+* <<apidoc-org-listUsers-loggedInUser-orgId,listUsers>>
+* <<apidoc-org-migrateSystems-loggedInUser-toOrgId-sids,migrateSystems>>
+* <<apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value,setClmSyncPatchesConfig>>
+* <<apidoc-org-setContentStaging-loggedInUser-orgId-enable,setContentStaging>>
+* <<apidoc-org-setErrataEmailNotifsForOrg-loggedInUser-orgId-enable,setErrataEmailNotifsForOrg>>
+* <<apidoc-org-setOrgConfigManagedByOrgAdmin-loggedInUser-orgId-enable,setOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-setPolicyForScapFileUpload-loggedInUser-orgId-newSettings,setPolicyForScapFileUpload>>
+* <<apidoc-org-setPolicyForScapResultDeletion-loggedInUser-orgId-newSettings,setPolicyForScapResultDeletion>>
+* <<apidoc-org-transferSystems-loggedInUser-toOrgId-sids,transferSystems>>
+* <<apidoc-org-updateName-loggedInUser-orgId-name,updateName>>
 
 == Description
 
@@ -37,7 +37,7 @@ Contains methods to access common organization management
 org
 
 
-[#apidoc-org-create-558201620]
+[#apidoc-org-create-loggedInUser-orgName-adminLogin-adminPassword-prefix-firstName-lastName-email-usePamAuth]
 == Method: create
 
 HTTP `POST`
@@ -91,7 +91,7 @@ Returns:
 
 
 
-[#apidoc-org-createFirst-1974910273]
+[#apidoc-org-createFirst-orgName-adminLogin-adminPassword-firstName-lastName-email]
 == Method: createFirst
 
 HTTP `POST`
@@ -137,7 +137,7 @@ Returns:
 
 
 
-[#apidoc-org-delete-1040580772]
+[#apidoc-org-delete-loggedInUser-orgId]
 == Method: delete
 
 HTTP `POST`
@@ -164,7 +164,7 @@ Returns:
 
 
 
-[#apidoc-org-getClmSyncPatchesConfig-1153269540]
+[#apidoc-org-getClmSyncPatchesConfig-loggedInUser-orgId]
 == Method: getClmSyncPatchesConfig
 
 HTTP `GET`
@@ -190,7 +190,7 @@ Returns:
 
 
 
-[#apidoc-org-getDetails-1056221435]
+[#apidoc-org-getDetails-loggedInUser-orgId]
 == Method: getDetails
 
 HTTP `GET`
@@ -228,7 +228,7 @@ Returns:
 
 
 
-[#apidoc-org-getDetails-821664929]
+[#apidoc-org-getDetails-loggedInUser-name]
 == Method: getDetails
 
 HTTP `GET`
@@ -266,7 +266,7 @@ Returns:
 
 
 
-[#apidoc-org-getPolicyForScapFileUpload-869140506]
+[#apidoc-org-getPolicyForScapFileUpload-loggedInUser-orgId]
 == Method: getPolicyForScapFileUpload
 
 HTTP `GET`
@@ -295,7 +295,7 @@ Returns:
 
 
 
-[#apidoc-org-getPolicyForScapResultDeletion-1847707373]
+[#apidoc-org-getPolicyForScapResultDeletion-loggedInUser-orgId]
 == Method: getPolicyForScapResultDeletion
 
 HTTP `GET`
@@ -324,7 +324,7 @@ Returns:
 
 
 
-[#apidoc-org-isContentStagingEnabled-1320400528]
+[#apidoc-org-isContentStagingEnabled-loggedInUser-orgId]
 == Method: isContentStagingEnabled
 
 HTTP `GET`
@@ -351,7 +351,7 @@ Returns:
 
 
 
-[#apidoc-org-isErrataEmailNotifsForOrg-213560315]
+[#apidoc-org-isErrataEmailNotifsForOrg-loggedInUser-orgId]
 == Method: isErrataEmailNotifsForOrg
 
 HTTP `GET`
@@ -379,7 +379,7 @@ Returns:
 
 
 
-[#apidoc-org-isOrgConfigManagedByOrgAdmin-906904117]
+[#apidoc-org-isOrgConfigManagedByOrgAdmin-loggedInUser-orgId]
 == Method: isOrgConfigManagedByOrgAdmin
 
 HTTP `GET`
@@ -406,7 +406,7 @@ Returns:
 
 
 
-[#apidoc-org-listOrgs-2115692179]
+[#apidoc-org-listOrgs-loggedInUser]
 == Method: listOrgs
 
 HTTP `GET`
@@ -442,7 +442,7 @@ Returns:
 
 
 
-[#apidoc-org-listUsers-393476856]
+[#apidoc-org-listUsers-loggedInUser-orgId]
 == Method: listUsers
 
 HTTP `GET`
@@ -475,7 +475,7 @@ Returns:
 
 
 
-[#apidoc-org-migrateSystems-492815168]
+[#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids]
 == Method: migrateSystems (Deprecated)
 
 HTTP `POST`
@@ -515,7 +515,7 @@ Returns:
 
 
 
-[#apidoc-org-setClmSyncPatchesConfig-115584215]
+[#apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value]
 == Method: setClmSyncPatchesConfig
 
 HTTP `POST`
@@ -543,7 +543,7 @@ Returns:
 
 
 
-[#apidoc-org-setContentStaging-486668812]
+[#apidoc-org-setContentStaging-loggedInUser-orgId-enable]
 == Method: setContentStaging
 
 HTTP `POST`
@@ -571,7 +571,7 @@ Returns:
 
 
 
-[#apidoc-org-setErrataEmailNotifsForOrg-1214336947]
+[#apidoc-org-setErrataEmailNotifsForOrg-loggedInUser-orgId-enable]
 == Method: setErrataEmailNotifsForOrg
 
 HTTP `POST`
@@ -599,7 +599,7 @@ Returns:
 
 
 
-[#apidoc-org-setOrgConfigManagedByOrgAdmin-28376203]
+[#apidoc-org-setOrgConfigManagedByOrgAdmin-loggedInUser-orgId-enable]
 == Method: setOrgConfigManagedByOrgAdmin
 
 HTTP `POST`
@@ -628,7 +628,7 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapFileUpload-226972126]
+[#apidoc-org-setPolicyForScapFileUpload-loggedInUser-orgId-newSettings]
 == Method: setPolicyForScapFileUpload
 
 HTTP `POST`
@@ -659,7 +659,7 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapResultDeletion-1975716431]
+[#apidoc-org-setPolicyForScapResultDeletion-loggedInUser-orgId-newSettings]
 == Method: setPolicyForScapResultDeletion
 
 HTTP `POST`
@@ -690,7 +690,7 @@ Returns:
 
 
 
-[#apidoc-org-transferSystems-1631537374]
+[#apidoc-org-transferSystems-loggedInUser-toOrgId-sids]
 == Method: transferSystems
 
 HTTP `POST`
@@ -725,7 +725,7 @@ Returns:
 
 
 
-[#apidoc-org-updateName-249270028]
+[#apidoc-org-updateName-loggedInUser-orgId-name]
 == Method: updateName
 
 HTTP `POST`

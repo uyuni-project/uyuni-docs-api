@@ -4,34 +4,34 @@
 
 == Available methods
 
-* <<apidoc-contentmanagement-attachFilter-1240091493,attachFilter>>
-* <<apidoc-contentmanagement-attachSource-2103229641,attachSource>>
-* <<apidoc-contentmanagement-attachSource-942901628,attachSource>>
-* <<apidoc-contentmanagement-buildProject-1329489396,buildProject>>
-* <<apidoc-contentmanagement-buildProject-2099052183,buildProject>>
-* <<apidoc-contentmanagement-createAppStreamFilters-1863497271,createAppStreamFilters>>
-* <<apidoc-contentmanagement-createEnvironment-1399108737,createEnvironment>>
-* <<apidoc-contentmanagement-createFilter-1251935072,createFilter>>
-* <<apidoc-contentmanagement-createProject-1225196709,createProject>>
-* <<apidoc-contentmanagement-detachFilter-1257669532,detachFilter>>
-* <<apidoc-contentmanagement-detachSource-2099922328,detachSource>>
-* <<apidoc-contentmanagement-listFilterCriteria-1706466507,listFilterCriteria>>
-* <<apidoc-contentmanagement-listFilters-1703412736,listFilters>>
-* <<apidoc-contentmanagement-listProjectEnvironments-785337150,listProjectEnvironments>>
-* <<apidoc-contentmanagement-listProjectFilters-394568342,listProjectFilters>>
-* <<apidoc-contentmanagement-listProjectSources-185354501,listProjectSources>>
-* <<apidoc-contentmanagement-listProjects-737434492,listProjects>>
-* <<apidoc-contentmanagement-lookupEnvironment-1595687022,lookupEnvironment>>
-* <<apidoc-contentmanagement-lookupFilter-1096030628,lookupFilter>>
-* <<apidoc-contentmanagement-lookupProject-626652764,lookupProject>>
-* <<apidoc-contentmanagement-lookupSource-2100962393,lookupSource>>
-* <<apidoc-contentmanagement-promoteProject-1723212594,promoteProject>>
-* <<apidoc-contentmanagement-removeEnvironment-909013150,removeEnvironment>>
-* <<apidoc-contentmanagement-removeFilter-1834816004,removeFilter>>
-* <<apidoc-contentmanagement-removeProject-1146011389,removeProject>>
-* <<apidoc-contentmanagement-updateEnvironment-1659650374,updateEnvironment>>
-* <<apidoc-contentmanagement-updateFilter-250219336,updateFilter>>
-* <<apidoc-contentmanagement-updateProject-1298670487,updateProject>>
+* <<apidoc-contentmanagement-attachFilter-loggedInUser-projectLabel-filterId,attachFilter>>
+* <<apidoc-contentmanagement-attachSource-loggedInUser-projectLabel-sourceType-sourceLabel-sourcePosition,attachSource>>
+* <<apidoc-contentmanagement-attachSource-loggedInUser-projectLabel-sourceType-sourceLabel,attachSource>>
+* <<apidoc-contentmanagement-buildProject-loggedInUser-projectLabel,buildProject>>
+* <<apidoc-contentmanagement-buildProject-loggedInUser-projectLabel-message,buildProject>>
+* <<apidoc-contentmanagement-createAppStreamFilters-loggedInUser-prefix-channelLabel-projectLabel,createAppStreamFilters>>
+* <<apidoc-contentmanagement-createEnvironment-loggedInUser-projectLabel-predecessorLabel-envLabel-name-description,createEnvironment>>
+* <<apidoc-contentmanagement-createFilter-loggedInUser-name-rule-entityType-criteria,createFilter>>
+* <<apidoc-contentmanagement-createProject-loggedInUser-projectLabel-name-description,createProject>>
+* <<apidoc-contentmanagement-detachFilter-loggedInUser-projectLabel-filterId,detachFilter>>
+* <<apidoc-contentmanagement-detachSource-loggedInUser-projectLabel-sourceType-sourceLabel,detachSource>>
+* <<apidoc-contentmanagement-listFilterCriteria-loggedInUser,listFilterCriteria>>
+* <<apidoc-contentmanagement-listFilters-loggedInUser,listFilters>>
+* <<apidoc-contentmanagement-listProjectEnvironments-loggedInUser-projectLabel,listProjectEnvironments>>
+* <<apidoc-contentmanagement-listProjectFilters-loggedInUser-projectLabel,listProjectFilters>>
+* <<apidoc-contentmanagement-listProjectSources-loggedInUser-projectLabel,listProjectSources>>
+* <<apidoc-contentmanagement-listProjects-loggedInUser,listProjects>>
+* <<apidoc-contentmanagement-lookupEnvironment-loggedInUser-projectLabel-envLabel,lookupEnvironment>>
+* <<apidoc-contentmanagement-lookupFilter-loggedInUser-filterId,lookupFilter>>
+* <<apidoc-contentmanagement-lookupProject-loggedInUser-projectLabel,lookupProject>>
+* <<apidoc-contentmanagement-lookupSource-loggedInUser-projectLabel-sourceType-sourceLabel,lookupSource>>
+* <<apidoc-contentmanagement-promoteProject-loggedInUser-projectLabel-envLabel,promoteProject>>
+* <<apidoc-contentmanagement-removeEnvironment-loggedInUser-projectLabel-envLabel,removeEnvironment>>
+* <<apidoc-contentmanagement-removeFilter-loggedInUser-filterId,removeFilter>>
+* <<apidoc-contentmanagement-removeProject-loggedInUser-projectLabel,removeProject>>
+* <<apidoc-contentmanagement-updateEnvironment-loggedInUser-projectLabel-envLabel-props,updateEnvironment>>
+* <<apidoc-contentmanagement-updateFilter-loggedInUser-filterId-name-rule-criteria,updateFilter>>
+* <<apidoc-contentmanagement-updateProject-loggedInUser-projectLabel-props,updateProject>>
 
 == Description
 
@@ -43,7 +43,7 @@ Provides methods to access and modify Content Lifecycle Management related entit
 contentmanagement
 
 
-[#apidoc-contentmanagement-attachFilter-1240091493]
+[#apidoc-contentmanagement-attachFilter-loggedInUser-projectLabel-filterId]
 == Method: attachFilter
 
 HTTP `POST`
@@ -81,7 +81,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-attachSource-2103229641]
+[#apidoc-contentmanagement-attachSource-loggedInUser-projectLabel-sourceType-sourceLabel-sourcePosition]
 == Method: attachSource
 
 HTTP `POST`
@@ -118,7 +118,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-attachSource-942901628]
+[#apidoc-contentmanagement-attachSource-loggedInUser-projectLabel-sourceType-sourceLabel]
 == Method: attachSource
 
 HTTP `POST`
@@ -153,7 +153,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-buildProject-1329489396]
+[#apidoc-contentmanagement-buildProject-loggedInUser-projectLabel]
 == Method: buildProject
 
 HTTP `POST`
@@ -179,7 +179,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-buildProject-2099052183]
+[#apidoc-contentmanagement-buildProject-loggedInUser-projectLabel-message]
 == Method: buildProject
 
 HTTP `POST`
@@ -207,7 +207,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createAppStreamFilters-1863497271]
+[#apidoc-contentmanagement-createAppStreamFilters-loggedInUser-prefix-channelLabel-projectLabel]
 == Method: createAppStreamFilters
 
 HTTP `POST`
@@ -248,7 +248,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createEnvironment-1399108737]
+[#apidoc-contentmanagement-createEnvironment-loggedInUser-projectLabel-predecessorLabel-envLabel-name-description]
 == Method: createEnvironment
 
 HTTP `POST`
@@ -292,7 +292,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createFilter-1251935072]
+[#apidoc-contentmanagement-createFilter-loggedInUser-name-rule-entityType-criteria]
 == Method: createFilter
 
 HTTP `POST`
@@ -319,7 +319,8 @@ Create a Content Filter
    #item("by type - field: advisory_type (e.g. 'Security Advisory'); matcher: equals")
    #item("by synopsis - field: synopsis; matcher: equals, contains or matches")
    #item("by keyword - field: keyword; matcher: contains")
-   #item("by date - field: issue_date; matcher: greater or greatereq")
+   #item("by date - field: issue_date; matcher: greater or greatereq; value needs to be in ISO format e.g
+   2022-12-10T12:00:00Z")
    #item("by affected package name - field: package_name; matcher: contains_pkg_name or matches_pkg_name")
    #item("by affected package with version - field: package_nevr; matcher: contains_pkg_lt_evr,
    contains_pkg_le_evr, contains_pkg_eq_evr, contains_pkg_ge_evr or contains_pkg_gt_evr")
@@ -371,7 +372,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-createProject-1225196709]
+[#apidoc-contentmanagement-createProject-loggedInUser-projectLabel-name-description]
 == Method: createProject
 
 HTTP `POST`
@@ -409,7 +410,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-detachFilter-1257669532]
+[#apidoc-contentmanagement-detachFilter-loggedInUser-projectLabel-filterId]
 == Method: detachFilter
 
 HTTP `POST`
@@ -437,7 +438,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-detachSource-2099922328]
+[#apidoc-contentmanagement-detachSource-loggedInUser-projectLabel-sourceType-sourceLabel]
 == Method: detachSource
 
 HTTP `POST`
@@ -467,7 +468,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listFilterCriteria-1706466507]
+[#apidoc-contentmanagement-listFilterCriteria-loggedInUser]
 == Method: listFilterCriteria
 
 HTTP `GET`
@@ -495,7 +496,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listFilters-1703412736]
+[#apidoc-contentmanagement-listFilters-loggedInUser]
 == Method: listFilters
 
 HTTP `GET`
@@ -530,7 +531,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectEnvironments-785337150]
+[#apidoc-contentmanagement-listProjectEnvironments-loggedInUser-projectLabel]
 == Method: listProjectEnvironments
 
 HTTP `GET`
@@ -567,7 +568,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectFilters-394568342]
+[#apidoc-contentmanagement-listProjectFilters-loggedInUser-projectLabel]
 == Method: listProjectFilters
 
 HTTP `GET`
@@ -607,7 +608,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjectSources-185354501]
+[#apidoc-contentmanagement-listProjectSources-loggedInUser-projectLabel]
 == Method: listProjectSources
 
 HTTP `GET`
@@ -639,7 +640,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-listProjects-737434492]
+[#apidoc-contentmanagement-listProjects-loggedInUser]
 == Method: listProjects
 
 HTTP `GET`
@@ -672,7 +673,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupEnvironment-1595687022]
+[#apidoc-contentmanagement-lookupEnvironment-loggedInUser-projectLabel-envLabel]
 == Method: lookupEnvironment
 
 HTTP `GET`
@@ -710,7 +711,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupFilter-1096030628]
+[#apidoc-contentmanagement-lookupFilter-loggedInUser-filterId]
 == Method: lookupFilter
 
 HTTP `GET`
@@ -746,7 +747,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupProject-626652764]
+[#apidoc-contentmanagement-lookupProject-loggedInUser-projectLabel]
 == Method: lookupProject
 
 HTTP `GET`
@@ -780,7 +781,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-lookupSource-2100962393]
+[#apidoc-contentmanagement-lookupSource-loggedInUser-projectLabel-sourceType-sourceLabel]
 == Method: lookupSource
 
 HTTP `GET`
@@ -815,7 +816,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-promoteProject-1723212594]
+[#apidoc-contentmanagement-promoteProject-loggedInUser-projectLabel-envLabel]
 == Method: promoteProject
 
 HTTP `POST`
@@ -843,7 +844,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeEnvironment-909013150]
+[#apidoc-contentmanagement-removeEnvironment-loggedInUser-projectLabel-envLabel]
 == Method: removeEnvironment
 
 HTTP `POST`
@@ -871,7 +872,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeFilter-1834816004]
+[#apidoc-contentmanagement-removeFilter-loggedInUser-filterId]
 == Method: removeFilter
 
 HTTP `POST`
@@ -897,7 +898,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-removeProject-1146011389]
+[#apidoc-contentmanagement-removeProject-loggedInUser-projectLabel]
 == Method: removeProject
 
 HTTP `POST`
@@ -923,7 +924,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateEnvironment-1659650374]
+[#apidoc-contentmanagement-updateEnvironment-loggedInUser-projectLabel-envLabel-props]
 == Method: updateEnvironment
 
 HTTP `POST`
@@ -965,7 +966,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateFilter-250219336]
+[#apidoc-contentmanagement-updateFilter-loggedInUser-filterId-name-rule-criteria]
 == Method: updateFilter
 
 HTTP `POST`
@@ -1013,7 +1014,7 @@ Returns:
 
 
 
-[#apidoc-contentmanagement-updateProject-1298670487]
+[#apidoc-contentmanagement-updateProject-loggedInUser-projectLabel-props]
 == Method: updateProject
 
 HTTP `POST`
