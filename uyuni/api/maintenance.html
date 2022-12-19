@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/maintenance.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/maintenance.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,52 +367,52 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-maintenance-assignScheduleToSystems-874771283">assignScheduleToSystems</a></p>
+<p><a href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy">assignScheduleToSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-createCalendar-698229852">createCalendar</a></p>
+<p><a href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical">createCalendar</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-createCalendarWithUrl-1133794432">createCalendarWithUrl</a></p>
+<p><a href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url">createCalendarWithUrl</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-createSchedule-326791409">createSchedule</a></p>
+<p><a href="#apidoc-maintenance-createSchedule-loggedInUser-name-type">createSchedule</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-createSchedule-1595659891">createSchedule</a></p>
+<p><a href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar">createSchedule</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-deleteCalendar-1441963321">deleteCalendar</a></p>
+<p><a href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions">deleteCalendar</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-deleteSchedule-340772346">deleteSchedule</a></p>
+<p><a href="#apidoc-maintenance-deleteSchedule-loggedInUser-name">deleteSchedule</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-getCalendarDetails-1432043209">getCalendarDetails</a></p>
+<p><a href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label">getCalendarDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-getScheduleDetails-887000223">getScheduleDetails</a></p>
+<p><a href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name">getScheduleDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-listCalendarLabels-1416807034">listCalendarLabels</a></p>
+<p><a href="#apidoc-maintenance-listCalendarLabels-loggedInUser">listCalendarLabels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-listScheduleNames-2070813038">listScheduleNames</a></p>
+<p><a href="#apidoc-maintenance-listScheduleNames-loggedInUser">listScheduleNames</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-listSystemsWithSchedule-912034375">listSystemsWithSchedule</a></p>
+<p><a href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName">listSystemsWithSchedule</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-refreshCalendar-227996691">refreshCalendar</a></p>
+<p><a href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy">refreshCalendar</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-retractScheduleFromSystems-206623154">retractScheduleFromSystems</a></p>
+<p><a href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids">retractScheduleFromSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-updateCalendar-28782490">updateCalendar</a></p>
+<p><a href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy">updateCalendar</a></p>
 </li>
 <li>
-<p><a href="#apidoc-maintenance-updateSchedule-1412764055">updateSchedule</a></p>
+<p><a href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy">updateSchedule</a></p>
 </li>
 </ul>
 </div>
@@ -433,7 +433,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-assignScheduleToSystems-874771283"><a class="anchor" href="#apidoc-maintenance-assignScheduleToSystems-874771283"></a><a class="link" href="#apidoc-maintenance-assignScheduleToSystems-874771283">Method: assignScheduleToSystems</a></h2>
+<h2 id="apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy">Method: assignScheduleToSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -489,7 +489,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-createCalendar-698229852"><a class="anchor" href="#apidoc-maintenance-createCalendar-698229852"></a><a class="link" href="#apidoc-maintenance-createCalendar-698229852">Method: createCalendar</a></h2>
+<h2 id="apidoc-maintenance-createCalendar-loggedInUser-label-ical"><a class="anchor" href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical"></a><a class="link" href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical">Method: createCalendar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -551,7 +551,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-createCalendarWithUrl-1133794432"><a class="anchor" href="#apidoc-maintenance-createCalendarWithUrl-1133794432"></a><a class="link" href="#apidoc-maintenance-createCalendarWithUrl-1133794432">Method: createCalendarWithUrl</a></h2>
+<h2 id="apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url"><a class="anchor" href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url"></a><a class="link" href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url">Method: createCalendarWithUrl</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -613,7 +613,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-createSchedule-326791409"><a class="anchor" href="#apidoc-maintenance-createSchedule-326791409"></a><a class="link" href="#apidoc-maintenance-createSchedule-326791409">Method: createSchedule</a></h2>
+<h2 id="apidoc-maintenance-createSchedule-loggedInUser-name-type"><a class="anchor" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type"></a><a class="link" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type">Method: createSchedule</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -694,7 +694,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-createSchedule-1595659891"><a class="anchor" href="#apidoc-maintenance-createSchedule-1595659891"></a><a class="link" href="#apidoc-maintenance-createSchedule-1595659891">Method: createSchedule</a></h2>
+<h2 id="apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar"><a class="anchor" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar"></a><a class="link" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar">Method: createSchedule</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -778,7 +778,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-deleteCalendar-1441963321"><a class="anchor" href="#apidoc-maintenance-deleteCalendar-1441963321"></a><a class="link" href="#apidoc-maintenance-deleteCalendar-1441963321">Method: deleteCalendar</a></h2>
+<h2 id="apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions"><a class="anchor" href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions"></a><a class="link" href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions">Method: deleteCalendar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -875,7 +875,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-deleteSchedule-340772346"><a class="anchor" href="#apidoc-maintenance-deleteSchedule-340772346"></a><a class="link" href="#apidoc-maintenance-deleteSchedule-340772346">Method: deleteSchedule</a></h2>
+<h2 id="apidoc-maintenance-deleteSchedule-loggedInUser-name"><a class="anchor" href="#apidoc-maintenance-deleteSchedule-loggedInUser-name"></a><a class="link" href="#apidoc-maintenance-deleteSchedule-loggedInUser-name">Method: deleteSchedule</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -912,7 +912,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-getCalendarDetails-1432043209"><a class="anchor" href="#apidoc-maintenance-getCalendarDetails-1432043209"></a><a class="link" href="#apidoc-maintenance-getCalendarDetails-1432043209">Method: getCalendarDetails</a></h2>
+<h2 id="apidoc-maintenance-getCalendarDetails-loggedInUser-label"><a class="anchor" href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label"></a><a class="link" href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label">Method: getCalendarDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -971,7 +971,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-getScheduleDetails-887000223"><a class="anchor" href="#apidoc-maintenance-getScheduleDetails-887000223"></a><a class="link" href="#apidoc-maintenance-getScheduleDetails-887000223">Method: getScheduleDetails</a></h2>
+<h2 id="apidoc-maintenance-getScheduleDetails-loggedInUser-name"><a class="anchor" href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name"></a><a class="link" href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name">Method: getScheduleDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1049,7 +1049,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-listCalendarLabels-1416807034"><a class="anchor" href="#apidoc-maintenance-listCalendarLabels-1416807034"></a><a class="link" href="#apidoc-maintenance-listCalendarLabels-1416807034">Method: listCalendarLabels</a></h2>
+<h2 id="apidoc-maintenance-listCalendarLabels-loggedInUser"><a class="anchor" href="#apidoc-maintenance-listCalendarLabels-loggedInUser"></a><a class="link" href="#apidoc-maintenance-listCalendarLabels-loggedInUser">Method: listCalendarLabels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1083,7 +1083,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-listScheduleNames-2070813038"><a class="anchor" href="#apidoc-maintenance-listScheduleNames-2070813038"></a><a class="link" href="#apidoc-maintenance-listScheduleNames-2070813038">Method: listScheduleNames</a></h2>
+<h2 id="apidoc-maintenance-listScheduleNames-loggedInUser"><a class="anchor" href="#apidoc-maintenance-listScheduleNames-loggedInUser"></a><a class="link" href="#apidoc-maintenance-listScheduleNames-loggedInUser">Method: listScheduleNames</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1117,7 +1117,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-listSystemsWithSchedule-912034375"><a class="anchor" href="#apidoc-maintenance-listSystemsWithSchedule-912034375"></a><a class="link" href="#apidoc-maintenance-listSystemsWithSchedule-912034375">Method: listSystemsWithSchedule</a></h2>
+<h2 id="apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName"><a class="anchor" href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName"></a><a class="link" href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName">Method: listSystemsWithSchedule</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1155,7 +1155,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-refreshCalendar-227996691"><a class="anchor" href="#apidoc-maintenance-refreshCalendar-227996691"></a><a class="link" href="#apidoc-maintenance-refreshCalendar-227996691">Method: refreshCalendar</a></h2>
+<h2 id="apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy">Method: refreshCalendar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1262,7 +1262,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-retractScheduleFromSystems-206623154"><a class="anchor" href="#apidoc-maintenance-retractScheduleFromSystems-206623154"></a><a class="link" href="#apidoc-maintenance-retractScheduleFromSystems-206623154">Method: retractScheduleFromSystems</a></h2>
+<h2 id="apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids"><a class="anchor" href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids"></a><a class="link" href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids">Method: retractScheduleFromSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1300,7 +1300,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-updateCalendar-28782490"><a class="anchor" href="#apidoc-maintenance-updateCalendar-28782490"></a><a class="link" href="#apidoc-maintenance-updateCalendar-28782490">Method: updateCalendar</a></h2>
+<h2 id="apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy">Method: updateCalendar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1420,7 +1420,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-maintenance-updateSchedule-1412764055"><a class="anchor" href="#apidoc-maintenance-updateSchedule-1412764055"></a><a class="link" href="#apidoc-maintenance-updateSchedule-1412764055">Method: updateSchedule</a></h2>
+<h2 id="apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy">Method: updateSchedule</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>

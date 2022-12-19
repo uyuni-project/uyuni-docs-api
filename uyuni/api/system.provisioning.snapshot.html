@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/system.provisioning.snapshot.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/system.provisioning.snapshot.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,43 +367,43 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-1817497820">addTagToSnapshot</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName">addTagToSnapshot</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshot-1997267152">deleteSnapshot</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId">deleteSnapshot</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-151060420">deleteSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate">deleteSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-970211863">deleteSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate">deleteSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-847292314">deleteSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails">deleteSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-2046545652">deleteSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails">deleteSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-831473649">listSnapshotConfigFiles</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId">listSnapshotConfigFiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-280194442">listSnapshotPackages</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId">listSnapshotPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-listSnapshots-1673228701">listSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate">listSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-listSnapshots-954269867">listSnapshots</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails">listSnapshots</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-516515090">rollbackToSnapshot</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId">rollbackToSnapshot</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-rollbackToTag-1023460014">rollbackToTag</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName">rollbackToTag</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_snapshot-rollbackToTag-1716876539">rollbackToTag</a></p>
+<p><a href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName">rollbackToTag</a></p>
 </li>
 </ul>
 </div>
@@ -424,7 +424,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-addTagToSnapshot-1817497820"><a class="anchor" href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-1817497820"></a><a class="link" href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-1817497820">Method: addTagToSnapshot</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName"><a class="anchor" href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName"></a><a class="link" href="#apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName">Method: addTagToSnapshot</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -464,7 +464,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshot-1997267152"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshot-1997267152"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshot-1997267152">Method: deleteSnapshot</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId">Method: deleteSnapshot</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -504,7 +504,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-151060420"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-151060420"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-151060420">Method: deleteSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate">Method: deleteSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -558,7 +558,7 @@ removed.</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-970211863"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-970211863"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-970211863">Method: deleteSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate">Method: deleteSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -615,7 +615,7 @@ with the server will be removed.</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-847292314"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-847292314"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-847292314">Method: deleteSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails">Method: deleteSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -677,7 +677,7 @@ is provided.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-2046545652"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-2046545652"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-2046545652">Method: deleteSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails"><a class="anchor" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails"></a><a class="link" href="#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails">Method: deleteSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -743,7 +743,7 @@ is provided.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-831473649"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-831473649"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-831473649">Method: listSnapshotConfigFiles</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId">Method: listSnapshotConfigFiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -861,7 +861,7 @@ Present for files or directories only.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-listSnapshotPackages-280194442"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-280194442"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-280194442">Method: listSnapshotPackages</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId">Method: listSnapshotPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -923,7 +923,7 @@ Present for files or directories only.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-listSnapshots-1673228701"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshots-1673228701"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshots-1673228701">Method: listSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate">Method: listSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1020,7 +1020,7 @@ reason (optional)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-listSnapshots-954269867"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshots-954269867"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshots-954269867">Method: listSnapshots</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails"><a class="anchor" href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails"></a><a class="link" href="#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails">Method: listSnapshots</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1125,7 +1125,7 @@ reason (optional)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-rollbackToSnapshot-516515090"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-516515090"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-516515090">Method: rollbackToSnapshot</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId">Method: rollbackToSnapshot</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1165,7 +1165,7 @@ reason (optional)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-rollbackToTag-1023460014"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToTag-1023460014"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToTag-1023460014">Method: rollbackToTag</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName">Method: rollbackToTag</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1205,7 +1205,7 @@ reason (optional)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_snapshot-rollbackToTag-1716876539"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToTag-1716876539"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToTag-1716876539">Method: rollbackToTag</a></h2>
+<h2 id="apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName"><a class="anchor" href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName"></a><a class="link" href="#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName">Method: rollbackToTag</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>

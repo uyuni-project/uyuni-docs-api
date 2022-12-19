@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/proxy.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/proxy.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,31 +367,31 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-proxy-activateProxy-27639992">activateProxy</a></p>
+<p><a href="#apidoc-proxy-activateProxy-clientcert-version">activateProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-containerConfig-658022908">containerConfig</a></p>
+<p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey">containerConfig</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-containerConfig-1836910918">containerConfig</a></p>
+<p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail">containerConfig</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-createMonitoringScout-1640043321">createMonitoringScout</a></p>
+<p><a href="#apidoc-proxy-createMonitoringScout-clientcert">createMonitoringScout</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-deactivateProxy-1564299842">deactivateProxy</a></p>
+<p><a href="#apidoc-proxy-deactivateProxy-clientcert">deactivateProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-isProxy-837603331">isProxy</a></p>
+<p><a href="#apidoc-proxy-isProxy-clientcert">isProxy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listAvailableProxyChannels-1754547054">listAvailableProxyChannels</a></p>
+<p><a href="#apidoc-proxy-listAvailableProxyChannels-clientcert">listAvailableProxyChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listProxies-1060104887">listProxies</a></p>
+<p><a href="#apidoc-proxy-listProxies-loggedInUser">listProxies</a></p>
 </li>
 <li>
-<p><a href="#apidoc-proxy-listProxyClients-146214994">listProxyClients</a></p>
+<p><a href="#apidoc-proxy-listProxyClients-loggedInUser-proxyId">listProxyClients</a></p>
 </li>
 </ul>
 </div>
@@ -413,7 +413,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-activateProxy-27639992"><a class="anchor" href="#apidoc-proxy-activateProxy-27639992"></a><a class="link" href="#apidoc-proxy-activateProxy-27639992">Method: activateProxy</a></h2>
+<h2 id="apidoc-proxy-activateProxy-clientcert-version"><a class="anchor" href="#apidoc-proxy-activateProxy-clientcert-version"></a><a class="link" href="#apidoc-proxy-activateProxy-clientcert-version">Method: activateProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -452,7 +452,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-containerConfig-658022908"><a class="anchor" href="#apidoc-proxy-containerConfig-658022908"></a><a class="link" href="#apidoc-proxy-containerConfig-658022908">Method: containerConfig</a></h2>
+<h2 id="apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey"><a class="anchor" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey"></a><a class="link" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey">Method: containerConfig</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -513,7 +513,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-containerConfig-1836910918"><a class="anchor" href="#apidoc-proxy-containerConfig-1836910918"></a><a class="link" href="#apidoc-proxy-containerConfig-1836910918">Method: containerConfig</a></h2>
+<h2 id="apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail"><a class="anchor" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail"></a><a class="link" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail">Method: containerConfig</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -592,7 +592,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-createMonitoringScout-1640043321"><a class="anchor" href="#apidoc-proxy-createMonitoringScout-1640043321"></a><a class="link" href="#apidoc-proxy-createMonitoringScout-1640043321">Method: createMonitoringScout</a></h2>
+<h2 id="apidoc-proxy-createMonitoringScout-clientcert"><a class="anchor" href="#apidoc-proxy-createMonitoringScout-clientcert"></a><a class="link" href="#apidoc-proxy-createMonitoringScout-clientcert">Method: createMonitoringScout</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -629,7 +629,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-deactivateProxy-1564299842"><a class="anchor" href="#apidoc-proxy-deactivateProxy-1564299842"></a><a class="link" href="#apidoc-proxy-deactivateProxy-1564299842">Method: deactivateProxy</a></h2>
+<h2 id="apidoc-proxy-deactivateProxy-clientcert"><a class="anchor" href="#apidoc-proxy-deactivateProxy-clientcert"></a><a class="link" href="#apidoc-proxy-deactivateProxy-clientcert">Method: deactivateProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -664,7 +664,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-isProxy-837603331"><a class="anchor" href="#apidoc-proxy-isProxy-837603331"></a><a class="link" href="#apidoc-proxy-isProxy-837603331">Method: isProxy</a></h2>
+<h2 id="apidoc-proxy-isProxy-clientcert"><a class="anchor" href="#apidoc-proxy-isProxy-clientcert"></a><a class="link" href="#apidoc-proxy-isProxy-clientcert">Method: isProxy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -699,7 +699,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listAvailableProxyChannels-1754547054"><a class="anchor" href="#apidoc-proxy-listAvailableProxyChannels-1754547054"></a><a class="link" href="#apidoc-proxy-listAvailableProxyChannels-1754547054">Method: listAvailableProxyChannels</a></h2>
+<h2 id="apidoc-proxy-listAvailableProxyChannels-clientcert"><a class="anchor" href="#apidoc-proxy-listAvailableProxyChannels-clientcert"></a><a class="link" href="#apidoc-proxy-listAvailableProxyChannels-clientcert">Method: listAvailableProxyChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -737,7 +737,7 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listProxies-1060104887"><a class="anchor" href="#apidoc-proxy-listProxies-1060104887"></a><a class="link" href="#apidoc-proxy-listProxies-1060104887">Method: listProxies</a></h2>
+<h2 id="apidoc-proxy-listProxies-loggedInUser"><a class="anchor" href="#apidoc-proxy-listProxies-loggedInUser"></a><a class="link" href="#apidoc-proxy-listProxies-loggedInUser">Method: listProxies</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -801,7 +801,7 @@ to any assigned channel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-proxy-listProxyClients-146214994"><a class="anchor" href="#apidoc-proxy-listProxyClients-146214994"></a><a class="link" href="#apidoc-proxy-listProxyClients-146214994">Method: listProxyClients</a></h2>
+<h2 id="apidoc-proxy-listProxyClients-loggedInUser-proxyId"><a class="anchor" href="#apidoc-proxy-listProxyClients-loggedInUser-proxyId"></a><a class="link" href="#apidoc-proxy-listProxyClients-loggedInUser-proxyId">Method: listProxyClients</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>

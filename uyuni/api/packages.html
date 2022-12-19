@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/packages.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/packages.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,40 +367,40 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-packages-findByNvrea-551319099">findByNvrea</a></p>
+<p><a href="#apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel">findByNvrea</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getDetails-322765937">getDetails</a></p>
+<p><a href="#apidoc-packages-getDetails-loggedInUser-pid">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getPackage-1340662552">getPackage</a></p>
+<p><a href="#apidoc-packages-getPackage-loggedInUser-pid">getPackage</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-getPackageUrl-1283581890">getPackageUrl</a></p>
+<p><a href="#apidoc-packages-getPackageUrl-loggedInUser-pid">getPackageUrl</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listChangelog-2109638031">listChangelog</a></p>
+<p><a href="#apidoc-packages-listChangelog-loggedInUser-pid">listChangelog</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listDependencies-947844775">listDependencies</a></p>
+<p><a href="#apidoc-packages-listDependencies-loggedInUser-pid">listDependencies</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listFiles-106629049">listFiles</a></p>
+<p><a href="#apidoc-packages-listFiles-loggedInUser-pid">listFiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listProvidingChannels-869189990">listProvidingChannels</a></p>
+<p><a href="#apidoc-packages-listProvidingChannels-loggedInUser-pid">listProvidingChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listProvidingErrata-1681911120">listProvidingErrata</a></p>
+<p><a href="#apidoc-packages-listProvidingErrata-loggedInUser-pid">listProvidingErrata</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-listSourcePackages-1947403350">listSourcePackages</a></p>
+<p><a href="#apidoc-packages-listSourcePackages-loggedInUser">listSourcePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-removePackage-590399893">removePackage</a></p>
+<p><a href="#apidoc-packages-removePackage-loggedInUser-pid">removePackage</a></p>
 </li>
 <li>
-<p><a href="#apidoc-packages-removeSourcePackage-2097702021">removeSourcePackage</a></p>
+<p><a href="#apidoc-packages-removeSourcePackage-loggedInUser-psid">removeSourcePackage</a></p>
 </li>
 </ul>
 </div>
@@ -422,7 +422,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-findByNvrea-551319099"><a class="anchor" href="#apidoc-packages-findByNvrea-551319099"></a><a class="link" href="#apidoc-packages-findByNvrea-551319099">Method: findByNvrea</a></h2>
+<h2 id="apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel"><a class="anchor" href="#apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel"></a><a class="link" href="#apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel">Method: findByNvrea</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -514,7 +514,7 @@ the gpg key it was signed with.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getDetails-322765937"><a class="anchor" href="#apidoc-packages-getDetails-322765937"></a><a class="link" href="#apidoc-packages-getDetails-322765937">Method: getDetails</a></h2>
+<h2 id="apidoc-packages-getDetails-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-getDetails-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-getDetails-loggedInUser-pid">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -619,7 +619,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getPackage-1340662552"><a class="anchor" href="#apidoc-packages-getPackage-1340662552"></a><a class="link" href="#apidoc-packages-getPackage-1340662552">Method: getPackage</a></h2>
+<h2 id="apidoc-packages-getPackage-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-getPackage-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-getPackage-loggedInUser-pid">Method: getPackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -658,7 +658,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-getPackageUrl-1283581890"><a class="anchor" href="#apidoc-packages-getPackageUrl-1283581890"></a><a class="link" href="#apidoc-packages-getPackageUrl-1283581890">Method: getPackageUrl</a></h2>
+<h2 id="apidoc-packages-getPackageUrl-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-getPackageUrl-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-getPackageUrl-loggedInUser-pid">Method: getPackageUrl</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -696,7 +696,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listChangelog-2109638031"><a class="anchor" href="#apidoc-packages-listChangelog-2109638031"></a><a class="link" href="#apidoc-packages-listChangelog-2109638031">Method: listChangelog</a></h2>
+<h2 id="apidoc-packages-listChangelog-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-listChangelog-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-listChangelog-loggedInUser-pid">Method: listChangelog</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -733,7 +733,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listDependencies-947844775"><a class="anchor" href="#apidoc-packages-listDependencies-947844775"></a><a class="link" href="#apidoc-packages-listDependencies-947844775">Method: listDependencies</a></h2>
+<h2 id="apidoc-packages-listDependencies-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-listDependencies-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-listDependencies-loggedInUser-pid">Method: listDependencies</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -824,7 +824,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listFiles-106629049"><a class="anchor" href="#apidoc-packages-listFiles-106629049"></a><a class="link" href="#apidoc-packages-listFiles-106629049">Method: listFiles</a></h2>
+<h2 id="apidoc-packages-listFiles-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-listFiles-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-listFiles-loggedInUser-pid">Method: listFiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -893,7 +893,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listProvidingChannels-869189990"><a class="anchor" href="#apidoc-packages-listProvidingChannels-869189990"></a><a class="link" href="#apidoc-packages-listProvidingChannels-869189990">Method: listProvidingChannels</a></h2>
+<h2 id="apidoc-packages-listProvidingChannels-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-listProvidingChannels-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-listProvidingChannels-loggedInUser-pid">Method: listProvidingChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -950,7 +950,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listProvidingErrata-1681911120"><a class="anchor" href="#apidoc-packages-listProvidingErrata-1681911120"></a><a class="link" href="#apidoc-packages-listProvidingErrata-1681911120">Method: listProvidingErrata</a></h2>
+<h2 id="apidoc-packages-listProvidingErrata-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-listProvidingErrata-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-listProvidingErrata-loggedInUser-pid">Method: listProvidingErrata</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1016,7 +1016,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-listSourcePackages-1947403350"><a class="anchor" href="#apidoc-packages-listSourcePackages-1947403350"></a><a class="link" href="#apidoc-packages-listSourcePackages-1947403350">Method: listSourcePackages</a></h2>
+<h2 id="apidoc-packages-listSourcePackages-loggedInUser"><a class="anchor" href="#apidoc-packages-listSourcePackages-loggedInUser"></a><a class="link" href="#apidoc-packages-listSourcePackages-loggedInUser">Method: listSourcePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1067,7 +1067,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-removePackage-590399893"><a class="anchor" href="#apidoc-packages-removePackage-590399893"></a><a class="link" href="#apidoc-packages-removePackage-590399893">Method: removePackage</a></h2>
+<h2 id="apidoc-packages-removePackage-loggedInUser-pid"><a class="anchor" href="#apidoc-packages-removePackage-loggedInUser-pid"></a><a class="link" href="#apidoc-packages-removePackage-loggedInUser-pid">Method: removePackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1104,7 +1104,7 @@ the package resides.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-packages-removeSourcePackage-2097702021"><a class="anchor" href="#apidoc-packages-removeSourcePackage-2097702021"></a><a class="link" href="#apidoc-packages-removeSourcePackage-2097702021">Method: removeSourcePackage</a></h2>
+<h2 id="apidoc-packages-removeSourcePackage-loggedInUser-psid"><a class="anchor" href="#apidoc-packages-removeSourcePackage-loggedInUser-psid"></a><a class="link" href="#apidoc-packages-removeSourcePackage-loggedInUser-psid">Method: removeSourcePackage</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>

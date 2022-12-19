@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/sync.master.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/sync.master.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,49 +367,49 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-sync_master-addToMaster-1156916634">addToMaster</a></p>
+<p><a href="#apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap">addToMaster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-create-1879769947">create</a></p>
+<p><a href="#apidoc-sync_master-create-loggedInUser-label">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-delete-1194181141">delete</a></p>
+<p><a href="#apidoc-sync_master-delete-loggedInUser-masterId">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-getDefaultMaster-934985972">getDefaultMaster</a></p>
+<p><a href="#apidoc-sync_master-getDefaultMaster-loggedInUser">getDefaultMaster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-getMaster-1866841711">getMaster</a></p>
+<p><a href="#apidoc-sync_master-getMaster-loggedInUser-masterId">getMaster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-getMasterByLabel-1698185801">getMasterByLabel</a></p>
+<p><a href="#apidoc-sync_master-getMasterByLabel-loggedInUser-label">getMasterByLabel</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-getMasterOrgs-562851134">getMasterOrgs</a></p>
+<p><a href="#apidoc-sync_master-getMasterOrgs-loggedInUser-masterId">getMasterOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-getMasters-1682037548">getMasters</a></p>
+<p><a href="#apidoc-sync_master-getMasters-loggedInUser">getMasters</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-hasMaster-549803608">hasMaster</a></p>
+<p><a href="#apidoc-sync_master-hasMaster-">hasMaster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-makeDefault-520296852">makeDefault</a></p>
+<p><a href="#apidoc-sync_master-makeDefault-loggedInUser-masterId">makeDefault</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-mapToLocal-780607123">mapToLocal</a></p>
+<p><a href="#apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId">mapToLocal</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-setCaCert-236544568">setCaCert</a></p>
+<p><a href="#apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename">setCaCert</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-setMasterOrgs-1677203878">setMasterOrgs</a></p>
+<p><a href="#apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps">setMasterOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-unsetDefaultMaster-156304703">unsetDefaultMaster</a></p>
+<p><a href="#apidoc-sync_master-unsetDefaultMaster-loggedInUser">unsetDefaultMaster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_master-update-2020466851">update</a></p>
+<p><a href="#apidoc-sync_master-update-loggedInUser-masterId-label">update</a></p>
 </li>
 </ul>
 </div>
@@ -431,7 +431,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-addToMaster-1156916634"><a class="anchor" href="#apidoc-sync_master-addToMaster-1156916634"></a><a class="link" href="#apidoc-sync_master-addToMaster-1156916634">Method: addToMaster</a></h2>
+<h2 id="apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap"><a class="anchor" href="#apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap"></a><a class="link" href="#apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap">Method: addToMaster</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -485,7 +485,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-create-1879769947"><a class="anchor" href="#apidoc-sync_master-create-1879769947"></a><a class="link" href="#apidoc-sync_master-create-1879769947">Method: create</a></h2>
+<h2 id="apidoc-sync_master-create-loggedInUser-label"><a class="anchor" href="#apidoc-sync_master-create-loggedInUser-label"></a><a class="link" href="#apidoc-sync_master-create-loggedInUser-label">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -538,7 +538,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-delete-1194181141"><a class="anchor" href="#apidoc-sync_master-delete-1194181141"></a><a class="link" href="#apidoc-sync_master-delete-1194181141">Method: delete</a></h2>
+<h2 id="apidoc-sync_master-delete-loggedInUser-masterId"><a class="anchor" href="#apidoc-sync_master-delete-loggedInUser-masterId"></a><a class="link" href="#apidoc-sync_master-delete-loggedInUser-masterId">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -575,7 +575,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-getDefaultMaster-934985972"><a class="anchor" href="#apidoc-sync_master-getDefaultMaster-934985972"></a><a class="link" href="#apidoc-sync_master-getDefaultMaster-934985972">Method: getDefaultMaster</a></h2>
+<h2 id="apidoc-sync_master-getDefaultMaster-loggedInUser"><a class="anchor" href="#apidoc-sync_master-getDefaultMaster-loggedInUser"></a><a class="link" href="#apidoc-sync_master-getDefaultMaster-loggedInUser">Method: getDefaultMaster</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -625,7 +625,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-getMaster-1866841711"><a class="anchor" href="#apidoc-sync_master-getMaster-1866841711"></a><a class="link" href="#apidoc-sync_master-getMaster-1866841711">Method: getMaster</a></h2>
+<h2 id="apidoc-sync_master-getMaster-loggedInUser-masterId"><a class="anchor" href="#apidoc-sync_master-getMaster-loggedInUser-masterId"></a><a class="link" href="#apidoc-sync_master-getMaster-loggedInUser-masterId">Method: getMaster</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -678,7 +678,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-getMasterByLabel-1698185801"><a class="anchor" href="#apidoc-sync_master-getMasterByLabel-1698185801"></a><a class="link" href="#apidoc-sync_master-getMasterByLabel-1698185801">Method: getMasterByLabel</a></h2>
+<h2 id="apidoc-sync_master-getMasterByLabel-loggedInUser-label"><a class="anchor" href="#apidoc-sync_master-getMasterByLabel-loggedInUser-label"></a><a class="link" href="#apidoc-sync_master-getMasterByLabel-loggedInUser-label">Method: getMasterByLabel</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -731,7 +731,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-getMasterOrgs-562851134"><a class="anchor" href="#apidoc-sync_master-getMasterOrgs-562851134"></a><a class="link" href="#apidoc-sync_master-getMasterOrgs-562851134">Method: getMasterOrgs</a></h2>
+<h2 id="apidoc-sync_master-getMasterOrgs-loggedInUser-masterId"><a class="anchor" href="#apidoc-sync_master-getMasterOrgs-loggedInUser-masterId"></a><a class="link" href="#apidoc-sync_master-getMasterOrgs-loggedInUser-masterId">Method: getMasterOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -784,7 +784,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-getMasters-1682037548"><a class="anchor" href="#apidoc-sync_master-getMasters-1682037548"></a><a class="link" href="#apidoc-sync_master-getMasters-1682037548">Method: getMasters</a></h2>
+<h2 id="apidoc-sync_master-getMasters-loggedInUser"><a class="anchor" href="#apidoc-sync_master-getMasters-loggedInUser"></a><a class="link" href="#apidoc-sync_master-getMasters-loggedInUser">Method: getMasters</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -837,7 +837,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-hasMaster-549803608"><a class="anchor" href="#apidoc-sync_master-hasMaster-549803608"></a><a class="link" href="#apidoc-sync_master-hasMaster-549803608">Method: hasMaster</a></h2>
+<h2 id="apidoc-sync_master-hasMaster-"><a class="anchor" href="#apidoc-sync_master-hasMaster-"></a><a class="link" href="#apidoc-sync_master-hasMaster-">Method: hasMaster</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -864,7 +864,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-makeDefault-520296852"><a class="anchor" href="#apidoc-sync_master-makeDefault-520296852"></a><a class="link" href="#apidoc-sync_master-makeDefault-520296852">Method: makeDefault</a></h2>
+<h2 id="apidoc-sync_master-makeDefault-loggedInUser-masterId"><a class="anchor" href="#apidoc-sync_master-makeDefault-loggedInUser-masterId"></a><a class="link" href="#apidoc-sync_master-makeDefault-loggedInUser-masterId">Method: makeDefault</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -901,7 +901,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-mapToLocal-780607123"><a class="anchor" href="#apidoc-sync_master-mapToLocal-780607123"></a><a class="link" href="#apidoc-sync_master-mapToLocal-780607123">Method: mapToLocal</a></h2>
+<h2 id="apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId"><a class="anchor" href="#apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId"></a><a class="link" href="#apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId">Method: mapToLocal</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -945,7 +945,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-setCaCert-236544568"><a class="anchor" href="#apidoc-sync_master-setCaCert-236544568"></a><a class="link" href="#apidoc-sync_master-setCaCert-236544568">Method: setCaCert</a></h2>
+<h2 id="apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename"><a class="anchor" href="#apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename"></a><a class="link" href="#apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename">Method: setCaCert</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -985,7 +985,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-setMasterOrgs-1677203878"><a class="anchor" href="#apidoc-sync_master-setMasterOrgs-1677203878"></a><a class="link" href="#apidoc-sync_master-setMasterOrgs-1677203878">Method: setMasterOrgs</a></h2>
+<h2 id="apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps"><a class="anchor" href="#apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps"></a><a class="link" href="#apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps">Method: setMasterOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1045,7 +1045,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-unsetDefaultMaster-156304703"><a class="anchor" href="#apidoc-sync_master-unsetDefaultMaster-156304703"></a><a class="link" href="#apidoc-sync_master-unsetDefaultMaster-156304703">Method: unsetDefaultMaster</a></h2>
+<h2 id="apidoc-sync_master-unsetDefaultMaster-loggedInUser"><a class="anchor" href="#apidoc-sync_master-unsetDefaultMaster-loggedInUser"></a><a class="link" href="#apidoc-sync_master-unsetDefaultMaster-loggedInUser">Method: unsetDefaultMaster</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1079,7 +1079,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_master-update-2020466851"><a class="anchor" href="#apidoc-sync_master-update-2020466851"></a><a class="link" href="#apidoc-sync_master-update-2020466851">Method: update</a></h2>
+<h2 id="apidoc-sync_master-update-loggedInUser-masterId-label"><a class="anchor" href="#apidoc-sync_master-update-loggedInUser-masterId-label"></a><a class="link" href="#apidoc-sync_master-update-loggedInUser-masterId-label">Method: update</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>

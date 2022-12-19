@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/sync.slave.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/sync.slave.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,28 +367,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-sync_slave-create-27975228">create</a></p>
+<p><a href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-delete-1990315034">delete</a></p>
+<p><a href="#apidoc-sync_slave-delete-loggedInUser-slaveId">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-getAllowedOrgs-1503457997">getAllowedOrgs</a></p>
+<p><a href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId">getAllowedOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-getSlave-1501191853">getSlave</a></p>
+<p><a href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId">getSlave</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-getSlaveByName-242626688">getSlaveByName</a></p>
+<p><a href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn">getSlaveByName</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-getSlaves-556084207">getSlaves</a></p>
+<p><a href="#apidoc-sync_slave-getSlaves-loggedInUser">getSlaves</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-setAllowedOrgs-1385709669">setAllowedOrgs</a></p>
+<p><a href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds">setAllowedOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-sync_slave-update-2106220231">update</a></p>
+<p><a href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs">update</a></p>
 </li>
 </ul>
 </div>
@@ -410,7 +410,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-create-27975228"><a class="anchor" href="#apidoc-sync_slave-create-27975228"></a><a class="link" href="#apidoc-sync_slave-create-27975228">Method: create</a></h2>
+<h2 id="apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs"><a class="anchor" href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs"></a><a class="link" href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -469,7 +469,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-delete-1990315034"><a class="anchor" href="#apidoc-sync_slave-delete-1990315034"></a><a class="link" href="#apidoc-sync_slave-delete-1990315034">Method: delete</a></h2>
+<h2 id="apidoc-sync_slave-delete-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-delete-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-delete-loggedInUser-slaveId">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -506,7 +506,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-getAllowedOrgs-1503457997"><a class="anchor" href="#apidoc-sync_slave-getAllowedOrgs-1503457997"></a><a class="link" href="#apidoc-sync_slave-getAllowedOrgs-1503457997">Method: getAllowedOrgs</a></h2>
+<h2 id="apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId">Method: getAllowedOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -543,7 +543,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-getSlave-1501191853"><a class="anchor" href="#apidoc-sync_slave-getSlave-1501191853"></a><a class="link" href="#apidoc-sync_slave-getSlave-1501191853">Method: getSlave</a></h2>
+<h2 id="apidoc-sync_slave-getSlave-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId">Method: getSlave</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -596,7 +596,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-getSlaveByName-242626688"><a class="anchor" href="#apidoc-sync_slave-getSlaveByName-242626688"></a><a class="link" href="#apidoc-sync_slave-getSlaveByName-242626688">Method: getSlaveByName</a></h2>
+<h2 id="apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn"><a class="anchor" href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn"></a><a class="link" href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn">Method: getSlaveByName</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -649,7 +649,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-getSlaves-556084207"><a class="anchor" href="#apidoc-sync_slave-getSlaves-556084207"></a><a class="link" href="#apidoc-sync_slave-getSlaves-556084207">Method: getSlaves</a></h2>
+<h2 id="apidoc-sync_slave-getSlaves-loggedInUser"><a class="anchor" href="#apidoc-sync_slave-getSlaves-loggedInUser"></a><a class="link" href="#apidoc-sync_slave-getSlaves-loggedInUser">Method: getSlaves</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -702,7 +702,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-setAllowedOrgs-1385709669"><a class="anchor" href="#apidoc-sync_slave-setAllowedOrgs-1385709669"></a><a class="link" href="#apidoc-sync_slave-setAllowedOrgs-1385709669">Method: setAllowedOrgs</a></h2>
+<h2 id="apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds"><a class="anchor" href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds"></a><a class="link" href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds">Method: setAllowedOrgs</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -742,7 +742,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-update-2106220231"><a class="anchor" href="#apidoc-sync_slave-update-2106220231"></a><a class="link" href="#apidoc-sync_slave-update-2106220231">Method: update</a></h2>
+<h2 id="apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs"><a class="anchor" href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs"></a><a class="link" href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs">Method: update</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
