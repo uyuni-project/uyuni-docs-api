@@ -4,19 +4,19 @@
 
 == Available methods
 
-* <<apidoc-system_provisioning_snapshot-addTagToSnapshot-603092020,addTagToSnapshot>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshot-1183884158,deleteSnapshot>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots-891612704,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots-1807861968,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots-2140404961,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-deleteSnapshots-1414992442,deleteSnapshots>>
-* <<apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-2052728503,listSnapshotConfigFiles>>
-* <<apidoc-system_provisioning_snapshot-listSnapshotPackages-1858035494,listSnapshotPackages>>
-* <<apidoc-system_provisioning_snapshot-listSnapshots-1854154410,listSnapshots>>
-* <<apidoc-system_provisioning_snapshot-listSnapshots-1965388767,listSnapshots>>
-* <<apidoc-system_provisioning_snapshot-rollbackToSnapshot-1558686575,rollbackToSnapshot>>
-* <<apidoc-system_provisioning_snapshot-rollbackToTag-687328420,rollbackToTag>>
-* <<apidoc-system_provisioning_snapshot-rollbackToTag-1612040005,rollbackToTag>>
+* <<apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName,addTagToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId,deleteSnapshot>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails,deleteSnapshots>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId,listSnapshotConfigFiles>>
+* <<apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId,listSnapshotPackages>>
+* <<apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate,listSnapshots>>
+* <<apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails,listSnapshots>>
+* <<apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId,rollbackToSnapshot>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName,rollbackToTag>>
+* <<apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName,rollbackToTag>>
 
 == Description
 
@@ -27,7 +27,7 @@ Provides methods to access and delete system snapshots.
 system.provisioning.snapshot
 
 
-[#apidoc-system_provisioning_snapshot-addTagToSnapshot-603092020]
+[#apidoc-system_provisioning_snapshot-addTagToSnapshot-loggedInUser-snapId-tagName]
 == Method: addTagToSnapshot
 
 HTTP `POST`
@@ -55,7 +55,7 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_snapshot-deleteSnapshot-1183884158]
+[#apidoc-system_provisioning_snapshot-deleteSnapshot-loggedInUser-snapId]
 == Method: deleteSnapshot
 
 HTTP `POST`
@@ -82,7 +82,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-deleteSnapshots-891612704]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-startDate-endDate]
 == Method: deleteSnapshots
 
 HTTP `POST`
@@ -120,7 +120,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-deleteSnapshots-1807861968]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-startDate-endDate]
 == Method: deleteSnapshots
 
 HTTP `POST`
@@ -160,7 +160,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-deleteSnapshots-2140404961]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-dateDetails]
 == Method: deleteSnapshots
 
 HTTP `POST`
@@ -199,7 +199,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-deleteSnapshots-1414992442]
+[#apidoc-system_provisioning_snapshot-deleteSnapshots-loggedInUser-sid-dateDetails]
 == Method: deleteSnapshots
 
 HTTP `POST`
@@ -241,7 +241,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-2052728503]
+[#apidoc-system_provisioning_snapshot-listSnapshotConfigFiles-loggedInUser-snapId]
 == Method: listSnapshotConfigFiles
 
 HTTP `GET`
@@ -295,7 +295,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-system_provisioning_snapshot-listSnapshotPackages-1858035494]
+[#apidoc-system_provisioning_snapshot-listSnapshotPackages-loggedInUser-snapId]
 == Method: listSnapshotPackages
 
 HTTP `GET`
@@ -329,7 +329,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-listSnapshots-1854154410]
+[#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-startDate-endDate]
 == Method: listSnapshots
 
 HTTP `GET`
@@ -386,7 +386,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-listSnapshots-1965388767]
+[#apidoc-system_provisioning_snapshot-listSnapshots-loggedInUser-sid-dateDetails]
 == Method: listSnapshots
 
 HTTP `GET`
@@ -444,7 +444,7 @@ Returns:
 Available since API version: 10.1
 
 
-[#apidoc-system_provisioning_snapshot-rollbackToSnapshot-1558686575]
+[#apidoc-system_provisioning_snapshot-rollbackToSnapshot-loggedInUser-sid-snapId]
 == Method: rollbackToSnapshot
 
 HTTP `POST`
@@ -472,7 +472,7 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_snapshot-rollbackToTag-687328420]
+[#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-sid-tagName]
 == Method: rollbackToTag
 
 HTTP `POST`
@@ -500,7 +500,7 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_snapshot-rollbackToTag-1612040005]
+[#apidoc-system_provisioning_snapshot-rollbackToTag-loggedInUser-tagName]
 == Method: rollbackToTag
 
 HTTP `POST`

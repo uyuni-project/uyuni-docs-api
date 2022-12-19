@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-schedule-archiveActions-289858350,archiveActions>>
-* <<apidoc-schedule-cancelActions-316750525,cancelActions>>
-* <<apidoc-schedule-deleteActions-1360711901,deleteActions>>
-* <<apidoc-schedule-failSystemAction-1452603040,failSystemAction>>
-* <<apidoc-schedule-failSystemAction-1846406183,failSystemAction>>
-* <<apidoc-schedule-listAllActions-945276373,listAllActions>>
-* <<apidoc-schedule-listAllArchivedActions-923117660,listAllArchivedActions>>
-* <<apidoc-schedule-listAllCompletedActions-1527894232,listAllCompletedActions>>
-* <<apidoc-schedule-listArchivedActions-1438272511,listArchivedActions>>
-* <<apidoc-schedule-listCompletedActions-595076272,listCompletedActions>>
-* <<apidoc-schedule-listCompletedSystems-579077514,listCompletedSystems>>
-* <<apidoc-schedule-listFailedActions-1397052719,listFailedActions>>
-* <<apidoc-schedule-listFailedSystems-1185843580,listFailedSystems>>
-* <<apidoc-schedule-listInProgressActions-1386805129,listInProgressActions>>
-* <<apidoc-schedule-listInProgressSystems-1559469558,listInProgressSystems>>
-* <<apidoc-schedule-rescheduleActions-1149529206,rescheduleActions>>
+* <<apidoc-schedule-archiveActions-loggedInUser-actionIds,archiveActions>>
+* <<apidoc-schedule-cancelActions-loggedInUser-actionIds,cancelActions>>
+* <<apidoc-schedule-deleteActions-loggedInUser-actionIds,deleteActions>>
+* <<apidoc-schedule-failSystemAction-loggedInUser-sid-actionId,failSystemAction>>
+* <<apidoc-schedule-failSystemAction-loggedInUser-sid-actionId-message,failSystemAction>>
+* <<apidoc-schedule-listAllActions-loggedInUser,listAllActions>>
+* <<apidoc-schedule-listAllArchivedActions-loggedInUser,listAllArchivedActions>>
+* <<apidoc-schedule-listAllCompletedActions-loggedInUser,listAllCompletedActions>>
+* <<apidoc-schedule-listArchivedActions-loggedInUser,listArchivedActions>>
+* <<apidoc-schedule-listCompletedActions-loggedInUser,listCompletedActions>>
+* <<apidoc-schedule-listCompletedSystems-loggedInUser-actionId,listCompletedSystems>>
+* <<apidoc-schedule-listFailedActions-loggedInUser,listFailedActions>>
+* <<apidoc-schedule-listFailedSystems-loggedInUser-actionId,listFailedSystems>>
+* <<apidoc-schedule-listInProgressActions-loggedInUser,listInProgressActions>>
+* <<apidoc-schedule-listInProgressSystems-loggedInUser-actionId,listInProgressSystems>>
+* <<apidoc-schedule-rescheduleActions-loggedInUser-actionIds-onlyFailed,rescheduleActions>>
 
 == Description
 
@@ -30,7 +30,7 @@ Methods to retrieve information about scheduled actions.
 schedule
 
 
-[#apidoc-schedule-archiveActions-289858350]
+[#apidoc-schedule-archiveActions-loggedInUser-actionIds]
 == Method: archiveActions
 
 HTTP `POST`
@@ -56,7 +56,7 @@ Returns:
 
 
 
-[#apidoc-schedule-cancelActions-316750525]
+[#apidoc-schedule-cancelActions-loggedInUser-actionIds]
 == Method: cancelActions
 
 HTTP `POST`
@@ -64,7 +64,7 @@ HTTP `POST`
 Description:
 
 Cancel all actions in given list. If an invalid action is provided,
- none of the actions given will canceled.
+ none of the actions given will be canceled.
 
 
 
@@ -83,7 +83,7 @@ Returns:
 
 
 
-[#apidoc-schedule-deleteActions-1360711901]
+[#apidoc-schedule-deleteActions-loggedInUser-actionIds]
 == Method: deleteActions
 
 HTTP `POST`
@@ -109,7 +109,7 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-1452603040]
+[#apidoc-schedule-failSystemAction-loggedInUser-sid-actionId]
 == Method: failSystemAction
 
 HTTP `POST`
@@ -137,7 +137,7 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-1846406183]
+[#apidoc-schedule-failSystemAction-loggedInUser-sid-actionId-message]
 == Method: failSystemAction
 
 HTTP `POST`
@@ -167,7 +167,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllActions-945276373]
+[#apidoc-schedule-listAllActions-loggedInUser]
 == Method: listAllActions
 
 HTTP `GET`
@@ -204,7 +204,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllArchivedActions-923117660]
+[#apidoc-schedule-listAllArchivedActions-loggedInUser]
 == Method: listAllArchivedActions
 
 HTTP `GET`
@@ -240,7 +240,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllCompletedActions-1527894232]
+[#apidoc-schedule-listAllCompletedActions-loggedInUser]
 == Method: listAllCompletedActions
 
 HTTP `GET`
@@ -276,7 +276,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listArchivedActions-1438272511]
+[#apidoc-schedule-listArchivedActions-loggedInUser]
 == Method: listArchivedActions
 
 HTTP `GET`
@@ -312,7 +312,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedActions-595076272]
+[#apidoc-schedule-listCompletedActions-loggedInUser]
 == Method: listCompletedActions
 
 HTTP `GET`
@@ -348,7 +348,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedSystems-579077514]
+[#apidoc-schedule-listCompletedSystems-loggedInUser-actionId]
 == Method: listCompletedSystems
 
 HTTP `GET`
@@ -383,7 +383,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedActions-1397052719]
+[#apidoc-schedule-listFailedActions-loggedInUser]
 == Method: listFailedActions
 
 HTTP `GET`
@@ -419,7 +419,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedSystems-1185843580]
+[#apidoc-schedule-listFailedSystems-loggedInUser-actionId]
 == Method: listFailedSystems
 
 HTTP `GET`
@@ -454,7 +454,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressActions-1386805129]
+[#apidoc-schedule-listInProgressActions-loggedInUser]
 == Method: listInProgressActions
 
 HTTP `GET`
@@ -490,7 +490,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressSystems-1559469558]
+[#apidoc-schedule-listInProgressSystems-loggedInUser-actionId]
 == Method: listInProgressSystems
 
 HTTP `GET`
@@ -525,7 +525,7 @@ Returns:
 
 
 
-[#apidoc-schedule-rescheduleActions-1149529206]
+[#apidoc-schedule-rescheduleActions-loggedInUser-actionIds-onlyFailed]
 == Method: rescheduleActions
 
 HTTP `POST`

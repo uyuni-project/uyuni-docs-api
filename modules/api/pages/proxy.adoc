@@ -4,15 +4,15 @@
 
 == Available methods
 
-* <<apidoc-proxy-activateProxy-227158811,activateProxy>>
-* <<apidoc-proxy-containerConfig-328246330,containerConfig>>
-* <<apidoc-proxy-containerConfig-2079515765,containerConfig>>
-* <<apidoc-proxy-createMonitoringScout-783323948,createMonitoringScout>>
-* <<apidoc-proxy-deactivateProxy-1813121792,deactivateProxy>>
-* <<apidoc-proxy-isProxy-136544977,isProxy>>
-* <<apidoc-proxy-listAvailableProxyChannels-654958709,listAvailableProxyChannels>>
-* <<apidoc-proxy-listProxies-858315599,listProxies>>
-* <<apidoc-proxy-listProxyClients-1335794721,listProxyClients>>
+* <<apidoc-proxy-activateProxy-clientcert-version,activateProxy>>
+* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey,containerConfig>>
+* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail,containerConfig>>
+* <<apidoc-proxy-createMonitoringScout-clientcert,createMonitoringScout>>
+* <<apidoc-proxy-deactivateProxy-clientcert,deactivateProxy>>
+* <<apidoc-proxy-isProxy-clientcert,isProxy>>
+* <<apidoc-proxy-listAvailableProxyChannels-clientcert,listAvailableProxyChannels>>
+* <<apidoc-proxy-listProxies-loggedInUser,listProxies>>
+* <<apidoc-proxy-listProxyClients-loggedInUser-proxyId,listProxyClients>>
 
 == Description
 
@@ -24,7 +24,7 @@ Provides methods to activate/deactivate a proxy
 proxy
 
 
-[#apidoc-proxy-activateProxy-227158811]
+[#apidoc-proxy-activateProxy-clientcert-version]
 == Method: activateProxy
 
 HTTP `POST`
@@ -52,7 +52,7 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-328246330]
+[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey]
 == Method: containerConfig
 
 HTTP `POST`
@@ -94,7 +94,7 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-2079515765]
+[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail]
 == Method: containerConfig
 
 HTTP `POST`
@@ -148,7 +148,7 @@ Returns:
 
 
 
-[#apidoc-proxy-createMonitoringScout-783323948]
+[#apidoc-proxy-createMonitoringScout-clientcert]
 == Method: createMonitoringScout
 
 HTTP `POST`
@@ -173,7 +173,7 @@ Returns:
 Available since API version: 10.7
 
 
-[#apidoc-proxy-deactivateProxy-1813121792]
+[#apidoc-proxy-deactivateProxy-clientcert]
 == Method: deactivateProxy
 
 HTTP `POST`
@@ -198,7 +198,7 @@ Returns:
 
 
 
-[#apidoc-proxy-isProxy-136544977]
+[#apidoc-proxy-isProxy-clientcert]
 == Method: isProxy
 
 HTTP `GET`
@@ -223,7 +223,7 @@ Returns:
 
 
 
-[#apidoc-proxy-listAvailableProxyChannels-654958709]
+[#apidoc-proxy-listAvailableProxyChannels-clientcert]
 == Method: listAvailableProxyChannels
 
 HTTP `GET`
@@ -249,7 +249,7 @@ Returns:
 Available since API version: 10.5
 
 
-[#apidoc-proxy-listProxies-858315599]
+[#apidoc-proxy-listProxies-loggedInUser]
 == Method: listProxies
 
 HTTP `GET`
@@ -284,7 +284,7 @@ Returns:
 
 
 
-[#apidoc-proxy-listProxyClients-1335794721]
+[#apidoc-proxy-listProxyClients-loggedInUser-proxyId]
 == Method: listProxyClients
 
 HTTP `GET`

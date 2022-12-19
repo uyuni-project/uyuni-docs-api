@@ -4,20 +4,20 @@
 
 == Available methods
 
-* <<apidoc-image-addImageFile-1685344880,addImageFile>>
-* <<apidoc-image-delete-1877547288,delete>>
-* <<apidoc-image-deleteImageFile-1533987146,deleteImageFile>>
-* <<apidoc-image-getCustomValues-1586128778,getCustomValues>>
-* <<apidoc-image-getDetails-577076657,getDetails>>
-* <<apidoc-image-getPillar-1488129598,getPillar>>
-* <<apidoc-image-getRelevantErrata-899869274,getRelevantErrata>>
-* <<apidoc-image-importContainerImage-1661720039,importContainerImage>>
-* <<apidoc-image-importImage-1779082722,importImage>>
-* <<apidoc-image-importOSImage-596243782,importOSImage>>
-* <<apidoc-image-listImages-1593084680,listImages>>
-* <<apidoc-image-listPackages-413880637,listPackages>>
-* <<apidoc-image-scheduleImageBuild-1500321780,scheduleImageBuild>>
-* <<apidoc-image-setPillar-1394960202,setPillar>>
+* <<apidoc-image-addImageFile-loggedInUser-imageId-file-type-external,addImageFile>>
+* <<apidoc-image-delete-loggedInUser-imageId,delete>>
+* <<apidoc-image-deleteImageFile-loggedInUser-imageId-file,deleteImageFile>>
+* <<apidoc-image-getCustomValues-loggedInUser-imageId,getCustomValues>>
+* <<apidoc-image-getDetails-loggedInUser-imageId,getDetails>>
+* <<apidoc-image-getPillar-loggedInUser-imageId,getPillar>>
+* <<apidoc-image-getRelevantErrata-loggedInUser-imageId,getRelevantErrata>>
+* <<apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence,importContainerImage>>
+* <<apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence,importImage>>
+* <<apidoc-image-importOSImage-loggedInUser-name-version-arch,importOSImage>>
+* <<apidoc-image-listImages-loggedInUser,listImages>>
+* <<apidoc-image-listPackages-loggedInUser-imageId,listPackages>>
+* <<apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence,scheduleImageBuild>>
+* <<apidoc-image-setPillar-loggedInUser-imageId-pillarData,setPillar>>
 
 == Description
 
@@ -28,7 +28,7 @@ Provides methods to access and modify images.
 image
 
 
-[#apidoc-image-addImageFile-1685344880]
+[#apidoc-image-addImageFile-loggedInUser-imageId-file-type-external]
 == Method: addImageFile
 
 HTTP `POST`
@@ -60,7 +60,7 @@ Returns:
 
 
 
-[#apidoc-image-delete-1877547288]
+[#apidoc-image-delete-loggedInUser-imageId]
 == Method: delete
 
 HTTP `POST`
@@ -86,7 +86,7 @@ Returns:
 
 
 
-[#apidoc-image-deleteImageFile-1533987146]
+[#apidoc-image-deleteImageFile-loggedInUser-imageId-file]
 == Method: deleteImageFile
 
 HTTP `POST`
@@ -114,7 +114,7 @@ Returns:
 
 
 
-[#apidoc-image-getCustomValues-1586128778]
+[#apidoc-image-getCustomValues-loggedInUser-imageId]
 == Method: getCustomValues
 
 HTTP `GET`
@@ -142,7 +142,7 @@ Returns:
 
 
 
-[#apidoc-image-getDetails-577076657]
+[#apidoc-image-getDetails-loggedInUser-imageId]
 == Method: getDetails
 
 HTTP `GET`
@@ -198,7 +198,7 @@ Returns:
 
 
 
-[#apidoc-image-getPillar-1488129598]
+[#apidoc-image-getPillar-loggedInUser-imageId]
 == Method: getPillar
 
 HTTP `GET`
@@ -224,7 +224,7 @@ Returns:
 
 
 
-[#apidoc-image-getRelevantErrata-899869274]
+[#apidoc-image-getRelevantErrata-loggedInUser-imageId]
 == Method: getRelevantErrata
 
 HTTP `GET`
@@ -260,7 +260,7 @@ Returns:
 
 
 
-[#apidoc-image-importContainerImage-1661720039]
+[#apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence]
 == Method: importContainerImage
 
 HTTP `POST`
@@ -296,7 +296,7 @@ Returns:
 
 
 
-[#apidoc-image-importImage-1779082722]
+[#apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence]
 == Method: importImage (Deprecated)
 
 HTTP `POST`
@@ -333,7 +333,7 @@ Returns:
 
 
 
-[#apidoc-image-importOSImage-596243782]
+[#apidoc-image-importOSImage-loggedInUser-name-version-arch]
 == Method: importOSImage
 
 HTTP `POST`
@@ -363,7 +363,7 @@ Returns:
 
 
 
-[#apidoc-image-listImages-1593084680]
+[#apidoc-image-listImages-loggedInUser]
 == Method: listImages
 
 HTTP `GET`
@@ -399,7 +399,7 @@ Returns:
 
 
 
-[#apidoc-image-listPackages-413880637]
+[#apidoc-image-listPackages-loggedInUser-imageId]
 == Method: listPackages
 
 HTTP `GET`
@@ -431,7 +431,7 @@ Returns:
 
 
 
-[#apidoc-image-scheduleImageBuild-1500321780]
+[#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence]
 == Method: scheduleImageBuild
 
 HTTP `POST`
@@ -463,7 +463,7 @@ Returns:
 
 
 
-[#apidoc-image-setPillar-1394960202]
+[#apidoc-image-setPillar-loggedInUser-imageId-pillarData]
 == Method: setPillar
 
 HTTP `POST`

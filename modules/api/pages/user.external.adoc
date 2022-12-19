@@ -4,22 +4,22 @@
 
 == Available methods
 
-* <<apidoc-user_external-createExternalGroupToRoleMap-194807416,createExternalGroupToRoleMap>>
-* <<apidoc-user_external-createExternalGroupToSystemGroupMap-418472732,createExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-deleteExternalGroupToRoleMap-1468302269,deleteExternalGroupToRoleMap>>
-* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-1165871113,deleteExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getDefaultOrg-1233973724,getDefaultOrg>>
-* <<apidoc-user_external-getExternalGroupToRoleMap-831253172,getExternalGroupToRoleMap>>
-* <<apidoc-user_external-getExternalGroupToSystemGroupMap-61693849,getExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getKeepTemporaryRoles-2037830530,getKeepTemporaryRoles>>
-* <<apidoc-user_external-getUseOrgUnit-1341040751,getUseOrgUnit>>
-* <<apidoc-user_external-listExternalGroupToRoleMaps-944009331,listExternalGroupToRoleMaps>>
-* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-1451735609,listExternalGroupToSystemGroupMaps>>
-* <<apidoc-user_external-setDefaultOrg-111790152,setDefaultOrg>>
-* <<apidoc-user_external-setExternalGroupRoles-2041089861,setExternalGroupRoles>>
-* <<apidoc-user_external-setExternalGroupSystemGroups-1924459698,setExternalGroupSystemGroups>>
-* <<apidoc-user_external-setKeepTemporaryRoles-1374887853,setKeepTemporaryRoles>>
-* <<apidoc-user_external-setUseOrgUnit-1509123129,setUseOrgUnit>>
+* <<apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles,createExternalGroupToRoleMap>>
+* <<apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames,createExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name,deleteExternalGroupToRoleMap>>
+* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name,deleteExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getDefaultOrg-loggedInUser,getDefaultOrg>>
+* <<apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name,getExternalGroupToRoleMap>>
+* <<apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name,getExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getKeepTemporaryRoles-loggedInUser,getKeepTemporaryRoles>>
+* <<apidoc-user_external-getUseOrgUnit-loggedInUser,getUseOrgUnit>>
+* <<apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser,listExternalGroupToRoleMaps>>
+* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser,listExternalGroupToSystemGroupMaps>>
+* <<apidoc-user_external-setDefaultOrg-loggedInUser-orgId,setDefaultOrg>>
+* <<apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles,setExternalGroupRoles>>
+* <<apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames,setExternalGroupSystemGroups>>
+* <<apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles,setKeepTemporaryRoles>>
+* <<apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit,setUseOrgUnit>>
 
 == Description
 
@@ -34,7 +34,7 @@ If you are using IPA integration to allow authentication of users from
 user.external
 
 
-[#apidoc-user_external-createExternalGroupToRoleMap-194807416]
+[#apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles]
 == Method: createExternalGroupToRoleMap
 
 HTTP `POST`
@@ -71,7 +71,7 @@ Returns:
 
 
 
-[#apidoc-user_external-createExternalGroupToSystemGroupMap-418472732]
+[#apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames]
 == Method: createExternalGroupToSystemGroupMap
 
 HTTP `POST`
@@ -106,7 +106,7 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToRoleMap-1468302269]
+[#apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name]
 == Method: deleteExternalGroupToRoleMap
 
 HTTP `POST`
@@ -133,7 +133,7 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-1165871113]
+[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name]
 == Method: deleteExternalGroupToSystemGroupMap
 
 HTTP `POST`
@@ -160,7 +160,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getDefaultOrg-1233973724]
+[#apidoc-user_external-getDefaultOrg-loggedInUser]
 == Method: getDefaultOrg
 
 HTTP `GET`
@@ -185,7 +185,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToRoleMap-831253172]
+[#apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name]
 == Method: getExternalGroupToRoleMap
 
 HTTP `GET`
@@ -215,7 +215,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToSystemGroupMap-61693849]
+[#apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name]
 == Method: getExternalGroupToSystemGroupMap
 
 HTTP `GET`
@@ -245,7 +245,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getKeepTemporaryRoles-2037830530]
+[#apidoc-user_external-getKeepTemporaryRoles-loggedInUser]
 == Method: getKeepTemporaryRoles
 
 HTTP `GET`
@@ -272,7 +272,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getUseOrgUnit-1341040751]
+[#apidoc-user_external-getUseOrgUnit-loggedInUser]
 == Method: getUseOrgUnit
 
 HTTP `GET`
@@ -299,7 +299,7 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToRoleMaps-944009331]
+[#apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser]
 == Method: listExternalGroupToRoleMaps
 
 HTTP `GET`
@@ -328,7 +328,7 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToSystemGroupMaps-1451735609]
+[#apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser]
 == Method: listExternalGroupToSystemGroupMaps
 
 HTTP `GET`
@@ -357,7 +357,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setDefaultOrg-111790152]
+[#apidoc-user_external-setDefaultOrg-loggedInUser-orgId]
 == Method: setDefaultOrg
 
 HTTP `POST`
@@ -385,7 +385,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupRoles-2041089861]
+[#apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles]
 == Method: setExternalGroupRoles
 
 HTTP `POST`
@@ -417,7 +417,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupSystemGroups-1924459698]
+[#apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames]
 == Method: setExternalGroupSystemGroups
 
 HTTP `POST`
@@ -447,7 +447,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setKeepTemporaryRoles-1374887853]
+[#apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles]
 == Method: setKeepTemporaryRoles
 
 HTTP `POST`
@@ -476,7 +476,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setUseOrgUnit-1509123129]
+[#apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit]
 == Method: setUseOrgUnit
 
 HTTP `POST`
