@@ -1,0 +1,25 @@
+= Ruby Example
+
+== List all channels with Ruby
+Below is an example of the `channel.listAllChannels` API call. List of channel labels is printed.
+
+[source,ruby]
+----
+#!/usr/bin/ruby
+require "xmlrpc/client"
+
+@MANAGER_URL = "http://manager.example.com/rpc/api"
+@MANAGER_LOGIN = "username"
+@MANAGER_PASSWORD = "password"
+
+@client = XMLRPC::Client.new2(@MANAGER_URL)
+
+@key = @client.call('auth.login', @MANAGER_LOGIN, @MANAGER_PASSWORD)
+channels = @client.call('channel.listAllChannels', @key)
+for channel in channels do
+   p channel["label"]
+end
+
+@client.call('auth.logout', @key)
+----
+
