@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/kickstart.tree.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/kickstart.tree.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,28 +367,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-kickstart_tree-create-918357996">create</a></p>
+<p><a href="#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-delete-140222364">delete</a></p>
+<p><a href="#apidoc-kickstart_tree-delete-loggedInUser-treeLabel">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-deleteTreeAndProfiles-648021229">deleteTreeAndProfiles</a></p>
+<p><a href="#apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel">deleteTreeAndProfiles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-getDetails-1076879089">getDetails</a></p>
+<p><a href="#apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-list-1776875429">list</a></p>
+<p><a href="#apidoc-kickstart_tree-list-loggedInUser-channelLabel">list</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-listInstallTypes-269724308">listInstallTypes</a></p>
+<p><a href="#apidoc-kickstart_tree-listInstallTypes-loggedInUser">listInstallTypes</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-rename-1974910273">rename</a></p>
+<p><a href="#apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel">rename</a></p>
 </li>
 <li>
-<p><a href="#apidoc-kickstart_tree-update-728386983">update</a></p>
+<p><a href="#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType">update</a></p>
 </li>
 </ul>
 </div>
@@ -409,7 +409,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-create-918357996"><a class="anchor" href="#apidoc-kickstart_tree-create-918357996"></a><a class="link" href="#apidoc-kickstart_tree-create-918357996">Method: create</a></h2>
+<h2 id="apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType"><a class="anchor" href="#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType"></a><a class="link" href="#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -441,7 +441,7 @@ associate with the kickstart tree.</p>
 </li>
 <li>
 <p><span class="string">string</span>  installType - Label for
-KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).</p>
+KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).</p>
 </li>
 </ul>
 </div>
@@ -458,7 +458,7 @@ KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-delete-140222364"><a class="anchor" href="#apidoc-kickstart_tree-delete-140222364"></a><a class="link" href="#apidoc-kickstart_tree-delete-140222364">Method: delete</a></h2>
+<h2 id="apidoc-kickstart_tree-delete-loggedInUser-treeLabel"><a class="anchor" href="#apidoc-kickstart_tree-delete-loggedInUser-treeLabel"></a><a class="link" href="#apidoc-kickstart_tree-delete-loggedInUser-treeLabel">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -496,7 +496,7 @@ kickstart tree to delete.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-deleteTreeAndProfiles-648021229"><a class="anchor" href="#apidoc-kickstart_tree-deleteTreeAndProfiles-648021229"></a><a class="link" href="#apidoc-kickstart_tree-deleteTreeAndProfiles-648021229">Method: deleteTreeAndProfiles</a></h2>
+<h2 id="apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel"><a class="anchor" href="#apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel"></a><a class="link" href="#apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel">Method: deleteTreeAndProfiles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -536,7 +536,7 @@ kickstart tree to delete.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-getDetails-1076879089"><a class="anchor" href="#apidoc-kickstart_tree-getDetails-1076879089"></a><a class="link" href="#apidoc-kickstart_tree-getDetails-1076879089">Method: getDetails</a></h2>
+<h2 id="apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel"><a class="anchor" href="#apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel"></a><a class="link" href="#apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -606,7 +606,7 @@ search.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-list-1776875429"><a class="anchor" href="#apidoc-kickstart_tree-list-1776875429"></a><a class="link" href="#apidoc-kickstart_tree-list-1776875429">Method: list</a></h2>
+<h2 id="apidoc-kickstart_tree-list-loggedInUser-channelLabel"><a class="anchor" href="#apidoc-kickstart_tree-list-loggedInUser-channelLabel"></a><a class="link" href="#apidoc-kickstart_tree-list-loggedInUser-channelLabel">Method: list</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -663,7 +663,7 @@ search.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-listInstallTypes-269724308"><a class="anchor" href="#apidoc-kickstart_tree-listInstallTypes-269724308"></a><a class="link" href="#apidoc-kickstart_tree-listInstallTypes-269724308">Method: listInstallTypes</a></h2>
+<h2 id="apidoc-kickstart_tree-listInstallTypes-loggedInUser"><a class="anchor" href="#apidoc-kickstart_tree-listInstallTypes-loggedInUser"></a><a class="link" href="#apidoc-kickstart_tree-listInstallTypes-loggedInUser">Method: listInstallTypes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -714,7 +714,7 @@ search.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-rename-1974910273"><a class="anchor" href="#apidoc-kickstart_tree-rename-1974910273"></a><a class="link" href="#apidoc-kickstart_tree-rename-1974910273">Method: rename</a></h2>
+<h2 id="apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel"><a class="anchor" href="#apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel"></a><a class="link" href="#apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel">Method: rename</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -755,7 +755,7 @@ kickstart tree to rename.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-kickstart_tree-update-728386983"><a class="anchor" href="#apidoc-kickstart_tree-update-728386983"></a><a class="link" href="#apidoc-kickstart_tree-update-728386983">Method: update</a></h2>
+<h2 id="apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType"><a class="anchor" href="#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType"></a><a class="link" href="#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType">Method: update</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -787,7 +787,7 @@ associate with kickstart tree.</p>
 </li>
 <li>
 <p><span class="string">string</span>  installType - Label for
-KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).</p>
+KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).</p>
 </li>
 </ul>
 </div>

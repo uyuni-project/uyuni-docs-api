@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/errata.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/errata.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,61 +367,61 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-errata-addPackages-1488129598">addPackages</a></p>
+<p><a href="#apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds">addPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-applicableToChannels-128026509">applicableToChannels</a></p>
+<p><a href="#apidoc-errata-applicableToChannels-loggedInUser-advisoryName">applicableToChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-bugzillaFixes-1628242023">bugzillaFixes</a></p>
+<p><a href="#apidoc-errata-bugzillaFixes-loggedInUser-advisoryName">bugzillaFixes</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-clone-596243782">clone</a></p>
+<p><a href="#apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames">clone</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsOriginal-899869274">cloneAsOriginal</a></p>
+<p><a href="#apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames">cloneAsOriginal</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsOriginalAsync-413880637">cloneAsOriginalAsync</a></p>
+<p><a href="#apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames">cloneAsOriginalAsync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-cloneAsync-1533987146">cloneAsync</a></p>
+<p><a href="#apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames">cloneAsync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-create-1877547288">create</a></p>
+<p><a href="#apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-delete-1295769221">delete</a></p>
+<p><a href="#apidoc-errata-delete-loggedInUser-advisoryName">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-findByCve-1674661311">findByCve</a></p>
+<p><a href="#apidoc-errata-findByCve-loggedInUser-cveName">findByCve</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-getDetails-1787476367">getDetails</a></p>
+<p><a href="#apidoc-errata-getDetails-loggedInUser-advisoryName">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listAffectedSystems-1117642317">listAffectedSystems</a></p>
+<p><a href="#apidoc-errata-listAffectedSystems-loggedInUser-advisoryName">listAffectedSystems</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listCves-727867010">listCves</a></p>
+<p><a href="#apidoc-errata-listCves-loggedInUser-advisoryName">listCves</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listKeywords-1593084680">listKeywords</a></p>
+<p><a href="#apidoc-errata-listKeywords-loggedInUser-advisoryName">listKeywords</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-listPackages-577076657">listPackages</a></p>
+<p><a href="#apidoc-errata-listPackages-loggedInUser-advisoryName">listPackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-publish-257641638">publish</a></p>
+<p><a href="#apidoc-errata-publish-loggedInUser-advisoryName-channelLabels">publish</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-publishAsOriginal-39898352">publishAsOriginal</a></p>
+<p><a href="#apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels">publishAsOriginal</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-removePackages-1394960202">removePackages</a></p>
+<p><a href="#apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds">removePackages</a></p>
 </li>
 <li>
-<p><a href="#apidoc-errata-setDetails-1297259456">setDetails</a></p>
+<p><a href="#apidoc-errata-setDetails-loggedInUser-advisoryName-details">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -442,7 +442,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-addPackages-1488129598"><a class="anchor" href="#apidoc-errata-addPackages-1488129598"></a><a class="link" href="#apidoc-errata-addPackages-1488129598">Method: addPackages</a></h2>
+<h2 id="apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds"><a class="anchor" href="#apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds"></a><a class="link" href="#apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds">Method: addPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -483,7 +483,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-applicableToChannels-128026509"><a class="anchor" href="#apidoc-errata-applicableToChannels-128026509"></a><a class="link" href="#apidoc-errata-applicableToChannels-128026509">Method: applicableToChannels</a></h2>
+<h2 id="apidoc-errata-applicableToChannels-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-applicableToChannels-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-applicableToChannels-loggedInUser-advisoryName">Method: applicableToChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -545,7 +545,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-bugzillaFixes-1628242023"><a class="anchor" href="#apidoc-errata-bugzillaFixes-1628242023"></a><a class="link" href="#apidoc-errata-bugzillaFixes-1628242023">Method: bugzillaFixes</a></h2>
+<h2 id="apidoc-errata-bugzillaFixes-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-bugzillaFixes-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-bugzillaFixes-loggedInUser-advisoryName">Method: bugzillaFixes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -598,7 +598,7 @@ struct</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-clone-596243782"><a class="anchor" href="#apidoc-errata-clone-596243782"></a><a class="link" href="#apidoc-errata-clone-596243782">Method: clone</a></h2>
+<h2 id="apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames"><a class="anchor" href="#apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames"></a><a class="link" href="#apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames">Method: clone</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -663,7 +663,7 @@ struct</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsOriginal-899869274"><a class="anchor" href="#apidoc-errata-cloneAsOriginal-899869274"></a><a class="link" href="#apidoc-errata-cloneAsOriginal-899869274">Method: cloneAsOriginal</a></h2>
+<h2 id="apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames"><a class="anchor" href="#apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames"></a><a class="link" href="#apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames">Method: cloneAsOriginal</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -728,7 +728,7 @@ struct</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsOriginalAsync-413880637"><a class="anchor" href="#apidoc-errata-cloneAsOriginalAsync-413880637"></a><a class="link" href="#apidoc-errata-cloneAsOriginalAsync-413880637">Method: cloneAsOriginalAsync</a></h2>
+<h2 id="apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames"><a class="anchor" href="#apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames"></a><a class="link" href="#apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames">Method: cloneAsOriginalAsync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -769,7 +769,7 @@ struct</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-cloneAsync-1533987146"><a class="anchor" href="#apidoc-errata-cloneAsync-1533987146"></a><a class="link" href="#apidoc-errata-cloneAsync-1533987146">Method: cloneAsync</a></h2>
+<h2 id="apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames"><a class="anchor" href="#apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames"></a><a class="link" href="#apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames">Method: cloneAsync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -809,7 +809,7 @@ struct</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-create-1877547288"><a class="anchor" href="#apidoc-errata-create-1877547288"></a><a class="link" href="#apidoc-errata-create-1877547288">Method: create</a></h2>
+<h2 id="apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels"><a class="anchor" href="#apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels"></a><a class="link" href="#apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -948,7 +948,7 @@ or 'Unspecified'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-delete-1295769221"><a class="anchor" href="#apidoc-errata-delete-1295769221"></a><a class="link" href="#apidoc-errata-delete-1295769221">Method: delete</a></h2>
+<h2 id="apidoc-errata-delete-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-delete-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-delete-loggedInUser-advisoryName">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -986,7 +986,7 @@ or 'Unspecified'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-findByCve-1674661311"><a class="anchor" href="#apidoc-errata-findByCve-1674661311"></a><a class="link" href="#apidoc-errata-findByCve-1674661311">Method: findByCve</a></h2>
+<h2 id="apidoc-errata-findByCve-loggedInUser-cveName"><a class="anchor" href="#apidoc-errata-findByCve-loggedInUser-cveName"></a><a class="link" href="#apidoc-errata-findByCve-loggedInUser-cveName">Method: findByCve</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1049,7 +1049,7 @@ or 'Unspecified'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-getDetails-1787476367"><a class="anchor" href="#apidoc-errata-getDetails-1787476367"></a><a class="link" href="#apidoc-errata-getDetails-1787476367">Method: getDetails</a></h2>
+<h2 id="apidoc-errata-getDetails-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-getDetails-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-getDetails-loggedInUser-advisoryName">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1104,6 +1104,9 @@ or 'Unspecified'</p>
 <p><span class="string">string</span>  "advisory_status"</p>
 </li>
 <li>
+<p><span class="string">string</span>  "vendor_advisory"</p>
+</li>
+<li>
 <p><span class="string">string</span>  "type"</p>
 </li>
 <li>
@@ -1135,7 +1138,7 @@ or 'Unspecified'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listAffectedSystems-1117642317"><a class="anchor" href="#apidoc-errata-listAffectedSystems-1117642317"></a><a class="link" href="#apidoc-errata-listAffectedSystems-1117642317">Method: listAffectedSystems</a></h2>
+<h2 id="apidoc-errata-listAffectedSystems-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-listAffectedSystems-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-listAffectedSystems-loggedInUser-advisoryName">Method: listAffectedSystems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1204,7 +1207,7 @@ to any assigned channel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listCves-727867010"><a class="anchor" href="#apidoc-errata-listCves-727867010"></a><a class="link" href="#apidoc-errata-listCves-727867010">Method: listCves</a></h2>
+<h2 id="apidoc-errata-listCves-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-listCves-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-listCves-loggedInUser-advisoryName">Method: listCves</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1243,7 +1246,7 @@ to any assigned channel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listKeywords-1593084680"><a class="anchor" href="#apidoc-errata-listKeywords-1593084680"></a><a class="link" href="#apidoc-errata-listKeywords-1593084680">Method: listKeywords</a></h2>
+<h2 id="apidoc-errata-listKeywords-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-listKeywords-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-listKeywords-loggedInUser-advisoryName">Method: listKeywords</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1282,7 +1285,7 @@ to any assigned channel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-listPackages-577076657"><a class="anchor" href="#apidoc-errata-listPackages-577076657"></a><a class="link" href="#apidoc-errata-listPackages-577076657">Method: listPackages</a></h2>
+<h2 id="apidoc-errata-listPackages-loggedInUser-advisoryName"><a class="anchor" href="#apidoc-errata-listPackages-loggedInUser-advisoryName"></a><a class="link" href="#apidoc-errata-listPackages-loggedInUser-advisoryName">Method: listPackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1396,7 +1399,7 @@ providing this package.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-publish-257641638"><a class="anchor" href="#apidoc-errata-publish-257641638"></a><a class="link" href="#apidoc-errata-publish-257641638">Method: publish</a></h2>
+<h2 id="apidoc-errata-publish-loggedInUser-advisoryName-channelLabels"><a class="anchor" href="#apidoc-errata-publish-loggedInUser-advisoryName-channelLabels"></a><a class="link" href="#apidoc-errata-publish-loggedInUser-advisoryName-channelLabels">Method: publish</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1458,7 +1461,7 @@ providing this package.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-publishAsOriginal-39898352"><a class="anchor" href="#apidoc-errata-publishAsOriginal-39898352"></a><a class="link" href="#apidoc-errata-publishAsOriginal-39898352">Method: publishAsOriginal</a></h2>
+<h2 id="apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels"><a class="anchor" href="#apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels"></a><a class="link" href="#apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels">Method: publishAsOriginal</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1521,7 +1524,7 @@ providing this package.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-removePackages-1394960202"><a class="anchor" href="#apidoc-errata-removePackages-1394960202"></a><a class="link" href="#apidoc-errata-removePackages-1394960202">Method: removePackages</a></h2>
+<h2 id="apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds"><a class="anchor" href="#apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds"></a><a class="link" href="#apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds">Method: removePackages</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1562,7 +1565,7 @@ providing this package.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-errata-setDetails-1297259456"><a class="anchor" href="#apidoc-errata-setDetails-1297259456"></a><a class="link" href="#apidoc-errata-setDetails-1297259456">Method: setDetails</a></h2>
+<h2 id="apidoc-errata-setDetails-loggedInUser-advisoryName-details"><a class="anchor" href="#apidoc-errata-setDetails-loggedInUser-advisoryName-details"></a><a class="link" href="#apidoc-errata-setDetails-loggedInUser-advisoryName-details">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>

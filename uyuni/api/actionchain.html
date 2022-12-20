@@ -356,7 +356,7 @@
         <i class="fas fa-arrow-right custom-color" data-tippy="Next Page" id="nextPage"></i></a></span>
     &nbsp;
     <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-api-2022.11/modules/api/pages/actionchain.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
+  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/uyuni-2022.12-api/modules/api/pages/actionchain.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
 </div>
 </div>
 <article class="doc"><a name="section-top"></a>
@@ -367,58 +367,58 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-actionchain-addConfigurationDeployment-329895342">addConfigurationDeployment</a></p>
+<p><a href="#apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers">addConfigurationDeployment</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addErrataUpdate-230532210">addErrataUpdate</a></p>
+<p><a href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel">addErrataUpdate</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addErrataUpdate-1095312505">addErrataUpdate</a></p>
+<p><a href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel">addErrataUpdate</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addErrataUpdate-2079290629">addErrataUpdate</a></p>
+<p><a href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant">addErrataUpdate</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addPackageInstall-921720213">addPackageInstall</a></p>
+<p><a href="#apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel">addPackageInstall</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addPackageRemoval-1452209410">addPackageRemoval</a></p>
+<p><a href="#apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel">addPackageRemoval</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addPackageUpgrade-1045813316">addPackageUpgrade</a></p>
+<p><a href="#apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel">addPackageUpgrade</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addPackageVerify-1041417694">addPackageVerify</a></p>
+<p><a href="#apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel">addPackageVerify</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addScriptRun-525474921">addScriptRun</a></p>
+<p><a href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout">addScriptRun</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addScriptRun-725270251">addScriptRun</a></p>
+<p><a href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout">addScriptRun</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-addSystemReboot-621874105">addSystemReboot</a></p>
+<p><a href="#apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel">addSystemReboot</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-createChain-414471424">createChain</a></p>
+<p><a href="#apidoc-actionchain-createChain-loggedInUser-chainLabel">createChain</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-deleteChain-1219531013">deleteChain</a></p>
+<p><a href="#apidoc-actionchain-deleteChain-loggedInUser-chainLabel">deleteChain</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-listChainActions-95884778">listChainActions</a></p>
+<p><a href="#apidoc-actionchain-listChainActions-loggedInUser-chainLabel">listChainActions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-listChains-370723210">listChains</a></p>
+<p><a href="#apidoc-actionchain-listChains-loggedInUser">listChains</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-removeAction-2021265366">removeAction</a></p>
+<p><a href="#apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId">removeAction</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-renameChain-479668966">renameChain</a></p>
+<p><a href="#apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel">renameChain</a></p>
 </li>
 <li>
-<p><a href="#apidoc-actionchain-scheduleChain-61780583">scheduleChain</a></p>
+<p><a href="#apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date">scheduleChain</a></p>
 </li>
 </ul>
 </div>
@@ -439,7 +439,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addConfigurationDeployment-329895342"><a class="anchor" href="#apidoc-actionchain-addConfigurationDeployment-329895342"></a><a class="link" href="#apidoc-actionchain-addConfigurationDeployment-329895342">Method: addConfigurationDeployment</a></h2>
+<h2 id="apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers"><a class="anchor" href="#apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers"></a><a class="link" href="#apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers">Method: addConfigurationDeployment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -502,7 +502,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addErrataUpdate-230532210"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-230532210"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-230532210">Method: addErrataUpdate</a></h2>
+<h2 id="apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel">Method: addErrataUpdate</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -545,7 +545,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addErrataUpdate-1095312505"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-1095312505"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-1095312505">Method: addErrataUpdate</a></h2>
+<h2 id="apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel">Method: addErrataUpdate</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -588,7 +588,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addErrataUpdate-2079290629"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-2079290629"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-2079290629">Method: addErrataUpdate</a></h2>
+<h2 id="apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant"><a class="anchor" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant"></a><a class="link" href="#apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel-onlyRelevant">Method: addErrataUpdate</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -635,7 +635,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addPackageInstall-921720213"><a class="anchor" href="#apidoc-actionchain-addPackageInstall-921720213"></a><a class="link" href="#apidoc-actionchain-addPackageInstall-921720213">Method: addPackageInstall</a></h2>
+<h2 id="apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addPackageInstall-loggedInUser-sid-packageIds-chainLabel">Method: addPackageInstall</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -678,7 +678,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addPackageRemoval-1452209410"><a class="anchor" href="#apidoc-actionchain-addPackageRemoval-1452209410"></a><a class="link" href="#apidoc-actionchain-addPackageRemoval-1452209410">Method: addPackageRemoval</a></h2>
+<h2 id="apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addPackageRemoval-loggedInUser-sid-packageIds-chainLabel">Method: addPackageRemoval</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -722,7 +722,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addPackageUpgrade-1045813316"><a class="anchor" href="#apidoc-actionchain-addPackageUpgrade-1045813316"></a><a class="link" href="#apidoc-actionchain-addPackageUpgrade-1045813316">Method: addPackageUpgrade</a></h2>
+<h2 id="apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addPackageUpgrade-loggedInUser-sid-packageIds-chainLabel">Method: addPackageUpgrade</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -766,7 +766,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addPackageVerify-1041417694"><a class="anchor" href="#apidoc-actionchain-addPackageVerify-1041417694"></a><a class="link" href="#apidoc-actionchain-addPackageVerify-1041417694">Method: addPackageVerify</a></h2>
+<h2 id="apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel"><a class="anchor" href="#apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel"></a><a class="link" href="#apidoc-actionchain-addPackageVerify-loggedInUser-sid-packageIds-chainLabel">Method: addPackageVerify</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -810,7 +810,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addScriptRun-525474921"><a class="anchor" href="#apidoc-actionchain-addScriptRun-525474921"></a><a class="link" href="#apidoc-actionchain-addScriptRun-525474921">Method: addScriptRun</a></h2>
+<h2 id="apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout"><a class="anchor" href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout"></a><a class="link" href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-scriptLabel-uid-scriptBody-gid-timeout">Method: addScriptRun</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -866,7 +866,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addScriptRun-725270251"><a class="anchor" href="#apidoc-actionchain-addScriptRun-725270251"></a><a class="link" href="#apidoc-actionchain-addScriptRun-725270251">Method: addScriptRun</a></h2>
+<h2 id="apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout"><a class="anchor" href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout"></a><a class="link" href="#apidoc-actionchain-addScriptRun-loggedInUser-sid-chainLabel-uid-scriptBody-gid-timeout">Method: addScriptRun</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -919,7 +919,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-addSystemReboot-621874105"><a class="anchor" href="#apidoc-actionchain-addSystemReboot-621874105"></a><a class="link" href="#apidoc-actionchain-addSystemReboot-621874105">Method: addSystemReboot</a></h2>
+<h2 id="apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel"><a class="anchor" href="#apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel"></a><a class="link" href="#apidoc-actionchain-addSystemReboot-loggedInUser-sid-chainLabel">Method: addSystemReboot</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -959,7 +959,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-createChain-414471424"><a class="anchor" href="#apidoc-actionchain-createChain-414471424"></a><a class="link" href="#apidoc-actionchain-createChain-414471424">Method: createChain</a></h2>
+<h2 id="apidoc-actionchain-createChain-loggedInUser-chainLabel"><a class="anchor" href="#apidoc-actionchain-createChain-loggedInUser-chainLabel"></a><a class="link" href="#apidoc-actionchain-createChain-loggedInUser-chainLabel">Method: createChain</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -996,7 +996,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-deleteChain-1219531013"><a class="anchor" href="#apidoc-actionchain-deleteChain-1219531013"></a><a class="link" href="#apidoc-actionchain-deleteChain-1219531013">Method: deleteChain</a></h2>
+<h2 id="apidoc-actionchain-deleteChain-loggedInUser-chainLabel"><a class="anchor" href="#apidoc-actionchain-deleteChain-loggedInUser-chainLabel"></a><a class="link" href="#apidoc-actionchain-deleteChain-loggedInUser-chainLabel">Method: deleteChain</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1033,7 +1033,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-listChainActions-95884778"><a class="anchor" href="#apidoc-actionchain-listChainActions-95884778"></a><a class="link" href="#apidoc-actionchain-listChainActions-95884778">Method: listChainActions</a></h2>
+<h2 id="apidoc-actionchain-listChainActions-loggedInUser-chainLabel"><a class="anchor" href="#apidoc-actionchain-listChainActions-loggedInUser-chainLabel"></a><a class="link" href="#apidoc-actionchain-listChainActions-loggedInUser-chainLabel">Method: listChainActions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1102,7 +1102,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-listChains-370723210"><a class="anchor" href="#apidoc-actionchain-listChains-370723210"></a><a class="link" href="#apidoc-actionchain-listChains-370723210">Method: listChains</a></h2>
+<h2 id="apidoc-actionchain-listChains-loggedInUser"><a class="anchor" href="#apidoc-actionchain-listChains-loggedInUser"></a><a class="link" href="#apidoc-actionchain-listChains-loggedInUser">Method: listChains</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -1153,7 +1153,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-removeAction-2021265366"><a class="anchor" href="#apidoc-actionchain-removeAction-2021265366"></a><a class="link" href="#apidoc-actionchain-removeAction-2021265366">Method: removeAction</a></h2>
+<h2 id="apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId"><a class="anchor" href="#apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId"></a><a class="link" href="#apidoc-actionchain-removeAction-loggedInUser-chainLabel-actionId">Method: removeAction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1193,7 +1193,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-renameChain-479668966"><a class="anchor" href="#apidoc-actionchain-renameChain-479668966"></a><a class="link" href="#apidoc-actionchain-renameChain-479668966">Method: renameChain</a></h2>
+<h2 id="apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel"><a class="anchor" href="#apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel"></a><a class="link" href="#apidoc-actionchain-renameChain-loggedInUser-previousLabel-newLabel">Method: renameChain</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1233,7 +1233,7 @@ is thrown if an errata does not apply to a system.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-actionchain-scheduleChain-61780583"><a class="anchor" href="#apidoc-actionchain-scheduleChain-61780583"></a><a class="link" href="#apidoc-actionchain-scheduleChain-61780583">Method: scheduleChain</a></h2>
+<h2 id="apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date"><a class="anchor" href="#apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date"></a><a class="link" href="#apidoc-actionchain-scheduleChain-loggedInUser-chainLabel-date">Method: scheduleChain</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
