@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-packages-findByNvrea-204319504,findByNvrea>>
-* <<apidoc-packages-getDetails-47110095,getDetails>>
-* <<apidoc-packages-getPackage-688426301,getPackage>>
-* <<apidoc-packages-getPackageUrl-1817055696,getPackageUrl>>
-* <<apidoc-packages-listChangelog-792758624,listChangelog>>
-* <<apidoc-packages-listDependencies-353825943,listDependencies>>
-* <<apidoc-packages-listFiles-1539591544,listFiles>>
-* <<apidoc-packages-listProvidingChannels-1477200907,listProvidingChannels>>
-* <<apidoc-packages-listProvidingErrata-100984998,listProvidingErrata>>
-* <<apidoc-packages-listSourcePackages-1711329405,listSourcePackages>>
-* <<apidoc-packages-removePackage-880176971,removePackage>>
-* <<apidoc-packages-removeSourcePackage-1293962032,removeSourcePackage>>
+* <<apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel,findByNvrea>>
+* <<apidoc-packages-getDetails-loggedInUser-pid,getDetails>>
+* <<apidoc-packages-getPackage-loggedInUser-pid,getPackage>>
+* <<apidoc-packages-getPackageUrl-loggedInUser-pid,getPackageUrl>>
+* <<apidoc-packages-listChangelog-loggedInUser-pid,listChangelog>>
+* <<apidoc-packages-listDependencies-loggedInUser-pid,listDependencies>>
+* <<apidoc-packages-listFiles-loggedInUser-pid,listFiles>>
+* <<apidoc-packages-listProvidingChannels-loggedInUser-pid,listProvidingChannels>>
+* <<apidoc-packages-listProvidingErrata-loggedInUser-pid,listProvidingErrata>>
+* <<apidoc-packages-listSourcePackages-loggedInUser,listSourcePackages>>
+* <<apidoc-packages-removePackage-loggedInUser-pid,removePackage>>
+* <<apidoc-packages-removeSourcePackage-loggedInUser-psid,removeSourcePackage>>
 
 == Description
 
@@ -27,7 +27,7 @@ Methods to retrieve information about the Packages contained
 packages
 
 
-[#apidoc-packages-findByNvrea-204319504]
+[#apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel]
 == Method: findByNvrea
 
 HTTP `GET`
@@ -79,7 +79,7 @@ Returns:
 
 
 
-[#apidoc-packages-getDetails-47110095]
+[#apidoc-packages-getDetails-loggedInUser-pid]
 == Method: getDetails
 
 HTTP `GET`
@@ -127,7 +127,7 @@ Returns:
 
 
 
-[#apidoc-packages-getPackage-688426301]
+[#apidoc-packages-getPackage-loggedInUser-pid]
 == Method: getPackage
 
 HTTP `GET`
@@ -155,7 +155,7 @@ Returns:
 
 
 
-[#apidoc-packages-getPackageUrl-1817055696]
+[#apidoc-packages-getPackageUrl-loggedInUser-pid]
 == Method: getPackageUrl
 
 HTTP `GET`
@@ -182,7 +182,7 @@ Returns:
 
 
 
-[#apidoc-packages-listChangelog-792758624]
+[#apidoc-packages-listChangelog-loggedInUser-pid]
 == Method: listChangelog
 
 HTTP `GET`
@@ -208,7 +208,7 @@ Returns:
 
 
 
-[#apidoc-packages-listDependencies-353825943]
+[#apidoc-packages-listDependencies-loggedInUser-pid]
 == Method: listDependencies
 
 HTTP `GET`
@@ -248,7 +248,7 @@ Returns:
 
 
 
-[#apidoc-packages-listFiles-1539591544]
+[#apidoc-packages-listFiles-loggedInUser-pid]
 == Method: listFiles
 
 HTTP `GET`
@@ -282,7 +282,7 @@ Returns:
 
 
 
-[#apidoc-packages-listProvidingChannels-1477200907]
+[#apidoc-packages-listProvidingChannels-loggedInUser-pid]
 == Method: listProvidingChannels
 
 HTTP `GET`
@@ -312,7 +312,7 @@ Returns:
 
 
 
-[#apidoc-packages-listProvidingErrata-100984998]
+[#apidoc-packages-listProvidingErrata-loggedInUser-pid]
 == Method: listProvidingErrata
 
 HTTP `GET`
@@ -345,7 +345,7 @@ Returns:
 
 
 
-[#apidoc-packages-listSourcePackages-1711329405]
+[#apidoc-packages-listSourcePackages-loggedInUser]
 == Method: listSourcePackages
 
 HTTP `GET`
@@ -372,7 +372,7 @@ Returns:
 
 
 
-[#apidoc-packages-removePackage-880176971]
+[#apidoc-packages-removePackage-loggedInUser-pid]
 == Method: removePackage
 
 HTTP `POST`
@@ -398,7 +398,7 @@ Returns:
 
 
 
-[#apidoc-packages-removeSourcePackage-1293962032]
+[#apidoc-packages-removeSourcePackage-loggedInUser-psid]
 == Method: removeSourcePackage
 
 HTTP `POST`
