@@ -3,86 +3,72 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Uyuni API Version 26 :: Uyuni API Documentation</title>
-    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html">
-    <meta name="generator" content="Antora 2.2.0">
+<title>Uyuni API Version 26
+     | Uyuni API Documentation</title>    <link rel="next" href="common_gfdl1.2_i.html">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../_/css/site.css">
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" /> -->
 <link rel="stylesheet" href="../_/css/search.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../_/css/font-styles.css">
 <link rel="stylesheet" href="../_/fonts/css/all.css">
 <link rel="stylesheet" href="../_/css/site-extra.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+<link href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet"> -->
 <link rel="stylesheet" href="../_/css/vendor/light.css">
+<script src="/docserv/res/lightheaded/analytics.js"
+        type="text/javascript"></script>
+    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
-<header class="header" role="banner">
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <a class=" navbar-logo" href="https://www.uyuni-project.org/uyuni-docs/uyuni/index.html"><img
-                        class="logo" src="../_/img/uyuni_logo.png"/></a>
-                <!-- <a href="https://opensource.suse.com/doc-susemanager/index.html">Uyuni Project</a>
-        <span class="separator">//</span>
-          <a href="https://www.uyuni-project.org/uyuni-docs-api">Documentation</a> -->
-            </div>
-                <div class="navbar-item">
-                    <!-- <i class="fas fa-search"></i>&nbsp; -->
-                    <input id="search-input" type="text" placeholder="Search...">
-                </div>
-            <button class="navbar-burger" data-target="topbar-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class=" navbar-logo" href="https://www.uyuni-project.org/"><img class="logo"
+            src="../_/img/uyuni_logo.png" /></a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs"  autofocus>
         </div>
-        <!-- Comment out this section and the twitter section for Product WebUI docs (SUMA) -->
-        <div id="topbar-nav" class="navbar-menu">
-            <div class="navbar-end">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <div class="navbar-link">Resources</div>
-                    <div class="navbar-dropdown">
-                        <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-                        <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
-                                class="fab fa-github"></i>&nbsp;Report Issue</a>
-                        <a class="navbar-item"
-                           href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
-                                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
-                    </div>
-                </div>
-<!--
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <div class="navbar-link">Language</div>
-                    <div class="navbar-dropdown">
-
-                        <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
-                        <a role="button" class="navbar-item" id="es" onclick="selectLanguage(this.id)"><img src="../_/img/espFlag.svg" class="langIcon spanish">&nbsp;Español</a>
-                        <a role="button" class="navbar-item" id="cs" onclick="selectLanguage(this.id)"><img src="../_/img/czech-republic.svg" class="langIcon czech">&nbsp;Czech</a>
-                        <a role="button" class="navbar-item" id="zh_CN" onclick="selectLanguage(this.id)"><img src="../_/img/china.svg" class="langIcon china">&nbsp;Chinese</a>
-                    </div> -->
-                </div>
-
-            </div>
-
-
-        <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
-          <span class="icon">
-            <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 512 512">
-              <path fill="#57aaee"
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
-            </svg>
-          </span>
-        </a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Resources</div>
+          <div class="navbar-dropdown">
+
+            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
+            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                class="fab fa-github"></i>&nbsp;Report Issue</a>
+            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+          </div>
         </div>
-    </nav>
-</header>
-<div class="body">
-<div class="nav-container" data-component="uyuni" data-version="master">
+      </div>
+    </div>
+    <a id="twitter-link" class="navbar-item" href="https://twitter.com/uyuniproject">
+      <span class="icon">
+        <svg aria-hidden="true" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="#57aaee"
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+          </path>
+        </svg>
+      </span>
+    </a>
+    </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="uyuni" data-version="">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -193,6 +179,9 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api/image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/image.delta.html">image.delta</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api/image.profile.html">image.profile</a>
@@ -316,14 +305,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Uyuni API</span>
-    <span class="version">master</span>
+    <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Uyuni API</span>
+      <a class="title" href="index.html">Uyuni API</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+          <a href="index.html">default</a>
         </li>
       </ul>
     </li>
@@ -332,10 +321,9 @@
     </div>
   </aside>
 </div>
-<main role="main">
+<main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-
   <a href="index.html" class="home-link is-current"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
@@ -343,19 +331,13 @@
     <li><a href="index.html">Uyuni API Version 26</a></li>
   </ul>
 </nav>
-
-
-
-  <div class="edit-this-page">
-    <span class="prev-caret">
-&nbsp;
-<span class="next-caret">
-    &nbsp;
-    <a href="https://github.com/uyuni-project/uyuni-docs/issues"><i class="fas fa-bug custom-color" data-tippy="Create an Issue" id="createIssue"></i>&nbsp;</a>
-  <a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/ROOT/pages/index.adoc"><i class="fas fa-edit custom-color" data-tippy="Edit this page and submit a pull request" id="submitPR"></i></a>
-</div>
-</div>
-<article class="doc"><a name="section-top"></a>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
 <h1 class="page">Uyuni API Version 26</h1>
 <div class="paragraph">
 <p>Welcome to the SUSE Manager API. By using the included API calls, you can easily automate many of
@@ -364,263 +346,191 @@ the tasks you perform every day. All API calls are grouped by common functionali
 <div class="ulist">
 <ul>
 <li>
-<p><a href="api/actionchain.html#apidoc-actionchain" class="page">actionchain</a></p>
+<p><a href="api/actionchain.html#apidoc-actionchain" class="xref page">actionchain</a></p>
 </li>
 <li>
-<p><a href="api/activationkey.html#apidoc-activationkey" class="page">activationkey</a></p>
+<p><a href="api/activationkey.html#apidoc-activationkey" class="xref page">activationkey</a></p>
 </li>
 <li>
-<p><a href="api/admin.html#apidoc-admin" class="page">admin</a></p>
+<p><a href="api/admin.html#apidoc-admin" class="xref page">admin</a></p>
 </li>
 <li>
-<p><a href="api/admin.monitoring.html#apidoc-admin_monitoring" class="page">admin_monitoring</a></p>
+<p><a href="api/admin.monitoring.html#apidoc-admin_monitoring" class="xref page">admin_monitoring</a></p>
 </li>
 <li>
-<p><a href="api/ansible.html#apidoc-ansible" class="page">ansible</a></p>
+<p><a href="api/ansible.html#apidoc-ansible" class="xref page">ansible</a></p>
 </li>
 <li>
-<p><a href="api/api.html#apidoc-api" class="page">api</a></p>
+<p><a href="api/api.html#apidoc-api" class="xref page">api</a></p>
 </li>
 <li>
-<p><a href="api/audit.html#apidoc-audit" class="page">audit</a></p>
+<p><a href="api/audit.html#apidoc-audit" class="xref page">audit</a></p>
 </li>
 <li>
-<p><a href="api/auth.html#apidoc-auth" class="page">auth</a></p>
+<p><a href="api/auth.html#apidoc-auth" class="xref page">auth</a></p>
 </li>
 <li>
-<p><a href="api/channel.html#apidoc-channel" class="page">channel</a></p>
+<p><a href="api/channel.html#apidoc-channel" class="xref page">channel</a></p>
 </li>
 <li>
-<p><a href="api/channel.access.html#apidoc-channel_access" class="page">channel_access</a></p>
+<p><a href="api/channel.access.html#apidoc-channel_access" class="xref page">channel_access</a></p>
 </li>
 <li>
-<p><a href="api/channel.org.html#apidoc-channel_org" class="page">channel_org</a></p>
+<p><a href="api/channel.org.html#apidoc-channel_org" class="xref page">channel_org</a></p>
 </li>
 <li>
-<p><a href="api/channel.software.html#apidoc-channel_software" class="page">channel_software</a></p>
+<p><a href="api/channel.software.html#apidoc-channel_software" class="xref page">channel_software</a></p>
 </li>
 <li>
-<p><a href="api/configchannel.html#apidoc-configchannel" class="page">configchannel</a></p>
+<p><a href="api/configchannel.html#apidoc-configchannel" class="xref page">configchannel</a></p>
 </li>
 <li>
-<p><a href="api/contentmanagement.html#apidoc-contentmanagement" class="page">contentmanagement</a></p>
+<p><a href="api/contentmanagement.html#apidoc-contentmanagement" class="xref page">contentmanagement</a></p>
 </li>
 <li>
-<p><a href="api/distchannel.html#apidoc-distchannel" class="page">distchannel</a></p>
+<p><a href="api/distchannel.html#apidoc-distchannel" class="xref page">distchannel</a></p>
 </li>
 <li>
-<p><a href="api/errata.html#apidoc-errata" class="page">errata</a></p>
+<p><a href="api/errata.html#apidoc-errata" class="xref page">errata</a></p>
 </li>
 <li>
-<p><a href="api/formula.html#apidoc-formula" class="page">formula</a></p>
+<p><a href="api/formula.html#apidoc-formula" class="xref page">formula</a></p>
 </li>
 <li>
-<p><a href="api/image.html#apidoc-image" class="page">image</a></p>
+<p><a href="api/image.html#apidoc-image" class="xref page">image</a></p>
 </li>
 <li>
-<p><a href="api/image.profile.html#apidoc-image_profile" class="page">image_profile</a></p>
+<p><a href="api/image.delta.html#apidoc-image_delta" class="xref page">image_delta</a></p>
 </li>
 <li>
-<p><a href="api/image.store.html#apidoc-image_store" class="page">image_store</a></p>
+<p><a href="api/image.profile.html#apidoc-image_profile" class="xref page">image_profile</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.html#apidoc-kickstart" class="page">kickstart</a></p>
+<p><a href="api/image.store.html#apidoc-image_store" class="xref page">image_store</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.filepreservation.html#apidoc-kickstart_filepreservation" class="page">kickstart_filepreservation</a></p>
+<p><a href="api/kickstart.html#apidoc-kickstart" class="xref page">kickstart</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.keys.html#apidoc-kickstart_keys" class="page">kickstart_keys</a></p>
+<p><a href="api/kickstart.filepreservation.html#apidoc-kickstart_filepreservation" class="xref page">kickstart_filepreservation</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.profile.html#apidoc-kickstart_profile" class="page">kickstart_profile</a></p>
+<p><a href="api/kickstart.keys.html#apidoc-kickstart_keys" class="xref page">kickstart_keys</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.profile.keys.html#apidoc-kickstart_profile_keys" class="page">kickstart_profile_keys</a></p>
+<p><a href="api/kickstart.profile.html#apidoc-kickstart_profile" class="xref page">kickstart_profile</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.profile.software.html#apidoc-kickstart_profile_software" class="page">kickstart_profile_software</a></p>
+<p><a href="api/kickstart.profile.keys.html#apidoc-kickstart_profile_keys" class="xref page">kickstart_profile_keys</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.profile.system.html#apidoc-kickstart_profile_system" class="page">kickstart_profile_system</a></p>
+<p><a href="api/kickstart.profile.software.html#apidoc-kickstart_profile_software" class="xref page">kickstart_profile_software</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.snippet.html#apidoc-kickstart_snippet" class="page">kickstart_snippet</a></p>
+<p><a href="api/kickstart.profile.system.html#apidoc-kickstart_profile_system" class="xref page">kickstart_profile_system</a></p>
 </li>
 <li>
-<p><a href="api/kickstart.tree.html#apidoc-kickstart_tree" class="page">kickstart_tree</a></p>
+<p><a href="api/kickstart.snippet.html#apidoc-kickstart_snippet" class="xref page">kickstart_snippet</a></p>
 </li>
 <li>
-<p><a href="api/maintenance.html#apidoc-maintenance" class="page">maintenance</a></p>
+<p><a href="api/kickstart.tree.html#apidoc-kickstart_tree" class="xref page">kickstart_tree</a></p>
 </li>
 <li>
-<p><a href="api/org.html#apidoc-org" class="page">org</a></p>
+<p><a href="api/maintenance.html#apidoc-maintenance" class="xref page">maintenance</a></p>
 </li>
 <li>
-<p><a href="api/org.trusts.html#apidoc-org_trusts" class="page">org_trusts</a></p>
+<p><a href="api/org.html#apidoc-org" class="xref page">org</a></p>
 </li>
 <li>
-<p><a href="api/packages.html#apidoc-packages" class="page">packages</a></p>
+<p><a href="api/org.trusts.html#apidoc-org_trusts" class="xref page">org_trusts</a></p>
 </li>
 <li>
-<p><a href="api/packages.provider.html#apidoc-packages_provider" class="page">packages_provider</a></p>
+<p><a href="api/packages.html#apidoc-packages" class="xref page">packages</a></p>
 </li>
 <li>
-<p><a href="api/packages.search.html#apidoc-packages_search" class="page">packages_search</a></p>
+<p><a href="api/packages.provider.html#apidoc-packages_provider" class="xref page">packages_provider</a></p>
 </li>
 <li>
-<p><a href="api/preferences.locale.html#apidoc-preferences_locale" class="page">preferences_locale</a></p>
+<p><a href="api/packages.search.html#apidoc-packages_search" class="xref page">packages_search</a></p>
 </li>
 <li>
-<p><a href="api/proxy.html#apidoc-proxy" class="page">proxy</a></p>
+<p><a href="api/preferences.locale.html#apidoc-preferences_locale" class="xref page">preferences_locale</a></p>
 </li>
 <li>
-<p><a href="api/recurringaction.html#apidoc-recurringaction" class="page">recurringaction</a></p>
+<p><a href="api/proxy.html#apidoc-proxy" class="xref page">proxy</a></p>
 </li>
 <li>
-<p><a href="api/saltkey.html#apidoc-saltkey" class="page">saltkey</a></p>
+<p><a href="api/recurringaction.html#apidoc-recurringaction" class="xref page">recurringaction</a></p>
 </li>
 <li>
-<p><a href="api/schedule.html#apidoc-schedule" class="page">schedule</a></p>
+<p><a href="api/saltkey.html#apidoc-saltkey" class="xref page">saltkey</a></p>
 </li>
 <li>
-<p><a href="api/subscriptionmatching.pinnedsubscription.html#apidoc-subscriptionmatching_pinnedsubscription" class="page">subscriptionmatching_pinnedsubscription</a></p>
+<p><a href="api/schedule.html#apidoc-schedule" class="xref page">schedule</a></p>
 </li>
 <li>
-<p><a href="api/sync.content.html#apidoc-sync_content" class="page">sync_content</a></p>
+<p><a href="api/subscriptionmatching.pinnedsubscription.html#apidoc-subscriptionmatching_pinnedsubscription" class="xref page">subscriptionmatching_pinnedsubscription</a></p>
 </li>
 <li>
-<p><a href="api/sync.master.html#apidoc-sync_master" class="page">sync_master</a></p>
+<p><a href="api/sync.content.html#apidoc-sync_content" class="xref page">sync_content</a></p>
 </li>
 <li>
-<p><a href="api/sync.slave.html#apidoc-sync_slave" class="page">sync_slave</a></p>
+<p><a href="api/sync.master.html#apidoc-sync_master" class="xref page">sync_master</a></p>
 </li>
 <li>
-<p><a href="api/system.html#apidoc-system" class="page">system</a></p>
+<p><a href="api/sync.slave.html#apidoc-sync_slave" class="xref page">sync_slave</a></p>
 </li>
 <li>
-<p><a href="api/system.config.html#apidoc-system_config" class="page">system_config</a></p>
+<p><a href="api/system.html#apidoc-system" class="xref page">system</a></p>
 </li>
 <li>
-<p><a href="api/system.custominfo.html#apidoc-system_custominfo" class="page">system_custominfo</a></p>
+<p><a href="api/system.config.html#apidoc-system_config" class="xref page">system_config</a></p>
 </li>
 <li>
-<p><a href="api/system.monitoring.html" class="page">system.monitoring</a></p>
+<p><a href="api/system.custominfo.html#apidoc-system_custominfo" class="xref page">system_custominfo</a></p>
 </li>
 <li>
-<p><a href="api/system.provisioning.powermanagement.html#apidoc-system_provisioning_powermanagement" class="page">system_provisioning_powermanagement</a></p>
+<p><a href="api/system.monitoring.html" class="xref page">system.monitoring</a></p>
 </li>
 <li>
-<p><a href="api/system.provisioning.snapshot.html#apidoc-system_provisioning_snapshot" class="page">system_provisioning_snapshot</a></p>
+<p><a href="api/system.provisioning.powermanagement.html#apidoc-system_provisioning_powermanagement" class="xref page">system_provisioning_powermanagement</a></p>
 </li>
 <li>
-<p><a href="api/system.scap.html#apidoc-system_scap" class="page">system_scap</a></p>
+<p><a href="api/system.provisioning.snapshot.html#apidoc-system_provisioning_snapshot" class="xref page">system_provisioning_snapshot</a></p>
 </li>
 <li>
-<p><a href="api/system.search.html#apidoc-system_search" class="page">system_search</a></p>
+<p><a href="api/system.scap.html#apidoc-system_scap" class="xref page">system_scap</a></p>
 </li>
 <li>
-<p><a href="api/systemgroup.html#apidoc-systemgroup" class="page">systemgroup</a></p>
+<p><a href="api/system.search.html#apidoc-system_search" class="xref page">system_search</a></p>
 </li>
 <li>
-<p><a href="api/user.html#apidoc-user" class="page">user</a></p>
+<p><a href="api/systemgroup.html#apidoc-systemgroup" class="xref page">systemgroup</a></p>
 </li>
 <li>
-<p><a href="api/user.external.html#apidoc-user_external" class="page">user_external</a></p>
+<p><a href="api/user.html#apidoc-user" class="xref page">user</a></p>
 </li>
 <li>
-<p><a href="api/virtualhostmanager.html#apidoc-virtualhostmanager" class="page">virtualhostmanager</a></p>
+<p><a href="api/user.external.html#apidoc-user_external" class="xref page">user_external</a></p>
+</li>
+<li>
+<p><a href="api/virtualhostmanager.html#apidoc-virtualhostmanager" class="xref page">virtualhostmanager</a></p>
 </li>
 </ul>
 </div>
-
-<div class="cedents grid" role="navigation">
-
-  </div>
-
-  </div>
-</div>
+<nav class="pagination">
+  <span class="next"><a href="common_gfdl1.2_i.html">License</a></span>
+</nav>
 </article>
-<aside class="article-aside hidden" role="navigation">
-  <h3 class="toc-title"><i class="fas fa-align-left fa-rotate-180"></i>&nbsp;&nbsp; Contents</h3>
-  <div id="article-toc"></div>
-</aside>
-
-
-
+  </div>
 </main>
 </div>
-<script>tippy('#previousPage', {
-placement: 'bottom', // or 'left', 'right', ...
-})
-
-tippy('#nextPage', {
-  placement: 'bottom', // or 'left', 'right', ...
-})
-tippy('#createIssue', {
-  placement: 'bottom', // or 'left', 'right', ...
-})
-tippy('#submitPR', {
-  placement: 'bottom', // or 'left', 'right', ...
-})
-</script>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/rainbow.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="https://unpkg.com/popper.js@1"></script>
-<script src="https://unpkg.com/tippy.js@4"></script>
-<script>
-    tippy.setDefaults({
-        placement: 'bottom',
-        arrow: true,
-        arrowType: 'sharp',
-        delay: 800,
-        theme: 'light',
-    });
-
-    tippy('#previousPage', {
-        content: "Previous Page",
-    });
-
-    tippy('#nextPage', {
-        content: "Next Page",
-    });
-
-    tippy('#createIssue', {
-        content: "Create Issue",
-    });
-
-    tippy('#submitPR', {
-        content: "Edit this page and submit a pull request",
-    });
-
-
-</script>
-<script type="text/javascript">
-    window.antora = window.antora || {}
-    window.antora.basePath = '..'
-    window.antora.pagePath = '/uyuni/index.html'
-</script>
 <script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+<script src="../_/js/vendor/langSelection.js"></script>
 
-    <script src="../_/js/vendor/lunr.js"></script>
-    <script src="../_/js/vendor/search.js"></script>
-    <script async src="../_/../search-index.js"></script>
-<script src="../_/js/vendor/tocbot.min.js"></script>
-<script>
-    tocbot.init( {
-        tocSelector: '#article-toc',
-        contentSelector: 'article',
-        headingSelector: 'h2, h3, h4, h5, h6',
-        collapseDepth: 6,
-        positionFixedSelector: '#article-toc',
-        scrollSmooth: false
-    } );
-    var tocList = document.getElementById( 'article-toc' ).getElementsByClassName( 'toc-list' );
-    if ( tocList && tocList.length > 0 && tocList[0].childNodes.length > 0 ) {
-        document.getElementById( 'article-toc' ).parentNode.classList.remove( 'hidden' );
-    }
-</script>
   </body>
 </html>
