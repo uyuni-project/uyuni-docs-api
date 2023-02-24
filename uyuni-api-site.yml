@@ -1,10 +1,10 @@
 # Doc site [title, and start page]
 site:
   title: Uyuni API Documentation
-  start_page: uyuni::index
+  start_page: uyuni::index.adoc
 
   # site.url should be adjusted before building depending on the desired target.
-  url: https://www.uyuni-project.org/uyuni-docs-api
+  url: /
 
 asciidoc:
   attributes:
@@ -17,6 +17,7 @@ asciidoc:
     sectlinks: true
     icons: font
     experimental: true
+    page-pagination: true
 
     # Enable or disable SUSE Manager conditional content (Not applicable to UYUNI - default is false)
     suma-content: false
@@ -24,25 +25,17 @@ asciidoc:
 
 content:
   sources:
-  # Uncomment to build from your local git clone
-    #- url: .
-      #start_path: .
-
   # build from remote github repository.
     - url: https://github.com/uyuni-project/uyuni-docs-api.git
-      branches:
-        - 'master'
+      branches: 
+        - 'api-branding-update'
 
 ui:
   bundle:
-    # latest-bundle.zip (All Uyuni endpoints)
-
-    url: ./branding/default-ui/suma/latest-bundle.zip
+    url: ./branding/default-ui/suma/ui-bundle.zip
     snapshot: true
 
-  # Modify the custom branding depending on your publishing endpoint
-  # uyuni-webui (All Uyuni endpoints)
-  supplemental_files: ./branding/supplemental-ui/uyuni/uyuni-webui
+  supplemental_files: ./branding/supplemental-ui/uyuni/uyuni-2023
 
 output:
   dir: ./build/en
