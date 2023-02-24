@@ -5,6 +5,7 @@
 == Available methods
 
 * <<apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType,create>>
+* <<apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions,create>>
 * <<apidoc-kickstart_tree-delete-loggedInUser-treeLabel,delete>>
 * <<apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel,deleteTreeAndProfiles>>
 * <<apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel,getDetails>>
@@ -12,6 +13,7 @@
 * <<apidoc-kickstart_tree-listInstallTypes-loggedInUser,listInstallTypes>>
 * <<apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel,rename>>
 * <<apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType,update>>
+* <<apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions,update>>
 
 == Description
 
@@ -48,6 +50,47 @@ Parameters:
  
 * [.string]#string#  installType - Label for
  KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions]
+== Method: create
+
+HTTP `POST`
+
+Description:
+
+Create a Kickstart Tree (Distribution) in #product().
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - The new kickstart tree label.
+ 
+* [.string]#string#  basePath - Path to the base or
+ root of the kickstart tree.
+ 
+* [.string]#string#  channelLabel - Label of channel to
+ associate with the kickstart tree. 
+ 
+* [.string]#string#  installType - Label for
+ KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
+ 
+* [.string]#string#  kernelOptions - Options to be passed to the kernel
+ when booting for the installation. 
+ 
+* [.string]#string#  postKernelOptions - Options to be passed to the kernel
+ when booting for the installation. 
  
 
 Returns:
@@ -140,6 +183,8 @@ Returns:
 ** [.string]#string#  "label"
 ** [.string]#string#  "abs_path"
 ** [.int]#int#  "channel_id"
+** [.string]#string#  "kernel_options"
+** [.string]#string#  "post_kernel_options"
    * [.struct]#struct#  kickstart install type
 ** [.int]#int#  "id"
 ** [.string]#string#  "label"
@@ -268,6 +313,47 @@ Parameters:
  
 * [.string]#string#  installType - Label for
  KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions]
+== Method: update
+
+HTTP `POST`
+
+Description:
+
+Edit a Kickstart Tree (Distribution) in #product().
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  treeLabel - Label for the kickstart tree.
+ 
+* [.string]#string#  basePath - Path to the base or
+ root of the kickstart tree.
+ 
+* [.string]#string#  channelLabel - Label of channel to
+ associate with kickstart tree.
+ 
+* [.string]#string#  installType - Label for
+ KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
+ 
+* [.string]#string#  kernelOptions - Options to be passed to the kernel
+ when booting for the installation. 
+ 
+* [.string]#string#  postKernelOptions - Options to be passed to the kernel
+ when booting for the installation. 
  
 
 Returns:
