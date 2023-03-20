@@ -79,8 +79,8 @@ endef
 define pdf-book-create
 	asciidoctor-pdf \
 		-r ./extensions/xref-converter.rb \
-		-a pdf-stylesdir=$(PDF_THEME_DIR)/ \
-		-a pdf-style=$(1) \
+		-a pdf-themesdir=$(PDF_THEME_DIR)/ \
+		-a pdf-theme=$(1) \
 		-a pdf-fontsdir=$(PDF_FONTS_DIR) \
 		-a productname=$(2) \
 		-a suma-content=$(3) \
