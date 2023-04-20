@@ -1,0 +1,214 @@
+[#apidoc-cluster]
+= cluster
+
+
+== Available methods
+
+* <<apidoc-cluster-addCluster-1115730443,addCluster>>
+* <<apidoc-cluster-deleteCluster-1357174989,deleteCluster>>
+* <<apidoc-cluster-listClusterNodes-1261949348,listClusterNodes>>
+* <<apidoc-cluster-listClusters-1208417271,listClusters>>
+* <<apidoc-cluster-scheduleJoinNodeToCluster-873546358,scheduleJoinNodeToCluster>>
+* <<apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533,scheduleRemoveNodeFromCluster>>
+* <<apidoc-cluster-scheduleUpgradeCluster-93467152,scheduleUpgradeCluster>>
+
+== Description
+
+Provides methods to access and modify clusters.
+
+*Namespace*:
+
+cluster
+
+
+[#apidoc-cluster-addCluster-1115730443]
+== Method: addCluster 
+
+Description:
+
+Add a cluster
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.string]#string#  name
+ 
+* [.string]#string#  description
+ 
+* [.integer]#integer#  management node id
+ 
+* [.string]#string#  cluster provider
+ 
+* struct containing the values for each field in the form 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-cluster-deleteCluster-1357174989]
+== Method: deleteCluster 
+
+Description:
+
+Delete a cluster given the ID
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  clusterId
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-cluster-listClusterNodes-1261949348]
+== Method: listClusterNodes 
+
+Description:
+
+Lists the nodes of a cluster.
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  clusterId
+ 
+
+Returns:
+
+* [.array]#string array#  hostname
+ 
+
+
+
+[#apidoc-cluster-listClusters-1208417271]
+== Method: listClusters 
+
+Description:
+
+List all clusters for the user's org
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+          ** [.struct]#struct#  cluster_id
+                 *** [.string]#string#  "cluster_name"
+                 
+
+
+
+[#apidoc-cluster-scheduleJoinNodeToCluster-873546358]
+== Method: scheduleJoinNodeToCluster 
+
+Description:
+
+Schedule the execution of a node join the cluster
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  clusterId
+ 
+* [.array]#integer array#  systemIds
+ 
+* struct containing the values for each field in the form 
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the action can run
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533]
+== Method: scheduleRemoveNodeFromCluster 
+
+Description:
+
+Schedule the execution of a node join the cluster
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  clusterId
+ 
+* [.array]#integer array#  systemIds
+ 
+* struct containing the values for each field in the form 
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the action can run
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-cluster-scheduleUpgradeCluster-93467152]
+== Method: scheduleUpgradeCluster 
+
+Description:
+
+Schedule the execution of a cluster upgrade
+
+
+
+
+Parameters:
+
+  * [.string]#string#  sessionKey
+ 
+* [.int]#int#  clusterId
+ 
+* struct containing the values for each field in the form 
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the action can run
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
