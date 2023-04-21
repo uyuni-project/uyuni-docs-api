@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sample Scripts
-     | Uyuni API Documentation</title>    <meta name="generator" content="Antora 3.1.2">
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/scripts.html">
+    <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -617,6 +618,29 @@ client = ServerProxy(MANAGER_URL)
 key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
 
 print(client.user.list_users(key))
+
+client.auth.logout(key)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following code shows how to use date-time parameters. This code will schedule immediate installation of package rhnlib-2.5.22.9.el6.noarch to system with id 1000000001.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/env python3
+from datetime import datetime
+from xmlrpc.client import ServerProxy
+
+MANAGER_URL = "http://manager.example.com/rpc/api"
+MANAGER_LOGIN = "username"
+MANAGER_PASSWORD = "password"
+
+client = ServerProxy(MANAGER_URL)
+
+key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
+package_list = client.packages.findByNvrea(key, 'rhnlib', '2.5.22', '9.el6', '', 'noarch')
+earliest_occurrence = datetime.today()
+client.system.schedulePackageInstall(key, 1000000001, [package_list[0]['id']], earliest_occurrence)
 
 client.auth.logout(key)</code></pre>
 </div>

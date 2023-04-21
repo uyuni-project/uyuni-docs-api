@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>saltkey
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/saltkey.html">
-    <link rel="prev" href="recurringaction.html">
-    <link rel="next" href="schedule.html">
+<title>cluster
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/cluster.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -245,7 +243,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -330,42 +328,42 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="saltkey.html">saltkey</a></li>
+    <li><a href="cluster.html">cluster</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/saltkey.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/cluster.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">saltkey</h1>
+<h1 class="page">cluster</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-saltkey-accept-loggedInUser-minionId">accept</a></p>
+<p><a href="#apidoc-cluster-addCluster-1115730443">addCluster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-acceptedList-loggedInUser">acceptedList</a></p>
+<p><a href="#apidoc-cluster-deleteCluster-1357174989">deleteCluster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-delete-loggedInUser-minionId">delete</a></p>
+<p><a href="#apidoc-cluster-listClusterNodes-1261949348">listClusterNodes</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-deniedList-loggedInUser">deniedList</a></p>
+<p><a href="#apidoc-cluster-listClusters-1208417271">listClusters</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-pendingList-loggedInUser">pendingList</a></p>
+<p><a href="#apidoc-cluster-scheduleJoinNodeToCluster-873546358">scheduleJoinNodeToCluster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-reject-loggedInUser-minionId">reject</a></p>
+<p><a href="#apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533">scheduleRemoveNodeFromCluster</a></p>
 </li>
 <li>
-<p><a href="#apidoc-saltkey-rejectedList-loggedInUser">rejectedList</a></p>
+<p><a href="#apidoc-cluster-scheduleUpgradeCluster-93467152">scheduleUpgradeCluster</a></p>
 </li>
 </ul>
 </div>
@@ -375,27 +373,24 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to manage salt keys</p>
+<p>Provides methods to access and modify clusters.</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>saltkey</p>
+<p>cluster</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-accept-loggedInUser-minionId"><a class="anchor" href="#apidoc-saltkey-accept-loggedInUser-minionId"></a><a class="link" href="#apidoc-saltkey-accept-loggedInUser-minionId">Method: accept</a></h2>
+<h2 id="apidoc-cluster-addCluster-1115730443"><a class="anchor" href="#apidoc-cluster-addCluster-1115730443"></a><a class="link" href="#apidoc-cluster-addCluster-1115730443">Method: addCluster</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Accept a minion key</p>
+<p>Add a cluster</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -406,7 +401,19 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  minionId</p>
+<p><span class="string">string</span>  name</p>
+</li>
+<li>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="integer">integer</span>  management node id</p>
+</li>
+<li>
+<p><span class="string">string</span>  cluster provider</p>
+</li>
+<li>
+<p>struct containing the values for each field in the form</p>
 </li>
 </ul>
 </div>
@@ -423,50 +430,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-acceptedList-loggedInUser"><a class="anchor" href="#apidoc-saltkey-acceptedList-loggedInUser"></a><a class="link" href="#apidoc-saltkey-acceptedList-loggedInUser">Method: acceptedList</a></h2>
+<h2 id="apidoc-cluster-deleteCluster-1357174989"><a class="anchor" href="#apidoc-cluster-deleteCluster-1357174989"></a><a class="link" href="#apidoc-cluster-deleteCluster-1357174989">Method: deleteCluster</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List accepted salt keys</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">string array</span>  Accepted salt key list</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-saltkey-delete-loggedInUser-minionId"><a class="anchor" href="#apidoc-saltkey-delete-loggedInUser-minionId"></a><a class="link" href="#apidoc-saltkey-delete-loggedInUser-minionId">Method: delete</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Delete a minion key</p>
+<p>Delete a cluster given the ID</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -477,7 +447,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  minionId</p>
+<p><span class="int">int</span>  clusterId</p>
 </li>
 </ul>
 </div>
@@ -494,16 +464,47 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-deniedList-loggedInUser"><a class="anchor" href="#apidoc-saltkey-deniedList-loggedInUser"></a><a class="link" href="#apidoc-saltkey-deniedList-loggedInUser">Method: deniedList</a></h2>
+<h2 id="apidoc-cluster-listClusterNodes-1261949348"><a class="anchor" href="#apidoc-cluster-listClusterNodes-1261949348"></a><a class="link" href="#apidoc-cluster-listClusterNodes-1261949348">Method: listClusterNodes</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List of denied salt keys</p>
+<p>Lists the nodes of a cluster.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  clusterId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  hostname</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-cluster-listClusters-1208417271"><a class="anchor" href="#apidoc-cluster-listClusters-1208417271"></a><a class="link" href="#apidoc-cluster-listClusters-1208417271">Method: listClusters</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List all clusters for the user&#8217;s org</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -521,57 +522,34 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="array">string array</span>  Denied salt key list</p>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  cluster_id</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "cluster_name"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-pendingList-loggedInUser"><a class="anchor" href="#apidoc-saltkey-pendingList-loggedInUser"></a><a class="link" href="#apidoc-saltkey-pendingList-loggedInUser">Method: pendingList</a></h2>
+<h2 id="apidoc-cluster-scheduleJoinNodeToCluster-873546358"><a class="anchor" href="#apidoc-cluster-scheduleJoinNodeToCluster-873546358"></a><a class="link" href="#apidoc-cluster-scheduleJoinNodeToCluster-873546358">Method: scheduleJoinNodeToCluster</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List pending salt keys</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">string array</span>  Pending salt key list</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-saltkey-reject-loggedInUser-minionId"><a class="anchor" href="#apidoc-saltkey-reject-loggedInUser-minionId"></a><a class="link" href="#apidoc-saltkey-reject-loggedInUser-minionId">Method: reject</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Reject a minion key</p>
+<p>Schedule the execution of a node join the cluster</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -582,7 +560,16 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  minionId</p>
+<p><span class="int">int</span>  clusterId</p>
+</li>
+<li>
+<p><span class="array">integer array</span>  systemIds</p>
+</li>
+<li>
+<p>struct containing the values for each field in the form</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the action can run</p>
 </li>
 </ul>
 </div>
@@ -599,16 +586,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-saltkey-rejectedList-loggedInUser"><a class="anchor" href="#apidoc-saltkey-rejectedList-loggedInUser"></a><a class="link" href="#apidoc-saltkey-rejectedList-loggedInUser">Method: rejectedList</a></h2>
+<h2 id="apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533"><a class="anchor" href="#apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533"></a><a class="link" href="#apidoc-cluster-scheduleRemoveNodeFromCluster-1942400533">Method: scheduleRemoveNodeFromCluster</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>List of rejected salt keys</p>
+<p>Schedule the execution of a node join the cluster</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -618,6 +602,18 @@
 <li>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
+<li>
+<p><span class="int">int</span>  clusterId</p>
+</li>
+<li>
+<p><span class="array">integer array</span>  systemIds</p>
+</li>
+<li>
+<p>struct containing the values for each field in the form</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the action can run</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -626,16 +622,52 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="array">string array</span>  Rejected salt key list</p>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="recurringaction.html">recurringaction</a></span>
-  <span class="next"><a href="schedule.html">schedule</a></span>
-</nav>
+<div class="sect1">
+<h2 id="apidoc-cluster-scheduleUpgradeCluster-93467152"><a class="anchor" href="#apidoc-cluster-scheduleUpgradeCluster-93467152"></a><a class="link" href="#apidoc-cluster-scheduleUpgradeCluster-93467152">Method: scheduleUpgradeCluster</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule the execution of a cluster upgrade</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  clusterId</p>
+</li>
+<li>
+<p>struct containing the values for each field in the form</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the action can run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>
