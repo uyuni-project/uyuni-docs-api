@@ -2,10 +2,9 @@
 
 Below is an example of the login process using an authentication token with the HTTP over JSON API.
 
-The HTTP over JSON API uses authentication tokens for access. The token is sent in a
-cookie called `pxt-session-cookie` in a response to a call to the `auth.login` endpoint.
-The `auth.login` endpoint accepts a POST request with a JSON body that has `login` and
-`password` properties in a top-level object.
+The HTTP over JSON API uses authentication tokens for access. 
+The token is sent in a cookie called `pxt-session-cookie` in a response to a call to the `auth.login` endpoint.
+The `auth.login` endpoint accepts a POST request with a JSON body that has `login` and `password` properties in a top-level object.
 
 [source,bash]
 ----
@@ -20,3 +19,11 @@ Set-Cookie: pxt-session-cookie=&lt;tokenhash&gt;; ...
 ----
 
 Once the login is successful, the retrieved cookie must be added to each subsequent request for authenticated access.
+
+
+
+//= HTTP GET example
+
+//= HTTP POST example
+
+//= Python 3 example
