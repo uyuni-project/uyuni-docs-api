@@ -1,10 +1,16 @@
 = HTTP POST example
 
 Below is an example of an HTTP POST call to the `contentmanagement.createProject` API.
-In a POST request, method parameters can be sent as query string key-value pairs, as a JSON object in the request body, or a mix of both. `object` type parameters cannot be represented as a query string element and therefore must be sent in the request body.
+
+In a POST request, method parameters can be sent as:
+
+* query string key-value pairs
+* JSON object in the request body
+* a mix of both. 
+
+`object` type parameters cannot be represented as a query string element and therefore must be sent in the request body.
 The following examples show both approaches.
 
-_The JSON output is pretty-printed for clarity._
 
 == Using the query string
 
@@ -23,3 +29,26 @@ $ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&lt;token
   }
 }
 ----
+
+
+== Using the request body
+
+The request body must be a top-level JSON object that contains all the parameters as its properties.
+
+[source,bash]
+----
+$ API=https://manager.example.com/rhn/manager/api
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&lt;tokenhash&gt;;" \
+> -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
+> $API/contentmanagement/createProject
+{
+  "success": true,
+  "result": {
+    "name": "My Project",
+    "id": 1,
+    "label": "myproject",
+    "orgId": 1
+  }
+}
+----
+
