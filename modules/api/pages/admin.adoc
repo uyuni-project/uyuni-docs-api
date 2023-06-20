@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-admin-create-loggedInUser-description-host-port-username-password-key-keyPassword,create>>
-* <<apidoc-admin-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword,create>>
-* <<apidoc-admin-delete-loggedInUser-host,delete>>
-* <<apidoc-admin-getDetails-loggedInUser-host,getDetails>>
-* <<apidoc-admin-list-loggedInUser,list>>
-* <<apidoc-admin-setDetails-loggedInUser-host-details,setDetails>>
+* <<apidoc-admin-create-512521244,create>>
+* <<apidoc-admin-create-1626803358,create>>
+* <<apidoc-admin-delete-300648514,delete>>
+* <<apidoc-admin-getDetails-1235287572,getDetails>>
+* <<apidoc-admin-list-879837202,list>>
+* <<apidoc-admin-setDetails-1840663231,setDetails>>
 
 == Description
 
@@ -20,10 +20,8 @@ Provides methods to access and modify pay-as-you-go ssh connection data
 admin
 
 
-[#apidoc-admin-create-loggedInUser-description-host-port-username-password-key-keyPassword]
-== Method: create
-
-HTTP `POST`
+[#apidoc-admin-create-512521244]
+== Method: create 
 
 Description:
 
@@ -34,7 +32,7 @@ Create a new ssh connection data to extract data from
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  
@@ -59,10 +57,8 @@ Returns:
 
 
 
-[#apidoc-admin-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword]
-== Method: create
-
-HTTP `POST`
+[#apidoc-admin-create-1626803358]
+== Method: create 
 
 Description:
 
@@ -73,7 +69,7 @@ Create a new ssh connection data to extract data from
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  
@@ -110,10 +106,8 @@ Returns:
 
 
 
-[#apidoc-admin-delete-loggedInUser-host]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-admin-delete-300648514]
+== Method: delete 
 
 Description:
 
@@ -124,7 +118,7 @@ Returns a list of ssh connection data registered.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  host - hostname or IP address of the instance
  
@@ -136,10 +130,8 @@ Returns:
 
 
 
-[#apidoc-admin-getDetails-loggedInUser-host]
-== Method: getDetails
-
-HTTP `POST`
+[#apidoc-admin-getDetails-1235287572]
+== Method: getDetails 
 
 Description:
 
@@ -150,7 +142,7 @@ Returns a list of ssh connection data registered.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  host - hostname or IP address of the instance, will fail if
  host doesn't exist.
@@ -159,22 +151,20 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  SSH data
-** [.string]#string#  "description"
-** [.string]#string#  "hostname"
-** [.int]#int#  "port"
-** [.string]#string#  "username"
-** [.string]#string#  "bastion_hostname"
-** [.int]#int#  "bastion_port"
-** [.string]#string#  "bastion_username"
-  
+              ** [.string]#string#  "description"
+              ** [.string]#string#  "hostname"
+              ** [.int]#int#  "port"
+              ** [.string]#string#  "username"
+              ** [.string]#string#  "bastion_hostname"
+              ** [.int]#int#  "bastion_port"
+              ** [.string]#string#  "bastion_username"
+        
  
 
 
 
-[#apidoc-admin-list-loggedInUser]
-== Method: list
-
-HTTP `POST`
+[#apidoc-admin-list-879837202]
+== Method: list 
 
 Description:
 
@@ -185,29 +175,27 @@ Returns a list of ssh connection data registered.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  SSH data
-** [.string]#string#  "description"
-** [.string]#string#  "hostname"
-** [.int]#int#  "port"
-** [.string]#string#  "username"
-** [.string]#string#  "bastion_hostname"
-** [.int]#int#  "bastion_port"
-** [.string]#string#  "bastion_username"
- 
- 
+              ** [.string]#string#  "description"
+              ** [.string]#string#  "hostname"
+              ** [.int]#int#  "port"
+              ** [.string]#string#  "username"
+              ** [.string]#string#  "bastion_hostname"
+              ** [.int]#int#  "bastion_port"
+              ** [.string]#string#  "bastion_username"
+       
+  
 
 
 
-[#apidoc-admin-setDetails-loggedInUser-host-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-admin-setDetails-1840663231]
+== Method: setDetails 
 
 Description:
 
@@ -218,25 +206,25 @@ Updates the details of a ssh connection data
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  host - hostname or IP address to the instance, will fail if
  host doesn't exist.
  
 * [.struct]#struct#  details - user details
-** [.string]#string#  "description"
-** [.int]#int#  "port"
-** [.string]#string#  "username"
-** [.string]#string#  "password"
-** [.string]#string#  "key"
-** [.string]#string#  "key_password"
-** [.string]#string#  "bastion_host"
-** [.int]#int#  "bastion_port"
-** [.string]#string#  "bastion_username"
-** [.string]#string#  "bastion_password"
-** [.string]#string#  "bastion_key"
-** [.string]#string#  "bastion_key_password"
- 
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "port"
+     ** [.string]#string#  "username"
+     ** [.string]#string#  "password"
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "key_password"
+     ** [.string]#string#  "bastion_host"
+     ** [.int]#int#  "bastion_port"
+     ** [.string]#string#  "bastion_username"
+     ** [.string]#string#  "bastion_password"
+     ** [.string]#string#  "bastion_key"
+     ** [.string]#string#  "bastion_key_password"
+    
 
 Returns:
 

@@ -4,16 +4,14 @@
 
 == Available methods
 
-* <<apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType,create>>
-* <<apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions,create>>
-* <<apidoc-kickstart_tree-delete-loggedInUser-treeLabel,delete>>
-* <<apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel,deleteTreeAndProfiles>>
-* <<apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel,getDetails>>
-* <<apidoc-kickstart_tree-list-loggedInUser-channelLabel,list>>
-* <<apidoc-kickstart_tree-listInstallTypes-loggedInUser,listInstallTypes>>
-* <<apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel,rename>>
-* <<apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType,update>>
-* <<apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions,update>>
+* <<apidoc-kickstart_tree-create-953797060,create>>
+* <<apidoc-kickstart_tree-delete-172198129,delete>>
+* <<apidoc-kickstart_tree-deleteTreeAndProfiles-914864188,deleteTreeAndProfiles>>
+* <<apidoc-kickstart_tree-getDetails-1708850768,getDetails>>
+* <<apidoc-kickstart_tree-list-699574604,list>>
+* <<apidoc-kickstart_tree-listInstallTypes-277698998,listInstallTypes>>
+* <<apidoc-kickstart_tree-rename-979132425,rename>>
+* <<apidoc-kickstart_tree-update-1287460787,update>>
 
 == Description
 
@@ -24,56 +22,19 @@ Provides methods to access and modify the kickstart trees.
 kickstart.tree
 
 
-[#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType]
-== Method: create
-
-HTTP `POST`
+[#apidoc-kickstart_tree-create-953797060]
+== Method: create 
 
 Description:
 
-Create a Kickstart Tree (Distribution) in #product().
+Create a Kickstart Tree (Distribution) in SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
- 
-* [.string]#string#  treeLabel - The new kickstart tree label.
- 
-* [.string]#string#  basePath - Path to the base or
- root of the kickstart tree.
- 
-* [.string]#string#  channelLabel - Label of channel to
- associate with the kickstart tree. 
- 
-* [.string]#string#  installType - Label for
- KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
-[#apidoc-kickstart_tree-create-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions]
-== Method: create
-
-HTTP `POST`
-
-Description:
-
-Create a Kickstart Tree (Distribution) in #product().
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  treeLabel - The new kickstart tree label.
  
@@ -86,12 +47,6 @@ Parameters:
 * [.string]#string#  installType - Label for
  KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
  
-* [.string]#string#  kernelOptions - Options to be passed to the kernel
- when booting for the installation. 
- 
-* [.string]#string#  postKernelOptions - Options to be passed to the kernel
- when booting for the installation. 
- 
 
 Returns:
 
@@ -100,21 +55,19 @@ Returns:
 
 
 
-[#apidoc-kickstart_tree-delete-loggedInUser-treeLabel]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-kickstart_tree-delete-172198129]
+== Method: delete 
 
 Description:
 
-Delete a Kickstart Tree (Distribution) from #product().
+Delete a Kickstart Tree (Distribution) from SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  treeLabel - Label for the
  kickstart tree to delete.
@@ -127,10 +80,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_tree-deleteTreeAndProfiles-loggedInUser-treeLabel]
-== Method: deleteTreeAndProfiles
-
-HTTP `POST`
+[#apidoc-kickstart_tree-deleteTreeAndProfiles-914864188]
+== Method: deleteTreeAndProfiles 
 
 Description:
 
@@ -143,7 +94,7 @@ Delete a kickstarttree and any profiles associated with
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  treeLabel - Label for the
  kickstart tree to delete.
@@ -156,10 +107,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_tree-getDetails-loggedInUser-treeLabel]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-kickstart_tree-getDetails-1708850768]
+== Method: getDetails 
 
 Description:
 
@@ -170,7 +119,7 @@ The detailed information about a kickstartable tree given the tree name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  treeLabel - Label of kickstartable tree to
  search.
@@ -179,26 +128,22 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  kickstartable tree
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "abs_path"
-** [.int]#int#  "channel_id"
-** [.string]#string#  "kernel_options"
-** [.string]#string#  "post_kernel_options"
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "abs_path"
+   ** [.int]#int#  "channel_id"
    * [.struct]#struct#  kickstart install type
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
   
+   
  
 
 
 
-[#apidoc-kickstart_tree-list-loggedInUser-channelLabel]
-== Method: list
-
-HTTP `POST`
+[#apidoc-kickstart_tree-list-699574604]
+== Method: list 
 
 Description:
 
@@ -209,7 +154,7 @@ List the available kickstartable trees for the given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - Label of channel to
  search.
@@ -219,19 +164,16 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  kickstartable tree
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "base_path"
-** [.int]#int#  "channel_id"
-   
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "base_path"
+   ** [.int]#int#  "channel_id"
+    
 
 
 
-[#apidoc-kickstart_tree-listInstallTypes-loggedInUser]
-== Method: listInstallTypes
-
-HTTP `GET`
+[#apidoc-kickstart_tree-listInstallTypes-277698998]
+== Method: listInstallTypes 
 
 Description:
 
@@ -243,36 +185,33 @@ List the available kickstartable install types (rhel2,3,4,5 and
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  kickstart install type
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-   
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+    
 
 
 
-[#apidoc-kickstart_tree-rename-loggedInUser-originalLabel-newLabel]
-== Method: rename
-
-HTTP `POST`
+[#apidoc-kickstart_tree-rename-979132425]
+== Method: rename 
 
 Description:
 
-Rename a Kickstart Tree (Distribution) in #product().
+Rename a Kickstart Tree (Distribution) in SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  originalLabel - Label for the
  kickstart tree to rename.
@@ -287,56 +226,19 @@ Returns:
 
 
 
-[#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType]
-== Method: update
-
-HTTP `POST`
+[#apidoc-kickstart_tree-update-1287460787]
+== Method: update 
 
 Description:
 
-Edit a Kickstart Tree (Distribution) in #product().
+Edit a Kickstart Tree (Distribution) in SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
- 
-* [.string]#string#  treeLabel - Label for the kickstart tree.
- 
-* [.string]#string#  basePath - Path to the base or
- root of the kickstart tree.
- 
-* [.string]#string#  channelLabel - Label of channel to
- associate with kickstart tree.
- 
-* [.string]#string#  installType - Label for
- KickstartInstallType (rhel_6, rhel_7, rhel_8, rhel_9, fedora_9).
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
-[#apidoc-kickstart_tree-update-loggedInUser-treeLabel-basePath-channelLabel-installType-kernelOptions-postKernelOptions]
-== Method: update
-
-HTTP `POST`
-
-Description:
-
-Edit a Kickstart Tree (Distribution) in #product().
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  treeLabel - Label for the kickstart tree.
  
@@ -348,12 +250,6 @@ Parameters:
  
 * [.string]#string#  installType - Label for
  KickstartInstallType (rhel_2.1, rhel_3, rhel_4, rhel_5, fedora_9).
- 
-* [.string]#string#  kernelOptions - Options to be passed to the kernel
- when booting for the installation. 
- 
-* [.string]#string#  postKernelOptions - Options to be passed to the kernel
- when booting for the installation. 
  
 
 Returns:

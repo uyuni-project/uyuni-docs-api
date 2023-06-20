@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-preferences_locale-listLocales-,listLocales>>
-* <<apidoc-preferences_locale-listTimeZones-,listTimeZones>>
-* <<apidoc-preferences_locale-setLocale-loggedInUser-login-locale,setLocale>>
-* <<apidoc-preferences_locale-setTimeZone-loggedInUser-login-tzid,setTimeZone>>
+* <<apidoc-preferences_locale-listLocales-980801953,listLocales>>
+* <<apidoc-preferences_locale-listTimeZones-28502081,listTimeZones>>
+* <<apidoc-preferences_locale-setLocale-1868532012,setLocale>>
+* <<apidoc-preferences_locale-setTimeZone-498717267,setTimeZone>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to access and modify user locale information
 preferences.locale
 
 
-[#apidoc-preferences_locale-listLocales-]
-== Method: listLocales
-
-HTTP `GET`
+[#apidoc-preferences_locale-listLocales-980801953]
+== Method: listLocales 
 
 Description:
 
@@ -41,10 +39,8 @@ Returns:
 
 
 
-[#apidoc-preferences_locale-listTimeZones-]
-== Method: listTimeZones
-
-HTTP `GET`
+[#apidoc-preferences_locale-listTimeZones-28502081]
+== Method: listTimeZones 
 
 Description:
 
@@ -61,17 +57,15 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  timezone
-** [.int]#int#  "time_zone_id" - unique identifier for timezone
-** [.string]#string#  "olson_name" - name as identified by the Olson database
- 
- 
+   ** [.int]#int#  "time_zone_id" - unique identifier for timezone
+   ** [.string]#string#  "olson_name" - name as identified by the Olson database
+  
+  
 
 
 
-[#apidoc-preferences_locale-setLocale-loggedInUser-login-locale]
-== Method: setLocale
-
-HTTP `POST`
+[#apidoc-preferences_locale-setLocale-1868532012]
+== Method: setLocale 
 
 Description:
 
@@ -82,7 +76,7 @@ Set a user's locale.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -96,10 +90,8 @@ Returns:
 
 
 
-[#apidoc-preferences_locale-setTimeZone-loggedInUser-login-tzid]
-== Method: setTimeZone
-
-HTTP `POST`
+[#apidoc-preferences_locale-setTimeZone-498717267]
+== Method: setTimeZone 
 
 Description:
 
@@ -110,7 +102,7 @@ Set a user's timezone.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  

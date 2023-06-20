@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-packages_provider-associateKey-loggedInUser-providerName-key-type,associateKey>>
-* <<apidoc-packages_provider-list-loggedInUser,list>>
-* <<apidoc-packages_provider-listKeys-loggedInUser-providerName,listKeys>>
+* <<apidoc-packages_provider-associateKey-1979657069,associateKey>>
+* <<apidoc-packages_provider-list-19509485,list>>
+* <<apidoc-packages_provider-listKeys-1288641854,listKeys>>
 
 == Description
 
@@ -18,23 +18,21 @@ Methods to retrieve information about Package Providers associated with
 packages.provider
 
 
-[#apidoc-packages_provider-associateKey-loggedInUser-providerName-key-type]
-== Method: associateKey
-
-HTTP `POST`
+[#apidoc-packages_provider-associateKey-1979657069]
+== Method: associateKey 
 
 Description:
 
 Associate a package security key and with the package provider.
       If the provider or key doesn't exist, it is created. User executing the
-      request must be a #product() administrator.
+      request must be a SUSE Manager administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  providerName - The provider name
  
@@ -51,55 +49,51 @@ Returns:
 
 
 
-[#apidoc-packages_provider-list-loggedInUser]
-== Method: list
-
-HTTP `POST`
+[#apidoc-packages_provider-list-19509485]
+== Method: list 
 
 Description:
 
 List all Package Providers.
- User executing the request must be a #product() administrator.
+ User executing the request must be a SUSE Manager administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  package provider
-** [.string]#string#  "name"
-** [.array]#array#  "keys"
+   ** [.string]#string#  "name"
+   ** [.array]#array#  "keys"
       * [.struct]#struct#  package security key
-** [.string]#string#  "key"
-** [.string]#string#  "type"
- 
- 
- 
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "type"
+    
+       
+   
 
 
 
-[#apidoc-packages_provider-listKeys-loggedInUser-providerName]
-== Method: listKeys
-
-HTTP `GET`
+[#apidoc-packages_provider-listKeys-1288641854]
+== Method: listKeys 
 
 Description:
 
 List all security keys associated with a package provider.
- User executing the request must be a #product() administrator.
+ User executing the request must be a SUSE Manager administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  providerName - The provider name
  
@@ -108,9 +102,9 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  package security key
-** [.string]#string#  "key"
-** [.string]#string#  "type"
- 
- 
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "type"
+    
+   
 
 

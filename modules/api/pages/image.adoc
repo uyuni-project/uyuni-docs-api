@@ -4,20 +4,14 @@
 
 == Available methods
 
-* <<apidoc-image-addImageFile-loggedInUser-imageId-file-type-external,addImageFile>>
-* <<apidoc-image-delete-loggedInUser-imageId,delete>>
-* <<apidoc-image-deleteImageFile-loggedInUser-imageId-file,deleteImageFile>>
-* <<apidoc-image-getCustomValues-loggedInUser-imageId,getCustomValues>>
-* <<apidoc-image-getDetails-loggedInUser-imageId,getDetails>>
-* <<apidoc-image-getPillar-loggedInUser-imageId,getPillar>>
-* <<apidoc-image-getRelevantErrata-loggedInUser-imageId,getRelevantErrata>>
-* <<apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence,importContainerImage>>
-* <<apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence,importImage>>
-* <<apidoc-image-importOSImage-loggedInUser-name-version-arch,importOSImage>>
-* <<apidoc-image-listImages-loggedInUser,listImages>>
-* <<apidoc-image-listPackages-loggedInUser-imageId,listPackages>>
-* <<apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence,scheduleImageBuild>>
-* <<apidoc-image-setPillar-loggedInUser-imageId-pillarData,setPillar>>
+* <<apidoc-image-delete-1178027755,delete>>
+* <<apidoc-image-getCustomValues-925800237,getCustomValues>>
+* <<apidoc-image-getDetails-1642286060,getDetails>>
+* <<apidoc-image-getRelevantErrata-1404582039,getRelevantErrata>>
+* <<apidoc-image-importImage-856000892,importImage>>
+* <<apidoc-image-listImages-1080187590,listImages>>
+* <<apidoc-image-listPackages-687842599,listPackages>>
+* <<apidoc-image-scheduleImageBuild-1402232732,scheduleImageBuild>>
 
 == Description
 
@@ -28,42 +22,8 @@ Provides methods to access and modify images.
 image
 
 
-[#apidoc-image-addImageFile-loggedInUser-imageId-file-type-external]
-== Method: addImageFile
-
-HTTP `POST`
-
-Description:
-
-Delete image file
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  imageId - ID of the image
- 
-* [.string]#string#  file - the file name, it must exist in the store
- 
-* [.string]#string#  type - the image type
- 
-* [.boolean]#boolean#  external - the file is external
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
-[#apidoc-image-delete-loggedInUser-imageId]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-image-delete-1178027755]
+== Method: delete 
 
 Description:
 
@@ -74,7 +34,7 @@ Delete an image
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  imageId
  
@@ -86,38 +46,8 @@ Returns:
 
 
 
-[#apidoc-image-deleteImageFile-loggedInUser-imageId-file]
-== Method: deleteImageFile
-
-HTTP `POST`
-
-Description:
-
-Delete image file
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  imageId - ID of the image
- 
-* [.string]#string#  file - the file name
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
-[#apidoc-image-getCustomValues-loggedInUser-imageId]
-== Method: getCustomValues
-
-HTTP `GET`
+[#apidoc-image-getCustomValues-925800237]
+== Method: getCustomValues 
 
 Description:
 
@@ -128,7 +58,7 @@ Get the custom data values defined for the image
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  imageId
  
@@ -136,16 +66,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  the map of custom labels to custom values
-** [.string]#string#  "custom info label"
-** [.string]#string#  "value"
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 
 
-[#apidoc-image-getDetails-loggedInUser-imageId]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-image-getDetails-1642286060]
+== Method: getDetails 
 
 Description:
 
@@ -156,7 +84,7 @@ Get details of an image
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  imageId
  
@@ -164,70 +92,38 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  image overview information
-** [.int]#int#  "id"
-** [.string]#string#  "name" - image name
-** [.string]#string#  "type" - image type
-** [.string]#string#  "version" - image tag/version
-** [.int]#int#  "revision" - image build revision number
-** [.string]#string#  "arch" - image architecture
-** [.boolean]#boolean#  "external" - true if the image is built externally,
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name" - image name
+   ** [.string]#string#  "version" - image tag/version
+   ** [.int]#int#  "revision" - image build revision number
+   ** [.string]#string#  "arch" - image architecture
+   ** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-** [.string]#string#  "checksum"
-** [.string]#string#  "profileLabel"
-** [.string]#string#  "storeLabel"
-** [.string]#string#  "buildStatus" - One of:
-*** queued
-*** picked up
-*** completed
-*** failed
-** [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
-*** queued
-*** picked up
-*** completed
-*** failed
-** [.int]#int#  "buildServerId"
-** [.int]#int#  "securityErrata"
-** [.int]#int#  "bugErrata"
-** [.int]#int#  "enhancementErrata"
-** [.int]#int#  "outdatedPackages"
-** [.int]#int#  "installedPackages"
-** [.struct]#struct#  "files" - image files
-** [.boolean]#boolean#  "obsolete" - true if the image has been replaced in the store
-  
+   ** [.string]#string#  "checksum"
+   ** [.string]#string#  "profileLabel"
+   ** [.string]#string#  "buildStatus" - One of:
+                          *** queued
+              *** picked up
+              *** completed
+              *** failed
+               ** [.string]#string#  "inspectStatus" - Available if the build is successful. One of:
+                          *** queued
+              *** picked up
+              *** completed
+              *** failed
+               ** [.int]#int#  "buildServerId"
+   ** [.int]#int#  "securityErrata"
+   ** [.int]#int#  "bugErrata"
+   ** [.int]#int#  "enhancementErrata"
+   ** [.int]#int#  "outdatedPackages"
+   ** [.int]#int#  "installedPackages"
+   
  
 
 
 
-[#apidoc-image-getPillar-loggedInUser-imageId]
-== Method: getPillar
-
-HTTP `GET`
-
-Description:
-
-Get pillar data of an image
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  imageId
- 
-
-Returns:
-
-* [.struct]#struct#  the pillar data
- 
-
-
-
-[#apidoc-image-getRelevantErrata-loggedInUser-imageId]
-== Method: getRelevantErrata
-
-HTTP `GET`
+[#apidoc-image-getRelevantErrata-1404582039]
+== Method: getRelevantErrata 
 
 Description:
 
@@ -238,7 +134,7 @@ Returns a list of all errata that are relevant for the image
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  imageId
  
@@ -247,23 +143,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+       
 
 
 
-[#apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence]
-== Method: importContainerImage
-
-HTTP `POST`
+[#apidoc-image-importImage-856000892]
+== Method: importImage 
 
 Description:
 
@@ -274,7 +168,7 @@ Import an image and schedule an inspect afterwards
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - image name as specified in the store
  
@@ -296,77 +190,8 @@ Returns:
 
 
 
-[#apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence]
-== Method: importImage (Deprecated)
-
-HTTP `POST`
-
-Description:
-
-Import an image and schedule an inspect afterwards
-
-
-Deprecated - Schedule a Container image import
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.string]#string#  name - image name as specified in the store
- 
-* [.string]#string#  version - version to import or empty
- 
-* [.int]#int#  buildHostId - system ID of the build host
- 
-* [.string]#string#  storeLabel
- 
-* [.string]#string#  activationKey - activation key to get the channel data from
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the following inspect can run
- 
-
-Returns:
-
-* [.int]#int#  the ID of the inspect action created
- 
-
-
-
-[#apidoc-image-importOSImage-loggedInUser-name-version-arch]
-== Method: importOSImage
-
-HTTP `POST`
-
-Description:
-
-Import an image and schedule an inspect afterwards
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.string]#string#  name - image name as specified in the store
- 
-* [.string]#string#  version - version to import
- 
-* [.string]#string#  arch - image architecture
- 
-
-Returns:
-
-* [.int]#int#  the ID of the image
- 
-
-
-
-[#apidoc-image-listImages-loggedInUser]
-== Method: listImages
-
-HTTP `GET`
+[#apidoc-image-listImages-1080187590]
+== Method: listImages 
 
 Description:
 
@@ -377,32 +202,29 @@ List available images
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  image information
-** [.int]#int#  "id"
-** [.string]#string#  "name" - image name
-** [.string]#string#  "version" - image tag/version
-** [.int]#int#  "revision" - image build revision number
-** [.string]#string#  "arch" - image architecture
-** [.boolean]#boolean#  "external" - true if the image is built externally,
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name" - image name
+   ** [.string]#string#  "version" - image tag/version
+   ** [.int]#int#  "revision" - image build revision number
+   ** [.string]#string#  "arch" - image architecture
+   ** [.boolean]#boolean#  "external" - true if the image is built externally,
           false otherwise
-** [.string]#string#  "storeLabel"
-** [.string]#string#  "checksum"
-** [.string]#string#  "obsolete"
-   
- 
+   ** [.string]#string#  "storeLabel"
+   ** [.string]#string#  "checksum"
+   ** [.string]#string#  "obsolete"
+    
 
 
 
-[#apidoc-image-listPackages-loggedInUser-imageId]
-== Method: listPackages
-
-HTTP `GET`
+[#apidoc-image-listPackages-687842599]
+== Method: listPackages 
 
 Description:
 
@@ -413,7 +235,7 @@ List the installed packages on the given image
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  imageId
  
@@ -421,20 +243,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  package
-*** [.string]#string#  "name"
-*** [.string]#string#  "version"
-*** [.string]#string#  "release"
-*** [.string]#string#  "epoch"
-*** [.string]#string#  "arch"
- 
+          ** [.struct]#struct#  package
+                 *** [.string]#string#  "name"
+                 *** [.string]#string#  "version"
+                 *** [.string]#string#  "release"
+                 *** [.string]#string#  "epoch"
+                 *** [.string]#string#  "arch"
+                 
 
 
 
-[#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence]
-== Method: scheduleImageBuild
-
-HTTP `POST`
+[#apidoc-image-scheduleImageBuild-1402232732]
+== Method: scheduleImageBuild 
 
 Description:
 
@@ -445,7 +265,7 @@ Schedule an image build
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  profileLabel
  
@@ -459,34 +279,6 @@ Parameters:
 Returns:
 
 * [.int]#int#  the ID of the build action created
- 
-
-
-
-[#apidoc-image-setPillar-loggedInUser-imageId-pillarData]
-== Method: setPillar
-
-HTTP `POST`
-
-Description:
-
-Set pillar data of an image
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  imageId
- 
-* [.struct]#struct#  pillarData
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
 

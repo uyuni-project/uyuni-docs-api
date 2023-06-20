@@ -4,28 +4,27 @@
 
 == Available methods
 
-* <<apidoc-org-create-loggedInUser-orgName-adminLogin-adminPassword-prefix-firstName-lastName-email-usePamAuth,create>>
-* <<apidoc-org-createFirst-orgName-adminLogin-adminPassword-firstName-lastName-email,createFirst>>
-* <<apidoc-org-delete-loggedInUser-orgId,delete>>
-* <<apidoc-org-getClmSyncPatchesConfig-loggedInUser-orgId,getClmSyncPatchesConfig>>
-* <<apidoc-org-getDetails-loggedInUser-orgId,getDetails>>
-* <<apidoc-org-getDetails-loggedInUser-name,getDetails>>
-* <<apidoc-org-getPolicyForScapFileUpload-loggedInUser-orgId,getPolicyForScapFileUpload>>
-* <<apidoc-org-getPolicyForScapResultDeletion-loggedInUser-orgId,getPolicyForScapResultDeletion>>
-* <<apidoc-org-isContentStagingEnabled-loggedInUser-orgId,isContentStagingEnabled>>
-* <<apidoc-org-isErrataEmailNotifsForOrg-loggedInUser-orgId,isErrataEmailNotifsForOrg>>
-* <<apidoc-org-isOrgConfigManagedByOrgAdmin-loggedInUser-orgId,isOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-listOrgs-loggedInUser,listOrgs>>
-* <<apidoc-org-listUsers-loggedInUser-orgId,listUsers>>
-* <<apidoc-org-migrateSystems-loggedInUser-toOrgId-sids,migrateSystems>>
-* <<apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value,setClmSyncPatchesConfig>>
-* <<apidoc-org-setContentStaging-loggedInUser-orgId-enable,setContentStaging>>
-* <<apidoc-org-setErrataEmailNotifsForOrg-loggedInUser-orgId-enable,setErrataEmailNotifsForOrg>>
-* <<apidoc-org-setOrgConfigManagedByOrgAdmin-loggedInUser-orgId-enable,setOrgConfigManagedByOrgAdmin>>
-* <<apidoc-org-setPolicyForScapFileUpload-loggedInUser-orgId-newSettings,setPolicyForScapFileUpload>>
-* <<apidoc-org-setPolicyForScapResultDeletion-loggedInUser-orgId-newSettings,setPolicyForScapResultDeletion>>
-* <<apidoc-org-transferSystems-loggedInUser-toOrgId-sids,transferSystems>>
-* <<apidoc-org-updateName-loggedInUser-orgId-name,updateName>>
+* <<apidoc-org-create-1236678463,create>>
+* <<apidoc-org-delete-1699593080,delete>>
+* <<apidoc-org-getClmSyncPatchesConfig-588108658,getClmSyncPatchesConfig>>
+* <<apidoc-org-getDetails-113468028,getDetails>>
+* <<apidoc-org-getDetails-241016743,getDetails>>
+* <<apidoc-org-getPolicyForScapFileUpload-485998677,getPolicyForScapFileUpload>>
+* <<apidoc-org-getPolicyForScapResultDeletion-1803467457,getPolicyForScapResultDeletion>>
+* <<apidoc-org-isContentStagingEnabled-307536845,isContentStagingEnabled>>
+* <<apidoc-org-isErrataEmailNotifsForOrg-2118892964,isErrataEmailNotifsForOrg>>
+* <<apidoc-org-isOrgConfigManagedByOrgAdmin-461996027,isOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-listOrgs-793882880,listOrgs>>
+* <<apidoc-org-listUsers-607657546,listUsers>>
+* <<apidoc-org-migrateSystems-972236893,migrateSystems>>
+* <<apidoc-org-setClmSyncPatchesConfig-1715259593,setClmSyncPatchesConfig>>
+* <<apidoc-org-setContentStaging-8972378,setContentStaging>>
+* <<apidoc-org-setErrataEmailNotifsForOrg-787309361,setErrataEmailNotifsForOrg>>
+* <<apidoc-org-setOrgConfigManagedByOrgAdmin-784488689,setOrgConfigManagedByOrgAdmin>>
+* <<apidoc-org-setPolicyForScapFileUpload-1265615409,setPolicyForScapFileUpload>>
+* <<apidoc-org-setPolicyForScapResultDeletion-970909181,setPolicyForScapResultDeletion>>
+* <<apidoc-org-transferSystems-1529948259,transferSystems>>
+* <<apidoc-org-updateName-1074852402,updateName>>
 
 == Description
 
@@ -37,10 +36,8 @@ Contains methods to access common organization management
 org
 
 
-[#apidoc-org-create-loggedInUser-orgName-adminLogin-adminPassword-prefix-firstName-lastName-email-usePamAuth]
-== Method: create
-
-HTTP `POST`
+[#apidoc-org-create-1236678463]
+== Method: create 
 
 Description:
 
@@ -51,7 +48,7 @@ Create a new organization and associated administrator account.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  orgName - Organization name. Must meet same
  criteria as in the web UI.
@@ -76,71 +73,23 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - number of active users in the organization
+   ** [.int]#int#  "systems" - number of systems in the organization
+   ** [.int]#int#  "trusts" - number of trusted organizations
+   ** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
+   ** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
+   ** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
+   ** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
+   
  
 
 
 
-[#apidoc-org-createFirst-orgName-adminLogin-adminPassword-firstName-lastName-email]
-== Method: createFirst
-
-HTTP `POST`
-
-Description:
-
-Create first organization and user after initial setup without authentication
-
-
-
-
-Parameters:
-
-* [.string]#string#  orgName - Organization name. Must meet same
- criteria as in the web UI.
- 
-* [.string]#string#  adminLogin - New administrator login name.
- 
-* [.string]#string#  adminPassword - New administrator password.
- 
-* [.string]#string#  firstName - New administrator's first name.
- 
-* [.string]#string#  lastName - New administrator's first name.
- 
-* [.string]#string#  email - New administrator's e-mail.
- 
-
-Returns:
-
-* * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
-  
- 
-
-
-
-[#apidoc-org-delete-loggedInUser-orgId]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-org-delete-1699593080]
+== Method: delete 
 
 Description:
 
@@ -152,7 +101,7 @@ Delete an organization. The default organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -164,10 +113,8 @@ Returns:
 
 
 
-[#apidoc-org-getClmSyncPatchesConfig-loggedInUser-orgId]
-== Method: getClmSyncPatchesConfig
-
-HTTP `GET`
+[#apidoc-org-getClmSyncPatchesConfig-588108658]
+== Method: getClmSyncPatchesConfig 
 
 Description:
 
@@ -178,7 +125,7 @@ Reads the content lifecycle management patch synchronization config option.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -190,10 +137,8 @@ Returns:
 
 
 
-[#apidoc-org-getDetails-loggedInUser-orgId]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-org-getDetails-113468028]
+== Method: getDetails 
 
 Description:
 
@@ -205,7 +150,7 @@ The detailed information about an organization given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -213,25 +158,23 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - number of active users in the organization
+   ** [.int]#int#  "systems" - number of systems in the organization
+   ** [.int]#int#  "trusts" - number of trusted organizations
+   ** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
+   ** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
+   ** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
+   ** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
+   
  
 
 
 
-[#apidoc-org-getDetails-loggedInUser-name]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-org-getDetails-241016743]
+== Method: getDetails 
 
 Description:
 
@@ -243,7 +186,7 @@ The detailed information about an organization given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -251,25 +194,23 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - number of active users in the organization
+   ** [.int]#int#  "systems" - number of systems in the organization
+   ** [.int]#int#  "trusts" - number of trusted organizations
+   ** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
+   ** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
+   ** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
+   ** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
+   
  
 
 
 
-[#apidoc-org-getPolicyForScapFileUpload-loggedInUser-orgId]
-== Method: getPolicyForScapFileUpload
-
-HTTP `GET`
+[#apidoc-org-getPolicyForScapFileUpload-485998677]
+== Method: getPolicyForScapFileUpload 
 
 Description:
 
@@ -281,7 +222,7 @@ Get the status of SCAP detailed result file upload settings
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -289,16 +230,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  scap_upload_info
-** [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
-** [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
- 
+         ** [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
+         ** [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
+      
 
 
 
-[#apidoc-org-getPolicyForScapResultDeletion-loggedInUser-orgId]
-== Method: getPolicyForScapResultDeletion
-
-HTTP `GET`
+[#apidoc-org-getPolicyForScapResultDeletion-1803467457]
+== Method: getPolicyForScapResultDeletion 
 
 Description:
 
@@ -310,7 +249,7 @@ Get the status of SCAP result deletion settings for the given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -318,16 +257,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  scap_deletion_info
-** [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
-** [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
- 
+         ** [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
+         ** [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
+      
 
 
 
-[#apidoc-org-isContentStagingEnabled-loggedInUser-orgId]
-== Method: isContentStagingEnabled
-
-HTTP `GET`
+[#apidoc-org-isContentStagingEnabled-307536845]
+== Method: isContentStagingEnabled 
 
 Description:
 
@@ -339,7 +276,7 @@ Get the status of content staging settings for the given organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -351,10 +288,8 @@ Returns:
 
 
 
-[#apidoc-org-isErrataEmailNotifsForOrg-loggedInUser-orgId]
-== Method: isErrataEmailNotifsForOrg
-
-HTTP `GET`
+[#apidoc-org-isErrataEmailNotifsForOrg-2118892964]
+== Method: isErrataEmailNotifsForOrg 
 
 Description:
 
@@ -366,7 +301,7 @@ Returns whether errata e-mail notifications are enabled
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -379,22 +314,20 @@ Returns:
 
 
 
-[#apidoc-org-isOrgConfigManagedByOrgAdmin-loggedInUser-orgId]
-== Method: isOrgConfigManagedByOrgAdmin
-
-HTTP `GET`
+[#apidoc-org-isOrgConfigManagedByOrgAdmin-461996027]
+== Method: isOrgConfigManagedByOrgAdmin 
 
 Description:
 
 Returns whether Organization Administrator is able to manage his
- organization configuration. This may have a high impact on general #product() performance.
+ organization configuration. This may have a high impact on general SUSE Manager performance.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -406,10 +339,8 @@ Returns:
 
 
 
-[#apidoc-org-listOrgs-loggedInUser]
-== Method: listOrgs
-
-HTTP `GET`
+[#apidoc-org-listOrgs-793882880]
+== Method: listOrgs 
 
 Description:
 
@@ -420,32 +351,30 @@ Returns the list of organizations.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
- 
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - number of active users in the organization
+   ** [.int]#int#  "systems" - number of systems in the organization
+   ** [.int]#int#  "trusts" - number of trusted organizations
+   ** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
+   ** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
+   ** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
+   ** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
+  
+    
 
 
 
-[#apidoc-org-listUsers-loggedInUser-orgId]
-== Method: listUsers
-
-HTTP `GET`
+[#apidoc-org-listUsers-607657546]
+== Method: listUsers 
 
 Description:
 
@@ -456,7 +385,7 @@ Returns the list of users in a given organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -465,25 +394,23 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  user
-** [.string]#string#  "login"
-** [.string]#string#  "login_uc"
-** [.string]#string#  "name"
-** [.string]#string#  "email"
-** [.boolean]#boolean#  "is_org_admin"
- 
- 
+   ** [.string]#string#  "login"
+   ** [.string]#string#  "login_uc"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "email"
+   ** [.boolean]#boolean#  "is_org_admin"
+  
+    
 
 
 
-[#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids]
+[#apidoc-org-migrateSystems-972236893]
 == Method: migrateSystems (Deprecated)
-
-HTTP `POST`
 
 Description:
 
 Transfer systems from one organization to another.  If executed by
- a #product() administrator, the systems will be transferred from their current
+ a SUSE Manager administrator, the systems will be transferred from their current
  organization to the organization specified by the toOrgId.  If executed by
  an organization administrator, the systems must exist in the same organization
  as that administrator and the systems will be transferred to the organization
@@ -500,7 +427,7 @@ Deprecated - being replaced by org.transferSystems(User loggedInUser, Integer to
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  toOrgId - ID of the organization where the
  system(s) will be transferred to.
@@ -515,10 +442,8 @@ Returns:
 
 
 
-[#apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value]
-== Method: setClmSyncPatchesConfig
-
-HTTP `POST`
+[#apidoc-org-setClmSyncPatchesConfig-1715259593]
+== Method: setClmSyncPatchesConfig 
 
 Description:
 
@@ -529,7 +454,7 @@ Sets the content lifecycle management patch synchronization config option.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -543,10 +468,8 @@ Returns:
 
 
 
-[#apidoc-org-setContentStaging-loggedInUser-orgId-enable]
-== Method: setContentStaging
-
-HTTP `POST`
+[#apidoc-org-setContentStaging-8972378]
+== Method: setContentStaging 
 
 Description:
 
@@ -557,7 +480,7 @@ Set the status of content staging for the given organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -571,10 +494,8 @@ Returns:
 
 
 
-[#apidoc-org-setErrataEmailNotifsForOrg-loggedInUser-orgId-enable]
-== Method: setErrataEmailNotifsForOrg
-
-HTTP `POST`
+[#apidoc-org-setErrataEmailNotifsForOrg-787309361]
+== Method: setErrataEmailNotifsForOrg 
 
 Description:
 
@@ -585,7 +506,7 @@ Dis/enables errata e-mail notifications for the organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -599,22 +520,20 @@ Returns:
 
 
 
-[#apidoc-org-setOrgConfigManagedByOrgAdmin-loggedInUser-orgId-enable]
-== Method: setOrgConfigManagedByOrgAdmin
-
-HTTP `POST`
+[#apidoc-org-setOrgConfigManagedByOrgAdmin-784488689]
+== Method: setOrgConfigManagedByOrgAdmin 
 
 Description:
 
 Sets whether Organization Administrator can manage his organization
- configuration. This may have a high impact on general #product() performance.
+ configuration. This may have a high impact on general SUSE Manager performance.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -628,10 +547,8 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapFileUpload-loggedInUser-orgId-newSettings]
-== Method: setPolicyForScapFileUpload
-
-HTTP `POST`
+[#apidoc-org-setPolicyForScapFileUpload-1265615409]
+== Method: setPolicyForScapFileUpload 
 
 Description:
 
@@ -643,14 +560,14 @@ Set the status of SCAP detailed result file upload settings
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
 * [.struct]#struct#  newSettings
-** [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
-** [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
- 
+         ** [.boolean]#boolean#  "enabled" - Aggregation of detailed SCAP results is enabled.
+         ** [.int]#int#  "size_limit" - Limit (in Bytes) for a single SCAP file upload.
+      
 
 Returns:
 
@@ -659,10 +576,8 @@ Returns:
 
 
 
-[#apidoc-org-setPolicyForScapResultDeletion-loggedInUser-orgId-newSettings]
-== Method: setPolicyForScapResultDeletion
-
-HTTP `POST`
+[#apidoc-org-setPolicyForScapResultDeletion-970909181]
+== Method: setPolicyForScapResultDeletion 
 
 Description:
 
@@ -674,14 +589,14 @@ Set the status of SCAP result deletion settins for the given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
 * [.struct]#struct#  newSettings
-** [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
-** [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
- 
+         ** [.boolean]#boolean#  "enabled" - Deletion of SCAP results is enabled
+         ** [.int]#int#  "retention_period" - Period (in days) after which a scan can be deleted (if enabled).
+      
 
 Returns:
 
@@ -690,15 +605,13 @@ Returns:
 
 
 
-[#apidoc-org-transferSystems-loggedInUser-toOrgId-sids]
-== Method: transferSystems
-
-HTTP `POST`
+[#apidoc-org-transferSystems-1529948259]
+== Method: transferSystems 
 
 Description:
 
 Transfer systems from one organization to another.  If executed by
- a #product() administrator, the systems will be transferred from their current
+ a SUSE Manager administrator, the systems will be transferred from their current
  organization to the organization specified by the toOrgId.  If executed by
  an organization administrator, the systems must exist in the same organization
  as that administrator and the systems will be transferred to the organization
@@ -710,7 +623,7 @@ Transfer systems from one organization to another.  If executed by
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  toOrgId - ID of the organization where the
  system(s) will be transferred to.
@@ -725,10 +638,8 @@ Returns:
 
 
 
-[#apidoc-org-updateName-loggedInUser-orgId-name]
-== Method: updateName
-
-HTTP `POST`
+[#apidoc-org-updateName-1074852402]
+== Method: updateName 
 
 Description:
 
@@ -739,7 +650,7 @@ Updates the name of an organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -750,17 +661,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  organization info
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "active_users" - number of active users in the organization
-** [.int]#int#  "systems" - number of systems in the organization
-** [.int]#int#  "trusts" - number of trusted organizations
-** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
-** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
-** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
-** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
-** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "active_users" - number of active users in the organization
+   ** [.int]#int#  "systems" - number of systems in the organization
+   ** [.int]#int#  "trusts" - number of trusted organizations
+   ** [.int]#int#  "system_groups" - number of system groups in the organization (optional)
+   ** [.int]#int#  "activation_keys" - number of activation keys in the organization (optional)
+   ** [.int]#int#  "kickstart_profiles" - number of kickstart profiles in the organization (optional)
+   ** [.int]#int#  "configuration_channels" - number of configuration channels in the organization (optional)
+   ** [.boolean]#boolean#  "staging_content_enabled" - is staging content enabled in organization (optional)
+   
  
 
 

@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-recurringaction-create-loggedInUser-actionProps,create>>
-* <<apidoc-recurringaction-delete-loggedInUser-actionId,delete>>
-* <<apidoc-recurringaction-listByEntity-loggedInUser-entityId-entityType,listByEntity>>
-* <<apidoc-recurringaction-lookupById-loggedInUser-actionId,lookupById>>
-* <<apidoc-recurringaction-update-loggedInUser-actionProps,update>>
+* <<apidoc-recurringaction-create-1642373234,create>>
+* <<apidoc-recurringaction-delete-336982413,delete>>
+* <<apidoc-recurringaction-listByEntity-495367734,listByEntity>>
+* <<apidoc-recurringaction-lookupById-235668413,lookupById>>
+* <<apidoc-recurringaction-update-443414834,update>>
 
 == Description
 
@@ -19,10 +19,8 @@ Provides methods to handle Recurring Actions for Minions, Groups and Organizatio
 recurringaction
 
 
-[#apidoc-recurringaction-create-loggedInUser-actionProps]
-== Method: create
-
-HTTP `POST`
+[#apidoc-recurringaction-create-1642373234]
+== Method: create 
 
 Description:
 
@@ -33,18 +31,18 @@ Create a new recurring action.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.struct]#struct#  actionProps
-** [.string]#string#  "entity_type" - the type of the target entity. One of the following:
-*** MINION
-*** GROUP
-*** ORG
-** [.int]#int#  "entity_id" - the ID of the target entity
-** [.string]#string#  "name" - the name of the action
-** [.string]#string#  "cron_expr" - the execution frequency of the action
-** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
- 
+      ** [.string]#string#  "entity_type" - the type of the target entity. One of the following:
+                  *** MINION
+          *** GROUP
+          *** ORG
+              ** [.int]#int#  "entity_id" - the ID of the target entity
+      ** [.string]#string#  "name" - the name of the action
+      ** [.string]#string#  "cron_expr" - the execution frequency of the action
+      ** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+   
 
 Returns:
 
@@ -53,10 +51,8 @@ Returns:
 
 
 
-[#apidoc-recurringaction-delete-loggedInUser-actionId]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-recurringaction-delete-336982413]
+== Method: delete 
 
 Description:
 
@@ -67,7 +63,7 @@ Delete recurring action with given action id.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  actionId - ID of the action
  
@@ -79,10 +75,8 @@ Returns:
 
 
 
-[#apidoc-recurringaction-listByEntity-loggedInUser-entityId-entityType]
-== Method: listByEntity
-
-HTTP `GET`
+[#apidoc-recurringaction-listByEntity-495367734]
+== Method: listByEntity 
 
 Description:
 
@@ -93,7 +87,7 @@ Return a list of recurring actions for a given entity.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  entityType - type of the target entity. Can be MINION, GROUP or ORG.
  
@@ -104,24 +98,22 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  recurring action information
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "entity_id"
-** [.string]#string#  "entity_type"
-** [.string]#string#  "cron_expr"
-** [.dateTime.iso8601]#dateTime.iso8601#  "created"
-** [.string]#string#  "creator"
-** [.boolean]#boolean#  "test"
-** [.boolean]#boolean#  "active"
- 
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "entity_id"
+   ** [.string]#string#  "entity_type"
+   ** [.string]#string#  "cron_expr"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+   ** [.string]#string#  "creator"
+   ** [.boolean]#boolean#  "test"
+   ** [.boolean]#boolean#  "active"
+  
+       
 
 
 
-[#apidoc-recurringaction-lookupById-loggedInUser-actionId]
-== Method: lookupById
-
-HTTP `GET`
+[#apidoc-recurringaction-lookupById-235668413]
+== Method: lookupById 
 
 Description:
 
@@ -132,7 +124,7 @@ Return recurring action with given action ID.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  actionId - ID of the action
  
@@ -140,24 +132,22 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  recurring action information
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.int]#int#  "entity_id"
-** [.string]#string#  "entity_type"
-** [.string]#string#  "cron_expr"
-** [.dateTime.iso8601]#dateTime.iso8601#  "created"
-** [.string]#string#  "creator"
-** [.boolean]#boolean#  "test"
-** [.boolean]#boolean#  "active"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "entity_id"
+   ** [.string]#string#  "entity_type"
+   ** [.string]#string#  "cron_expr"
+   ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
+   ** [.string]#string#  "creator"
+   ** [.boolean]#boolean#  "test"
+   ** [.boolean]#boolean#  "active"
+   
  
 
 
 
-[#apidoc-recurringaction-update-loggedInUser-actionProps]
-== Method: update
-
-HTTP `POST`
+[#apidoc-recurringaction-update-443414834]
+== Method: update 
 
 Description:
 
@@ -168,15 +158,15 @@ Update a recurring action.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.struct]#struct#  actionProps
-** [.int]#int#  "id" - the ID of the action to update
-** [.string]#string#  "name" - the name of the action (optional)
-** [.string]#string#  "cron_expr" - the execution frequency of the action (optional)
-** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
-** [.boolean]#boolean#  "active" - whether the action should be active (optional)
- 
+      ** [.int]#int#  "id" - the ID of the action to update
+      ** [.string]#string#  "name" - the name of the action (optional)
+      ** [.string]#string#  "cron_expr" - the execution frequency of the action (optional)
+      ** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+      ** [.boolean]#boolean#  "active" - whether the action should be active (optional)
+   
 
 Returns:
 

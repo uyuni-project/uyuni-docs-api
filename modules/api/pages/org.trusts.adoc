@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-org_trusts-addTrust-loggedInUser-orgId-trustOrgId,addTrust>>
-* <<apidoc-org_trusts-getDetails-loggedInUser-orgId,getDetails>>
-* <<apidoc-org_trusts-listChannelsConsumed-loggedInUser-orgId,listChannelsConsumed>>
-* <<apidoc-org_trusts-listChannelsProvided-loggedInUser-orgId,listChannelsProvided>>
-* <<apidoc-org_trusts-listOrgs-loggedInUser,listOrgs>>
-* <<apidoc-org_trusts-listSystemsAffected-loggedInUser-orgId-trustOrgId,listSystemsAffected>>
-* <<apidoc-org_trusts-listTrusts-loggedInUser-orgId,listTrusts>>
-* <<apidoc-org_trusts-removeTrust-loggedInUser-orgId-trustOrgId,removeTrust>>
+* <<apidoc-org_trusts-addTrust-398051839,addTrust>>
+* <<apidoc-org_trusts-getDetails-370543159,getDetails>>
+* <<apidoc-org_trusts-listChannelsConsumed-2142397531,listChannelsConsumed>>
+* <<apidoc-org_trusts-listChannelsProvided-852736357,listChannelsProvided>>
+* <<apidoc-org_trusts-listOrgs-2088388998,listOrgs>>
+* <<apidoc-org_trusts-listSystemsAffected-1571036418,listSystemsAffected>>
+* <<apidoc-org_trusts-listTrusts-940459786,listTrusts>>
+* <<apidoc-org_trusts-removeTrust-2068183023,removeTrust>>
 
 == Description
 
@@ -23,10 +23,8 @@ Contains methods to access common organization trust information
 org.trusts
 
 
-[#apidoc-org_trusts-addTrust-loggedInUser-orgId-trustOrgId]
-== Method: addTrust
-
-HTTP `POST`
+[#apidoc-org_trusts-addTrust-398051839]
+== Method: addTrust 
 
 Description:
 
@@ -37,7 +35,7 @@ Add an organization to the list of trusted organizations.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -51,10 +49,8 @@ Returns:
 
 
 
-[#apidoc-org_trusts-getDetails-loggedInUser-orgId]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-org_trusts-getDetails-370543159]
+== Method: getDetails 
 
 Description:
 
@@ -66,7 +62,7 @@ The trust details about an organization given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId - Id of the trusted organization
  
@@ -74,30 +70,28 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  org trust details
-** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Date the organization was
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - Date the organization was
           created
-** [.dateTime.iso8601]#dateTime.iso8601#  "trusted_since" - Date the organization was
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "trusted_since" - Date the organization was
           defined as trusted
-** [.int]#int#  "channels_provided" - Number of channels provided by
+          ** [.int]#int#  "channels_provided" - Number of channels provided by
           the organization.
-** [.int]#int#  "channels_consumed" - Number of channels consumed by
+          ** [.int]#int#  "channels_consumed" - Number of channels consumed by
           the organization.
-** [.int]#int#  "systems_migrated_to" - (Deprecated by systems_transferred_to) Number
+          ** [.int]#int#  "systems_migrated_to" - (Deprecated by systems_transferred_to) Number
           of systems transferred to the organization.
-** [.int]#int#  "systems_migrated_from" - (Deprecated by systems_transferred_from) Number
+          ** [.int]#int#  "systems_migrated_from" - (Deprecated by systems_transferred_from) Number
           of systems transferred from the organization.
-** [.int]#int#  "systems_transferred_to" - Number of systems transferred to
+          ** [.int]#int#  "systems_transferred_to" - Number of systems transferred to
           the organization.
-** [.int]#int#  "systems_transferred_from" - Number of systems transferred
+          ** [.int]#int#  "systems_transferred_from" - Number of systems transferred
           from the organization.
- 
+      
 
 
 
-[#apidoc-org_trusts-listChannelsConsumed-loggedInUser-orgId]
-== Method: listChannelsConsumed
-
-HTTP `GET`
+[#apidoc-org_trusts-listChannelsConsumed-2142397531]
+== Method: listChannelsConsumed 
 
 Description:
 
@@ -109,7 +103,7 @@ Lists all software channels that the organization given may consume
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId - Id of the trusted organization
  
@@ -117,19 +111,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  channel info
-*** [.int]#int#  "channel_id"
-*** [.string]#string#  "channel_name"
-*** [.int]#int#  "packages"
-*** [.int]#int#  "systems"
- 
+         ** [.struct]#struct#  channel info
+             *** [.int]#int#  "channel_id"
+             *** [.string]#string#  "channel_name"
+             *** [.int]#int#  "packages"
+             *** [.int]#int#  "systems"
+               
 
 
 
-[#apidoc-org_trusts-listChannelsProvided-loggedInUser-orgId]
-== Method: listChannelsProvided
-
-HTTP `GET`
+[#apidoc-org_trusts-listChannelsProvided-852736357]
+== Method: listChannelsProvided 
 
 Description:
 
@@ -141,7 +133,7 @@ Lists all software channels that the organization given is providing to
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId - Id of the trusted organization
  
@@ -149,19 +141,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  channel info
-*** [.int]#int#  "channel_id"
-*** [.string]#string#  "channel_name"
-*** [.int]#int#  "packages"
-*** [.int]#int#  "systems"
- 
+         ** [.struct]#struct#  channel info
+             *** [.int]#int#  "channel_id"
+             *** [.string]#string#  "channel_name"
+             *** [.int]#int#  "packages"
+             *** [.int]#int#  "systems"
+               
 
 
 
-[#apidoc-org_trusts-listOrgs-loggedInUser]
-== Method: listOrgs
-
-HTTP `GET`
+[#apidoc-org_trusts-listOrgs-2088388998]
+== Method: listOrgs 
 
 Description:
 
@@ -172,25 +162,23 @@ List all organanizations trusted by the user's organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  trusted organizations
-** [.int]#int#  "org_id"
-** [.string]#string#  "org_name"
-** [.int]#int#  "shared_channels"
- 
- 
+       ** [.int]#int#  "org_id"
+       ** [.string]#string#  "org_name"
+       ** [.int]#int#  "shared_channels"
+      
+      
 
 
 
-[#apidoc-org_trusts-listSystemsAffected-loggedInUser-orgId-trustOrgId]
-== Method: listSystemsAffected
-
-HTTP `GET`
+[#apidoc-org_trusts-listSystemsAffected-1571036418]
+== Method: listSystemsAffected 
 
 Description:
 
@@ -203,7 +191,7 @@ Get a list of systems within the  trusted organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -213,17 +201,15 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  affected systems
-*** [.int]#int#  "systemId"
-*** [.string]#string#  "systemName"
- 
+     ** [.struct]#struct#  affected systems
+       *** [.int]#int#  "systemId"
+       *** [.string]#string#  "systemName"
+         
 
 
 
-[#apidoc-org_trusts-listTrusts-loggedInUser-orgId]
-== Method: listTrusts
-
-HTTP `GET`
+[#apidoc-org_trusts-listTrusts-940459786]
+== Method: listTrusts 
 
 Description:
 
@@ -234,7 +220,7 @@ Returns the list of trusted organizations.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -243,18 +229,16 @@ Returns:
 
 * [.array]#array# :
    * [.struct]#struct#  trusted organizations
-** [.int]#int#  "orgId"
-** [.string]#string#  "orgName"
-** [.boolean]#boolean#  "trustEnabled"
- 
- 
+     ** [.int]#int#  "orgId"
+     ** [.string]#string#  "orgName"
+     ** [.boolean]#boolean#  "trustEnabled"
+    
+  
 
 
 
-[#apidoc-org_trusts-removeTrust-loggedInUser-orgId-trustOrgId]
-== Method: removeTrust
-
-HTTP `POST`
+[#apidoc-org_trusts-removeTrust-2068183023]
+== Method: removeTrust 
 
 Description:
 
@@ -265,7 +249,7 @@ Remove an organization to the list of trusted organizations.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  

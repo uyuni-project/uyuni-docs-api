@@ -4,25 +4,25 @@
 
 == Available methods
 
-* <<apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds,addPackages>>
-* <<apidoc-errata-applicableToChannels-loggedInUser-advisoryName,applicableToChannels>>
-* <<apidoc-errata-bugzillaFixes-loggedInUser-advisoryName,bugzillaFixes>>
-* <<apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames,clone>>
-* <<apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames,cloneAsOriginal>>
-* <<apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames,cloneAsOriginalAsync>>
-* <<apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames,cloneAsync>>
-* <<apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels,create>>
-* <<apidoc-errata-delete-loggedInUser-advisoryName,delete>>
-* <<apidoc-errata-findByCve-loggedInUser-cveName,findByCve>>
-* <<apidoc-errata-getDetails-loggedInUser-advisoryName,getDetails>>
-* <<apidoc-errata-listAffectedSystems-loggedInUser-advisoryName,listAffectedSystems>>
-* <<apidoc-errata-listCves-loggedInUser-advisoryName,listCves>>
-* <<apidoc-errata-listKeywords-loggedInUser-advisoryName,listKeywords>>
-* <<apidoc-errata-listPackages-loggedInUser-advisoryName,listPackages>>
-* <<apidoc-errata-publish-loggedInUser-advisoryName-channelLabels,publish>>
-* <<apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels,publishAsOriginal>>
-* <<apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds,removePackages>>
-* <<apidoc-errata-setDetails-loggedInUser-advisoryName-details,setDetails>>
+* <<apidoc-errata-addPackages-572706092,addPackages>>
+* <<apidoc-errata-applicableToChannels-742939450,applicableToChannels>>
+* <<apidoc-errata-bugzillaFixes-674608081,bugzillaFixes>>
+* <<apidoc-errata-clone-154177822,clone>>
+* <<apidoc-errata-cloneAsOriginal-165951629,cloneAsOriginal>>
+* <<apidoc-errata-cloneAsOriginalAsync-676538195,cloneAsOriginalAsync>>
+* <<apidoc-errata-cloneAsync-735140074,cloneAsync>>
+* <<apidoc-errata-create-711487917,create>>
+* <<apidoc-errata-delete-39846973,delete>>
+* <<apidoc-errata-findByCve-1082705382,findByCve>>
+* <<apidoc-errata-getDetails-1762409247,getDetails>>
+* <<apidoc-errata-listAffectedSystems-1925356935,listAffectedSystems>>
+* <<apidoc-errata-listCves-1241568657,listCves>>
+* <<apidoc-errata-listKeywords-552186123,listKeywords>>
+* <<apidoc-errata-listPackages-1336822843,listPackages>>
+* <<apidoc-errata-publish-859361949,publish>>
+* <<apidoc-errata-publishAsOriginal-1579030959,publishAsOriginal>>
+* <<apidoc-errata-removePackages-1289602009,removePackages>>
+* <<apidoc-errata-setDetails-494021631,setDetails>>
 
 == Description
 
@@ -33,10 +33,8 @@ Provides methods to access and modify errata.
 errata
 
 
-[#apidoc-errata-addPackages-loggedInUser-advisoryName-packageIds]
-== Method: addPackages
-
-HTTP `POST`
+[#apidoc-errata-addPackages-572706092]
+== Method: addPackages 
 
 Description:
 
@@ -48,7 +46,7 @@ Add a set of packages to an erratum with the given advisory name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -62,10 +60,8 @@ Returns:
 
 
 
-[#apidoc-errata-applicableToChannels-loggedInUser-advisoryName]
-== Method: applicableToChannels
-
-HTTP `GET`
+[#apidoc-errata-applicableToChannels-742939450]
+== Method: applicableToChannels 
 
 Description:
 
@@ -78,7 +74,7 @@ Returns a list of channels applicable to the errata with the given advisory name
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -86,19 +82,17 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  channel
-*** [.int]#int#  "channel_id"
-*** [.string]#string#  "label"
-*** [.string]#string#  "name"
-*** [.string]#string#  "parent_channel_label"
- 
+          ** [.struct]#struct#  channel
+              *** [.int]#int#  "channel_id"
+              *** [.string]#string#  "label"
+              *** [.string]#string#  "name"
+              *** [.string]#string#  "parent_channel_label"
+                  
 
 
 
-[#apidoc-errata-bugzillaFixes-loggedInUser-advisoryName]
-== Method: bugzillaFixes
-
-HTTP `POST`
+[#apidoc-errata-bugzillaFixes-674608081]
+== Method: bugzillaFixes 
 
 Description:
 
@@ -114,7 +108,7 @@ Get the Bugzilla fixes for an erratum matching the given
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -122,17 +116,15 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  Bugzilla info
-** [.string]#string#  "bugzilla_id" - actual bug number is the key into the
+          ** [.string]#string#  "bugzilla_id" - actual bug number is the key into the
                       struct
-** [.string]#string#  "bug_summary" - summary who's key is the bug id
- 
+          ** [.string]#string#  "bug_summary" - summary who's key is the bug id
+       
 
 
 
-[#apidoc-errata-clone-loggedInUser-channelLabel-advisoryNames]
-== Method: clone
-
-HTTP `POST`
+[#apidoc-errata-clone-154177822]
+== Method: clone 
 
 Description:
 
@@ -143,7 +135,7 @@ Clone a list of errata into the specified channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel
  
@@ -154,21 +146,19 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+           
 
 
 
-[#apidoc-errata-cloneAsOriginal-loggedInUser-channelLabel-advisoryNames]
-== Method: cloneAsOriginal
-
-HTTP `POST`
+[#apidoc-errata-cloneAsOriginal-165951629]
+== Method: cloneAsOriginal 
 
 Description:
 
@@ -179,7 +169,7 @@ Clones a list of errata into a specified cloned channel according the original e
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel
  
@@ -190,21 +180,19 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+           
 
 
 
-[#apidoc-errata-cloneAsOriginalAsync-loggedInUser-channelLabel-advisoryNames]
-== Method: cloneAsOriginalAsync
-
-HTTP `POST`
+[#apidoc-errata-cloneAsOriginalAsync-676538195]
+== Method: cloneAsOriginalAsync 
 
 Description:
 
@@ -216,7 +204,7 @@ Asynchronously clones a list of errata into a specified cloned channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel
  
@@ -230,10 +218,8 @@ Returns:
 
 
 
-[#apidoc-errata-cloneAsync-loggedInUser-channelLabel-advisoryNames]
-== Method: cloneAsync
-
-HTTP `POST`
+[#apidoc-errata-cloneAsync-735140074]
+== Method: cloneAsync 
 
 Description:
 
@@ -244,7 +230,7 @@ Asynchronously clone a list of errata into the specified channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel
  
@@ -258,10 +244,8 @@ Returns:
 
 
 
-[#apidoc-errata-create-loggedInUser-errataInfo-bugs-keywords-packageIds-channelLabels]
-== Method: create
-
-HTTP `POST`
+[#apidoc-errata-create-711487917]
+== Method: create 
 
 Description:
 
@@ -272,34 +256,34 @@ Create a custom errata
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.struct]#struct#  errataInfo
-** [.string]#string#  "synopsis"
-** [.string]#string#  "advisory_name"
-** [.int]#int#  "advisory_release"
-** [.string]#string#  "advisory_type" - Type of advisory (one of the
+          ** [.string]#string#  "synopsis"
+          ** [.string]#string#  "advisory_name"
+          ** [.int]#int#  "advisory_release"
+          ** [.string]#string#  "advisory_type" - Type of advisory (one of the
                   following: 'Security Advisory', 'Product Enhancement Advisory',
                   or 'Bug Fix Advisory'
-** [.string]#string#  "advisory_status" - Status of advisory (one of the
+          ** [.string]#string#  "advisory_status" - Status of advisory (one of the
                   following: 'final', 'testing', 'stable' or 'retracted'
-** [.string]#string#  "product"
-** [.string]#string#  "errataFrom"
-** [.string]#string#  "topic"
-** [.string]#string#  "description"
-** [.string]#string#  "references"
-** [.string]#string#  "notes"
-** [.string]#string#  "solution"
-** [.string]#string#  "severity" - Severity of advisory (one of the
+          ** [.string]#string#  "product"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+          ** [.string]#string#  "severity" - Severity of advisory (one of the
                   following: 'Low', 'Moderate', 'Important', 'Critical'
                   or 'Unspecified'
- 
+        
 * [.array]#array#  bugs
-** [.struct]#struct#  bug
-*** [.int]#int#  "id" - Bug Id
-*** [.string]#string#  "summary"
-*** [.string]#string#  "url"
- 
+         ** [.struct]#struct#  bug
+           *** [.int]#int#  "id" - Bug Id
+           *** [.string]#string#  "summary"
+           *** [.string]#string#  "url"
+                 
 * [.array]#string array#  keywords - list of keywords to associate with the errata
  
 * [.array]#int array#  packageIds
@@ -310,21 +294,19 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-  
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+       
  
 
 
 
-[#apidoc-errata-delete-loggedInUser-advisoryName]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-errata-delete-39846973]
+== Method: delete 
 
 Description:
 
@@ -336,7 +318,7 @@ Delete an erratum.  This method will only allow for deletion
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -348,10 +330,8 @@ Returns:
 
 
 
-[#apidoc-errata-findByCve-loggedInUser-cveName]
-== Method: findByCve
-
-HTTP `GET`
+[#apidoc-errata-findByCve-1082705382]
+== Method: findByCve 
 
 Description:
 
@@ -363,7 +343,7 @@ Lookup the details for errata associated with the given CVE
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  cveName
  
@@ -372,21 +352,19 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+           
 
 
 
-[#apidoc-errata-getDetails-loggedInUser-advisoryName]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-errata-getDetails-1762409247]
+== Method: getDetails 
 
 Description:
 
@@ -397,7 +375,7 @@ Retrieves the details for the erratum matching the given advisory name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -405,30 +383,27 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  erratum
-** [.int]#int#  "id"
-** [.string]#string#  "issue_date"
-** [.string]#string#  "update_date"
-** [.string]#string#  "last_modified_date" - last time the erratum was modified.
-** [.string]#string#  "synopsis"
-** [.int]#int#  "release"
-** [.string]#string#  "advisory_status"
-** [.string]#string#  "vendor_advisory"
-** [.string]#string#  "type"
-** [.string]#string#  "product"
-** [.string]#string#  "errataFrom"
-** [.string]#string#  "topic"
-** [.string]#string#  "description"
-** [.string]#string#  "references"
-** [.string]#string#  "notes"
-** [.string]#string#  "solution"
- 
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "issue_date"
+          ** [.string]#string#  "update_date"
+          ** [.string]#string#  "last_modified_date" - last time the erratum was modified.
+          ** [.string]#string#  "synopsis"
+          ** [.int]#int#  "release"
+          ** [.string]#string#  "advisory_status"
+          ** [.string]#string#  "type"
+          ** [.string]#string#  "product"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+      
 
 
 
-[#apidoc-errata-listAffectedSystems-loggedInUser-advisoryName]
-== Method: listAffectedSystems
-
-HTTP `GET`
+[#apidoc-errata-listAffectedSystems-1925356935]
+== Method: listAffectedSystems 
 
 Description:
 
@@ -441,7 +416,7 @@ Return the list of systems affected by the errata with the given advisory name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -450,24 +425,22 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  system
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
              successfully checked in
-** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
-** [.int]#int#  "extra_pkg_count" - number of packages not belonging
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
+     ** [.int]#int#  "extra_pkg_count" - number of packages not belonging
              to any assigned channel
-** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
- 
- 
+     ** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
+  
+       
 
 
 
-[#apidoc-errata-listCves-loggedInUser-advisoryName]
-== Method: listCves
-
-HTTP `GET`
+[#apidoc-errata-listCves-1241568657]
+== Method: listCves 
 
 Description:
 
@@ -480,7 +453,7 @@ Returns a list of CVEs applicable to the errata
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -492,10 +465,8 @@ Returns:
 
 
 
-[#apidoc-errata-listKeywords-loggedInUser-advisoryName]
-== Method: listKeywords
-
-HTTP `GET`
+[#apidoc-errata-listKeywords-552186123]
+== Method: listKeywords 
 
 Description:
 
@@ -508,7 +479,7 @@ Get the keywords associated with an erratum matching the given advisory name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -520,10 +491,8 @@ Returns:
 
 
 
-[#apidoc-errata-listPackages-loggedInUser-advisoryName]
-== Method: listPackages
-
-HTTP `GET`
+[#apidoc-errata-listPackages-1336822843]
+== Method: listPackages 
 
 Description:
 
@@ -536,7 +505,7 @@ Returns a list of the packages affected by the errata with the given advisory na
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -544,37 +513,35 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  package
-*** [.int]#int#  "id"
-*** [.string]#string#  "name"
-*** [.string]#string#  "epoch"
-*** [.string]#string#  "version"
-*** [.string]#string#  "release"
-*** [.string]#string#  "arch_label"
-*** [.array]#string array#  "providing_channels" - - Channel label
+              ** [.struct]#struct#  package
+                  *** [.int]#int#  "id"
+                  *** [.string]#string#  "name"
+                  *** [.string]#string#  "epoch"
+                  *** [.string]#string#  "version"
+                  *** [.string]#string#  "release"
+                  *** [.string]#string#  "arch_label"
+                  *** [.array]#string array#  "providing_channels" - - Channel label
                               providing this package.
-*** [.string]#string#  "build_host"
-*** [.string]#string#  "description"
-*** [.string]#string#  "checksum"
-*** [.string]#string#  "checksum_type"
-*** [.string]#string#  "vendor"
-*** [.string]#string#  "summary"
-*** [.string]#string#  "cookie"
-*** [.string]#string#  "license"
-*** [.string]#string#  "path"
-*** [.string]#string#  "file"
-*** [.string]#string#  "build_date"
-*** [.string]#string#  "last_modified_date"
-*** [.string]#string#  "size"
-*** [.string]#string#  "payload_size"
- 
+                  *** [.string]#string#  "build_host"
+                  *** [.string]#string#  "description"
+                  *** [.string]#string#  "checksum"
+                  *** [.string]#string#  "checksum_type"
+                  *** [.string]#string#  "vendor"
+                  *** [.string]#string#  "summary"
+                  *** [.string]#string#  "cookie"
+                  *** [.string]#string#  "license"
+                  *** [.string]#string#  "path"
+                  *** [.string]#string#  "file"
+                  *** [.string]#string#  "build_date"
+                  *** [.string]#string#  "last_modified_date"
+                  *** [.string]#string#  "size"
+                  *** [.string]#string#  "payload_size"
+                           
 
 
 
-[#apidoc-errata-publish-loggedInUser-advisoryName-channelLabels]
-== Method: publish
-
-HTTP `POST`
+[#apidoc-errata-publish-859361949]
+== Method: publish 
 
 Description:
 
@@ -585,7 +552,7 @@ Adds an existing errata to a set of channels.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -595,21 +562,19 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-  
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+       
  
 
 
 
-[#apidoc-errata-publishAsOriginal-loggedInUser-advisoryName-channelLabels]
-== Method: publishAsOriginal
-
-HTTP `POST`
+[#apidoc-errata-publishAsOriginal-1579030959]
+== Method: publishAsOriginal 
 
 Description:
 
@@ -621,7 +586,7 @@ Adds an existing cloned errata to a set of cloned
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -631,21 +596,19 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-  
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+       
  
 
 
 
-[#apidoc-errata-removePackages-loggedInUser-advisoryName-packageIds]
-== Method: removePackages
-
-HTTP `POST`
+[#apidoc-errata-removePackages-1289602009]
+== Method: removePackages 
 
 Description:
 
@@ -657,7 +620,7 @@ Remove a set of packages from an erratum with the given advisory name.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
@@ -671,10 +634,8 @@ Returns:
 
 
 
-[#apidoc-errata-setDetails-loggedInUser-advisoryName-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-errata-setDetails-494021631]
+== Method: setDetails 
 
 Description:
 
@@ -687,37 +648,37 @@ Set erratum details. All arguments are optional and will only be modified
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  advisoryName
  
 * [.struct]#struct#  details
-** [.string]#string#  "synopsis"
-** [.string]#string#  "advisory_name"
-** [.int]#int#  "advisory_release"
-** [.string]#string#  "advisory_type" - Type of advisory (one of the
+          ** [.string]#string#  "synopsis"
+          ** [.string]#string#  "advisory_name"
+          ** [.int]#int#  "advisory_release"
+          ** [.string]#string#  "advisory_type" - Type of advisory (one of the
                   following: 'Security Advisory', 'Product Enhancement Advisory',
                   or 'Bug Fix Advisory'
-** [.string]#string#  "product"
-** [.dateTime.iso8601]#dateTime.iso8601#  "issue_date"
-** [.dateTime.iso8601]#dateTime.iso8601#  "update_date"
-** [.string]#string#  "errataFrom"
-** [.string]#string#  "topic"
-** [.string]#string#  "description"
-** [.string]#string#  "references"
-** [.string]#string#  "notes"
-** [.string]#string#  "solution"
-** [.string]#string#  "severity" - Severity of advisory (one of the
+          ** [.string]#string#  "product"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "issue_date"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "update_date"
+          ** [.string]#string#  "errataFrom"
+          ** [.string]#string#  "topic"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "references"
+          ** [.string]#string#  "notes"
+          ** [.string]#string#  "solution"
+          ** [.string]#string#  "severity" - Severity of advisory (one of the
                   following: 'Low', 'Moderate', 'Important', 'Critical'
                   or 'Unspecified'
-** [.array]#array#  "bugs" - 'bugs' is the key into the struct
-*** [.struct]#struct#  bug
-**** [.int]#int#  "id" - Bug Id
-**** [.string]#string#  "summary"
-**** [.string]#string#  "url"
-** [.array]#string array#  "keywords" - list of keywords to associate with the errata
-** [.array]#string array#  "cves" - list of CVEs to associate with the errata
- 
+          ** [.array]#array#  "bugs" - 'bugs' is the key into the struct
+                 *** [.struct]#struct#  bug
+                    **** [.int]#int#  "id" - Bug Id
+                    **** [.string]#string#  "summary"
+                    **** [.string]#string#  "url"
+                                     ** [.array]#string array#  "keywords" - list of keywords to associate with the errata
+          ** [.array]#string array#  "cves" - list of CVEs to associate with the errata
+      
 
 Returns:
 

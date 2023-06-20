@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-sync_content-addChannel-loggedInUser-channelLabel-mirrorUrl,addChannel>>
-* <<apidoc-sync_content-addChannels-loggedInUser-channelLabel-mirrorUrl,addChannels>>
-* <<apidoc-sync_content-addCredentials-loggedInUser-username-password-primary,addCredentials>>
-* <<apidoc-sync_content-deleteCredentials-loggedInUser-username,deleteCredentials>>
-* <<apidoc-sync_content-listChannels-loggedInUser,listChannels>>
-* <<apidoc-sync_content-listCredentials-loggedInUser,listCredentials>>
-* <<apidoc-sync_content-listProducts-loggedInUser,listProducts>>
-* <<apidoc-sync_content-synchronizeChannelFamilies-loggedInUser,synchronizeChannelFamilies>>
-* <<apidoc-sync_content-synchronizeChannels-loggedInUser-mirrorUrl,synchronizeChannels>>
-* <<apidoc-sync_content-synchronizeProducts-loggedInUser,synchronizeProducts>>
-* <<apidoc-sync_content-synchronizeRepositories-loggedInUser-mirrorUrl,synchronizeRepositories>>
-* <<apidoc-sync_content-synchronizeSubscriptions-loggedInUser,synchronizeSubscriptions>>
+* <<apidoc-sync_content-addChannel-1386207903,addChannel>>
+* <<apidoc-sync_content-addChannels-730815140,addChannels>>
+* <<apidoc-sync_content-addCredentials-2098087645,addCredentials>>
+* <<apidoc-sync_content-deleteCredentials-3244883,deleteCredentials>>
+* <<apidoc-sync_content-listChannels-1305218621,listChannels>>
+* <<apidoc-sync_content-listCredentials-752286440,listCredentials>>
+* <<apidoc-sync_content-listProducts-2072605782,listProducts>>
+* <<apidoc-sync_content-synchronizeChannelFamilies-1076550812,synchronizeChannelFamilies>>
+* <<apidoc-sync_content-synchronizeChannels-2146222703,synchronizeChannels>>
+* <<apidoc-sync_content-synchronizeProducts-1882274571,synchronizeProducts>>
+* <<apidoc-sync_content-synchronizeRepositories-1145512119,synchronizeRepositories>>
+* <<apidoc-sync_content-synchronizeSubscriptions-1570860758,synchronizeSubscriptions>>
 
 == Description
 
@@ -26,21 +26,19 @@ Provides the namespace for the content synchronization methods.
 sync.content
 
 
-[#apidoc-sync_content-addChannel-loggedInUser-channelLabel-mirrorUrl]
-== Method: addChannel
-
-HTTP `POST`
+[#apidoc-sync_content-addChannel-1386207903]
+== Method: addChannel 
 
 Description:
 
-Add a new channel to the #product() database
+Add a new channel to the SUSE Manager database
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - Label of the channel to add
  
@@ -54,21 +52,19 @@ Returns:
 
 
 
-[#apidoc-sync_content-addChannels-loggedInUser-channelLabel-mirrorUrl]
-== Method: addChannels
-
-HTTP `POST`
+[#apidoc-sync_content-addChannels-730815140]
+== Method: addChannels 
 
 Description:
 
-Add a new channel to the #product() database
+Add a new channel to the SUSE Manager database
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - Label of the channel to add
  
@@ -82,21 +78,19 @@ Returns:
 
 
 
-[#apidoc-sync_content-addCredentials-loggedInUser-username-password-primary]
-== Method: addCredentials
-
-HTTP `POST`
+[#apidoc-sync_content-addCredentials-2098087645]
+== Method: addCredentials 
 
 Description:
 
-Add organization credentials (mirror credentials) to #product().
+Add organization credentials (mirror credentials) to SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  username - Organization credentials
                                                   (Mirror credentials) username
@@ -114,21 +108,19 @@ Returns:
 
 
 
-[#apidoc-sync_content-deleteCredentials-loggedInUser-username]
-== Method: deleteCredentials
-
-HTTP `POST`
+[#apidoc-sync_content-deleteCredentials-3244883]
+== Method: deleteCredentials 
 
 Description:
 
-Delete organization credentials (mirror credentials) from #product().
+Delete organization credentials (mirror credentials) from SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  username - Username of credentials to delete
  
@@ -140,10 +132,8 @@ Returns:
 
 
 
-[#apidoc-sync_content-listChannels-loggedInUser]
-== Method: listChannels
-
-HTTP `GET`
+[#apidoc-sync_content-listChannels-1305218621]
+== Method: listChannels 
 
 Description:
 
@@ -154,67 +144,63 @@ List all accessible channels.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
                        * [.struct]#struct#  channel
-** [.string]#string#  "arch" - architecture of the channel
-** [.string]#string#  "description" - description of the channel
-** [.string]#string#  "family" - channel family label
-** [.boolean]#boolean#  "is_signed" - channel has signed metadata
-** [.string]#string#  "label" - label of the channel
-** [.string]#string#  "name" - name of the channel
-** [.boolean]#boolean#  "optional" - channel is optional
-** [.string]#string#  "parent" - the label of the parent channel
-** [.string]#string#  "product_name" - product name
-** [.string]#string#  "product_version" - product version
-** [.string]#string#  "source_url" - repository source URL
-** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-** [.string]#string#  "summary" - channel summary
-** [.string]#string#  "update_tag" - update tag
-** [.boolean]#boolean#  "installer_updates" - is an installer update channel
- 
- 
+     ** [.string]#string#  "arch" - architecture of the channel
+     ** [.string]#string#  "description" - description of the channel
+     ** [.string]#string#  "family" - channel family label
+     ** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+     ** [.string]#string#  "label" - label of the channel
+     ** [.string]#string#  "name" - name of the channel
+     ** [.boolean]#boolean#  "optional" - channel is optional
+     ** [.string]#string#  "parent" - the label of the parent channel
+     ** [.string]#string#  "product_name" - product name
+     ** [.string]#string#  "product_version" - product version
+     ** [.string]#string#  "source_url" - repository source URL
+     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     ** [.string]#string#  "summary" - channel summary
+     ** [.string]#string#  "update_tag" - update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+                     
 
 
 
-[#apidoc-sync_content-listCredentials-loggedInUser]
-== Method: listCredentials
-
-HTTP `GET`
+[#apidoc-sync_content-listCredentials-752286440]
+== Method: listCredentials 
 
 Description:
 
 List organization credentials (mirror credentials) available in
-             #product().
+             SUSE Manager.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
                        * [.struct]#struct#  credentials
-** [.int]#int#  "id" - ID of the credentials
-** [.string]#string#  "user" - username
-** [.boolean]#boolean#  "isPrimary" - primary
- 
- 
+     ** [.int]#int#  "id" - ID of the credentials
+     ** [.string]#string#  "user" - username
+     ** [.boolean]#boolean#  "isPrimary" - primary
+    
+                     
 
 
 
-[#apidoc-sync_content-listProducts-loggedInUser]
-== Method: listProducts
-
-HTTP `GET`
+[#apidoc-sync_content-listProducts-2072605782]
+== Method: listProducts 
 
 Description:
 
@@ -225,79 +211,77 @@ List all accessible products.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
                        * [.struct]#struct#  product
-** [.string]#string#  "friendly_name" - friendly name of the product
-** [.string]#string#  "arch" - architecture
-** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-** [.array]#array#  "channels"
+     ** [.string]#string#  "friendly_name" - friendly name of the product
+     ** [.string]#string#  "arch" - architecture
+     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     ** [.array]#array#  "channels"
        * [.struct]#struct#  channel
-** [.string]#string#  "arch" - architecture of the channel
-** [.string]#string#  "description" - description of the channel
-** [.string]#string#  "family" - channel family label
-** [.boolean]#boolean#  "is_signed" - channel has signed metadata
-** [.string]#string#  "label" - label of the channel
-** [.string]#string#  "name" - name of the channel
-** [.boolean]#boolean#  "optional" - channel is optional
-** [.string]#string#  "parent" - the label of the parent channel
-** [.string]#string#  "product_name" - product name
-** [.string]#string#  "product_version" - product version
-** [.string]#string#  "source_url" - repository source URL
-** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-** [.string]#string#  "summary" - channel summary
-** [.string]#string#  "update_tag" - update tag
-** [.boolean]#boolean#  "installer_updates" - is an installer update channel
- 
-** [.array]#array#  "extensions"
-*** [.struct]#struct#  extension product
-**** [.string]#string#  "friendly_name" - friendly name of extension product
-**** [.string]#string#  "arch" - architecture
-**** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-**** [.array]#array#  "channels"
+     ** [.string]#string#  "arch" - architecture of the channel
+     ** [.string]#string#  "description" - description of the channel
+     ** [.string]#string#  "family" - channel family label
+     ** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+     ** [.string]#string#  "label" - label of the channel
+     ** [.string]#string#  "name" - name of the channel
+     ** [.boolean]#boolean#  "optional" - channel is optional
+     ** [.string]#string#  "parent" - the label of the parent channel
+     ** [.string]#string#  "product_name" - product name
+     ** [.string]#string#  "product_version" - product version
+     ** [.string]#string#  "source_url" - repository source URL
+     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     ** [.string]#string#  "summary" - channel summary
+     ** [.string]#string#  "update_tag" - update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+          ** [.array]#array#  "extensions"
+       *** [.struct]#struct#  extension product
+         **** [.string]#string#  "friendly_name" - friendly name of extension product
+         **** [.string]#string#  "arch" - architecture
+         **** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+         **** [.array]#array#  "channels"
            * [.struct]#struct#  channel
-** [.string]#string#  "arch" - architecture of the channel
-** [.string]#string#  "description" - description of the channel
-** [.string]#string#  "family" - channel family label
-** [.boolean]#boolean#  "is_signed" - channel has signed metadata
-** [.string]#string#  "label" - label of the channel
-** [.string]#string#  "name" - name of the channel
-** [.boolean]#boolean#  "optional" - channel is optional
-** [.string]#string#  "parent" - the label of the parent channel
-** [.string]#string#  "product_name" - product name
-** [.string]#string#  "product_version" - product version
-** [.string]#string#  "source_url" - repository source URL
-** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
-** [.string]#string#  "summary" - channel summary
-** [.string]#string#  "update_tag" - update tag
-** [.boolean]#boolean#  "installer_updates" - is an installer update channel
- 
-** [.boolean]#boolean#  "recommended" - recommended
- 
- 
+     ** [.string]#string#  "arch" - architecture of the channel
+     ** [.string]#string#  "description" - description of the channel
+     ** [.string]#string#  "family" - channel family label
+     ** [.boolean]#boolean#  "is_signed" - channel has signed metadata
+     ** [.string]#string#  "label" - label of the channel
+     ** [.string]#string#  "name" - name of the channel
+     ** [.boolean]#boolean#  "optional" - channel is optional
+     ** [.string]#string#  "parent" - the label of the parent channel
+     ** [.string]#string#  "product_name" - product name
+     ** [.string]#string#  "product_version" - product version
+     ** [.string]#string#  "source_url" - repository source URL
+     ** [.string]#string#  "status" - 'available', 'unavailable' or 'installed'
+     ** [.string]#string#  "summary" - channel summary
+     ** [.string]#string#  "update_tag" - update tag
+     ** [.boolean]#boolean#  "installer_updates" - is an installer update channel
+    
+                          ** [.boolean]#boolean#  "recommended" - recommended
+    
+                     
 
 
 
-[#apidoc-sync_content-synchronizeChannelFamilies-loggedInUser]
-== Method: synchronizeChannelFamilies
-
-HTTP `POST`
+[#apidoc-sync_content-synchronizeChannelFamilies-1076550812]
+== Method: synchronizeChannelFamilies 
 
 Description:
 
 Synchronize channel families between the Customer Center
-             and the #product() database.
+             and the SUSE Manager database.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -307,22 +291,20 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeChannels-loggedInUser-mirrorUrl]
-== Method: synchronizeChannels
-
-HTTP `POST`
+[#apidoc-sync_content-synchronizeChannels-2146222703]
+== Method: synchronizeChannels 
 
 Description:
 
 (Deprecated) Synchronize channels between the Customer Center
-             and the #product() database.
+             and the SUSE Manager database.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mirrorUrl - Sync from mirror temporarily
  
@@ -334,22 +316,20 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeProducts-loggedInUser]
-== Method: synchronizeProducts
-
-HTTP `POST`
+[#apidoc-sync_content-synchronizeProducts-1882274571]
+== Method: synchronizeProducts 
 
 Description:
 
 Synchronize SUSE products between the Customer Center
-             and the #product() database.
+             and the SUSE Manager database.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -359,22 +339,20 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeRepositories-loggedInUser-mirrorUrl]
-== Method: synchronizeRepositories
-
-HTTP `POST`
+[#apidoc-sync_content-synchronizeRepositories-1145512119]
+== Method: synchronizeRepositories 
 
 Description:
 
 Synchronize repositories between the Customer Center
-             and the #product() database.
+             and the SUSE Manager database.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mirrorUrl - Optional mirror url or null
  
@@ -386,22 +364,20 @@ Returns:
 
 
 
-[#apidoc-sync_content-synchronizeSubscriptions-loggedInUser]
-== Method: synchronizeSubscriptions
-
-HTTP `POST`
+[#apidoc-sync_content-synchronizeSubscriptions-1570860758]
+== Method: synchronizeSubscriptions 
 
 Description:
 
 Synchronize subscriptions between the Customer Center
-             and the #product() database.
+             and the SUSE Manager database.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:

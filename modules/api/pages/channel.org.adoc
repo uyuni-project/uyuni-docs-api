@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-channel_org-disableAccess-loggedInUser-label-orgId,disableAccess>>
-* <<apidoc-channel_org-enableAccess-loggedInUser-label-orgId,enableAccess>>
-* <<apidoc-channel_org-list-loggedInUser-label,list>>
+* <<apidoc-channel_org-disableAccess-743171167,disableAccess>>
+* <<apidoc-channel_org-enableAccess-1752151434,enableAccess>>
+* <<apidoc-channel_org-list-1573507674,list>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to retrieve and alter organization trust
 channel.org
 
 
-[#apidoc-channel_org-disableAccess-loggedInUser-label-orgId]
-== Method: disableAccess
-
-HTTP `POST`
+[#apidoc-channel_org-disableAccess-743171167]
+== Method: disableAccess 
 
 Description:
 
@@ -32,7 +30,7 @@ Disable access to the channel for the given organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the channel
  
@@ -46,10 +44,8 @@ Returns:
 
 
 
-[#apidoc-channel_org-enableAccess-loggedInUser-label-orgId]
-== Method: enableAccess
-
-HTTP `POST`
+[#apidoc-channel_org-enableAccess-1752151434]
+== Method: enableAccess 
 
 Description:
 
@@ -60,7 +56,7 @@ Enable access to the channel for the given organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the channel
  
@@ -74,10 +70,8 @@ Returns:
 
 
 
-[#apidoc-channel_org-list-loggedInUser-label]
-== Method: list
-
-HTTP `POST`
+[#apidoc-channel_org-list-1573507674]
+== Method: list 
 
 Description:
 
@@ -89,7 +83,7 @@ List the organizations associated with the given channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the channel
  
@@ -97,10 +91,10 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  org
-*** [.int]#int#  "org_id"
-*** [.string]#string#  "org_name"
-*** [.boolean]#boolean#  "access_enabled"
- 
+      ** [.struct]#struct#  org
+          *** [.int]#int#  "org_id"
+          *** [.string]#string#  "org_name"
+          *** [.boolean]#boolean#  "access_enabled"
+        
 
 

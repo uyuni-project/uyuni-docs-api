@@ -4,28 +4,28 @@
 
 == Available methods
 
-* <<apidoc-systemgroup-addOrRemoveAdmins-loggedInUser-systemGroupName-loginNames-add,addOrRemoveAdmins>>
-* <<apidoc-systemgroup-addOrRemoveSystems-loggedInUser-systemGroupName-serverIds-add,addOrRemoveSystems>>
-* <<apidoc-systemgroup-create-loggedInUser-name-description,create>>
-* <<apidoc-systemgroup-delete-loggedInUser-systemGroupName,delete>>
-* <<apidoc-systemgroup-getDetails-loggedInUser-systemGroupId,getDetails>>
-* <<apidoc-systemgroup-getDetails-loggedInUser-systemGroupName,getDetails>>
-* <<apidoc-systemgroup-listActiveSystemsInGroup-loggedInUser-systemGroupName,listActiveSystemsInGroup>>
-* <<apidoc-systemgroup-listAdministrators-loggedInUser-systemGroupName,listAdministrators>>
-* <<apidoc-systemgroup-listAllGroups-loggedInUser,listAllGroups>>
-* <<apidoc-systemgroup-listAssignedConfigChannels-loggedInUser-systemGroupName,listAssignedConfigChannels>>
-* <<apidoc-systemgroup-listAssignedFormuals-loggedInUser-systemGroupName,listAssignedFormuals>>
-* <<apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-loggedInUser,listGroupsWithNoAssociatedAdmins>>
-* <<apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName-daysInactive,listInactiveSystemsInGroup>>
-* <<apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName,listInactiveSystemsInGroup>>
-* <<apidoc-systemgroup-listSystems-loggedInUser-systemGroupName,listSystems>>
-* <<apidoc-systemgroup-listSystemsMinimal-loggedInUser-systemGroupName,listSystemsMinimal>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence-onlyRelevant,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-subscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels,subscribeConfigChannel>>
-* <<apidoc-systemgroup-unsubscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels,unsubscribeConfigChannel>>
-* <<apidoc-systemgroup-update-loggedInUser-systemGroupName-description,update>>
+* <<apidoc-systemgroup-addOrRemoveAdmins-1842040624,addOrRemoveAdmins>>
+* <<apidoc-systemgroup-addOrRemoveSystems-19719769,addOrRemoveSystems>>
+* <<apidoc-systemgroup-create-908696451,create>>
+* <<apidoc-systemgroup-delete-1913836511,delete>>
+* <<apidoc-systemgroup-getDetails-1905758512,getDetails>>
+* <<apidoc-systemgroup-getDetails-992155575,getDetails>>
+* <<apidoc-systemgroup-listActiveSystemsInGroup-2007058705,listActiveSystemsInGroup>>
+* <<apidoc-systemgroup-listAdministrators-525180031,listAdministrators>>
+* <<apidoc-systemgroup-listAllGroups-369042555,listAllGroups>>
+* <<apidoc-systemgroup-listAssignedConfigChannels-1363130483,listAssignedConfigChannels>>
+* <<apidoc-systemgroup-listAssignedFormuals-525401732,listAssignedFormuals>>
+* <<apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-1878024069,listGroupsWithNoAssociatedAdmins>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup-289571900,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup-965988043,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listSystems-2012635448,listSystems>>
+* <<apidoc-systemgroup-listSystemsMinimal-1920021004,listSystemsMinimal>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-1141371177,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-1931205834,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive-1996346865,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-subscribeConfigChannel-709531076,subscribeConfigChannel>>
+* <<apidoc-systemgroup-unsubscribeConfigChannel-119202251,unsubscribeConfigChannel>>
+* <<apidoc-systemgroup-update-159936195,update>>
 
 == Description
 
@@ -36,14 +36,12 @@ Provides methods to access and modify system groups.
 systemgroup
 
 
-[#apidoc-systemgroup-addOrRemoveAdmins-loggedInUser-systemGroupName-loginNames-add]
-== Method: addOrRemoveAdmins
-
-HTTP `POST`
+[#apidoc-systemgroup-addOrRemoveAdmins-1842040624]
+== Method: addOrRemoveAdmins 
 
 Description:
 
-Add or remove administrators to/from the given group. #product() and
+Add or remove administrators to/from the given group. SUSE Manager and
  Organization administrators are granted access to groups within their organization
  by default; therefore, users with those roles should not be included in the array
  provided. Caller must be an organization administrator.
@@ -53,7 +51,7 @@ Add or remove administrators to/from the given group. #product() and
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -69,10 +67,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-addOrRemoveSystems-loggedInUser-systemGroupName-serverIds-add]
-== Method: addOrRemoveSystems
-
-HTTP `POST`
+[#apidoc-systemgroup-addOrRemoveSystems-19719769]
+== Method: addOrRemoveSystems 
 
 Description:
 
@@ -83,7 +79,7 @@ Add/remove the given servers to a system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -100,10 +96,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-create-loggedInUser-name-description]
-== Method: create
-
-HTTP `POST`
+[#apidoc-systemgroup-create-908696451]
+== Method: create 
 
 Description:
 
@@ -114,7 +108,7 @@ Create a new system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the system group.
  
@@ -125,20 +119,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
-  
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
  
 
 
 
-[#apidoc-systemgroup-delete-loggedInUser-systemGroupName]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-systemgroup-delete-1913836511]
+== Method: delete 
 
 Description:
 
@@ -149,7 +141,7 @@ Delete a system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -161,10 +153,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-getDetails-loggedInUser-systemGroupId]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-systemgroup-getDetails-1905758512]
+== Method: getDetails 
 
 Description:
 
@@ -175,7 +165,7 @@ Retrieve details of a ServerGroup based on it's id
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  systemGroupId
  
@@ -183,20 +173,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
-  
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
  
 
 
 
-[#apidoc-systemgroup-getDetails-loggedInUser-systemGroupName]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-systemgroup-getDetails-992155575]
+== Method: getDetails 
 
 Description:
 
@@ -207,7 +195,7 @@ Retrieve details of a ServerGroup based on it's name
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -215,20 +203,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
-  
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
  
 
 
 
-[#apidoc-systemgroup-listActiveSystemsInGroup-loggedInUser-systemGroupName]
-== Method: listActiveSystemsInGroup
-
-HTTP `GET`
+[#apidoc-systemgroup-listActiveSystemsInGroup-2007058705]
+== Method: listActiveSystemsInGroup 
 
 Description:
 
@@ -239,7 +225,7 @@ Lists active systems within a server group
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -251,10 +237,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listAdministrators-loggedInUser-systemGroupName]
-== Method: listAdministrators
-
-HTTP `GET`
+[#apidoc-systemgroup-listAdministrators-525180031]
+== Method: listAdministrators 
 
 Description:
 
@@ -266,7 +250,7 @@ Returns the list of users who can administer the given group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -275,20 +259,18 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  user
-** [.int]#int#  "id"
-** [.string]#string#  "login"
-** [.string]#string#  "login_uc" - upper case version of the login
-** [.boolean]#boolean#  "enabled" - true if user is enabled,
+              ** [.int]#int#  "id"
+              ** [.string]#string#  "login"
+              ** [.string]#string#  "login_uc" - upper case version of the login
+              ** [.boolean]#boolean#  "enabled" - true if user is enabled,
                          false if the user is disabled
- 
- 
+       
+    
 
 
 
-[#apidoc-systemgroup-listAllGroups-loggedInUser]
-== Method: listAllGroups
-
-HTTP `GET`
+[#apidoc-systemgroup-listAllGroups-369042555]
+== Method: listAllGroups 
 
 Description:
 
@@ -300,27 +282,25 @@ Retrieve a list of system groups that are accessible by the logged
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
- 
- 
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+       
+       
 
 
 
-[#apidoc-systemgroup-listAssignedConfigChannels-loggedInUser-systemGroupName]
-== Method: listAssignedConfigChannels
-
-HTTP `GET`
+[#apidoc-systemgroup-listAssignedConfigChannels-1363130483]
+== Method: listAssignedConfigChannels 
 
 Description:
 
@@ -331,7 +311,7 @@ List all Configuration Channels assigned to a system group
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -340,28 +320,26 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  configuration channel information
-** [.int]#int#  "id"
-** [.int]#int#  "orgId"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.struct]#struct#  "configChannelType"
+   ** [.int]#int#  "id"
+   ** [.int]#int#  "orgId"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.string]#string#  "description"
+   ** [.struct]#struct#  "configChannelType"
    * [.struct]#struct#  configuration channel type information
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.int]#int#  "priority"
- 
- 
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "name"
+   ** [.int]#int#  "priority"
+  
+  
+  
 
 Available since API version: 25
 
 
-[#apidoc-systemgroup-listAssignedFormuals-loggedInUser-systemGroupName]
-== Method: listAssignedFormuals
-
-HTTP `GET`
+[#apidoc-systemgroup-listAssignedFormuals-525401732]
+== Method: listAssignedFormuals 
 
 Description:
 
@@ -372,7 +350,7 @@ List all Configuration Channels assigned to a system group
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -381,19 +359,17 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  formula
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.string]#string#  "formula_group"
- 
- 
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "description"
+     ** [.string]#string#  "formula_group"
+  
+  
 
 Available since API version: 25
 
 
-[#apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-loggedInUser]
-== Method: listGroupsWithNoAssociatedAdmins
-
-HTTP `GET`
+[#apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-1878024069]
+== Method: listGroupsWithNoAssociatedAdmins 
 
 Description:
 
@@ -406,27 +382,25 @@ Returns a list of system groups that do not have an administrator.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
- 
- 
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+       
+       
 
 
 
-[#apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName-daysInactive]
-== Method: listInactiveSystemsInGroup
-
-HTTP `GET`
+[#apidoc-systemgroup-listInactiveSystemsInGroup-289571900]
+== Method: listInactiveSystemsInGroup 
 
 Description:
 
@@ -438,7 +412,7 @@ Lists inactive systems within a server group using a
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -453,10 +427,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName]
-== Method: listInactiveSystemsInGroup
-
-HTTP `GET`
+[#apidoc-systemgroup-listInactiveSystemsInGroup-965988043]
+== Method: listInactiveSystemsInGroup 
 
 Description:
 
@@ -468,7 +440,7 @@ Lists inactive systems within a server group using the default
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -480,10 +452,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listSystems-loggedInUser-systemGroupName]
-== Method: listSystems
-
-HTTP `GET`
+[#apidoc-systemgroup-listSystems-2012635448]
+== Method: listSystems 
 
 Description:
 
@@ -495,7 +465,7 @@ Return a list of systems associated with this system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -504,47 +474,45 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  server details
-** [.int]#int#  "id" - system ID
-** [.string]#string#  "profile_name"
-** [.string]#string#  "machine_id"
-** [.string]#string#  "minion_id"
-** [.string]#string#  "base_entitlement" - system's base entitlement label
+         ** [.int]#int#  "id" - system ID
+         ** [.string]#string#  "profile_name"
+         ** [.string]#string#  "machine_id"
+         ** [.string]#string#  "minion_id"
+         ** [.string]#string#  "base_entitlement" - system's base entitlement label
 
-** [.array]#string array#  "addon_entitlements" - system's addon entitlements labels,
+         ** [.array]#string array#  "addon_entitlements" - system's addon entitlements labels,
                        currently only 'virtualization_host'
-** [.boolean]#boolean#  "auto_update" - true if system has auto errata updates
+          ** [.boolean]#boolean#  "auto_update" - true if system has auto errata updates
                                           enabled
-** [.string]#string#  "release" - the operating system release (i.e. 4AS,
+          ** [.string]#string#  "release" - the operating system release (i.e. 4AS,
                       5Server)
-** [.string]#string#  "address1"
-** [.string]#string#  "address2"
-** [.string]#string#  "city"
-** [.string]#string#  "state"
-** [.string]#string#  "country"
-** [.string]#string#  "building"
-** [.string]#string#  "room"
-** [.string]#string#  "rack"
-** [.string]#string#  "description"
-** [.string]#string#  "hostname"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot"
-** [.string]#string#  "osa_status" - either 'unknown', 'offline', or 'online'
-** [.boolean]#boolean#  "lock_status" - True indicates that the system is locked.
+          ** [.string]#string#  "address1"
+          ** [.string]#string#  "address2"
+          ** [.string]#string#  "city"
+          ** [.string]#string#  "state"
+          ** [.string]#string#  "country"
+          ** [.string]#string#  "building"
+          ** [.string]#string#  "room"
+          ** [.string]#string#  "rack"
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "hostname"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot"
+          ** [.string]#string#  "osa_status" - either 'unknown', 'offline', or 'online'
+          ** [.boolean]#boolean#  "lock_status" - True indicates that the system is locked.
            False indicates that the system is unlocked.
-** [.string]#string#  "virtualization" - virtualization type -
+          ** [.string]#string#  "virtualization" - virtualization type -
            for virtual guests only (optional)
-** [.string]#string#  "contact_method" - one of the following:
-*** default
-*** ssh-push
-*** ssh-push-tunnel
- 
- 
+          ** [.string]#string#  "contact_method" - one of the following:
+                          *** default
+              *** ssh-push
+              *** ssh-push-tunnel
+               
+       
 
 
 
-[#apidoc-systemgroup-listSystemsMinimal-loggedInUser-systemGroupName]
-== Method: listSystemsMinimal
-
-HTTP `GET`
+[#apidoc-systemgroup-listSystemsMinimal-1920021004]
+== Method: listSystemsMinimal 
 
 Description:
 
@@ -556,7 +524,7 @@ Return a list of systems associated with this system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -565,24 +533,22 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  system
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "name"
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
              successfully checked in
-** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
-** [.int]#int#  "extra_pkg_count" - number of packages not belonging
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
+     ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
+     ** [.int]#int#  "extra_pkg_count" - number of packages not belonging
              to any assigned channel
-** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
- 
- 
+     ** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
+  
+       
 
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds]
-== Method: scheduleApplyErrataToActive
-
-HTTP `POST`
+[#apidoc-systemgroup-scheduleApplyErrataToActive-1141371177]
+== Method: scheduleApplyErrataToActive 
 
 Description:
 
@@ -594,7 +560,7 @@ Schedules an action to apply errata updates to active systems
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -609,10 +575,8 @@ Returns:
 Available since API version: 13.0
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence]
-== Method: scheduleApplyErrataToActive
-
-HTTP `POST`
+[#apidoc-systemgroup-scheduleApplyErrataToActive-1931205834]
+== Method: scheduleApplyErrataToActive 
 
 Description:
 
@@ -624,13 +588,13 @@ Schedules an action to apply errata updates to active systems
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
 * [.array]#int array#  errataIds
  
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+* dateTime.iso8601 earliestOccurrence 
  
 
 Returns:
@@ -641,10 +605,8 @@ Returns:
 Available since API version: 13.0
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence-onlyRelevant]
-== Method: scheduleApplyErrataToActive
-
-HTTP `POST`
+[#apidoc-systemgroup-scheduleApplyErrataToActive-1996346865]
+== Method: scheduleApplyErrataToActive 
 
 Description:
 
@@ -656,15 +618,13 @@ Schedules an action to apply errata updates to active systems
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
 * [.array]#int array#  errataIds
  
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
- 
-* [.boolean]#boolean#  onlyRelevant
+* dateTime.iso8601 earliestOccurrence 
  
 
 Returns:
@@ -675,10 +635,8 @@ Returns:
 Available since API version: 24
 
 
-[#apidoc-systemgroup-subscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels]
-== Method: subscribeConfigChannel
-
-HTTP `POST`
+[#apidoc-systemgroup-subscribeConfigChannel-709531076]
+== Method: subscribeConfigChannel 
 
 Description:
 
@@ -689,7 +647,7 @@ Subscribe given config channels to a system group
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -703,10 +661,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-unsubscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels]
-== Method: unsubscribeConfigChannel
-
-HTTP `POST`
+[#apidoc-systemgroup-unsubscribeConfigChannel-119202251]
+== Method: unsubscribeConfigChannel 
 
 Description:
 
@@ -717,7 +673,7 @@ Unsubscribe given config channels to a system group
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -731,10 +687,8 @@ Returns:
 
 
 
-[#apidoc-systemgroup-update-loggedInUser-systemGroupName-description]
-== Method: update
-
-HTTP `POST`
+[#apidoc-systemgroup-update-159936195]
+== Method: update 
 
 Description:
 
@@ -745,7 +699,7 @@ Update an existing system group.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  systemGroupName
  
@@ -755,12 +709,12 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  server group
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "description"
-** [.int]#int#  "org_id"
-** [.int]#int#  "system_count"
-  
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "org_id"
+          ** [.int]#int#  "system_count"
+        
  
 
 

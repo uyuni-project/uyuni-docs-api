@@ -4,83 +4,83 @@
 
 == Available methods
 
-* <<apidoc-channel_software-addPackages-loggedInUser-channelLabel-packageIds,addPackages>>
-* <<apidoc-channel_software-addRepoFilter-loggedInUser-label-filterProps,addRepoFilter>>
-* <<apidoc-channel_software-alignMetadata-loggedInUser-channelFromLabel-channelToLabel-metadataType,alignMetadata>>
-* <<apidoc-channel_software-applyChannelState-user-sids,applyChannelState>>
-* <<apidoc-channel_software-associateRepo-loggedInUser-channelLabel-repoLabel,associateRepo>>
-* <<apidoc-channel_software-clearRepoFilters-loggedInUser-label,clearRepoFilters>>
-* <<apidoc-channel_software-clone-loggedInUser-originalLabel-channelDetails-originalState,clone>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey-gpgCheck,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel,create>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url,createRepo>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey,createRepo>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey-hasSignedMetadata,createRepo>>
-* <<apidoc-channel_software-delete-loggedInUser-channelLabel,delete>>
-* <<apidoc-channel_software-disassociateRepo-loggedInUser-channelLabel-repoLabel,disassociateRepo>>
-* <<apidoc-channel_software-getChannelLastBuildById-loggedInUser-id,getChannelLastBuildById>>
-* <<apidoc-channel_software-getDetails-loggedInUser-channelLabel,getDetails>>
-* <<apidoc-channel_software-getDetails-loggedInUser-id,getDetails>>
-* <<apidoc-channel_software-getRepoDetails-loggedInUser-repoLabel,getRepoDetails>>
-* <<apidoc-channel_software-getRepoDetails-loggedInUser-id,getRepoDetails>>
-* <<apidoc-channel_software-getRepoSyncCronExpression-loggedInUser-channelLabel,getRepoSyncCronExpression>>
-* <<apidoc-channel_software-isExisting-loggedInUser-channelLabel,isExisting>>
-* <<apidoc-channel_software-isGloballySubscribable-loggedInUser-channelLabel,isGloballySubscribable>>
-* <<apidoc-channel_software-isUserManageable-loggedInUser-channelLabel-login,isUserManageable>>
-* <<apidoc-channel_software-isUserSubscribable-loggedInUser-channelLabel-login,isUserSubscribable>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate-endDate,listAllPackages>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate,listAllPackages>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel,listAllPackages>>
-* <<apidoc-channel_software-listArches-loggedInUser,listArches>>
-* <<apidoc-channel_software-listChannelRepos-loggedInUser-channelLabel,listChannelRepos>>
-* <<apidoc-channel_software-listChildren-loggedInUser-channelLabel,listChildren>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate-lastModified,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel,listErrata>>
-* <<apidoc-channel_software-listErrataByType-loggedInUser-channelLabel-advisoryType,listErrataByType>>
-* <<apidoc-channel_software-listErrataNeedingSync-loggedInUser-channelLabel,listErrataNeedingSync>>
-* <<apidoc-channel_software-listLatestPackages-loggedInUser-channelLabel,listLatestPackages>>
-* <<apidoc-channel_software-listPackagesWithoutChannel-loggedInUser,listPackagesWithoutChannel>>
-* <<apidoc-channel_software-listRepoFilters-loggedInUser-label,listRepoFilters>>
-* <<apidoc-channel_software-listSubscribedSystems-loggedInUser-channelLabel,listSubscribedSystems>>
-* <<apidoc-channel_software-listSystemChannels-loggedInUser-sid,listSystemChannels>>
-* <<apidoc-channel_software-listUserRepos-loggedInUser,listUserRepos>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel,mergeErrata>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-startDate-endDate,mergeErrata>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-errataNames,mergeErrata>>
-* <<apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel,mergePackages>>
-* <<apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel-alignModules,mergePackages>>
-* <<apidoc-channel_software-regenerateNeededCache-loggedInUser-channelLabel,regenerateNeededCache>>
-* <<apidoc-channel_software-regenerateNeededCache-loggedInUser,regenerateNeededCache>>
-* <<apidoc-channel_software-regenerateYumCache-loggedInUser-channelLabel-force,regenerateYumCache>>
-* <<apidoc-channel_software-removeErrata-loggedInUser-channelLabel-errataNames-removePackages,removeErrata>>
-* <<apidoc-channel_software-removePackages-loggedInUser-channelLabel-packageIds,removePackages>>
-* <<apidoc-channel_software-removeRepo-loggedInUser-id,removeRepo>>
-* <<apidoc-channel_software-removeRepo-loggedInUser-label,removeRepo>>
-* <<apidoc-channel_software-removeRepoFilter-loggedInUser-label-filterProps,removeRepoFilter>>
-* <<apidoc-channel_software-setContactDetails-loggedInUser-channelLabel-maintainerName-maintainerEmail-maintainerPhone-supportPolicy,setContactDetails>>
-* <<apidoc-channel_software-setDetails-loggedInUser-channelLabel-details,setDetails>>
-* <<apidoc-channel_software-setDetails-loggedInUser-channelId-details,setDetails>>
-* <<apidoc-channel_software-setGloballySubscribable-loggedInUser-channelLabel-value,setGloballySubscribable>>
-* <<apidoc-channel_software-setRepoFilters-loggedInUser-label-filterProps,setRepoFilters>>
-* <<apidoc-channel_software-setUserManageable-loggedInUser-channelLabel-login-value,setUserManageable>>
-* <<apidoc-channel_software-setUserSubscribable-loggedInUser-channelLabel-login-value,setUserSubscribable>>
-* <<apidoc-channel_software-syncErrata-loggedInUser-channelLabel,syncErrata>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabels,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-params,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr-params,syncRepo>>
-* <<apidoc-channel_software-updateRepo-loggedInUser-id-label-url,updateRepo>>
-* <<apidoc-channel_software-updateRepoLabel-loggedInUser-id-label,updateRepoLabel>>
-* <<apidoc-channel_software-updateRepoLabel-loggedInUser-label-newLabel,updateRepoLabel>>
-* <<apidoc-channel_software-updateRepoSsl-loggedInUser-id-sslCaCert-sslCliCert-sslCliKey,updateRepoSsl>>
-* <<apidoc-channel_software-updateRepoSsl-loggedInUser-label-sslCaCert-sslCliCert-sslCliKey,updateRepoSsl>>
-* <<apidoc-channel_software-updateRepoUrl-loggedInUser-id-url,updateRepoUrl>>
-* <<apidoc-channel_software-updateRepoUrl-loggedInUser-label-url,updateRepoUrl>>
+* <<apidoc-channel_software-addPackages-1402043538,addPackages>>
+* <<apidoc-channel_software-addRepoFilter-170929968,addRepoFilter>>
+* <<apidoc-channel_software-alignMetadata-305700980,alignMetadata>>
+* <<apidoc-channel_software-applyChannelState-435788463,applyChannelState>>
+* <<apidoc-channel_software-associateRepo-523655718,associateRepo>>
+* <<apidoc-channel_software-clearRepoFilters-1094103443,clearRepoFilters>>
+* <<apidoc-channel_software-clone-1572937899,clone>>
+* <<apidoc-channel_software-create-231585923,create>>
+* <<apidoc-channel_software-create-960630105,create>>
+* <<apidoc-channel_software-create-1337710988,create>>
+* <<apidoc-channel_software-create-1574053815,create>>
+* <<apidoc-channel_software-createRepo-129831064,createRepo>>
+* <<apidoc-channel_software-createRepo-408680160,createRepo>>
+* <<apidoc-channel_software-createRepo-1784029781,createRepo>>
+* <<apidoc-channel_software-delete-1897978534,delete>>
+* <<apidoc-channel_software-disassociateRepo-1151964959,disassociateRepo>>
+* <<apidoc-channel_software-getChannelLastBuildById-180295702,getChannelLastBuildById>>
+* <<apidoc-channel_software-getDetails-1736949057,getDetails>>
+* <<apidoc-channel_software-getDetails-1153624232,getDetails>>
+* <<apidoc-channel_software-getRepoDetails-2029310301,getRepoDetails>>
+* <<apidoc-channel_software-getRepoDetails-1767429584,getRepoDetails>>
+* <<apidoc-channel_software-getRepoSyncCronExpression-209455103,getRepoSyncCronExpression>>
+* <<apidoc-channel_software-isExisting-254310990,isExisting>>
+* <<apidoc-channel_software-isGloballySubscribable-1824222273,isGloballySubscribable>>
+* <<apidoc-channel_software-isUserManageable-947519212,isUserManageable>>
+* <<apidoc-channel_software-isUserSubscribable-1871293699,isUserSubscribable>>
+* <<apidoc-channel_software-listAllPackages-1850252216,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages-322033405,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages-1802242940,listAllPackages>>
+* <<apidoc-channel_software-listArches-1528762150,listArches>>
+* <<apidoc-channel_software-listChannelRepos-827074780,listChannelRepos>>
+* <<apidoc-channel_software-listChildren-318869248,listChildren>>
+* <<apidoc-channel_software-listErrata-1357984916,listErrata>>
+* <<apidoc-channel_software-listErrata-1942002328,listErrata>>
+* <<apidoc-channel_software-listErrata-1865152087,listErrata>>
+* <<apidoc-channel_software-listErrata-41772135,listErrata>>
+* <<apidoc-channel_software-listErrataByType-1542567208,listErrataByType>>
+* <<apidoc-channel_software-listErrataNeedingSync-1364618464,listErrataNeedingSync>>
+* <<apidoc-channel_software-listLatestPackages-401002619,listLatestPackages>>
+* <<apidoc-channel_software-listPackagesWithoutChannel-405787243,listPackagesWithoutChannel>>
+* <<apidoc-channel_software-listRepoFilters-220667244,listRepoFilters>>
+* <<apidoc-channel_software-listSubscribedSystems-347766549,listSubscribedSystems>>
+* <<apidoc-channel_software-listSystemChannels-89961399,listSystemChannels>>
+* <<apidoc-channel_software-listUserRepos-773749702,listUserRepos>>
+* <<apidoc-channel_software-mergeErrata-2130179092,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata-405654827,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata-1279095549,mergeErrata>>
+* <<apidoc-channel_software-mergePackages-631007928,mergePackages>>
+* <<apidoc-channel_software-mergePackages-1678404939,mergePackages>>
+* <<apidoc-channel_software-regenerateNeededCache-901087828,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateNeededCache-1941633008,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateYumCache-1148038393,regenerateYumCache>>
+* <<apidoc-channel_software-removeErrata-531076772,removeErrata>>
+* <<apidoc-channel_software-removePackages-1759413538,removePackages>>
+* <<apidoc-channel_software-removeRepo-927704210,removeRepo>>
+* <<apidoc-channel_software-removeRepo-1478318899,removeRepo>>
+* <<apidoc-channel_software-removeRepoFilter-408989959,removeRepoFilter>>
+* <<apidoc-channel_software-setContactDetails-1027310894,setContactDetails>>
+* <<apidoc-channel_software-setDetails-859897724,setDetails>>
+* <<apidoc-channel_software-setDetails-70140977,setDetails>>
+* <<apidoc-channel_software-setGloballySubscribable-1909597726,setGloballySubscribable>>
+* <<apidoc-channel_software-setRepoFilters-1951337995,setRepoFilters>>
+* <<apidoc-channel_software-setUserManageable-671890880,setUserManageable>>
+* <<apidoc-channel_software-setUserSubscribable-1233113908,setUserSubscribable>>
+* <<apidoc-channel_software-syncErrata-24333082,syncErrata>>
+* <<apidoc-channel_software-syncRepo-1902761576,syncRepo>>
+* <<apidoc-channel_software-syncRepo-793349921,syncRepo>>
+* <<apidoc-channel_software-syncRepo-9451853,syncRepo>>
+* <<apidoc-channel_software-syncRepo-1355475787,syncRepo>>
+* <<apidoc-channel_software-syncRepo-1873788332,syncRepo>>
+* <<apidoc-channel_software-updateRepo-134815104,updateRepo>>
+* <<apidoc-channel_software-updateRepoLabel-1909198389,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoLabel-996963339,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoSsl-831543502,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoSsl-956903564,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoUrl-774689836,updateRepoUrl>>
+* <<apidoc-channel_software-updateRepoUrl-484103705,updateRepoUrl>>
 
 == Description
 
@@ -91,10 +91,8 @@ Provides methods to access and modify many aspects of a channel.
 channel.software
 
 
-[#apidoc-channel_software-addPackages-loggedInUser-channelLabel-packageIds]
-== Method: addPackages
-
-HTTP `POST`
+[#apidoc-channel_software-addPackages-1402043538]
+== Method: addPackages 
 
 Description:
 
@@ -105,7 +103,7 @@ Adds a given list of packages to the given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - target channel
  
@@ -120,10 +118,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-addRepoFilter-loggedInUser-label-filterProps]
-== Method: addRepoFilter
-
-HTTP `POST`
+[#apidoc-channel_software-addRepoFilter-170929968]
+== Method: addRepoFilter 
 
 Description:
 
@@ -134,14 +130,14 @@ Adds a filter for a given repo.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
 * [.struct]#struct#  filterProps
-** [.string]#string#  "filter" - string to filter on
-** [.string]#string#  "flag" - + for include, - for exclude
- 
+          ** [.string]#string#  "filter" - string to filter on
+          ** [.string]#string#  "flag" - + for include, - for exclude
+   
 
 Returns:
 
@@ -150,10 +146,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-alignMetadata-loggedInUser-channelFromLabel-channelToLabel-metadataType]
-== Method: alignMetadata
-
-HTTP `POST`
+[#apidoc-channel_software-alignMetadata-305700980]
+== Method: alignMetadata 
 
 Description:
 
@@ -164,7 +158,7 @@ Align the metadata of a channel to another channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelFromLabel - the label of the source channel
  
@@ -180,10 +174,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-applyChannelState-user-sids]
-== Method: applyChannelState
-
-HTTP `POST`
+[#apidoc-channel_software-applyChannelState-435788463]
+== Method: applyChannelState 
 
 Description:
 
@@ -194,7 +186,7 @@ Refresh pillar data and then schedule channels state on the provided systems
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.array]#int array#  sids
  
@@ -206,10 +198,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-associateRepo-loggedInUser-channelLabel-repoLabel]
-== Method: associateRepo
-
-HTTP `POST`
+[#apidoc-channel_software-associateRepo-523655718]
+== Method: associateRepo 
 
 Description:
 
@@ -220,7 +210,7 @@ Associates a repository with a channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -230,41 +220,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "arch_name"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "summary"
-** [.string]#string#  "description"
-** [.string]#string#  "checksum_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "maintainer_name"
-** [.string]#string#  "maintainer_email"
-** [.string]#string#  "maintainer_phone"
-** [.string]#string#  "support_policy"
-** [.string]#string#  "gpg_key_url"
-** [.string]#string#  "gpg_key_id"
-** [.string]#string#  "gpg_key_fp"
-** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-** [.string]#string#  "end_of_life"
-** [.string]#string#  "parent_channel_label"
-** [.string]#string#  "clone_original"
-** [.array]#array#  "contentSources"
-*** [.struct]#struct#  content source
-**** [.int]#int#  "id"
-**** [.string]#string#  "label"
-**** [.string]#string#  "sourceUrl"
-**** [.string]#string#  "type"
-  
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array#  "contentSources"
+          *** [.struct]#struct#  content source
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                    
  
 
 
 
-[#apidoc-channel_software-clearRepoFilters-loggedInUser-label]
-== Method: clearRepoFilters
-
-HTTP `POST`
+[#apidoc-channel_software-clearRepoFilters-1094103443]
+== Method: clearRepoFilters 
 
 Description:
 
@@ -275,7 +263,7 @@ Removes the filters for a repo
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -287,10 +275,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-clone-loggedInUser-originalLabel-channelDetails-originalState]
-== Method: clone
-
-HTTP `POST`
+[#apidoc-channel_software-clone-1572937899]
+== Method: clone 
 
 Description:
 
@@ -303,26 +289,26 @@ Clone a channel.  If arch_label is omitted, the arch label of the
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  originalLabel
  
 * [.struct]#struct#  channelDetails
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "summary"
-** [.string]#string#  "parent_label" - (optional)
-** [.string]#string#  "arch_label" - (optional)
-** [.string]#string#  "gpg_key_url" - (optional),
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "label"
+          ** [.string]#string#  "summary"
+          ** [.string]#string#  "parent_label" - (optional)
+          ** [.string]#string#  "arch_label" - (optional)
+          ** [.string]#string#  "gpg_key_url" - (optional),
               gpg_url might be used as well
-** [.string]#string#  "gpg_key_id" - (optional),
+          ** [.string]#string#  "gpg_key_id" - (optional),
               gpg_id might be used as well
-** [.string]#string#  "gpg_key_fp" - (optional),
+          ** [.string]#string#  "gpg_key_fp" - (optional),
               gpg_fingerprint might be used as well
-** [.string]#string#  "gpg_check" - (optional)
-** [.string]#string#  "description" - (optional)
-** [.string]#string#  "checksum" - either sha1 or sha256
- 
+          ** [.string]#string#  "gpg_check" - (optional)
+          ** [.string]#string#  "description" - (optional)
+          ** [.string]#string#  "checksum" - either sha1 or sha256
+       
 * [.boolean]#boolean#  originalState
  
 
@@ -333,10 +319,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey-gpgCheck]
-== Method: create
-
-HTTP `POST`
+[#apidoc-channel_software-create-231585923]
+== Method: create 
 
 Description:
 
@@ -347,7 +331,7 @@ Creates a software channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the new channel
  
@@ -363,16 +347,16 @@ Parameters:
  
 * [.string]#string#  checksumType - checksum type for this channel,
               used for yum repository metadata generation
-** sha1 - offers widest compatibility with clients
-** sha256 - offers highest security, but is compatible
+                ** sha1 - offers widest compatibility with clients
+          ** sha256 - offers highest security, but is compatible
                         only with newer clients: Fedora 11 and newer,
                         or Enterprise Linux 6 and newer.
- 
+       
 * [.struct]#struct#  gpgKey
-** [.string]#string#  "url" - GPG key URL
-** [.string]#string#  "id" - GPG key ID
-** [.string]#string#  "fingerprint" - GPG key Fingerprint
- 
+          ** [.string]#string#  "url" - GPG key URL
+          ** [.string]#string#  "id" - GPG key ID
+          ** [.string]#string#  "fingerprint" - GPG key Fingerprint
+       
 * [.boolean]#boolean#  gpgCheck - true if the GPG check should be
      enabled by default, false otherwise
  
@@ -385,10 +369,8 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey]
-== Method: create
-
-HTTP `POST`
+[#apidoc-channel_software-create-960630105]
+== Method: create 
 
 Description:
 
@@ -399,7 +381,7 @@ Creates a software channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the new channel
  
@@ -415,16 +397,16 @@ Parameters:
  
 * [.string]#string#  checksumType - checksum type for this channel,
               used for yum repository metadata generation
-** sha1 - offers widest compatibility with clients
-** sha256 - offers highest security, but is compatible
+                ** sha1 - offers widest compatibility with clients
+          ** sha256 - offers highest security, but is compatible
                         only with newer clients: Fedora 11 and newer,
                         or Enterprise Linux 6 and newer.
- 
+       
 * [.struct]#struct#  gpgKey
-** [.string]#string#  "url" - GPG key URL
-** [.string]#string#  "id" - GPG key ID
-** [.string]#string#  "fingerprint" - GPG key Fingerprint
- 
+          ** [.string]#string#  "url" - GPG key URL
+          ** [.string]#string#  "id" - GPG key ID
+          ** [.string]#string#  "fingerprint" - GPG key Fingerprint
+       
 
 Returns:
 
@@ -434,10 +416,8 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType]
-== Method: create
-
-HTTP `POST`
+[#apidoc-channel_software-create-1337710988]
+== Method: create 
 
 Description:
 
@@ -448,7 +428,7 @@ Creates a software channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the new channel
  
@@ -464,11 +444,11 @@ Parameters:
  
 * [.string]#string#  checksumType - checksum type for this channel,
               used for yum repository metadata generation
-** sha1 - offers widest compatibility with clients
-** sha256 - offers highest security, but is compatible
+                ** sha1 - offers widest compatibility with clients
+          ** sha256 - offers highest security, but is compatible
                         only with newer clients: Fedora 11 and newer,
                         or Enterprise Linux 6 and newer.
- 
+       
 
 Returns:
 
@@ -478,10 +458,8 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel]
-== Method: create
-
-HTTP `POST`
+[#apidoc-channel_software-create-1574053815]
+== Method: create 
 
 Description:
 
@@ -492,7 +470,7 @@ Creates a software channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of the new channel
  
@@ -514,10 +492,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url]
-== Method: createRepo
-
-HTTP `POST`
+[#apidoc-channel_software-createRepo-129831064]
+== Method: createRepo 
 
 Description:
 
@@ -528,7 +504,7 @@ Creates a repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -540,26 +516,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey]
-== Method: createRepo
-
-HTTP `POST`
+[#apidoc-channel_software-createRepo-408680160]
+== Method: createRepo 
 
 Description:
 
@@ -570,7 +544,7 @@ Creates a repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -588,26 +562,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey-hasSignedMetadata]
-== Method: createRepo
-
-HTTP `POST`
+[#apidoc-channel_software-createRepo-1784029781]
+== Method: createRepo 
 
 Description:
 
@@ -618,7 +590,7 @@ Creates a repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -642,26 +614,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-delete-loggedInUser-channelLabel]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-channel_software-delete-1897978534]
+== Method: delete 
 
 Description:
 
@@ -672,7 +642,7 @@ Deletes a custom software channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to delete
  
@@ -684,10 +654,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-disassociateRepo-loggedInUser-channelLabel-repoLabel]
-== Method: disassociateRepo
-
-HTTP `POST`
+[#apidoc-channel_software-disassociateRepo-1151964959]
+== Method: disassociateRepo 
 
 Description:
 
@@ -698,7 +666,7 @@ Disassociates a repository from a channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -708,41 +676,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "arch_name"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "summary"
-** [.string]#string#  "description"
-** [.string]#string#  "checksum_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "maintainer_name"
-** [.string]#string#  "maintainer_email"
-** [.string]#string#  "maintainer_phone"
-** [.string]#string#  "support_policy"
-** [.string]#string#  "gpg_key_url"
-** [.string]#string#  "gpg_key_id"
-** [.string]#string#  "gpg_key_fp"
-** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-** [.string]#string#  "end_of_life"
-** [.string]#string#  "parent_channel_label"
-** [.string]#string#  "clone_original"
-** [.array]#array#  "contentSources"
-*** [.struct]#struct#  content source
-**** [.int]#int#  "id"
-**** [.string]#string#  "label"
-**** [.string]#string#  "sourceUrl"
-**** [.string]#string#  "type"
-  
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array#  "contentSources"
+          *** [.struct]#struct#  content source
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                    
  
 
 
 
-[#apidoc-channel_software-getChannelLastBuildById-loggedInUser-id]
-== Method: getChannelLastBuildById
-
-HTTP `GET`
+[#apidoc-channel_software-getChannelLastBuildById-180295702]
+== Method: getChannelLastBuildById 
 
 Description:
 
@@ -754,7 +720,7 @@ Returns the last build date of the repomd.xml file
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - id of channel wanted
  
@@ -766,10 +732,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-getDetails-loggedInUser-channelLabel]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-channel_software-getDetails-1736949057]
+== Method: getDetails 
 
 Description:
 
@@ -780,7 +744,7 @@ Returns details of the given channel as a map
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -788,41 +752,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "arch_name"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "summary"
-** [.string]#string#  "description"
-** [.string]#string#  "checksum_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "maintainer_name"
-** [.string]#string#  "maintainer_email"
-** [.string]#string#  "maintainer_phone"
-** [.string]#string#  "support_policy"
-** [.string]#string#  "gpg_key_url"
-** [.string]#string#  "gpg_key_id"
-** [.string]#string#  "gpg_key_fp"
-** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-** [.string]#string#  "end_of_life"
-** [.string]#string#  "parent_channel_label"
-** [.string]#string#  "clone_original"
-** [.array]#array#  "contentSources"
-*** [.struct]#struct#  content source
-**** [.int]#int#  "id"
-**** [.string]#string#  "label"
-**** [.string]#string#  "sourceUrl"
-**** [.string]#string#  "type"
-  
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array#  "contentSources"
+          *** [.struct]#struct#  content source
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                    
  
 
 
 
-[#apidoc-channel_software-getDetails-loggedInUser-id]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-channel_software-getDetails-1153624232]
+== Method: getDetails 
 
 Description:
 
@@ -833,7 +795,7 @@ Returns details of the given channel as a map
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - channel to query
  
@@ -841,41 +803,39 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "arch_name"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "summary"
-** [.string]#string#  "description"
-** [.string]#string#  "checksum_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "maintainer_name"
-** [.string]#string#  "maintainer_email"
-** [.string]#string#  "maintainer_phone"
-** [.string]#string#  "support_policy"
-** [.string]#string#  "gpg_key_url"
-** [.string]#string#  "gpg_key_id"
-** [.string]#string#  "gpg_key_fp"
-** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-** [.string]#string#  "end_of_life"
-** [.string]#string#  "parent_channel_label"
-** [.string]#string#  "clone_original"
-** [.array]#array#  "contentSources"
-*** [.struct]#struct#  content source
-**** [.int]#int#  "id"
-**** [.string]#string#  "label"
-**** [.string]#string#  "sourceUrl"
-**** [.string]#string#  "type"
-  
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array#  "contentSources"
+          *** [.struct]#struct#  content source
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                    
  
 
 
 
-[#apidoc-channel_software-getRepoDetails-loggedInUser-repoLabel]
-== Method: getRepoDetails
-
-HTTP `GET`
+[#apidoc-channel_software-getRepoDetails-2029310301]
+== Method: getRepoDetails 
 
 Description:
 
@@ -886,7 +846,7 @@ Returns details of the given repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  repoLabel - repo to query
  
@@ -894,26 +854,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-getRepoDetails-loggedInUser-id]
-== Method: getRepoDetails
-
-HTTP `GET`
+[#apidoc-channel_software-getRepoDetails-1767429584]
+== Method: getRepoDetails 
 
 Description:
 
@@ -924,7 +882,7 @@ Returns details of the given repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - repository ID
  
@@ -932,26 +890,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-getRepoSyncCronExpression-loggedInUser-channelLabel]
-== Method: getRepoSyncCronExpression
-
-HTTP `GET`
+[#apidoc-channel_software-getRepoSyncCronExpression-209455103]
+== Method: getRepoSyncCronExpression 
 
 Description:
 
@@ -962,7 +918,7 @@ Returns repo synchronization cron expression
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -974,10 +930,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-isExisting-loggedInUser-channelLabel]
-== Method: isExisting
-
-HTTP `GET`
+[#apidoc-channel_software-isExisting-254310990]
+== Method: isExisting 
 
 Description:
 
@@ -988,7 +942,7 @@ Returns whether is existing
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -1000,10 +954,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-isGloballySubscribable-loggedInUser-channelLabel]
-== Method: isGloballySubscribable
-
-HTTP `GET`
+[#apidoc-channel_software-isGloballySubscribable-1824222273]
+== Method: isGloballySubscribable 
 
 Description:
 
@@ -1015,7 +967,7 @@ Returns whether the channel is subscribable by any user
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1027,10 +979,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-isUserManageable-loggedInUser-channelLabel-login]
-== Method: isUserManageable
-
-HTTP `GET`
+[#apidoc-channel_software-isUserManageable-947519212]
+== Method: isUserManageable 
 
 Description:
 
@@ -1041,7 +991,7 @@ Returns whether the channel may be managed by the given user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -1055,10 +1005,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-isUserSubscribable-loggedInUser-channelLabel-login]
-== Method: isUserSubscribable
-
-HTTP `GET`
+[#apidoc-channel_software-isUserSubscribable-1871293699]
+== Method: isUserSubscribable 
 
 Description:
 
@@ -1069,7 +1017,7 @@ Returns whether the channel may be subscribed to by the given user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -1083,10 +1031,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate-endDate]
-== Method: listAllPackages
-
-HTTP `GET`
+[#apidoc-channel_software-listAllPackages-1850252216]
+== Method: listAllPackages 
 
 Description:
 
@@ -1098,7 +1044,7 @@ Lists all packages in the channel, regardless of package version,
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1111,25 +1057,23 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.string]#string#  "checksum"
-** [.string]#string#  "checksum_type"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "last_modified_date"
-** [.string]#string#  "last_modified" - (deprecated)
- 
- 
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.string]#string#  "checksum"
+      ** [.string]#string#  "checksum_type"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "last_modified_date"
+      ** [.string]#string#  "last_modified" - (deprecated)
+   
+       
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate]
-== Method: listAllPackages
-
-HTTP `GET`
+[#apidoc-channel_software-listAllPackages-322033405]
+== Method: listAllPackages 
 
 Description:
 
@@ -1141,7 +1085,7 @@ Lists all packages in the channel, regardless of version whose last
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1152,25 +1096,23 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.string]#string#  "checksum"
-** [.string]#string#  "checksum_type"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "last_modified_date"
-** [.string]#string#  "last_modified" - (deprecated)
- 
- 
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.string]#string#  "checksum"
+      ** [.string]#string#  "checksum_type"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "last_modified_date"
+      ** [.string]#string#  "last_modified" - (deprecated)
+   
+       
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel]
-== Method: listAllPackages
-
-HTTP `GET`
+[#apidoc-channel_software-listAllPackages-1802242940]
+== Method: listAllPackages 
 
 Description:
 
@@ -1181,7 +1123,7 @@ Lists all packages in the channel, regardless of the package version
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1190,25 +1132,23 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.string]#string#  "checksum"
-** [.string]#string#  "checksum_type"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "last_modified_date"
-** [.string]#string#  "last_modified" - (deprecated)
- 
- 
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.string]#string#  "checksum"
+      ** [.string]#string#  "checksum_type"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "last_modified_date"
+      ** [.string]#string#  "last_modified" - (deprecated)
+   
+       
 
 
 
-[#apidoc-channel_software-listArches-loggedInUser]
-== Method: listArches
-
-HTTP `GET`
+[#apidoc-channel_software-listArches-1528762150]
+== Method: listArches 
 
 Description:
 
@@ -1219,24 +1159,22 @@ Lists the potential software channel architectures that can be created
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  channel arch
-** [.string]#string#  "name"
-** [.string]#string#  "label"
- 
- 
+          ** [.string]#string#  "name"
+          ** [.string]#string#  "label"
+       
+           
 
 
 
-[#apidoc-channel_software-listChannelRepos-loggedInUser-channelLabel]
-== Method: listChannelRepos
-
-HTTP `GET`
+[#apidoc-channel_software-listChannelRepos-827074780]
+== Method: listChannelRepos 
 
 Description:
 
@@ -1247,7 +1185,7 @@ Lists associated repos with the given channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -1256,26 +1194,24 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
- 
- 
- 
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+         
+       
 
 
 
-[#apidoc-channel_software-listChildren-loggedInUser-channelLabel]
-== Method: listChildren
-
-HTTP `GET`
+[#apidoc-channel_software-listChildren-318869248]
+== Method: listChildren 
 
 Description:
 
@@ -1286,7 +1222,7 @@ List the children of a channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - the label of the channel
  
@@ -1295,41 +1231,39 @@ Returns:
 
 * [.array]#array# :
               * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "name"
-** [.string]#string#  "label"
-** [.string]#string#  "arch_name"
-** [.string]#string#  "arch_label"
-** [.string]#string#  "summary"
-** [.string]#string#  "description"
-** [.string]#string#  "checksum_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "maintainer_name"
-** [.string]#string#  "maintainer_email"
-** [.string]#string#  "maintainer_phone"
-** [.string]#string#  "support_policy"
-** [.string]#string#  "gpg_key_url"
-** [.string]#string#  "gpg_key_id"
-** [.string]#string#  "gpg_key_fp"
-** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
-** [.string]#string#  "end_of_life"
-** [.string]#string#  "parent_channel_label"
-** [.string]#string#  "clone_original"
-** [.array]#array#  "contentSources"
-*** [.struct]#struct#  content source
-**** [.int]#int#  "id"
-**** [.string]#string#  "label"
-**** [.string]#string#  "sourceUrl"
-**** [.string]#string#  "type"
- 
- 
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "arch_name"
+      ** [.string]#string#  "arch_label"
+      ** [.string]#string#  "summary"
+      ** [.string]#string#  "description"
+      ** [.string]#string#  "checksum_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "maintainer_name"
+      ** [.string]#string#  "maintainer_email"
+      ** [.string]#string#  "maintainer_phone"
+      ** [.string]#string#  "support_policy"
+      ** [.string]#string#  "gpg_key_url"
+      ** [.string]#string#  "gpg_key_id"
+      ** [.string]#string#  "gpg_key_fp"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+      ** [.string]#string#  "end_of_life"
+      ** [.string]#string#  "parent_channel_label"
+      ** [.string]#string#  "clone_original"
+      ** [.array]#array#  "contentSources"
+          *** [.struct]#struct#  content source
+              **** [.int]#int#  "id"
+              **** [.string]#string#  "label"
+              **** [.string]#string#  "sourceUrl"
+              **** [.string]#string#  "type"
+                   
+       
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate]
-== Method: listErrata
-
-HTTP `GET`
+[#apidoc-channel_software-listErrata-1357984916]
+== Method: listErrata 
 
 Description:
 
@@ -1340,7 +1274,7 @@ List the errata applicable to a channel after given startDate
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1351,23 +1285,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+       
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate]
-== Method: listErrata
-
-HTTP `GET`
+[#apidoc-channel_software-listErrata-1942002328]
+== Method: listErrata 
 
 Description:
 
@@ -1378,7 +1310,7 @@ List the errata applicable to a channel between startDate and endDate.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1391,23 +1323,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+       
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate-lastModified]
-== Method: listErrata
-
-HTTP `GET`
+[#apidoc-channel_software-listErrata-1865152087]
+== Method: listErrata 
 
 Description:
 
@@ -1418,7 +1348,7 @@ List the errata applicable to a channel between startDate and endDate.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1433,23 +1363,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+       
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel]
-== Method: listErrata
-
-HTTP `GET`
+[#apidoc-channel_software-listErrata-41772135]
+== Method: listErrata 
 
 Description:
 
@@ -1460,7 +1388,7 @@ List the errata applicable to a channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1469,23 +1397,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+     
 
 
 
-[#apidoc-channel_software-listErrataByType-loggedInUser-channelLabel-advisoryType]
-== Method: listErrataByType
-
-HTTP `GET`
+[#apidoc-channel_software-listErrataByType-1542567208]
+== Method: listErrataByType 
 
 Description:
 
@@ -1496,7 +1422,7 @@ List the errata of a specific type that are applicable to a channel
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1508,21 +1434,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  errata
-*** [.string]#string#  "advisory" - name of the advisory
-*** [.string]#string#  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS
-*** [.string]#string#  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS
-*** [.string]#string#  "synopsis"
-*** [.string]#string#  "advisory_type"
-*** [.string]#string#  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS
- 
+          ** [.struct]#struct#  errata
+              *** [.string]#string#  "advisory" - name of the advisory
+              *** [.string]#string#  "issue_date" - date format follows YYYY-MM-DD HH24:MI:SS
+              *** [.string]#string#  "update_date" - date format follows YYYY-MM-DD HH24:MI:SS
+              *** [.string]#string#  "synopsis"
+              *** [.string]#string#  "advisory_type"
+              *** [.string]#string#  "last_modified_date" - date format follows YYYY-MM-DD HH24:MI:SS
+                 
 
 
 
-[#apidoc-channel_software-listErrataNeedingSync-loggedInUser-channelLabel]
-== Method: listErrataNeedingSync
-
-HTTP `GET`
+[#apidoc-channel_software-listErrataNeedingSync-1364618464]
+== Method: listErrataNeedingSync 
 
 Description:
 
@@ -1539,7 +1463,7 @@ If you have synced a new channel then patches
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to update
  
@@ -1548,23 +1472,21 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "date" - the date erratum was created (deprecated)
-** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
-** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
-** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "date" - the date erratum was created (deprecated)
+          ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+          ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+          ** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+          ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+       
+       
 
 
 
-[#apidoc-channel_software-listLatestPackages-loggedInUser-channelLabel]
-== Method: listLatestPackages
-
-HTTP `GET`
+[#apidoc-channel_software-listLatestPackages-401002619]
+== Method: listLatestPackages 
 
 Description:
 
@@ -1576,7 +1498,7 @@ Lists the packages with the latest version (including release and
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1584,21 +1506,19 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  package
-*** [.string]#string#  "name"
-*** [.string]#string#  "version"
-*** [.string]#string#  "release"
-*** [.string]#string#  "epoch"
-*** [.int]#int#  "id"
-*** [.string]#string#  "arch_label"
- 
+          ** [.struct]#struct#  package
+              *** [.string]#string#  "name"
+              *** [.string]#string#  "version"
+              *** [.string]#string#  "release"
+              *** [.string]#string#  "epoch"
+              *** [.int]#int#  "id"
+              *** [.string]#string#  "arch_label"
+                 
 
 
 
-[#apidoc-channel_software-listPackagesWithoutChannel-loggedInUser]
-== Method: listPackagesWithoutChannel
-
-HTTP `GET`
+[#apidoc-channel_software-listPackagesWithoutChannel-405787243]
+== Method: listPackagesWithoutChannel 
 
 Description:
 
@@ -1610,34 +1530,32 @@ Lists all packages that are not associated with a channel.  Typically
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "path" - the path on that file system that the package
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "path" - the path on that file system that the package
              resides
-** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
-** [.string]#string#  "provider" - the provider of the package, determined by
+      ** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
+      ** [.string]#string#  "provider" - the provider of the package, determined by
               the gpg key it was signed with.
- 
- 
+   
+    
 
 
 
-[#apidoc-channel_software-listRepoFilters-loggedInUser-label]
-== Method: listRepoFilters
-
-HTTP `GET`
+[#apidoc-channel_software-listRepoFilters-220667244]
+== Method: listRepoFilters 
 
 Description:
 
@@ -1648,7 +1566,7 @@ Lists the filters for a repo
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -1657,18 +1575,16 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  filter
-** [.int]#int#  "sortOrder"
-** [.string]#string#  "filter"
-** [.string]#string#  "flag"
- 
- 
+      ** [.int]#int#  "sortOrder"
+      ** [.string]#string#  "filter"
+      ** [.string]#string#  "flag"
+   
+       
 
 
 
-[#apidoc-channel_software-listSubscribedSystems-loggedInUser-channelLabel]
-== Method: listSubscribedSystems
-
-HTTP `GET`
+[#apidoc-channel_software-listSubscribedSystems-347766549]
+== Method: listSubscribedSystems 
 
 Description:
 
@@ -1679,7 +1595,7 @@ Returns list of subscribed systems for the given channel label
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to query
  
@@ -1687,17 +1603,15 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  system
-*** [.int]#int#  "id"
-*** [.string]#string#  "name"
- 
+              ** [.struct]#struct#  system
+                  *** [.int]#int#  "id"
+                  *** [.string]#string#  "name"
+                          
 
 
 
-[#apidoc-channel_software-listSystemChannels-loggedInUser-sid]
-== Method: listSystemChannels
-
-HTTP `GET`
+[#apidoc-channel_software-listSystemChannels-89961399]
+== Method: listSystemChannels 
 
 Description:
 
@@ -1709,7 +1623,7 @@ Returns a list of channels that a system is subscribed to for the
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid - system ID
  
@@ -1717,18 +1631,16 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  channel
-*** [.string]#string#  "id"
-*** [.string]#string#  "label"
-*** [.string]#string#  "name"
- 
+              ** [.struct]#struct#  channel
+                  *** [.string]#string#  "id"
+                  *** [.string]#string#  "label"
+                  *** [.string]#string#  "name"
+                          
 
 
 
-[#apidoc-channel_software-listUserRepos-loggedInUser]
-== Method: listUserRepos
-
-HTTP `GET`
+[#apidoc-channel_software-listUserRepos-773749702]
+== Method: listUserRepos 
 
 Description:
 
@@ -1739,24 +1651,22 @@ Returns a list of ContentSource (repos) that the user can see
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  map
-*** [.long]#long#  "id" - ID of the repo
-*** [.string]#string#  "label" - label of the repo
-*** [.string]#string#  "sourceUrl" - URL of the repo
- 
+          ** [.struct]#struct#  map
+              *** [.long]#long#  "id" - ID of the repo
+              *** [.string]#string#  "label" - label of the repo
+              *** [.string]#string#  "sourceUrl" - URL of the repo
+                 
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel]
-== Method: mergeErrata
-
-HTTP `POST`
+[#apidoc-channel_software-mergeErrata-2130179092]
+== Method: mergeErrata 
 
 Description:
 
@@ -1767,7 +1677,7 @@ Merges all errata from one channel into another
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mergeFromLabel - the label of the
  channel to pull errata from
@@ -1780,21 +1690,19 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+       
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-startDate-endDate]
-== Method: mergeErrata
-
-HTTP `POST`
+[#apidoc-channel_software-mergeErrata-405654827]
+== Method: mergeErrata 
 
 Description:
 
@@ -1806,7 +1714,7 @@ Merges all errata from one channel into another based upon a
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mergeFromLabel - the label of the
  channel to pull errata from
@@ -1823,21 +1731,19 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+       
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-errataNames]
-== Method: mergeErrata
-
-HTTP `POST`
+[#apidoc-channel_software-mergeErrata-1279095549]
+== Method: mergeErrata 
 
 Description:
 
@@ -1848,7 +1754,7 @@ Merges a list of errata from one channel into another
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mergeFromLabel - the label of the
  channel to pull errata from
@@ -1863,21 +1769,19 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
-** [.int]#int#  "id" - errata ID
-** [.string]#string#  "date" - the date erratum was created
-** [.string]#string#  "advisory_type" - type of the advisory
-** [.string]#string#  "advisory_status" - status of the advisory
-** [.string]#string#  "advisory_name" - name of the advisory
-** [.string]#string#  "advisory_synopsis" - summary of the erratum
- 
- 
+          ** [.int]#int#  "id" - errata ID
+          ** [.string]#string#  "date" - the date erratum was created
+          ** [.string]#string#  "advisory_type" - type of the advisory
+          ** [.string]#string#  "advisory_status" - status of the advisory
+          ** [.string]#string#  "advisory_name" - name of the advisory
+          ** [.string]#string#  "advisory_synopsis" - summary of the erratum
+      
+       
 
 
 
-[#apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel]
-== Method: mergePackages
-
-HTTP `POST`
+[#apidoc-channel_software-mergePackages-631007928]
+== Method: mergePackages 
 
 Description:
 
@@ -1888,7 +1792,7 @@ Merges all packages from one channel into another
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mergeFromLabel - the label of the
           channel to pull packages from
@@ -1901,27 +1805,25 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "path" - the path on that file system that the package
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "path" - the path on that file system that the package
              resides
-** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
-** [.string]#string#  "provider" - the provider of the package, determined by
+      ** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
+      ** [.string]#string#  "provider" - the provider of the package, determined by
               the gpg key it was signed with.
- 
- 
+   
+       
 
 
 
-[#apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel-alignModules]
-== Method: mergePackages
-
-HTTP `POST`
+[#apidoc-channel_software-mergePackages-1678404939]
+== Method: mergePackages 
 
 Description:
 
@@ -1932,7 +1834,7 @@ Merges all packages from one channel into another
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  mergeFromLabel - the label of the
           channel to pull packages from
@@ -1948,27 +1850,25 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  package
-** [.string]#string#  "name"
-** [.string]#string#  "version"
-** [.string]#string#  "release"
-** [.string]#string#  "epoch"
-** [.int]#int#  "id"
-** [.string]#string#  "arch_label"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
-** [.string]#string#  "path" - the path on that file system that the package
+      ** [.string]#string#  "name"
+      ** [.string]#string#  "version"
+      ** [.string]#string#  "release"
+      ** [.string]#string#  "epoch"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "arch_label"
+      ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+      ** [.string]#string#  "path" - the path on that file system that the package
              resides
-** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
-** [.string]#string#  "provider" - the provider of the package, determined by
+      ** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
+      ** [.string]#string#  "provider" - the provider of the package, determined by
               the gpg key it was signed with.
- 
- 
+   
+       
 
 
 
-[#apidoc-channel_software-regenerateNeededCache-loggedInUser-channelLabel]
-== Method: regenerateNeededCache
-
-HTTP `POST`
+[#apidoc-channel_software-regenerateNeededCache-901087828]
+== Method: regenerateNeededCache 
 
 Description:
 
@@ -1983,7 +1883,7 @@ Completely clear and regenerate the needed Errata and Package
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - the label of the
           channel
@@ -1996,15 +1896,13 @@ Returns:
 
 
 
-[#apidoc-channel_software-regenerateNeededCache-loggedInUser]
-== Method: regenerateNeededCache
-
-HTTP `POST`
+[#apidoc-channel_software-regenerateNeededCache-1941633008]
+== Method: regenerateNeededCache 
 
 Description:
 
 Completely clear and regenerate the needed Errata and Package
-      cache for all systems subscribed. You must be a #product() Admin to
+      cache for all systems subscribed. You must be a SUSE Manager Admin to
       perform this action. This will schedule an asynchronous action to
       actually do the processing.
 
@@ -2013,7 +1911,7 @@ Completely clear and regenerate the needed Errata and Package
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -2023,10 +1921,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-regenerateYumCache-loggedInUser-channelLabel-force]
-== Method: regenerateYumCache
-
-HTTP `POST`
+[#apidoc-channel_software-regenerateYumCache-1148038393]
+== Method: regenerateYumCache 
 
 Description:
 
@@ -2037,7 +1933,7 @@ Regenerate yum cache for the specified channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - the label of the
           channel
@@ -2052,10 +1948,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeErrata-loggedInUser-channelLabel-errataNames-removePackages]
-== Method: removeErrata
-
-HTTP `POST`
+[#apidoc-channel_software-removeErrata-531076772]
+== Method: removeErrata 
 
 Description:
 
@@ -2066,7 +1960,7 @@ Removes a given list of errata from the given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - target channel
  
@@ -2082,10 +1976,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-removePackages-loggedInUser-channelLabel-packageIds]
-== Method: removePackages
-
-HTTP `POST`
+[#apidoc-channel_software-removePackages-1759413538]
+== Method: removePackages 
 
 Description:
 
@@ -2096,7 +1988,7 @@ Removes a given list of packages from the given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - target channel
  
@@ -2111,10 +2003,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepo-loggedInUser-id]
-== Method: removeRepo
-
-HTTP `POST`
+[#apidoc-channel_software-removeRepo-927704210]
+== Method: removeRepo 
 
 Description:
 
@@ -2125,7 +2015,7 @@ Removes a repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.long]#long#  id - ID of repo to be removed
  
@@ -2137,10 +2027,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepo-loggedInUser-label]
-== Method: removeRepo
-
-HTTP `POST`
+[#apidoc-channel_software-removeRepo-1478318899]
+== Method: removeRepo 
 
 Description:
 
@@ -2151,7 +2039,7 @@ Removes a repository
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - label of repo to be removed
  
@@ -2163,10 +2051,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepoFilter-loggedInUser-label-filterProps]
-== Method: removeRepoFilter
-
-HTTP `POST`
+[#apidoc-channel_software-removeRepoFilter-408989959]
+== Method: removeRepoFilter 
 
 Description:
 
@@ -2177,14 +2063,14 @@ Removes a filter for a given repo.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
 * [.struct]#struct#  filterProps
-** [.string]#string#  "filter" - string to filter on
-** [.string]#string#  "flag" - + for include, - for exclude
- 
+          ** [.string]#string#  "filter" - string to filter on
+          ** [.string]#string#  "flag" - + for include, - for exclude
+   
 
 Returns:
 
@@ -2193,10 +2079,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setContactDetails-loggedInUser-channelLabel-maintainerName-maintainerEmail-maintainerPhone-supportPolicy]
-== Method: setContactDetails
-
-HTTP `POST`
+[#apidoc-channel_software-setContactDetails-1027310894]
+== Method: setContactDetails 
 
 Description:
 
@@ -2207,7 +2091,7 @@ Set contact/support information for given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -2230,10 +2114,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setDetails-loggedInUser-channelLabel-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-channel_software-setDetails-859897724]
+== Method: setDetails 
 
 Description:
 
@@ -2244,28 +2126,28 @@ Allows to modify channel attributes
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
 * [.struct]#struct#  details
-** [.string]#string#  "checksum_label" - new channel repository checksum label
+      ** [.string]#string#  "checksum_label" - new channel repository checksum label
           (optional)
-** [.string]#string#  "name" - new channel name (optional)
-** [.string]#string#  "summary" - new channel summary (optional)
-** [.string]#string#  "description" - new channel description (optional)
-** [.string]#string#  "maintainer_name" - new channel maintainer name
+      ** [.string]#string#  "name" - new channel name (optional)
+      ** [.string]#string#  "summary" - new channel summary (optional)
+      ** [.string]#string#  "description" - new channel description (optional)
+      ** [.string]#string#  "maintainer_name" - new channel maintainer name
           (optional)
-** [.string]#string#  "maintainer_email" - new channel email address
+      ** [.string]#string#  "maintainer_email" - new channel email address
           (optional)
-** [.string]#string#  "maintainer_phone" - new channel phone number (optional)
-** [.string]#string#  "gpg_key_url" - new channel gpg key url (optional)
-** [.string]#string#  "gpg_key_id" - new channel gpg key id (optional)
-** [.string]#string#  "gpg_key_fp" - new channel gpg key fingerprint
+      ** [.string]#string#  "maintainer_phone" - new channel phone number (optional)
+      ** [.string]#string#  "gpg_key_url" - new channel gpg key url (optional)
+      ** [.string]#string#  "gpg_key_id" - new channel gpg key id (optional)
+      ** [.string]#string#  "gpg_key_fp" - new channel gpg key fingerprint
           (optional)
-** [.string]#string#  "gpg_check" - enable/disable gpg check (optional)
+      ** [.string]#string#  "gpg_check" - enable/disable gpg check (optional)
 
- 
+   
 
 Returns:
 
@@ -2274,10 +2156,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setDetails-loggedInUser-channelId-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-channel_software-setDetails-70140977]
+== Method: setDetails 
 
 Description:
 
@@ -2288,28 +2168,28 @@ Allows to modify channel attributes
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  channelId - channel id
  
 * [.struct]#struct#  details
-** [.string]#string#  "checksum_label" - new channel repository checksum label
+      ** [.string]#string#  "checksum_label" - new channel repository checksum label
           (optional)
-** [.string]#string#  "name" - new channel name (optional)
-** [.string]#string#  "summary" - new channel summary (optional)
-** [.string]#string#  "description" - new channel description (optional)
-** [.string]#string#  "maintainer_name" - new channel maintainer name
+      ** [.string]#string#  "name" - new channel name (optional)
+      ** [.string]#string#  "summary" - new channel summary (optional)
+      ** [.string]#string#  "description" - new channel description (optional)
+      ** [.string]#string#  "maintainer_name" - new channel maintainer name
           (optional)
-** [.string]#string#  "maintainer_email" - new channel email address
+      ** [.string]#string#  "maintainer_email" - new channel email address
           (optional)
-** [.string]#string#  "maintainer_phone" - new channel phone number (optional)
-** [.string]#string#  "gpg_key_url" - new channel gpg key url (optional)
-** [.string]#string#  "gpg_key_id" - new channel gpg key id (optional)
-** [.string]#string#  "gpg_key_fp" - new channel gpg key fingerprint
+      ** [.string]#string#  "maintainer_phone" - new channel phone number (optional)
+      ** [.string]#string#  "gpg_key_url" - new channel gpg key url (optional)
+      ** [.string]#string#  "gpg_key_id" - new channel gpg key id (optional)
+      ** [.string]#string#  "gpg_key_fp" - new channel gpg key fingerprint
           (optional)
-** [.string]#string#  "gpg_check" - enable/disable gpg check
+      ** [.string]#string#  "gpg_check" - enable/disable gpg check
           (optional)
- 
+   
 
 Returns:
 
@@ -2318,10 +2198,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setGloballySubscribable-loggedInUser-channelLabel-value]
-== Method: setGloballySubscribable
-
-HTTP `POST`
+[#apidoc-channel_software-setGloballySubscribable-1909597726]
+== Method: setGloballySubscribable 
 
 Description:
 
@@ -2332,7 +2210,7 @@ Set globally subscribable attribute for given channel.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -2347,10 +2225,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setRepoFilters-loggedInUser-label-filterProps]
-== Method: setRepoFilters
-
-HTTP `POST`
+[#apidoc-channel_software-setRepoFilters-1951337995]
+== Method: setRepoFilters 
 
 Description:
 
@@ -2362,15 +2238,15 @@ Replaces the existing set of filters for a given repo.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
 * [.array]#array#  filterProps
-** [.struct]#struct#  filter properties
-*** [.string]#string#  "filter" - string to filter on
-*** [.string]#string#  "flag" - + for include, - for exclude
- 
+      ** [.struct]#struct#  filter properties
+          *** [.string]#string#  "filter" - string to filter on
+          *** [.string]#string#  "flag" - + for include, - for exclude
+         
 
 Returns:
 
@@ -2379,10 +2255,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setUserManageable-loggedInUser-channelLabel-login-value]
-== Method: setUserManageable
-
-HTTP `POST`
+[#apidoc-channel_software-setUserManageable-671890880]
+== Method: setUserManageable 
 
 Description:
 
@@ -2395,7 +2269,7 @@ Set the manageable flag for a given channel and user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -2411,10 +2285,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-setUserSubscribable-loggedInUser-channelLabel-login-value]
-== Method: setUserSubscribable
-
-HTTP `POST`
+[#apidoc-channel_software-setUserSubscribable-1233113908]
+== Method: setUserSubscribable 
 
 Description:
 
@@ -2427,7 +2299,7 @@ Set the subscribable flag for a given channel and user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - label of the channel
  
@@ -2443,10 +2315,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncErrata-loggedInUser-channelLabel]
-== Method: syncErrata
-
-HTTP `POST`
+[#apidoc-channel_software-syncErrata-24333082]
+== Method: syncErrata 
 
 Description:
 
@@ -2465,7 +2335,7 @@ If you have synced a new channel then patches
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel to update
  
@@ -2477,10 +2347,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabels]
-== Method: syncRepo
-
-HTTP `POST`
+[#apidoc-channel_software-syncRepo-1902761576]
+== Method: syncRepo 
 
 Description:
 
@@ -2491,7 +2359,7 @@ Trigger immediate repo synchronization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.array]#string array#  channelLabels
  
@@ -2503,10 +2371,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel]
-== Method: syncRepo
-
-HTTP `POST`
+[#apidoc-channel_software-syncRepo-793349921]
+== Method: syncRepo 
 
 Description:
 
@@ -2517,7 +2383,7 @@ Trigger immediate repo synchronization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -2529,10 +2395,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-params]
-== Method: syncRepo
-
-HTTP `POST`
+[#apidoc-channel_software-syncRepo-9451853]
+== Method: syncRepo 
 
 Description:
 
@@ -2543,16 +2407,16 @@ Trigger immediate repo synchronization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
 * [.struct]#struct#  params
-** [.boolean]#boolean#  "sync-kickstart" - create kickstartable tree - Optional
-** [.boolean]#boolean#  "no-errata" - do not sync errata - Optional
-** [.boolean]#boolean#  "fail" - terminate upon any error - Optional
-** [.boolean]#boolean#  "latest" - only download latest packages - Optional
- 
+    ** [.boolean]#boolean#  "sync-kickstart" - create kickstartable tree - Optional
+    ** [.boolean]#boolean#  "no-errata" - do not sync errata - Optional
+    ** [.boolean]#boolean#  "fail" - terminate upon any error - Optional
+    ** [.boolean]#boolean#  "latest" - only download latest packages - Optional
+   
 
 Returns:
 
@@ -2561,10 +2425,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr]
-== Method: syncRepo
-
-HTTP `POST`
+[#apidoc-channel_software-syncRepo-1355475787]
+== Method: syncRepo 
 
 Description:
 
@@ -2575,7 +2437,7 @@ Schedule periodic repo synchronization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
@@ -2589,10 +2451,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr-params]
-== Method: syncRepo
-
-HTTP `POST`
+[#apidoc-channel_software-syncRepo-1873788332]
+== Method: syncRepo 
 
 Description:
 
@@ -2603,18 +2463,18 @@ Schedule periodic repo synchronization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  channelLabel - channel label
  
 * [.string]#string#  cronExpr - cron expression, if empty all periodic schedules will be disabled
  
 * [.struct]#struct#  params
-** [.boolean]#boolean#  "sync-kickstart" - create kickstartable tree - Optional
-** [.boolean]#boolean#  "no-errata" - do not sync errata - Optional
-** [.boolean]#boolean#  "fail" - terminate upon any error - Optional
-** [.boolean]#boolean#  "latest" - only download latest packages - Optional
- 
+    ** [.boolean]#boolean#  "sync-kickstart" - create kickstartable tree - Optional
+    ** [.boolean]#boolean#  "no-errata" - do not sync errata - Optional
+    ** [.boolean]#boolean#  "fail" - terminate upon any error - Optional
+    ** [.boolean]#boolean#  "latest" - only download latest packages - Optional
+   
 
 Returns:
 
@@ -2623,10 +2483,8 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepo-loggedInUser-id-label-url]
-== Method: updateRepo
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepo-134815104]
+== Method: updateRepo 
 
 Description:
 
@@ -2637,7 +2495,7 @@ Updates a ContentSource (repo)
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - repository ID
  
@@ -2649,26 +2507,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoLabel-loggedInUser-id-label]
-== Method: updateRepoLabel
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoLabel-1909198389]
+== Method: updateRepoLabel 
 
 Description:
 
@@ -2679,7 +2535,7 @@ Updates repository label
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - repository ID
  
@@ -2689,26 +2545,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoLabel-loggedInUser-label-newLabel]
-== Method: updateRepoLabel
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoLabel-996963339]
+== Method: updateRepoLabel 
 
 Description:
 
@@ -2719,7 +2573,7 @@ Updates repository label
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -2729,26 +2583,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoSsl-loggedInUser-id-sslCaCert-sslCliCert-sslCliKey]
-== Method: updateRepoSsl
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoSsl-831543502]
+== Method: updateRepoSsl 
 
 Description:
 
@@ -2759,7 +2611,7 @@ Updates repository SSL certificates
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - repository ID
  
@@ -2773,26 +2625,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoSsl-loggedInUser-label-sslCaCert-sslCliCert-sslCliKey]
-== Method: updateRepoSsl
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoSsl-956903564]
+== Method: updateRepoSsl 
 
 Description:
 
@@ -2803,7 +2653,7 @@ Updates repository SSL certificates
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -2817,26 +2667,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoUrl-loggedInUser-id-url]
-== Method: updateRepoUrl
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoUrl-774689836]
+== Method: updateRepoUrl 
 
 Description:
 
@@ -2847,7 +2695,7 @@ Updates repository source URL
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  id - repository ID
  
@@ -2857,26 +2705,24 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
-  
- 
 
 
 
-[#apidoc-channel_software-updateRepoUrl-loggedInUser-label-url]
-== Method: updateRepoUrl
-
-HTTP `POST`
+[#apidoc-channel_software-updateRepoUrl-484103705]
+== Method: updateRepoUrl 
 
 Description:
 
@@ -2887,7 +2733,7 @@ Updates repository source URL
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - repository label
  
@@ -2897,18 +2743,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  channel
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "sourceUrl"
-** [.string]#string#  "type"
-** [.boolean]#boolean#  "hasSignedMetadata"
-** [.array]#array#  "sslContentSources"
+      ** [.int]#int#  "id"
+      ** [.string]#string#  "label"
+      ** [.string]#string#  "sourceUrl"
+      ** [.string]#string#  "type"
+      ** [.boolean]#boolean#  "hasSignedMetadata"
+      ** [.array]#array#  "sslContentSources"
          * [.struct]#struct#  content source SSL
-** [.string]#string#  "sslCaDesc"
-** [.string]#string#  "sslCertDesc"
-** [.string]#string#  "sslKeyDesc"
- 
-  
+      ** [.string]#string#  "sslCaDesc"
+      ** [.string]#string#  "sslCertDesc"
+      ** [.string]#string#  "sslKeyDesc"
+   
+          
  
 
 

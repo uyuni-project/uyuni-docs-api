@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-kickstart_snippet-createOrUpdate-loggedInUser-name-contents,createOrUpdate>>
-* <<apidoc-kickstart_snippet-delete-loggedInUser-name,delete>>
-* <<apidoc-kickstart_snippet-listAll-loggedInUser,listAll>>
-* <<apidoc-kickstart_snippet-listCustom-loggedInUser,listCustom>>
-* <<apidoc-kickstart_snippet-listDefault-loggedInUser,listDefault>>
+* <<apidoc-kickstart_snippet-createOrUpdate-1445905688,createOrUpdate>>
+* <<apidoc-kickstart_snippet-delete-1552771166,delete>>
+* <<apidoc-kickstart_snippet-listAll-1100576285,listAll>>
+* <<apidoc-kickstart_snippet-listCustom-1017472170,listCustom>>
+* <<apidoc-kickstart_snippet-listDefault-1020745918,listDefault>>
 
 == Description
 
@@ -19,10 +19,8 @@ Provides methods to create kickstart files
 kickstart.snippet
 
 
-[#apidoc-kickstart_snippet-createOrUpdate-loggedInUser-name-contents]
-== Method: createOrUpdate
-
-HTTP `POST`
+[#apidoc-kickstart_snippet-createOrUpdate-1445905688]
+== Method: createOrUpdate 
 
 Description:
 
@@ -34,7 +32,7 @@ Will create a snippet with the given name and contents if it
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -44,20 +42,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  snippet
-** [.string]#string#  "name"
-** [.string]#string#  "contents"
-** [.string]#string#  "fragment" - the string to include in a kickstart
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - the string to include in a kickstart
                           file that will generate this snippet
-** [.string]#string#  "file" - the local path to the file containing this snippet
-  
+     ** [.string]#string#  "file" - the local path to the file containing this snippet
+     
  
 
 
 
-[#apidoc-kickstart_snippet-delete-loggedInUser-name]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-kickstart_snippet-delete-1552771166]
+== Method: delete 
 
 Description:
 
@@ -69,7 +65,7 @@ Delete the specified snippet.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -81,10 +77,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_snippet-listAll-loggedInUser]
-== Method: listAll
-
-HTTP `GET`
+[#apidoc-kickstart_snippet-listAll-1100576285]
+== Method: listAll 
 
 Description:
 
@@ -95,27 +89,25 @@ List all cobbler snippets for the logged in user
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
             * [.struct]#struct#  snippet
-** [.string]#string#  "name"
-** [.string]#string#  "contents"
-** [.string]#string#  "fragment" - the string to include in a kickstart
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - the string to include in a kickstart
                           file that will generate this snippet
-** [.string]#string#  "file" - the local path to the file containing this snippet
- 
- 
+     ** [.string]#string#  "file" - the local path to the file containing this snippet
+    
+           
 
 
 
-[#apidoc-kickstart_snippet-listCustom-loggedInUser]
-== Method: listCustom
-
-HTTP `GET`
+[#apidoc-kickstart_snippet-listCustom-1017472170]
+== Method: listCustom 
 
 Description:
 
@@ -127,27 +119,25 @@ List only custom snippets for the logged in user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
             * [.struct]#struct#  snippet
-** [.string]#string#  "name"
-** [.string]#string#  "contents"
-** [.string]#string#  "fragment" - the string to include in a kickstart
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - the string to include in a kickstart
                           file that will generate this snippet
-** [.string]#string#  "file" - the local path to the file containing this snippet
- 
- 
+     ** [.string]#string#  "file" - the local path to the file containing this snippet
+    
+           
 
 
 
-[#apidoc-kickstart_snippet-listDefault-loggedInUser]
-== Method: listDefault
-
-HTTP `GET`
+[#apidoc-kickstart_snippet-listDefault-1020745918]
+== Method: listDefault 
 
 Description:
 
@@ -159,19 +149,19 @@ List only pre-made default snippets for the logged in user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
             * [.struct]#struct#  snippet
-** [.string]#string#  "name"
-** [.string]#string#  "contents"
-** [.string]#string#  "fragment" - the string to include in a kickstart
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "contents"
+     ** [.string]#string#  "fragment" - the string to include in a kickstart
                           file that will generate this snippet
-** [.string]#string#  "file" - the local path to the file containing this snippet
- 
- 
+     ** [.string]#string#  "file" - the local path to the file containing this snippet
+    
+           
 
 

@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-api-getApiCallList-loggedInUser,getApiCallList>>
-* <<apidoc-api-getApiNamespaceCallList-loggedInUser-namespace,getApiNamespaceCallList>>
-* <<apidoc-api-getApiNamespaces-loggedInUser,getApiNamespaces>>
-* <<apidoc-api-getVersion-,getVersion>>
-* <<apidoc-api-systemVersion-,systemVersion>>
+* <<apidoc-api-getApiCallList-1811655452,getApiCallList>>
+* <<apidoc-api-getApiNamespaceCallList-882568900,getApiNamespaceCallList>>
+* <<apidoc-api-getApiNamespaces-126426355,getApiNamespaces>>
+* <<apidoc-api-getVersion-1956569315,getVersion>>
+* <<apidoc-api-systemVersion-1011646033,systemVersion>>
 
 == Description
 
@@ -19,10 +19,8 @@ Methods providing information about the API.
 api
 
 
-[#apidoc-api-getApiCallList-loggedInUser]
-== Method: getApiCallList
-
-HTTP `GET`
+[#apidoc-api-getApiCallList-1811655452]
+== Method: getApiCallList 
 
 Description:
 
@@ -33,24 +31,22 @@ Lists all available api calls grouped by namespace
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.struct]#struct#  method_info
-** [.string]#string#  "name" - method name
-** [.string]#string#  "parameters" - method parameters
-** [.string]#string#  "exceptions" - method exceptions
-** [.string]#string#  "return" - method return type
- 
+       ** [.string]#string#  "name" - method name
+       ** [.string]#string#  "parameters" - method parameters
+       ** [.string]#string#  "exceptions" - method exceptions
+       ** [.string]#string#  "return" - method return type
+    
 
 
 
-[#apidoc-api-getApiNamespaceCallList-loggedInUser-namespace]
-== Method: getApiNamespaceCallList
-
-HTTP `GET`
+[#apidoc-api-getApiNamespaceCallList-882568900]
+== Method: getApiNamespaceCallList 
 
 Description:
 
@@ -61,7 +57,7 @@ Lists all available api calls for the specified namespace
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  namespace
  
@@ -69,18 +65,16 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  method_info
-** [.string]#string#  "name" - method name
-** [.string]#string#  "parameters" - method parameters
-** [.string]#string#  "exceptions" - method exceptions
-** [.string]#string#  "return" - method return type
- 
+        ** [.string]#string#  "name" - method name
+        ** [.string]#string#  "parameters" - method parameters
+        ** [.string]#string#  "exceptions" - method exceptions
+        ** [.string]#string#  "return" - method return type
+    
 
 
 
-[#apidoc-api-getApiNamespaces-loggedInUser]
-== Method: getApiNamespaces
-
-HTTP `GET`
+[#apidoc-api-getApiNamespaces-126426355]
+== Method: getApiNamespaces 
 
 Description:
 
@@ -91,22 +85,20 @@ Lists available API namespaces
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.struct]#struct#  namespace
-** [.string]#string#  "namespace" - API namespace
-** [.string]#string#  "handler" - API Handler
- 
+        ** [.string]#string#  "namespace" - API namespace
+        ** [.string]#string#  "handler" - API Handler
+    
 
 
 
-[#apidoc-api-getVersion-]
-== Method: getVersion
-
-HTTP `GET`
+[#apidoc-api-getVersion-1956569315]
+== Method: getVersion 
 
 Description:
 
@@ -125,10 +117,8 @@ Returns:
 
 
 
-[#apidoc-api-systemVersion-]
-== Method: systemVersion
-
-HTTP `GET`
+[#apidoc-api-systemVersion-1011646033]
+== Method: systemVersion 
 
 Description:
 

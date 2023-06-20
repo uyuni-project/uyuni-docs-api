@@ -4,14 +4,14 @@
 
 == Available methods
 
-* <<apidoc-channel-listAllChannels-loggedInUser,listAllChannels>>
-* <<apidoc-channel-listManageableChannels-loggedInUser,listManageableChannels>>
-* <<apidoc-channel-listMyChannels-loggedInUser,listMyChannels>>
-* <<apidoc-channel-listPopularChannels-loggedInUser-popularityCount,listPopularChannels>>
-* <<apidoc-channel-listRetiredChannels-loggedInUser,listRetiredChannels>>
-* <<apidoc-channel-listSharedChannels-loggedInUser,listSharedChannels>>
-* <<apidoc-channel-listSoftwareChannels-loggedInUser,listSoftwareChannels>>
-* <<apidoc-channel-listVendorChannels-loggedInUser,listVendorChannels>>
+* <<apidoc-channel-listAllChannels-1653329708,listAllChannels>>
+* <<apidoc-channel-listManageableChannels-1147824431,listManageableChannels>>
+* <<apidoc-channel-listMyChannels-913001083,listMyChannels>>
+* <<apidoc-channel-listPopularChannels-549618612,listPopularChannels>>
+* <<apidoc-channel-listRetiredChannels-1887542184,listRetiredChannels>>
+* <<apidoc-channel-listSharedChannels-170201397,listSharedChannels>>
+* <<apidoc-channel-listSoftwareChannels-1147820709,listSoftwareChannels>>
+* <<apidoc-channel-listVendorChannels-1266033948,listVendorChannels>>
 
 == Description
 
@@ -22,10 +22,8 @@ Provides method to get back a list of Software Channels.
 channel
 
 
-[#apidoc-channel-listAllChannels-loggedInUser]
-== Method: listAllChannels
-
-HTTP `GET`
+[#apidoc-channel-listAllChannels-1653329708]
+== Method: listAllChannels 
 
 Description:
 
@@ -36,29 +34,27 @@ List all software channels that the user's organization is entitled to.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listManageableChannels-loggedInUser]
-== Method: listManageableChannels
-
-HTTP `GET`
+[#apidoc-channel-listManageableChannels-1147824431]
+== Method: listManageableChannels 
 
 Description:
 
@@ -69,29 +65,27 @@ List all software channels that the user is entitled to manage.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listMyChannels-loggedInUser]
-== Method: listMyChannels
-
-HTTP `GET`
+[#apidoc-channel-listMyChannels-913001083]
+== Method: listMyChannels 
 
 Description:
 
@@ -102,29 +96,27 @@ List all software channels that belong to the user's organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listPopularChannels-loggedInUser-popularityCount]
-== Method: listPopularChannels
-
-HTTP `GET`
+[#apidoc-channel-listPopularChannels-549618612]
+== Method: listPopularChannels 
 
 Description:
 
@@ -137,7 +129,7 @@ List the most popular software channels.  Channels that have at least
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  popularityCount
  
@@ -146,22 +138,20 @@ Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listRetiredChannels-loggedInUser]
-== Method: listRetiredChannels
-
-HTTP `GET`
+[#apidoc-channel-listRetiredChannels-1887542184]
+== Method: listRetiredChannels 
 
 Description:
 
@@ -174,29 +164,27 @@ List all retired software channels.  These are channels that the user's
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listSharedChannels-loggedInUser]
-== Method: listSharedChannels
-
-HTTP `GET`
+[#apidoc-channel-listSharedChannels-170201397]
+== Method: listSharedChannels 
 
 Description:
 
@@ -208,29 +196,27 @@ List all software channels that may be shared by the user's
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 
 
-[#apidoc-channel-listSoftwareChannels-loggedInUser]
-== Method: listSoftwareChannels
-
-HTTP `GET`
+[#apidoc-channel-listSoftwareChannels-1147820709]
+== Method: listSoftwareChannels 
 
 Description:
 
@@ -241,26 +227,24 @@ List all visible software channels.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  channel
-*** [.string]#string#  "label"
-*** [.string]#string#  "name"
-*** [.string]#string#  "parent_label"
-*** [.string]#string#  "end_of_life"
-*** [.string]#string#  "arch"
- 
+      ** [.struct]#struct#  channel
+          *** [.string]#string#  "label"
+          *** [.string]#string#  "name"
+          *** [.string]#string#  "parent_label"
+          *** [.string]#string#  "end_of_life"
+          *** [.string]#string#  "arch"
+         
 
 
 
-[#apidoc-channel-listVendorChannels-loggedInUser]
-== Method: listVendorChannels
-
-HTTP `GET`
+[#apidoc-channel-listVendorChannels-1266033948]
+== Method: listVendorChannels 
 
 Description:
 
@@ -272,21 +256,21 @@ Lists all the vendor software channels that the user's organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  channel info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "name"
-** [.string]#string#  "provider_name"
-** [.int]#int#  "packages"
-** [.int]#int#  "systems"
-** [.string]#string#  "arch_name"
- 
- 
+     ** [.int]#int#  "id"
+     ** [.string]#string#  "label"
+     ** [.string]#string#  "name"
+     ** [.string]#string#  "provider_name"
+     ** [.int]#int#  "packages"
+     ** [.int]#int#  "systems"
+     ** [.string]#string#  "arch_name"
+    
+      
 
 

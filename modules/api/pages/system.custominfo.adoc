@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-system_custominfo-createKey-loggedInUser-keyLabel-keyDescription,createKey>>
-* <<apidoc-system_custominfo-deleteKey-loggedInUser-keyLabel,deleteKey>>
-* <<apidoc-system_custominfo-listAllKeys-loggedInUser,listAllKeys>>
-* <<apidoc-system_custominfo-updateKey-loggedInUser-keyLabel-keyDescription,updateKey>>
+* <<apidoc-system_custominfo-createKey-779932859,createKey>>
+* <<apidoc-system_custominfo-deleteKey-653130292,deleteKey>>
+* <<apidoc-system_custominfo-listAllKeys-2003533730,listAllKeys>>
+* <<apidoc-system_custominfo-updateKey-1369468885,updateKey>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to access and modify custom system information.
 system.custominfo
 
 
-[#apidoc-system_custominfo-createKey-loggedInUser-keyLabel-keyDescription]
-== Method: createKey
-
-HTTP `POST`
+[#apidoc-system_custominfo-createKey-779932859]
+== Method: createKey 
 
 Description:
 
@@ -32,7 +30,7 @@ Create a new custom key
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  keyLabel - new key's label
  
@@ -46,10 +44,8 @@ Returns:
 
 
 
-[#apidoc-system_custominfo-deleteKey-loggedInUser-keyLabel]
-== Method: deleteKey
-
-HTTP `POST`
+[#apidoc-system_custominfo-deleteKey-653130292]
+== Method: deleteKey 
 
 Description:
 
@@ -60,7 +56,7 @@ Delete an existing custom key and all systems' values for the key.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  keyLabel - new key's label
  
@@ -72,10 +68,8 @@ Returns:
 
 
 
-[#apidoc-system_custominfo-listAllKeys-loggedInUser]
-== Method: listAllKeys
-
-HTTP `GET`
+[#apidoc-system_custominfo-listAllKeys-2003533730]
+== Method: listAllKeys 
 
 Description:
 
@@ -86,27 +80,25 @@ List the custom information keys defined for the user's organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  custom info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "description"
-** [.int]#int#  "system_count"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
- 
- 
+          ** [.int]#int#  "id"
+          ** [.string]#string#  "label"
+          ** [.string]#string#  "description"
+          ** [.int]#int#  "system_count"
+          ** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+       
+       
 
 
 
-[#apidoc-system_custominfo-updateKey-loggedInUser-keyLabel-keyDescription]
-== Method: updateKey
-
-HTTP `POST`
+[#apidoc-system_custominfo-updateKey-1369468885]
+== Method: updateKey 
 
 Description:
 
@@ -117,7 +109,7 @@ Update description of a custom key
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  keyLabel - key to change
  

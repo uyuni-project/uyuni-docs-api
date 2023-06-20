@@ -4,23 +4,21 @@
 
 == Available methods
 
-* <<apidoc-admin_monitoring-disable-loggedInUser,disable>>
-* <<apidoc-admin_monitoring-enable-loggedInUser,enable>>
-* <<apidoc-admin_monitoring-getStatus-loggedInUser,getStatus>>
+* <<apidoc-admin_monitoring-disable-1876619012,disable>>
+* <<apidoc-admin_monitoring-enable-1333721416,enable>>
+* <<apidoc-admin_monitoring-getStatus-710746177,getStatus>>
 
 == Description
 
-Provides methods to manage the monitoring of the #product() server.
+Provides methods to manage the monitoring of the SUSE Manager server.
 
 *Namespace*:
 
 admin.monitoring
 
 
-[#apidoc-admin_monitoring-disable-loggedInUser]
-== Method: disable
-
-HTTP `POST`
+[#apidoc-admin_monitoring-disable-1876619012]
+== Method: disable 
 
 Description:
 
@@ -31,26 +29,24 @@ Disable monitoring.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  Exporters
-*** [.string]#string#  "node"
-*** [.string]#string#  "tomcat"
-*** [.string]#string#  "taskomatic"
-*** [.string]#string#  "postgres"
-*** [.string]#string#  "self_monitoring"
- 
+      ** [.struct]#struct#  Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
 
 
 
-[#apidoc-admin_monitoring-enable-loggedInUser]
-== Method: enable
-
-HTTP `POST`
+[#apidoc-admin_monitoring-enable-1333721416]
+== Method: enable 
 
 Description:
 
@@ -61,26 +57,24 @@ Enable monitoring.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  Exporters
-*** [.string]#string#  "node"
-*** [.string]#string#  "tomcat"
-*** [.string]#string#  "taskomatic"
-*** [.string]#string#  "postgres"
-*** [.string]#string#  "self_monitoring"
- 
+      ** [.struct]#struct#  Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
 
 
 
-[#apidoc-admin_monitoring-getStatus-loggedInUser]
-== Method: getStatus
-
-HTTP `GET`
+[#apidoc-admin_monitoring-getStatus-710746177]
+== Method: getStatus 
 
 Description:
 
@@ -91,18 +85,18 @@ Get the status of each Prometheus exporter.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  Exporters
-*** [.string]#string#  "node"
-*** [.string]#string#  "tomcat"
-*** [.string]#string#  "taskomatic"
-*** [.string]#string#  "postgres"
-*** [.string]#string#  "self_monitoring"
- 
+      ** [.struct]#struct#  Exporters
+          *** [.string]#string#  "node"
+          *** [.string]#string#  "tomcat"
+          *** [.string]#string#  "taskomatic"
+          *** [.string]#string#  "postgres"
+          *** [.string]#string#  "self_monitoring"
+         
 
 

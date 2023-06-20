@@ -4,11 +4,11 @@
 
 == Available methods
 
-* <<apidoc-kickstart_keys-create-loggedInUser-description-type-content,create>>
-* <<apidoc-kickstart_keys-delete-loggedInUser-description,delete>>
-* <<apidoc-kickstart_keys-getDetails-loggedInUser-description,getDetails>>
-* <<apidoc-kickstart_keys-listAllKeys-loggedInUser,listAllKeys>>
-* <<apidoc-kickstart_keys-update-loggedInUser-description-type-content,update>>
+* <<apidoc-kickstart_keys-create-1592225010,create>>
+* <<apidoc-kickstart_keys-delete-1717737290,delete>>
+* <<apidoc-kickstart_keys-getDetails-234223191,getDetails>>
+* <<apidoc-kickstart_keys-listAllKeys-1231119120,listAllKeys>>
+* <<apidoc-kickstart_keys-update-1338926429,update>>
 
 == Description
 
@@ -19,10 +19,8 @@ Provides methods to manipulate kickstart keys.
 kickstart.keys
 
 
-[#apidoc-kickstart_keys-create-loggedInUser-description-type-content]
-== Method: create
-
-HTTP `POST`
+[#apidoc-kickstart_keys-create-1592225010]
+== Method: create 
 
 Description:
 
@@ -33,7 +31,7 @@ creates a new key with the given parameters
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  
@@ -49,10 +47,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_keys-delete-loggedInUser-description]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-kickstart_keys-delete-1717737290]
+== Method: delete 
 
 Description:
 
@@ -63,7 +59,7 @@ deletes the key identified by the given parameters
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  
@@ -75,10 +71,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_keys-getDetails-loggedInUser-description]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-kickstart_keys-getDetails-234223191]
+== Method: getDetails 
 
 Description:
 
@@ -89,7 +83,7 @@ returns all the data associated with the given key
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  
@@ -97,17 +91,15 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  key
-** [.string]#string#  "description"
-** [.string]#string#  "type"
-** [.string]#string#  "content"
- 
+          ** [.string]#string#  "description"
+          ** [.string]#string#  "type"
+          ** [.string]#string#  "content"
+       
 
 
 
-[#apidoc-kickstart_keys-listAllKeys-loggedInUser]
-== Method: listAllKeys
-
-HTTP `GET`
+[#apidoc-kickstart_keys-listAllKeys-1231119120]
+== Method: listAllKeys 
 
 Description:
 
@@ -119,23 +111,21 @@ list all keys for the org associated with the user logged into the
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  key
-*** [.string]#string#  "description"
-*** [.string]#string#  "type"
- 
+          ** [.struct]#struct#  key
+              *** [.string]#string#  "description"
+              *** [.string]#string#  "type"
+                 
 
 
 
-[#apidoc-kickstart_keys-update-loggedInUser-description-type-content]
-== Method: update
-
-HTTP `POST`
+[#apidoc-kickstart_keys-update-1338926429]
+== Method: update 
 
 Description:
 
@@ -146,7 +136,7 @@ Updates type and content of the key identified by the description
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  description
  

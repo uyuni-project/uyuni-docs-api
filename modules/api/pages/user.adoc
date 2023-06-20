@@ -4,33 +4,33 @@
 
 == Available methods
 
-* <<apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault,addAssignedSystemGroup>>
-* <<apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault,addAssignedSystemGroups>>
-* <<apidoc-user-addDefaultSystemGroup-loggedInUser-login-name,addDefaultSystemGroup>>
-* <<apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames,addDefaultSystemGroups>>
-* <<apidoc-user-addRole-loggedInUser-login-role,addRole>>
-* <<apidoc-user-create-loggedInUser-login-password-firstName-lastName-email,create>>
-* <<apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth,create>>
-* <<apidoc-user-delete-loggedInUser-login,delete>>
-* <<apidoc-user-disable-loggedInUser-login,disable>>
-* <<apidoc-user-enable-loggedInUser-login,enable>>
-* <<apidoc-user-getCreateDefaultSystemGroup-loggedInUser,getCreateDefaultSystemGroup>>
-* <<apidoc-user-getDetails-loggedInUser-login,getDetails>>
-* <<apidoc-user-listAssignableRoles-loggedInUser,listAssignableRoles>>
-* <<apidoc-user-listAssignedSystemGroups-loggedInUser-login,listAssignedSystemGroups>>
-* <<apidoc-user-listDefaultSystemGroups-loggedInUser-login,listDefaultSystemGroups>>
-* <<apidoc-user-listRoles-loggedInUser-login,listRoles>>
-* <<apidoc-user-listUsers-loggedInUser,listUsers>>
-* <<apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault,removeAssignedSystemGroup>>
-* <<apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault,removeAssignedSystemGroups>>
-* <<apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName,removeDefaultSystemGroup>>
-* <<apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames,removeDefaultSystemGroups>>
-* <<apidoc-user-removeRole-loggedInUser-login-role,removeRole>>
-* <<apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup,setCreateDefaultSystemGroup>>
-* <<apidoc-user-setDetails-loggedInUser-login-details,setDetails>>
-* <<apidoc-user-setErrataNotifications-loggedInUser-login-value,setErrataNotifications>>
-* <<apidoc-user-setReadOnly-loggedInUser-login-readOnly,setReadOnly>>
-* <<apidoc-user-usePamAuthentication-loggedInUser-login-val,usePamAuthentication>>
+* <<apidoc-user-addAssignedSystemGroup-400731411,addAssignedSystemGroup>>
+* <<apidoc-user-addAssignedSystemGroups-1788132713,addAssignedSystemGroups>>
+* <<apidoc-user-addDefaultSystemGroup-1143156756,addDefaultSystemGroup>>
+* <<apidoc-user-addDefaultSystemGroups-109611571,addDefaultSystemGroups>>
+* <<apidoc-user-addRole-2101456637,addRole>>
+* <<apidoc-user-create-126434188,create>>
+* <<apidoc-user-create-1161399216,create>>
+* <<apidoc-user-delete-905962412,delete>>
+* <<apidoc-user-disable-1627145296,disable>>
+* <<apidoc-user-enable-778520216,enable>>
+* <<apidoc-user-getCreateDefaultSystemGroup-1599019404,getCreateDefaultSystemGroup>>
+* <<apidoc-user-getDetails-1870823910,getDetails>>
+* <<apidoc-user-listAssignableRoles-1322011459,listAssignableRoles>>
+* <<apidoc-user-listAssignedSystemGroups-1644425487,listAssignedSystemGroups>>
+* <<apidoc-user-listDefaultSystemGroups-538459693,listDefaultSystemGroups>>
+* <<apidoc-user-listRoles-1316910947,listRoles>>
+* <<apidoc-user-listUsers-1063891302,listUsers>>
+* <<apidoc-user-removeAssignedSystemGroup-1995054261,removeAssignedSystemGroup>>
+* <<apidoc-user-removeAssignedSystemGroups-1003603952,removeAssignedSystemGroups>>
+* <<apidoc-user-removeDefaultSystemGroup-1124290846,removeDefaultSystemGroup>>
+* <<apidoc-user-removeDefaultSystemGroups-2103841285,removeDefaultSystemGroups>>
+* <<apidoc-user-removeRole-267081652,removeRole>>
+* <<apidoc-user-setCreateDefaultSystemGroup-2036771172,setCreateDefaultSystemGroup>>
+* <<apidoc-user-setDetails-487780337,setDetails>>
+* <<apidoc-user-setErrataNotifications-887000223,setErrataNotifications>>
+* <<apidoc-user-setReadOnly-2070813038,setReadOnly>>
+* <<apidoc-user-usePamAuthentication-654982383,usePamAuthentication>>
 
 == Description
 
@@ -42,10 +42,8 @@ User namespace contains methods to access common user functions
 user
 
 
-[#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault]
-== Method: addAssignedSystemGroup
-
-HTTP `POST`
+[#apidoc-user-addAssignedSystemGroup-400731411]
+== Method: addAssignedSystemGroup 
 
 Description:
 
@@ -56,7 +54,7 @@ Add system group to user's list of assigned system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -73,10 +71,8 @@ Returns:
 
 
 
-[#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault]
-== Method: addAssignedSystemGroups
-
-HTTP `POST`
+[#apidoc-user-addAssignedSystemGroups-1788132713]
+== Method: addAssignedSystemGroups 
 
 Description:
 
@@ -87,7 +83,7 @@ Add system groups to user's list of assigned system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -104,10 +100,8 @@ Returns:
 
 
 
-[#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name]
-== Method: addDefaultSystemGroup
-
-HTTP `POST`
+[#apidoc-user-addDefaultSystemGroup-1143156756]
+== Method: addDefaultSystemGroup 
 
 Description:
 
@@ -118,7 +112,7 @@ Add system group to user's list of default system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -132,10 +126,8 @@ Returns:
 
 
 
-[#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames]
-== Method: addDefaultSystemGroups
-
-HTTP `POST`
+[#apidoc-user-addDefaultSystemGroups-109611571]
+== Method: addDefaultSystemGroups 
 
 Description:
 
@@ -146,7 +138,7 @@ Add system groups to user's list of default system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -160,10 +152,8 @@ Returns:
 
 
 
-[#apidoc-user-addRole-loggedInUser-login-role]
-== Method: addRole
-
-HTTP `POST`
+[#apidoc-user-addRole-2101456637]
+== Method: addRole 
 
 Description:
 
@@ -174,7 +164,7 @@ Adds a role to a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User login name to update.
  
@@ -190,10 +180,8 @@ Returns:
 
 
 
-[#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email]
-== Method: create
-
-HTTP `POST`
+[#apidoc-user-create-126434188]
+== Method: create 
 
 Description:
 
@@ -204,7 +192,7 @@ Create a new user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - desired login name, will fail if
  already in use.
@@ -225,10 +213,8 @@ Returns:
 
 
 
-[#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth]
-== Method: create
-
-HTTP `POST`
+[#apidoc-user-create-1161399216]
+== Method: create 
 
 Description:
 
@@ -239,7 +225,7 @@ Create a new user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - desired login name,
  will fail if already in use.
@@ -263,10 +249,8 @@ Returns:
 
 
 
-[#apidoc-user-delete-loggedInUser-login]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-user-delete-905962412]
+== Method: delete 
 
 Description:
 
@@ -277,7 +261,7 @@ Delete a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User login name to delete.
  
@@ -289,10 +273,8 @@ Returns:
 
 
 
-[#apidoc-user-disable-loggedInUser-login]
-== Method: disable
-
-HTTP `POST`
+[#apidoc-user-disable-1627145296]
+== Method: disable 
 
 Description:
 
@@ -303,7 +285,7 @@ Disable a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User login name to disable.
  
@@ -315,10 +297,8 @@ Returns:
 
 
 
-[#apidoc-user-enable-loggedInUser-login]
-== Method: enable
-
-HTTP `POST`
+[#apidoc-user-enable-778520216]
+== Method: enable 
 
 Description:
 
@@ -329,7 +309,7 @@ Enable a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User login name to enable.
  
@@ -341,10 +321,8 @@ Returns:
 
 
 
-[#apidoc-user-getCreateDefaultSystemGroup-loggedInUser]
-== Method: getCreateDefaultSystemGroup
-
-HTTP `GET`
+[#apidoc-user-getCreateDefaultSystemGroup-1599019404]
+== Method: getCreateDefaultSystemGroup 
 
 Description:
 
@@ -362,7 +340,7 @@ Returns the current value of the CreateDefaultSystemGroup setting.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -372,10 +350,8 @@ Returns:
 
 
 
-[#apidoc-user-getDetails-loggedInUser-login]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-user-getDetails-1870823910]
+== Method: getDetails 
 
 Description:
 
@@ -386,7 +362,7 @@ Returns the details about a given user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -394,30 +370,28 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  user details
-** [.string]#string#  "first_names" - deprecated, use first_name
-** [.string]#string#  "first_name"
-** [.string]#string#  "last_name"
-** [.string]#string#  "email"
-** [.int]#int#  "org_id"
-** [.string]#string#  "org_name"
-** [.string]#string#  "prefix"
-** [.string]#string#  "last_login_date"
-** [.string]#string#  "created_date"
-** [.boolean]#boolean#  "enabled" - true if user is enabled,
+     ** [.string]#string#  "first_names" - deprecated, use first_name
+     ** [.string]#string#  "first_name"
+     ** [.string]#string#  "last_name"
+     ** [.string]#string#  "email"
+     ** [.int]#int#  "org_id"
+     ** [.string]#string#  "org_name"
+     ** [.string]#string#  "prefix"
+     ** [.string]#string#  "last_login_date"
+     ** [.string]#string#  "created_date"
+     ** [.boolean]#boolean#  "enabled" - true if user is enabled,
      false if the user is disabled
-** [.boolean]#boolean#  "use_pam" - true if user is configured to use
+     ** [.boolean]#boolean#  "use_pam" - true if user is configured to use
      PAM authentication
-** [.boolean]#boolean#  "read_only" - true if user is readonly
-** [.boolean]#boolean#  "errata_notification" - true if errata e-mail notification
+     ** [.boolean]#boolean#  "read_only" - true if user is readonly
+     ** [.boolean]#boolean#  "errata_notification" - true if errata e-mail notification
      is enabled for the user
- 
+    
 
 
 
-[#apidoc-user-listAssignableRoles-loggedInUser]
-== Method: listAssignableRoles
-
-HTTP `GET`
+[#apidoc-user-listAssignableRoles-1322011459]
+== Method: listAssignableRoles 
 
 Description:
 
@@ -428,7 +402,7 @@ Returns a list of user roles that this user can assign to others.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -438,10 +412,8 @@ Returns:
 
 
 
-[#apidoc-user-listAssignedSystemGroups-loggedInUser-login]
-== Method: listAssignedSystemGroups
-
-HTTP `GET`
+[#apidoc-user-listAssignedSystemGroups-1644425487]
+== Method: listAssignedSystemGroups 
 
 Description:
 
@@ -452,7 +424,7 @@ Returns the system groups that a user can administer.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -460,20 +432,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  system group
-*** [.int]#int#  "id"
-*** [.string]#string#  "name"
-*** [.string]#string#  "description"
-*** [.int]#int#  "system_count"
-*** [.int]#int#  "org_id" - Organization ID for this system group.
- 
+     ** [.struct]#struct#  system group
+       *** [.int]#int#  "id"
+       *** [.string]#string#  "name"
+       *** [.string]#string#  "description"
+       *** [.int]#int#  "system_count"
+       *** [.int]#int#  "org_id" - Organization ID for this system group.
+         
 
 
 
-[#apidoc-user-listDefaultSystemGroups-loggedInUser-login]
-== Method: listDefaultSystemGroups
-
-HTTP `GET`
+[#apidoc-user-listDefaultSystemGroups-538459693]
+== Method: listDefaultSystemGroups 
 
 Description:
 
@@ -484,7 +454,7 @@ Returns a user's list of default system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -492,20 +462,18 @@ Parameters:
 Returns:
 
 * [.array]#array# :
-** [.struct]#struct#  system group
-*** [.int]#int#  "id"
-*** [.string]#string#  "name"
-*** [.string]#string#  "description"
-*** [.int]#int#  "system_count"
-*** [.int]#int#  "org_id" - Organization ID for this system group.
- 
+     ** [.struct]#struct#  system group
+       *** [.int]#int#  "id"
+       *** [.string]#string#  "name"
+       *** [.string]#string#  "description"
+       *** [.int]#int#  "system_count"
+       *** [.int]#int#  "org_id" - Organization ID for this system group.
+         
 
 
 
-[#apidoc-user-listRoles-loggedInUser-login]
-== Method: listRoles
-
-HTTP `GET`
+[#apidoc-user-listRoles-1316910947]
+== Method: listRoles 
 
 Description:
 
@@ -516,7 +484,7 @@ Returns a list of the user's roles.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -528,10 +496,8 @@ Returns:
 
 
 
-[#apidoc-user-listUsers-loggedInUser]
-== Method: listUsers
-
-HTTP `GET`
+[#apidoc-user-listUsers-1063891302]
+== Method: listUsers 
 
 Description:
 
@@ -542,27 +508,25 @@ Returns a list of users in your organization.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  user
-** [.int]#int#  "id"
-** [.string]#string#  "login"
-** [.string]#string#  "login_uc" - upper case version of the login
-** [.boolean]#boolean#  "enabled" - true if user is enabled,
+              ** [.int]#int#  "id"
+              ** [.string]#string#  "login"
+              ** [.string]#string#  "login_uc" - upper case version of the login
+              ** [.boolean]#boolean#  "enabled" - true if user is enabled,
                          false if the user is disabled
- 
- 
+       
+  
 
 
 
-[#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault]
-== Method: removeAssignedSystemGroup
-
-HTTP `POST`
+[#apidoc-user-removeAssignedSystemGroup-1995054261]
+== Method: removeAssignedSystemGroup 
 
 Description:
 
@@ -573,7 +537,7 @@ Remove system group from the user's list of assigned system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -590,10 +554,8 @@ Returns:
 
 
 
-[#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault]
-== Method: removeAssignedSystemGroups
-
-HTTP `POST`
+[#apidoc-user-removeAssignedSystemGroups-1003603952]
+== Method: removeAssignedSystemGroups 
 
 Description:
 
@@ -604,7 +566,7 @@ Remove system groups from a user's list of assigned system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -621,10 +583,8 @@ Returns:
 
 
 
-[#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName]
-== Method: removeDefaultSystemGroup
-
-HTTP `POST`
+[#apidoc-user-removeDefaultSystemGroup-1124290846]
+== Method: removeDefaultSystemGroup 
 
 Description:
 
@@ -635,7 +595,7 @@ Remove a system group from user's list of default system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -649,10 +609,8 @@ Returns:
 
 
 
-[#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames]
-== Method: removeDefaultSystemGroups
-
-HTTP `POST`
+[#apidoc-user-removeDefaultSystemGroups-2103841285]
+== Method: removeDefaultSystemGroups 
 
 Description:
 
@@ -663,7 +621,7 @@ Remove system groups from a user's list of default system groups.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -677,10 +635,8 @@ Returns:
 
 
 
-[#apidoc-user-removeRole-loggedInUser-login-role]
-== Method: removeRole
-
-HTTP `POST`
+[#apidoc-user-removeRole-267081652]
+== Method: removeRole 
 
 Description:
 
@@ -691,7 +647,7 @@ Remove a role from a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User login name to update.
  
@@ -707,10 +663,8 @@ Returns:
 
 
 
-[#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup]
-== Method: setCreateDefaultSystemGroup
-
-HTTP `POST`
+[#apidoc-user-setCreateDefaultSystemGroup-2036771172]
+== Method: setCreateDefaultSystemGroup 
 
 Description:
 
@@ -728,7 +682,7 @@ Sets the value of the createDefaultSystemGroup setting.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.boolean]#boolean#  createDefaultSystemGroup - true if we should automatically create system groups, false otherwise.
  
@@ -740,10 +694,8 @@ Returns:
 
 
 
-[#apidoc-user-setDetails-loggedInUser-login-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-user-setDetails-487780337]
+== Method: setDetails 
 
 Description:
 
@@ -754,18 +706,18 @@ Updates the details of a user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
 * [.struct]#struct#  details
-** [.string]#string#  "first_names" - deprecated, use first_name
-** [.string]#string#  "first_name"
-** [.string]#string#  "last_name"
-** [.string]#string#  "email"
-** [.string]#string#  "prefix"
-** [.string]#string#  "password"
- 
+     ** [.string]#string#  "first_names" - deprecated, use first_name
+     ** [.string]#string#  "first_name"
+     ** [.string]#string#  "last_name"
+     ** [.string]#string#  "email"
+     ** [.string]#string#  "prefix"
+     ** [.string]#string#  "password"
+    
 
 Returns:
 
@@ -774,10 +726,8 @@ Returns:
 
 
 
-[#apidoc-user-setErrataNotifications-loggedInUser-login-value]
-== Method: setErrataNotifications
-
-HTTP `POST`
+[#apidoc-user-setErrataNotifications-887000223]
+== Method: setErrataNotifications 
 
 Description:
 
@@ -788,7 +738,7 @@ Enables/disables errata mail notifications for a specific user.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -803,10 +753,8 @@ Returns:
 
 
 
-[#apidoc-user-setReadOnly-loggedInUser-login-readOnly]
-== Method: setReadOnly
-
-HTTP `POST`
+[#apidoc-user-setReadOnly-2070813038]
+== Method: setReadOnly 
 
 Description:
 
@@ -818,7 +766,7 @@ Sets whether the target user should have only read-only API access or
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
@@ -833,29 +781,27 @@ Returns:
 
 
 
-[#apidoc-user-usePamAuthentication-loggedInUser-login-val]
-== Method: usePamAuthentication
-
-HTTP `POST`
+[#apidoc-user-usePamAuthentication-654982383]
+== Method: usePamAuthentication 
 
 Description:
 
 Toggles whether or not a user uses PAM authentication or
- basic #product() authentication.
+ basic SUSE Manager authentication.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  login - User's login name.
  
 * [.int]#int#  val
-** 1 to enable PAM authentication
-** 0 to disable.
- 
+        ** 1 to enable PAM authentication
+     ** 0 to disable.
+    
 
 Returns:
 

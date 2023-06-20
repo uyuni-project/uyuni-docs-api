@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-subscriptionmatching_pinnedsubscription-create-loggedInUser-subscriptionId-sid,create>>
-* <<apidoc-subscriptionmatching_pinnedsubscription-delete-loggedInUser-subscriptionId,delete>>
-* <<apidoc-subscriptionmatching_pinnedsubscription-list-loggedInUser,list>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-create-2145651615,create>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-delete-524415577,delete>>
+* <<apidoc-subscriptionmatching_pinnedsubscription-list-1062354350,list>>
 
 == Description
 
@@ -17,10 +17,8 @@ Provides the namespace for operations on Pinned Subscriptions
 subscriptionmatching.pinnedsubscription
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-create-loggedInUser-subscriptionId-sid]
-== Method: create
-
-HTTP `POST`
+[#apidoc-subscriptionmatching_pinnedsubscription-create-2145651615]
+== Method: create 
 
 Description:
 
@@ -31,7 +29,7 @@ Creates a Pinned Subscription based on given subscription and system
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  subscriptionId - Subscription ID
  
@@ -41,18 +39,16 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  pinned subscription
-** [.int]#int#  "id"
-** [.int]#int#  "subscription_id"
-** [.int]#int#  "system_id"
-  
+      ** [.int]#int#  "id"
+      ** [.int]#int#  "subscription_id"
+      ** [.int]#int#  "system_id"
+    
  
 
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-delete-loggedInUser-subscriptionId]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-subscriptionmatching_pinnedsubscription-delete-524415577]
+== Method: delete 
 
 Description:
 
@@ -63,7 +59,7 @@ Deletes Pinned Subscription with given id
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  subscriptionId - Pinned Subscription ID
  
@@ -75,10 +71,8 @@ Returns:
 
 
 
-[#apidoc-subscriptionmatching_pinnedsubscription-list-loggedInUser]
-== Method: list
-
-HTTP `POST`
+[#apidoc-subscriptionmatching_pinnedsubscription-list-1062354350]
+== Method: list 
 
 Description:
 
@@ -89,17 +83,17 @@ Lists all PinnedSubscriptions
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
          * [.struct]#struct#  pinned subscription
-** [.int]#int#  "id"
-** [.int]#int#  "subscription_id"
-** [.int]#int#  "system_id"
- 
- 
+      ** [.int]#int#  "id"
+      ** [.int]#int#  "subscription_id"
+      ** [.int]#int#  "system_id"
+   
+      
 
 

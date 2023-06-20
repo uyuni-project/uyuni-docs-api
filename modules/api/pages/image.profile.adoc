@@ -4,16 +4,16 @@
 
 == Available methods
 
-* <<apidoc-image_profile-create-loggedInUser-label-type-storeLabel-path-activationKey-kiwiOptions,create>>
-* <<apidoc-image_profile-create-loggedInUser-label-type-storeLabel-path-activationKey,create>>
-* <<apidoc-image_profile-delete-loggedInUser-label,delete>>
-* <<apidoc-image_profile-deleteCustomValues-loggedInUser-label-keys,deleteCustomValues>>
-* <<apidoc-image_profile-getCustomValues-loggedInUser-label,getCustomValues>>
-* <<apidoc-image_profile-getDetails-loggedInUser-label,getDetails>>
-* <<apidoc-image_profile-listImageProfileTypes-loggedInUser,listImageProfileTypes>>
-* <<apidoc-image_profile-listImageProfiles-loggedInUser,listImageProfiles>>
-* <<apidoc-image_profile-setCustomValues-loggedInUser-label-values,setCustomValues>>
-* <<apidoc-image_profile-setDetails-loggedInUser-label-details,setDetails>>
+* <<apidoc-image_profile-create-1621023573,create>>
+* <<apidoc-image_profile-create-343446206,create>>
+* <<apidoc-image_profile-delete-20780627,delete>>
+* <<apidoc-image_profile-deleteCustomValues-440033814,deleteCustomValues>>
+* <<apidoc-image_profile-getCustomValues-602011152,getCustomValues>>
+* <<apidoc-image_profile-getDetails-547525391,getDetails>>
+* <<apidoc-image_profile-listImageProfileTypes-703311663,listImageProfileTypes>>
+* <<apidoc-image_profile-listImageProfiles-442627636,listImageProfiles>>
+* <<apidoc-image_profile-setCustomValues-1943829936,setCustomValues>>
+* <<apidoc-image_profile-setDetails-892589968,setDetails>>
 
 == Description
 
@@ -24,10 +24,8 @@ Provides methods to access and modify image profiles.
 image.profile
 
 
-[#apidoc-image_profile-create-loggedInUser-label-type-storeLabel-path-activationKey-kiwiOptions]
-== Method: create
-
-HTTP `POST`
+[#apidoc-image_profile-create-1621023573]
+== Method: create 
 
 Description:
 
@@ -38,7 +36,7 @@ Create a new image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -60,10 +58,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-create-loggedInUser-label-type-storeLabel-path-activationKey]
-== Method: create
-
-HTTP `POST`
+[#apidoc-image_profile-create-343446206]
+== Method: create 
 
 Description:
 
@@ -74,7 +70,7 @@ Create a new image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -94,10 +90,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-delete-loggedInUser-label]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-image_profile-delete-20780627]
+== Method: delete 
 
 Description:
 
@@ -108,7 +102,7 @@ Delete an image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -120,10 +114,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-deleteCustomValues-loggedInUser-label-keys]
-== Method: deleteCustomValues
-
-HTTP `POST`
+[#apidoc-image_profile-deleteCustomValues-440033814]
+== Method: deleteCustomValues 
 
 Description:
 
@@ -136,7 +128,7 @@ Delete the custom values defined for the specified image profile.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -150,10 +142,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-getCustomValues-loggedInUser-label]
-== Method: getCustomValues
-
-HTTP `GET`
+[#apidoc-image_profile-getCustomValues-602011152]
+== Method: getCustomValues 
 
 Description:
 
@@ -164,7 +154,7 @@ Get the custom data values defined for the image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -172,16 +162,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  the map of custom labels to custom values
-** [.string]#string#  "custom info label"
-** [.string]#string#  "value"
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 
 
-[#apidoc-image_profile-getDetails-loggedInUser-label]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-image_profile-getDetails-547525391]
+== Method: getDetails 
 
 Description:
 
@@ -192,7 +180,7 @@ Get details of an image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
@@ -200,20 +188,18 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  image profile information
-** [.string]#string#  "label"
-** [.string]#string#  "imageType"
-** [.string]#string#  "imageStore"
-** [.string]#string#  "activationKey"
-** [.string]#string#  "path" - in case type support path
-  
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "imageType"
+   ** [.string]#string#  "imageStore"
+   ** [.string]#string#  "activationKey"
+   ** [.string]#string#  "path" - in case type support path
+   
  
 
 
 
-[#apidoc-image_profile-listImageProfileTypes-loggedInUser]
-== Method: listImageProfileTypes
-
-HTTP `GET`
+[#apidoc-image_profile-listImageProfileTypes-703311663]
+== Method: listImageProfileTypes 
 
 Description:
 
@@ -224,7 +210,7 @@ List available image store types
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -234,10 +220,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-listImageProfiles-loggedInUser]
-== Method: listImageProfiles
-
-HTTP `GET`
+[#apidoc-image_profile-listImageProfiles-442627636]
+== Method: listImageProfiles 
 
 Description:
 
@@ -248,27 +232,24 @@ List available image profiles
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  image profile information
-** [.string]#string#  "label"
-** [.string]#string#  "imageType"
-** [.string]#string#  "imageStore"
-** [.string]#string#  "activationKey"
-** [.string]#string#  "path" - in case type support path
-   
- 
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "imageType"
+   ** [.string]#string#  "imageStore"
+   ** [.string]#string#  "activationKey"
+   ** [.string]#string#  "path" - in case type support path
+    
 
 
 
-[#apidoc-image_profile-setCustomValues-loggedInUser-label-values]
-== Method: setCustomValues
-
-HTTP `POST`
+[#apidoc-image_profile-setCustomValues-1943829936]
+== Method: setCustomValues 
 
 Description:
 
@@ -279,14 +260,14 @@ Set custom values for the specified image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
 * [.struct]#struct#  values - the map of custom labels to custom values
-** [.string]#string#  "custom info label"
-** [.string]#string#  "value"
- 
+      ** [.string]#string#  "custom info label"
+      ** [.string]#string#  "value"
+     
 
 Returns:
 
@@ -295,10 +276,8 @@ Returns:
 
 
 
-[#apidoc-image_profile-setDetails-loggedInUser-label-details]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-image_profile-setDetails-892589968]
+== Method: setDetails 
 
 Description:
 
@@ -309,15 +288,15 @@ Set details of an image profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label
  
 * [.struct]#struct#  details
-** [.string]#string#  "storeLabel"
-** [.string]#string#  "path"
-** [.string]#string#  "activationKey" - set empty string to unset
- 
+     ** [.string]#string#  "storeLabel"
+     ** [.string]#string#  "path"
+     ** [.string]#string#  "activationKey" - set empty string to unset
+    
 
 Returns:
 

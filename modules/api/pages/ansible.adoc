@@ -4,18 +4,18 @@
 
 == Available methods
 
-* <<apidoc-ansible-createAnsiblePath-loggedInUser-props,createAnsiblePath>>
-* <<apidoc-ansible-discoverPlaybooks-loggedInUser-pathId,discoverPlaybooks>>
-* <<apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath,fetchPlaybookContents>>
-* <<apidoc-ansible-introspectInventory-loggedInUser-pathId,introspectInventory>>
-* <<apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId,listAnsiblePaths>>
-* <<apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId,lookupAnsiblePathById>>
-* <<apidoc-ansible-removeAnsiblePath-loggedInUser-pathId,removeAnsiblePath>>
-* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs,schedulePlaybook>>
-* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs,schedulePlaybook>>
-* <<apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props,updateAnsiblePath>>
+* <<apidoc-ansible-createAnsiblePath-961648587,createAnsiblePath>>
+* <<apidoc-ansible-discoverPlaybooks-1144148902,discoverPlaybooks>>
+* <<apidoc-ansible-fetchPlaybookContents-1902673295,fetchPlaybookContents>>
+* <<apidoc-ansible-introspectInventory-420967638,introspectInventory>>
+* <<apidoc-ansible-listAnsiblePaths-501668992,listAnsiblePaths>>
+* <<apidoc-ansible-lookupAnsiblePathById-1099766787,lookupAnsiblePathById>>
+* <<apidoc-ansible-removeAnsiblePath-1479286669,removeAnsiblePath>>
+* <<apidoc-ansible-schedulePlaybook-595382884,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-85775058,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-1428242559,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-1119158442,schedulePlaybook>>
+* <<apidoc-ansible-updateAnsiblePath-1929760689,updateAnsiblePath>>
 
 == Description
 
@@ -26,10 +26,8 @@ Provides methods to manage Ansible systems
 ansible
 
 
-[#apidoc-ansible-createAnsiblePath-loggedInUser-props]
-== Method: createAnsiblePath
-
-HTTP `POST`
+[#apidoc-ansible-createAnsiblePath-961648587]
+== Method: createAnsiblePath 
 
 Description:
 
@@ -40,30 +38,28 @@ Create ansible path
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.struct]#struct#  props
-** [.string]#string#  "type" - The ansible path type: 'inventory' or 'playbook'
-** [.int]#int#  "server_id" - ID of control node server
-** [.string]#string#  "path" - The local path to inventory/playbook
- 
+      ** [.string]#string#  "type" - The ansible path type: 'inventory' or 'playbook'
+      ** [.int]#int#  "server_id" - ID of control node server
+      ** [.string]#string#  "path" - The local path to inventory/playbook
+   
 
 Returns:
 
 * * [.struct]#struct#  ansible path
-** [.int]#int#  "path id"
-** [.string]#string#  "type label"
-** [.int]#int#  "id of the ansible control node system"
-** [.string]#string#  "local path to inventory or playbook"
-  
+     ** [.int]#int#  "path id"
+     ** [.string]#string#  "type label"
+     ** [.int]#int#  "id of the ansible control node system"
+     ** [.string]#string#  "local path to inventory or playbook"
+     
  
 
 
 
-[#apidoc-ansible-discoverPlaybooks-loggedInUser-pathId]
-== Method: discoverPlaybooks
-
-HTTP `POST`
+[#apidoc-ansible-discoverPlaybooks-1144148902]
+== Method: discoverPlaybooks 
 
 Description:
 
@@ -74,7 +70,7 @@ Discover playbooks under given playbook path with given pathId
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - path id
  
@@ -82,21 +78,19 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  playbooks
-** [.struct]#struct#  playbook
+     ** [.struct]#struct#  playbook
          * [.struct]#struct#  ansible path
-** [.int]#int#  "path id"
-** [.string]#string#  "type label"
-** [.int]#int#  "id of the ansible control node system"
-** [.string]#string#  "local path to inventory or playbook"
- 
- 
+     ** [.int]#int#  "path id"
+     ** [.string]#string#  "type label"
+     ** [.int]#int#  "id of the ansible control node system"
+     ** [.string]#string#  "local path to inventory or playbook"
+    
+       
 
 
 
-[#apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath]
-== Method: fetchPlaybookContents
-
-HTTP `POST`
+[#apidoc-ansible-fetchPlaybookContents-1902673295]
+== Method: fetchPlaybookContents 
 
 Description:
 
@@ -107,7 +101,7 @@ Fetch the playbook content from the control node using a synchronous salt call.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - playbook path id
  
@@ -122,10 +116,8 @@ Returns:
 
 
 
-[#apidoc-ansible-introspectInventory-loggedInUser-pathId]
-== Method: introspectInventory
-
-HTTP `POST`
+[#apidoc-ansible-introspectInventory-420967638]
+== Method: introspectInventory 
 
 Description:
 
@@ -136,7 +128,7 @@ Introspect inventory under given inventory path with given pathId and return it 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - path id
  
@@ -144,15 +136,13 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  Inventory in a nested structure
-** [.object]#object#  Inventory item - Inventory item (can be nested)
- 
+   ** [.object]#object#  Inventory item - Inventory item (can be nested)
+  
 
 
 
-[#apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId]
-== Method: listAnsiblePaths
-
-HTTP `GET`
+[#apidoc-ansible-listAnsiblePaths-501668992]
+== Method: listAnsiblePaths 
 
 Description:
 
@@ -163,7 +153,7 @@ List ansible paths for server (control node)
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  controlNodeId - id of ansible control node server
  
@@ -172,19 +162,17 @@ Returns:
 
 * [.array]#array# :
  * [.struct]#struct#  ansible path
-** [.int]#int#  "path id"
-** [.string]#string#  "type label"
-** [.int]#int#  "id of the ansible control node system"
-** [.string]#string#  "local path to inventory or playbook"
- 
- 
+     ** [.int]#int#  "path id"
+     ** [.string]#string#  "type label"
+     ** [.int]#int#  "id of the ansible control node system"
+     ** [.string]#string#  "local path to inventory or playbook"
+    
+  
 
 
 
-[#apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId]
-== Method: lookupAnsiblePathById
-
-HTTP `GET`
+[#apidoc-ansible-lookupAnsiblePathById-1099766787]
+== Method: lookupAnsiblePathById 
 
 Description:
 
@@ -195,7 +183,7 @@ Lookup ansible path by path id
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - path id
  
@@ -203,19 +191,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  ansible path
-** [.int]#int#  "path id"
-** [.string]#string#  "type label"
-** [.int]#int#  "id of the ansible control node system"
-** [.string]#string#  "local path to inventory or playbook"
-  
+     ** [.int]#int#  "path id"
+     ** [.string]#string#  "type label"
+     ** [.int]#int#  "id of the ansible control node system"
+     ** [.string]#string#  "local path to inventory or playbook"
+     
  
 
 
 
-[#apidoc-ansible-removeAnsiblePath-loggedInUser-pathId]
-== Method: removeAnsiblePath
-
-HTTP `POST`
+[#apidoc-ansible-removeAnsiblePath-1479286669]
+== Method: removeAnsiblePath 
 
 Description:
 
@@ -226,7 +212,7 @@ Create ansible path
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - path id
  
@@ -238,10 +224,8 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel]
-== Method: schedulePlaybook
-
-HTTP `POST`
+[#apidoc-ansible-schedulePlaybook-595382884]
+== Method: schedulePlaybook 
 
 Description:
 
@@ -252,7 +236,7 @@ Schedule a playbook execution
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  playbookPath
  
@@ -272,10 +256,8 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode]
-== Method: schedulePlaybook
-
-HTTP `POST`
+[#apidoc-ansible-schedulePlaybook-85775058]
+== Method: schedulePlaybook 
 
 Description:
 
@@ -286,7 +268,7 @@ Schedule a playbook execution
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  playbookPath
  
@@ -308,10 +290,8 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs]
-== Method: schedulePlaybook
-
-HTTP `POST`
+[#apidoc-ansible-schedulePlaybook-1428242559]
+== Method: schedulePlaybook 
 
 Description:
 
@@ -322,7 +302,7 @@ Schedule a playbook execution
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  playbookPath
  
@@ -335,8 +315,8 @@ Parameters:
 * [.string]#string#  actionChainLabel - label of an action chain to use, or None
  
 * [.struct]#struct#  ansibleArgs
-** [.boolean]#boolean#  "flushCache"
- 
+         ** [.boolean]#boolean#  "flushCache"
+      
 
 Returns:
 
@@ -345,10 +325,8 @@ Returns:
 
 
 
-[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs]
-== Method: schedulePlaybook
-
-HTTP `POST`
+[#apidoc-ansible-schedulePlaybook-1119158442]
+== Method: schedulePlaybook 
 
 Description:
 
@@ -359,7 +337,7 @@ Schedule a playbook execution
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  playbookPath
  
@@ -374,8 +352,8 @@ Parameters:
 * [.boolean]#boolean#  testMode - 'true' if the playbook shall be executed in test mode
  
 * [.struct]#struct#  ansibleArgs
-** [.boolean]#boolean#  "flushCache"
- 
+         ** [.boolean]#boolean#  "flushCache"
+      
 
 Returns:
 
@@ -384,10 +362,8 @@ Returns:
 
 
 
-[#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props]
-== Method: updateAnsiblePath
-
-HTTP `POST`
+[#apidoc-ansible-updateAnsiblePath-1929760689]
+== Method: updateAnsiblePath 
 
 Description:
 
@@ -398,22 +374,22 @@ Create ansible path
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  pathId - path id
  
 * [.struct]#struct#  props
-** [.string]#string#  "path" - The local path to inventory/playbook
- 
+      ** [.string]#string#  "path" - The local path to inventory/playbook
+   
 
 Returns:
 
 * * [.struct]#struct#  ansible path
-** [.int]#int#  "path id"
-** [.string]#string#  "type label"
-** [.int]#int#  "id of the ansible control node system"
-** [.string]#string#  "local path to inventory or playbook"
-  
+     ** [.int]#int#  "path id"
+     ** [.string]#string#  "type label"
+     ** [.int]#int#  "id of the ansible control node system"
+     ** [.string]#string#  "local path to inventory or playbook"
+     
  
 
 

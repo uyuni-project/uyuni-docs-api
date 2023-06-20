@@ -4,12 +4,12 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_software-appendToSoftwareList-loggedInUser-ksLabel-packageList,appendToSoftwareList>>
-* <<apidoc-kickstart_profile_software-getSoftwareDetails-loggedInUser-ksLabel,getSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-getSoftwareList-loggedInUser-ksLabel,getSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareDetails-loggedInUser-ksLabel-params,setSoftwareDetails>>
-* <<apidoc-kickstart_profile_software-setSoftwareList-loggedInUser-ksLabel-packageList,setSoftwareList>>
-* <<apidoc-kickstart_profile_software-setSoftwareList-loggedInUser-ksLabel-packageList-ignoreMissing-noBase,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-appendToSoftwareList-632233407,appendToSoftwareList>>
+* <<apidoc-kickstart_profile_software-getSoftwareDetails-431176461,getSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-getSoftwareList-1666012907,getSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareDetails-1152160962,setSoftwareDetails>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-80572712,setSoftwareList>>
+* <<apidoc-kickstart_profile_software-setSoftwareList-582266124,setSoftwareList>>
 
 == Description
 
@@ -21,10 +21,8 @@ Provides methods to access and modify the software list
 kickstart.profile.software
 
 
-[#apidoc-kickstart_profile_software-appendToSoftwareList-loggedInUser-ksLabel-packageList]
-== Method: appendToSoftwareList
-
-HTTP `POST`
+[#apidoc-kickstart_profile_software-appendToSoftwareList-632233407]
+== Method: appendToSoftwareList 
 
 Description:
 
@@ -36,7 +34,7 @@ Append the list of software packages to a kickstart profile.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  
@@ -50,10 +48,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-getSoftwareDetails-loggedInUser-ksLabel]
-== Method: getSoftwareDetails
-
-HTTP `GET`
+[#apidoc-kickstart_profile_software-getSoftwareDetails-431176461]
+== Method: getSoftwareDetails 
 
 Description:
 
@@ -64,7 +60,7 @@ Gets kickstart profile software details.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  
@@ -72,16 +68,14 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  kickstart packages info
-** [.string]#string#  "noBase" - install @Base package group
-** [.string]#string#  "ignoreMissing" - ignore missing packages
- 
+              ** [.string]#string#  "noBase" - install @Base package group
+              ** [.string]#string#  "ignoreMissing" - ignore missing packages
+           
 
 
 
-[#apidoc-kickstart_profile_software-getSoftwareList-loggedInUser-ksLabel]
-== Method: getSoftwareList
-
-HTTP `GET`
+[#apidoc-kickstart_profile_software-getSoftwareList-1666012907]
+== Method: getSoftwareList 
 
 Description:
 
@@ -92,7 +86,7 @@ Get a list of a kickstart profile's software packages.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  
@@ -104,10 +98,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareDetails-loggedInUser-ksLabel-params]
-== Method: setSoftwareDetails
-
-HTTP `POST`
+[#apidoc-kickstart_profile_software-setSoftwareDetails-1152160962]
+== Method: setSoftwareDetails 
 
 Description:
 
@@ -118,14 +110,14 @@ Sets kickstart profile software details.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  
 * [.struct]#struct#  params - kickstart packages info
-** [.string]#string#  "noBase" - install @Base package group
-** [.string]#string#  "ignoreMissing" - ignore missing packages
- 
+              ** [.string]#string#  "noBase" - install @Base package group
+              ** [.string]#string#  "ignoreMissing" - ignore missing packages
+           
 
 Returns:
 
@@ -134,10 +126,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareList-loggedInUser-ksLabel-packageList]
-== Method: setSoftwareList
-
-HTTP `POST`
+[#apidoc-kickstart_profile_software-setSoftwareList-80572712]
+== Method: setSoftwareList 
 
 Description:
 
@@ -148,7 +138,7 @@ Set the list of software packages for a kickstart profile.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  
@@ -162,10 +152,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_software-setSoftwareList-loggedInUser-ksLabel-packageList-ignoreMissing-noBase]
-== Method: setSoftwareList
-
-HTTP `POST`
+[#apidoc-kickstart_profile_software-setSoftwareList-582266124]
+== Method: setSoftwareList 
 
 Description:
 
@@ -176,7 +164,7 @@ Set the list of software packages for a kickstart profile.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the label of the kickstart profile
  

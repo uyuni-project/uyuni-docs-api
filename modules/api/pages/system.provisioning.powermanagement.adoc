@@ -4,19 +4,19 @@
 
 == Available methods
 
-* <<apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid,getDetails>>
-* <<apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name,getDetails>>
-* <<apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid,getStatus>>
-* <<apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name,getStatus>>
-* <<apidoc-system_provisioning_powermanagement-listTypes-loggedInUser,listTypes>>
-* <<apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid,powerOff>>
-* <<apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name,powerOff>>
-* <<apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid,powerOn>>
-* <<apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name,powerOn>>
-* <<apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid,reboot>>
-* <<apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name,reboot>>
-* <<apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data,setDetails>>
-* <<apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data,setDetails>>
+* <<apidoc-system_provisioning_powermanagement-getDetails-1527980131,getDetails>>
+* <<apidoc-system_provisioning_powermanagement-getDetails-1268303884,getDetails>>
+* <<apidoc-system_provisioning_powermanagement-getStatus-271449893,getStatus>>
+* <<apidoc-system_provisioning_powermanagement-getStatus-560849466,getStatus>>
+* <<apidoc-system_provisioning_powermanagement-listTypes-1705491584,listTypes>>
+* <<apidoc-system_provisioning_powermanagement-powerOff-448491930,powerOff>>
+* <<apidoc-system_provisioning_powermanagement-powerOff-117890788,powerOff>>
+* <<apidoc-system_provisioning_powermanagement-powerOn-500483729,powerOn>>
+* <<apidoc-system_provisioning_powermanagement-powerOn-1419194266,powerOn>>
+* <<apidoc-system_provisioning_powermanagement-reboot-1012752603,reboot>>
+* <<apidoc-system_provisioning_powermanagement-reboot-1364947765,reboot>>
+* <<apidoc-system_provisioning_powermanagement-setDetails-1381209636,setDetails>>
+* <<apidoc-system_provisioning_powermanagement-setDetails-268547125,setDetails>>
 
 == Description
 
@@ -34,10 +34,8 @@ Provides methods to access and modify power management for systems.
 system.provisioning.powermanagement
 
 
-[#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-system_provisioning_powermanagement-getDetails-1527980131]
+== Method: getDetails 
 
 Description:
 
@@ -48,7 +46,7 @@ Get current power management settings of the given system
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
@@ -56,19 +54,17 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  powerManagementParameters
-** [.string]#string#  "powerType" - Power management type
-** [.string]#string#  "powerAddress" - IP address for power management
-** [.string]#string#  "powerUsername" - The Username
-** [.string]#string#  "powerPassword" - The Password
-** [.string]#string#  "powerId" - Identifier
- 
+    ** [.string]#string#  "powerType" - Power management type
+    ** [.string]#string#  "powerAddress" - IP address for power management
+    ** [.string]#string#  "powerUsername" - The Username
+    ** [.string]#string#  "powerPassword" - The Password
+    ** [.string]#string#  "powerId" - Identifier
+   
 
 
 
-[#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name]
-== Method: getDetails
-
-HTTP `GET`
+[#apidoc-system_provisioning_powermanagement-getDetails-1268303884]
+== Method: getDetails 
 
 Description:
 
@@ -79,7 +75,7 @@ Get current power management settings of the given system
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -87,19 +83,17 @@ Parameters:
 Returns:
 
 * [.struct]#struct#  powerManagementParameters
-** [.string]#string#  "powerType" - Power management type
-** [.string]#string#  "powerAddress" - IP address for power management
-** [.string]#string#  "powerUsername" - The Username
-** [.string]#string#  "powerPassword" - The Password
-** [.string]#string#  "powerId" - Identifier
- 
+    ** [.string]#string#  "powerType" - Power management type
+    ** [.string]#string#  "powerAddress" - IP address for power management
+    ** [.string]#string#  "powerUsername" - The Username
+    ** [.string]#string#  "powerPassword" - The Password
+    ** [.string]#string#  "powerId" - Identifier
+   
 
 
 
-[#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid]
-== Method: getStatus
-
-HTTP `GET`
+[#apidoc-system_provisioning_powermanagement-getStatus-271449893]
+== Method: getStatus 
 
 Description:
 
@@ -110,7 +104,7 @@ Execute powermanagement actions
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
@@ -122,10 +116,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name]
-== Method: getStatus
-
-HTTP `GET`
+[#apidoc-system_provisioning_powermanagement-getStatus-560849466]
+== Method: getStatus 
 
 Description:
 
@@ -136,7 +128,7 @@ Execute powermanagement actions
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -148,10 +140,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser]
-== Method: listTypes
-
-HTTP `GET`
+[#apidoc-system_provisioning_powermanagement-listTypes-1705491584]
+== Method: listTypes 
 
 Description:
 
@@ -162,7 +152,7 @@ Return a list of available power management types
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -172,10 +162,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid]
-== Method: powerOff
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-powerOff-448491930]
+== Method: powerOff 
 
 Description:
 
@@ -186,7 +174,7 @@ Execute power management action 'powerOff'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
@@ -198,10 +186,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name]
-== Method: powerOff
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-powerOff-117890788]
+== Method: powerOff 
 
 Description:
 
@@ -212,7 +198,7 @@ Execute power management action 'powerOff'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -224,10 +210,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid]
-== Method: powerOn
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-powerOn-500483729]
+== Method: powerOn 
 
 Description:
 
@@ -238,7 +222,7 @@ Execute power management action 'powerOn'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
@@ -250,10 +234,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name]
-== Method: powerOn
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-powerOn-1419194266]
+== Method: powerOn 
 
 Description:
 
@@ -264,7 +246,7 @@ Execute power management action 'powerOn'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -276,10 +258,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid]
-== Method: reboot
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-reboot-1012752603]
+== Method: reboot 
 
 Description:
 
@@ -290,7 +270,7 @@ Execute power management action 'Reboot'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
@@ -302,10 +282,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name]
-== Method: reboot
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-reboot-1364947765]
+== Method: reboot 
 
 Description:
 
@@ -316,7 +294,7 @@ Execute power management action 'Reboot'
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
@@ -328,10 +306,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-setDetails-1381209636]
+== Method: setDetails 
 
 Description:
 
@@ -342,17 +318,17 @@ Get current power management settings of the given system
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  sid
  
 * [.struct]#struct#  data
-** [.string]#string#  "powerType" - Power management type
-** [.string]#string#  "powerAddress" - IP address for power management
-** [.string]#string#  "powerUsername" - The Username
-** [.string]#string#  "powerPassword" - The Password
-** [.string]#string#  "powerId" - Identifier
- 
+    ** [.string]#string#  "powerType" - Power management type
+    ** [.string]#string#  "powerAddress" - IP address for power management
+    ** [.string]#string#  "powerUsername" - The Username
+    ** [.string]#string#  "powerPassword" - The Password
+    ** [.string]#string#  "powerId" - Identifier
+   
 
 Returns:
 
@@ -361,10 +337,8 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data]
-== Method: setDetails
-
-HTTP `POST`
+[#apidoc-system_provisioning_powermanagement-setDetails-268547125]
+== Method: setDetails 
 
 Description:
 
@@ -375,17 +349,17 @@ Get current power management settings of the given system
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name
  
 * [.struct]#struct#  data
-** [.string]#string#  "powerType" - Power management type
-** [.string]#string#  "powerAddress" - IP address for power management
-** [.string]#string#  "powerUsername" - The Username
-** [.string]#string#  "powerPassword" - The Password
-** [.string]#string#  "powerId" - Identifier
- 
+    ** [.string]#string#  "powerType" - Power management type
+    ** [.string]#string#  "powerAddress" - IP address for power management
+    ** [.string]#string#  "powerUsername" - The Username
+    ** [.string]#string#  "powerPassword" - The Password
+    ** [.string]#string#  "powerId" - Identifier
+   
 
 Returns:
 

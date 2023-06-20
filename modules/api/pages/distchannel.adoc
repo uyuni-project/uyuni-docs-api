@@ -4,10 +4,10 @@
 
 == Available methods
 
-* <<apidoc-distchannel-listDefaultMaps-loggedInUser,listDefaultMaps>>
-* <<apidoc-distchannel-listMapsForOrg-loggedInUser,listMapsForOrg>>
-* <<apidoc-distchannel-listMapsForOrg-loggedInUser-orgId,listMapsForOrg>>
-* <<apidoc-distchannel-setMapForOrg-loggedInUser-os-release-archName-channelLabel,setMapForOrg>>
+* <<apidoc-distchannel-listDefaultMaps-328690775,listDefaultMaps>>
+* <<apidoc-distchannel-listMapsForOrg-280475120,listMapsForOrg>>
+* <<apidoc-distchannel-listMapsForOrg-134967549,listMapsForOrg>>
+* <<apidoc-distchannel-setMapForOrg-95387183,setMapForOrg>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to access and modify distribution channel information
 distchannel
 
 
-[#apidoc-distchannel-listDefaultMaps-loggedInUser]
-== Method: listDefaultMaps
-
-HTTP `GET`
+[#apidoc-distchannel-listDefaultMaps-328690775]
+== Method: listDefaultMaps 
 
 Description:
 
@@ -32,27 +30,25 @@ Lists the default distribution channel maps
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  distribution channel map
-** [.string]#string#  "os" - operating system
-** [.string]#string#  "release" - OS Relase
-** [.string]#string#  "arch_name" - channel architecture
-** [.string]#string#  "channel_label" - channel label
-** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
- 
- 
+          ** [.string]#string#  "os" - operating system
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - channel architecture
+          ** [.string]#string#  "channel_label" - channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
 
-[#apidoc-distchannel-listMapsForOrg-loggedInUser]
-== Method: listMapsForOrg
-
-HTTP `GET`
+[#apidoc-distchannel-listMapsForOrg-280475120]
+== Method: listMapsForOrg 
 
 Description:
 
@@ -63,39 +59,37 @@ Lists distribution channel maps valid for the user's organization
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  distribution channel map
-** [.string]#string#  "os" - operating system
-** [.string]#string#  "release" - OS Relase
-** [.string]#string#  "arch_name" - channel architecture
-** [.string]#string#  "channel_label" - channel label
-** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
- 
- 
+          ** [.string]#string#  "os" - operating system
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - channel architecture
+          ** [.string]#string#  "channel_label" - channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
 
-[#apidoc-distchannel-listMapsForOrg-loggedInUser-orgId]
-== Method: listMapsForOrg
-
-HTTP `GET`
+[#apidoc-distchannel-listMapsForOrg-134967549]
+== Method: listMapsForOrg 
 
 Description:
 
 Lists distribution channel maps valid for an organization,
- #product() admin rights needed.
+ SUSE Manager admin rights needed.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId
  
@@ -104,20 +98,18 @@ Returns:
 
 * [.array]#array# :
       * [.struct]#struct#  distribution channel map
-** [.string]#string#  "os" - operating system
-** [.string]#string#  "release" - OS Relase
-** [.string]#string#  "arch_name" - channel architecture
-** [.string]#string#  "channel_label" - channel label
-** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
- 
- 
+          ** [.string]#string#  "os" - operating system
+          ** [.string]#string#  "release" - OS Relase
+          ** [.string]#string#  "arch_name" - channel architecture
+          ** [.string]#string#  "channel_label" - channel label
+          ** [.string]#string#  "org_specific" - 'Y' organization specific, 'N' default
+      
+    
 
 
 
-[#apidoc-distchannel-setMapForOrg-loggedInUser-os-release-archName-channelLabel]
-== Method: setMapForOrg
-
-HTTP `POST`
+[#apidoc-distchannel-setMapForOrg-95387183]
+== Method: setMapForOrg 
 
 Description:
 
@@ -129,7 +121,7 @@ Sets, overrides (/removes if channelLabel empty)
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  os
  

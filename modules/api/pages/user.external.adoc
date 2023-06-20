@@ -4,28 +4,27 @@
 
 == Available methods
 
-* <<apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles,createExternalGroupToRoleMap>>
-* <<apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames,createExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name,deleteExternalGroupToRoleMap>>
-* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name,deleteExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getDefaultOrg-loggedInUser,getDefaultOrg>>
-* <<apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name,getExternalGroupToRoleMap>>
-* <<apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name,getExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getKeepTemporaryRoles-loggedInUser,getKeepTemporaryRoles>>
-* <<apidoc-user_external-getUseOrgUnit-loggedInUser,getUseOrgUnit>>
-* <<apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser,listExternalGroupToRoleMaps>>
-* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser,listExternalGroupToSystemGroupMaps>>
-* <<apidoc-user_external-setDefaultOrg-loggedInUser-orgId,setDefaultOrg>>
-* <<apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles,setExternalGroupRoles>>
-* <<apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames,setExternalGroupSystemGroups>>
-* <<apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles,setKeepTemporaryRoles>>
-* <<apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit,setUseOrgUnit>>
+* <<apidoc-user_external-createExternalGroupToRoleMap-2063539635,createExternalGroupToRoleMap>>
+* <<apidoc-user_external-createExternalGroupToSystemGroupMap-1695442281,createExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-deleteExternalGroupToRoleMap-253022329,deleteExternalGroupToRoleMap>>
+* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-2054758027,deleteExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getDefaultOrg-1474515510,getDefaultOrg>>
+* <<apidoc-user_external-getExternalGroupToRoleMap-73626808,getExternalGroupToRoleMap>>
+* <<apidoc-user_external-getExternalGroupToSystemGroupMap-1242621531,getExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getKeepTemporaryRoles-815450270,getKeepTemporaryRoles>>
+* <<apidoc-user_external-getUseOrgUnit-894432502,getUseOrgUnit>>
+* <<apidoc-user_external-listExternalGroupToRoleMaps-218388141,listExternalGroupToRoleMaps>>
+* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-1816795520,listExternalGroupToSystemGroupMaps>>
+* <<apidoc-user_external-setDefaultOrg-828093115,setDefaultOrg>>
+* <<apidoc-user_external-setExternalGroupRoles-701427635,setExternalGroupRoles>>
+* <<apidoc-user_external-setExternalGroupSystemGroups-824096549,setExternalGroupSystemGroups>>
+* <<apidoc-user_external-setKeepTemporaryRoles-194109476,setKeepTemporaryRoles>>
+* <<apidoc-user_external-setUseOrgUnit-766565657,setUseOrgUnit>>
 
 == Description
 
 If you are using IPA integration to allow authentication of users from
- an external IPA server (rare) the users will still need to be created in the #product()
- database. Methods in this namespace allow you to configure some specifics of how this
+ an external IPA server (rare) the users will still need to be created in the SUSE Manager database. Methods in this namespace allow you to configure some specifics of how this
  happens, like what organization they are created in or what roles they will have.
  These options can also be set in the web admin interface.
 
@@ -34,23 +33,21 @@ If you are using IPA integration to allow authentication of users from
 user.external
 
 
-[#apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles]
-== Method: createExternalGroupToRoleMap
-
-HTTP `POST`
+[#apidoc-user_external-createExternalGroupToRoleMap-2063539635]
+== Method: createExternalGroupToRoleMap 
 
 Description:
 
 Externally authenticated users may be members of external groups. You
  can use these groups to assign additional roles to the users when they log in.
- Can only be called by a #product() Administrator.
+ Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group. Must be
  unique.
@@ -64,17 +61,15 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "roles" - role
-  
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "roles" - role
+    
  
 
 
 
-[#apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames]
-== Method: createExternalGroupToSystemGroupMap
-
-HTTP `POST`
+[#apidoc-user_external-createExternalGroupToSystemGroupMap-1695442281]
+== Method: createExternalGroupToSystemGroupMap 
 
 Description:
 
@@ -87,7 +82,7 @@ Externally authenticated users may be members of external groups. You
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group. Must be
  unique.
@@ -99,29 +94,27 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "groups" - roles
-  
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "groups" - roles
+    
  
 
 
 
-[#apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name]
-== Method: deleteExternalGroupToRoleMap
-
-HTTP `POST`
+[#apidoc-user_external-deleteExternalGroupToRoleMap-253022329]
+== Method: deleteExternalGroupToRoleMap 
 
 Description:
 
 Delete the role map for an external group. Can only be called
- by a #product() Administrator.
+ by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -133,10 +126,8 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name]
-== Method: deleteExternalGroupToSystemGroupMap
-
-HTTP `POST`
+[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-2054758027]
+== Method: deleteExternalGroupToSystemGroupMap 
 
 Description:
 
@@ -148,7 +139,7 @@ Delete the server group map for an external group. Can only be called
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -160,22 +151,20 @@ Returns:
 
 
 
-[#apidoc-user_external-getDefaultOrg-loggedInUser]
-== Method: getDefaultOrg
-
-HTTP `GET`
+[#apidoc-user_external-getDefaultOrg-1474515510]
+== Method: getDefaultOrg 
 
 Description:
 
 Get the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -185,22 +174,20 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name]
-== Method: getExternalGroupToRoleMap
-
-HTTP `GET`
+[#apidoc-user_external-getExternalGroupToRoleMap-73626808]
+== Method: getExternalGroupToRoleMap 
 
 Description:
 
 Get a representation of the role mapping for an external group.
- Can only be called by a #product() Administrator.
+ Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -208,17 +195,15 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "roles" - role
-  
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "roles" - role
+    
  
 
 
 
-[#apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name]
-== Method: getExternalGroupToSystemGroupMap
-
-HTTP `GET`
+[#apidoc-user_external-getExternalGroupToSystemGroupMap-1242621531]
+== Method: getExternalGroupToSystemGroupMap 
 
 Description:
 
@@ -230,7 +215,7 @@ Get a representation of the server group mapping for an external
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -238,30 +223,28 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "groups" - roles
-  
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "groups" - roles
+    
  
 
 
 
-[#apidoc-user_external-getKeepTemporaryRoles-loggedInUser]
-== Method: getKeepTemporaryRoles
-
-HTTP `GET`
+[#apidoc-user_external-getKeepTemporaryRoles-815450270]
+== Method: getKeepTemporaryRoles 
 
 Description:
 
 Get whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -272,23 +255,21 @@ Returns:
 
 
 
-[#apidoc-user_external-getUseOrgUnit-loggedInUser]
-== Method: getUseOrgUnit
-
-HTTP `GET`
+[#apidoc-user_external-getUseOrgUnit-894432502]
+== Method: getUseOrgUnit 
 
 Description:
 
 Get whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+ SUSE Manager organization name. Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -299,39 +280,35 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser]
-== Method: listExternalGroupToRoleMaps
-
-HTTP `GET`
+[#apidoc-user_external-listExternalGroupToRoleMaps-218388141]
+== Method: listExternalGroupToRoleMaps 
 
 Description:
 
 List role mappings for all known external groups. Can only be called
- by a #product() Administrator.
+ by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "roles" - role
- 
- 
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "roles" - role
+   
+  
 
 
 
-[#apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser]
-== Method: listExternalGroupToSystemGroupMaps
-
-HTTP `GET`
+[#apidoc-user_external-listExternalGroupToSystemGroupMaps-1816795520]
+== Method: listExternalGroupToSystemGroupMaps 
 
 Description:
 
@@ -343,36 +320,34 @@ List server group mappings for all known external groups. Can only be
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  external group
-** [.string]#string#  "name"
-** [.array]#string array#  "groups" - roles
- 
- 
+      ** [.string]#string#  "name"
+      ** [.array]#string array#  "groups" - roles
+   
+  
 
 
 
-[#apidoc-user_external-setDefaultOrg-loggedInUser-orgId]
-== Method: setDefaultOrg
-
-HTTP `POST`
+[#apidoc-user_external-setDefaultOrg-828093115]
+== Method: setDefaultOrg 
 
 Description:
 
 Set the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  orgId - ID of the organization to set
  as the default org. 0 if there should not be a default organization.
@@ -385,22 +360,20 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles]
-== Method: setExternalGroupRoles
-
-HTTP `POST`
+[#apidoc-user_external-setExternalGroupRoles-701427635]
+== Method: setExternalGroupRoles 
 
 Description:
 
 Update the roles for an external group. Replace previously set roles
- with the ones passed in here. Can only be called by a #product() Administrator.
+ with the ones passed in here. Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -417,10 +390,8 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames]
-== Method: setExternalGroupSystemGroups
-
-HTTP `POST`
+[#apidoc-user_external-setExternalGroupSystemGroups-824096549]
+== Method: setExternalGroupSystemGroups 
 
 Description:
 
@@ -432,7 +403,7 @@ Update the server groups for an external group. Replace previously set
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  name - Name of the external group.
  
@@ -447,23 +418,21 @@ Returns:
 
 
 
-[#apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles]
-== Method: setKeepTemporaryRoles
-
-HTTP `POST`
+[#apidoc-user_external-setKeepTemporaryRoles-194109476]
+== Method: setKeepTemporaryRoles 
 
 Description:
 
 Set whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.boolean]#boolean#  keepRoles - True if we should keep roles
  after users log in through non-IPA method, false otherwise.
@@ -476,23 +445,21 @@ Returns:
 
 
 
-[#apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit]
-== Method: setUseOrgUnit
-
-HTTP `POST`
+[#apidoc-user_external-setUseOrgUnit-766565657]
+== Method: setUseOrgUnit 
 
 Description:
 
 Set whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+ SUSE Manager organization name. Can only be called by a SUSE Manager Administrator.
 
 
 
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.boolean]#boolean#  useOrgUnit - true if we should use the IPA
  orgunit to determine which organization to create the user in, false otherwise.

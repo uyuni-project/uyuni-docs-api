@@ -4,21 +4,21 @@
 
 == Available methods
 
-* <<apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap,addToMaster>>
-* <<apidoc-sync_master-create-loggedInUser-label,create>>
-* <<apidoc-sync_master-delete-loggedInUser-masterId,delete>>
-* <<apidoc-sync_master-getDefaultMaster-loggedInUser,getDefaultMaster>>
-* <<apidoc-sync_master-getMaster-loggedInUser-masterId,getMaster>>
-* <<apidoc-sync_master-getMasterByLabel-loggedInUser-label,getMasterByLabel>>
-* <<apidoc-sync_master-getMasterOrgs-loggedInUser-masterId,getMasterOrgs>>
-* <<apidoc-sync_master-getMasters-loggedInUser,getMasters>>
-* <<apidoc-sync_master-hasMaster-,hasMaster>>
-* <<apidoc-sync_master-makeDefault-loggedInUser-masterId,makeDefault>>
-* <<apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId,mapToLocal>>
-* <<apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename,setCaCert>>
-* <<apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps,setMasterOrgs>>
-* <<apidoc-sync_master-unsetDefaultMaster-loggedInUser,unsetDefaultMaster>>
-* <<apidoc-sync_master-update-loggedInUser-masterId-label,update>>
+* <<apidoc-sync_master-addToMaster-987666875,addToMaster>>
+* <<apidoc-sync_master-create-1547358501,create>>
+* <<apidoc-sync_master-delete-502047593,delete>>
+* <<apidoc-sync_master-getDefaultMaster-657827804,getDefaultMaster>>
+* <<apidoc-sync_master-getMaster-1821826140,getMaster>>
+* <<apidoc-sync_master-getMasterByLabel-1639379591,getMasterByLabel>>
+* <<apidoc-sync_master-getMasterOrgs-906244819,getMasterOrgs>>
+* <<apidoc-sync_master-getMasters-1823075447,getMasters>>
+* <<apidoc-sync_master-hasMaster-1419454167,hasMaster>>
+* <<apidoc-sync_master-makeDefault-755820705,makeDefault>>
+* <<apidoc-sync_master-mapToLocal-423039171,mapToLocal>>
+* <<apidoc-sync_master-setCaCert-1721207829,setCaCert>>
+* <<apidoc-sync_master-setMasterOrgs-1814723699,setMasterOrgs>>
+* <<apidoc-sync_master-unsetDefaultMaster-747909318,unsetDefaultMaster>>
+* <<apidoc-sync_master-update-341631013,update>>
 
 == Description
 
@@ -30,10 +30,8 @@ Contains methods to set up information about known-"masters", for use
 sync.master
 
 
-[#apidoc-sync_master-addToMaster-loggedInUser-masterId-orgMap]
-== Method: addToMaster
-
-HTTP `POST`
+[#apidoc-sync_master-addToMaster-987666875]
+== Method: addToMaster 
 
 Description:
 
@@ -45,15 +43,15 @@ Add a single organizations to the list of those the specified Master has
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - Id of the desired Master
  
 * [.struct]#struct#  orgMap
-** [.int]#int#  "masterOrgId"
-** [.string]#string#  "masterOrgName"
-** [.int]#int#  "localOrgId"
- 
+          ** [.int]#int#  "masterOrgId"
+          ** [.string]#string#  "masterOrgName"
+          ** [.int]#int#  "localOrgId"
+      
 
 Returns:
 
@@ -62,10 +60,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-create-loggedInUser-label]
-== Method: create
-
-HTTP `POST`
+[#apidoc-sync_master-create-1547358501]
+== Method: create 
 
 Description:
 
@@ -76,7 +72,7 @@ Create a new Master, known to this Slave.
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - Master's fully-qualified domain name
  
@@ -84,19 +80,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+   
  
 
 
 
-[#apidoc-sync_master-delete-loggedInUser-masterId]
-== Method: delete
-
-HTTP `POST`
+[#apidoc-sync_master-delete-502047593]
+== Method: delete 
 
 Description:
 
@@ -107,7 +101,7 @@ Remove the specified Master
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - Id of the Master to remove
  
@@ -119,10 +113,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-getDefaultMaster-loggedInUser]
-== Method: getDefaultMaster
-
-HTTP `GET`
+[#apidoc-sync_master-getDefaultMaster-657827804]
+== Method: getDefaultMaster 
 
 Description:
 
@@ -133,25 +125,23 @@ Return the current default-Master for this Slave
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+   
  
 
 
 
-[#apidoc-sync_master-getMaster-loggedInUser-masterId]
-== Method: getMaster
-
-HTTP `GET`
+[#apidoc-sync_master-getMaster-1821826140]
+== Method: getMaster 
 
 Description:
 
@@ -162,7 +152,7 @@ Find a Master by specifying its ID
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - ID of the desired Master
  
@@ -170,19 +160,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+   
  
 
 
 
-[#apidoc-sync_master-getMasterByLabel-loggedInUser-label]
-== Method: getMasterByLabel
-
-HTTP `GET`
+[#apidoc-sync_master-getMasterByLabel-1639379591]
+== Method: getMasterByLabel 
 
 Description:
 
@@ -193,7 +181,7 @@ Find a Master by specifying its label
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  label - Label of the desired Master
  
@@ -201,19 +189,17 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+   
  
 
 
 
-[#apidoc-sync_master-getMasterOrgs-loggedInUser-masterId]
-== Method: getMasterOrgs
-
-HTTP `GET`
+[#apidoc-sync_master-getMasterOrgs-906244819]
+== Method: getMasterOrgs 
 
 Description:
 
@@ -224,7 +210,7 @@ List all organizations the specified Master has exported to this Slave
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - ID of the desired Master
  
@@ -233,18 +219,16 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  IssMasterOrg info
-** [.int]#int#  "masterOrgId"
-** [.string]#string#  "masterOrgName"
-** [.int]#int#  "localOrgId"
- 
- 
+   ** [.int]#int#  "masterOrgId"
+   ** [.string]#string#  "masterOrgName"
+   ** [.int]#int#  "localOrgId"
+  
+    
 
 
 
-[#apidoc-sync_master-getMasters-loggedInUser]
-== Method: getMasters
-
-HTTP `GET`
+[#apidoc-sync_master-getMasters-1823075447]
+== Method: getMasters 
 
 Description:
 
@@ -255,26 +239,24 @@ Get all the Masters this Slave knows about
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
- 
- 
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+  
+       
 
 
 
-[#apidoc-sync_master-hasMaster-]
-== Method: hasMaster
-
-HTTP `POST`
+[#apidoc-sync_master-hasMaster-1419454167]
+== Method: hasMaster 
 
 Description:
 
@@ -293,10 +275,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-makeDefault-loggedInUser-masterId]
-== Method: makeDefault
-
-HTTP `POST`
+[#apidoc-sync_master-makeDefault-755820705]
+== Method: makeDefault 
 
 Description:
 
@@ -307,7 +287,7 @@ Make the specified Master the default for this Slave's inter-server-sync
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - Id of the Master to make the default
  
@@ -319,10 +299,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-mapToLocal-loggedInUser-masterId-masterOrgId-localOrgId]
-== Method: mapToLocal
-
-HTTP `POST`
+[#apidoc-sync_master-mapToLocal-423039171]
+== Method: mapToLocal 
 
 Description:
 
@@ -334,7 +312,7 @@ Add a single organizations to the list of those the specified Master has
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - ID of the desired Master
  
@@ -350,10 +328,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-setCaCert-loggedInUser-masterId-caCertFilename]
-== Method: setCaCert
-
-HTTP `POST`
+[#apidoc-sync_master-setCaCert-1721207829]
+== Method: setCaCert 
 
 Description:
 
@@ -364,7 +340,7 @@ Set the CA-CERT filename for specified Master on this Slave
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - ID of the Master to affect
  
@@ -378,10 +354,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-setMasterOrgs-loggedInUser-masterId-orgMaps]
-== Method: setMasterOrgs
-
-HTTP `POST`
+[#apidoc-sync_master-setMasterOrgs-1814723699]
+== Method: setMasterOrgs 
 
 Description:
 
@@ -392,16 +366,16 @@ Reset all organizations the specified Master has exported to this Slave
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - Id of the desired Master
  
 * [.array]#array#  orgMaps
-** [.struct]#struct#  master-org details
-*** [.int]#int#  "masterOrgId"
-*** [.string]#string#  "masterOrgName"
-*** [.int]#int#  "localOrgId"
- 
+      ** [.struct]#struct#  master-org details
+          *** [.int]#int#  "masterOrgId"
+          *** [.string]#string#  "masterOrgName"
+          *** [.int]#int#  "localOrgId"
+         
 
 Returns:
 
@@ -410,10 +384,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-unsetDefaultMaster-loggedInUser]
-== Method: unsetDefaultMaster
-
-HTTP `POST`
+[#apidoc-sync_master-unsetDefaultMaster-747909318]
+== Method: unsetDefaultMaster 
 
 Description:
 
@@ -424,7 +396,7 @@ Make this slave have no default Master for inter-server-sync
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 
 Returns:
@@ -434,10 +406,8 @@ Returns:
 
 
 
-[#apidoc-sync_master-update-loggedInUser-masterId-label]
-== Method: update
-
-HTTP `POST`
+[#apidoc-sync_master-update-341631013]
+== Method: update 
 
 Description:
 
@@ -448,7 +418,7 @@ Updates the label of the specified Master
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.int]#int#  masterId - ID of the Master to update
  
@@ -458,11 +428,11 @@ Parameters:
 Returns:
 
 * * [.struct]#struct#  IssMaster info
-** [.int]#int#  "id"
-** [.string]#string#  "label"
-** [.string]#string#  "caCert"
-** [.boolean]#boolean#  "isCurrentMaster"
-  
+   ** [.int]#int#  "id"
+   ** [.string]#string#  "label"
+   ** [.string]#string#  "caCert"
+   ** [.boolean]#boolean#  "isCurrentMaster"
+   
  
 
 

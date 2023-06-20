@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-kickstart_profile_keys-addActivationKey-loggedInUser-ksLabel-key,addActivationKey>>
-* <<apidoc-kickstart_profile_keys-getActivationKeys-loggedInUser-ksLabel,getActivationKeys>>
-* <<apidoc-kickstart_profile_keys-removeActivationKey-loggedInUser-ksLabel-key,removeActivationKey>>
+* <<apidoc-kickstart_profile_keys-addActivationKey-1527894232,addActivationKey>>
+* <<apidoc-kickstart_profile_keys-getActivationKeys-579077514,getActivationKeys>>
+* <<apidoc-kickstart_profile_keys-removeActivationKey-1559469558,removeActivationKey>>
 
 == Description
 
@@ -18,10 +18,8 @@ Provides methods to access and modify the list of activation keys
 kickstart.profile.keys
 
 
-[#apidoc-kickstart_profile_keys-addActivationKey-loggedInUser-ksLabel-key]
-== Method: addActivationKey
-
-HTTP `POST`
+[#apidoc-kickstart_profile_keys-addActivationKey-1527894232]
+== Method: addActivationKey 
 
 Description:
 
@@ -32,7 +30,7 @@ Add an activation key association to the kickstart profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the kickstart profile label
  
@@ -46,10 +44,8 @@ Returns:
 
 
 
-[#apidoc-kickstart_profile_keys-getActivationKeys-loggedInUser-ksLabel]
-== Method: getActivationKeys
-
-HTTP `GET`
+[#apidoc-kickstart_profile_keys-getActivationKeys-579077514]
+== Method: getActivationKeys 
 
 Description:
 
@@ -61,7 +57,7 @@ Lookup the activation keys associated with the kickstart
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the kickstart profile label
  
@@ -70,33 +66,31 @@ Returns:
 
 * [.array]#array# :
      * [.struct]#struct#  activation key
-** [.string]#string#  "key"
-** [.string]#string#  "description"
-** [.int]#int#  "usage_limit"
-** [.string]#string#  "base_channel_label"
-** [.array]#string array#  "child_channel_labels" - childChannelLabel
-** [.array]#string array#  "entitlements" - entitlementLabel
-** [.array]#string array#  "server_group_ids" - serverGroupId
-** [.array]#string array#  "package_names" - packageName - (deprecated by packages)
-** [.array]#array#  "packages"
-*** [.struct]#struct#  package
-**** [.string]#string#  "name" - packageName
-**** [.string]#string#  "arch" - archLabel - optional
-** [.boolean]#boolean#  "universal_default"
-** [.boolean]#boolean#  "disabled"
-** [.string]#string#  "contact_method" - One of the following:
-*** default
-*** ssh-push
-*** ssh-push-tunnel
- 
- 
+     ** [.string]#string#  "key"
+     ** [.string]#string#  "description"
+     ** [.int]#int#  "usage_limit"
+     ** [.string]#string#  "base_channel_label"
+     ** [.array]#string array#  "child_channel_labels" - childChannelLabel
+     ** [.array]#string array#  "entitlements" - entitlementLabel
+     ** [.array]#string array#  "server_group_ids" - serverGroupId
+     ** [.array]#string array#  "package_names" - packageName - (deprecated by packages)
+     ** [.array]#array#  "packages"
+       *** [.struct]#struct#  package
+         **** [.string]#string#  "name" - packageName
+         **** [.string]#string#  "arch" - archLabel - optional
+                 ** [.boolean]#boolean#  "universal_default"
+     ** [.boolean]#boolean#  "disabled"
+     ** [.string]#string#  "contact_method" - One of the following:
+                *** default
+         *** ssh-push
+         *** ssh-push-tunnel
+           
+    
 
 
 
-[#apidoc-kickstart_profile_keys-removeActivationKey-loggedInUser-ksLabel-key]
-== Method: removeActivationKey
-
-HTTP `POST`
+[#apidoc-kickstart_profile_keys-removeActivationKey-1559469558]
+== Method: removeActivationKey 
 
 Description:
 
@@ -107,7 +101,7 @@ Remove an activation key association from the kickstart profile
 
 Parameters:
 
-* [.string]#string#  sessionKey
+  * [.string]#string#  sessionKey
  
 * [.string]#string#  ksLabel - the kickstart profile label
  
