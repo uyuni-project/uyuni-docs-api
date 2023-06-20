@@ -12,7 +12,10 @@
 
 == Description
 
-Provides methods to handle Recurring Actions for Minions, Groups and Organizations.
+Provides methods to handle recurring actions for minions, system groups and organizations.
+ 
+ Deprecated - This namespace will be removed in a future API version. To work with recurring actions,
+ please check out the newer 'recurring' namespace.
 
 *Namespace*:
 
@@ -20,15 +23,17 @@ recurringaction
 
 
 [#apidoc-recurringaction-create-loggedInUser-actionProps]
-== Method: create
+== Method: create (Deprecated)
 
 HTTP `POST`
 
 Description:
 
-Create a new recurring action.
+Create a new recurring highstate action.
 
 
+Deprecated - This method will be removed in a future API version. To create recurring actions, please use either
+ 'recurring.highstate.create' or 'recurring.custom.create' instead.
 
 
 Parameters:
@@ -37,9 +42,9 @@ Parameters:
  
 * [.struct]#struct#  actionProps
 ** [.string]#string#  "entity_type" - the type of the target entity. One of the following:
-*** MINION
-*** GROUP
-*** ORG
+*** minion
+*** group
+*** org
 ** [.int]#int#  "entity_id" - the ID of the target entity
 ** [.string]#string#  "name" - the name of the action
 ** [.string]#string#  "cron_expr" - the execution frequency of the action
@@ -54,22 +59,24 @@ Returns:
 
 
 [#apidoc-recurringaction-delete-loggedInUser-actionId]
-== Method: delete
+== Method: delete (Deprecated)
 
 HTTP `POST`
 
 Description:
 
-Delete recurring action with given action id.
+Delete a recurring action with the given action ID.
 
 
+Deprecated - This method will be removed in a future API version. To work with recurring actions, please check
+ out the newer 'recurring' namespace.
 
 
 Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  actionId - ID of the action
+* [.int]#int#  actionId - the action ID
  
 
 Returns:
@@ -80,7 +87,7 @@ Returns:
 
 
 [#apidoc-recurringaction-listByEntity-loggedInUser-entityId-entityType]
-== Method: listByEntity
+== Method: listByEntity (Deprecated)
 
 HTTP `GET`
 
@@ -89,21 +96,26 @@ Description:
 Return a list of recurring actions for a given entity.
 
 
+Deprecated - This method will be removed in a future API version. To work with recurring actions, please check
+ out the newer 'recurring' namespace.
 
 
 Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  entityType - type of the target entity. Can be MINION, GROUP or ORG.
+* [.string]#string#  "entityType" - the type of the target entity. One of the following:
+** MINION
+** GROUP
+** ORG
  
-* [.int]#int#  entityId - ID of the target entity
+* [.int]#int#  entityId - the ID of the target entity
  
 
 Returns:
 
 * [.array]#array# :
-          * [.struct]#struct#  recurring action information
+          * [.struct]#struct#  recurring action information (some fields may be absent for some action types)
 ** [.int]#int#  "id"
 ** [.string]#string#  "name"
 ** [.int]#int#  "entity_id"
@@ -112,6 +124,7 @@ Returns:
 ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
 ** [.string]#string#  "creator"
 ** [.boolean]#boolean#  "test"
+** [.array]#string array#  "states" - the ordered list of states to be executed by a custom state action
 ** [.boolean]#boolean#  "active"
  
  
@@ -119,27 +132,29 @@ Returns:
 
 
 [#apidoc-recurringaction-lookupById-loggedInUser-actionId]
-== Method: lookupById
+== Method: lookupById (Deprecated)
 
 HTTP `GET`
 
 Description:
 
-Return recurring action with given action ID.
+Find a recurring action with the given action ID.
 
 
+Deprecated - This method will be removed in a future API version. To work with recurring actions, please check
+ out the newer 'recurring' namespace.
 
 
 Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  actionId - ID of the action
+* [.int]#int#  actionId - the action ID
  
 
 Returns:
 
-* * [.struct]#struct#  recurring action information
+* * [.struct]#struct#  recurring action information (some fields may be absent for some action types)
 ** [.int]#int#  "id"
 ** [.string]#string#  "name"
 ** [.int]#int#  "entity_id"
@@ -148,6 +163,7 @@ Returns:
 ** [.dateTime.iso8601]#dateTime.iso8601#  "created"
 ** [.string]#string#  "creator"
 ** [.boolean]#boolean#  "test"
+** [.array]#string array#  "states" - the ordered list of states to be executed by a custom state action
 ** [.boolean]#boolean#  "active"
   
  
@@ -155,15 +171,17 @@ Returns:
 
 
 [#apidoc-recurringaction-update-loggedInUser-actionProps]
-== Method: update
+== Method: update (Deprecated)
 
 HTTP `POST`
 
 Description:
 
-Update a recurring action.
+Update a recurring highstate action.
 
 
+Deprecated - This method will be removed in a future API version. To update recurring actions, please use either
+ 'recurring.highstate.update' or 'recurring.custom.update' instead.
 
 
 Parameters:

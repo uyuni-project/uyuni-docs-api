@@ -1,0 +1,109 @@
+[#apidoc-recurring_custom]
+= recurring.custom
+
+
+== Available methods
+
+* <<apidoc-recurring_custom-create-loggedInUser-actionProps,create>>
+* <<apidoc-recurring_custom-listAvailable-loggedInUser,listAvailable>>
+* <<apidoc-recurring_custom-update-loggedInUser-actionProps,update>>
+
+== Description
+
+Provides methods to handle recurring custom states for minions, system groups and organizations.
+
+*Namespace*:
+
+recurring.custom
+
+
+[#apidoc-recurring_custom-create-loggedInUser-actionProps]
+== Method: create
+
+HTTP `POST`
+
+Description:
+
+Create a new recurring custom state action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.string]#string#  "entity_type" - the type of the target entity. One of the following:
+*** minion
+*** group
+*** org
+** [.int]#int#  "entity_id" - the ID of the target entity
+** [.string]#string#  "name" - the name of the recurring action
+** [.string]#string#  "cron_expr" - the execution frequency of the action as a cron expression
+** [.array]#string array#  "states" - the ordered list of custom state names to be executed
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the newly created recurring action
+ 
+
+
+
+[#apidoc-recurring_custom-listAvailable-loggedInUser]
+== Method: listAvailable
+
+HTTP `GET`
+
+Description:
+
+List all the custom states available to the user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#string array#  the list of custom channels available to the user
+ 
+
+
+
+[#apidoc-recurring_custom-update-loggedInUser-actionProps]
+== Method: update
+
+HTTP `POST`
+
+Description:
+
+Update a recurring custom state action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.int]#int#  "id" - the ID of the action to update
+** [.string]#string#  "name" - the name of the action (optional)
+** [.string]#string#  "cron_expr" - the execution frequency of the action (optional)
+** [.array]#string array#  "states" - the ordered list of custom state names to be executed (optional)
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+** [.boolean]#boolean#  "active" - whether the action should be active (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the updated recurring action
+ 
+
+

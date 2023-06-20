@@ -1,0 +1,82 @@
+[#apidoc-recurring_highstate]
+= recurring.highstate
+
+
+== Available methods
+
+* <<apidoc-recurring_highstate-create-loggedInUser-actionProps,create>>
+* <<apidoc-recurring_highstate-update-loggedInUser-actionProps,update>>
+
+== Description
+
+Provides methods to handle recurring highstates for minions, system groups and organizations.
+
+*Namespace*:
+
+recurring.highstate
+
+
+[#apidoc-recurring_highstate-create-loggedInUser-actionProps]
+== Method: create
+
+HTTP `POST`
+
+Description:
+
+Create a new recurring highstate action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.string]#string#  "entity_type" - the type of the target entity. One of the following:
+*** minion
+*** group
+*** org
+** [.int]#int#  "entity_id" - the ID of the target entity
+** [.string]#string#  "name" - the name of the recurring action
+** [.string]#string#  "cron_expr" - the execution frequency of the action as a cron expression
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the newly created recurring action
+ 
+
+
+
+[#apidoc-recurring_highstate-update-loggedInUser-actionProps]
+== Method: update
+
+HTTP `POST`
+
+Description:
+
+Update the properties of a recurring highstate action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.int]#int#  "id" - the ID of the action to update
+** [.string]#string#  "name" - the name of the action (optional)
+** [.string]#string#  "cron_expr" - the execution frequency of the action (optional)
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+** [.boolean]#boolean#  "active" - whether the action should be active (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the updated recurring action
+ 
+
+
