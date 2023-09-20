@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Python 2 Example
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/scripts/python2.html">
-    <link rel="prev" href="perl.html">
-    <link rel="next" href="python3.html">
-    <meta name="generator" content="Antora 3.1.3">
+<title>Perl Example
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/scripts/xmlrpc_perl.html">
+    <link rel="prev" href="json-python3.html">
+    <link rel="next" href="xmlrpc_python2.html">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/search.css">
 <link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
@@ -95,24 +95,6 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">XMLRPC Scripts</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="perl.html">Perl Example</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="python2.html">Python 2 Example</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="python3.html">Python 3 Example</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="ruby.html">Ruby Example</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">HTTP over JSON API scripts</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -125,7 +107,25 @@
     <a class="nav-link" href="json-http-post.html">JSON HTTP Post</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="json-using-request-body.html">JSON HTTP Request Body</a>
+    <a class="nav-link" href="json-python3.html">Python 3 Example</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">XMLRPC Scripts</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="xmlrpc_perl.html">Perl Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="xmlrpc_python2.html">Python 2 Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="xmlrpc_python3.html">Python 3 Example</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="xmlrpc_ruby.html">Ruby Example</a>
   </li>
 </ul>
   </li>
@@ -243,6 +243,15 @@
     <a class="nav-link" href="../proxy.html">proxy</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../recurringaction.html">recurringaction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -332,73 +341,47 @@
     <li><a href="../../index.html">Uyuni API</a></li>
     <li>Script Examples</li>
     <li>XMLRPC Scripts</li>
-    <li><a href="python2.html">Python 2 Example</a></li>
+    <li><a href="xmlrpc_perl.html">Perl Example</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/scripts/python2.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/scripts/xmlrpc_perl.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Python 2 Example</h1>
+<h1 class="page">Perl Example</h1>
 <div class="sect1">
-<h2 id="_list_users_with_python_2"><a class="anchor" href="#_list_users_with_python_2"></a><a class="link" href="#_list_users_with_python_2">List users with Python 2</a></h2>
+<h2 id="_list_users_with_perl"><a class="anchor" href="#_list_users_with_perl"></a><a class="link" href="#_list_users_with_perl">List users with Perl</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Below is an example of the <code>user.listUsers</code> call being used. Only the login of each
-user is printed.</p>
+<p>This Perl example shows the <code>system.listUserSystems</code> call being used to get a list of systems a user has access to. In the example below, the name of each system will be printed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
-import xmlrpclib
+<pre class="highlightjs highlight"><code class="language-perl hljs" data-lang="perl">#!/usr/bin/perl
+use Frontier::Client;
 
-MANAGER_URL = "http://manager.example.com/rpc/api"
-MANAGER_LOGIN = "username"
-MANAGER_PASSWORD = "password"
+my $HOST = 'manager.example.com';
+my $user = 'username';
+my $pass = 'password';
 
-client = xmlrpclib.Server(MANAGER_URL, verbose=0)
+my $client = new Frontier::Client(url =&gt; "http://$HOST/rpc/api");
+my $session = $client-&gt;call('auth.login',$user, $pass);
 
-key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
-list = client.user.list_users(key)
-for user in list:
-  print user.get('login')
-
-client.auth.logout(key)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following code shows how to use date-time parameters. This code will schedule immediate installation of package rhnlib-2.5.22.9.el6.noarch to system with id 1000000001.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">#!/usr/bin/python
-from datetime import datetime
-import time
-import xmlrpclib
-
-MANAGER_URL = "http://manager.example.com/rpc/api"
-MANAGER_LOGIN = "username"
-MANAGER_PASSWORD = "password"
-
-client = xmlrpclib.Server(MANAGER_URL, verbose=0)
-
-key = client.auth.login(MANAGER_LOGIN, MANAGER_PASSWORD)
-package_list = client.packages.findByNvrea(key, 'rhnlib', '2.5.22', '9.el6', '', 'noarch')
-today = datetime.today()
-earliest_occurrence = xmlrpclib.DateTime(today)
-client.system.schedulePackageInstall(key, 1000000001, package_list[0]['id'], earliest_occurrence)
-
-client.auth.logout(key)</code></pre>
+my $systems = $client-&gt;call('system.listUserSystems', $session);
+foreach my $system (@$systems) {
+   print $system-&gt;{'name'}."\n";
+}
+$client-&gt;call('auth.logout', $session);</code></pre>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="perl.html">Perl Example</a></span>
-  <span class="next"><a href="python3.html">Python 3 Example</a></span>
+  <span class="prev"><a href="json-python3.html">Python 3 Example</a></span>
+  <span class="next"><a href="xmlrpc_python2.html">Python 2 Example</a></span>
 </nav>
 </article>
   </div>

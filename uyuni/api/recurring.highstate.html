@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>api
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/api.html">
-    <link rel="prev" href="ansible.html">
-    <link rel="next" href="audit.html">
+<title>recurring.highstate
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/recurring.highstate.html">
+    <link rel="prev" href="recurring.custom.html">
+    <link rel="next" href="recurringaction.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -143,7 +143,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="ansible.html">ansible</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -248,7 +248,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -339,36 +339,27 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="api.html">api</a></li>
+    <li><a href="recurring.highstate.html">recurring.highstate</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/api.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/recurring.highstate.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">api</h1>
+<h1 class="page">recurring.highstate</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-api-getApiCallList-loggedInUser">getApiCallList</a></p>
+<p><a href="#apidoc-recurring_highstate-create-loggedInUser-actionProps">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-api-getApiNamespaceCallList-loggedInUser-namespace">getApiNamespaceCallList</a></p>
-</li>
-<li>
-<p><a href="#apidoc-api-getApiNamespaces-loggedInUser">getApiNamespaces</a></p>
-</li>
-<li>
-<p><a href="#apidoc-api-getVersion-">getVersion</a></p>
-</li>
-<li>
-<p><a href="#apidoc-api-systemVersion-">systemVersion</a></p>
+<p><a href="#apidoc-recurring_highstate-update-loggedInUser-actionProps">update</a></p>
 </li>
 </ul>
 </div>
@@ -378,77 +369,27 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Methods providing information about the API.</p>
+<p>Provides methods to handle recurring highstates for minions, system groups and organizations.</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>api</p>
+<p>recurring.highstate</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-api-getApiCallList-loggedInUser"><a class="anchor" href="#apidoc-api-getApiCallList-loggedInUser"></a><a class="link" href="#apidoc-api-getApiCallList-loggedInUser">Method: getApiCallList</a></h2>
+<h2 id="apidoc-recurring_highstate-create-loggedInUser-actionProps"><a class="anchor" href="#apidoc-recurring_highstate-create-loggedInUser-actionProps"></a><a class="link" href="#apidoc-recurring_highstate-create-loggedInUser-actionProps">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>HTTP <code>GET</code></p>
+<p>HTTP <code>POST</code></p>
 </div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Lists all available api calls grouped by namespace</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  method_info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "name" - method name</p>
-</li>
-<li>
-<p><span class="string">string</span>  "parameters" - method parameters</p>
-</li>
-<li>
-<p><span class="string">string</span>  "exceptions" - method exceptions</p>
-</li>
-<li>
-<p><span class="string">string</span>  "return" - method return type</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-api-getApiNamespaceCallList-loggedInUser-namespace"><a class="anchor" href="#apidoc-api-getApiNamespaceCallList-loggedInUser-namespace"></a><a class="link" href="#apidoc-api-getApiNamespaceCallList-loggedInUser-namespace">Method: getApiNamespaceCallList</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Lists all available api calls for the specified namespace</p>
+<p>Create a new recurring highstate action.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -459,7 +400,39 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  namespace</p>
+<p><span class="struct">struct</span>  actionProps</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "entity_type" - the type of the target entity. One of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>minion</p>
+</li>
+<li>
+<p>group</p>
+</li>
+<li>
+<p>org</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="int">int</span>  "entity_id" - the ID of the target entity</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - the name of the recurring action</p>
+</li>
+<li>
+<p><span class="string">string</span>  "cron_expr" - the execution frequency of the action as a cron expression</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "test" - whether the action should be executed in test mode (optional)</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -469,39 +442,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  method_info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "name" - method name</p>
-</li>
-<li>
-<p><span class="string">string</span>  "parameters" - method parameters</p>
-</li>
-<li>
-<p><span class="string">string</span>  "exceptions" - method exceptions</p>
-</li>
-<li>
-<p><span class="string">string</span>  "return" - method return type</p>
-</li>
-</ul>
-</div>
+<p><span class="int">int</span>  id - the ID of the newly created recurring action</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-api-getApiNamespaces-loggedInUser"><a class="anchor" href="#apidoc-api-getApiNamespaces-loggedInUser"></a><a class="link" href="#apidoc-api-getApiNamespaces-loggedInUser">Method: getApiNamespaces</a></h2>
+<h2 id="apidoc-recurring_highstate-update-loggedInUser-actionProps"><a class="anchor" href="#apidoc-recurring_highstate-update-loggedInUser-actionProps"></a><a class="link" href="#apidoc-recurring_highstate-update-loggedInUser-actionProps">Method: update</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>HTTP <code>GET</code></p>
+<p>HTTP <code>POST</code></p>
 </div>
 <div class="paragraph">
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Lists available API namespaces</p>
+<p>Update the properties of a recurring highstate action.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -511,6 +468,28 @@
 <li>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
+<li>
+<p><span class="struct">struct</span>  actionProps</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - the ID of the action to update</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - the name of the action (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "cron_expr" - the execution frequency of the action (optional)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "test" - whether the action should be executed in test mode (optional)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "active" - whether the action should be active (optional)</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -519,79 +498,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  namespace</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "namespace" - API namespace</p>
-</li>
-<li>
-<p><span class="string">string</span>  "handler" - API Handler</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-api-getVersion-"><a class="anchor" href="#apidoc-api-getVersion-"></a><a class="link" href="#apidoc-api-getVersion-">Method: getVersion</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns the version of the API.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  version</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-api-systemVersion-"><a class="anchor" href="#apidoc-api-systemVersion-"></a><a class="link" href="#apidoc-api-systemVersion-">Method: systemVersion</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns the server version.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  version</p>
+<p><span class="int">int</span>  id - the ID of the updated recurring action</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="ansible.html">ansible</a></span>
-  <span class="next"><a href="audit.html">audit</a></span>
+  <span class="prev"><a href="recurring.custom.html">recurring.custom</a></span>
+  <span class="next"><a href="recurringaction.html">recurringaction</a></span>
 </nav>
 </article>
   </div>
