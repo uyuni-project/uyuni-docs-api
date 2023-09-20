@@ -55,6 +55,8 @@
 * <<apidoc-system-getNetworkDevices-loggedInUser-sid,getNetworkDevices>>
 * <<apidoc-system-getNetworkForSystems-loggedInUser-sids,getNetworkForSystems>>
 * <<apidoc-system-getOsaPing-loggedInUser-sid,getOsaPing>>
+* <<apidoc-system-getPillar-loggedInUser-systemId-category,getPillar>>
+* <<apidoc-system-getPillar-loggedInUser-minionId-category,getPillar>>
 * <<apidoc-system-getRegistrationDate-loggedInUser-sid,getRegistrationDate>>
 * <<apidoc-system-getRelevantErrata-loggedInUser-sid,getRelevantErrata>>
 * <<apidoc-system-getRelevantErrataByType-loggedInUser-sid-advisoryType,getRelevantErrataByType>>
@@ -196,6 +198,8 @@
 * <<apidoc-system-setGuestCpus-loggedInUser-sid-numOfCpus,setGuestCpus>>
 * <<apidoc-system-setGuestMemory-loggedInUser-sid-memory,setGuestMemory>>
 * <<apidoc-system-setLockStatus-loggedInUser-sid-lockStatus,setLockStatus>>
+* <<apidoc-system-setPillar-loggedInUser-systemId-category-pillarData,setPillar>>
+* <<apidoc-system-setPillar-loggedInUser-minionId-category-pillarData,setPillar>>
 * <<apidoc-system-setPrimaryFqdn-loggedInUser-sid-fqdn,setPrimaryFqdn>>
 * <<apidoc-system-setPrimaryInterface-loggedInUser-sid-interfaceName,setPrimaryInterface>>
 * <<apidoc-system-setProfileName-loggedInUser-sid-name,setProfileName>>
@@ -1949,6 +1953,62 @@ Returns:
           (1970/01/01 00:00:00 if never received a response)
 ** [.dateTime.iso8601]#dateTime.iso8601#  "lastPingTime" - time of the last sent ping
           (1970/01/01 00:00:00 if no ping is pending
+ 
+
+
+
+[#apidoc-system-getPillar-loggedInUser-systemId-category]
+== Method: getPillar
+
+HTTP `GET`
+
+Description:
+
+Get pillar data of given category for given system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.string]#string#  category
+ 
+
+Returns:
+
+* [.struct]#struct#  the pillar data
+ 
+
+
+
+[#apidoc-system-getPillar-loggedInUser-minionId-category]
+== Method: getPillar
+
+HTTP `GET`
+
+Description:
+
+Get pillar data of given category for given system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  minionId
+ 
+* [.string]#string#  category
+ 
+
+Returns:
+
+* [.struct]#struct#  the pillar data
  
 
 
@@ -7014,6 +7074,62 @@ Parameters:
  
 * [.boolean]#boolean#  lockStatus - true to lock the system,
  false to unlock the system.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system-setPillar-loggedInUser-systemId-category-pillarData]
+== Method: setPillar
+
+HTTP `POST`
+
+Description:
+
+Set pillar data of a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.struct]#struct#  pillarData
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system-setPillar-loggedInUser-minionId-category-pillarData]
+== Method: setPillar
+
+HTTP `POST`
+
+Description:
+
+Set pillar data of a system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  systemId
+ 
+* [.struct]#struct#  pillarData
  
 
 Returns:
