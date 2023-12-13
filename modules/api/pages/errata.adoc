@@ -421,6 +421,11 @@ Returns:
 ** [.string]#string#  "references"
 ** [.string]#string#  "notes"
 ** [.string]#string#  "solution"
+** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
+          advisable following the application of the errata. Typical example is upon kernel update.
+** [.boolean]#boolean#  "restart_suggested" - A boolean flag signaling a weather reboot of
+          the package manager is advisable following the application of the errata. This is commonly
+          used to address update stack issues before proceeding with other updates.
  
 
 

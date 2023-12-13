@@ -1299,6 +1299,7 @@ Returns:
 ** [.int]#int#  "id" - system ID
 ** [.string]#string#  "profile_name"
 ** [.string]#string#  "machine_id"
+** [.boolean]#boolean#  "payg" - Whether the server instance is payg or not
 ** [.string]#string#  "minion_id"
 ** [.string]#string#  "base_entitlement" - system's base entitlement label
 
@@ -2582,6 +2583,7 @@ Returns:
 ** [.struct]#struct#  server details
 *** [.int]#int#  "id" - The server's id
 *** [.string]#string#  "name" - The server's name
+*** [.boolean]#boolean#  "payg" - Whether the server instance is payg or not
 *** [.string]#string#  "minion_id" - The server's minion id, in case it is a salt minion client
 *** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - Last time server successfully checked in (in UTC)
 *** [.int]#int#  "ram" - The amount of physical memory in MB.
