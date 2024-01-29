@@ -59,6 +59,7 @@
 * <<apidoc-system-getPillar-loggedInUser-minionId-category,getPillar>>
 * <<apidoc-system-getRegistrationDate-loggedInUser-sid,getRegistrationDate>>
 * <<apidoc-system-getRelevantErrata-loggedInUser-sid,getRelevantErrata>>
+* <<apidoc-system-getRelevantErrata-loggedInUser-sids,getRelevantErrata>>
 * <<apidoc-system-getRelevantErrataByType-loggedInUser-sid-advisoryType,getRelevantErrataByType>>
 * <<apidoc-system-getRunningKernel-loggedInUser-sid,getRunningKernel>>
 * <<apidoc-system-getScriptActionDetails-loggedInUser-actionId,getScriptActionDetails>>
@@ -2064,6 +2065,45 @@ Returns:
 
 * [.array]#array# :
           * [.struct]#struct#  errata
+** [.int]#int#  "id" - errata ID
+** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
+** [.string]#string#  "date" - the date erratum was created (deprecated)
+** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
+** [.string]#string#  "advisory_synopsis" - summary of the erratum
+** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
+ 
+ 
+
+
+
+[#apidoc-system-getRelevantErrata-loggedInUser-sids]
+== Method: getRelevantErrata
+
+HTTP `GET`
+
+Description:
+
+Returns a list of all errata that are relevant to a list of systems.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.struct]#struct#  server_errata
+*** [.string]#string#  "system_id" - The ID of the system
+*** [.array]#array#  "errata" - An array of available errata infos
+                  * [.struct]#struct#  errata
 ** [.int]#int#  "id" - errata ID
 ** [.string]#string#  "issue_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "date" - the date erratum was created (deprecated)
