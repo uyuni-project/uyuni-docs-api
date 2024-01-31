@@ -488,6 +488,9 @@
 <p><a href="#apidoc-system-getRelevantErrata-loggedInUser-sid">getRelevantErrata</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-getRelevantErrata-loggedInUser-sids">getRelevantErrata</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-getRelevantErrataByType-loggedInUser-sid-advisoryType">getRelevantErrataByType</a></p>
 </li>
 <li>
@@ -3968,6 +3971,91 @@ in local time</p>
 <ul>
 <li>
 <p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  errata</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - errata ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - the date erratum was updated (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - the date erratum was created (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - the date erratum was updated (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - summary of the erratum</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - type label such as 'Security', 'Bug Fix'</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_status" - status label such as 'final', 'testing', 'retracted'</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - name such as 'RHSA', etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getRelevantErrata-loggedInUser-sids"><a class="anchor" href="#apidoc-system-getRelevantErrata-loggedInUser-sids"></a><a class="link" href="#apidoc-system-getRelevantErrata-loggedInUser-sids">Method: getRelevantErrata</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of all errata that are relevant to a list of systems.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  server_errata</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "system_id" - The ID of the system</p>
+</li>
+<li>
+<p><span class="array">array</span>  "errata" - An array of available errata infos</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><span class="struct">struct</span>  errata</p>
