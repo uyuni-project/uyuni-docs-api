@@ -1,0 +1,42 @@
+[#apidoc-admin_configuration]
+= admin.configuration
+
+
+== Available methods
+
+* <<apidoc-admin_configuration-configure-loggedInUser-content,configure>>
+
+== Description
+
+Provides methods to configure the #product() server.
+
+*Namespace*:
+
+admin.configuration
+
+
+[#apidoc-admin_configuration-configure-loggedInUser-content]
+== Method: configure
+
+HTTP `POST`
+
+Description:
+
+Configure server.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.map]#map#  content - the Uyuni configuration formula data
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
