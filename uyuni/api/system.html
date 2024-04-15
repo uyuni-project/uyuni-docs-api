@@ -102,6 +102,9 @@
     <a class="nav-link" href="admin.monitoring.html">admin_monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin_configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="ansible.html">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -410,6 +413,9 @@
 <p><a href="#apidoc-system-downloadSystemId-loggedInUser-sid">downloadSystemId</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-getCoCoAttestationConfig-loggedInUser-sid">getCoCoAttestationConfig</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-getConnectionPath-loggedInUser-sid">getConnectionPath</a></p>
 </li>
 <li>
@@ -683,7 +689,13 @@
 <p><a href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName">provisionSystem</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName">provisionSystem</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate">provisionSystem</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate">provisionSystem</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName">provisionVirtualGuest</a></p>
@@ -699,6 +711,9 @@
 </li>
 <li>
 <p><a href="#apidoc-system-refreshPillar-loggedInUser-subset-sids">refreshPillar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn">registerPeripheralServer</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-removeEntitlements-loggedInUser-sid-entitlements">removeEntitlements</a></p>
@@ -756,6 +771,9 @@
 </li>
 <li>
 <p><a href="#apidoc-system-scheduleChangeChannels-loggedInUser-sids-baseChannelLabel-childLabels-earliestOccurrence">scheduleChangeChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence">scheduleCoCoAttestation</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-scheduleDistUpgrade-loggedInUser-sid-channels-dryRun-earliestOccurrence">scheduleDistUpgrade</a></p>
@@ -890,6 +908,9 @@
 <p><a href="#apidoc-system-setChildChannels-loggedInUser-sid-channelIdsOrLabels">setChildChannels</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType">setCoCoAttestationConfig</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-setCustomValues-loggedInUser-sid-values">setCustomValues</a></p>
 </li>
 <li>
@@ -933,6 +954,9 @@
 </li>
 <li>
 <p><a href="#apidoc-system-updatePackageState-loggedInUser-sid-packageName-state-versionConstraint">updatePackageState</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword">updatePeripheralServerInfo</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-upgradeEntitlement-loggedInUser-sid-entitlementLevel">upgradeEntitlement</a></p>
@@ -2401,6 +2425,56 @@
 <ul>
 <li>
 <p><span class="string">string</span>  id</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getCoCoAttestationConfig-loggedInUser-sid"><a class="anchor" href="#apidoc-system-getCoCoAttestationConfig-loggedInUser-sid"></a><a class="link" href="#apidoc-system-getCoCoAttestationConfig-loggedInUser-sid">Method: getCoCoAttestationConfig</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return the Confidential Compute Attestation configuration for the given system id</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the server to get the config for.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  coco_attestation_config</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="boolean">boolean</span>  "enabled" - true if Confidential Compute Attestation is enabled for this system</p>
+</li>
+<li>
+<p><span class="string">string</span>  "environment_type" - the configured environment type</p>
+</li>
+<li>
+<p><span class="int">int</span>  "system_id" - the ID of the system</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -8704,7 +8778,92 @@ on error</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system-provisionSystem-loggedInUser-request-sid-profileName"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName">Method: provisionSystem</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Provision a system using the specified kickstart/autoinstallation profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the system to be provisioned.</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileName - Profile to use.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the action scheduled, otherwise exception thrown
+on error</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate">Method: provisionSystem</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Provision a system using the specified kickstart/autoinstallation profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the system to be provisioned.</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileName - Profile to use.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestDate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the action scheduled, otherwise exception thrown
+on error</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate">Method: provisionSystem</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -8978,6 +9137,44 @@ virtual networking hardware.</p>
 <ul>
 <li>
 <p><span class="array">int array</span>  skippedIds</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-registerPeripheralServer-loggedInUser-fqdn"><a class="anchor" href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn"></a><a class="link" href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn">Method: registerPeripheralServer</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Register foreign peripheral server.
+ This is used for registering containerized peripheral servers.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - FQDN of the server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
@@ -9861,6 +10058,47 @@ on error</p>
 </div>
 <div class="paragraph">
 <p>Available since API version: 19.0</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence"><a class="anchor" href="#apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence"></a><a class="link" href="#apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence">Method: scheduleCoCoAttestation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule Confidential Compute Attestation Action</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the server to run the script on.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - Earliest the script can run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the script run action created. Can be used to fetch
+results with system.getScriptResults</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -12294,6 +12532,62 @@ or channelLabel</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType"><a class="anchor" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType"></a><a class="link" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType">Method: setCoCoAttestationConfig</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Configure Confidential Compute Attestation for the given system</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the server to get the config for.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  enabled - set the endabled state for Confidential Compute Attestation</p>
+</li>
+<li>
+<p><span class="string">string</span>  environmentType - set the environment type of the system:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NONE</p>
+</li>
+<li>
+<p>KVM_AMD_EPYC_MILAN</p>
+</li>
+<li>
+<p>KVM_AMD_EPYC_GENOA</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system-setCustomValues-loggedInUser-sid-values"><a class="anchor" href="#apidoc-system-setCustomValues-loggedInUser-sid-values"></a><a class="link" href="#apidoc-system-setCustomValues-loggedInUser-sid-values">Method: setCustomValues</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -12994,6 +13288,55 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 <ul>
 <li>
 <p>1 on success, exception on failure</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword"><a class="anchor" href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword"></a><a class="link" href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword">Method: updatePeripheralServerInfo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update foreign peripheral server info.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  reportDbName - ReportDB name</p>
+</li>
+<li>
+<p><span class="string">string</span>  reportDbHost - ReportDB host</p>
+</li>
+<li>
+<p><span class="int">int</span>  reportDbPort - ReportDB port</p>
+</li>
+<li>
+<p><span class="string">string</span>  reportDbUser - ReportDB user</p>
+</li>
+<li>
+<p><span class="string">string</span>  reportDbPassword - ReportDB password</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
