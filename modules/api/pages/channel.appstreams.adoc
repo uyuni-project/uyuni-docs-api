@@ -1,0 +1,127 @@
+[#apidoc-channel_appstreams]
+= channel.appstreams
+
+
+== Available methods
+
+* <<apidoc-channel_appstreams-isModular-loggedInUser-channelLabel,isModular>>
+* <<apidoc-channel_appstreams-listModular-loggedInUser,listModular>>
+* <<apidoc-channel_appstreams-listModuleStreams-loggedInUser-channelLabel,listModuleStreams>>
+
+== Description
+
+Provides methods to handle appstreams for channels.
+
+*Namespace*:
+
+channel.appstreams
+
+
+[#apidoc-channel_appstreams-isModular-loggedInUser-channelLabel]
+== Method: isModular
+
+HTTP `GET`
+
+Description:
+
+Check if channel is modular.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel
+ 
+
+Returns:
+
+* [.boolean]#boolean#  result - true if the channel is modular
+ 
+
+
+
+[#apidoc-channel_appstreams-listModular-loggedInUser]
+== Method: listModular
+
+HTTP `GET`
+
+Description:
+
+List modular channels in users organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  channel
+** [.int]#int#  "id"
+** [.string]#string#  "name"
+** [.string]#string#  "label"
+** [.string]#string#  "arch_name"
+** [.string]#string#  "arch_label"
+** [.string]#string#  "summary"
+** [.string]#string#  "description"
+** [.string]#string#  "checksum_label"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+** [.string]#string#  "maintainer_name"
+** [.string]#string#  "maintainer_email"
+** [.string]#string#  "maintainer_phone"
+** [.string]#string#  "support_policy"
+** [.string]#string#  "gpg_key_url"
+** [.string]#string#  "gpg_key_id"
+** [.string]#string#  "gpg_key_fp"
+** [.dateTime.iso8601]#dateTime.iso8601#  "yumrepo_last_sync" - (optional)
+** [.string]#string#  "end_of_life"
+** [.string]#string#  "parent_channel_label"
+** [.string]#string#  "clone_original"
+** [.array]#array#  "contentSources"
+*** [.struct]#struct#  content source
+**** [.int]#int#  "id"
+**** [.string]#string#  "label"
+**** [.string]#string#  "sourceUrl"
+**** [.string]#string#  "type"
+ 
+ 
+
+
+
+[#apidoc-channel_appstreams-listModuleStreams-loggedInUser-channelLabel]
+== Method: listModuleStreams
+
+HTTP `GET`
+
+Description:
+
+List available module streams for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  AppStream
+** [.string]#string#  "stream"
+** [.string]#string#  "module"
+** [.string]#string#  "arch"
+ 
+ 
+
+

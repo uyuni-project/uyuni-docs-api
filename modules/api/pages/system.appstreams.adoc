@@ -1,0 +1,120 @@
+[#apidoc-system_appstreams]
+= system.appstreams
+
+
+== Available methods
+
+* <<apidoc-system_appstreams-disable-loggedInUser-sid-moduleStreams-earliestOccurrence,disable>>
+* <<apidoc-system_appstreams-enable-loggedInUser-sid-moduleStreams-earliestOccurrence,enable>>
+* <<apidoc-system_appstreams-listModuleStreams-loggedInUser-sid,listModuleStreams>>
+
+== Description
+
+Provides methods to handle appstreams for systems.
+
+*Namespace*:
+
+system.appstreams
+
+
+[#apidoc-system_appstreams-disable-loggedInUser-sid-moduleStreams-earliestOccurrence]
+== Method: disable
+
+HTTP `POST`
+
+Description:
+
+Schedule disabling of module streams.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.array]#array#  moduleStreams
+** [.struct]#struct#  Module Stream
+*** [.string]#string#  "module"
+*** [.string]#string#  "stream"
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The action id of the scheduled action
+ 
+
+
+
+[#apidoc-system_appstreams-enable-loggedInUser-sid-moduleStreams-earliestOccurrence]
+== Method: enable
+
+HTTP `POST`
+
+Description:
+
+Schedule enabling of module streams.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.array]#array#  moduleStreams
+** [.struct]#struct#  Module Stream
+*** [.string]#string#  "module"
+*** [.string]#string#  "stream"
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The action id of the scheduled action
+ 
+
+
+
+[#apidoc-system_appstreams-listModuleStreams-loggedInUser-sid]
+== Method: listModuleStreams
+
+HTTP `GET`
+
+Description:
+
+List available module streams for a given system.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  ChannelAppStreams
+** [.string]#string#  "channel_name"
+** [.array]#array#  "AppStreams"
+          * [.struct]#struct#  AppStream
+** [.boolean]#boolean#  "is_enabled"
+** [.string]#string#  "stream"
+** [.string]#string#  "module"
+** [.string]#string#  "arch"
+ 
+ 
+ 
+
+
