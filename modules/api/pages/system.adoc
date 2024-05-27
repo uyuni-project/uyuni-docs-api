@@ -34,6 +34,7 @@
 * <<apidoc-system-deleteTagFromSnapshot-loggedInUser-sid-tagName,deleteTagFromSnapshot>>
 * <<apidoc-system-downloadSystemId-loggedInUser-sid,downloadSystemId>>
 * <<apidoc-system-getCoCoAttestationConfig-loggedInUser-sid,getCoCoAttestationConfig>>
+* <<apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId,getCoCoAttestationResultDetails>>
 * <<apidoc-system-getConnectionPath-loggedInUser-sid,getConnectionPath>>
 * <<apidoc-system-getCpu-loggedInUser-sid,getCpu>>
 * <<apidoc-system-getCustomValues-loggedInUser-sid,getCustomValues>>
@@ -49,6 +50,7 @@
 * <<apidoc-system-getId-loggedInUser-name,getId>>
 * <<apidoc-system-getInstalledProducts-loggedInUser-sid,getInstalledProducts>>
 * <<apidoc-system-getKernelLivePatch-loggedInUser-sid,getKernelLivePatch>>
+* <<apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid,getLatestCoCoAttestationReport>>
 * <<apidoc-system-getMemory-loggedInUser-sid,getMemory>>
 * <<apidoc-system-getMinionIdMap-loggedInUser,getMinionIdMap>>
 * <<apidoc-system-getName-loggedInUser-sid,getName>>
@@ -78,6 +80,9 @@
 * <<apidoc-system-listActiveSystemsDetails-loggedInUser-sids,listActiveSystemsDetails>>
 * <<apidoc-system-listAdministrators-loggedInUser-sid,listAdministrators>>
 * <<apidoc-system-listAllInstallablePackages-loggedInUser-sid,listAllInstallablePackages>>
+* <<apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest,listCoCoAttestationReports>>
+* <<apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit,listCoCoAttestationReports>>
+* <<apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit,listCoCoAttestationReports>>
 * <<apidoc-system-listDuplicatesByHostname-loggedInUser,listDuplicatesByHostname>>
 * <<apidoc-system-listDuplicatesByIp-loggedInUser,listDuplicatesByIp>>
 * <<apidoc-system-listDuplicatesByMac-loggedInUser,listDuplicatesByMac>>
@@ -198,7 +203,7 @@
 * <<apidoc-system-setBaseChannel-loggedInUser-sid-cid,setBaseChannel>>
 * <<apidoc-system-setBaseChannel-loggedInUser-sid-channelLabel,setBaseChannel>>
 * <<apidoc-system-setChildChannels-loggedInUser-sid-channelIdsOrLabels,setChildChannels>>
-* <<apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType,setCoCoAttestationConfig>>
+* <<apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot,setCoCoAttestationConfig>>
 * <<apidoc-system-setCustomValues-loggedInUser-sid-values,setCustomValues>>
 * <<apidoc-system-setDetails-loggedInUser-sid-details,setDetails>>
 * <<apidoc-system-setGroupMembership-loggedInUser-sid-sgid-member,setGroupMembership>>
@@ -1213,6 +1218,41 @@ Returns:
 
 
 
+[#apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId]
+== Method: getCoCoAttestationResultDetails
+
+HTTP `GET`
+
+Description:
+
+Return a specific results with all details
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.int]#int#  resultId
+ 
+
+Returns:
+
+* * [.struct]#struct#  result
+** [.int]#int#  "result_id"
+** [.string]#string#  "result_type"
+** [.string]#string#  "result_status"
+** [.string]#string#  "result_description"
+** [.dateTime.iso8601]#dateTime.iso8601#  "result_attested"
+** [.string]#string#  "result_details"
+  
+ 
+
+
+
 [#apidoc-system-getConnectionPath-loggedInUser-sid]
 == Method: getConnectionPath
 
@@ -1773,6 +1813,44 @@ Parameters:
 Returns:
 
 * string 
+ 
+
+
+
+[#apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid]
+== Method: getLatestCoCoAttestationReport
+
+HTTP `GET`
+
+Description:
+
+Return the latest report for the given system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+
+Returns:
+
+* * [.struct]#struct#  reportResults
+** [.int]#int#  "report_id"
+** [.string]#string#  "report_status"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_created"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_modified"
+** [.array]#array#  "results"
+*** [.struct]#struct#  result
+**** [.int]#int#  "result_id"
+**** [.string]#string#  "result_type"
+**** [.string]#string#  "result_status"
+**** [.string]#string#  "result_description"
+**** [.dateTime.iso8601]#dateTime.iso8601#  "result_attested"
+  
  
 
 
@@ -2799,6 +2877,135 @@ Returns:
 *** [.string]#string#  "epoch"
 *** [.int]#int#  "id"
 *** [.string]#string#  "arch_label"
+ 
+
+
+
+[#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest]
+== Method: listCoCoAttestationReports
+
+HTTP `GET`
+
+Description:
+
+Return a list of reports with its results for the given filters
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  reportResults
+** [.int]#int#  "report_id"
+** [.string]#string#  "report_status"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_created"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_modified"
+** [.array]#array#  "results"
+*** [.struct]#struct#  result
+**** [.int]#int#  "result_id"
+**** [.string]#string#  "result_type"
+**** [.string]#string#  "result_status"
+**** [.string]#string#  "result_description"
+**** [.dateTime.iso8601]#dateTime.iso8601#  "result_attested"
+ 
+ 
+
+
+
+[#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit]
+== Method: listCoCoAttestationReports
+
+HTTP `GET`
+
+Description:
+
+Return a list of reports with its results for the given filters
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.int]#int#  offset - Number of reports to skip
+ 
+* [.int]#int#  limit - Maximum number of reports
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  reportResults
+** [.int]#int#  "report_id"
+** [.string]#string#  "report_status"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_created"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_modified"
+** [.array]#array#  "results"
+*** [.struct]#struct#  result
+**** [.int]#int#  "result_id"
+**** [.string]#string#  "result_type"
+**** [.string]#string#  "result_status"
+**** [.string]#string#  "result_description"
+**** [.dateTime.iso8601]#dateTime.iso8601#  "result_attested"
+ 
+ 
+
+
+
+[#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit]
+== Method: listCoCoAttestationReports
+
+HTTP `GET`
+
+Description:
+
+Return a list of reports with its results for the given filters
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest
+ 
+* [.int]#int#  offset - Number of reports to skip
+ 
+* [.int]#int#  limit - Maximum number of reports
+ 
+
+Returns:
+
+* [.array]#array# :
+         * [.struct]#struct#  reportResults
+** [.int]#int#  "report_id"
+** [.string]#string#  "report_status"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_created"
+** [.dateTime.iso8601]#dateTime.iso8601#  "report_modified"
+** [.array]#array#  "results"
+*** [.struct]#struct#  result
+**** [.int]#int#  "result_id"
+**** [.string]#string#  "result_type"
+**** [.string]#string#  "result_status"
+**** [.string]#string#  "result_description"
+**** [.dateTime.iso8601]#dateTime.iso8601#  "result_attested"
+ 
  
 
 
@@ -7093,7 +7300,7 @@ Returns:
 
 
 
-[#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType]
+[#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot]
 == Method: setCoCoAttestationConfig
 
 HTTP `POST`
@@ -7111,12 +7318,14 @@ Parameters:
  
 * [.int]#int#  sid - ID of the server to get the config for.
  
-* [.boolean]#boolean#  enabled - set the endabled state for Confidential Compute Attestation
+* [.boolean]#boolean#  enabled - set the enabled state for Confidential Compute Attestation
  
 * [.string]#string#  environmentType - set the environment type of the system:
 ** NONE
 ** KVM_AMD_EPYC_MILAN
 ** KVM_AMD_EPYC_GENOA
+ 
+* [.boolean]#boolean#  attestOnBoot - set if the attestation should be performed on system boot
  
 
 Returns:
