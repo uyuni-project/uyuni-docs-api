@@ -6,7 +6,7 @@
 <title>system
      | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/system.html">
     <link rel="prev" href="sync.slave.html">
-    <link rel="next" href="system.appstreams.html#apidoc-system_appstreams">
+    <link rel="next" href="system.appstreams.html">
     <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -105,9 +105,6 @@
     <a class="nav-link" href="api.html">api</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="apilist.html">apilist</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="audit.html">audit</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -120,7 +117,7 @@
     <a class="nav-link" href="channel.html">channel</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="channel.appstreams.html#apidoc-channel_appstreams">channel_appstreams</a>
+    <a class="nav-link" href="channel.appstreams.html">channel_appstreams</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="channel.org.html">channel_org</a>
@@ -243,7 +240,7 @@
     <a class="nav-link" href="system.html">system</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="system.appstreams.html#apidoc-system_appstreams">system_appstreams</a>
+    <a class="nav-link" href="system.appstreams.html">system_appstreams</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.config.html">system_config</a>
@@ -416,6 +413,9 @@
 <p><a href="#apidoc-system-getCoCoAttestationConfig-loggedInUser-sid">getCoCoAttestationConfig</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId">getCoCoAttestationResultDetails</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-getConnectionPath-loggedInUser-sid">getConnectionPath</a></p>
 </li>
 <li>
@@ -459,6 +459,9 @@
 </li>
 <li>
 <p><a href="#apidoc-system-getKernelLivePatch-loggedInUser-sid">getKernelLivePatch</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid">getLatestCoCoAttestationReport</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-getMemory-loggedInUser-sid">getMemory</a></p>
@@ -546,6 +549,15 @@
 </li>
 <li>
 <p><a href="#apidoc-system-listAllInstallablePackages-loggedInUser-sid">listAllInstallablePackages</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest">listCoCoAttestationReports</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit">listCoCoAttestationReports</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit">listCoCoAttestationReports</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-listDuplicatesByHostname-loggedInUser">listDuplicatesByHostname</a></p>
@@ -908,7 +920,7 @@
 <p><a href="#apidoc-system-setChildChannels-loggedInUser-sid-channelIdsOrLabels">setChildChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType">setCoCoAttestationConfig</a></p>
+<p><a href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot">setCoCoAttestationConfig</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-setCustomValues-loggedInUser-sid-values">setCustomValues</a></p>
@@ -2481,6 +2493,68 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId"><a class="anchor" href="#apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId"></a><a class="link" href="#apidoc-system-getCoCoAttestationResultDetails-loggedInUser-sid-resultId">Method: getCoCoAttestationResultDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a specific results with all details</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+<li>
+<p><span class="int">int</span>  resultId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "result_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_description"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "result_attested"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_details"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system-getConnectionPath-loggedInUser-sid"><a class="anchor" href="#apidoc-system-getConnectionPath-loggedInUser-sid"></a><a class="link" href="#apidoc-system-getConnectionPath-loggedInUser-sid">Method: getConnectionPath</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -3484,6 +3558,88 @@ to any assigned channel</p>
 <ul>
 <li>
 <p>string</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid"><a class="anchor" href="#apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid"></a><a class="link" href="#apidoc-system-getLatestCoCoAttestationReport-loggedInUser-sid">Method: getLatestCoCoAttestationReport</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return the latest report for the given system</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  reportResults</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "report_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_status"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_created"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_modified"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "results"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "result_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_description"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "result_attested"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -5429,6 +5585,279 @@ false if the user is disabled</p>
 </li>
 <li>
 <p><span class="string">string</span>  "arch_label"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest"><a class="anchor" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest"></a><a class="link" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest">Method: listCoCoAttestationReports</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a list of reports with its results for the given filters</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reportResults</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "report_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_status"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_created"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_modified"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "results"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "result_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_description"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "result_attested"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit"><a class="anchor" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit"></a><a class="link" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-offset-limit">Method: listCoCoAttestationReports</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a list of reports with its results for the given filters</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+<li>
+<p><span class="int">int</span>  offset - Number of reports to skip</p>
+</li>
+<li>
+<p><span class="int">int</span>  limit - Maximum number of reports</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reportResults</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "report_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_status"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_created"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_modified"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "results"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "result_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_description"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "result_attested"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit"><a class="anchor" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit"></a><a class="link" href="#apidoc-system-listCoCoAttestationReports-loggedInUser-sid-earliest-offset-limit">Method: listCoCoAttestationReports</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Return a list of reports with its results for the given filters</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest</p>
+</li>
+<li>
+<p><span class="int">int</span>  offset - Number of reports to skip</p>
+</li>
+<li>
+<p><span class="int">int</span>  limit - Maximum number of reports</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reportResults</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "report_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_status"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_created"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "report_modified"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "results"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "result_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "result_description"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "result_attested"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -12556,7 +12985,7 @@ or channelLabel</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType"><a class="anchor" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType"></a><a class="link" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType">Method: setCoCoAttestationConfig</a></h2>
+<h2 id="apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot"><a class="anchor" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot"></a><a class="link" href="#apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot">Method: setCoCoAttestationConfig</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -12579,7 +13008,7 @@ or channelLabel</p>
 <p><span class="int">int</span>  sid - ID of the server to get the config for.</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  enabled - set the endabled state for Confidential Compute Attestation</p>
+<p><span class="boolean">boolean</span>  enabled - set the enabled state for Confidential Compute Attestation</p>
 </li>
 <li>
 <p><span class="string">string</span>  environmentType - set the environment type of the system:</p>
@@ -12596,6 +13025,9 @@ or channelLabel</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  attestOnBoot - set if the attestation should be performed on system boot</p>
 </li>
 </ul>
 </div>
@@ -13463,7 +13895,7 @@ false if the user is disabled</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="sync.slave.html">sync_slave</a></span>
-  <span class="next"><a href="system.appstreams.html#apidoc-system_appstreams">system_appstreams</a></span>
+  <span class="next"><a href="system.appstreams.html">system_appstreams</a></span>
 </nav>
 </article>
   </div>
