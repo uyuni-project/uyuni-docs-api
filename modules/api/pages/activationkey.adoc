@@ -4,6 +4,7 @@
 
 == Available methods
 
+* <<apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams,addAppStreams>>
 * <<apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels,addChildChannels>>
 * <<apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop,addConfigChannels>>
 * <<apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements,addEntitlements>>
@@ -21,6 +22,7 @@
 * <<apidoc-activationkey-listActivationKeys-loggedInUser,listActivationKeys>>
 * <<apidoc-activationkey-listChannels-minionId-machinePassword-activationKey,listChannels>>
 * <<apidoc-activationkey-listConfigChannels-loggedInUser-key,listConfigChannels>>
+* <<apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams,removeAppStreams>>
 * <<apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels,removeChildChannels>>
 * <<apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels,removeConfigChannels>>
 * <<apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements,removeEntitlements>>
@@ -37,6 +39,38 @@ Contains methods to access common activation key functions
 *Namespace*:
 
 activationkey
+
+
+[#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams]
+== Method: addAppStreams
+
+HTTP `POST`
+
+Description:
+
+Add app streams to an activation key. If any of the provided app streams is not available in the
+ channels of the activation key, the request will fail.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  appStreams
+** [.struct]#struct#  Module Stream
+*** [.string]#string#  "module"
+*** [.string]#string#  "stream"
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
 
 
 [#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels]
@@ -622,6 +656,37 @@ Returns:
 ** [.int]#int#  "priority"
  
  
+ 
+
+
+
+[#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams]
+== Method: removeAppStreams
+
+HTTP `POST`
+
+Description:
+
+Remove app streams from an activation key.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  key
+ 
+* [.array]#array#  appStreams
+** [.struct]#struct#  Module Stream
+*** [.string]#string#  "module"
+*** [.string]#string#  "stream"
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
 

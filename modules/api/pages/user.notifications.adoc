@@ -1,0 +1,130 @@
+[#apidoc-user_notifications]
+= user.notifications
+
+
+== Available methods
+
+* <<apidoc-user_notifications-deleteNotifications-notifications-user,deleteNotifications>>
+* <<apidoc-user_notifications-getNotifications-user-unread,getNotifications>>
+* <<apidoc-user_notifications-setAllNotificationsRead-user,setAllNotificationsRead>>
+* <<apidoc-user_notifications-setNotificationsRead-user-notifications,setNotificationsRead>>
+
+== Description
+
+Provides methods to manage user notifications.
+
+*Namespace*:
+
+user.notifications
+
+
+[#apidoc-user_notifications-deleteNotifications-notifications-user]
+== Method: deleteNotifications
+
+HTTP `POST`
+
+Description:
+
+Deletes multiple notifications
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  notifications - The list of notification IDs to delete.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user_notifications-getNotifications-user-unread]
+== Method: getNotifications
+
+HTTP `GET`
+
+Description:
+
+Get all notifications from a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.boolean]#boolean#  unread - If true, return only unread notifications.
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  notification
+** [.long]#long#  "id"
+** [.array]#read array#  "boolean" - $desc
+** [.array]#message array#  "string" - $desc
+** [.array]#summary array#  "string" - $desc
+** [.array]#details array#  "string" - $desc
+** [.array]#type array#  "notificationType" - $desc
+** [.array]#created array#  "date" - $desc
+ 
+ 
+
+
+
+[#apidoc-user_notifications-setAllNotificationsRead-user]
+== Method: setAllNotificationsRead
+
+HTTP `POST`
+
+Description:
+
+Set all notifications from a user as read
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-user_notifications-setNotificationsRead-user-notifications]
+== Method: setNotificationsRead
+
+HTTP `POST`
+
+Description:
+
+Set notifications of the given user as read
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  notifications - The list of notification IDs to set as 'read'.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
