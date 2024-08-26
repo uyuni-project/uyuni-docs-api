@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Frequently Asked Questions
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/faqs.html">
-    <link rel="prev" href="../common_gfdl1.2_i.html">
-    <link rel="next" href="actionchain.html">
+<title>user.notifications
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/user.notifications.html">
     <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -80,7 +78,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -306,57 +304,225 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="faqs.html">FAQ</a></li>
+    <li><a href="user.notifications.html">user.notifications</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/faqs.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/user.notifications.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Frequently Asked Questions</h1>
+<h1 class="page">user.notifications</h1>
 <div class="sect1">
-<h2 id="_what_programming_languages_are_supported_by_the_uyuni_api"><a class="anchor" href="#_what_programming_languages_are_supported_by_the_uyuni_api"></a><a class="link" href="#_what_programming_languages_are_supported_by_the_uyuni_api">What programming languages are supported by the Uyuni API?</a></h2>
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Any language that provides an XMLRPC client interface will work with the Uyuni API. While
-Perl and Python are two of the most commonly used, an XMLRPC client implementation is available for every
-common language.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_when_trying_to_call_a_specific_function_the_error_fault_returned_from_xml_rpc_server_fault_code_1_could_not_find_method_method_in_class_is_given_what_is_wrong"><a class="anchor" href="#_when_trying_to_call_a_specific_function_the_error_fault_returned_from_xml_rpc_server_fault_code_1_could_not_find_method_method_in_class_is_given_what_is_wrong"></a><a class="link" href="#_when_trying_to_call_a_specific_function_the_error_fault_returned_from_xml_rpc_server_fault_code_1_could_not_find_method_method_in_class_is_given_what_is_wrong">When trying to call a specific function, the error "Fault returned from XML RPC Server, fault code -1: Could not find method METHOD in class&#8230;&#8203;"  is given. What is wrong?</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Typically this is seen when either a function name is being called that doesn&#8217;t exist, the number
-of parameters for a particular function is incorrect, or the type of a passed parameter is incorrect (Such as
-an array is expected, but a String is passed). Check all of these things.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_should_i_call_an_api_method_using_the_naming_scheme_methodname_or_method_name"><a class="anchor" href="#_should_i_call_an_api_method_using_the_naming_scheme_methodname_or_method_name"></a><a class="link" href="#_should_i_call_an_api_method_using_the_naming_scheme_methodname_or_method_name">Should I call an API method using the naming scheme "methodName" or "method_name"?</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Both of these are valid names for the same method, so use whichever you prefer.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-user_notifications-deleteNotifications-notifications-user">deleteNotifications</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user_notifications-getNotifications-user-unread">getNotifications</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user_notifications-setAllNotificationsRead-user">setAllNotificationsRead</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user_notifications-setNotificationsRead-user-notifications">setNotificationsRead</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_why_are_some_available_methods_listed_several_times"><a class="anchor" href="#_why_are_some_available_methods_listed_several_times"></a><a class="link" href="#_why_are_some_available_methods_listed_several_times">Why are some available methods listed several times?</a></h2>
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The methods are overloaded: the same method name, but a different set of parameters.</p>
+<p>Provides methods to manage user notifications.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>user.notifications</p>
 </div>
 </div>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="../common_gfdl1.2_i.html">License</a></span>
-  <span class="next"><a href="actionchain.html">actionchain</a></span>
-</nav>
+<div class="sect1">
+<h2 id="apidoc-user_notifications-deleteNotifications-notifications-user"><a class="anchor" href="#apidoc-user_notifications-deleteNotifications-notifications-user"></a><a class="link" href="#apidoc-user_notifications-deleteNotifications-notifications-user">Method: deleteNotifications</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Deletes multiple notifications</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  notifications - The list of notification IDs to delete.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user_notifications-getNotifications-user-unread"><a class="anchor" href="#apidoc-user_notifications-getNotifications-user-unread"></a><a class="link" href="#apidoc-user_notifications-getNotifications-user-unread">Method: getNotifications</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get all notifications from a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  unread - If true, return only unread notifications.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  notification</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="long">long</span>  "id"</p>
+</li>
+<li>
+<p><span class="array">read array</span>  "boolean" - $desc</p>
+</li>
+<li>
+<p><span class="array">message array</span>  "string" - $desc</p>
+</li>
+<li>
+<p><span class="array">summary array</span>  "string" - $desc</p>
+</li>
+<li>
+<p><span class="array">details array</span>  "string" - $desc</p>
+</li>
+<li>
+<p><span class="array">type array</span>  "notificationType" - $desc</p>
+</li>
+<li>
+<p><span class="array">created array</span>  "date" - $desc</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user_notifications-setAllNotificationsRead-user"><a class="anchor" href="#apidoc-user_notifications-setAllNotificationsRead-user"></a><a class="link" href="#apidoc-user_notifications-setAllNotificationsRead-user">Method: setAllNotificationsRead</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set all notifications from a user as read</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user_notifications-setNotificationsRead-user-notifications"><a class="anchor" href="#apidoc-user_notifications-setNotificationsRead-user-notifications"></a><a class="link" href="#apidoc-user_notifications-setNotificationsRead-user-notifications">Method: setNotificationsRead</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set notifications of the given user as read</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  notifications - The list of notification IDs to set as 'read'.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>

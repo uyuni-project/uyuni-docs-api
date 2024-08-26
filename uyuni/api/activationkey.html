@@ -323,6 +323,9 @@
 <div class="ulist">
 <ul>
 <li>
+<p><a href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams">addAppStreams</a></p>
+</li>
+<li>
 <p><a href="#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels">addChildChannels</a></p>
 </li>
 <li>
@@ -374,6 +377,9 @@
 <p><a href="#apidoc-activationkey-listConfigChannels-loggedInUser-key">listConfigChannels</a></p>
 </li>
 <li>
+<p><a href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams">removeAppStreams</a></p>
+</li>
+<li>
 <p><a href="#apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels">removeChildChannels</a></p>
 </li>
 <li>
@@ -410,6 +416,64 @@
 </div>
 <div class="paragraph">
 <p>activationkey</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams"><a class="anchor" href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams"></a><a class="link" href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams">Method: addAppStreams</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add app streams to an activation key. If any of the provided app streams is not available in the
+ channels of the activation key, the request will fail.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  appStreams</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Module Stream</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "stream"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1430,6 +1494,63 @@ successfully checked in</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams"><a class="anchor" href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams"></a><a class="link" href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams">Method: removeAppStreams</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove app streams from an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  appStreams</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Module Stream</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "stream"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>
