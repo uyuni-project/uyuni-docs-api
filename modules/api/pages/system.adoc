@@ -131,8 +131,12 @@
 * <<apidoc-system-obtainReactivationKey-clientCert,obtainReactivationKey>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-profileName,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName,provisionVirtualGuest>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName-memoryMb-vcpus-storageGb,provisionVirtualGuest>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName-memoryMb-vcpus-storageGb-macAddress,provisionVirtualGuest>>
@@ -200,7 +204,6 @@
 * <<apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence,scheduleSyncPackagesWithSystem>>
 * <<apidoc-system-searchByName-loggedInUser-regexp,searchByName>>
 * <<apidoc-system-sendOsaPing-loggedInUser-sid,sendOsaPing>>
-* <<apidoc-system-setBaseChannel-loggedInUser-sid-cid,setBaseChannel>>
 * <<apidoc-system-setBaseChannel-loggedInUser-sid-channelLabel,setBaseChannel>>
 * <<apidoc-system-setChildChannels-loggedInUser-sid-channelIdsOrLabels,setChildChannels>>
 * <<apidoc-system-setCoCoAttestationConfig-loggedInUser-sid-enabled-environmentType-attestOnBoot,setCoCoAttestationConfig>>
@@ -4818,6 +4821,68 @@ Returns:
 
 
 
+[#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.int]#int#  proxy - ID of the proxy to use.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.int]#int#  proxy - ID of the proxy to use.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
 [#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate]
 == Method: provisionSystem
 
@@ -4866,6 +4931,72 @@ Parameters:
 * [.string]#string#  sessionKey
  
 * [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.int]#int#  proxy - ID of the proxy to use.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.int]#int#  proxy - ID of the proxy to use.
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -7201,36 +7332,6 @@ Returns:
 
 
 
-[#apidoc-system-setBaseChannel-loggedInUser-sid-cid]
-== Method: setBaseChannel (Deprecated)
-
-HTTP `POST`
-
-Description:
-
-Assigns the server to a new baseChannel.
-
-
-Deprecated - being replaced by system.setBaseChannel(string sessionKey,
- int serverId, string channelLabel)
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid
- 
-* [.int]#int#  cid - channel ID
- 
-
-Returns:
-
-* [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
 [#apidoc-system-setBaseChannel-loggedInUser-sid-channelLabel]
 == Method: setBaseChannel (Deprecated)
 
@@ -7245,6 +7346,7 @@ Assigns the server to a new base channel.  If the user provides an empty
 
 Deprecated - being replaced by system.scheduleChangeChannels(string sessionKey,
  int serverId, String baseChannelLabel, array_single channelLabels, date earliestOccurrence).
+ Internally it is already implemented using scheduleChangeChannels
 
 
 Parameters:
