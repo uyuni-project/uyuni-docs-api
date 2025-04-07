@@ -4,6 +4,7 @@
 
 == Available methods
 
+* <<apidoc-actionchain-addApplyHighstate-loggedInUser-sid-chainLabel,addApplyHighstate>>
 * <<apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers,addConfigurationDeployment>>
 * <<apidoc-actionchain-addErrataUpdate-loggedInUser-sid-errataIds-chainLabel,addErrataUpdate>>
 * <<apidoc-actionchain-addErrataUpdate-loggedInUser-sids-errataIds-chainLabel,addErrataUpdate>>
@@ -30,6 +31,34 @@ Provides the namespace for the Action Chain methods.
 *Namespace*:
 
 actionchain
+
+
+[#apidoc-actionchain-addApplyHighstate-loggedInUser-sid-chainLabel]
+== Method: addApplyHighstate
+
+HTTP `POST`
+
+Description:
+
+Adds an action to apply highstate on the system to an Action Chain.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - System ID
+ 
+* [.string]#string#  chainLabel - Label of the chain
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The id of the action or throw an exception
+ 
+
 
 
 [#apidoc-actionchain-addConfigurationDeployment-loggedInUser-chainLabel-sid-revisionSpecifiers]

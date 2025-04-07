@@ -137,6 +137,8 @@
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName,provisionVirtualGuest>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName-memoryMb-vcpus-storageGb,provisionVirtualGuest>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName-memoryMb-vcpus-storageGb-macAddress,provisionVirtualGuest>>
@@ -847,8 +849,8 @@ Parameters:
 * [.array]#array#  netDevices
 ** [.struct]#struct#  network device
 *** [.string]#string#  "name"
-*** [.string]#string#  "ip"
 *** [.string]#string#  "mac"
+*** [.string]#string#  "ip"
 *** [.string]#string#  "dnsname"
  
 
@@ -4963,7 +4965,7 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
-* [.int]#int#  proxy - ID of the proxy to use.
+* [.int]#int#  proxy - ID of the proxy to use
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -4996,11 +4998,85 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
+* [.int]#int#  proxy - ID of the proxy to use
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
 * [.int]#int#  proxy - ID of the proxy to use.
  
 * [.string]#string#  profileName - Profile to use.
  
 * [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.int]#int#  proxy - ID of the proxy to use.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
  
 
 Returns:
