@@ -25,7 +25,7 @@ PDF_THEME_DIR ?= branding/pdf/themes
 # suse-draft
 # suse
 
-PDF_THEME_SUMA ?= suse-draft
+PDF_THEME_SUMA ?= suse
 
 
 # UYUNI PDF Themes
