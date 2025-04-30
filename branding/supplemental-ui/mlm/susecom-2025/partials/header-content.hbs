@@ -6,14 +6,18 @@
           <img class="logo" src="{{uiRootPath}}/img/logo.svg" alt="SUSE logo"/>
         </a>
       </div>
+
       {{#if env.SITE_SEARCH_PROVIDER}}
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
-          <label class="visual-search-label" for="search-input" aria-hidden="true">Search</label>
+          <label class="visual-search-label" for="search-input" aria-label="Search">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </label>
           <input label="Search" aria-label="Search" id="search-input" type="text" placeholder="Search the docs" {{#if page.home}}autofocus{{/if}}>
         </div>
       </div>
       {{/if}}
+
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -43,9 +47,9 @@
                 <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues">GitHub Issue</a>
               </div>
             </div>
-          </div> <!-- end of navbar-dropdown -->
-        </div> <!-- end of has-dropdown -->
-      </div> <!-- end of navbar-end -->
-    </div> <!-- end of navbar-menu -->
+          </div> <!-- end navbar-dropdown -->
+        </div> <!-- end has-dropdown -->
+      </div> <!-- end navbar-end -->
+    </div> <!-- end navbar-menu -->
   </nav>
 </header>
