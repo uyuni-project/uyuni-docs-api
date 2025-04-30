@@ -1,0 +1,55 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="navbar-logo" href="https://documentation.suse.com/" aria-label="SUSE Documentation Home">
+          <img class="logo" src="{{uiRootPath}}/img/logo.svg" alt="SUSE logo"/>
+        </a>
+      </div>
+
+      {{#if env.SITE_SEARCH_PROVIDER}}
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <label class="visual-search-label" for="search-input" aria-label="Search">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </label>
+          <input label="Search" aria-label="Search" id="search-input" type="text" placeholder="Search the docs" {{#if page.home}}autofocus{{/if}}>
+        </div>
+      </div>
+      {{/if}}
+
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">
+            <img src="{{uiRootPath}}/img/resources.png" class="langIcon Resurces" alt="Resources" title="Resources">
+          </div>
+          <div class="navbar-dropdown">
+            {{#with page.origin}}
+            <a class="navbar-item" href="{{./webUrl}}">
+              <i class="fab fa-github"></i>&nbsp;{{@root.page.origin.descriptor.title}}
+            </a>
+            {{/with}}
+
+            <div class="has-submenu">
+              <a class="navbar-item" href="#">
+                <i class="fas fa-file-alt"></i>&nbsp;Report Issue &nbsp;<i class="fas fa-chevron-right"></i>
+              </a>
+              <div class="submenu">
+                <a class="navbar-item" href="https://scc.suse.com">SCC (Recommended)</a>
+                <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues">GitHub Issue</a>
+              </div>
+            </div>
+          </div> <!-- end navbar-dropdown -->
+        </div> <!-- end has-dropdown -->
+      </div> <!-- end navbar-end -->
+    </div> <!-- end navbar-menu -->
+  </nav>
+</header>

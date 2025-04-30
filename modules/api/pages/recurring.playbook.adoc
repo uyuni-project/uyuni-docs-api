@@ -1,0 +1,89 @@
+[#apidoc-recurring_playbook]
+= recurring.playbook
+
+
+== Available methods
+
+* <<apidoc-recurring_playbook-create-loggedInUser-actionProps,create>>
+* <<apidoc-recurring_playbook-update-loggedInUser-actionProps,update>>
+
+== Description
+
+Provides methods to handle recurring ansible playbook execution
+ for minions, system groups and organizations.
+
+*Namespace*:
+
+recurring.playbook
+
+
+[#apidoc-recurring_playbook-create-loggedInUser-actionProps]
+== Method: create
+
+HTTP `POST`
+
+Description:
+
+Create a new recurring Ansible playbook action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.int]#int#  "entity_id" - the ID of the target entity
+** [.string]#string#  "name" - the name of the recurring action
+** [.string]#string#  "cron_expr" - the execution frequency of the action as a cron expression
+** [.string]#string#  "extra_vars" - extra variables to override existing
+                                          vars or create new ones (optional)
+** [.boolean]#boolean#  "flush_cache" - whether the Ansible cache should be flushed (optional)
+** [.string]#string#  "inventory_path" - the path to the configured Ansible inventory
+** [.string]#string#  "playbook_path" - the path to the playbook to be executed
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the newly created recurring action
+ 
+
+
+
+[#apidoc-recurring_playbook-update-loggedInUser-actionProps]
+== Method: update
+
+HTTP `POST`
+
+Description:
+
+Update a recurring Ansbile playbook action.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.struct]#struct#  actionProps
+** [.int]#int#  "id" - the ID of the action to update
+** [.string]#string#  "name" - the name of the action (optional)
+** [.string]#string#  "cron_expr" - the execution frequency of the action (optional)
+** [.string]#string#  "extra_vars" - extra variables to override existing
+                                          vars or create new ones (optional)
+** [.boolean]#boolean#  "flush_cache" - whether the Ansible cache should be flushed (optional)
+** [.string]#string#  "inventory_path" - the path to the configured Ansible inventory (optional
+** [.string]#string#  "playbook_path" - the path to the playbook to be executed (optional)
+** [.boolean]#boolean#  "test" - whether the action should be executed in test mode (optional)
+** [.boolean]#boolean#  "active" - whether the action should be active (optional)
+ 
+
+Returns:
+
+* [.int]#int#  id - the ID of the updated recurring action
+ 
+
+

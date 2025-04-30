@@ -1,0 +1,690 @@
+[#apidoc-sync_hub]
+= sync.hub
+
+
+== Available methods
+
+* <<apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels,addPeripheralChannelsToSync>>
+* <<apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel,addPeripheralChannelsToSync>>
+* <<apidoc-sync_hub-deregister-loggedInUser-fqdn,deregister>>
+* <<apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal,deregister>>
+* <<apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn,generateAccessToken>>
+* <<apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn,getAllPeripheralChannels>>
+* <<apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn,getAllPeripheralOrgs>>
+* <<apidoc-sync_hub-getManagerInfo-loggedInUser,getManagerInfo>>
+* <<apidoc-sync_hub-isISSPeripheral-loggedInUser,isISSPeripheral>>
+* <<apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn,listPeripheralChannelsToSync>>
+* <<apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData,migrateFromISSv1>>
+* <<apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData,migrateFromISSv2>>
+* <<apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn,regenerateSCCCredentials>>
+* <<apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password,registerPeripheral>>
+* <<apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA,registerPeripheral>>
+* <<apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token,registerPeripheralWithToken>>
+* <<apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA,registerPeripheralWithToken>>
+* <<apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels,removePeripheralChannelsToSync>>
+* <<apidoc-sync_hub-replaceTokens-loggedInUser-fqdn,replaceTokens>>
+* <<apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data,setDetails>>
+* <<apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token,storeAccessToken>>
+* <<apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn,syncPeripheralChannels>>
+
+== Description
+
+Contains methods to set up and manage Hub Inter-Server synchronization
+
+*Namespace*:
+
+sync.hub
+
+
+[#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels]
+== Method: addPeripheralChannelsToSync
+
+HTTP `POST`
+
+Description:
+
+Add peripheral channels to synchronize on a peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+ 
+* [.array]#array#  " channelLabels "
+** [.string]#string#  "label" - The channel label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel]
+== Method: addPeripheralChannelsToSync
+
+HTTP `POST`
+
+Description:
+
+Add peripheral channels to synchronize on a peripheral server, forcing the peripheral org in custom channels
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
+ 
+* [.array]#array#  "channelLabels"
+** [.string]#string#  "label" - The channel label
+ 
+* [.int]#int#  "peripheralOrgIdWhenCustomChannel" - ID of the peripheral Org to be set in custom channels
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-deregister-loggedInUser-fqdn]
+== Method: deregister
+
+HTTP `POST`
+
+Description:
+
+De-register the server locally identified by the fqdn.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to de-register
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal]
+== Method: deregister
+
+HTTP `POST`
+
+Description:
+
+De-register the server identified by the fqdn.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to de-register
+ 
+* [.boolean]#boolean#  onlyLocal -  true if the de - registration has to be performed only this
+ server, false to instead fully deregister on both sides
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn]
+== Method: generateAccessToken
+
+HTTP `POST`
+
+Description:
+
+Generate a new access token for ISS for accessing this system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - FQDN of the peripheral/hub that will be using this access token
+ 
+
+Returns:
+
+* [.string]#string#  The serialized form of the token
+ 
+
+
+
+[#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn]
+== Method: getAllPeripheralChannels
+
+HTTP `GET`
+
+Description:
+
+Remotely collect data about peripheral channels
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#   channel info 
+** [.long]#long#  "id" - the id of the channel
+** [.string]#string#  "name" - the name of the channel
+** [.boolean]#boolean#  "label" - the label of the channel
+** [.string]#string#  "summary" - the summary of the channel
+** [.long]#long#  "org_id" - the organization id of the channel
+** [.long]#long#  "parent_channel_id" - the parent channel ID of the channel
+ 
+ 
+
+
+
+[#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn]
+== Method: getAllPeripheralOrgs
+
+HTTP `GET`
+
+Description:
+
+Remotely collect data about peripheral organizations
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+ * [.struct]#struct#   org info 
+** [.long]#long#  "org_id" - org identifier
+** [.string]#string#  "org_name" - org name
+ 
+ 
+
+
+
+[#apidoc-sync_hub-getManagerInfo-loggedInUser]
+== Method: getManagerInfo
+
+HTTP `GET`
+
+Description:
+
+Get manager info.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* * [.struct]#struct#  manager info
+** [.string]#string#  "version" - version
+** [.boolean]#boolean#  "report_db" - true if there is a report database
+** [.string]#string#  "report_db_name" - name of the report database
+** [.string]#string#  "report_db_host" - hostname of the report database
+** [.int]#int#  "report_db_port" - port of the report database
+  
+ 
+
+
+
+[#apidoc-sync_hub-isISSPeripheral-loggedInUser]
+== Method: isISSPeripheral
+
+HTTP `POST`
+
+Description:
+
+Check if this server is configured as peripheral server and read data from a Hub
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.boolean]#boolean#  peripheral - True if this is an ISS peripheral, false otherwise
+ 
+
+
+
+[#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn]
+== Method: listPeripheralChannelsToSync
+
+HTTP `POST`
+
+Description:
+
+Lists current peripheral channel to synchronize on a peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.string]#string#  "label" - Label of a peripheral channel to sync
+ 
+
+
+
+[#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData]
+== Method: migrateFromISSv1
+
+HTTP `POST`
+
+Description:
+
+Migrate the existing ISSv1 slaves to Hub Online Synchronization peripherals.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array#  migration_data
+** [.struct]#struct#  slave_migration_data
+*** [.string]#string#  "fqdn" - The fully qualified domain name of the remote slave server.
+*** [.string]#string#  "token" - The token used to authenticate on the remote server.
+*** [.string]#string#  "root_ca" - The root ca needed to establish a secure connection to the
+       remote server.
+ 
+
+Returns:
+
+* * [.struct]#struct#  result
+** [.array]#array#  "messages"
+*** [.struct]#struct#  message
+**** [.string]#string#  "severity" - the severity of the message
+**** [.string]#string#  "message" - the message
+** [.result_code]#result_code#  "success"
+  
+ 
+
+
+
+[#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData]
+== Method: migrateFromISSv2
+
+HTTP `POST`
+
+Description:
+
+Migrate the existing ISSv2 peripherals to Hub Online Synchronization peripherals.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#array#  migration_data
+** [.struct]#struct#  peripheral_migration_data
+*** [.string]#string#  "fqdn" - The fully qualified domain name of the remote peripheral server.
+*** [.string]#string#  "token" - The token used to authenticate on the remote server.
+*** [.string]#string#  "root_ca" - The root ca needed to establish a secure connection to the
+       remote server.
+ 
+
+Returns:
+
+* * [.struct]#struct#  result
+** [.array]#array#  "messages"
+*** [.struct]#struct#  message
+**** [.string]#string#  "severity" - the severity of the message
+**** [.string]#string#  "message" - the message
+** [.result_code]#result_code#  "success"
+  
+ 
+
+
+
+[#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn]
+== Method: regenerateSCCCredentials
+
+HTTP `POST`
+
+Description:
+
+Regenerate the username and the password for an existing peripheral.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password]
+== Method: registerPeripheral
+
+HTTP `POST`
+
+Description:
+
+Registers automatically a remote server with the specified ISS role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to register
+ 
+* [.string]#string#  username - the name of the user, needed to access the remote server
+ It must have the sat admin role
+ 
+* [.string]#string#  password - the password of the user, needed to access the remote
+ server
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA]
+== Method: registerPeripheral
+
+HTTP `POST`
+
+Description:
+
+Registers automatically a remote server with the specified ISS role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to register
+ 
+* [.string]#string#  username - the name of the user, needed to access the remote server
+ It must have the sat admin role
+ 
+* [.string]#string#  password - the password of the user, needed to access the remote
+ server
+ 
+* [.string]#string#  rootCA - the root CA certificate, in case it's needed to establish a secure
+ connection
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token]
+== Method: registerPeripheralWithToken
+
+HTTP `POST`
+
+Description:
+
+Registers a remote server with the specified ISS role using an existing specified access token.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to register
+ 
+* [.string]#string#  token - the token used to authenticate on the remote server.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA]
+== Method: registerPeripheralWithToken
+
+HTTP `POST`
+
+Description:
+
+Registers a remote server with the specified ISS role using an existing specified access token.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote server to register
+ 
+* [.string]#string#  token - the token used to authenticate on the remote server.
+ 
+* [.string]#string#  rootCA - the root CA certificate, in case it's needed to establish a secure
+ connection
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels]
+== Method: removePeripheralChannelsToSync
+
+HTTP `POST`
+
+Description:
+
+Remove peripheral channels to synchronize on a peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+ 
+* [.array]#array#  " channelLabels "
+** [.string]#string#  "label" - The channel label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn]
+== Method: replaceTokens
+
+HTTP `POST`
+
+Description:
+
+Replace the auth tokens for connections between this hub and the given peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the remote peripheral server to replace the tokens
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data]
+== Method: setDetails
+
+HTTP `POST`
+
+Description:
+
+Set server details. All arguments are optional and will only be modified
+ if included in the struct.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - The FQDN of Hub or Peripheral server to lookup details for.
+ 
+* [.string]#string#  role - The role which should be updated. Either 'HUB' or 'PERIPHERAL'.
+ 
+* [.struct]#struct#  data
+** [.string]#string#  "root_ca" - The root ca
+** [.string]#string#  "gpg_key" - The root gpg key - only for role HUB
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token]
+== Method: storeAccessToken
+
+HTTP `POST`
+
+Description:
+
+Generate a new access token for ISS for accessing this system
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - the FQDN of the peripheral/hub that generated this access token
+ 
+* [.string]#string#  token - the access token
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn]
+== Method: syncPeripheralChannels
+
+HTTP `POST`
+
+Description:
+
+Synchronize peripheral channels on a peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+ 
+* [.array]#array#  " channelLabels "
+** [.string]#string#  "label" - The channel label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

@@ -19,6 +19,7 @@
 * <<apidoc-user-listAssignableRoles-loggedInUser,listAssignableRoles>>
 * <<apidoc-user-listAssignedSystemGroups-loggedInUser-login,listAssignedSystemGroups>>
 * <<apidoc-user-listDefaultSystemGroups-loggedInUser-login,listDefaultSystemGroups>>
+* <<apidoc-user-listPermissions-loggedInUser-login,listPermissions>>
 * <<apidoc-user-listRoles-loggedInUser-login,listRoles>>
 * <<apidoc-user-listUsers-loggedInUser,listUsers>>
 * <<apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault,removeAssignedSystemGroup>>
@@ -176,11 +177,9 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  login - User login name to update.
+* [.string]#string#  login - user login name to update
  
-* [.string]#string#  role - Role label to add.  Can be any of:
- satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
- activation_key_admin.
+* [.string]#string#  role - the role label to add
  
 
 Returns:
@@ -502,6 +501,37 @@ Returns:
 
 
 
+[#apidoc-user-listPermissions-loggedInUser-login]
+== Method: listPermissions
+
+HTTP `GET`
+
+Description:
+
+Lists the effective RBAC permissions of a user.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  login - user's login name
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  namespace
+** [.string]#string#  "namespace"
+** [.string]#string#  "access_mode"
+** [.string]#string#  "description"
+ 
+ 
+
+
+
 [#apidoc-user-listRoles-loggedInUser-login]
 == Method: listRoles
 
@@ -518,12 +548,12 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  login - User's login name.
+* [.string]#string#  login - user's login name
  
 
 Returns:
 
-* [.array]#string array#  (role label)
+* [.array]#string array#  the role label
  
 
 
@@ -693,11 +723,9 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  login - User login name to update.
+* [.string]#string#  login - user login name to update
  
-* [.string]#string#  role - Role label to remove.  Can be any of:
- satellite_admin, org_admin, channel_admin, config_admin, system_group_admin, or
- activation_key_admin.
+* [.string]#string#  role - the role label to remove
  
 
 Returns:
