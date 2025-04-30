@@ -1,0 +1,323 @@
+[#apidoc-access]
+= access
+
+
+== Available methods
+
+* <<apidoc-access-createRole-loggedInUser-label-description-permissionsFrom,createRole>>
+* <<apidoc-access-createRole-loggedInUser-label-description,createRole>>
+* <<apidoc-access-deleteRole-loggedInUser-label,deleteRole>>
+* <<apidoc-access-grantAccess-loggedInUser-label-namespaces,grantAccess>>
+* <<apidoc-access-grantAccess-loggedInUser-label-namespaces-modes,grantAccess>>
+* <<apidoc-access-listNamespaces-loggedInUser,listNamespaces>>
+* <<apidoc-access-listPermissions-loggedInUser-label,listPermissions>>
+* <<apidoc-access-listRoles-loggedInUser,listRoles>>
+* <<apidoc-access-revokeAccess-loggedInUser-label-namespaces,revokeAccess>>
+* <<apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes,revokeAccess>>
+
+== Description
+
+Provides methods to manage Role-Based Access Control
+
+*Namespace*:
+
+access
+
+
+[#apidoc-access-createRole-loggedInUser-label-description-permissionsFrom]
+== Method: createRole
+
+HTTP `POST`
+
+Description:
+
+Create a new role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label - the unique label of the new role
+ 
+* [.string]#string#  description - the description of the new role
+ 
+* [.array]#string array#  permissionsFrom - the list of roles to inherit permissions from
+ 
+
+Returns:
+
+* * [.struct]#struct#  access group
+** [.string]#string#  "label"
+** [.string]#string#  "description"
+  
+ 
+
+
+
+[#apidoc-access-createRole-loggedInUser-label-description]
+== Method: createRole
+
+HTTP `POST`
+
+Description:
+
+Create a new role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.string]#string#  description - the description of the new role
+ 
+
+Returns:
+
+* * [.struct]#struct#  access group
+** [.string]#string#  "label"
+** [.string]#string#  "description"
+  
+ 
+
+
+
+[#apidoc-access-deleteRole-loggedInUser-label]
+== Method: deleteRole
+
+HTTP `POST`
+
+Description:
+
+Delete a role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-access-grantAccess-loggedInUser-label-namespaces]
+== Method: grantAccess
+
+HTTP `POST`
+
+Description:
+
+Grant full access to the given namespace for the specified role.
+ Return the expanded list of namespaces granted by the call.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#string array#  namespaces - the list of namespaces to grant access to
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-access-grantAccess-loggedInUser-label-namespaces-modes]
+== Method: grantAccess
+
+HTTP `POST`
+
+Description:
+
+Grant access to the given namespace for the specified role.
+ Returns the expanded list of namespaces granted by the call.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#string array#  namespaces - the list of namespaces to grant access to
+ 
+* [.array]#string array#  modes - the access modes (R for read/view, W for write/modify)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-access-listNamespaces-loggedInUser]
+== Method: listNamespaces
+
+HTTP `GET`
+
+Description:
+
+List available namespaces.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  namespace
+** [.string]#string#  "namespace"
+** [.string]#string#  "access_mode"
+** [.string]#string#  "description"
+ 
+ 
+
+
+
+[#apidoc-access-listPermissions-loggedInUser-label]
+== Method: listPermissions
+
+HTTP `GET`
+
+Description:
+
+List permissions granted by a role.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  namespace
+** [.string]#string#  "namespace"
+** [.string]#string#  "access_mode"
+** [.string]#string#  "description"
+ 
+ 
+
+
+
+[#apidoc-access-listRoles-loggedInUser]
+== Method: listRoles
+
+HTTP `GET`
+
+Description:
+
+List existing roles.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+     * [.struct]#struct#  access group
+** [.string]#string#  "label"
+** [.string]#string#  "description"
+ 
+ 
+
+
+
+[#apidoc-access-revokeAccess-loggedInUser-label-namespaces]
+== Method: revokeAccess
+
+HTTP `POST`
+
+Description:
+
+Revoke access to the given namespace for the specified role.
+ Return the expanded list of namespaces revoked by the call.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#string array#  namespaces - the list of namespaces to revoke access to
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes]
+== Method: revokeAccess
+
+HTTP `POST`
+
+Description:
+
+Revoke access to the given namespace for the specified role.
+ Return the expanded list of namespaces revoked by the call.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  label
+ 
+* [.array]#string array#  namespaces - the list of namespaces to revoke access to
+ 
+* [.array]#string array#  modes - the access modes (R for read/view, W for write/modify)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

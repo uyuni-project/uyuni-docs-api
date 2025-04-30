@@ -167,8 +167,6 @@
 * <<apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence,scheduleCoCoAttestation>>
 * <<apidoc-system-scheduleDistUpgrade-loggedInUser-sid-channels-dryRun-earliestOccurrence,scheduleDistUpgrade>>
 * <<apidoc-system-scheduleDistUpgrade-loggedInUser-sid-channels-dryRun-allowVendorChange-earliestOccurrence,scheduleDistUpgrade>>
-* <<apidoc-system-scheduleGuestAction-loggedInUser-sid-state-date,scheduleGuestAction>>
-* <<apidoc-system-scheduleGuestAction-loggedInUser-sid-state,scheduleGuestAction>>
 * <<apidoc-system-scheduleHardwareRefresh-loggedInUser-sid-earliestOccurrence,scheduleHardwareRefresh>>
 * <<apidoc-system-schedulePackageInstall-loggedInUser-sids-packageIds-earliestOccurrence,schedulePackageInstall>>
 * <<apidoc-system-schedulePackageInstall-loggedInUser-sids-packageIds-earliestOccurrence-allowModules,schedulePackageInstall>>
@@ -212,8 +210,6 @@
 * <<apidoc-system-setCustomValues-loggedInUser-sid-values,setCustomValues>>
 * <<apidoc-system-setDetails-loggedInUser-sid-details,setDetails>>
 * <<apidoc-system-setGroupMembership-loggedInUser-sid-sgid-member,setGroupMembership>>
-* <<apidoc-system-setGuestCpus-loggedInUser-sid-numOfCpus,setGuestCpus>>
-* <<apidoc-system-setGuestMemory-loggedInUser-sid-memory,setGuestMemory>>
 * <<apidoc-system-setLockStatus-loggedInUser-sid-lockStatus,setLockStatus>>
 * <<apidoc-system-setPillar-loggedInUser-systemId-category-pillarData,setPillar>>
 * <<apidoc-system-setPillar-loggedInUser-minionId-category-pillarData,setPillar>>
@@ -849,8 +845,8 @@ Parameters:
 * [.array]#array#  netDevices
 ** [.struct]#struct#  network device
 *** [.string]#string#  "name"
-*** [.string]#string#  "mac"
 *** [.string]#string#  "ip"
+*** [.string]#string#  "mac"
 *** [.string]#string#  "dnsname"
  
 
@@ -4965,7 +4961,7 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
-* [.int]#int#  proxy - ID of the proxy to use
+* [.int]#int#  proxy - ID of the proxy to use.
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -4998,7 +4994,7 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
-* [.int]#int#  proxy - ID of the proxy to use
+* [.int]#int#  proxy - ID of the proxy to use.
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -5993,68 +5989,6 @@ Parameters:
 Returns:
 
 * [.int]#int#  actionId
- 
-
-
-
-[#apidoc-system-scheduleGuestAction-loggedInUser-sid-state-date]
-== Method: scheduleGuestAction
-
-HTTP `POST`
-
-Description:
-
-Schedules a guest action for the specified virtual guest for a given
-          date/time.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid - the system Id of the guest
- 
-* [.string]#string#  state - One of the following actions  'start',
-          'suspend', 'resume', 'restart', 'shutdown'.
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  date - the time/date to schedule the action
- 
-
-Returns:
-
-* [.int]#int#  actionId - The action id of the scheduled action
- 
-
-
-
-[#apidoc-system-scheduleGuestAction-loggedInUser-sid-state]
-== Method: scheduleGuestAction
-
-HTTP `POST`
-
-Description:
-
-Schedules a guest action for the specified virtual guest for the
-          current time.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid - the system Id of the guest
- 
-* [.string]#string#  state - One of the following actions  'start',
-          'suspend', 'resume', 'restart', 'shutdown'.
- 
-
-Returns:
-
-* [.int]#int#  actionId - The action id of the scheduled action
  
 
 
@@ -7625,68 +7559,6 @@ Parameters:
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
- 
-
-
-
-[#apidoc-system-setGuestCpus-loggedInUser-sid-numOfCpus]
-== Method: setGuestCpus
-
-HTTP `POST`
-
-Description:
-
-Schedule an action of a guest's host, to set that guest's CPU
-          allocation
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid - The guest's system id
- 
-* [.int]#int#  numOfCpus - The number of virtual cpus to
-          allocate to the guest
- 
-
-Returns:
-
-* [.int]#int#  actionID - the action Id for the schedule action
-              on the host system
- 
-
-
-
-[#apidoc-system-setGuestMemory-loggedInUser-sid-memory]
-== Method: setGuestMemory
-
-HTTP `POST`
-
-Description:
-
-Schedule an action of a guest's host, to set that guest's memory
-          allocation
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid - The guest's system id
- 
-* [.int]#int#  memory - The amount of memory to
-          allocate to the guest
- 
-
-Returns:
-
-* [.int]#int#  actionID - the action Id for the schedule action
-              on the host system
  
 
 
