@@ -32,58 +32,11 @@
               <a class="navbar-item" href="#" ><i class="fas fa-file-alt"></i>&nbsp;Report Issue &nbsp;<i class="fas fa-chevron-right"></i></a>
               <div class="submenu">
                 <a class="navbar-item" href="https://scc.suse.com">SCC (Recommended)</a>
-                <a class="navbar-item" href="{{./webUrl}}/issues">GitHub Issue</a>
+                <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs-api/issues">GitHub Issue</a>
               </div>
-            </div>
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs?tab=readme-ov-file#introduction"><i class="fas fa-user-edit"></i>&nbsp;Contribute</a>
-            {{/with}}
-          </div>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link"><img src="{{uiRootPath}}/img/language.png" class="langIcon Language" alt="Language"
-              title="Language"></div>
-          <div class="navbar-dropdown">
-            <!--  </div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-            {{#each (languagelist page.navigation uiRootPath)}}
-              <a role="button" class="navbar-item" id="{{./id}}" onclick="selectLanguage(this.id)">
-                <!--<img src="{{./uiRootPath}}/img/{{./image}}" class="langIcon {{./class}}">-->
-                &nbsp;{{./label}}
-              </a>
-            {{/each}}
-            <!-- LANGUAGESELECTOR -->
-          </div>
-        </div>
-        <!--
-        <div class="navbar-item">
-          <a href="https://twitter.com/SUSE">
-            <img alt="X-logo" class="x-logo" src="{{uiRootPath}}/img/x-logo-white.png">
-          </a>
-        </div>
-        -->
       </div>
     </div>
-
-    <!--   <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-          </span>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-          </span>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-          </span>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-          </span>
-        </div>
-      </div> -->
     </div>
   </nav>
 </header>
