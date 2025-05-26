@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Uyuni API Documentation
      | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/apilist.html">
-    <meta name="generator" content="Antora 3.1.7">
+    <link rel="prev" href="api.html">
+    <link rel="next" href="audit.html">
+    <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -16,6 +18,7 @@
 <link href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" rel="stylesheet">
 <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet"> -->
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
 <script src="/docserv/res/lightheaded/analytics.js"
         type="text/javascript"></script>
     <script>var uiRootPath = '../../_'</script>
@@ -23,14 +26,14 @@
   <body class="article">
 <header class="header">
   <nav class="navbar">
-    <div class="navbar-brand">
-      <div class="navbar-item">
-        <a class=" navbar-logo" href="https://www.uyuni-project.org/"><img class="logo"
-            src="../../_/img/uyuni_logo.png" /></a>
-      </div>
+   <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+            </div>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
-          <input id="search-input" type="text" placeholder="Search the docs" >
+          <input id="search-input" type="text" placeholder="Search the docs">
         </div>
       </div>
       <button class="navbar-burger" data-target="topbar-nav">
@@ -39,29 +42,61 @@
         <span></span>
       </button>
     </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Resources</div>
-          <div class="navbar-dropdown">
-
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
-                class="fab fa-github"></i>&nbsp;Report Issue</a>
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
-                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+     <div id="topbar-nav" class="navbar-menu">
+          <div class="navbar-end">
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <div class="navbar-link"><img src="../../_/img/resources.png" class="langIcon Resurces" alt="Resources" title="Resources"></div>
+                  <div class="navbar-dropdown">
+                      <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                      <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                              class="fab fa-github"></i>&nbsp;uyuni-docs</a>
+                      <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                              class="fab fa-github"></i>&nbsp;Report Issue</a>
+                      <a class="navbar-item"
+                         href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                              class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                  </div>
+              </div>
+                           <div class="navbar-item has-dropdown is-hoverable">
+                 <div class="navbar-link"><img src="../../_/img/language.png" class="langIcon Language" alt="Language" title="Language"></div>
+                 <div class="navbar-dropdown">
+                     <!--  </div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                     <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                     <!-- LANGUAGESELECTOR -->
+                 </div>
+             </div>
+                <div></div>
           </div>
-        </div>
       </div>
-    </div>
-     <a href="https://twitter.com/uyuniproject?lang=en">
+      <a href="https://twitter.com/uyuniproject?lang=en">
       <img class="x-logo" src="../../_/img/x-logo-white.png">
       </a>
-    </div>
+      
+   <!--   <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+      </div> -->
     </div>
   </nav>
-</header><div class="body">
+</header>
+<div class="body">
 <div class="nav-container" data-component="uyuni" data-version="">
   <aside class="nav">
     <div class="panels">
@@ -82,6 +117,9 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="actionchain.html">actionchain</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -97,10 +135,16 @@
     <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="ansible.html">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="apilist.html">apilist.adoc</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="audit.html">audit</a>
@@ -211,6 +255,9 @@
     <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -233,6 +280,9 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.html">system</a>
@@ -271,6 +321,9 @@
     <a class="nav-link" href="user.external.html">user.external</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
   </li>
 </ul>
@@ -304,7 +357,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="apilist.html">Uyuni API Documentation</a></li>
+    <li><a href="apilist.html">apilist.adoc</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/apilist.adoc">Edit this Page</a></div>
@@ -343,19 +396,22 @@ trademarks that are incorporated in this software or its documentation.</p>
 <div class="ulist">
 <ul>
 <li>
+<p><a href="access.html#apidoc-access" class="xref page">access.adoc#apidoc-access</a></p>
+</li>
+<li>
 <p><a href="actionchain.html#apidoc-actionchain" class="xref page">actionchain.adoc#apidoc-actionchain</a></p>
 </li>
 <li>
 <p><a href="activationkey.html#apidoc-activationkey" class="xref page">activationkey.adoc#apidoc-activationkey</a></p>
 </li>
 <li>
-<p><a href="admin.html#apidoc-admin" class="xref page">admin.adoc#apidoc-admin</a></p>
-</li>
-<li>
 <p><a href="admin.configuration.html#apidoc-admin.configuration" class="xref page">admin.configuration.adoc#apidoc-admin.configuration</a></p>
 </li>
 <li>
 <p><a href="admin.monitoring.html#apidoc-admin.monitoring" class="xref page">admin.monitoring.adoc#apidoc-admin.monitoring</a></p>
+</li>
+<li>
+<p><a href="admin.payg.html#apidoc-admin.payg" class="xref page">admin.payg.adoc#apidoc-admin.payg</a></p>
 </li>
 <li>
 <p><a href="ansible.html#apidoc-ansible" class="xref page">ansible.adoc#apidoc-ansible</a></p>
@@ -472,6 +528,9 @@ trademarks that are incorporated in this software or its documentation.</p>
 <p><a href="recurring.highstate.html#apidoc-recurring.highstate" class="xref page">recurring.highstate.adoc#apidoc-recurring.highstate</a></p>
 </li>
 <li>
+<p><a href="recurring.playbook.html#apidoc-recurring.playbook" class="xref page">recurring.playbook.adoc#apidoc-recurring.playbook</a></p>
+</li>
+<li>
 <p><a href="saltkey.html#apidoc-saltkey" class="xref page">saltkey.adoc#apidoc-saltkey</a></p>
 </li>
 <li>
@@ -484,10 +543,7 @@ trademarks that are incorporated in this software or its documentation.</p>
 <p><a href="sync.content.html#apidoc-sync.content" class="xref page">sync.content.adoc#apidoc-sync.content</a></p>
 </li>
 <li>
-<p><a href="sync.master.html#apidoc-sync.master" class="xref page">sync.master.adoc#apidoc-sync.master</a></p>
-</li>
-<li>
-<p><a href="sync.slave.html#apidoc-sync.slave" class="xref page">sync.slave.adoc#apidoc-sync.slave</a></p>
+<p><a href="sync.hub.html#apidoc-sync.hub" class="xref page">sync.hub.adoc#apidoc-sync.hub</a></p>
 </li>
 <li>
 <p><a href="system.html#apidoc-system" class="xref page">system.adoc#apidoc-system</a></p>
@@ -534,16 +590,21 @@ trademarks that are incorporated in this software or its documentation.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Generated on: 12/17/2024</p>
+<p>Generated on: 5/15/2025</p>
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="api.html">api</a></span>
+  <span class="next"><a href="audit.html">audit</a></span>
+</nav>
 </article>
   </div>
 </main>
 </div>
 <script src="../../_/js/site.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="../../_/js/vendor/lunr.js"></script>
 <script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
 <script async src="../../search-index.js"></script>
