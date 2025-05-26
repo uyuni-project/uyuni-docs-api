@@ -7,7 +7,7 @@
      | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/proxy.html">
     <link rel="prev" href="preferences.locale.html">
     <link rel="next" href="recurring.html">
-    <meta name="generator" content="Antora 3.1.7">
+    <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -18,6 +18,7 @@
 <link href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" rel="stylesheet">
 <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet"> -->
 <link rel="stylesheet" href="../../_/css/vendor/light.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
 <script src="/docserv/res/lightheaded/analytics.js"
         type="text/javascript"></script>
     <script>var uiRootPath = '../../_'</script>
@@ -25,14 +26,14 @@
   <body class="article">
 <header class="header">
   <nav class="navbar">
-    <div class="navbar-brand">
-      <div class="navbar-item">
-        <a class=" navbar-logo" href="https://www.uyuni-project.org/"><img class="logo"
-            src="../../_/img/uyuni_logo.png" /></a>
-      </div>
+   <div class="navbar-brand">
+            <div class="navbar-item">
+                <a class=" navbar-logo" href="https://www.uyuni-project.org/"><img
+                        class="logo" src="../../_/img/uyuni_logo.png"/></a>
+            </div>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
-          <input id="search-input" type="text" placeholder="Search the docs" >
+          <input id="search-input" type="text" placeholder="Search the docs">
         </div>
       </div>
       <button class="navbar-burger" data-target="topbar-nav">
@@ -41,29 +42,61 @@
         <span></span>
       </button>
     </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Resources</div>
-          <div class="navbar-dropdown">
-
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
-                class="fab fa-github"></i>&nbsp;Uyuni Project</a>
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
-                class="fab fa-github"></i>&nbsp;Report Issue</a>
-            <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
-                class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+     <div id="topbar-nav" class="navbar-menu">
+          <div class="navbar-end">
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <div class="navbar-link"><img src="../../_/img/resources.png" class="langIcon Resurces" alt="Resources" title="Resources"></div>
+                  <div class="navbar-dropdown">
+                      <!--  <div class="navbar-item"><strong>Resources</strong></div> -->
+                      <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs"><i
+                              class="fab fa-github"></i>&nbsp;uyuni-docs</a>
+                      <a class="navbar-item" href="https://github.com/uyuni-project/uyuni-docs/issues"><i
+                              class="fab fa-github"></i>&nbsp;Report Issue</a>
+                      <a class="navbar-item"
+                         href="https://github.com/uyuni-project/uyuni-docs/wiki"><i
+                              class="fas fa-user-edit"></i>&nbsp;Contribute</a>
+                  </div>
+              </div>
+                           <div class="navbar-item has-dropdown is-hoverable">
+                 <div class="navbar-link"><img src="../../_/img/language.png" class="langIcon Language" alt="Language" title="Language"></div>
+                 <div class="navbar-dropdown">
+                     <!--  </div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                     <a role="button" class="navbar-item" id="en" onclick="selectLanguage(this.id)"><img src="../../_/img/engFlag.svg" class="langIcon english">&nbsp;English</a>
+                     <!-- LANGUAGESELECTOR -->
+                 </div>
+             </div>
+                <div></div>
           </div>
-        </div>
       </div>
-    </div>
-     <a href="https://twitter.com/uyuniproject?lang=en">
+      <a href="https://twitter.com/uyuniproject?lang=en">
       <img class="x-logo" src="../../_/img/x-logo-white.png">
       </a>
-    </div>
+      
+   <!--   <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+          </span>
+        </div>
+      </div> -->
     </div>
   </nav>
-</header><div class="body">
+</header>
+<div class="body">
 <div class="nav-container" data-component="uyuni" data-version="">
   <aside class="nav">
     <div class="panels">
@@ -84,6 +117,9 @@
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="actionchain.html">actionchain</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -99,10 +135,16 @@
     <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="ansible.html">ansible</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="apilist.html">apilist.adoc</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="audit.html">audit</a>
@@ -213,6 +255,9 @@
     <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="recurringaction.html">recurringaction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -235,6 +280,9 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.slave.html">sync.slave</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.html">system</a>
@@ -271,6 +319,9 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
@@ -324,6 +375,15 @@
 <ul>
 <li>
 <p><a href="#apidoc-proxy-activateProxy-clientcert-version">activateProxy</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey">bootstrapProxy</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag">bootstrapProxy</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag">bootstrapProxy</a></p>
 </li>
 <li>
 <p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey">containerConfig</a></p>
@@ -408,6 +468,225 @@ registered.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey"><a class="anchor" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey"></a><a class="link" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey">Method: bootstrapProxy</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Deploy a proxy container on given salt minion. It expects that the images are installed as RPMs.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  hostId - The ID of the target minion</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentFqdn - The FQDN of the server the proxy uses</p>
+</li>
+<li>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache - The maximum memory cache size</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - The email of proxy admin</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - CA certificate in PEM format</p>
+</li>
+<li>
+<p><span class="array">string array</span>  intermediateCAs - A list of intermediate CAs in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyCert - Proxy certificate in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyKey - Proxy private key in PEM format</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag"><a class="anchor" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag"></a><a class="link" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag">Method: bootstrapProxy</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Deploy a proxy container on given salt minion. Use the given registry for the images.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  hostId - The ID of the target minion</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentFqdn - The FQDN of the server the proxy uses</p>
+</li>
+<li>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache - The maximum memory cache size</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - The email of proxy admin</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - CA certificate in PEM format</p>
+</li>
+<li>
+<p><span class="array">string array</span>  intermediateCAs - A list of intermediate CAs in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyCert - Proxy certificate in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyKey - Proxy private key in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryBaseURL - Image registry (e.g. <a href="https://registry.opensuse.org/uyuni/" class="bare">https://registry.opensuse.org/uyuni/</a>)</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryBaseTag - Image tag (e.g. latest)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag"><a class="anchor" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag"></a><a class="link" href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag">Method: bootstrapProxy</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Deploy a proxy container on given salt minion. Allows individual registry for each image.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  hostId - The ID of the target minion</p>
+</li>
+<li>
+<p><span class="string">string</span>  parentFqdn - The FQDN of the server the proxy uses</p>
+</li>
+<li>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache - The maximum memory cache size</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - The email of proxy admin</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - CA certificate in PEM format</p>
+</li>
+<li>
+<p><span class="array">string array</span>  intermediateCAs - A list of intermediate CAs in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyCert - Proxy certificate in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyKey - Proxy private key in PEM format</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryHttpdURL - Httpd image registry</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryHttpdTag - Httpd image tag</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySaltbrokerURL - Salt broker image registry</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySaltbrokerTag - Salt broker image tag</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySquidURL - Squid image registry</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySquidTag - Squid image tag</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySshURL - Ssh image registry</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrySshTag - Ssh image tag</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryTftpdURL - Tftpd image registry</p>
+</li>
+<li>
+<p><span class="string">string</span>  registryTftpdTag - Tftpd image tag</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey"><a class="anchor" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey"></a><a class="link" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey">Method: containerConfig</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -428,31 +707,31 @@ registered.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  proxyName</p>
+<p><span class="string">string</span>  proxyName - The FQDN of the proxy</p>
 </li>
 <li>
-<p><span class="int">int</span>  proxyPort</p>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
 </li>
 <li>
-<p><span class="string">string</span>  server</p>
+<p><span class="string">string</span>  server - The server FQDN the proxy will connect to</p>
 </li>
 <li>
-<p><span class="int">int</span>  maxCache</p>
+<p><span class="int">int</span>  maxCache - Max cache size in MB</p>
 </li>
 <li>
-<p><span class="string">string</span>  email</p>
+<p><span class="string">string</span>  email - The proxy admin email</p>
 </li>
 <li>
-<p><span class="string">string</span>  rootCA</p>
+<p><span class="string">string</span>  rootCA - The root CA used to sign the SSL certificate in PEM format</p>
 </li>
 <li>
 <p><span class="array">string array</span>  intermediateCAs - intermediate CAs used to sign the SSL certificate in PEM format</p>
 </li>
 <li>
-<p><span class="string">string</span>  proxyCrt</p>
+<p><span class="string">string</span>  proxyCrt - proxy CRT content in PEM format</p>
 </li>
 <li>
-<p><span class="string">string</span>  proxyKey</p>
+<p><span class="string">string</span>  proxyKey - proxy SSL private key in PEM format</p>
 </li>
 </ul>
 </div>
@@ -489,49 +768,49 @@ registered.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  proxyName</p>
+<p><span class="string">string</span>  proxyName - The FQDN of the proxy</p>
 </li>
 <li>
-<p><span class="int">int</span>  proxyPort</p>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
 </li>
 <li>
-<p><span class="string">string</span>  server</p>
+<p><span class="string">string</span>  server - The server FQDN the proxy will connect to</p>
 </li>
 <li>
-<p><span class="int">int</span>  maxCache</p>
+<p><span class="int">int</span>  maxCache - Max cache size in MB</p>
 </li>
 <li>
-<p><span class="string">string</span>  email</p>
+<p><span class="string">string</span>  email - The proxy admin email</p>
 </li>
 <li>
-<p><span class="string">string</span>  caCrt</p>
+<p><span class="string">string</span>  caCrt - CA certificate to use to sign the SSL certificate in PEM format</p>
 </li>
 <li>
-<p><span class="string">string</span>  caKey</p>
+<p><span class="string">string</span>  caKey - CA private key to use to sign the SSL certificate in PEM format</p>
 </li>
 <li>
-<p><span class="string">string</span>  caPassword</p>
+<p><span class="string">string</span>  caPassword - The CA private key password</p>
 </li>
 <li>
 <p><span class="array">string array</span>  cnames - Proxy alternate cnames to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  country</p>
+<p><span class="string">string</span>  country - The 2-letter country code to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  state</p>
+<p><span class="string">string</span>  state - The state to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  city</p>
+<p><span class="string">string</span>  city - The city to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  org</p>
+<p><span class="string">string</span>  org - The organization to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  orgUnit</p>
+<p><span class="string">string</span>  orgUnit - The organization unit to set in the SSL certificate</p>
 </li>
 <li>
-<p><span class="string">string</span>  sslEmail</p>
+<p><span class="string">string</span>  sslEmail - The email to set in the SSL certificate</p>
 </li>
 </ul>
 </div>
@@ -770,7 +1049,7 @@ successfully checked in</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="int">int</span>  proxyId</p>
+<p><span class="int">int</span>  proxyId - the Proxy ID</p>
 </li>
 </ul>
 </div>
@@ -796,6 +1075,7 @@ successfully checked in</p>
 </div>
 <script src="../../_/js/site.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
 <script src="../../_/js/vendor/lunr.js"></script>
 <script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
 <script async src="../../search-index.js"></script>

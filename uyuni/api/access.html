@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>system.provisioning.powermanagement
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/system.provisioning.powermanagement.html">
-    <link rel="prev" href="system.monitoring.html">
-    <link rel="next" href="system.provisioning.snapshot.html">
+<title>access
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/access.html">
+    <link rel="prev" href="faqs.html">
+    <link rel="next" href="actionchain.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -116,7 +116,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="faqs.html">FAQ</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="access.html">access</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -299,7 +299,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -357,60 +357,51 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a></li>
+    <li><a href="access.html">access</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/system.provisioning.powermanagement.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/access.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">system.provisioning.powermanagement</h1>
+<h1 class="page">access</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid">getDetails</a></p>
+<p><a href="#apidoc-access-createRole-loggedInUser-label-description-permissionsFrom">createRole</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name">getDetails</a></p>
+<p><a href="#apidoc-access-createRole-loggedInUser-label-description">createRole</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid">getStatus</a></p>
+<p><a href="#apidoc-access-deleteRole-loggedInUser-label">deleteRole</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name">getStatus</a></p>
+<p><a href="#apidoc-access-grantAccess-loggedInUser-label-namespaces">grantAccess</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser">listTypes</a></p>
+<p><a href="#apidoc-access-grantAccess-loggedInUser-label-namespaces-modes">grantAccess</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid">powerOff</a></p>
+<p><a href="#apidoc-access-listNamespaces-loggedInUser">listNamespaces</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name">powerOff</a></p>
+<p><a href="#apidoc-access-listPermissions-loggedInUser-label">listPermissions</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid">powerOn</a></p>
+<p><a href="#apidoc-access-listRoles-loggedInUser">listRoles</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name">powerOn</a></p>
+<p><a href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces">revokeAccess</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid">reboot</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name">reboot</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data">setDetails</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data">setDetails</a></p>
+<p><a href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes">revokeAccess</a></p>
 </li>
 </ul>
 </div>
@@ -420,25 +411,243 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to access and modify power management for systems.
- Some functions exist in 2 variants. Either with server id or with a name.
- The function with server id is useful when a system exists with a full profile.
- Everybody allowed to manage that system can execute these functions.
- The variant with name expects a cobbler system name prefix. These functions
- enhance the name by adding the org id of the user to limit access to systems
- from the own organization. Additionally Org Admin permissions are required to
- call these functions.</p>
+<p>Provides methods to manage Role-Based Access Control</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>system.provisioning.powermanagement</p>
+<p>access</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid">Method: getDetails</a></h2>
+<h2 id="apidoc-access-createRole-loggedInUser-label-description-permissionsFrom"><a class="anchor" href="#apidoc-access-createRole-loggedInUser-label-description-permissionsFrom"></a><a class="link" href="#apidoc-access-createRole-loggedInUser-label-description-permissionsFrom">Method: createRole</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new role.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - the unique label of the new role</p>
+</li>
+<li>
+<p><span class="string">string</span>  description - the description of the new role</p>
+</li>
+<li>
+<p><span class="array">string array</span>  permissionsFrom - the list of roles to inherit permissions from</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  access group</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-access-createRole-loggedInUser-label-description"><a class="anchor" href="#apidoc-access-createRole-loggedInUser-label-description"></a><a class="link" href="#apidoc-access-createRole-loggedInUser-label-description">Method: createRole</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new role.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label</p>
+</li>
+<li>
+<p><span class="string">string</span>  description - the description of the new role</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  access group</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-access-deleteRole-loggedInUser-label"><a class="anchor" href="#apidoc-access-deleteRole-loggedInUser-label"></a><a class="link" href="#apidoc-access-deleteRole-loggedInUser-label">Method: deleteRole</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete a role.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-access-grantAccess-loggedInUser-label-namespaces"><a class="anchor" href="#apidoc-access-grantAccess-loggedInUser-label-namespaces"></a><a class="link" href="#apidoc-access-grantAccess-loggedInUser-label-namespaces">Method: grantAccess</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Grant full access to the given namespace for the specified role.
+ Return the expanded list of namespaces granted by the call.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  namespaces - the list of namespaces to grant access to</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-access-grantAccess-loggedInUser-label-namespaces-modes"><a class="anchor" href="#apidoc-access-grantAccess-loggedInUser-label-namespaces-modes"></a><a class="link" href="#apidoc-access-grantAccess-loggedInUser-label-namespaces-modes">Method: grantAccess</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Grant access to the given namespace for the specified role.
+ Returns the expanded list of namespaces granted by the call.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  namespaces - the list of namespaces to grant access to</p>
+</li>
+<li>
+<p><span class="array">string array</span>  modes - the access modes (R for read/view, W for write/modify)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-access-listNamespaces-loggedInUser"><a class="anchor" href="#apidoc-access-listNamespaces-loggedInUser"></a><a class="link" href="#apidoc-access-listNamespaces-loggedInUser">Method: listNamespaces</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -447,7 +656,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Get current power management settings of the given system</p>
+<p>List available namespaces.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -457,9 +666,6 @@
 <li>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -468,23 +674,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  powerManagementParameters</p>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  namespace</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
+<p><span class="string">string</span>  "namespace"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
+<p><span class="string">string</span>  "access_mode"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
+<p><span class="string">string</span>  "description"</p>
 </li>
 </ul>
 </div>
@@ -494,7 +697,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name">Method: getDetails</a></h2>
+<h2 id="apidoc-access-listPermissions-loggedInUser-label"><a class="anchor" href="#apidoc-access-listPermissions-loggedInUser-label"></a><a class="link" href="#apidoc-access-listPermissions-loggedInUser-label">Method: listPermissions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -503,7 +706,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Get current power management settings of the given system</p>
+<p>List permissions granted by a role.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -514,7 +717,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
+<p><span class="string">string</span>  label</p>
 </li>
 </ul>
 </div>
@@ -524,23 +727,20 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  powerManagementParameters</p>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  namespace</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
+<p><span class="string">string</span>  "namespace"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
+<p><span class="string">string</span>  "access_mode"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
+<p><span class="string">string</span>  "description"</p>
 </li>
 </ul>
 </div>
@@ -550,7 +750,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid">Method: getStatus</a></h2>
+<h2 id="apidoc-access-listRoles-loggedInUser"><a class="anchor" href="#apidoc-access-listRoles-loggedInUser"></a><a class="link" href="#apidoc-access-listRoles-loggedInUser">Method: listRoles</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -559,81 +759,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute powermanagement actions</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="boolean">boolean</span>  status - True when power is on, otherwise False</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name">Method: getStatus</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute powermanagement actions</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="boolean">boolean</span>  status - True when power is on, otherwise False</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-listTypes-loggedInUser"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser">Method: listTypes</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return a list of available power management types</p>
+<p>List existing roles.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -651,14 +777,27 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="array">string array</span>  power management types</p>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  access group</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid">Method: powerOff</a></h2>
+<h2 id="apidoc-access-revokeAccess-loggedInUser-label-namespaces"><a class="anchor" href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces"></a><a class="link" href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces">Method: revokeAccess</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -667,7 +806,8 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOff'</p>
+<p>Revoke access to the given namespace for the specified role.
+ Return the expanded list of namespaces revoked by the call.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -678,7 +818,10 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="int">int</span>  sid</p>
+<p><span class="string">string</span>  label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  namespaces - the list of namespaces to revoke access to</p>
 </li>
 </ul>
 </div>
@@ -695,7 +838,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name">Method: powerOff</a></h2>
+<h2 id="apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes"><a class="anchor" href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes"></a><a class="link" href="#apidoc-access-revokeAccess-loggedInUser-label-namespaces-modes">Method: revokeAccess</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -704,7 +847,8 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOff'</p>
+<p>Revoke access to the given namespace for the specified role.
+ Return the expanded list of namespaces revoked by the call.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -715,273 +859,13 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid">Method: powerOn</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute power management action 'powerOn'</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><span class="string">string</span>  label</p>
 </li>
 <li>
-<p><span class="int">int</span>  sid</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name">Method: powerOn</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute power management action 'powerOn'</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><span class="array">string array</span>  namespaces - the list of namespaces to revoke access to</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid">Method: reboot</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute power management action 'Reboot'</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name">Method: reboot</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute power management action 'Reboot'</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data">Method: setDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  data</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data">Method: setDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  data</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
-</li>
-</ul>
-</div>
+<p><span class="array">string array</span>  modes - the access modes (R for read/view, W for write/modify)</p>
 </li>
 </ul>
 </div>
@@ -998,8 +882,8 @@
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="system.monitoring.html">system.monitoring</a></span>
-  <span class="next"><a href="system.provisioning.snapshot.html">system.provisioning.snapshot</a></span>
+  <span class="prev"><a href="faqs.html">FAQ</a></span>
+  <span class="next"><a href="actionchain.html">actionchain</a></span>
 </nav>
 </article>
   </div>

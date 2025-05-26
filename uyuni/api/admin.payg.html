@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>system.provisioning.powermanagement
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/system.provisioning.powermanagement.html">
-    <link rel="prev" href="system.monitoring.html">
-    <link rel="next" href="system.provisioning.snapshot.html">
+<title>admin.payg
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/admin.payg.html">
+    <link rel="prev" href="admin.monitoring.html">
+    <link rel="next" href="ansible.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -134,7 +134,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="admin.payg.html">admin.payg</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -299,7 +299,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -357,60 +357,39 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a></li>
+    <li><a href="admin.payg.html">admin.payg</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/system.provisioning.powermanagement.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/admin.payg.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">system.provisioning.powermanagement</h1>
+<h1 class="page">admin.payg</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid">getDetails</a></p>
+<p><a href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name">getDetails</a></p>
+<p><a href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword">create</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid">getStatus</a></p>
+<p><a href="#apidoc-admin_payg-delete-loggedInUser-host">delete</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name">getStatus</a></p>
+<p><a href="#apidoc-admin_payg-getDetails-loggedInUser-host">getDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser">listTypes</a></p>
+<p><a href="#apidoc-admin_payg-list-loggedInUser">list</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid">powerOff</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name">powerOff</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid">powerOn</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name">powerOn</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid">reboot</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name">reboot</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data">setDetails</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data">setDetails</a></p>
+<p><a href="#apidoc-admin_payg-setDetails-loggedInUser-host-details">setDetails</a></p>
 </li>
 </ul>
 </div>
@@ -420,245 +399,18 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Provides methods to access and modify power management for systems.
- Some functions exist in 2 variants. Either with server id or with a name.
- The function with server id is useful when a system exists with a full profile.
- Everybody allowed to manage that system can execute these functions.
- The variant with name expects a cobbler system name prefix. These functions
- enhance the name by adding the org id of the user to limit access to systems
- from the own organization. Additionally Org Admin permissions are required to
- call these functions.</p>
+<p>Provides methods to access and modify PAYG ssh connection data</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>system.provisioning.powermanagement</p>
+<p>admin.payg</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid">Method: getDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  powerManagementParameters</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name">Method: getDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  powerManagementParameters</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid">Method: getStatus</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute powermanagement actions</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="boolean">boolean</span>  status - True when power is on, otherwise False</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name">Method: getStatus</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Execute powermanagement actions</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="boolean">boolean</span>  status - True when power is on, otherwise False</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-listTypes-loggedInUser"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser">Method: listTypes</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Return a list of available power management types</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">string array</span>  power management types</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid">Method: powerOff</a></h2>
+<h2 id="apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword"><a class="anchor" href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword"></a><a class="link" href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -667,7 +419,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOff'</p>
+<p>Create a new ssh connection data to extract data from</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -678,7 +430,26 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="int">int</span>  sid</p>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+already in use.</p>
+</li>
+<li>
+<p><span class="int">int</span>  port</p>
+</li>
+<li>
+<p><span class="string">string</span>  username</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - private key to use in authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  keyPassword</p>
 </li>
 </ul>
 </div>
@@ -695,7 +466,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name">Method: powerOff</a></h2>
+<h2 id="apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword"><a class="anchor" href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword"></a><a class="link" href="#apidoc-admin_payg-create-loggedInUser-description-host-port-username-password-key-keyPassword-bastionHost-bastionPort-bastionUsername-bastionPassword-bastionKey-bastionKeyPassword">Method: create</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -704,7 +475,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOff'</p>
+<p>Create a new ssh connection data to extract data from</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -715,7 +486,44 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+already in use.</p>
+</li>
+<li>
+<p><span class="int">int</span>  port</p>
+</li>
+<li>
+<p><span class="string">string</span>  username</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - private key to use in authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  keyPassword</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionHost - hostname or IP address to a bastion host</p>
+</li>
+<li>
+<p><span class="int">int</span>  bastionPort</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionUsername</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionPassword</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionKey - private key to use in bastion authentication</p>
+</li>
+<li>
+<p><span class="string">string</span>  bastionKeyPassword</p>
 </li>
 </ul>
 </div>
@@ -732,7 +540,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid">Method: powerOn</a></h2>
+<h2 id="apidoc-admin_payg-delete-loggedInUser-host"><a class="anchor" href="#apidoc-admin_payg-delete-loggedInUser-host"></a><a class="link" href="#apidoc-admin_payg-delete-loggedInUser-host">Method: delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -741,7 +549,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOn'</p>
+<p>Returns a list of ssh connection data registered.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -752,7 +560,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="int">int</span>  sid</p>
+<p><span class="string">string</span>  host - hostname or IP address of the instance</p>
 </li>
 </ul>
 </div>
@@ -769,7 +577,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name">Method: powerOn</a></h2>
+<h2 id="apidoc-admin_payg-getDetails-loggedInUser-host"><a class="anchor" href="#apidoc-admin_payg-getDetails-loggedInUser-host"></a><a class="link" href="#apidoc-admin_payg-getDetails-loggedInUser-host">Method: getDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -778,7 +586,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'powerOn'</p>
+<p>Returns a list of ssh connection data registered.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -789,7 +597,8 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
+<p><span class="string">string</span>  host - hostname or IP address of the instance, will fail if
+host doesn&#8217;t exist.</p>
 </li>
 </ul>
 </div>
@@ -799,14 +608,39 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p>* <span class="struct">struct</span>  SSH data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bastion_port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_username"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid">Method: reboot</a></h2>
+<h2 id="apidoc-admin_payg-list-loggedInUser"><a class="anchor" href="#apidoc-admin_payg-list-loggedInUser"></a><a class="link" href="#apidoc-admin_payg-list-loggedInUser">Method: list</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -815,7 +649,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'Reboot'</p>
+<p>Returns a list of ssh connection data registered.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -824,9 +658,6 @@
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
 </li>
 </ul>
 </div>
@@ -836,14 +667,42 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  SSH data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "username"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_hostname"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bastion_port"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "bastion_username"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name">Method: reboot</a></h2>
+<h2 id="apidoc-admin_payg-setDetails-loggedInUser-host-details"><a class="anchor" href="#apidoc-admin_payg-setDetails-loggedInUser-host-details"></a><a class="link" href="#apidoc-admin_payg-setDetails-loggedInUser-host-details">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -852,7 +711,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Execute power management action 'Reboot'</p>
+<p>Updates the details of a ssh connection data</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -863,122 +722,48 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
+<p><span class="string">string</span>  host - hostname or IP address to the instance, will fail if
+host doesn&#8217;t exist.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
+<li>
+<p><span class="struct">struct</span>  details - user details</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data">Method: setDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><span class="string">string</span>  "description"</p>
 </li>
 <li>
-<p><span class="int">int</span>  sid</p>
+<p><span class="int">int</span>  "port"</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  data</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
+<p><span class="string">string</span>  "username"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
+<p><span class="string">string</span>  "password"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
+<p><span class="string">string</span>  "key"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
+<p><span class="string">string</span>  "key_password"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data"><a class="anchor" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data"></a><a class="link" href="#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data">Method: setDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get current power management settings of the given system</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
+<p><span class="string">string</span>  "bastion_host"</p>
 </li>
 <li>
-<p><span class="string">string</span>  name</p>
+<p><span class="int">int</span>  "bastion_port"</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  data</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "powerType" - Power management type</p>
+<p><span class="string">string</span>  "bastion_username"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerAddress" - IP address for power management</p>
+<p><span class="string">string</span>  "bastion_password"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerUsername" - The Username</p>
+<p><span class="string">string</span>  "bastion_key"</p>
 </li>
 <li>
-<p><span class="string">string</span>  "powerPassword" - The Password</p>
-</li>
-<li>
-<p><span class="string">string</span>  "powerId" - Identifier</p>
+<p><span class="string">string</span>  "bastion_key_password"</p>
 </li>
 </ul>
 </div>
@@ -998,8 +783,8 @@
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="system.monitoring.html">system.monitoring</a></span>
-  <span class="next"><a href="system.provisioning.snapshot.html">system.provisioning.snapshot</a></span>
+  <span class="prev"><a href="admin.monitoring.html">admin.monitoring</a></span>
+  <span class="next"><a href="ansible.html">ansible</a></span>
 </nav>
 </article>
   </div>

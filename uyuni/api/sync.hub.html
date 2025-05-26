@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>user
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/user.html">
-    <link rel="prev" href="systemgroup.html">
-    <link rel="next" href="user.external.html">
+<title>sync.hub
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/sync.hub.html">
+    <link rel="prev" href="sync.slave.html">
+    <link rel="next" href="system.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -281,7 +281,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="sync.hub.html">sync.hub</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -314,7 +314,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="systemgroup.html">systemgroup</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="user.html">user</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -357,105 +357,87 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="user.html">user</a></li>
+    <li><a href="sync.hub.html">sync.hub</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/user.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/sync.hub.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">user</h1>
+<h1 class="page">sync.hub</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault">addAssignedSystemGroup</a></p>
+<p><a href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">addPeripheralChannelsToSync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">addAssignedSystemGroups</a></p>
+<p><a href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel">addPeripheralChannelsToSync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name">addDefaultSystemGroup</a></p>
+<p><a href="#apidoc-sync_hub-deregister-loggedInUser-fqdn">deregister</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames">addDefaultSystemGroups</a></p>
+<p><a href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal">deregister</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-addRole-loggedInUser-login-role">addRole</a></p>
+<p><a href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn">generateAccessToken</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email">create</a></p>
+<p><a href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn">getAllPeripheralChannels</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth">create</a></p>
+<p><a href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn">getAllPeripheralOrgs</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-delete-loggedInUser-login">delete</a></p>
+<p><a href="#apidoc-sync_hub-getManagerInfo-loggedInUser">getManagerInfo</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-disable-loggedInUser-login">disable</a></p>
+<p><a href="#apidoc-sync_hub-isISSPeripheral-loggedInUser">isISSPeripheral</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-enable-loggedInUser-login">enable</a></p>
+<p><a href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn">listPeripheralChannelsToSync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser">getCreateDefaultSystemGroup</a></p>
+<p><a href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">migrateFromISSv1</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-getDetails-loggedInUser-login">getDetails</a></p>
+<p><a href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData">migrateFromISSv2</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listAssignableRoles-loggedInUser">listAssignableRoles</a></p>
+<p><a href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn">regenerateSCCCredentials</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login">listAssignedSystemGroups</a></p>
+<p><a href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password">registerPeripheral</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login">listDefaultSystemGroups</a></p>
+<p><a href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA">registerPeripheral</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listPermissions-loggedInUser-login">listPermissions</a></p>
+<p><a href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token">registerPeripheralWithToken</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listRoles-loggedInUser-login">listRoles</a></p>
+<p><a href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA">registerPeripheralWithToken</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-listUsers-loggedInUser">listUsers</a></p>
+<p><a href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">removePeripheralChannelsToSync</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault">removeAssignedSystemGroup</a></p>
+<p><a href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn">replaceTokens</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">removeAssignedSystemGroups</a></p>
+<p><a href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data">setDetails</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName">removeDefaultSystemGroup</a></p>
+<p><a href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token">storeAccessToken</a></p>
 </li>
 <li>
-<p><a href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames">removeDefaultSystemGroups</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-removeRole-loggedInUser-login-role">removeRole</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup">setCreateDefaultSystemGroup</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-setDetails-loggedInUser-login-details">setDetails</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-setErrataNotifications-loggedInUser-login-value">setErrataNotifications</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly">setReadOnly</a></p>
-</li>
-<li>
-<p><a href="#apidoc-user-usePamAuthentication-loggedInUser-login-val">usePamAuthentication</a></p>
+<p><a href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn">syncPeripheralChannels</a></p>
 </li>
 </ul>
 </div>
@@ -465,19 +447,18 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>User namespace contains methods to access common user functions
- available from the web user interface.</p>
+<p>Contains methods to set up and manage Hub Inter-Server synchronization</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>user</p>
+<p>sync.hub</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault"><a class="anchor" href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault"></a><a class="link" href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault">Method: addAssignedSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"><a class="anchor" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"></a><a class="link" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">Method: addPeripheralChannelsToSync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -486,7 +467,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Add system group to user&#8217;s list of assigned system groups.</p>
+<p>Add peripheral channels to synchronize on a peripheral server</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -497,14 +478,17 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
 </li>
 <li>
-<p><span class="string">string</span>  sgName</p>
-</li>
+<p><span class="array">array</span>  " channelLabels "</p>
+<div class="ulist">
+<ul>
 <li>
-<p><span class="boolean">boolean</span>  setDefault - Should system group also be
-added to user&#8217;s list of default system groups.</p>
+<p><span class="string">string</span>  "label" - The channel label</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -521,7 +505,7 @@ added to user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"><a class="anchor" href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"></a><a class="link" href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">Method: addAssignedSystemGroups</a></h2>
+<h2 id="apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel"><a class="anchor" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel"></a><a class="link" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel">Method: addPeripheralChannelsToSync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -530,7 +514,7 @@ added to user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Add system groups to user&#8217;s list of assigned system groups.</p>
+<p>Add peripheral channels to synchronize on a peripheral server, forcing the peripheral org in custom channels</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -541,14 +525,20 @@ added to user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 <li>
-<p><span class="array">string array</span>  sgNames - server group names</p>
+<p><span class="array">array</span>  "channelLabels"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - The channel label</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  setDefault - Should system groups also be
-added to user&#8217;s list of default system groups.</p>
+<p><span class="int">int</span>  "peripheralOrgIdWhenCustomChannel" - ID of the peripheral Org to be set in custom channels</p>
 </li>
 </ul>
 </div>
@@ -565,7 +555,7 @@ added to user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addDefaultSystemGroup-loggedInUser-login-name"><a class="anchor" href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name"></a><a class="link" href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name">Method: addDefaultSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-deregister-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn">Method: deregister</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -574,7 +564,7 @@ added to user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Add system group to user&#8217;s list of default system groups.</p>
+<p>De-register the server locally identified by the fqdn.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -585,10 +575,7 @@ added to user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-<li>
-<p><span class="string">string</span>  name - server group name</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to de-register</p>
 </li>
 </ul>
 </div>
@@ -605,7 +592,7 @@ added to user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames"><a class="anchor" href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames"></a><a class="link" href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames">Method: addDefaultSystemGroups</a></h2>
+<h2 id="apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal"><a class="anchor" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal"></a><a class="link" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal">Method: deregister</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -614,7 +601,7 @@ added to user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Add system groups to user&#8217;s list of default system groups.</p>
+<p>De-register the server identified by the fqdn.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -625,10 +612,11 @@ added to user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to de-register</p>
 </li>
 <li>
-<p><span class="array">string array</span>  sgNames - server group names</p>
+<p><span class="boolean">boolean</span>  onlyLocal -  true if the de - registration has to be performed only this
+server, false to instead fully deregister on both sides</p>
 </li>
 </ul>
 </div>
@@ -645,7 +633,7 @@ added to user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-addRole-loggedInUser-login-role"><a class="anchor" href="#apidoc-user-addRole-loggedInUser-login-role"></a><a class="link" href="#apidoc-user-addRole-loggedInUser-login-role">Method: addRole</a></h2>
+<h2 id="apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn">Method: generateAccessToken</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -654,7 +642,7 @@ added to user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Adds a role to a user.</p>
+<p>Generate a new access token for ISS for accessing this system</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -665,10 +653,7 @@ added to user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - user login name to update</p>
-</li>
-<li>
-<p><span class="string">string</span>  role - the role label to add</p>
+<p><span class="string">string</span>  fqdn - FQDN of the peripheral/hub that will be using this access token</p>
 </li>
 </ul>
 </div>
@@ -678,229 +663,14 @@ added to user&#8217;s list of default system groups.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+<p><span class="string">string</span>  The serialized form of the token</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-create-loggedInUser-login-password-firstName-lastName-email"><a class="anchor" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email"></a><a class="link" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email">Method: create</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Create a new user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - desired login name, will fail if
-already in use.</p>
-</li>
-<li>
-<p><span class="string">string</span>  password</p>
-</li>
-<li>
-<p><span class="string">string</span>  firstName</p>
-</li>
-<li>
-<p><span class="string">string</span>  lastName</p>
-</li>
-<li>
-<p><span class="string">string</span>  email - User&#8217;s e-mail address.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth"><a class="anchor" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth"></a><a class="link" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth">Method: create</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Create a new user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - desired login name,
-will fail if already in use.</p>
-</li>
-<li>
-<p><span class="string">string</span>  password</p>
-</li>
-<li>
-<p><span class="string">string</span>  firstName</p>
-</li>
-<li>
-<p><span class="string">string</span>  lastName</p>
-</li>
-<li>
-<p><span class="string">string</span>  email - User&#8217;s e-mail address.</p>
-</li>
-<li>
-<p><span class="int">int</span>  usePamAuth - 1 if you wish to use PAM
-authentication for this user, 0 otherwise.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-delete-loggedInUser-login"><a class="anchor" href="#apidoc-user-delete-loggedInUser-login"></a><a class="link" href="#apidoc-user-delete-loggedInUser-login">Method: delete</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Delete a user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User login name to delete.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-disable-loggedInUser-login"><a class="anchor" href="#apidoc-user-disable-loggedInUser-login"></a><a class="link" href="#apidoc-user-disable-loggedInUser-login">Method: disable</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Disable a user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User login name to disable.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-enable-loggedInUser-login"><a class="anchor" href="#apidoc-user-enable-loggedInUser-login"></a><a class="link" href="#apidoc-user-enable-loggedInUser-login">Method: enable</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Enable a user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User login name to enable.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-getCreateDefaultSystemGroup-loggedInUser"><a class="anchor" href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser"></a><a class="link" href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser">Method: getCreateDefaultSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn">Method: getAllPeripheralChannels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>GET</code></p>
@@ -909,381 +679,7 @@ authentication for this user, 0 otherwise.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Returns the current value of the CreateDefaultSystemGroup setting.
- If True this will cause there to be a system group created (with the same name
- as the user) every time a new user is created, with the user automatically given
- permission to that system group and the system group being set as the default
- group for the user (so every time the user registers a system it will be
- placed in that system group by default). This can be useful if different
- users will administer different groups of servers in the same organization.
- Can only be called by an org_admin.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-getDetails-loggedInUser-login"><a class="anchor" href="#apidoc-user-getDetails-loggedInUser-login"></a><a class="link" href="#apidoc-user-getDetails-loggedInUser-login">Method: getDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns the details about a given user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  user details</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
-</li>
-<li>
-<p><span class="string">string</span>  "first_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "last_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "email"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "org_id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "org_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "prefix"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "last_login_date"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "created_date"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled" - true if user is enabled,
-false if the user is disabled</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "use_pam" - true if user is configured to use
-PAM authentication</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "read_only" - true if user is readonly</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "errata_notification" - true if errata e-mail notification
-is enabled for the user</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listAssignableRoles-loggedInUser"><a class="anchor" href="#apidoc-user-listAssignableRoles-loggedInUser"></a><a class="link" href="#apidoc-user-listAssignableRoles-loggedInUser">Method: listAssignableRoles</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns a list of user roles that this user can assign to others.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">string array</span>  (role label)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listAssignedSystemGroups-loggedInUser-login"><a class="anchor" href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login"></a><a class="link" href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login">Method: listAssignedSystemGroups</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns the system groups that a user can administer.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  system group</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "system_count"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listDefaultSystemGroups-loggedInUser-login"><a class="anchor" href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login"></a><a class="link" href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login">Method: listDefaultSystemGroups</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns a user&#8217;s list of default system groups.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="struct">struct</span>  system group</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "system_count"</p>
-</li>
-<li>
-<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listPermissions-loggedInUser-login"><a class="anchor" href="#apidoc-user-listPermissions-loggedInUser-login"></a><a class="link" href="#apidoc-user-listPermissions-loggedInUser-login">Method: listPermissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Lists the effective RBAC permissions of a user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - user&#8217;s login name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  namespace</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "namespace"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "access_mode"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "description"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listRoles-loggedInUser-login"><a class="anchor" href="#apidoc-user-listRoles-loggedInUser-login"></a><a class="link" href="#apidoc-user-listRoles-loggedInUser-login">Method: listRoles</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns a list of the user&#8217;s roles.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - user&#8217;s login name</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">string array</span>  the role label</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-listUsers-loggedInUser"><a class="anchor" href="#apidoc-user-listUsers-loggedInUser"></a><a class="link" href="#apidoc-user-listUsers-loggedInUser">Method: listUsers</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Returns a list of users in your organization.</p>
+<p>Remotely collect data about peripheral channels</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1304,21 +700,26 @@ is enabled for the user</p>
 <p><span class="array">array</span> :</p>
 </li>
 <li>
-<p><span class="struct">struct</span>  user</p>
+<p><span class="struct">struct</span>   channel info</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  "id"</p>
+<p><span class="long">long</span>  "id" - the id of the channel</p>
 </li>
 <li>
-<p><span class="string">string</span>  "login"</p>
+<p><span class="string">string</span>  "name" - the name of the channel</p>
 </li>
 <li>
-<p><span class="string">string</span>  "login_uc" - upper case version of the login</p>
+<p><span class="boolean">boolean</span>  "label" - the label of the channel</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "enabled" - true if user is enabled,
-false if the user is disabled</p>
+<p><span class="string">string</span>  "summary" - the summary of the channel</p>
+</li>
+<li>
+<p><span class="long">long</span>  "org_id" - the organization id of the channel</p>
+</li>
+<li>
+<p><span class="long">long</span>  "parent_channel_id" - the parent channel ID of the channel</p>
 </li>
 </ul>
 </div>
@@ -1328,7 +729,107 @@ false if the user is disabled</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault">Method: removeAssignedSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn">Method: getAllPeripheralOrgs</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remotely collect data about peripheral organizations</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>   org info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="long">long</span>  "org_id" - org identifier</p>
+</li>
+<li>
+<p><span class="string">string</span>  "org_name" - org name</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-getManagerInfo-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-getManagerInfo-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-getManagerInfo-loggedInUser">Method: getManagerInfo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get manager info.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  manager info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "version" - version</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "report_db" - true if there is a report database</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_db_name" - name of the report database</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_db_host" - hostname of the report database</p>
+</li>
+<li>
+<p><span class="int">int</span>  "report_db_port" - port of the report database</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-isISSPeripheral-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-isISSPeripheral-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-isISSPeripheral-loggedInUser">Method: isISSPeripheral</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1337,7 +838,41 @@ false if the user is disabled</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove system group from the user&#8217;s list of assigned system groups.</p>
+<p>Check if this server is configured as peripheral server and read data from a Hub</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="boolean">boolean</span>  peripheral - True if this is an ISS peripheral, false otherwise</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn">Method: listPeripheralChannelsToSync</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists current peripheral channel to synchronize on a peripheral server</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1348,14 +883,221 @@ false if the user is disabled</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - Label of a peripheral channel to sync</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"><a class="anchor" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"></a><a class="link" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">Method: migrateFromISSv1</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Migrate the existing ISSv1 slaves to Hub Online Synchronization peripherals.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  sgName - server group name</p>
+<p><span class="array">array</span>  migration_data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  slave_migration_data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The fully qualified domain name of the remote slave server.</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  setDefault - Should system group also
-be removed from the user&#8217;s list of default system groups.</p>
+<p><span class="string">string</span>  "token" - The token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca needed to establish a secure connection to the
+remote server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span>  "messages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  message</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "severity" - the severity of the message</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message" - the message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="result_code">result_code</span>  "success"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData"><a class="anchor" href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData"></a><a class="link" href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData">Method: migrateFromISSv2</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Migrate the existing ISSv2 peripherals to Hub Online Synchronization peripherals.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span>  migration_data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  peripheral_migration_data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The fully qualified domain name of the remote peripheral server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "token" - The token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca needed to establish a secure connection to the
+remote server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span>  "messages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  message</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "severity" - the severity of the message</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message" - the message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="result_code">result_code</span>  "success"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn">Method: regenerateSCCCredentials</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Regenerate the username and the password for an existing peripheral.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
 </li>
 </ul>
 </div>
@@ -1372,7 +1114,7 @@ be removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">Method: removeAssignedSystemGroups</a></h2>
+<h2 id="apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password"><a class="anchor" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password"></a><a class="link" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password">Method: registerPeripheral</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1381,7 +1123,7 @@ be removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove system groups from a user&#8217;s list of assigned system groups.</p>
+<p>Registers automatically a remote server with the specified ISS role.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1392,14 +1134,15 @@ be removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
 </li>
 <li>
-<p><span class="array">string array</span>  sgNames - server group names</p>
+<p><span class="string">string</span>  username - the name of the user, needed to access the remote server
+It must have the sat admin role</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  setDefault - Should system groups also be
-removed from the user&#8217;s list of default system groups.</p>
+<p><span class="string">string</span>  password - the password of the user, needed to access the remote
+server</p>
 </li>
 </ul>
 </div>
@@ -1416,7 +1159,7 @@ removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName">Method: removeDefaultSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA"><a class="anchor" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA"></a><a class="link" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA">Method: registerPeripheral</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1425,7 +1168,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove a system group from user&#8217;s list of default system groups.</p>
+<p>Registers automatically a remote server with the specified ISS role.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1436,10 +1179,19 @@ removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
 </li>
 <li>
-<p><span class="string">string</span>  sgName - server group name</p>
+<p><span class="string">string</span>  username - the name of the user, needed to access the remote server
+It must have the sat admin role</p>
+</li>
+<li>
+<p><span class="string">string</span>  password - the password of the user, needed to access the remote
+server</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - the root CA certificate, in case it&#8217;s needed to establish a secure
+connection</p>
 </li>
 </ul>
 </div>
@@ -1456,7 +1208,7 @@ removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames">Method: removeDefaultSystemGroups</a></h2>
+<h2 id="apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token"><a class="anchor" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token"></a><a class="link" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token">Method: registerPeripheralWithToken</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1465,7 +1217,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove system groups from a user&#8217;s list of default system groups.</p>
+<p>Registers a remote server with the specified ISS role using an existing specified access token.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1476,10 +1228,10 @@ removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
 </li>
 <li>
-<p><span class="array">string array</span>  sgNames - server group names</p>
+<p><span class="string">string</span>  token - the token used to authenticate on the remote server.</p>
 </li>
 </ul>
 </div>
@@ -1496,7 +1248,7 @@ removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-removeRole-loggedInUser-login-role"><a class="anchor" href="#apidoc-user-removeRole-loggedInUser-login-role"></a><a class="link" href="#apidoc-user-removeRole-loggedInUser-login-role">Method: removeRole</a></h2>
+<h2 id="apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA"><a class="anchor" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA"></a><a class="link" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA">Method: registerPeripheralWithToken</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1505,7 +1257,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Remove a role from a user.</p>
+<p>Registers a remote server with the specified ISS role using an existing specified access token.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1516,10 +1268,14 @@ removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - user login name to update</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
 </li>
 <li>
-<p><span class="string">string</span>  role - the role label to remove</p>
+<p><span class="string">string</span>  token - the token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - the root CA certificate, in case it&#8217;s needed to establish a secure
+connection</p>
 </li>
 </ul>
 </div>
@@ -1536,7 +1292,7 @@ removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup"><a class="anchor" href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup"></a><a class="link" href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup">Method: setCreateDefaultSystemGroup</a></h2>
+<h2 id="apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"><a class="anchor" href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"></a><a class="link" href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">Method: removePeripheralChannelsToSync</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1545,14 +1301,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Sets the value of the createDefaultSystemGroup setting.
- If True this will cause there to be a system group created (with the same name
- as the user) every time a new user is created, with the user automatically given
- permission to that system group and the system group being set as the default
- group for the user (so every time the user registers a system it will be
- placed in that system group by default). This can be useful if different
- users will administer different groups of servers in the same organization.
- Can only be called by an org_admin.</p>
+<p>Remove peripheral channels to synchronize on a peripheral server</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1563,66 +1312,14 @@ removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  createDefaultSystemGroup - true if we should automatically create system groups, false otherwise.</p>
+<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
+<li>
+<p><span class="array">array</span>  " channelLabels "</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-user-setDetails-loggedInUser-login-details"><a class="anchor" href="#apidoc-user-setDetails-loggedInUser-login-details"></a><a class="link" href="#apidoc-user-setDetails-loggedInUser-login-details">Method: setDetails</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Updates the details of a user.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  details</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
-</li>
-<li>
-<p><span class="string">string</span>  "first_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "last_name"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "email"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "prefix"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "password"</p>
+<p><span class="string">string</span>  "label" - The channel label</p>
 </li>
 </ul>
 </div>
@@ -1642,7 +1339,7 @@ removed from the user&#8217;s list of default system groups.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setErrataNotifications-loggedInUser-login-value"><a class="anchor" href="#apidoc-user-setErrataNotifications-loggedInUser-login-value"></a><a class="link" href="#apidoc-user-setErrataNotifications-loggedInUser-login-value">Method: setErrataNotifications</a></h2>
+<h2 id="apidoc-sync_hub-replaceTokens-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn">Method: replaceTokens</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1651,7 +1348,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Enables/disables errata mail notifications for a specific user.</p>
+<p>Replace the auth tokens for connections between this hub and the given peripheral server</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1662,11 +1359,7 @@ removed from the user&#8217;s list of default system groups.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  value - True for enabling
-errata notifications, False for disabling</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote peripheral server to replace the tokens</p>
 </li>
 </ul>
 </div>
@@ -1683,7 +1376,7 @@ errata notifications, False for disabling</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-setReadOnly-loggedInUser-login-readOnly"><a class="anchor" href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly"></a><a class="link" href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly">Method: setReadOnly</a></h2>
+<h2 id="apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data"><a class="anchor" href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data"></a><a class="link" href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data">Method: setDetails</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1692,8 +1385,8 @@ errata notifications, False for disabling</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Sets whether the target user should have only read-only API access or
- standard full scale access.</p>
+<p>Set server details. All arguments are optional and will only be modified
+ if included in the struct.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1704,11 +1397,23 @@ errata notifications, False for disabling</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - The FQDN of Hub or Peripheral server to lookup details for.</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  readOnly - Sets whether the target user should
-have only read-only API access or standard full scale access.</p>
+<p><span class="string">string</span>  role - The role which should be updated. Either 'HUB' or 'PERIPHERAL'.</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key" - The root gpg key - only for role HUB</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1725,7 +1430,7 @@ have only read-only API access or standard full scale access.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-user-usePamAuthentication-loggedInUser-login-val"><a class="anchor" href="#apidoc-user-usePamAuthentication-loggedInUser-login-val"></a><a class="link" href="#apidoc-user-usePamAuthentication-loggedInUser-login-val">Method: usePamAuthentication</a></h2>
+<h2 id="apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token"><a class="anchor" href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token"></a><a class="link" href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token">Method: storeAccessToken</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -1734,8 +1439,7 @@ have only read-only API access or standard full scale access.</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Toggles whether or not a user uses PAM authentication or
- basic #product() authentication.</p>
+<p>Generate a new access token for ISS for accessing this system</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -1746,17 +1450,54 @@ have only read-only API access or standard full scale access.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+<p><span class="string">string</span>  fqdn - the FQDN of the peripheral/hub that generated this access token</p>
 </li>
 <li>
-<p><span class="int">int</span>  val</p>
+<p><span class="string">string</span>  token - the access token</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>1 to enable PAM authentication</p>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn">Method: syncPeripheralChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Synchronize peripheral channels on a peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>0 to disable.</p>
+<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+</li>
+<li>
+<p><span class="array">array</span>  " channelLabels "</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - The channel label</p>
 </li>
 </ul>
 </div>
@@ -1776,8 +1517,8 @@ have only read-only API access or standard full scale access.</p>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="systemgroup.html">systemgroup</a></span>
-  <span class="next"><a href="user.external.html">user.external</a></span>
+  <span class="prev"><a href="sync.slave.html">sync.slave</a></span>
+  <span class="next"><a href="system.html">system</a></span>
 </nav>
 </article>
   </div>
