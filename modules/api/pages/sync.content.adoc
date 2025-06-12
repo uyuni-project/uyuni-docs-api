@@ -12,6 +12,7 @@
 * <<apidoc-sync_content-listCredentials-loggedInUser,listCredentials>>
 * <<apidoc-sync_content-listProducts-loggedInUser,listProducts>>
 * <<apidoc-sync_content-synchronizeChannelFamilies-loggedInUser,synchronizeChannelFamilies>>
+* <<apidoc-sync_content-synchronizeChannels-loggedInUser-mirrorUrl,synchronizeChannels>>
 * <<apidoc-sync_content-synchronizeProducts-loggedInUser,synchronizeProducts>>
 * <<apidoc-sync_content-synchronizeRepositories-loggedInUser-mirrorUrl,synchronizeRepositories>>
 * <<apidoc-sync_content-synchronizeSubscriptions-loggedInUser,synchronizeSubscriptions>>
@@ -297,6 +298,33 @@ Synchronize channel families between the Customer Center
 Parameters:
 
 * [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_content-synchronizeChannels-loggedInUser-mirrorUrl]
+== Method: synchronizeChannels
+
+HTTP `POST`
+
+Description:
+
+(Deprecated) Synchronize channels between the Customer Center
+             and the #product() database.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  mirrorUrl - Sync from mirror temporarily
  
 
 Returns:
