@@ -5,6 +5,9 @@
 == Available methods
 
 * <<apidoc-proxy-activateProxy-clientcert-version,activateProxy>>
+* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey,bootstrapProxy>>
+* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag,bootstrapProxy>>
+* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag,bootstrapProxy>>
 * <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey,containerConfig>>
 * <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail,containerConfig>>
 * <<apidoc-proxy-createMonitoringScout-clientcert,createMonitoringScout>>
@@ -52,6 +55,156 @@ Returns:
 
 
 
+[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey]
+== Method: bootstrapProxy
+
+HTTP `POST`
+
+Description:
+
+Deploy a proxy container on given salt minion. It expects that the images are installed as RPMs.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  hostId - The ID of the target minion
+ 
+* [.string]#string#  parentFqdn - The FQDN of the server the proxy uses
+ 
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
+ 
+* [.int]#int#  maxCache - The maximum memory cache size
+ 
+* [.string]#string#  email - The email of proxy admin
+ 
+* [.string]#string#  rootCA - CA certificate in PEM format
+ 
+* [.array]#string array#  intermediateCAs - A list of intermediate CAs in PEM format
+ 
+* [.string]#string#  proxyCert - Proxy certificate in PEM format
+ 
+* [.string]#string#  proxyKey - Proxy private key in PEM format
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag]
+== Method: bootstrapProxy
+
+HTTP `POST`
+
+Description:
+
+Deploy a proxy container on given salt minion. Use the given registry for the images.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  hostId - The ID of the target minion
+ 
+* [.string]#string#  parentFqdn - The FQDN of the server the proxy uses
+ 
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
+ 
+* [.int]#int#  maxCache - The maximum memory cache size
+ 
+* [.string]#string#  email - The email of proxy admin
+ 
+* [.string]#string#  rootCA - CA certificate in PEM format
+ 
+* [.array]#string array#  intermediateCAs - A list of intermediate CAs in PEM format
+ 
+* [.string]#string#  proxyCert - Proxy certificate in PEM format
+ 
+* [.string]#string#  proxyKey - Proxy private key in PEM format
+ 
+* [.string]#string#  registryBaseURL - Image registry (e.g. https://registry.opensuse.org/uyuni/)
+ 
+* [.string]#string#  registryBaseTag - Image tag (e.g. latest)
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag]
+== Method: bootstrapProxy
+
+HTTP `POST`
+
+Description:
+
+Deploy a proxy container on given salt minion. Allows individual registry for each image.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  hostId - The ID of the target minion
+ 
+* [.string]#string#  parentFqdn - The FQDN of the server the proxy uses
+ 
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
+ 
+* [.int]#int#  maxCache - The maximum memory cache size
+ 
+* [.string]#string#  email - The email of proxy admin
+ 
+* [.string]#string#  rootCA - CA certificate in PEM format
+ 
+* [.array]#string array#  intermediateCAs - A list of intermediate CAs in PEM format
+ 
+* [.string]#string#  proxyCert - Proxy certificate in PEM format
+ 
+* [.string]#string#  proxyKey - Proxy private key in PEM format
+ 
+* [.string]#string#  registryHttpdURL - Httpd image registry
+ 
+* [.string]#string#  registryHttpdTag - Httpd image tag
+ 
+* [.string]#string#  registrySaltbrokerURL - Salt broker image registry
+ 
+* [.string]#string#  registrySaltbrokerTag - Salt broker image tag
+ 
+* [.string]#string#  registrySquidURL - Squid image registry
+ 
+* [.string]#string#  registrySquidTag - Squid image tag
+ 
+* [.string]#string#  registrySshURL - Ssh image registry
+ 
+* [.string]#string#  registrySshTag - Ssh image tag
+ 
+* [.string]#string#  registryTftpdURL - Tftpd image registry
+ 
+* [.string]#string#  registryTftpdTag - Tftpd image tag
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
 [#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey]
 == Method: containerConfig
 
@@ -68,23 +221,23 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  proxyName
+* [.string]#string#  proxyName - The FQDN of the proxy
  
-* [.int]#int#  proxyPort
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
  
-* [.string]#string#  server
+* [.string]#string#  server - The server FQDN the proxy will connect to
  
-* [.int]#int#  maxCache
+* [.int]#int#  maxCache - Max cache size in MB
  
-* [.string]#string#  email
+* [.string]#string#  email - The proxy admin email
  
-* [.string]#string#  rootCA
+* [.string]#string#  rootCA - The root CA used to sign the SSL certificate in PEM format
  
 * [.array]#string array#  intermediateCAs - intermediate CAs used to sign the SSL certificate in PEM format
  
-* [.string]#string#  proxyCrt
+* [.string]#string#  proxyCrt - proxy CRT content in PEM format
  
-* [.string]#string#  proxyKey
+* [.string]#string#  proxyKey - proxy SSL private key in PEM format
  
 
 Returns:
@@ -110,35 +263,35 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  proxyName
+* [.string]#string#  proxyName - The FQDN of the proxy
  
-* [.int]#int#  proxyPort
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
  
-* [.string]#string#  server
+* [.string]#string#  server - The server FQDN the proxy will connect to
  
-* [.int]#int#  maxCache
+* [.int]#int#  maxCache - Max cache size in MB
  
-* [.string]#string#  email
+* [.string]#string#  email - The proxy admin email
  
-* [.string]#string#  caCrt
+* [.string]#string#  caCrt - CA certificate to use to sign the SSL certificate in PEM format
  
-* [.string]#string#  caKey
+* [.string]#string#  caKey - CA private key to use to sign the SSL certificate in PEM format
  
-* [.string]#string#  caPassword
+* [.string]#string#  caPassword - The CA private key password
  
 * [.array]#string array#  cnames - Proxy alternate cnames to set in the SSL certificate
  
-* [.string]#string#  country
+* [.string]#string#  country - The 2-letter country code to set in the SSL certificate
  
-* [.string]#string#  state
+* [.string]#string#  state - The state to set in the SSL certificate
  
-* [.string]#string#  city
+* [.string]#string#  city - The city to set in the SSL certificate
  
-* [.string]#string#  org
+* [.string]#string#  org - The organization to set in the SSL certificate
  
-* [.string]#string#  orgUnit
+* [.string]#string#  orgUnit - The organization unit to set in the SSL certificate
  
-* [.string]#string#  sslEmail
+* [.string]#string#  sslEmail - The email to set in the SSL certificate
  
 
 Returns:
@@ -297,7 +450,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.int]#int#  proxyId
+* [.int]#int#  proxyId - the Proxy ID
  
 
 Returns:

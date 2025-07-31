@@ -73,7 +73,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the new role
  
 * [.string]#string#  description - the description of the new role
  
@@ -104,7 +104,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the new role
  
 
 Returns:
@@ -122,7 +122,7 @@ HTTP `POST`
 Description:
 
 Grant full access to the given namespace for the specified role.
- Return the expanded list of namespaces granted by the call.
+ Returns the expanded list of namespaces granted by the call.
 
 
 
@@ -131,7 +131,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the role
  
 * [.array]#string array#  namespaces - the list of namespaces to grant access to
  
@@ -160,7 +160,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the role
  
 * [.array]#string array#  namespaces - the list of namespaces to grant access to
  
@@ -219,7 +219,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the role
  
 
 Returns:
@@ -270,7 +270,7 @@ HTTP `POST`
 Description:
 
 Revoke access to the given namespace for the specified role.
- Return the expanded list of namespaces revoked by the call.
+ Returns the expanded list of namespaces revoked by the call.
 
 
 
@@ -279,7 +279,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the role
  
 * [.array]#string array#  namespaces - the list of namespaces to revoke access to
  
@@ -299,7 +299,7 @@ HTTP `POST`
 Description:
 
 Revoke access to the given namespace for the specified role.
- Return the expanded list of namespaces revoked by the call.
+ Returns the expanded list of namespaces revoked by the call.
 
 
 
@@ -308,7 +308,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.string]#string#  label
+* [.string]#string#  label - the unique label of the role
  
 * [.array]#string array#  namespaces - the list of namespaces to revoke access to
  
