@@ -137,6 +137,8 @@
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName,provisionVirtualGuest>>
@@ -201,6 +203,7 @@
 * <<apidoc-system-scheduleScriptRun-loggedInUser-sids-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
 * <<apidoc-system-scheduleScriptRun-loggedInUser-sid-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
 * <<apidoc-system-scheduleScriptRun-loggedInUser-label-sid-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
+* <<apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence,scheduleSupportDataUpload>>
 * <<apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence,scheduleSyncPackagesWithSystem>>
 * <<apidoc-system-searchByName-loggedInUser-regexp,searchByName>>
 * <<apidoc-system-sendOsaPing-loggedInUser-sid,sendOsaPing>>
@@ -5009,6 +5012,76 @@ Returns:
 
 
 
+[#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
 [#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions]
 == Method: provisionSystem
 
@@ -7251,6 +7324,41 @@ Returns:
 
 
 
+[#apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence]
+== Method: scheduleSupportDataUpload
+
+HTTP `POST`
+
+Description:
+
+Schedule an action to get and upload support data from the specified system to SCC.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+* [.string]#string#  caseNumber - The SCC case number
+ 
+* [.string]#string#  parameter - Additional parameter for the tool which collect the data from the system. Can be empty
+ 
+* [.string]#string#  uploadGeo - The location of the upload server [EU, US]
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
 [#apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence]
 == Method: scheduleSyncPackagesWithSystem
 
@@ -7440,9 +7548,11 @@ Parameters:
 * [.boolean]#boolean#  enabled - set the enabled state for Confidential Compute Attestation
  
 * [.string]#string#  environmentType - set the environment type of the system:
-** NONE
 ** KVM_AMD_EPYC_MILAN
 ** KVM_AMD_EPYC_GENOA
+** KVM_AMD_EPYC_BERGAMO
+** KVM_AMD_EPYC_SIENA
+** KVM_AMD_EPYC_TURIN
  
 * [.boolean]#boolean#  attestOnBoot - set if the attestation should be performed on system boot
  
