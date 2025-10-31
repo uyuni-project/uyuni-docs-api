@@ -126,9 +126,6 @@
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="admin.html">admin</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -255,9 +252,6 @@
     <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -271,12 +265,6 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.hub.html">sync.hub</a>
@@ -611,7 +599,10 @@ struct</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Clone a list of errata into the specified channel.</p>
+<p>Clone a list of errata into the specified channel.
+ It only links the packages if the destination channel already contains an older version of the
+ same package (same name and architecture). If the package is completely new to that channel,
+ it will not be linked and the resulting behaviour will be the same as a channel.software.mergeErrata call.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -676,7 +667,8 @@ struct</p>
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Clones a list of errata into a specified cloned channel according the original erratas.</p>
+<p>Clones a list of errata into a specified cloned channel according the original erratas.
+ It always links the packages to the target channel by searching all related packages among all the parent clones.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -742,7 +734,8 @@ struct</p>
 </div>
 <div class="paragraph">
 <p>Asynchronously clones a list of errata into a specified cloned channel
- according the original erratas</p>
+ according the original erratas.
+ It always links the packages to the target channel by searching all related packages among all the parent clones.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
