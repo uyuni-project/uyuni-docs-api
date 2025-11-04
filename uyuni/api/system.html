@@ -126,9 +126,6 @@
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="admin.html">admin</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -255,9 +252,6 @@
     <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -271,12 +265,6 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.hub.html">sync.hub</a>
@@ -770,6 +758,12 @@
 <p><a href="#apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate">provisionSystem</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions">provisionSystem</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions">provisionSystem</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions">provisionSystem</a></p>
 </li>
 <li>
@@ -960,6 +954,9 @@
 </li>
 <li>
 <p><a href="#apidoc-system-scheduleScriptRun-loggedInUser-label-sid-username-groupname-timeout-script-earliestOccurrence">scheduleScriptRun</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence">scheduleSupportDataUpload</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence">scheduleSyncPackagesWithSystem</a></p>
@@ -9596,6 +9593,120 @@ on error</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions">Method: provisionSystem</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Provision a system using the specified kickstart/autoinstallation profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the system to be provisioned.</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileName - Profile to use.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestDate</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  advancedOptions</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "kernel_options" - custom kernel options</p>
+</li>
+<li>
+<p><span class="string">string</span>  "post_kernel_options" - custom post kernel options</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the action scheduled, otherwise exception thrown
+on error</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions">Method: provisionSystem</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Provision a system using the specified kickstart/autoinstallation profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid - ID of the system to be provisioned.</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileName - Profile to use.</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestDate</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  advancedOptions</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "kernel_options" - custom kernel options</p>
+</li>
+<li>
+<p><span class="string">string</span>  "post_kernel_options" - custom post kernel options</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the action scheduled, otherwise exception thrown
+on error</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions"><a class="anchor" href="#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions"></a><a class="link" href="#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions">Method: provisionSystem</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -12966,6 +13077,56 @@ results with system.getScriptResults</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence"><a class="anchor" href="#apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence"></a><a class="link" href="#apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence">Method: scheduleSupportDataUpload</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule an action to get and upload support data from the specified system to SCC.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+<li>
+<p><span class="string">string</span>  caseNumber - The SCC case number</p>
+</li>
+<li>
+<p><span class="string">string</span>  parameter - Additional parameter for the tool which collect the data from the system. Can be empty</p>
+</li>
+<li>
+<p><span class="string">string</span>  uploadGeo - The location of the upload server [EU, US]</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the action scheduled, otherwise exception thrown
+on error</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence"><a class="anchor" href="#apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence"></a><a class="link" href="#apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence">Method: scheduleSyncPackagesWithSystem</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -13245,13 +13406,19 @@ or channelLabel</p>
 <div class="ulist">
 <ul>
 <li>
-<p>NONE</p>
-</li>
-<li>
 <p>KVM_AMD_EPYC_MILAN</p>
 </li>
 <li>
 <p>KVM_AMD_EPYC_GENOA</p>
+</li>
+<li>
+<p>KVM_AMD_EPYC_BERGAMO</p>
+</li>
+<li>
+<p>KVM_AMD_EPYC_SIENA</p>
+</li>
+<li>
+<p>KVM_AMD_EPYC_TURIN</p>
 </li>
 </ul>
 </div>

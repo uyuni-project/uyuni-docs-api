@@ -126,9 +126,6 @@
     <a class="nav-link" href="activationkey.html">activationkey</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="admin.html">admin</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -255,9 +252,6 @@
     <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="recurringaction.html">recurringaction</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="saltkey.html">saltkey</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -271,12 +265,6 @@
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.content.html">sync.content</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.master.html">sync.master</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="sync.slave.html">sync.slave</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="sync.hub.html">sync.hub</a>
@@ -402,6 +390,15 @@
 </li>
 <li>
 <p><a href="#apidoc-contentmanagement-detachSource-loggedInUser-projectLabel-sourceType-sourceLabel">detachSource</a></p>
+</li>
+<li>
+<p><a href="#apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel">generateEnvironmentDifference</a></p>
+</li>
+<li>
+<p><a href="#apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel">generateProjectDifference</a></p>
+</li>
+<li>
+<p><a href="#apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel">listEnvironmentDifference</a></p>
 </li>
 <li>
 <p><a href="#apidoc-contentmanagement-listFilterCriteria-loggedInUser">listFilterCriteria</a></p>
@@ -1150,6 +1147,142 @@
 <ul>
 <li>
 <p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel"><a class="anchor" href="#apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel"></a><a class="link" href="#apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel">Method: generateEnvironmentDifference</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Generate the Environment difference for all channels of a given environment</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  projectLabel - Project label</p>
+</li>
+<li>
+<p><span class="string">string</span>  environmentLabel - Environment label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel"><a class="anchor" href="#apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel"></a><a class="link" href="#apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel">Method: generateProjectDifference</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Generate the difference for all environments in the given project</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  projectLabel - Project label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel"><a class="anchor" href="#apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel"></a><a class="link" href="#apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel">Method: listEnvironmentDifference</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the differences of a Project Environment compared to its original</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  projectLabel - Content Project label</p>
+</li>
+<li>
+<p><span class="string">string</span>  envLabel - Content Environment label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  content environment difference information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "action"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
