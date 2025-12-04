@@ -24,7 +24,7 @@
 == Description
 
 If you are using IPA integration to allow authentication of users from
- an external IPA server (rare) the users will still need to be created in the #product()
+ an external IPA server (rare) the users will still need to be created in the {productname}
  database. Methods in this namespace allow you to configure some specifics of how this
  happens, like what organization they are created in or what roles they will have.
  These options can also be set in the web admin interface.
@@ -43,7 +43,7 @@ Description:
 
 Externally authenticated users may be members of external groups. You
  can use these groups to assign additional roles to the users when they log in.
- Can only be called by a #product() Administrator.
+ Can only be called by a {productname} Administrator.
 
 
 
@@ -114,7 +114,7 @@ HTTP `POST`
 Description:
 
 Delete the role map for an external group. Can only be called
- by a #product() Administrator.
+ by a {productname} Administrator.
 
 
 
@@ -168,7 +168,7 @@ HTTP `GET`
 Description:
 
 Get the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a {productname} Administrator.
 
 
 
@@ -193,7 +193,7 @@ HTTP `GET`
 Description:
 
 Get a representation of the role mapping for an external group.
- Can only be called by a #product() Administrator.
+ Can only be called by a {productname} Administrator.
 
 
 
@@ -254,7 +254,7 @@ Description:
 
 Get whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a {productname} Administrator.
 
 
 
@@ -281,7 +281,7 @@ Description:
 
 Get whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+ {productname} organization name. Can only be called by a {productname} Administrator.
 
 
 
@@ -307,7 +307,7 @@ HTTP `GET`
 Description:
 
 List role mappings for all known external groups. Can only be called
- by a #product() Administrator.
+ by a {productname} Administrator.
 
 
 
@@ -365,7 +365,7 @@ HTTP `POST`
 Description:
 
 Set the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a {productname} Administrator.
 
 
 
@@ -393,7 +393,7 @@ HTTP `POST`
 Description:
 
 Update the roles for an external group. Replace previously set roles
- with the ones passed in here. Can only be called by a #product() Administrator.
+ with the ones passed in here. Can only be called by a {productname} Administrator.
 
 
 
@@ -456,7 +456,7 @@ Description:
 
 Set whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a {productname} Administrator.
 
 
 
@@ -485,7 +485,7 @@ Description:
 
 Set whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+ {productname} organization name. Can only be called by a {productname} Administrator.
 
 
 
