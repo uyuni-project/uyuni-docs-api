@@ -416,6 +416,15 @@
 <p><a href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn">replaceTokens</a></p>
 </li>
 <li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser">scheduleUpdateTask</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest">scheduleUpdateTask</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync">scheduleUpdateTask</a></p>
+</li>
+<li>
 <p><a href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data">setDetails</a></p>
 </li>
 <li>
@@ -463,7 +472,7 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 <li>
 <p><span class="array">array</span>  " channelLabels "</p>
@@ -868,7 +877,7 @@ server, false to instead fully deregister on both sides</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 </ul>
 </div>
@@ -1082,7 +1091,7 @@ remote server.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 </ul>
 </div>
@@ -1297,7 +1306,7 @@ connection</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 <li>
 <p><span class="array">array</span>  " channelLabels "</p>
@@ -1345,6 +1354,117 @@ connection</p>
 </li>
 <li>
 <p><span class="string">string</span>  fqdn - the FQDN of the remote peripheral server to replace the tokens</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest - earliest time the task will be executed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest - earliest time the task will be executed.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  withReposync - if true reposync will be run after mgr-sync refresh</p>
 </li>
 </ul>
 </div>
@@ -1475,17 +1595,7 @@ connection</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p>[. string ]# string #   fqdn  -  The FQDN identifying the peripheral server</p>
-</li>
-<li>
-<p><span class="array">array</span>  " channelLabels "</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  "label" - The channel label</p>
-</li>
-</ul>
-</div>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 </ul>
 </div>

@@ -398,9 +398,6 @@
 <p><a href="#apidoc-org-listUsers-loggedInUser-orgId">listUsers</a></p>
 </li>
 <li>
-<p><a href="#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids">migrateSystems</a></p>
-</li>
-<li>
 <p><a href="#apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value">setClmSyncPatchesConfig</a></p>
 </li>
 <li>
@@ -1177,63 +1174,6 @@ setting for the organization</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-org-migrateSystems-loggedInUser-toOrgId-sids"><a class="anchor" href="#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids"></a><a class="link" href="#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids">Method: migrateSystems (Deprecated)</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Transfer systems from one organization to another.  If executed by
- a #product() administrator, the systems will be transferred from their current
- organization to the organization specified by the toOrgId.  If executed by
- an organization administrator, the systems must exist in the same organization
- as that administrator and the systems will be transferred to the organization
- specified by the toOrgId. In any scenario, the origination and destination
- organizations must be defined in a trust.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Note: This method is deprecated and will be removed in a future API version. Please use
-transferSystems instead.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Deprecated - being replaced by org.transferSystems(User loggedInUser, Integer toOrgId,
- List(Integer) sids)</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  toOrgId - ID of the organization where the
-system(s) will be transferred to.</p>
-</li>
-<li>
-<p><span class="array">int array</span>  sids</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">int array</span>  serverIdTransferred</p>
 </li>
 </ul>
 </div>

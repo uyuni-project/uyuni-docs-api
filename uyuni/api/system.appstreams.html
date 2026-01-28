@@ -367,6 +367,12 @@
 <li>
 <p><a href="#apidoc-system_appstreams-listModuleStreams-loggedInUser-sid">listModuleStreams</a></p>
 </li>
+<li>
+<p><a href="#apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence">ssmDisable</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence">ssmEnable</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -571,6 +577,118 @@
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence"><a class="anchor" href="#apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence"></a><a class="link" href="#apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence">Method: ssmDisable</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule disabling of module streams from a given modular channel for the SSM (System Set Manager)
+ systems. Invalid modules will be filtered out. If all provided modules are invalid the request will fail.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  channelId</p>
+</li>
+<li>
+<p><span class="array">array</span>  moduleNames</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  moduleName</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  actionId - The action id of the scheduled action</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence"><a class="anchor" href="#apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence"></a><a class="link" href="#apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence">Method: ssmEnable</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule enabling of module streams from a given modular channel for the SSM (System Set Manager)
+ systems. Invalid modules will be filtered out. If all provided modules are invalid the request will fail.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  channelId</p>
+</li>
+<li>
+<p><span class="array">array</span>  moduleStreams</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Module Stream</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "stream"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  actionId - The action id of the scheduled action</p>
 </li>
 </ul>
 </div>
