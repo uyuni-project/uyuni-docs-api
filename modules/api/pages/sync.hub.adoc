@@ -23,6 +23,9 @@
 * <<apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA,registerPeripheralWithToken>>
 * <<apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels,removePeripheralChannelsToSync>>
 * <<apidoc-sync_hub-replaceTokens-loggedInUser-fqdn,replaceTokens>>
+* <<apidoc-sync_hub-scheduleUpdateTask-loggedInUser,scheduleUpdateTask>>
+* <<apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest,scheduleUpdateTask>>
+* <<apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync,scheduleUpdateTask>>
 * <<apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data,setDetails>>
 * <<apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token,storeAccessToken>>
 * <<apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn,syncPeripheralChannels>>
@@ -52,7 +55,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 * [.array]#array#  " channelLabels "
 ** [.string]#string#  "label" - The channel label
@@ -307,7 +310,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 
 Returns:
@@ -408,7 +411,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 
 Returns:
@@ -560,7 +563,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 * [.array]#array#  " channelLabels "
 ** [.string]#string#  "label" - The channel label
@@ -590,6 +593,84 @@ Parameters:
 * [.string]#string#  sessionKey
  
 * [.string]#string#  fqdn - the FQDN of the remote peripheral server to replace the tokens
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-scheduleUpdateTask-loggedInUser]
+== Method: scheduleUpdateTask
+
+HTTP `POST`
+
+Description:
+
+Schedules mgr-sync refresh with reposync on peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest]
+== Method: scheduleUpdateTask
+
+HTTP `POST`
+
+Description:
+
+Schedules mgr-sync refresh with reposync on peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest - earliest time the task will be executed.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync]
+== Method: scheduleUpdateTask
+
+HTTP `POST`
+
+Description:
+
+Schedules mgr-sync refresh with reposync on peripheral server
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliest - earliest time the task will be executed.
+ 
+* [.boolean]#boolean#  withReposync - if true reposync will be run after mgr-sync refresh
  
 
 Returns:
@@ -676,10 +757,7 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [. string ]# string #   fqdn  -  The FQDN identifying the peripheral server 
- 
-* [.array]#array#  " channelLabels "
-** [.string]#string#  "label" - The channel label
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 
 Returns:

@@ -5,6 +5,7 @@
 == Available methods
 
 * <<apidoc-proxy-activateProxy-clientcert-version,activateProxy>>
+* <<apidoc-proxy-backupConfiguration-loggedInUser-sids,backupConfiguration>>
 * <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey,bootstrapProxy>>
 * <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag,bootstrapProxy>>
 * <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag,bootstrapProxy>>
@@ -46,6 +47,32 @@ Parameters:
  
 * [.string]#string#  version - Version of proxy to be
  registered.
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-proxy-backupConfiguration-loggedInUser-sids]
+== Method: backupConfiguration
+
+HTTP `POST`
+
+Description:
+
+Backup the configuration of proxies in order to migrate them later.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
  
 
 Returns:

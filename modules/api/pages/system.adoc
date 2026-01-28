@@ -2437,6 +2437,7 @@ Returns:
 ** [.string]#string#  "end_of_life"
 ** [.string]#string#  "parent_channel_label"
 ** [.string]#string#  "clone_original"
+** [.string]#string#  "sync_status" - 'C' for new created, 'S' for syncing and 'R' for ready
 ** [.array]#array#  "contentSources"
 *** [.struct]#struct#  content source
 **** [.int]#int#  "id"
@@ -3977,6 +3978,7 @@ Returns:
 ** [.string]#string#  "end_of_life"
 ** [.string]#string#  "parent_channel_label"
 ** [.string]#string#  "clone_original"
+** [.string]#string#  "sync_status" - 'C' for new created, 'S' for syncing and 'R' for ready
 ** [.array]#array#  "contentSources"
 *** [.struct]#struct#  content source
 **** [.int]#int#  "id"
@@ -7402,9 +7404,8 @@ HTTP `POST`
 Description:
 
 Returns a list of system IDs whose name matches
-  the supplied regular expression(defined by
-  http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html_blank
- Java representation of regular expressions)
+  the supplied regular expression defined by Java representation of regular expressions
+  (http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html)
 
 
 
