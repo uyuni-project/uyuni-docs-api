@@ -362,6 +362,9 @@
 <p><a href="#apidoc-proxy-activateProxy-clientcert-version">activateProxy</a></p>
 </li>
 <li>
+<p><a href="#apidoc-proxy-backupConfiguration-loggedInUser-sids">backupConfiguration</a></p>
+</li>
+<li>
 <p><a href="#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey">bootstrapProxy</a></p>
 </li>
 <li>
@@ -437,6 +440,43 @@
 <li>
 <p><span class="string">string</span>  version - Version of proxy to be
 registered.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-backupConfiguration-loggedInUser-sids"><a class="anchor" href="#apidoc-proxy-backupConfiguration-loggedInUser-sids"></a><a class="link" href="#apidoc-proxy-backupConfiguration-loggedInUser-sids">Method: backupConfiguration</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Backup the configuration of proxies in order to migrate them later.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
 </li>
 </ul>
 </div>
