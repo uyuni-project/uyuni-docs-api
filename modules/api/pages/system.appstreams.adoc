@@ -7,8 +7,6 @@
 * <<apidoc-system_appstreams-disable-loggedInUser-sid-moduleStreams-earliestOccurrence,disable>>
 * <<apidoc-system_appstreams-enable-loggedInUser-sid-moduleStreams-earliestOccurrence,enable>>
 * <<apidoc-system_appstreams-listModuleStreams-loggedInUser-sid,listModuleStreams>>
-* <<apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence,ssmDisable>>
-* <<apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence,ssmEnable>>
 
 == Description
 
@@ -119,72 +117,6 @@ Returns:
 ** [.string]#string#  "arch"
  
  
- 
-
-
-
-[#apidoc-system_appstreams-ssmDisable-loggedInUser-channelId-moduleNames-earliestOccurrence]
-== Method: ssmDisable
-
-HTTP `POST`
-
-Description:
-
-Schedule disabling of module streams from a given modular channel for the SSM (System Set Manager)
- systems. Invalid modules will be filtered out. If all provided modules are invalid the request will fail.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  channelId
- 
-* [.array]#array#  moduleNames
-** [.string]#string#  moduleName
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
- 
-
-Returns:
-
-* [.int]#int#  actionId - The action id of the scheduled action
- 
-
-
-
-[#apidoc-system_appstreams-ssmEnable-loggedInUser-channelId-moduleStreams-earliestOccurrence]
-== Method: ssmEnable
-
-HTTP `POST`
-
-Description:
-
-Schedule enabling of module streams from a given modular channel for the SSM (System Set Manager)
- systems. Invalid modules will be filtered out. If all provided modules are invalid the request will fail.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  channelId
- 
-* [.array]#array#  moduleStreams
-** [.struct]#struct#  Module Stream
-*** [.string]#string#  "module"
-*** [.string]#string#  "stream"
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
- 
-
-Returns:
-
-* [.int]#int#  actionId - The action id of the scheduled action
  
 
 

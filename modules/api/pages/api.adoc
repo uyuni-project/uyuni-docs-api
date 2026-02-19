@@ -4,9 +4,9 @@
 
 == Available methods
 
-* <<apidoc-api-getApiCallList-,getApiCallList>>
-* <<apidoc-api-getApiNamespaceCallList-namespace,getApiNamespaceCallList>>
-* <<apidoc-api-getApiNamespaces-,getApiNamespaces>>
+* <<apidoc-api-getApiCallList-loggedInUser,getApiCallList>>
+* <<apidoc-api-getApiNamespaceCallList-loggedInUser-namespace,getApiNamespaceCallList>>
+* <<apidoc-api-getApiNamespaces-loggedInUser,getApiNamespaces>>
 * <<apidoc-api-getVersion-,getVersion>>
 * <<apidoc-api-productName-,productName>>
 * <<apidoc-api-systemVersion-,systemVersion>>
@@ -20,7 +20,7 @@ Methods providing information about the API.
 api
 
 
-[#apidoc-api-getApiCallList-]
+[#apidoc-api-getApiCallList-loggedInUser]
 == Method: getApiCallList
 
 HTTP `GET`
@@ -34,6 +34,8 @@ Lists all available api calls grouped by namespace
 
 Parameters:
 
+* [.string]#string#  sessionKey
+ 
 
 Returns:
 
@@ -46,7 +48,7 @@ Returns:
 
 
 
-[#apidoc-api-getApiNamespaceCallList-namespace]
+[#apidoc-api-getApiNamespaceCallList-loggedInUser-namespace]
 == Method: getApiNamespaceCallList
 
 HTTP `GET`
@@ -60,6 +62,8 @@ Lists all available api calls for the specified namespace
 
 Parameters:
 
+* [.string]#string#  sessionKey
+ 
 * [.string]#string#  namespace
  
 
@@ -74,7 +78,7 @@ Returns:
 
 
 
-[#apidoc-api-getApiNamespaces-]
+[#apidoc-api-getApiNamespaces-loggedInUser]
 == Method: getApiNamespaces
 
 HTTP `GET`
@@ -88,6 +92,8 @@ Lists available API namespaces
 
 Parameters:
 
+* [.string]#string#  sessionKey
+ 
 
 Returns:
 
