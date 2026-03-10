@@ -785,9 +785,6 @@
 <p><a href="#apidoc-system-refreshPillar-loggedInUser-subset-sids">refreshPillar</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn">registerPeripheralServer</a></p>
-</li>
-<li>
 <p><a href="#apidoc-system-removeEntitlements-loggedInUser-sid-entitlements">removeEntitlements</a></p>
 </li>
 <li>
@@ -1014,9 +1011,6 @@
 </li>
 <li>
 <p><a href="#apidoc-system-updatePackageState-loggedInUser-sid-packageName-state-versionConstraint">updatePackageState</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword">updatePeripheralServerInfo</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system-upgradeEntitlement-loggedInUser-sid-entitlementLevel">upgradeEntitlement</a></p>
@@ -10069,44 +10063,6 @@ virtual networking hardware.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system-registerPeripheralServer-loggedInUser-fqdn"><a class="anchor" href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn"></a><a class="link" href="#apidoc-system-registerPeripheralServer-loggedInUser-fqdn">Method: registerPeripheralServer</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Register foreign peripheral server.
- This is used for registering containerized peripheral servers.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  fqdn - FQDN of the server</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="apidoc-system-removeEntitlements-loggedInUser-sid-entitlements"><a class="anchor" href="#apidoc-system-removeEntitlements-loggedInUser-sid-entitlements"></a><a class="link" href="#apidoc-system-removeEntitlements-loggedInUser-sid-entitlements">Method: removeEntitlements</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -14060,55 +14016,6 @@ Select a Kickstart profile -&amp;gt; Create Cobbler System Record.</pre>
 <ul>
 <li>
 <p>1 on success, exception on failure</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword"><a class="anchor" href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword"></a><a class="link" href="#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword">Method: updatePeripheralServerInfo</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Update foreign peripheral server info.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  reportDbName - ReportDB name</p>
-</li>
-<li>
-<p><span class="string">string</span>  reportDbHost - ReportDB host</p>
-</li>
-<li>
-<p><span class="int">int</span>  reportDbPort - ReportDB port</p>
-</li>
-<li>
-<p><span class="string">string</span>  reportDbUser - ReportDB user</p>
-</li>
-<li>
-<p><span class="string">string</span>  reportDbPassword - ReportDB password</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
 </li>
 </ul>
 </div>

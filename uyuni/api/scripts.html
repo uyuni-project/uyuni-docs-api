@@ -395,7 +395,7 @@ In a GET request, method parameters must be sent as query string key-value pairs
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie=&amp;lt;tokenhash&amp;gt;;" \
 &gt; $API/contentmanagement/lookupProject?projectLabel=myproject
 {
   "success": true,
@@ -425,7 +425,7 @@ The following examples show both approaches.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" -X POST \
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie=&amp;lt;tokenhash&amp;gt;;" -X POST \
 &gt; "$API/contentmanagement/createProject?projectLabel=myproject&amp;name=My%20Project&amp;description="
 {
   "success": true,
@@ -447,7 +447,7 @@ $ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;t
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ API=https://manager.example.com/rhn/manager/api
-$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie&amp;lt;tokenhash&amp;gt;;" \
+$ curl -H "Content-Type: application/json" --cookie "pxt-session-cookie=&amp;lt;tokenhash&amp;gt;;" \
 &gt; -d '{"projectLabel":"myproject","name":"My Project","description":""}' \
 &gt; $API/contentmanagement/createProject
 {
