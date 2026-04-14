@@ -98,6 +98,7 @@
 * <<apidoc-system-listLatestUpgradablePackages-loggedInUser-sid,listLatestUpgradablePackages>>
 * <<apidoc-system-listMigrationTargets-loggedInUser-sid,listMigrationTargets>>
 * <<apidoc-system-listMigrationTargets-loggedInUser-sid-excludeTargetWhereMissingSuccessors,listMigrationTargets>>
+* <<apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid,listMigrationTargetsWithChannels>>
 * <<apidoc-system-listNewerInstalledPackages-loggedInUser-sid-name-version-release-epoch,listNewerInstalledPackages>>
 * <<apidoc-system-listNotes-loggedInUser-sid,listNotes>>
 * <<apidoc-system-listOlderInstalledPackages-loggedInUser-sid-name-version-release-epoch,listOlderInstalledPackages>>
@@ -3499,6 +3500,44 @@ Returns:
 ** [.struct]#struct#  migrationtarget
 *** [.string]#string#  "ident"
 *** [.string]#string#  "friendly"
+ 
+
+
+
+[#apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid]
+== Method: listMigrationTargetsWithChannels
+
+HTTP `GET`
+
+Description:
+
+Lists the eligible migration targets for a given server, including channel details.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.struct]#struct#  migration target
+*** [.string]#string#  "ident"
+*** [.string]#string#  "friendly"
+*** [.array]#array#  "channel_options"
+**** [.struct]#struct#  channel option
+***** [.string]#string#  "base_channel_label"
+***** [.string]#string#  "base_channel_name"
+***** [.array]#array#  "child_channels"
+****** [.struct]#struct#  child channel
+******* [.string]#string#  "label"
+******* [.string]#string#  "name"
+******* [.boolean]#boolean#  "mandatory"
  
 
 

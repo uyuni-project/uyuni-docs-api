@@ -10,6 +10,7 @@
 * <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag,bootstrapProxy>>
 * <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag,bootstrapProxy>>
 * <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey,containerConfig>>
+* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email,containerConfig>>
 * <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail,containerConfig>>
 * <<apidoc-proxy-createMonitoringScout-clientcert,createMonitoringScout>>
 * <<apidoc-proxy-deactivateProxy-clientcert,deactivateProxy>>
@@ -265,6 +266,41 @@ Parameters:
 * [.string]#string#  proxyCrt - proxy CRT content in PEM format
  
 * [.string]#string#  proxyKey - proxy SSL private key in PEM format
+ 
+
+Returns:
+
+* [.array]#byte array#  binary object - package file
+ 
+
+
+
+[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email]
+== Method: containerConfig
+
+HTTP `POST`
+
+Description:
+
+Compute and download the configuration for proxy containers without adding the TLS certificate
+   for Apache. In such a case, the certificate files need to be deployed to the proxy in a different way.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  proxyName - The FQDN of the proxy
+ 
+* [.int]#int#  proxyPort - The SSH port the proxy listens on
+ 
+* [.string]#string#  server - The server FQDN the proxy will connect to
+ 
+* [.int]#int#  maxCache - Max cache size in MB
+ 
+* [.string]#string#  email - The proxy admin email
  
 
 Returns:

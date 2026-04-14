@@ -14,6 +14,7 @@
 * <<apidoc-sync_hub-getManagerInfo-loggedInUser,getManagerInfo>>
 * <<apidoc-sync_hub-isISSPeripheral-loggedInUser,isISSPeripheral>>
 * <<apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn,listPeripheralChannelsToSync>>
+* <<apidoc-sync_hub-listPeripheralServers-loggedInUser,listPeripheralServers>>
 * <<apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData,migrateFromISSv1>>
 * <<apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData,migrateFromISSv2>>
 * <<apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn,regenerateSCCCredentials>>
@@ -196,6 +197,8 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
+ 
 
 Returns:
 
@@ -203,7 +206,7 @@ Returns:
  * [.struct]#struct#   channel info 
 ** [.long]#long#  "id" - the id of the channel
 ** [.string]#string#  "name" - the name of the channel
-** [.boolean]#boolean#  "label" - the label of the channel
+** [.string]#string#  "label" - the label of the channel
 ** [.string]#string#  "summary" - the summary of the channel
 ** [.long]#long#  "org_id" - the organization id of the channel
 ** [.long]#long#  "parent_channel_id" - the parent channel ID of the channel
@@ -227,6 +230,8 @@ Remotely collect data about peripheral organizations
 Parameters:
 
 * [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - The FQDN identifying the peripheral server
  
 
 Returns:
@@ -321,6 +326,34 @@ Returns:
 
 
 
+[#apidoc-sync_hub-listPeripheralServers-loggedInUser]
+== Method: listPeripheralServers
+
+HTTP `GET`
+
+Description:
+
+Lists all peripheral servers.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.struct]#struct#  peripheral_server
+*** [.string]#string#  "fqdn" - The FQDN of the peripheral server
+*** [.int]#int#  "id" - The system ID of the peripheral server
+*** [.string]#string#  "root_ca" - The root CA certificate of the peripheral server
+ 
+
+
+
 [#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData]
 == Method: migrateFromISSv1
 
@@ -337,8 +370,8 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.array]#array#  migration_data
-** [.struct]#struct#  slave_migration_data
+* [.array]#array#  migrationData
+** [.struct]#struct#  
 *** [.string]#string#  "fqdn" - The fully qualified domain name of the remote slave server.
 *** [.string]#string#  "token" - The token used to authenticate on the remote server.
 *** [.string]#string#  "root_ca" - The root ca needed to establish a secure connection to the
@@ -374,8 +407,8 @@ Parameters:
 
 * [.string]#string#  sessionKey
  
-* [.array]#array#  migration_data
-** [.struct]#struct#  peripheral_migration_data
+* [.array]#array#  migrationData
+** [.struct]#struct#  
 *** [.string]#string#  "fqdn" - The fully qualified domain name of the remote peripheral server.
 *** [.string]#string#  "token" - The token used to authenticate on the remote server.
 *** [.string]#string#  "root_ca" - The root ca needed to establish a secure connection to the
