@@ -7,7 +7,12 @@
 * <<apidoc-system_scap-deleteXccdfScan-loggedInUser-xid,deleteXccdfScan>>
 * <<apidoc-system_scap-getXccdfScanDetails-loggedInUser-xid,getXccdfScanDetails>>
 * <<apidoc-system_scap-getXccdfScanRuleResults-loggedInUser-xid,getXccdfScanRuleResults>>
+* <<apidoc-system_scap-listPolicies-loggedInUser,listPolicies>>
+* <<apidoc-system_scap-listScapContent-loggedInUser,listScapContent>>
+* <<apidoc-system_scap-listTailoringFiles-loggedInUser,listTailoringFiles>>
 * <<apidoc-system_scap-listXccdfScans-loggedInUser-sid,listXccdfScans>>
+* <<apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date,scheduleBetaXccdfScanCustom>>
+* <<apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date,scheduleBetaXccdfScanWithPolicy>>
 * <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams,scheduleXccdfScan>>
 * <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-date,scheduleXccdfScan>>
 * <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-ovalFiles-date,scheduleXccdfScan>>
@@ -123,6 +128,104 @@ Returns:
 
 
 
+[#apidoc-system_scap-listPolicies-loggedInUser]
+== Method: listPolicies
+
+HTTP `GET`
+
+Description:
+
+List SCAP policies available for the user's organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  SCAP policy information
+** [.int]#int#  "id" - Policy ID
+** [.string]#string#  "policyName" - Policy name
+** [.string]#string#  "description" - Policy description
+** [.int]#int#  "scapContentId" - SCAP content ID
+** [.string]#string#  "xccdfProfileId" - XCCDF profile ID
+** [.int]#int#  "tailoringFileId" - Tailoring file ID (optional)
+** [.string]#string#  "tailoringProfileId" - Tailoring profile ID (optional)
+** [.string]#string#  "ovalFiles" - OVAL files
+** [.string]#string#  "advancedArgs" - Advanced arguments
+** [.boolean]#boolean#  "fetchRemoteResources" - Fetch remote resources flag
+ 
+ 
+
+
+
+[#apidoc-system_scap-listScapContent-loggedInUser]
+== Method: listScapContent
+
+HTTP `GET`
+
+Description:
+
+List all available SCAP content.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  SCAP content information
+** [.int]#int#  "id" - SCAP content ID
+** [.string]#string#  "name" - SCAP content name
+** [.string]#string#  "description" - SCAP content description
+** [.string]#string#  "dataStreamFileName" - DataStream file name
+** [.string]#string#  "xccdfFileName" - XCCDF file name
+ 
+ 
+
+
+
+[#apidoc-system_scap-listTailoringFiles-loggedInUser]
+== Method: listTailoringFiles
+
+HTTP `GET`
+
+Description:
+
+List tailoring files available for the user's organization.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+   * [.struct]#struct#  Tailoring file information
+** [.int]#int#  "id" - Tailoring file ID
+** [.string]#string#  "name" - Tailoring file name
+** [.string]#string#  "fileName" - File name on disk
+** [.string]#string#  "displayFileName" - Display file name
+** [.int]#int#  "orgId" - Organization ID
+ 
+ 
+
+
+
 [#apidoc-system_scap-listXccdfScans-loggedInUser-sid]
 == Method: listXccdfScans
 
@@ -152,6 +255,73 @@ Returns:
 ** [.string]#string#  "ovalfiles" - optional OVAL files
 ** [.dateTime.iso8601]#dateTime.iso8601#  "completed" - scan completion time
  
+ 
+
+
+
+[#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date]
+== Method: scheduleBetaXccdfScanCustom
+
+HTTP `POST`
+
+Description:
+
+Schedule SCAP scan with custom parameters.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+* [.struct]#struct#  params
+** [.int]#int#  "scapContentId" - SCAP content ID (required)
+** [.string]#string#  "xccdfProfileId" - XCCDF profile ID (required)
+** [.int]#int#  "tailoringFileId" - Tailoring file ID (optional)
+** [.string]#string#  "tailoringProfileId" - Tailoring profile ID (optional)
+** [.string]#string#  "ovalFiles" - OVAL files (optional)
+** [.string]#string#  "advancedArgs" - Advanced arguments (optional)
+** [.boolean]#boolean#  "fetchRemoteResources" - Fetch remote resources (optional, default false)
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of SCAP action created
+ 
+
+
+
+[#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date]
+== Method: scheduleBetaXccdfScanWithPolicy
+
+HTTP `POST`
+
+Description:
+
+Schedule SCAP scan based on an existing SCAP policy.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+* [.int]#int#  policyId - SCAP policy ID
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of SCAP action created
  
 
 

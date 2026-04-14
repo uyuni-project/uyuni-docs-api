@@ -1,0 +1,44 @@
+[#apidoc-admin_ssh]
+= admin.ssh
+
+
+== Available methods
+
+* <<apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port,removeKnownHost>>
+
+== Description
+
+Provides methods to manage SSH data.
+
+*Namespace*:
+
+admin.ssh
+
+
+[#apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port]
+== Method: removeKnownHost
+
+HTTP `POST`
+
+Description:
+
+Remove a host from the list of known hosts.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  hostname
+ 
+* [.int]#int#  port
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
