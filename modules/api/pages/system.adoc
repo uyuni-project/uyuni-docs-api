@@ -98,7 +98,6 @@
 * <<apidoc-system-listLatestUpgradablePackages-loggedInUser-sid,listLatestUpgradablePackages>>
 * <<apidoc-system-listMigrationTargets-loggedInUser-sid,listMigrationTargets>>
 * <<apidoc-system-listMigrationTargets-loggedInUser-sid-excludeTargetWhereMissingSuccessors,listMigrationTargets>>
-* <<apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid,listMigrationTargetsWithChannels>>
 * <<apidoc-system-listNewerInstalledPackages-loggedInUser-sid-name-version-release-epoch,listNewerInstalledPackages>>
 * <<apidoc-system-listNotes-loggedInUser-sid,listNotes>>
 * <<apidoc-system-listOlderInstalledPackages-loggedInUser-sid-name-version-release-epoch,listOlderInstalledPackages>>
@@ -147,6 +146,7 @@
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName-memoryMb-vcpus-storageGb-macAddress,provisionVirtualGuest>>
 * <<apidoc-system-refreshPillar-loggedInUser-sids,refreshPillar>>
 * <<apidoc-system-refreshPillar-loggedInUser-subset-sids,refreshPillar>>
+* <<apidoc-system-registerPeripheralServer-loggedInUser-fqdn,registerPeripheralServer>>
 * <<apidoc-system-removeEntitlements-loggedInUser-sid-entitlements,removeEntitlements>>
 * <<apidoc-system-scheduleApplyErrata-loggedInUser-sids-errataIds,scheduleApplyErrata>>
 * <<apidoc-system-scheduleApplyErrata-loggedInUser-sids-errataIds-allowModules,scheduleApplyErrata>>
@@ -169,6 +169,8 @@
 * <<apidoc-system-scheduleCoCoAttestation-loggedInUser-sid-earliestOccurrence,scheduleCoCoAttestation>>
 * <<apidoc-system-scheduleDistUpgrade-loggedInUser-sid-channels-dryRun-earliestOccurrence,scheduleDistUpgrade>>
 * <<apidoc-system-scheduleDistUpgrade-loggedInUser-sid-channels-dryRun-allowVendorChange-earliestOccurrence,scheduleDistUpgrade>>
+* <<apidoc-system-scheduleGuestAction-loggedInUser-sid-state-date,scheduleGuestAction>>
+* <<apidoc-system-scheduleGuestAction-loggedInUser-sid-state,scheduleGuestAction>>
 * <<apidoc-system-scheduleHardwareRefresh-loggedInUser-sid-earliestOccurrence,scheduleHardwareRefresh>>
 * <<apidoc-system-schedulePackageInstall-loggedInUser-sids-packageIds-earliestOccurrence,schedulePackageInstall>>
 * <<apidoc-system-schedulePackageInstall-loggedInUser-sids-packageIds-earliestOccurrence-allowModules,schedulePackageInstall>>
@@ -203,7 +205,6 @@
 * <<apidoc-system-scheduleScriptRun-loggedInUser-sids-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
 * <<apidoc-system-scheduleScriptRun-loggedInUser-sid-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
 * <<apidoc-system-scheduleScriptRun-loggedInUser-label-sid-username-groupname-timeout-script-earliestOccurrence,scheduleScriptRun>>
-* <<apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence,scheduleSupportDataUpload>>
 * <<apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence,scheduleSyncPackagesWithSystem>>
 * <<apidoc-system-searchByName-loggedInUser-regexp,searchByName>>
 * <<apidoc-system-sendOsaPing-loggedInUser-sid,sendOsaPing>>
@@ -213,6 +214,8 @@
 * <<apidoc-system-setCustomValues-loggedInUser-sid-values,setCustomValues>>
 * <<apidoc-system-setDetails-loggedInUser-sid-details,setDetails>>
 * <<apidoc-system-setGroupMembership-loggedInUser-sid-sgid-member,setGroupMembership>>
+* <<apidoc-system-setGuestCpus-loggedInUser-sid-numOfCpus,setGuestCpus>>
+* <<apidoc-system-setGuestMemory-loggedInUser-sid-memory,setGuestMemory>>
 * <<apidoc-system-setLockStatus-loggedInUser-sid-lockStatus,setLockStatus>>
 * <<apidoc-system-setPillar-loggedInUser-systemId-category-pillarData,setPillar>>
 * <<apidoc-system-setPillar-loggedInUser-minionId-category-pillarData,setPillar>>
@@ -223,6 +226,7 @@
 * <<apidoc-system-tagLatestSnapshot-loggedInUser-sid-tagName,tagLatestSnapshot>>
 * <<apidoc-system-unentitle-clientCert,unentitle>>
 * <<apidoc-system-updatePackageState-loggedInUser-sid-packageName-state-versionConstraint,updatePackageState>>
+* <<apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword,updatePeripheralServerInfo>>
 * <<apidoc-system-upgradeEntitlement-loggedInUser-sid-entitlementLevel,upgradeEntitlement>>
 * <<apidoc-system-whoRegistered-loggedInUser-sid,whoRegistered>>
 
@@ -847,8 +851,8 @@ Parameters:
 * [.array]#array#  netDevices
 ** [.struct]#struct#  network device
 *** [.string]#string#  "name"
-*** [.string]#string#  "ip"
 *** [.string]#string#  "mac"
+*** [.string]#string#  "ip"
 *** [.string]#string#  "dnsname"
  
 
@@ -2436,7 +2440,6 @@ Returns:
 ** [.string]#string#  "end_of_life"
 ** [.string]#string#  "parent_channel_label"
 ** [.string]#string#  "clone_original"
-** [.string]#string#  "sync_status" - 'C' for new created, 'S' for syncing and 'R' for ready
 ** [.array]#array#  "contentSources"
 *** [.struct]#struct#  content source
 **** [.int]#int#  "id"
@@ -3475,7 +3478,7 @@ Returns:
 [#apidoc-system-listMigrationTargets-loggedInUser-sid-excludeTargetWhereMissingSuccessors]
 == Method: listMigrationTargets
 
-HTTP `GET`
+HTTP `POST`
 
 Description:
 
@@ -3500,44 +3503,6 @@ Returns:
 ** [.struct]#struct#  migrationtarget
 *** [.string]#string#  "ident"
 *** [.string]#string#  "friendly"
- 
-
-
-
-[#apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid]
-== Method: listMigrationTargetsWithChannels
-
-HTTP `GET`
-
-Description:
-
-Lists the eligible migration targets for a given server, including channel details.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid
- 
-
-Returns:
-
-* [.array]#array# :
-** [.struct]#struct#  migration target
-*** [.string]#string#  "ident"
-*** [.string]#string#  "friendly"
-*** [.array]#array#  "channel_options"
-**** [.struct]#struct#  channel option
-***** [.string]#string#  "base_channel_label"
-***** [.string]#string#  "base_channel_name"
-***** [.array]#array#  "child_channels"
-****** [.struct]#struct#  child channel
-******* [.string]#string#  "label"
-******* [.string]#string#  "name"
-******* [.boolean]#boolean#  "mandatory"
  
 
 
@@ -4015,7 +3980,6 @@ Returns:
 ** [.string]#string#  "end_of_life"
 ** [.string]#string#  "parent_channel_label"
 ** [.string]#string#  "clone_original"
-** [.string]#string#  "sync_status" - 'C' for new created, 'S' for syncing and 'R' for ready
 ** [.array]#array#  "contentSources"
 *** [.struct]#struct#  content source
 **** [.int]#int#  "id"
@@ -5003,7 +4967,7 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
-* [.int]#int#  proxy - ID of the proxy to use.
+* [.int]#int#  proxy - ID of the proxy to use
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -5036,7 +5000,7 @@ Parameters:
  
 * [.int]#int#  sid - ID of the system to be provisioned.
  
-* [.int]#int#  proxy - ID of the proxy to use.
+* [.int]#int#  proxy - ID of the proxy to use
  
 * [.string]#string#  profileName - Profile to use.
  
@@ -5358,6 +5322,33 @@ Parameters:
 Returns:
 
 * [.array]#int array#  skippedIds
+ 
+
+
+
+[#apidoc-system-registerPeripheralServer-loggedInUser-fqdn]
+== Method: registerPeripheralServer
+
+HTTP `POST`
+
+Description:
+
+Register foreign peripheral server.
+ This is used for registering containerized peripheral servers.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fqdn - FQDN of the server
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
 
@@ -6074,6 +6065,68 @@ Parameters:
 Returns:
 
 * [.int]#int#  actionId
+ 
+
+
+
+[#apidoc-system-scheduleGuestAction-loggedInUser-sid-state-date]
+== Method: scheduleGuestAction
+
+HTTP `POST`
+
+Description:
+
+Schedules a guest action for the specified virtual guest for a given
+          date/time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - the system Id of the guest
+ 
+* [.string]#string#  state - One of the following actions  'start',
+          'suspend', 'resume', 'restart', 'shutdown'.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - the time/date to schedule the action
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The action id of the scheduled action
+ 
+
+
+
+[#apidoc-system-scheduleGuestAction-loggedInUser-sid-state]
+== Method: scheduleGuestAction
+
+HTTP `POST`
+
+Description:
+
+Schedules a guest action for the specified virtual guest for the
+          current time.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - the system Id of the guest
+ 
+* [.string]#string#  state - One of the following actions  'start',
+          'suspend', 'resume', 'restart', 'shutdown'.
+ 
+
+Returns:
+
+* [.int]#int#  actionId - The action id of the scheduled action
  
 
 
@@ -7336,41 +7389,6 @@ Returns:
 
 
 
-[#apidoc-system-scheduleSupportDataUpload-loggedInUser-sid-caseNumber-parameter-uploadGeo-earliestOccurrence]
-== Method: scheduleSupportDataUpload
-
-HTTP `POST`
-
-Description:
-
-Schedule an action to get and upload support data from the specified system to SCC.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid
- 
-* [.string]#string#  caseNumber - The SCC case number
- 
-* [.string]#string#  parameter - Additional parameter for the tool which collect the data from the system. Can be empty
- 
-* [.string]#string#  uploadGeo - The location of the upload server [EU, US]
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
- 
-
-Returns:
-
-* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
- on error
- 
-
-
-
 [#apidoc-system-scheduleSyncPackagesWithSystem-loggedInUser-targetServerId-sourceServerId-packageIds-earliestOccurrence]
 == Method: scheduleSyncPackagesWithSystem
 
@@ -7559,11 +7577,9 @@ Parameters:
 * [.boolean]#boolean#  enabled - set the enabled state for Confidential Compute Attestation
  
 * [.string]#string#  environmentType - set the environment type of the system:
+** NONE
 ** KVM_AMD_EPYC_MILAN
 ** KVM_AMD_EPYC_GENOA
-** KVM_AMD_EPYC_BERGAMO
-** KVM_AMD_EPYC_SIENA
-** KVM_AMD_EPYC_TURIN
  
 * [.boolean]#boolean#  attestOnBoot - set if the attestation should be performed on system boot
  
@@ -7680,6 +7696,68 @@ Parameters:
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-system-setGuestCpus-loggedInUser-sid-numOfCpus]
+== Method: setGuestCpus
+
+HTTP `POST`
+
+Description:
+
+Schedule an action of a guest's host, to set that guest's CPU
+          allocation
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - The guest's system id
+ 
+* [.int]#int#  numOfCpus - The number of virtual cpus to
+          allocate to the guest
+ 
+
+Returns:
+
+* [.int]#int#  actionID - the action Id for the schedule action
+              on the host system
+ 
+
+
+
+[#apidoc-system-setGuestMemory-loggedInUser-sid-memory]
+== Method: setGuestMemory
+
+HTTP `POST`
+
+Description:
+
+Schedule an action of a guest's host, to set that guest's memory
+          allocation
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - The guest's system id
+ 
+* [.int]#int#  memory - The amount of memory to
+          allocate to the guest
+ 
+
+Returns:
+
+* [.int]#int#  actionID - the action Id for the schedule action
+              on the host system
  
 
 
@@ -7974,6 +8052,40 @@ Parameters:
 Returns:
 
 * 1 on success, exception on failure 
+ 
+
+
+
+[#apidoc-system-updatePeripheralServerInfo-loggedInUser-sid-reportDbName-reportDbHost-reportDbPort-reportDbUser-reportDbPassword]
+== Method: updatePeripheralServerInfo
+
+HTTP `POST`
+
+Description:
+
+Update foreign peripheral server info.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  reportDbName - ReportDB name
+ 
+* [.string]#string#  reportDbHost - ReportDB host
+ 
+* [.int]#int#  reportDbPort - ReportDB port
+ 
+* [.string]#string#  reportDbUser - ReportDB user
+ 
+* [.string]#string#  reportDbPassword - ReportDB password
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
  
 
 
