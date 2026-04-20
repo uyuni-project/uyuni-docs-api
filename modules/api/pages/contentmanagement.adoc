@@ -15,6 +15,9 @@
 * <<apidoc-contentmanagement-createProject-loggedInUser-projectLabel-name-description,createProject>>
 * <<apidoc-contentmanagement-detachFilter-loggedInUser-projectLabel-filterId,detachFilter>>
 * <<apidoc-contentmanagement-detachSource-loggedInUser-projectLabel-sourceType-sourceLabel,detachSource>>
+* <<apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel,generateEnvironmentDifference>>
+* <<apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel,generateProjectDifference>>
+* <<apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel,listEnvironmentDifference>>
 * <<apidoc-contentmanagement-listFilterCriteria-loggedInUser,listFilterCriteria>>
 * <<apidoc-contentmanagement-listFilters-loggedInUser,listFilters>>
 * <<apidoc-contentmanagement-listProjectEnvironments-loggedInUser-projectLabel,listProjectEnvironments>>
@@ -430,6 +433,94 @@ Parameters:
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-generateEnvironmentDifference-loggedInUser-projectLabel-environmentLabel]
+== Method: generateEnvironmentDifference
+
+HTTP `POST`
+
+Description:
+
+Generate the Environment difference for all channels of a given environment
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+* [.string]#string#  environmentLabel - Environment label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-generateProjectDifference-loggedInUser-projectLabel]
+== Method: generateProjectDifference
+
+HTTP `POST`
+
+Description:
+
+Generate the difference for all environments in the given project
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Project label
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-contentmanagement-listEnvironmentDifference-loggedInUser-projectLabel-envLabel]
+== Method: listEnvironmentDifference
+
+HTTP `GET`
+
+Description:
+
+List the differences of a Project Environment compared to its original
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  projectLabel - Content Project label
+ 
+* [.string]#string#  envLabel - Content Environment label
+ 
+
+Returns:
+
+* * [.struct]#struct#  content environment difference information
+** [.int]#int#  "id"
+** [.string]#string#  "type"
+** [.string]#string#  "action"
+** [.string]#string#  "name"
+** [.string]#string#  "description"
+  
  
 
 
