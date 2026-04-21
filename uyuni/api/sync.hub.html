@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>sync.hub
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/sync.hub.html">
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/docs/api/sync.hub.html">
     <link rel="prev" href="sync.content.html">
     <link rel="next" href="system.html">
     <meta name="generator" content="Antora 3.1.10">
@@ -97,12 +97,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="uyuni" data-version="">
+<div class="nav-container" data-component="docs" data-version="">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -318,12 +318,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni API</span>
+    <span class="title">SUSE Multi-Linux Manager</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Uyuni API</a>
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">default</a>
@@ -338,10 +338,9 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni API</a></li>
+    <li><a href="../index.html">SUSE Multi-Linux Manager</a></li>
     <li><a href="sync.hub.html">sync.hub</a></li>
   </ul>
 </nav>
@@ -387,6 +386,9 @@
 </li>
 <li>
 <p><a href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn">listPeripheralChannelsToSync</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-listPeripheralServers-loggedInUser">listPeripheralServers</a></p>
 </li>
 <li>
 <p><a href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">migrateFromISSv1</a></p>
@@ -683,6 +685,9 @@ server, false to instead fully deregister on both sides</p>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -704,7 +709,7 @@ server, false to instead fully deregister on both sides</p>
 <p><span class="string">string</span>  "name" - the name of the channel</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  "label" - the label of the channel</p>
+<p><span class="string">string</span>  "label" - the label of the channel</p>
 </li>
 <li>
 <p><span class="string">string</span>  "summary" - the summary of the channel</p>
@@ -741,6 +746,9 @@ server, false to instead fully deregister on both sides</p>
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
 </li>
 </ul>
 </div>
@@ -901,6 +909,60 @@ server, false to instead fully deregister on both sides</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-sync_hub-listPeripheralServers-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-listPeripheralServers-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-listPeripheralServers-loggedInUser">Method: listPeripheralServers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all peripheral servers.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  peripheral_server</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The FQDN of the peripheral server</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - The system ID of the peripheral server</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root CA certificate of the peripheral server</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"><a class="anchor" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"></a><a class="link" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">Method: migrateFromISSv1</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -921,11 +983,11 @@ server, false to instead fully deregister on both sides</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="array">array</span>  migration_data</p>
+<p><span class="array">array</span>  migrationData</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  slave_migration_data</p>
+<p><span class="struct">struct</span></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1006,11 +1068,11 @@ remote server.</p>
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="array">array</span>  migration_data</p>
+<p><span class="array">array</span>  migrationData</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class="struct">struct</span>  peripheral_migration_data</p>
+<p><span class="struct">struct</span></p>
 <div class="ulist">
 <ul>
 <li>

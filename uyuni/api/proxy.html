@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>proxy
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/proxy.html">
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/docs/api/proxy.html">
     <link rel="prev" href="preferences.locale.html">
     <link rel="next" href="recurring.html">
     <meta name="generator" content="Antora 3.1.10">
@@ -97,12 +97,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="uyuni" data-version="">
+<div class="nav-container" data-component="docs" data-version="">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Uyuni API</a></h3>
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -318,12 +318,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Uyuni API</span>
+    <span class="title">SUSE Multi-Linux Manager</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Uyuni API</a>
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">default</a>
@@ -338,10 +338,9 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Uyuni API</a></li>
+    <li><a href="../index.html">SUSE Multi-Linux Manager</a></li>
     <li><a href="proxy.html">proxy</a></li>
   </ul>
 </nav>
@@ -375,6 +374,9 @@
 </li>
 <li>
 <p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey">containerConfig</a></p>
+</li>
+<li>
+<p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email">containerConfig</a></p>
 </li>
 <li>
 <p><a href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail">containerConfig</a></p>
@@ -757,6 +759,56 @@ registered.</p>
 </li>
 <li>
 <p><span class="string">string</span>  proxyKey - proxy SSL private key in PEM format</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">byte array</span>  binary object - package file</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email"><a class="anchor" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email"></a><a class="link" href="#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email">Method: containerConfig</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Compute and download the configuration for proxy containers without adding the TLS certificate
+   for Apache. In such a case, the certificate files need to be deployed to the proxy in a different way.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  proxyName - The FQDN of the proxy</p>
+</li>
+<li>
+<p><span class="int">int</span>  proxyPort - The SSH port the proxy listens on</p>
+</li>
+<li>
+<p><span class="string">string</span>  server - The server FQDN the proxy will connect to</p>
+</li>
+<li>
+<p><span class="int">int</span>  maxCache - Max cache size in MB</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - The proxy admin email</p>
 </li>
 </ul>
 </div>
