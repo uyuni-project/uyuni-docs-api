@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>sync.slave
-     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/sync.slave.html">
+<title>admin.ssh
+     | Uyuni API Documentation</title>    <link rel="canonical" href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/admin.ssh.html">
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/search.css">
@@ -340,45 +340,24 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Uyuni API</a></li>
-    <li><a href="sync.slave.html">sync.slave</a></li>
+    <li><a href="admin.ssh.html">admin.ssh</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/sync.slave.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/uyuni-project/uyuni-docs-api/edit/master/modules/api/pages/admin.ssh.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="On this page" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">sync.slave</h1>
+<h1 class="page">admin.ssh</h1>
 <div class="sect1">
 <h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs">create</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-delete-loggedInUser-slaveId">delete</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId">getAllowedOrgs</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId">getSlave</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn">getSlaveByName</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-getSlaves-loggedInUser">getSlaves</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds">setAllowedOrgs</a></p>
-</li>
-<li>
-<p><a href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs">update</a></p>
+<p><a href="#apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port">removeKnownHost</a></p>
 </li>
 </ul>
 </div>
@@ -388,19 +367,18 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Contains methods to set up information about allowed-"slaves", for use
- on the "master" side of ISS</p>
+<p>Provides methods to manage SSH data.</p>
 </div>
 <div class="paragraph">
 <p><strong>Namespace</strong>:</p>
 </div>
 <div class="paragraph">
-<p>sync.slave</p>
+<p>admin.ssh</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs"><a class="anchor" href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs"></a><a class="link" href="#apidoc-sync_slave-create-loggedInUser-slaveFqdn-isEnabled-allowAllOrgs">Method: create</a></h2>
+<h2 id="apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port"><a class="anchor" href="#apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port"></a><a class="link" href="#apidoc-admin_ssh-removeKnownHost-loggedInUser-hostname-port">Method: removeKnownHost</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -409,7 +387,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Create a new Slave, known to this Master.</p>
+<p>Remove a host from the list of known hosts.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -420,66 +398,10 @@
 <p><span class="string">string</span>  sessionKey</p>
 </li>
 <li>
-<p><span class="string">string</span>  slaveFqdn - Slave&#8217;s fully-qualified domain name</p>
+<p><span class="string">string</span>  hostname</p>
 </li>
 <li>
-<p><span class="boolean">boolean</span>  isEnabled - Let this slave talk to us?</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  allowAllOrgs - Export all our orgs to this slave?</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>* <span class="struct">struct</span>  IssSlave info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "slave"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "allowAllOrgs"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-delete-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-delete-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-delete-loggedInUser-slaveId">Method: delete</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Remove the specified Slave</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  slaveId - ID of the Slave to remove</p>
+<p><span class="int">int</span>  port</p>
 </li>
 </ul>
 </div>
@@ -490,304 +412,6 @@
 <ul>
 <li>
 <p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-getAllowedOrgs-loggedInUser-slaveId">Method: getAllowedOrgs</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get all orgs this Master is willing to export to the specified Slave</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  slaveId - Id of the desired Slave</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">int array</span>  ids of allowed organizations</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-getSlave-loggedInUser-slaveId"><a class="anchor" href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId"></a><a class="link" href="#apidoc-sync_slave-getSlave-loggedInUser-slaveId">Method: getSlave</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Find a Slave by specifying its ID</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  slaveId - ID of the desired Slave</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>* <span class="struct">struct</span>  IssSlave info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "slave"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "allowAllOrgs"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn"><a class="anchor" href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn"></a><a class="link" href="#apidoc-sync_slave-getSlaveByName-loggedInUser-slaveFqdn">Method: getSlaveByName</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Find a Slave by specifying its Fully-Qualified Domain Name</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="string">string</span>  slaveFqdn - Domain-name of the desired Slave</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>* <span class="struct">struct</span>  IssSlave info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "slave"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "allowAllOrgs"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-getSlaves-loggedInUser"><a class="anchor" href="#apidoc-sync_slave-getSlaves-loggedInUser"></a><a class="link" href="#apidoc-sync_slave-getSlaves-loggedInUser">Method: getSlaves</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>GET</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Get all the Slaves this Master knows about</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="array">array</span> :</p>
-</li>
-<li>
-<p><span class="struct">struct</span>  IssSlave info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "slave"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "allowAllOrgs"</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds"><a class="anchor" href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds"></a><a class="link" href="#apidoc-sync_slave-setAllowedOrgs-loggedInUser-slaveId-orgIds">Method: setAllowedOrgs</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Set the orgs this Master is willing to export to the specified Slave</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  slaveId - ID of the desired Slave</p>
-</li>
-<li>
-<p><span class="array">int array</span>  orgIds - List of org-ids we&#8217;re willing to export</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs"><a class="anchor" href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs"></a><a class="link" href="#apidoc-sync_slave-update-loggedInUser-slaveId-slaveFqdn-isEnabled-allowAllOrgs">Method: update</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Updates attributes of the specified Slave</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  slaveId - ID of the Slave to update</p>
-</li>
-<li>
-<p><span class="string">string</span>  slaveFqdn - Slave&#8217;s fully-qualified domain name</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  isEnabled - Let this slave talk to us?</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  allowAllOrgs - Export all our orgs to this Slave?</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>* <span class="struct">struct</span>  IssSlave info</p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  "id"</p>
-</li>
-<li>
-<p><span class="string">string</span>  "slave"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "enabled"</p>
-</li>
-<li>
-<p><span class="boolean">boolean</span>  "allowAllOrgs"</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>

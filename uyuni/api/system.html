@@ -641,6 +641,9 @@
 <p><a href="#apidoc-system-listMigrationTargets-loggedInUser-sid-excludeTargetWhereMissingSuccessors">listMigrationTargets</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid">listMigrationTargetsWithChannels</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system-listNewerInstalledPackages-loggedInUser-sid-name-version-release-epoch">listNewerInstalledPackages</a></p>
 </li>
 <li>
@@ -6851,6 +6854,103 @@ subscribed channels</p>
 </li>
 <li>
 <p><span class="string">string</span>  "friendly"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid"><a class="anchor" href="#apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid"></a><a class="link" href="#apidoc-system-listMigrationTargetsWithChannels-loggedInUser-sid">Method: listMigrationTargetsWithChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists the eligible migration targets for a given server, including channel details.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  sid</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  migration target</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "ident"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "friendly"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "channel_options"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  channel option</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "base_channel_label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "base_channel_name"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "child_channels"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  child channel</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "mandatory"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

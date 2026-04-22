@@ -368,7 +368,22 @@
 <p><a href="#apidoc-system_scap-getXccdfScanRuleResults-loggedInUser-xid">getXccdfScanRuleResults</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system_scap-listPolicies-loggedInUser">listPolicies</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system_scap-listScapContent-loggedInUser">listScapContent</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system_scap-listTailoringFiles-loggedInUser">listTailoringFiles</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system_scap-listXccdfScans-loggedInUser-sid">listXccdfScans</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date">scheduleBetaXccdfScanCustom</a></p>
+</li>
+<li>
+<p><a href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date">scheduleBetaXccdfScanWithPolicy</a></p>
 </li>
 <li>
 <p><a href="#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams">scheduleXccdfScan</a></p>
@@ -581,6 +596,189 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="apidoc-system_scap-listPolicies-loggedInUser"><a class="anchor" href="#apidoc-system_scap-listPolicies-loggedInUser"></a><a class="link" href="#apidoc-system_scap-listPolicies-loggedInUser">Method: listPolicies</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List SCAP policies available for the user&#8217;s organization.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  SCAP policy information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - Policy ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "policyName" - Policy name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description" - Policy description</p>
+</li>
+<li>
+<p><span class="int">int</span>  "scapContentId" - SCAP content ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "xccdfProfileId" - XCCDF profile ID</p>
+</li>
+<li>
+<p><span class="int">int</span>  "tailoringFileId" - Tailoring file ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "tailoringProfileId" - Tailoring profile ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ovalFiles" - OVAL files</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advancedArgs" - Advanced arguments</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "fetchRemoteResources" - Fetch remote resources flag</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_scap-listScapContent-loggedInUser"><a class="anchor" href="#apidoc-system_scap-listScapContent-loggedInUser"></a><a class="link" href="#apidoc-system_scap-listScapContent-loggedInUser">Method: listScapContent</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List all available SCAP content.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  SCAP content information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - SCAP content ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - SCAP content name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description" - SCAP content description</p>
+</li>
+<li>
+<p><span class="string">string</span>  "dataStreamFileName" - DataStream file name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "xccdfFileName" - XCCDF file name</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_scap-listTailoringFiles-loggedInUser"><a class="anchor" href="#apidoc-system_scap-listTailoringFiles-loggedInUser"></a><a class="link" href="#apidoc-system_scap-listTailoringFiles-loggedInUser">Method: listTailoringFiles</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List tailoring files available for the user&#8217;s organization.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  Tailoring file information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - Tailoring file ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - Tailoring file name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "fileName" - File name on disk</p>
+</li>
+<li>
+<p><span class="string">string</span>  "displayFileName" - Display file name</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId" - Organization ID</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="apidoc-system_scap-listXccdfScans-loggedInUser-sid"><a class="anchor" href="#apidoc-system_scap-listXccdfScans-loggedInUser-sid"></a><a class="link" href="#apidoc-system_scap-listXccdfScans-loggedInUser-sid">Method: listXccdfScans</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -634,6 +832,117 @@
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date"><a class="anchor" href="#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date"></a><a class="link" href="#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date">Method: scheduleBetaXccdfScanCustom</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule SCAP scan with custom parameters.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  params</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "scapContentId" - SCAP content ID (required)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "xccdfProfileId" - XCCDF profile ID (required)</p>
+</li>
+<li>
+<p><span class="int">int</span>  "tailoringFileId" - Tailoring file ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "tailoringProfileId" - Tailoring profile ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ovalFiles" - OVAL files (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advancedArgs" - Advanced arguments (optional)</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "fetchRemoteResources" - Fetch remote resources (optional, default false)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of SCAP action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date"><a class="anchor" href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date"></a><a class="link" href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date">Method: scheduleBetaXccdfScanWithPolicy</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule SCAP scan based on an existing SCAP policy.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
+</li>
+<li>
+<p><span class="int">int</span>  policyId - SCAP policy ID</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of SCAP action created</p>
 </li>
 </ul>
 </div>
