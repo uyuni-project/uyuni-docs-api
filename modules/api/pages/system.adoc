@@ -137,6 +137,8 @@
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions,provisionSystem>>
+* <<apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionSystem-loggedInUser-request-sid-proxy-profileName-earliestDate-advancedOptions,provisionSystem>>
 * <<apidoc-system-provisionVirtualGuest-loggedInUser-sid-guestName-profileName,provisionVirtualGuest>>
@@ -5013,6 +5015,76 @@ Returns:
 
 
 
+[#apidoc-system-provisionSystem-loggedInUser-sid-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
+[#apidoc-system-provisionSystem-loggedInUser-request-sid-profileName-earliestDate-advancedOptions]
+== Method: provisionSystem
+
+HTTP `POST`
+
+Description:
+
+Provision a system using the specified kickstart/autoinstallation profile.
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  sid - ID of the system to be provisioned.
+ 
+* [.string]#string#  profileName - Profile to use.
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestDate
+ 
+* [.struct]#struct#  advancedOptions
+** [.string]#string#  "kernel_options" - custom kernel options
+** [.string]#string#  "post_kernel_options" - custom post kernel options
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the action scheduled, otherwise exception thrown
+ on error
+ 
+
+
+
 [#apidoc-system-provisionSystem-loggedInUser-sid-proxy-profileName-earliestDate-advancedOptions]
 == Method: provisionSystem
 
@@ -7360,9 +7432,8 @@ HTTP `POST`
 Description:
 
 Returns a list of system IDs whose name matches
-  the supplied regular expression(defined by
-  http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html_blank
- Java representation of regular expressions)
+  the supplied regular expression defined by Java representation of regular expressions
+  (http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html)
 
 
 
