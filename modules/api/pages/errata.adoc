@@ -137,9 +137,6 @@ HTTP `POST`
 Description:
 
 Clone a list of errata into the specified channel.
- It only links the packages if the destination channel already contains an older version of the
- same package (same name and architecture). If the package is completely new to that channel,
- it will not be linked and the resulting behaviour will be the same as a channel.software.mergeErrata call.
 
 
 
@@ -176,7 +173,6 @@ HTTP `POST`
 Description:
 
 Clones a list of errata into a specified cloned channel according the original erratas.
- It always links the packages to the target channel by searching all related packages among all the parent clones.
 
 
 
@@ -213,8 +209,7 @@ HTTP `POST`
 Description:
 
 Asynchronously clones a list of errata into a specified cloned channel
- according the original erratas.
- It always links the packages to the target channel by searching all related packages among all the parent clones.
+ according the original erratas
 
 
 
