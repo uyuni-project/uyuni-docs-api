@@ -391,7 +391,7 @@ Parameters:
  kickstart to download.
  
 * [.string]#string#  host - The host to use when
- referring to the SUSE Manager server. Usually this should be the FQDN,
+ referring to the Uyuni server. Usually this should be the FQDN,
  but could be the ip address or shortname as well.
  
 
@@ -898,8 +898,9 @@ HTTP `POST`
 Description:
 
 Set advanced options for a kickstart profile.
- If 'md5_crypt_rootpw' is set to 'True', 'root_pw' is taken as plaintext and
- will md5 encrypted on server side, otherwise a hash encoded password
+ 'md5_crypt_rootpw' is not supported anymore.
+ If 'sha256_crypt_rootpw' is set to 'True', 'root_pw' is taken as plaintext and
+ will sha256 encrypted on server side, otherwise a hash encoded password
  (according to the auth option) is expected
 
 
@@ -920,7 +921,7 @@ Parameters:
               timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx,
               key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi,
               iscsiname, logging, monitor, multipath, poweroff, halt, services,
-              shutdown, user, vnc, zfcp, driverdisk, md5_crypt_rootpw
+              shutdown, user, vnc, zfcp, driverdisk, sha256_crypt_rootpw
 *** [.string]#string#  "arguments" - Arguments of the option
  
 
