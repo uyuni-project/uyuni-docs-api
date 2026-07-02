@@ -1,12 +1,51 @@
+{{#if page.attributes.revdate}}
+<meta http-equiv="last-modified" content="{{page.attributes.revdate}}"/>
+{{/if}}
 <link rel="stylesheet" href="{{uiRootPath}}/css/search.css">
 <link rel="icon" href="{{uiRootPath}}/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="{{uiRootPath}}/css/font-styles.css">
 <link rel="stylesheet" href="{{uiRootPath}}/fonts/css/all.css">
 <link rel="stylesheet" href="{{uiRootPath}}/css/site-extra.css">
+<link rel="stylesheet" href="{{uiRootPath}}/css/api-styles.css">
 <link rel="stylesheet" href="{{{uiRootPath}}}/css/vendor/tabs.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{uiRootPath}}/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://d12w0ryu9hjsx8.cloudfront.net/shared-header/1.10/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://d12w0ryu9hjsx8.cloudfront.net/shared-header/1.10/assets");
+</script>
+
+<!-- Qualtrics feedback widget -->
+<script src="{{uiRootPath}}/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+{{#if page.description}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{page.title}}",
+  "description": "{{page.description}}",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "SUSE"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SUSE",
+    "url": "https://documentation.suse.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+    }
+  }
+}
+</script>
+{{/if}}
