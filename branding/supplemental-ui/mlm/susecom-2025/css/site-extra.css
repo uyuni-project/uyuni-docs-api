@@ -117,11 +117,11 @@ i.fa[title="Tip:"] {
   background-color: #33ba78;
 }
 
-.has-submenu {
+.has-submenu-dropdown {
   position: relative;
 }
 
-.submenu {
+.submenu-dropdown {
   display: none;
   position: absolute;
   left: -50%;
@@ -135,7 +135,7 @@ i.fa[title="Tip:"] {
   width: max-content;
 }
 
-.has-submenu:hover .submenu {
+.has-submenu-dropdown:hover .submenu-dropdown {
   display: block;
   transform: translateX(0);
 }
@@ -150,11 +150,11 @@ i.fa[title="Tip:"] {
   transition: transform 0.3s ease-in-out;
 }
 
-.has-submenu:hover .navbar-item .fas.fa-chevron-right {
+.has-submenu-dropdown:hover .navbar-item .fas.fa-chevron-right {
   transform: rotate(90deg);
 }
 
-.submenu a.navbar-item {
+.submenu-dropdown a.navbar-item {
   padding: 0.5rem 1rem;
 }
 
@@ -211,6 +211,11 @@ a.navbar-logo {
 /* left nav panel */
 .nav-panel-menu {
   background-color: #efefef;
+  height: calc(100%);
+}
+
+.nav-panel-explore {
+    visibility: hidden;
 }
 
 .panels {
@@ -1221,6 +1226,20 @@ nav.pagination a {
   color: #00112b;
 }
 
+/*
+.survey-link {
+  background-color: #90ebcd;
+  padding: 16px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  color: black;
+  font-weight: 500;
+  z-index: 3;
+  text-decoration: none;
+}
+  */
+
 .toolbar .library-link {
   display: inline-flex;
   align-items: center;
@@ -1229,10 +1248,12 @@ nav.pagination a {
   text-decoration: none;
 }
 
+/* Text shown by default */
 .toolbar .library-text {
   display: inline-flex;
 }
 
+/* Icon hidden by default */
 .toolbar .library-icon {
   width: 20px;
   height: 20px;
@@ -1240,6 +1261,7 @@ nav.pagination a {
   margin: .225rem;
 }
 
+/* On mobile: hide text, show icon */
 @media (max-width: 1400px) {
   .toolbar .library-text {
     display: none;
@@ -1260,10 +1282,12 @@ nav.pagination a {
   text-decoration: none;
 }
 
+/* Text shown by default */
 .breadcrumbs .book-text {
   display: inline-flex;
 }
 
+/* Icon hidden by default */
 .breadcrumbs .book-icon {
   width: 20px;
   height: 20px;
@@ -1271,6 +1295,7 @@ nav.pagination a {
   margin: .225rem;
 }
 
+/* On mobile: hide text, show icon */
 @media (max-width: 1400px) {
   .breadcrumbs .book-text {
     display: none;
@@ -1287,31 +1312,47 @@ nav.pagination a {
   }
 }
 
+.home-link {
+margin: .225rem;
+}
+
+/*.breadcrumbs ul {
+  flex-wrap: wrap;
+} */
+
 @media screen and (max-width: 1023px) {
   .breadcrumbs {
     display: block !important;
   }
 }
 
-.home-link-dsc {
-  display: block;
-  height: 1.25rem;
-  width: 1.25rem;
-  margin: .625rem;
-}
-
-/* Shared Header - start */
 .toolbar {
   background-color: #efefef;
+  /* Shared Header - start */
   top: 6.8rem;
+  /* Shared Header - end */
 }
 
 body {
   font-family: "SUSE", "Poppins", sans-serif;
   word-break: keep-all;
+  /* Shared Header - start */
   padding-top: 0;
+  /* Shared Header - end */
 }
 
+.toc .toc-menu a {
+  border-left: unset;
+}
+
+.home-link-dsc {
+    display: block;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: .625rem;
+}
+
+/* Shared Header - start */
 .nav {
   top: 6.8rem;
   -webkit-box-shadow: none;
@@ -1331,7 +1372,13 @@ shared-header {
   top: 0;
   z-index: 999;
 }
+
 /* Shared Header - end */
+
+/* Ensure main content area fills viewport minus header */
+.body, main > .content {
+  min-height: calc(100vh - 2.2rem); /* 2.2rem is the sharedheader height, I think */
+}
 
 .doc {
   margin-top: 122px;
@@ -1356,31 +1403,63 @@ shared-header {
 }
 
 #qualtrics_container {
-  order: 99;
-  margin-top: 1.5rem;
+  order: 99; /* Higher order pushes it to the bottom */
+  margin-top: 1.5rem; /* Adds the requested line gap */
 }
 
+/* 1. Ensure the container's font-size is zero to hide the original text node */
 .QSI__EmbeddedFeedbackContainer_QuestionText {
   font-size: 0 !important;
   visibility: hidden !important;
-  position: relative;
+  position: relative; /* Useful for positioning if needed */
 }
 
+/* 2. Force the ::before element to be visible and have text */
 .QSI__EmbeddedFeedbackContainer_QuestionText::before {
   visibility: visible !important;
-  font-size: 14.4px !important;
+  font-size: 14.4px !important; /* Restore font size */
   display: inline-block;
-  content: "Was this helpful?";
-}
-
-html[lang="ja"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
-  content: "お役に立ちましたか？" !important;
+  content: "Was this helpful?"; /* Default fallback */
 }
 
 html[lang="zh_CN"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
   content: "这对您有帮助吗？" !important;
 }
+html[lang="de"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
+  content: "War das hilfreich?" !important;
+}
+html[lang="es"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
+  content: "¿Fue útil esto?" !important;
+}
+html[lang="fr"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
+  content: "Cela vous a-t-il été utile ?" !important;
+}
+html[lang="ja"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
+  content: "お役に立ちましたか？" !important;
+}
+html[lang="pt_BR"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
+  content: "Isso foi útil?" !important;
+}
 
-html[lang="ko"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
-  content: "도움이 되었나요?" !important;
+/* ── Breadcrumb flex layout ─────────────────────────────────────────────────── */
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove trailing separator from last breadcrumb item */
+.breadcrumbs li:last-child::after {
+  content: none;
+}
+
+/* ── API-specific overrides ──────────────────────────────────────────────────── */
+/* Prevent the default h2 border-bottom override in api-styles from
+   conflicting with the nav heading style. Already handled per-card. */
+.api-method-header h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }

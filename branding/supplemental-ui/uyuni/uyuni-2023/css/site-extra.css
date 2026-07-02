@@ -144,6 +144,7 @@ a.navbar-logo {
 /* left nav panel */
 .nav-panel-menu {
   background-color: #efefef;
+  height: calc(100%);
 }
 
 .panels {
@@ -657,4 +658,42 @@ div#toctitle {
   margin-top: 21px;
   margin-right: 34px;
   margin-left: 20px;
+}
+
+/* ── Nav full-height fix ─────────────────────────────────────────────────────── */
+.nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: sticky;
+  height: calc(100vh - 4rem);
+}
+
+.body, main > .content {
+  min-height: calc(100vh - 4rem);
+}
+
+/* ── Breadcrumb flex layout ──────────────────────────────────────────────────── */
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li::after {
+  content: "/";
+  padding: 0 0.5rem;
+  color: #6dbfb8;
+}
+
+.breadcrumbs li:last-child::after {
+  content: none;
+}
+
+/* ── API-specific ────────────────────────────────────────────────────────────── */
+.api-method-header h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
