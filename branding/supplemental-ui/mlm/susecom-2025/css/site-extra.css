@@ -472,9 +472,14 @@ aside.toc.sidebar {
 }
 
 .breadcrumbs li::after {
-  content: "/";
+  content: "|";
   padding: 0 0.5rem;
   color: #30ba78;
+}
+
+.breadcrumbs li:first-child::after,
+.breadcrumbs li:last-child::after {
+  content: none;
 }
 
 nav.pagination a {
@@ -1451,7 +1456,17 @@ html[lang="pt_BR"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
   padding: 0;
 }
 
-/* Remove trailing separator from last breadcrumb item */
+/* Use | as separator; suppress after home icon (first li) and last li */
+.breadcrumbs li::after {
+  content: "|";
+  padding: 0 0.5rem;
+  color: #30ba78;
+}
+
+.breadcrumbs li:first-child::after {
+  content: none;
+}
+
 .breadcrumbs li:last-child::after {
   content: none;
 }

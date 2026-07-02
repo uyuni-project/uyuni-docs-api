@@ -683,11 +683,12 @@ div#toctitle {
 }
 
 .breadcrumbs li::after {
-  content: "/";
+  content: "|";
   padding: 0 0.5rem;
   color: #6dbfb8;
 }
 
+.breadcrumbs li:first-child::after,
 .breadcrumbs li:last-child::after {
   content: none;
 }
