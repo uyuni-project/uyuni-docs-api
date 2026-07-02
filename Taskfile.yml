@@ -106,6 +106,10 @@ tasks:
     cmds:
       - "{{.DOCBUILD}} gen-nav"
       - "{{.DOCBUILD}} gen-all"
+      # Antora resolves nav/module paths relative to start_path (translations/en/).
+      # Symlink translations/en/modules → repo-root/modules so Antora finds content.
+      - mkdir -p translations/en
+      - ln -sfn ../../modules translations/en/modules
     sources:
       - config.yml
       - modules/api/pages/apilist.adoc
@@ -248,6 +252,7 @@ tasks:
       - rm -rf build/ translations/ .cache/ .bin/
       - rm -f modules/api/nav-api-guide.pdf.en.adoc
       - echo "Clean complete."
+
 
   # --------------------------------------------------------------------------
   # Container — build / pull / check
