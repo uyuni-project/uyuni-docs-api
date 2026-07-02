@@ -3,34 +3,25 @@ version: '3'
 # ── Build options ──────────────────────────────────────────────────────────────
 #
 # OPTION A — Container (only requires Podman or Docker)
-#   task container:pull              Pull the pre-built builder image from GHCR
-#   task container:draft:mlm        MLM HTML — documentation.suse.com branding
-#   task container:draft:uyuni      Uyuni HTML — uyuni-project.org branding
-#   task container:draft:all        Both HTML outputs
-#   task container:pdf:mlm          MLM API PDF
-#   task container:pdf:uyuni        Uyuni API PDF
-#   task container:pdf:all          All PDFs
-#   task container:obs:mlm          OBS tarballs for MLM
-#   task container:obs:uyuni        OBS tarballs for Uyuni
-#   task container:validate:mlm     Antora xref validation — MLM
-#   task container:validate:uyuni   Antora xref validation — Uyuni
-#   task container:shell            Interactive shell inside the container
-#   task container:run -- <task>    Run any task inside the container
+#   task container:publish:mlm    Full MLM build — HTML + API PDF
+#   task container:publish:uyuni  Full Uyuni build — HTML + API PDF
+#   task container:pdf:mlm        MLM API PDF only
+#   task container:pdf:uyuni      Uyuni API PDF only
+#   task container:draft:mlm      MLM HTML preview (no PDF)
+#   task container:draft:uyuni    Uyuni HTML preview (no PDF)
+#   task container:obs:mlm        OBS tarballs for MLM
+#   task container:obs:uyuni      OBS tarballs for Uyuni
 #
 # OPTION B — Local toolchain (Go + Task + Antora + Asciidoctor-PDF installed)
-#   task setup                      Build the docbuild binary (.bin/docbuild)
-#   task gen                        Regenerate nav + all Antora/PDF configs
-#   task draft:mlm                  MLM HTML — documentation.suse.com branding
-#   task draft:uyuni                Uyuni HTML — uyuni-project.org branding
-#   task draft:all                  Both HTML outputs
-#   task pdf:mlm                    MLM API PDF
-#   task pdf:uyuni                  Uyuni API PDF
-#   task pdf:all                    All PDFs
-#   task obs:mlm                    OBS tarballs for MLM
-#   task obs:uyuni                  OBS tarballs for Uyuni
-#   task validate:mlm               Antora xref validation — MLM
-#   task validate:uyuni             Antora xref validation — Uyuni
-#   task clean                      Remove build/, translations/, .cache/
+#   task publish:mlm              Full MLM build — HTML + API PDF
+#   task publish:uyuni            Full Uyuni build — HTML + API PDF
+#   task pdf:mlm                  MLM API PDF only
+#   task pdf:uyuni                Uyuni API PDF only
+#   task draft:mlm                MLM HTML preview (no PDF)
+#   task draft:uyuni              Uyuni HTML preview (no PDF)
+#   task obs:mlm                  OBS tarballs for MLM
+#   task obs:uyuni                OBS tarballs for Uyuni
+#   task setup / gen / clean      Dev tooling
 #
 
 vars:
@@ -57,28 +48,26 @@ tasks:
         echo "  uyuni-docs-api — build tasks"
         echo ""
         echo "  ── CONTAINER (recommended — requires only Podman or Docker) ──────────────"
-        echo "  container:draft:mlm     MLM HTML — documentation.suse.com branding"
-        echo "  container:draft:uyuni   Uyuni HTML — uyuni-project.org branding"
-        echo "  container:draft:all     Both HTML outputs"
-        echo "  container:pdf:mlm       MLM API PDF"
-        echo "  container:pdf:uyuni     Uyuni API PDF"
-        echo "  container:pdf:all       All PDFs — both products"
+        echo "  container:publish:mlm   Full MLM build — HTML + API PDF"
+        echo "  container:publish:uyuni Full Uyuni build — HTML + API PDF"
+        echo "  container:pdf:mlm       MLM API PDF only"
+        echo "  container:pdf:uyuni     Uyuni API PDF only"
         echo "  container:obs:mlm       OBS source tarballs for MLM"
         echo "  container:obs:uyuni     OBS source tarballs for Uyuni"
-        echo "  container:validate:mlm  Antora xref validation — MLM"
-        echo "  container:validate:uyuni Antora xref validation — Uyuni"
+        echo ""
+        echo "  ── PREVIEW / DRAFT HTML (fast, no PDF) ──────────────────────────────────"
+        echo "  container:draft:mlm     MLM HTML preview — documentation.suse.com branding"
+        echo "  container:draft:uyuni   Uyuni HTML preview — uyuni-project.org branding"
+        echo "  draft:mlm               (local) MLM HTML preview"
+        echo "  draft:uyuni             (local) Uyuni HTML preview"
         echo ""
         echo "  ── LOCAL (Go + Task + Antora + asciidoctor-pdf installed) ───────────────"
-        echo "  draft:mlm               MLM HTML — documentation.suse.com branding"
-        echo "  draft:uyuni             Uyuni HTML — uyuni-project.org branding"
-        echo "  draft:all               Both HTML outputs"
-        echo "  pdf:mlm                 MLM API PDF"
-        echo "  pdf:uyuni               Uyuni API PDF"
-        echo "  pdf:all                 All PDFs — both products"
+        echo "  publish:mlm             Full MLM build — HTML + API PDF"
+        echo "  publish:uyuni           Full Uyuni build — HTML + API PDF"
+        echo "  pdf:mlm                 MLM API PDF only"
+        echo "  pdf:uyuni               Uyuni API PDF only"
         echo "  obs:mlm                 OBS source tarballs for MLM"
         echo "  obs:uyuni               OBS source tarballs for Uyuni"
-        echo "  validate:mlm            Antora xref validation — MLM"
-        echo "  validate:uyuni          Antora xref validation — Uyuni"
         echo ""
         echo "  ── DEV / TOOLING ────────────────────────────────────────────────────────"
         echo "  setup                   Build the Go toolchain binary (.bin/docbuild)"
@@ -88,7 +77,6 @@ tasks:
         echo "  container:pull          Pull the latest pre-built builder image from GHCR"
         echo "  container:check-update  Check whether a newer builder image is available"
         echo "  container:shell         Open an interactive shell inside the container"
-        echo "  container:run -- <task> Run any task inside the container (escape hatch)"
         echo ""
         echo "  Run 'task --list' for the full index | 'task --summary <task>' for details"
         echo ""
@@ -123,22 +111,22 @@ tasks:
       - modules/api/pages/apilist.adoc
 
   # --------------------------------------------------------------------------
-  # HTML draft builds
+  # HTML draft / preview builds
   # --------------------------------------------------------------------------
   draft:mlm:
-    desc: "[Draft] MLM HTML — documentation.suse.com branding"
+    desc: "[Draft] MLM HTML preview — documentation.suse.com branding (no PDF)"
     deps: [gen]
     cmds:
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/mlm-dsc.site.yml
 
   draft:uyuni:
-    desc: "[Draft] Uyuni HTML — uyuni-project.org branding"
+    desc: "[Draft] Uyuni HTML preview — uyuni-project.org branding (no PDF)"
     deps: [gen]
     cmds:
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/uyuni-website.site.yml
 
   draft:all:
-    desc: "[Draft] Both HTML outputs (sequential)"
+    desc: "[Draft] Both HTML previews (sequential)"
     cmds:
       - task: draft:mlm
       - task: draft:uyuni
@@ -191,15 +179,19 @@ tasks:
     deps: [pdf:mlm, pdf:uyuni]
 
   # --------------------------------------------------------------------------
-  # Publish — HTML + PDF together
+  # Publish — full production build (HTML + PDF)
   # --------------------------------------------------------------------------
   publish:mlm:
-    desc: "[Local] Full MLM publish — HTML + PDF"
+    desc: "[Local] Full MLM build — HTML + API PDF"
     deps: [draft:mlm, pdf:mlm]
 
   publish:uyuni:
-    desc: "[Local] Full Uyuni publish — HTML + PDF"
+    desc: "[Local] Full Uyuni build — HTML + API PDF"
     deps: [draft:uyuni, pdf:uyuni]
+
+  publish:all:
+    desc: "[Local] Full build — both products, HTML + PDF"
+    deps: [publish:mlm, publish:uyuni]
 
   # --------------------------------------------------------------------------
   # OBS packages
@@ -221,16 +213,16 @@ tasks:
       - tar -czvf build/packages/uyuni-api-docs_en-pdf.tar.gz build/en/pdf
 
   # --------------------------------------------------------------------------
-  # Validation
+  # Validation (available via --list or --summary, not shown in default help)
   # --------------------------------------------------------------------------
   validate:mlm:
-    desc: "[Local] Antora xref validation — MLM"
+    desc: "[Dev] Antora xref validation — MLM"
     deps: [gen]
     cmds:
       - NODE_PATH="$(npm -g root)" antora --generator @antora/xref-validator translations/en/mlm-dsc.site.yml
 
   validate:uyuni:
-    desc: "[Local] Antora xref validation — Uyuni"
+    desc: "[Dev] Antora xref validation — Uyuni"
     deps: [gen]
     cmds:
       - NODE_PATH="$(npm -g root)" antora --generator @antora/xref-validator translations/en/uyuni-website.site.yml
@@ -293,48 +285,56 @@ tasks:
       - "{{.CONTAINER_CMD}} run --rm -it -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} bash"
 
   container:run:
-    desc: "[Container] Run any task inside the container (escape hatch)"
+    desc: "[Container] Run any task inside the container (escape hatch: task container:run -- <task>)"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task {{.CLI_ARGS}}"
 
   # --------------------------------------------------------------------------
-  # Container — HTML draft builds
+  # Container — full production builds (HTML + PDF)
   # --------------------------------------------------------------------------
-  container:setup:
-    desc: "[Dev] Build docbuild binary inside the container"
+  container:publish:mlm:
+    desc: "[Container] Full MLM build — HTML + API PDF, via container"
     cmds:
-      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task setup"
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task publish:mlm"
 
-  container:gen:
-    desc: "[Dev] Generate all configs inside the container"
+  container:publish:uyuni:
+    desc: "[Container] Full Uyuni build — HTML + API PDF, via container"
     cmds:
-      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task gen"
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task publish:uyuni"
 
+  container:publish:all:
+    desc: "[Container] Full build — both products, HTML + PDF, via container"
+    cmds:
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task publish:all"
+
+  # --------------------------------------------------------------------------
+  # Container — HTML draft / preview
+  # --------------------------------------------------------------------------
   container:draft:mlm:
-    desc: "[Draft] MLM HTML — documentation.suse.com branding, via container"
+    desc: "[Draft] MLM HTML preview — documentation.suse.com branding, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:mlm"
 
   container:draft:uyuni:
-    desc: "[Draft] Uyuni HTML — uyuni-project.org branding, via container"
+    desc: "[Draft] Uyuni HTML preview — uyuni-project.org branding, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:uyuni"
 
   container:draft:all:
-    desc: "[Draft] Both HTML outputs, via container"
+    desc: "[Draft] Both HTML previews, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:all"
 
   # --------------------------------------------------------------------------
-  # Container — PDF builds
+  # Container — PDF only
   # --------------------------------------------------------------------------
   container:pdf:mlm:
-    desc: "[Container] MLM API PDF, via container"
+    desc: "[Container] MLM API PDF only, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:mlm"
 
   container:pdf:uyuni:
-    desc: "[Container] Uyuni API PDF, via container"
+    desc: "[Container] Uyuni API PDF only, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:uyuni"
 
@@ -357,15 +357,25 @@ tasks:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task obs:uyuni"
 
   # --------------------------------------------------------------------------
-  # Container — Validation
+  # Container — Dev
   # --------------------------------------------------------------------------
+  container:setup:
+    desc: "[Dev] Build docbuild binary inside the container"
+    cmds:
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task setup"
+
+  container:gen:
+    desc: "[Dev] Generate all configs inside the container"
+    cmds:
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task gen"
+
   container:validate:mlm:
-    desc: "[Container] Antora xref validation — MLM, via container"
+    desc: "[Dev] Antora xref validation — MLM, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task validate:mlm"
 
   container:validate:uyuni:
-    desc: "[Container] Antora xref validation — Uyuni, via container"
+    desc: "[Dev] Antora xref validation — Uyuni, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task validate:uyuni"
 
