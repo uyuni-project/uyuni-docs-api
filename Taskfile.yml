@@ -2,24 +2,35 @@ version: '3'
 
 # ── Build options ──────────────────────────────────────────────────────────────
 #
-# OPTION A — Local toolchain (Go + Task + Antora + Asciidoctor-PDF installed)
-#   task setup                    Build the docbuild binary (.bin/docbuild)
-#   task gen                      Regenerate nav + all Antora/PDF configs from config.yml
-#   task draft:mlm                MLM HTML — documentation.suse.com branding
-#   task draft:uyuni              Uyuni HTML — uyuni-project.org branding
-#   task pdf:mlm                  MLM PDF (API guide)
-#   task pdf:uyuni                Uyuni PDF (API guide)
-#   task obs:mlm                  OBS packages for MLM (HTML + PDF tarballs)
-#   task obs:uyuni                OBS packages for Uyuni (HTML + PDF tarballs)
-#   task validate:mlm             Antora xref validation — MLM
-#   task validate:uyuni           Antora xref validation — Uyuni
-#   task clean                    Remove build/, translations/, .cache/
+# OPTION A — Container (only requires Podman or Docker)
+#   task container:pull              Pull the pre-built builder image from GHCR
+#   task container:draft:mlm        MLM HTML — documentation.suse.com branding
+#   task container:draft:uyuni      Uyuni HTML — uyuni-project.org branding
+#   task container:draft:all        Both HTML outputs
+#   task container:pdf:mlm          MLM API PDF
+#   task container:pdf:uyuni        Uyuni API PDF
+#   task container:pdf:all          All PDFs
+#   task container:obs:mlm          OBS tarballs for MLM
+#   task container:obs:uyuni        OBS tarballs for Uyuni
+#   task container:validate:mlm     Antora xref validation — MLM
+#   task container:validate:uyuni   Antora xref validation — Uyuni
+#   task container:shell            Interactive shell inside the container
+#   task container:run -- <task>    Run any task inside the container
 #
-# OPTION B — Container (only requires Podman or Docker)
-#   task container:pull           Pull the pre-built builder image from GHCR
-#   task container:draft:mlm     MLM HTML build inside container
-#   task container:pdf:mlm       MLM PDF build inside container
-#   ... (container variants of all above tasks)
+# OPTION B — Local toolchain (Go + Task + Antora + Asciidoctor-PDF installed)
+#   task setup                      Build the docbuild binary (.bin/docbuild)
+#   task gen                        Regenerate nav + all Antora/PDF configs
+#   task draft:mlm                  MLM HTML — documentation.suse.com branding
+#   task draft:uyuni                Uyuni HTML — uyuni-project.org branding
+#   task draft:all                  Both HTML outputs
+#   task pdf:mlm                    MLM API PDF
+#   task pdf:uyuni                  Uyuni API PDF
+#   task pdf:all                    All PDFs
+#   task obs:mlm                    OBS tarballs for MLM
+#   task obs:uyuni                  OBS tarballs for Uyuni
+#   task validate:mlm               Antora xref validation — MLM
+#   task validate:uyuni             Antora xref validation — Uyuni
+#   task clean                      Remove build/, translations/, .cache/
 #
 
 vars:
@@ -35,30 +46,74 @@ vars:
 
 tasks:
 
-  # ── Setup ────────────────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Default — human-friendly help screen (runs when you type just: task)
+  # --------------------------------------------------------------------------
   default:
-    desc: Show available tasks
-    cmds:
-      - task --list
     silent: true
+    cmds:
+      - |
+        echo ""
+        echo "  uyuni-docs-api — build tasks"
+        echo ""
+        echo "  ── CONTAINER (recommended — requires only Podman or Docker) ──────────────"
+        echo "  container:draft:mlm     MLM HTML — documentation.suse.com branding"
+        echo "  container:draft:uyuni   Uyuni HTML — uyuni-project.org branding"
+        echo "  container:draft:all     Both HTML outputs"
+        echo "  container:pdf:mlm       MLM API PDF"
+        echo "  container:pdf:uyuni     Uyuni API PDF"
+        echo "  container:pdf:all       All PDFs — both products"
+        echo "  container:obs:mlm       OBS source tarballs for MLM"
+        echo "  container:obs:uyuni     OBS source tarballs for Uyuni"
+        echo "  container:validate:mlm  Antora xref validation — MLM"
+        echo "  container:validate:uyuni Antora xref validation — Uyuni"
+        echo ""
+        echo "  ── LOCAL (Go + Task + Antora + asciidoctor-pdf installed) ───────────────"
+        echo "  draft:mlm               MLM HTML — documentation.suse.com branding"
+        echo "  draft:uyuni             Uyuni HTML — uyuni-project.org branding"
+        echo "  draft:all               Both HTML outputs"
+        echo "  pdf:mlm                 MLM API PDF"
+        echo "  pdf:uyuni               Uyuni API PDF"
+        echo "  pdf:all                 All PDFs — both products"
+        echo "  obs:mlm                 OBS source tarballs for MLM"
+        echo "  obs:uyuni               OBS source tarballs for Uyuni"
+        echo "  validate:mlm            Antora xref validation — MLM"
+        echo "  validate:uyuni          Antora xref validation — Uyuni"
+        echo ""
+        echo "  ── DEV / TOOLING ────────────────────────────────────────────────────────"
+        echo "  setup                   Build the Go toolchain binary (.bin/docbuild)"
+        echo "  gen                     Regenerate nav-api-guide.adoc and Antora/PDF configs"
+        echo "  clean                   Remove build/, translations/, .cache/, .bin/"
+        echo "  container:build         Build the builder image locally from Dockerfile.bci"
+        echo "  container:pull          Pull the latest pre-built builder image from GHCR"
+        echo "  container:check-update  Check whether a newer builder image is available"
+        echo "  container:shell         Open an interactive shell inside the container"
+        echo "  container:run -- <task> Run any task inside the container (escape hatch)"
+        echo ""
+        echo "  Run 'task --list' for the full index | 'task --summary <task>' for details"
+        echo ""
 
+  # --------------------------------------------------------------------------
+  # Setup — build the Go binary
+  # --------------------------------------------------------------------------
   setup:
-    desc: Build the docbuild binary into .bin/
+    desc: "[Dev] Build the Go toolchain binary (.bin/docbuild)"
     cmds:
       - mkdir -p .bin
-      - go build -o {{.DOCBUILD}} ./cmd/docbuild/
+      - go build -buildvcs=false -o {{.DOCBUILD}} ./cmd/docbuild/
     sources:
       - cmd/docbuild/*.go
       - internal/**/*.go
       - go.mod
+      - go.sum
     generates:
       - "{{.DOCBUILD}}"
 
-  # ── Config generation ─────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Config generation
+  # --------------------------------------------------------------------------
   gen:
-    desc: Regenerate nav-api-guide.adoc and all Antora/PDF configs from config.yml
+    desc: "[Dev] Regenerate nav-api-guide.adoc and all Antora/PDF configs from config.yml"
     deps: [setup]
     cmds:
       - "{{.DOCBUILD}} gen-nav"
@@ -67,28 +122,32 @@ tasks:
       - config.yml
       - modules/api/pages/apilist.adoc
 
-  # ── HTML draft builds ─────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # HTML draft builds
+  # --------------------------------------------------------------------------
   draft:mlm:
-    desc: Build MLM HTML (documentation.suse.com branding)
+    desc: "[Draft] MLM HTML — documentation.suse.com branding"
     deps: [gen]
     cmds:
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/mlm-dsc.site.yml
 
   draft:uyuni:
-    desc: Build Uyuni HTML (uyuni-project.org branding)
+    desc: "[Draft] Uyuni HTML — uyuni-project.org branding"
     deps: [gen]
     cmds:
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/uyuni-website.site.yml
 
   draft:all:
-    desc: Build all HTML outputs
-    deps: [draft:mlm, draft:uyuni]
+    desc: "[Draft] Both HTML outputs (sequential)"
+    cmds:
+      - task: draft:mlm
+      - task: draft:uyuni
 
-  # ── PDF builds ────────────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # PDF builds
+  # --------------------------------------------------------------------------
   pdf:mlm:
-    desc: Build SUSE Multi-Linux Manager API PDF
+    desc: "[Local] Build SUSE Multi-Linux Manager API PDF"
     deps: [gen]
     cmds:
       - mkdir -p build/en/pdf
@@ -108,7 +167,7 @@ tasks:
           modules/api/nav-api-guide.pdf.en.adoc
 
   pdf:uyuni:
-    desc: Build Uyuni API PDF
+    desc: "[Local] Build Uyuni API PDF"
     deps: [gen]
     cmds:
       - mkdir -p build/en/pdf
@@ -128,23 +187,25 @@ tasks:
           modules/api/nav-api-guide.pdf.en.adoc
 
   pdf:all:
-    desc: Build all PDFs
+    desc: "[Local] Build all PDFs — both products"
     deps: [pdf:mlm, pdf:uyuni]
 
-  # ── Publish (HTML + PDF) ─────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Publish — HTML + PDF together
+  # --------------------------------------------------------------------------
   publish:mlm:
-    desc: Full MLM publish — HTML + PDF
+    desc: "[Local] Full MLM publish — HTML + PDF"
     deps: [draft:mlm, pdf:mlm]
 
   publish:uyuni:
-    desc: Full Uyuni publish — HTML + PDF
+    desc: "[Local] Full Uyuni publish — HTML + PDF"
     deps: [draft:uyuni, pdf:uyuni]
 
-  # ── OBS packages ─────────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # OBS packages
+  # --------------------------------------------------------------------------
   obs:mlm:
-    desc: Create OBS tarballs for MLM (HTML + PDF)
+    desc: "[Local] Create OBS tarballs for MLM (HTML + PDF)"
     deps: [publish:mlm]
     cmds:
       - mkdir -p build/packages
@@ -152,123 +213,163 @@ tasks:
       - tar -czvf build/packages/susemanager-api-docs_en-pdf.tar.gz build/en/pdf
 
   obs:uyuni:
-    desc: Create OBS tarballs for Uyuni (HTML + PDF)
+    desc: "[Local] Create OBS tarballs for Uyuni (HTML + PDF)"
     deps: [publish:uyuni]
     cmds:
       - mkdir -p build/packages
       - tar --exclude='build/en/pdf' -czvf build/packages/uyuni-api-docs_en.tar.gz build/en
       - tar -czvf build/packages/uyuni-api-docs_en-pdf.tar.gz build/en/pdf
 
-  # ── Validation ───────────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Validation
+  # --------------------------------------------------------------------------
   validate:mlm:
-    desc: Validate Antora xrefs — MLM
+    desc: "[Local] Antora xref validation — MLM"
     deps: [gen]
     cmds:
       - NODE_PATH="$(npm -g root)" antora --generator @antora/xref-validator translations/en/mlm-dsc.site.yml
 
   validate:uyuni:
-    desc: Validate Antora xrefs — Uyuni
+    desc: "[Local] Antora xref validation — Uyuni"
     deps: [gen]
     cmds:
       - NODE_PATH="$(npm -g root)" antora --generator @antora/xref-validator translations/en/uyuni-website.site.yml
 
-  # ── Clean ────────────────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Clean
+  # --------------------------------------------------------------------------
   clean:
-    desc: Remove build artifacts, generated configs, and cache
+    desc: "[Dev] Remove build artifacts, generated configs, and Antora cache"
     cmds:
       - rm -rf build/ translations/ .cache/ .bin/
       - rm -f modules/api/nav-api-guide.pdf.en.adoc
+      - echo "Clean complete."
 
-  # ── Container tasks ──────────────────────────────────────────────────────────
-
+  # --------------------------------------------------------------------------
+  # Container — build / pull / check
+  # --------------------------------------------------------------------------
   container:build:
-    desc: Build the uyuni-docs-api-builder image locally
+    desc: "[Dev] Build the uyuni-docs-api-builder image locally from Dockerfile.bci"
     cmds:
       - "{{.CONTAINER_CMD}} build -f Dockerfile.bci -t {{.BUILDER_IMAGE}} ."
 
   container:pull:
-    desc: Pull the latest pre-built builder image from GHCR
+    desc: "[Container] Pull the latest pre-built builder image from GHCR"
     cmds:
       - "{{.CONTAINER_CMD}} pull {{.BUILDER_IMAGE}}"
+      - "{{.CONTAINER_CMD}} tag {{.BUILDER_IMAGE}} uyuni-docs-api-builder:latest"
+      - 'echo "uyuni-docs-api-builder:latest is now up to date."'
 
   container:check-update:
-    desc: Check if the builder image base has updates available
+    desc: "[Dev] Check whether a newer builder image is available on GHCR"
+    silent: true
     cmds:
-      - "{{.CONTAINER_CMD}} pull registry.suse.com/bci/nodejs:22"
+      - |
+        if ! command -v skopeo >/dev/null 2>&1; then
+          printf '\n  NOTE: skopeo is not installed — cannot check without pulling.\n'
+          printf '  To update your local image run: task container:pull\n\n'
+          exit 0
+        fi
+        REMOTE=$(skopeo inspect --no-creds docker://{{.BUILDER_IMAGE}} 2>/dev/null | grep -m1 '"Digest"' | awk -F'"' '{print $4}')
+        LOCAL=$({{.CONTAINER_CMD}} image inspect uyuni-docs-api-builder:latest 2>/dev/null | grep -m1 '"Digest"' | awk -F'"' '{print $4}')
+        if [ -z "$REMOTE" ]; then
+          printf '\n  WARNING: Could not reach ghcr.io — skipping update check.\n\n'
+        elif [ -z "$LOCAL" ]; then
+          printf '\n  No local image found. Run: task container:pull\n\n'
+        elif [ "$LOCAL" = "$REMOTE" ]; then
+          printf '  uyuni-docs-api-builder is up to date.\n'
+        else
+          printf '\n'
+          printf '  +--------------------------------------------------------------+\n'
+          printf '  | A new uyuni-docs-api-builder image is available on GHCR.    |\n'
+          printf '  | Run: task container:pull                                     |\n'
+          printf '  +--------------------------------------------------------------+\n'
+          printf '\n'
+        fi
 
   container:shell:
-    desc: Open a shell inside the builder container
+    desc: "[Dev] Open an interactive shell inside the builder container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -it -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} bash"
 
   container:run:
-    desc: Run an arbitrary task inside the container (TASK=<taskname>)
+    desc: "[Container] Run any task inside the container (escape hatch)"
     cmds:
-      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task {{.TASK}}"
+      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task {{.CLI_ARGS}}"
 
+  # --------------------------------------------------------------------------
+  # Container — HTML draft builds
+  # --------------------------------------------------------------------------
   container:setup:
-    desc: Build docbuild binary inside container
+    desc: "[Dev] Build docbuild binary inside the container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task setup"
 
   container:gen:
-    desc: Generate all configs inside container
+    desc: "[Dev] Generate all configs inside the container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task gen"
 
   container:draft:mlm:
-    desc: Build MLM HTML inside container
+    desc: "[Draft] MLM HTML — documentation.suse.com branding, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:mlm"
 
   container:draft:uyuni:
-    desc: Build Uyuni HTML inside container
+    desc: "[Draft] Uyuni HTML — uyuni-project.org branding, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:uyuni"
 
   container:draft:all:
-    desc: Build all HTML outputs inside container
+    desc: "[Draft] Both HTML outputs, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task draft:all"
 
+  # --------------------------------------------------------------------------
+  # Container — PDF builds
+  # --------------------------------------------------------------------------
   container:pdf:mlm:
-    desc: Build MLM PDF inside container
+    desc: "[Container] MLM API PDF, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:mlm"
 
   container:pdf:uyuni:
-    desc: Build Uyuni PDF inside container
+    desc: "[Container] Uyuni API PDF, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:uyuni"
 
   container:pdf:all:
-    desc: Build all PDFs inside container
+    desc: "[Container] All PDFs — both products, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:all"
 
+  # --------------------------------------------------------------------------
+  # Container — OBS packages
+  # --------------------------------------------------------------------------
   container:obs:mlm:
-    desc: Create MLM OBS tarballs inside container
+    desc: "[Container] OBS tarballs for MLM, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task obs:mlm"
 
   container:obs:uyuni:
-    desc: Create Uyuni OBS tarballs inside container
+    desc: "[Container] OBS tarballs for Uyuni, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task obs:uyuni"
 
+  # --------------------------------------------------------------------------
+  # Container — Validation
+  # --------------------------------------------------------------------------
   container:validate:mlm:
-    desc: Validate MLM xrefs inside container
+    desc: "[Container] Antora xref validation — MLM, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task validate:mlm"
 
   container:validate:uyuni:
-    desc: Validate Uyuni xrefs inside container
+    desc: "[Container] Antora xref validation — Uyuni, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task validate:uyuni"
 
   container:clean:
-    desc: Clean build artifacts inside container
+    desc: "[Dev] Clean build artifacts inside the container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task clean"
