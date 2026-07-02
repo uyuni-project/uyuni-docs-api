@@ -1,0 +1,230 @@
+/*
+ * api-styles.css — Uyuni variant
+ * Mirrors the MLM variant using Uyuni brand colours.
+ */
+
+:root {
+  --api-get:     #2ea44f; /* Uyuni green */
+  --api-post:    #1a6fbf; /* Uyuni blue */
+  --api-put:     #e67e22; /* amber */
+  --api-delete:  #c0392b;
+  --api-patch:   #6a4c93;
+  --api-head:    #555;
+  --api-options: #555;
+  --api-bg:      #f5f7fa;
+  --api-border:  #d6dee8;
+  --api-card-bg: #ffffff;
+  --api-shadow:  0 1px 3px rgba(0,0,0,0.08);
+  --api-radius:  6px;
+  --api-expand-bg: #edf7f0;
+  --api-expand-open: #d4eedd;
+  --api-type-pill-bg: #eaf3ea;
+  --api-type-pill-color: #2ea44f;
+  --api-string-pill-bg: #fff8e6;
+  --api-string-pill-color: #8a6000;
+  --api-int-pill-bg: #e8f0ff;
+  --api-int-pill-color: #1a3fa0;
+  --api-bool-pill-bg: #fdecea;
+  --api-bool-pill-color: #c0392b;
+  --api-struct-pill-bg: #f0eaff;
+  --api-struct-pill-color: #5c2e91;
+}
+
+/* ── Method cards ────────────────────────────────────────────────────────────── */
+.api-method-card {
+  border: 1px solid var(--api-border);
+  border-radius: var(--api-radius);
+  margin-bottom: 0.75rem;
+  background: var(--api-card-bg);
+  box-shadow: var(--api-shadow);
+  overflow: hidden;
+}
+
+.api-method-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--api-expand-bg);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.15s ease;
+}
+
+.api-method-header:hover {
+  background: var(--api-expand-open);
+}
+
+.api-method-header.open {
+  background: var(--api-expand-open);
+  border-bottom-color: var(--api-border);
+}
+
+.api-method-header h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex: 1;
+  color: #1a1a2e;
+}
+
+.api-method-toggle {
+  font-size: 0.8rem;
+  color: #666;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.api-method-header.open .api-method-toggle {
+  transform: rotate(180deg);
+}
+
+.api-method-body {
+  padding: 1rem 1.25rem;
+  display: none;
+}
+
+.api-method-body.open {
+  display: block;
+}
+
+/* ── HTTP verb badges ─────────────────────────────────────────────────────────── */
+.http-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: ui-monospace, "Fira Code", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+  color: #fff;
+  flex-shrink: 0;
+  min-width: 3.6rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.http-get    { background: var(--api-get); }
+.http-post   { background: var(--api-post); }
+.http-put    { background: var(--api-put); color: #000; }
+.http-delete { background: var(--api-delete); }
+.http-patch  { background: var(--api-patch); }
+.http-head   { background: var(--api-head); }
+.http-options { background: var(--api-options); }
+
+/* ── Endpoint path ──────────────────────────────────────────────────────────── */
+.api-endpoint-path {
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.82rem;
+  color: #333;
+  word-break: break-all;
+}
+
+/* ── Type role classes ────────────────────────────────────────────────────────── */
+.doc .struct {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-struct-pill-bg);
+  color: var(--api-struct-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+.doc .string {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-string-pill-bg);
+  color: var(--api-string-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+.doc .int,
+.doc .integer {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-int-pill-bg);
+  color: var(--api-int-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+.doc .boolean {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-bool-pill-bg);
+  color: var(--api-bool-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────────────────── */
+.doc table.tableblock {
+  font-size: 0.88rem;
+  border-radius: var(--api-radius);
+  overflow: hidden;
+  border: 1px solid var(--api-border);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc table.tableblock th {
+  background: var(--api-expand-bg);
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--api-border);
+}
+
+.doc table.tableblock td {
+  padding: 0.35rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.doc table.tableblock tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Code blocks ─────────────────────────────────────────────────────────────── */
+.api-method-body pre {
+  font-size: 0.82rem;
+  border-radius: 4px;
+  background: #f8f9fb;
+  border: 1px solid var(--api-border);
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+
+/* ── Controls ──────────────────────────────────────────────────────────────── */
+.api-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.api-controls button {
+  background: var(--api-expand-bg);
+  border: 1px solid var(--api-border);
+  border-radius: var(--api-radius);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+}
+
+.api-controls button:hover {
+  background: var(--api-expand-open);
+}
+
+.api-method-header a.anchor {
+  display: none;
+}

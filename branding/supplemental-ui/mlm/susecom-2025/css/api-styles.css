@@ -1,0 +1,272 @@
+/*
+ * api-styles.css — SUSE Multi-Linux Manager variant
+ * Modernises API namespace pages to resemble Swagger UI.
+ * Colours derived from documentation.suse.com / SUSE brand palette.
+ */
+
+/* ── HTTP verb badge colours (SUSE palette) ─────────────────────────────────── */
+:root {
+  --api-get:     #0c7f68; /* SUSE teal */
+  --api-post:    #005b8e; /* SUSE dark blue */
+  --api-put:     #ff9b00; /* SUSE amber */
+  --api-delete:  #c0392b; /* danger red */
+  --api-patch:   #6a4c93; /* purple */
+  --api-head:    #555;
+  --api-options: #555;
+  --api-bg:      #f5f7fa;
+  --api-border:  #d6dee8;
+  --api-card-bg: #ffffff;
+  --api-shadow:  0 1px 3px rgba(0,0,0,0.08);
+  --api-radius:  6px;
+  --api-expand-bg: #eef2f8;
+  --api-expand-open: #dce7f5;
+  --api-type-pill-bg: #eaf3f0;
+  --api-type-pill-color: #0c7f68;
+  --api-string-pill-bg: #fff8e6;
+  --api-string-pill-color: #8a6000;
+  --api-int-pill-bg: #e8f0ff;
+  --api-int-pill-color: #1a3fa0;
+  --api-bool-pill-bg: #fdecea;
+  --api-bool-pill-color: #c0392b;
+  --api-struct-pill-bg: #f0eaff;
+  --api-struct-pill-color: #5c2e91;
+}
+
+/* ── Page container ──────────────────────────────────────────────────────────── */
+.doc .sect1 {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Method section cards ────────────────────────────────────────────────────── */
+/*
+ * Each API method corresponds to an h2 with an id starting "apidoc-".
+ * api-collapse.js wraps each such section in a .api-method-card div and
+ * adds .api-method-header / .api-method-body children.
+ */
+.api-method-card {
+  border: 1px solid var(--api-border);
+  border-radius: var(--api-radius);
+  margin-bottom: 0.75rem;
+  background: var(--api-card-bg);
+  box-shadow: var(--api-shadow);
+  overflow: hidden;
+}
+
+.api-method-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--api-expand-bg);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.15s ease;
+}
+
+.api-method-header:hover {
+  background: var(--api-expand-open);
+}
+
+.api-method-header.open {
+  background: var(--api-expand-open);
+  border-bottom-color: var(--api-border);
+}
+
+.api-method-header h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex: 1;
+  color: #1a1a2e;
+}
+
+.api-method-toggle {
+  font-size: 0.8rem;
+  color: #666;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.api-method-header.open .api-method-toggle {
+  transform: rotate(180deg);
+}
+
+.api-method-body {
+  padding: 1rem 1.25rem;
+  display: none;
+}
+
+.api-method-body.open {
+  display: block;
+}
+
+/* ── HTTP verb badges ────────────────────────────────────────────────────────── */
+.http-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: ui-monospace, "Fira Code", "Cascadia Code", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+  color: #fff;
+  flex-shrink: 0;
+  min-width: 3.6rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.http-get    { background: var(--api-get); }
+.http-post   { background: var(--api-post); }
+.http-put    { background: var(--api-put); color: #000; }
+.http-delete { background: var(--api-delete); }
+.http-patch  { background: var(--api-patch); }
+.http-head   { background: var(--api-head); }
+.http-options { background: var(--api-options); }
+
+/* ── Endpoint path chip ──────────────────────────────────────────────────────── */
+.api-endpoint-path {
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.82rem;
+  color: #333;
+  word-break: break-all;
+}
+
+/* ── Type pills (replaces [.struct], [.string], etc.) ───────────────────────── */
+.type-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.1em 0.6em;
+  font-family: ui-monospace, "Fira Code", monospace;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.type-struct  { background: var(--api-struct-pill-bg);  color: var(--api-struct-pill-color); }
+.type-string  { background: var(--api-string-pill-bg);  color: var(--api-string-pill-color); }
+.type-int     { background: var(--api-int-pill-bg);     color: var(--api-int-pill-color); }
+.type-boolean { background: var(--api-bool-pill-bg);    color: var(--api-bool-pill-color); }
+.type-array   { background: var(--api-type-pill-bg);    color: var(--api-type-pill-color); }
+.type-generic { background: #f0f0f0; color: #555; }
+
+/* ── Existing adoc role classes — enhance without breaking ──────────────────── */
+/* [.struct]#struct# */
+.doc .struct {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-struct-pill-bg);
+  color: var(--api-struct-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+/* [.string]#string# etc. */
+.doc .string {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-string-pill-bg);
+  color: var(--api-string-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+.doc .int,
+.doc .integer {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-int-pill-bg);
+  color: var(--api-int-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+.doc .boolean {
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.85em;
+  background: var(--api-bool-pill-bg);
+  color: var(--api-bool-pill-color);
+  padding: 0.05em 0.4em;
+  border-radius: 4px;
+}
+
+/* ── Parameters / Return value tables ───────────────────────────────────────── */
+.doc table.tableblock {
+  font-size: 0.88rem;
+  border-radius: var(--api-radius);
+  overflow: hidden;
+  border: 1px solid var(--api-border);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc table.tableblock th {
+  background: var(--api-expand-bg);
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--api-border);
+}
+
+.doc table.tableblock td {
+  padding: 0.35rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.doc table.tableblock tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Code blocks inside method bodies ────────────────────────────────────────── */
+.api-method-body pre {
+  font-size: 0.82rem;
+  border-radius: 4px;
+  background: #f8f9fb;
+  border: 1px solid var(--api-border);
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+
+/* ── Expand / collapse all controls ──────────────────────────────────────────── */
+.api-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.api-controls button {
+  background: var(--api-expand-bg);
+  border: 1px solid var(--api-border);
+  border-radius: var(--api-radius);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+}
+
+.api-controls button:hover {
+  background: var(--api-expand-open);
+}
+
+/* ── Namespace section header ─────────────────────────────────────────────────── */
+.doc .sect1 > h2:first-child {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--api-get);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Anchor link icons on method headers ─────────────────────────────────────── */
+.api-method-header a.anchor {
+  display: none;
+}

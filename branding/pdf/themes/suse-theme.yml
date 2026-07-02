@@ -7,31 +7,27 @@ font:
   catalog:
     # SUSE 2025 Font Family
     SUSE:
-      normal: SUSE-Regular.ttf  # Default body font
-      bold: SUSE-Bold.ttf       # Bold text
-      italic: SUSE-Regular.ttf  # Regular Italic
+      normal: SUSE-Regular.ttf
+      bold: SUSE-Bold.ttf
+      italic: SUSE-Regular.ttf
       bold_italic: SUSE-Bold.ttf
-      light: SUSE-Light.ttf     # Light body text
-      medium: SUSE-Medium.ttf   # Headings
-      semibold: SUSE-SemiBold.ttf  # Subheadings
+      light: SUSE-Light.ttf
+      medium: SUSE-Medium.ttf
+      semibold: SUSE-SemiBold.ttf
       heavy: SUSE-ExtraBold.ttf
 
-    # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
     Noto Serif:
       normal: notoserif-regular-subset.ttf
       bold: notoserif-bold-subset.ttf
       italic: notoserif-italic-subset.ttf
       bold_italic: notoserif-bold_italic-subset.ttf
 
-    # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
       normal: mplus1mn-regular-ascii-conums.ttf
       bold: mplus1mn-bold-ascii.ttf
       italic: mplus1mn-italic-ascii.ttf
       bold_italic: mplus1mn-bold_italic-ascii.ttf
 
-    # M+ 1p supports Latin, Latin-1 Supplement, Latin Extended, Greek, Cyrillic, Vietnamese, Japanese & an assortment of symbols
-    # Provides support for the following glyphs ->, <-, => and <=
     M+ 1p Fallback:
       normal: mplus1p-regular-fallback.ttf
       bold: mplus1p-regular-fallback.ttf
@@ -46,57 +42,54 @@ capfont:
 brand:
   font: SUSE
   primary:
-    susepine: #0C322C
-    susejungle: #30BA78
-    suseseafoam: #7AD4AA
-    suseseafoam20: #e5f7ee
-    suseseafoam60: #afe6cc
-    susefog: #F2F2F2
-    susefog200: #E6E6E6
-    susefog300: #D7D7D7
-    susecoral: #FF6A52
-    susesalmon: #FF8E77
-    susegrn: #30BA78
-    suseblu: #0C322C
-    midnightblue: #192072
-    bluewaterhole: #2453FF
-    mint: #90EBCD
-    persimmon: #FE7C3F
+    susepine: '#0C322C'
+    susejungle: '#30BA78'
+    suseseafoam: '#7AD4AA'
+    suseseafoam20: '#e5f7ee'
+    suseseafoam60: '#afe6cc'
+    susefog: '#F2F2F2'
+    susefog200: '#E6E6E6'
+    susefog300: '#D7D7D7'
+    susecoral: '#FF6A52'
+    susesalmon: '#FF8E77'
+    susegrn: '#30BA78'
+    suseblu: '#0C322C'
+    midnightblue: '#192072'
+    bluewaterhole: '#2453FF'
+    mint: '#90EBCD'
+    persimmon: '#FE7C3F'
   preferred:
-    lime: #A0FF5F
-    grass: #00C081
-    seafoam: #02A49C
+    lime: '#A0FF5F'
+    grass: '#00C081'
+    seafoam: '#02A49C'
   secondary:
-    tourquise: #71D6E0
-    lightblue: #00B2E2
-    dark-blue: #0007B0
-    magenta: #DE0080
-    purple: #841781
-    slate: #24193B
-    pink: #F7A3D5
-    orange: #ED6924
-    lightorange: #FD9A2B
-    eggyolk: #FFEF8D
+    tourquise: '#71D6E0'
+    lightblue: '#00B2E2'
+    dark-blue: '#0007B0'
+    magenta: '#DE0080'
+    purple: '#841781'
+    slate: '#24193B'
+    pink: '#F7A3D5'
+    orange: '#ED6924'
+    lightorange: '#FD9A2B'
+    eggyolk: '#FFEF8D'
   neutral:
-    black: #000000
-    darkgrey: #5F5F5F
-    grey: #A7A9AC
-    lightgrey: #DCDDDE
-    lightergrey: #EDEDED
-    white: #FFFFFF
-  # Colors from: https://www.eosdesignsystem.com/colors
+    black: '#000000'
+    darkgrey: '#5F5F5F'
+    grey: '#A7A9AC'
+    lightgrey: '#DCDDDE'
+    lightergrey: '#EDEDED'
+    white: '#FFFFFF'
   elements:
-    link: #30BA78
-    #00B2E2
-    warning: #FFC107
-    error: #DC3545
-    text: #969494
-    decoration: #F75C03
-    decoration2: #841781
+    link: '#30BA78'
+    warning: '#FFC107'
+    error: '#DC3545'
+    text: '#969494'
+    decoration: '#F75C03'
+    decoration2: '#841781'
 
-# Configure style and layout of normal pages
 page:
-  background_color: #ffffff
+  background_color: '#ffffff'
   layout: portrait
   margin: [20mm, 27mm, 27mm, 20mm]
   margin_inner: 20mm
@@ -105,9 +98,9 @@ page:
 
 base:
   align: justify
-  font_size_xxxsmall:  6
-  font_size_xxsmall:  7
-  font_size_xsmall:  8
+  font_size_xxxsmall: 6
+  font_size_xxsmall: 7
+  font_size_xsmall: 8
   font_size_small: 9.5
   font_size_normal: 9.5
   font_size_medium: 10.5
@@ -119,13 +112,13 @@ base:
   font_size_ultralarge: 36
   font_size_hyperlarge: 48
   font_size_min: $base_font_size_xxxsmall
-  font_color: 333333
+  font_color: '333333'
   font_family: $brand_font
   font_style: normal
   font_size: $base_font_size_normal
   line_height_length: 13.8
   line-height: 1.5
-  border_color: #EEEEEE
+  border_color: '#EEEEEE'
   border_radius: 4
   border_width: 0.5
 vertical_rhythm: $base_line_height_length
@@ -139,11 +132,11 @@ link:
   font_size: $base_font_size_medium
 
 codespan:
-  font_color: #0c322c
+  font_color: '#0c322c'
   font_family: SUSE
   font_style: light
   text_decoration: underline
-  text_decoration_color: #efefef
+  text_decoration_color: '#efefef'
 
 ulist:
   marker:
@@ -158,12 +151,12 @@ ulist:
       font_color: $brand_primary_susejungle
 
 menu:
-  caret_content: " <font size=\"1.15em\" color=\"#0C322C\">\u203a</font> "
+  caret_content: " \u203a "
   font_style: bold
 
 heading:
   align: left
-  font_color: #000000
+  font_color: '#000000'
   font_family: $brand_font
   font_style: bold
   h1:
@@ -189,39 +182,36 @@ heading:
   h6:
     font_color: $brand_primary_susejungle
     font_size: $base_font_size_xxlarge
-  line_height: 1
-  margin_top: $vertical_rhythm * 0.4
-  margin_bottom: $vertical_rhythm * 0.9
+    line_height: 1
+    margin_top: $vertical_rhythm * 0.4
+    margin_bottom: $vertical_rhythm * 0.9
 
 extends: default
 role:
   title:
-    background-color: #c0efde
+    background-color: '#c0efde'
     border-offset: 2
 
 title-page:
-  background-color: #fff
+  background-color: '#fff'
   font-family: $brand_font
   align: left
   revision:
     display: none
-
   logo:
     top: 0%
     align: left
     image: image:images/SUSE_Logo-hor_rgb.svg[pdfwidth=32%]
-
   title:
-    font_color: #0c322c
+    font_color: '#0c322c'
     font-style: light
     top: 28%
     font_size: $base_font_size_xxxlarge
     line_height: .7
     margin-bottom: 4
     font-family: SUSE
-
   subtitle:
-    font_color: #30ba78
+    font_color: '#30ba78'
     font_style: semibold
     line_height: .7
     margin_top: 5
@@ -243,19 +233,6 @@ caption:
 lead:
   font_size: $base_font_size_large
   line_height: 1.4
-
-abstract:
-  font_color: 5c6266
-  font_size: $lead_font_size
-  line_height: $lead_line_height
-  font_style: italic
-  first_line_font_style: bold
-  title:
-    align: center
-    font_color: $heading_font_color
-    font_family: $heading_font_family
-    font_size: $heading_h4_font_size
-    font_style: $heading_font_style
 
 admonition:
   column_rule_color: $brand_primary_susefog300
@@ -292,7 +269,7 @@ admonition:
 button:
   font-color: $brand_primary_susepine
   font-size: $base_font_size_normal
-  background-color: #F2F2F2
+  background-color: '#F2F2F2'
   font-family: SUSE
 
 kbd:
@@ -302,19 +279,10 @@ kbd:
   font-color: $brand_primary_susepine
   font-size: $base_font_size_medium
 
-quote:
-  font_color: $base_font_color
-  font_size: $base_font_size_large
-  border_color: $base_border_color
-  border_width: 5
-  padding: [0, $horizontal_rhythm, $block_margin_bottom * -0.75, $horizontal_rhythm + $blockquote_border_width / 2]
-  cite_font_size: $base_font_size_small
-  cite_font_color: 999999
-
 code:
-  font_color: #0c322c
-  border_color: #eafaf4
-  background_color: #eafaf4
+  font_color: '#0c322c'
+  border_color: '#eafaf4'
+  background_color: '#eafaf4'
   font_family: M+ 1mn
   font_size: ceil($base_font_size)
   line_height: 1.0
@@ -328,13 +296,6 @@ conum:
   font_size: $base_font_size
   line_height: 4 / 3
 
-example:
-  border_color: $base_border_color
-  border_radius: $base_border_radius
-  border_width: 0.75
-  background_color: transparent
-  padding: [$vertical_rhythm, $horizontal_rhythm, 0, $horizontal_rhythm]
-
 image:
   align: center
   border_color: $brand_primary_susepine
@@ -344,8 +305,8 @@ prose:
   margin_bottom: $block_margin_bottom
 
 sidebar:
-  background_color: EEEEEE
-  border_color: E1E1E1
+  background_color: 'EEEEEE'
+  border_color: 'E1E1E1'
   border_radius: $base_border_radius
   border_width: $base_border_width
   padding: [$vertical_rhythm, $vertical_rhythm * 1.25, 0, $vertical_rhythm * 1.25]
@@ -355,18 +316,6 @@ sidebar:
     font_size: $heading_h4_font_size
     font_style: $heading_font_style
 
-thematic_break:
-  border_color: $base_border_color
-  border_style: solid
-  border_width: $base_border_width
-  margin_top: $vertical_rhythm * 0.5
-  margin_bottom: $vertical_rhythm * 1.5
-
-description_list:
-  term_font_style: bold
-  term_spacing: $vertical_rhythm / 4
-  description_indent: $horizontal_rhythm * 1.25
-
 list:
   indent: $horizontal_rhythm * 1.5
   marker-font-color: $brand_primary_susejungle
@@ -375,12 +324,12 @@ list:
 
 table:
   background_color: $page_background_color
-  head_background_color: f5f5f5
+  head_background_color: 'f5f5f5'
   head_font_color: $base_font_color
   head_font_style: bold
-  even_row_background_color: f9f9f9
-  foot_background_color: f0f0f0
-  border_color: dddddd
+  even_row_background_color: 'f9f9f9'
+  foot_background_color: 'f0f0f0'
+  border_color: 'dddddd'
   border_width: $base_border_width
   cell_padding: [3, 3, 6, 3]
 
@@ -390,42 +339,32 @@ toc:
     font_style: light
     font_color: $brand_primary_susepine
     font_size: $base_font_size_superlarge
-    
   hanging-indent: 0.2in
   indent: $horizontal_rhythm
-
   font_family: $brand_font
   font_size: $base_font_size
   font_color: $brand_neutral_black
   line_height: 1.2
-
   dot_leader:
-   content: ". "
-   font_color: $brand_primary_susepine
-   font_size: $base_font_size_xlarge
-   font_style: italic
-   levels: 1
-
+    content: ". "
+    font_color: $brand_primary_susepine
+    font_size: $base_font_size_xlarge
+    font_style: italic
+    levels: 1
   h1_font_color: $brand_primary_susepine
   h1_font_size: $base_font_size_xxlarge
   h1_font_style: bold
-
   h2_font_color: $brand_primary_susepine
   h2_font_size: $base_font_size_xlarge
-
   h3_font_color: $brand_neutral_darkgrey
   h3_font_size: $base_font_size_medium
-
   h4_font_color: $brand_neutral_darkgrey
   h4_font_size: $base_font_size_small
 
-  h5_font_color: $brand_neutral_darkgrey
-  h5_font_size: $base_font_size_small
-
 header:
   font_size: $base_font_size_xsmall
-  font_color: #adadad
-  border_color: dddddd
+  font_color: '#adadad'
+  border_color: 'dddddd'
   border_width: 0.25
   height: 0.75in
   line_height: $base_line_height
@@ -444,12 +383,11 @@ header:
     center:
       content: $header_recto_center_content
     right:
-     content: $header_recto_right_content
+      content: $header_recto_right_content
 
-# Footer     
 footer:
   font-size: $base_font_size_xsmall
-  font-color: #000
+  font-color: '#000'
   font-style: italic
   height: 0.75in
   line_height: $base_line_height

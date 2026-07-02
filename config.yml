@@ -1,0 +1,114 @@
+# uyuni-docs-api build configuration
+# Single source of truth for products, languages, branding, and nav generation.
+# Run: task setup && task gen
+
+# --------------------------------------------------------------------------
+# Antora extensions (applied to all builds)
+# --------------------------------------------------------------------------
+antora:
+  extensions:
+    - '@antora/lunr-extension'
+
+# --------------------------------------------------------------------------
+# Shared AsciiDoc attributes
+# Only what the API content actually uses — product name/version are
+# set per-product below. Add more here only if referenced in .adoc content.
+# --------------------------------------------------------------------------
+asciidoc:
+  linkattrs: "true"
+  sectlinks: "true"
+  icons: font
+  experimental: "true"
+  page-pagination: "true"
+
+# --------------------------------------------------------------------------
+# Nav generation
+# gen-nav reads modules/api/pages/apilist.adoc and regenerates
+# modules/api/nav-api-guide.adoc. Entries listed here are prepended
+# before the auto-generated namespace list.
+# --------------------------------------------------------------------------
+nav:
+  prepend:
+    - xref:faqs.adoc[FAQ]
+
+# --------------------------------------------------------------------------
+# Products
+# --------------------------------------------------------------------------
+products:
+
+  # ---- SUSE Multi-Linux Manager -------------------------------------------
+  mlm:
+    antora:
+      name: docs
+      title: SUSE Multi-Linux Manager API
+
+    asciidoc:
+      attributes:
+        productname: SUSE Multi-Linux Manager
+        productnumber: "5.2"
+        docversion: "5.2"
+        mlm-content: "true"
+        uyuni-content: "false"
+
+    sections:
+      - api
+
+    pdf:
+      prefix: suse_multi_linux_manager
+      tar_name: suse-multi-linux-manager-api-docs
+      obs_name: susemanager-api-docs
+
+    ui:
+      bundle: ./branding/default-ui/mlm/ui-bundle.zip
+
+    outputs:
+      mlm-dsc:
+        site:
+          title: SUSE Multi-Linux Manager 5.2 API Documentation
+          url: https://documentation.suse.com/multi-linux-manager/5.2/api/
+          start_page: docs::index.adoc
+          supplemental_files: ./branding/supplemental-ui/mlm/susecom-2025
+
+  # ---- Uyuni ---------------------------------------------------------------
+  uyuni:
+    antora:
+      name: uyuni
+      title: Uyuni API
+
+    asciidoc:
+      attributes:
+        productname: Uyuni
+        productnumber: "2026.06"
+        mlm-content: "false"
+        uyuni-content: "true"
+
+    sections:
+      - api
+
+    pdf:
+      prefix: uyuni
+      tar_name: uyuni-api-docs
+      obs_name: uyuni-api-docs
+
+    ui:
+      bundle: ./branding/default-ui/uyuni/ui-bundle.zip
+
+    outputs:
+      uyuni-website:
+        site:
+          title: Uyuni API Documentation
+          url: https://www.uyuni-project.org/uyuni-docs-api/
+          start_page: uyuni::index.adoc
+          supplemental_files: ./branding/supplemental-ui/uyuni/uyuni-2023
+
+# --------------------------------------------------------------------------
+# Languages
+# English only for initial migration. Add ja/zh_CN/ko when translations exist.
+# --------------------------------------------------------------------------
+languages:
+  - code: en
+    locale: en_US.utf8
+    date_format: "%B %d %Y"
+    pdf_theme:
+      mlm: suse
+      uyuni: uyuni

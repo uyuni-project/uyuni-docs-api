@@ -1,0 +1,54 @@
+name: CI — smoke build
+
+on:
+  push:
+    branches:
+      - master
+      - 'manager-*'
+      - 'suma-*'
+  pull_request:
+    branches:
+      - master
+      - 'manager-*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/uyuni-project/uyuni-docs-api-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build docbuild binary
+        run: task setup
+
+      - name: Generate configs and nav
+        run: task gen
+
+      - name: Smoke build — MLM HTML
+        run: task draft:mlm
+
+      - name: Smoke build — Uyuni HTML
+        run: task draft:uyuni
+
+      - name: Upload MLM build artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlm-html
+          path: build/en/
+          retention-days: 7
+
+      - name: Upload Uyuni build artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: uyuni-html
+          path: build/en/
+          retention-days: 7
