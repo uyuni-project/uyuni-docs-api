@@ -113,6 +113,13 @@ tasks:
     sources:
       - config.yml
       - modules/api/pages/apilist.adoc
+    generates:
+      # Task checks these exist before declaring the task up-to-date.
+      # If translations/ was cleaned or never created, gen will re-run.
+      - translations/en/mlm-dsc.site.yml
+      - translations/en/uyuni-website.site.yml
+      - translations/en/antora.yml
+      - translations/en/modules
 
   # --------------------------------------------------------------------------
   # HTML draft / preview builds
