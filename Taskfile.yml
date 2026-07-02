@@ -117,12 +117,17 @@ tasks:
     desc: "[Draft] MLM HTML preview — documentation.suse.com branding (no PDF)"
     deps: [gen]
     cmds:
+      # Re-generate antora.yml for mlm specifically — gen-all writes both products
+      # to the same path and the last writer (map iteration order) may have been uyuni.
+      - "{{.DOCBUILD}} gen-antora -product mlm -lang en"
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/mlm-dsc.site.yml
 
   draft:uyuni:
     desc: "[Draft] Uyuni HTML preview — uyuni-project.org branding (no PDF)"
     deps: [gen]
     cmds:
+      # Re-generate antora.yml for uyuni specifically (same reason as above).
+      - "{{.DOCBUILD}} gen-antora -product uyuni -lang en"
       - DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr npx antora --extension @antora/lunr-extension translations/en/uyuni-website.site.yml
 
   draft:all:
@@ -136,7 +141,7 @@ tasks:
   # --------------------------------------------------------------------------
   pdf:mlm:
     desc: "[Local] Build SUSE Multi-Linux Manager API PDF"
-    deps: [gen]
+    deps: [setup]
     cmds:
       - mkdir -p build/en/pdf
       - "{{.DOCBUILD}} gen-pdf-nav -book api -lang en -dir modules/api"
@@ -156,7 +161,7 @@ tasks:
 
   pdf:uyuni:
     desc: "[Local] Build Uyuni API PDF"
-    deps: [gen]
+    deps: [setup]
     cmds:
       - mkdir -p build/en/pdf
       - "{{.DOCBUILD}} gen-pdf-nav -book api -lang en -dir modules/api"
@@ -180,18 +185,25 @@ tasks:
 
   # --------------------------------------------------------------------------
   # Publish — full production build (HTML + PDF)
+  # Run HTML then PDF sequentially to avoid antora.yml race between products.
   # --------------------------------------------------------------------------
   publish:mlm:
     desc: "[Local] Full MLM build — HTML + API PDF"
-    deps: [draft:mlm, pdf:mlm]
+    cmds:
+      - task: draft:mlm
+      - task: pdf:mlm
 
   publish:uyuni:
     desc: "[Local] Full Uyuni build — HTML + API PDF"
-    deps: [draft:uyuni, pdf:uyuni]
+    cmds:
+      - task: draft:uyuni
+      - task: pdf:uyuni
 
   publish:all:
     desc: "[Local] Full build — both products, HTML + PDF"
-    deps: [publish:mlm, publish:uyuni]
+    cmds:
+      - task: publish:mlm
+      - task: publish:uyuni
 
   # --------------------------------------------------------------------------
   # OBS packages
