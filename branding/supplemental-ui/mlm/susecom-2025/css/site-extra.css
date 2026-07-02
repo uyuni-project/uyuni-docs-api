@@ -1455,7 +1455,21 @@ html[lang="pt_BR"] .QSI__EmbeddedFeedbackContainer_QuestionText::before {
   padding: 0;
 }
 
-/* Use | as separator; suppress after home icon (first li) and last li */
+/* Each li is a flex row so the ::after separator stays inline with icon/text */
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+}
+
+/* .home-link-dsc is display:block globally — override inside breadcrumbs so the
+   | separator sits on the same baseline as the icon, not below it */
+.breadcrumbs .home-link-dsc {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.1rem;
+}
+
+/* Use | as separator; suppress trailing | after last item */
 .breadcrumbs li::after {
   content: "|";
   padding: 0 0.5rem;
