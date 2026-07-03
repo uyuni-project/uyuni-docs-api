@@ -144,6 +144,7 @@ a.navbar-logo {
 /* left nav panel */
 .nav-panel-menu {
   background-color: #efefef;
+  height: calc(100%);
 }
 
 .panels {
@@ -246,8 +247,18 @@ html, body {
   text-rendering: optimizeLegibility;
 }
 
+html {
+  font-size: 18px !important;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.65 !important;
+}
+
+.nav-container {
+  font-size: 1.2rem !important;
 }
 
 /* Font for side toc
@@ -641,7 +652,8 @@ ul.sectlevel1 {
 }
 
 .doc {
-  line-height: 1.3;
+  font-size: 1.2rem;
+  line-height: 1.65;
 }
 .currentrel {
   color: #ff6a52;
@@ -657,4 +669,118 @@ div#toctitle {
   margin-top: 21px;
   margin-right: 34px;
   margin-left: 20px;
+}
+
+/* ── Nav full-height fix ─────────────────────────────────────────────────────── */
+.nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: sticky;
+  height: calc(100vh - 4rem);
+}
+
+.body, main > .content {
+  min-height: calc(100vh - 4rem);
+}
+
+/* ── Breadcrumb flex layout ──────────────────────────────────────────────────── */
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs li::after {
+  content: "|";
+  padding: 0 0.5rem;
+  color: #0e7774;
+}
+
+.breadcrumbs li:last-child::after {
+  content: none;
+}
+
+/* ── Toolbar home → breadcrumb separator ────────────────────────────────────── */
+.toolbar-sep {
+  color: #0e7774;
+  padding: 0 0.35rem;
+  align-self: center;
+  line-height: 1;
+  font-size: 1rem;
+}
+
+/* ── Toolbar search box ──────────────────────────────────────────────────────── */
+.toolbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 0.75rem;
+}
+
+.toolbar-search #search-input {
+  width: 240px;
+  height: 2rem;
+  padding: 0 0.6em;
+  font-size: 1.1rem;
+  font-family: inherit;
+  color: #0e7774;
+  background: #fff;
+  border: 1px solid #c0c2c4;
+  border-radius: 0.2rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.toolbar-search #search-input:focus {
+  border-color: #0e7774;
+  box-shadow: 0 0 0 2px rgba(14, 119, 116, 0.2);
+}
+
+.toolbar-search #search-input::placeholder {
+  color: #8e8e8e;
+}
+
+/* ── Breadcrumb font size ────────────────────────────────────────────────────── */
+.breadcrumbs,
+.breadcrumbs a,
+.breadcrumbs li {
+  font-size: 1rem;
+}
+
+/* ── API-specific ────────────────────────────────────────────────────────────── */
+.api-method-header h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── Global font size: content, left nav, right TOC ─────────────────────────── */
+.doc,
+.doc p,
+.doc li,
+.doc td,
+.doc dt,
+.doc dd {
+  font-size: 1.2rem;
+}
+
+.nav-menu,
+.nav-menu a,
+.nav-item,
+.nav-list {
+  font-size: 1.2rem !important;
+}
+
+aside.toc.sidebar,
+.toc-menu a,
+.toc-menu h3 {
+  font-size: 1.2rem !important;
 }
