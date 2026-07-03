@@ -50,7 +50,6 @@ type ProductAsciidoc struct {
 type PDFConfig struct {
 	Prefix  string `yaml:"prefix"`   // e.g. suse_multi_linux_manager
 	TarName string `yaml:"tar_name"` // e.g. suse-multi-linux-manager-docs
-	OBSName string `yaml:"obs_name"` // e.g. susemanager-docs
 }
 
 // UIConfig holds the Antora UI bundle path for a product.
@@ -63,7 +62,6 @@ type Output struct {
 	Site              OutputSite `yaml:"site"`
 	SupplementalFiles string     `yaml:"supplemental_files"`
 	LanguageSelector  bool       `yaml:"language_selector"`
-	OBS               bool       `yaml:"obs"`
 }
 
 // OutputSite holds the site-level metadata for an output target.

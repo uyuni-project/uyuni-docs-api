@@ -9,8 +9,6 @@ version: '3'
 #   task container:pdf:uyuni      Uyuni API PDF only
 #   task container:draft:mlm      MLM HTML preview (no PDF)
 #   task container:draft:uyuni    Uyuni HTML preview (no PDF)
-#   task container:obs:mlm        OBS tarballs for MLM
-#   task container:obs:uyuni      OBS tarballs for Uyuni
 #
 # OPTION B — Local toolchain (Go + Task + Antora + Asciidoctor-PDF installed)
 #   task publish:mlm              Full MLM build — HTML + API PDF
@@ -19,8 +17,6 @@ version: '3'
 #   task pdf:uyuni                Uyuni API PDF only
 #   task draft:mlm                MLM HTML preview (no PDF)
 #   task draft:uyuni              Uyuni HTML preview (no PDF)
-#   task obs:mlm                  OBS tarballs for MLM
-#   task obs:uyuni                OBS tarballs for Uyuni
 #   task setup / gen / clean      Dev tooling
 #
 
@@ -52,8 +48,6 @@ tasks:
         echo "  container:publish:uyuni Full Uyuni build — HTML + API PDF"
         echo "  container:pdf:mlm       MLM API PDF only"
         echo "  container:pdf:uyuni     Uyuni API PDF only"
-        echo "  container:obs:mlm       OBS source tarballs for MLM"
-        echo "  container:obs:uyuni     OBS source tarballs for Uyuni"
         echo ""
         echo "  ── PREVIEW / DRAFT HTML (fast, no PDF) ──────────────────────────────────"
         echo "  container:draft:mlm     MLM HTML preview — documentation.suse.com branding"
@@ -66,8 +60,6 @@ tasks:
         echo "  publish:uyuni           Full Uyuni build — HTML + API PDF"
         echo "  pdf:mlm                 MLM API PDF only"
         echo "  pdf:uyuni               Uyuni API PDF only"
-        echo "  obs:mlm                 OBS source tarballs for MLM"
-        echo "  obs:uyuni               OBS source tarballs for Uyuni"
         echo ""
         echo "  ── DEV / TOOLING ────────────────────────────────────────────────────────"
         echo "  setup                   Build the Go toolchain binary (.bin/docbuild)"
@@ -217,25 +209,6 @@ tasks:
       - task: publish:uyuni
 
   # --------------------------------------------------------------------------
-  # OBS packages
-  # --------------------------------------------------------------------------
-  obs:mlm:
-    desc: "[Local] Create OBS tarballs for MLM (HTML + PDF)"
-    deps: [publish:mlm]
-    cmds:
-      - mkdir -p build/packages
-      - tar --exclude='build/en/pdf' -czvf build/packages/susemanager-api-docs_en.tar.gz build/en
-      - tar -czvf build/packages/susemanager-api-docs_en-pdf.tar.gz build/en/pdf
-
-  obs:uyuni:
-    desc: "[Local] Create OBS tarballs for Uyuni (HTML + PDF)"
-    deps: [publish:uyuni]
-    cmds:
-      - mkdir -p build/packages
-      - tar --exclude='build/en/pdf' -czvf build/packages/uyuni-api-docs_en.tar.gz build/en
-      - tar -czvf build/packages/uyuni-api-docs_en-pdf.tar.gz build/en/pdf
-
-  # --------------------------------------------------------------------------
   # Validation (available via --list or --summary, not shown in default help)
   # --------------------------------------------------------------------------
   validate:mlm:
@@ -259,7 +232,6 @@ tasks:
       - rm -rf build/ translations/ .cache/ .bin/
       - rm -f modules/api/nav-api-guide.pdf.en.adoc
       - echo "Clean complete."
-
 
   # --------------------------------------------------------------------------
   # Container — build / pull / check
@@ -366,19 +338,6 @@ tasks:
     desc: "[Container] All PDFs — both products, via container"
     cmds:
       - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task pdf:all"
-
-  # --------------------------------------------------------------------------
-  # Container — OBS packages
-  # --------------------------------------------------------------------------
-  container:obs:mlm:
-    desc: "[Container] OBS tarballs for MLM, via container"
-    cmds:
-      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task obs:mlm"
-
-  container:obs:uyuni:
-    desc: "[Container] OBS tarballs for Uyuni, via container"
-    cmds:
-      - "{{.CONTAINER_CMD}} run --rm -v {{.ROOT_DIR}}:/docs:Z -w /docs {{.BUILDER_IMAGE}} task obs:uyuni"
 
   # --------------------------------------------------------------------------
   # Container — Dev
