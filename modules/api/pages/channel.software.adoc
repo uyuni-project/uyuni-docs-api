@@ -26,6 +26,7 @@
 * <<apidoc-channel_software-getRepoDetails-loggedInUser-repoLabel,getRepoDetails>>
 * <<apidoc-channel_software-getRepoDetails-loggedInUser-id,getRepoDetails>>
 * <<apidoc-channel_software-getRepoSyncCronExpression-loggedInUser-channelLabel,getRepoSyncCronExpression>>
+* <<apidoc-channel_software-isAutoSync-loggedInUser-channelLabel,isAutoSync>>
 * <<apidoc-channel_software-isExisting-loggedInUser-channelLabel,isExisting>>
 * <<apidoc-channel_software-isGloballySubscribable-loggedInUser-channelLabel,isGloballySubscribable>>
 * <<apidoc-channel_software-isUserManageable-loggedInUser-channelLabel-login,isUserManageable>>
@@ -61,6 +62,7 @@
 * <<apidoc-channel_software-removeRepo-loggedInUser-id,removeRepo>>
 * <<apidoc-channel_software-removeRepo-loggedInUser-label,removeRepo>>
 * <<apidoc-channel_software-removeRepoFilter-loggedInUser-label-filterProps,removeRepoFilter>>
+* <<apidoc-channel_software-setAutoSync-loggedInUser-channelLabel-autoSync,setAutoSync>>
 * <<apidoc-channel_software-setContactDetails-loggedInUser-channelLabel-maintainerName-maintainerEmail-maintainerPhone-supportPolicy,setContactDetails>>
 * <<apidoc-channel_software-setDetails-loggedInUser-channelLabel-details,setDetails>>
 * <<apidoc-channel_software-setDetails-loggedInUser-channelId-details,setDetails>>
@@ -978,6 +980,32 @@ Returns:
 
 
 
+[#apidoc-channel_software-isAutoSync-loggedInUser-channelLabel]
+== Method: isAutoSync
+
+HTTP `GET`
+
+Description:
+
+Returns whether is synchronized automatically
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+
+Returns:
+
+* [.boolean]#boolean#  result - true if the channel is synchronized automatically
+ 
+
+
+
 [#apidoc-channel_software-isExisting-loggedInUser-channelLabel]
 == Method: isExisting
 
@@ -1362,7 +1390,7 @@ Returns:
 ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "advisory_synopsis" - summary of the erratum
 ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',
 ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
 ** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
           advisable following the application of the errata. Typical example is upon kernel update.
@@ -1407,7 +1435,7 @@ Returns:
 ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "advisory_synopsis" - summary of the erratum
 ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',
 ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
 ** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
           advisable following the application of the errata. Typical example is upon kernel update.
@@ -1454,7 +1482,7 @@ Returns:
 ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "advisory_synopsis" - summary of the erratum
 ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',
 ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
 ** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
           advisable following the application of the errata. Typical example is upon kernel update.
@@ -1495,7 +1523,7 @@ Returns:
 ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "advisory_synopsis" - summary of the erratum
 ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',
 ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
 ** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
           advisable following the application of the errata. Typical example is upon kernel update.
@@ -1579,7 +1607,7 @@ Returns:
 ** [.string]#string#  "update_date" - the date erratum was updated (deprecated)
 ** [.string]#string#  "advisory_synopsis" - summary of the erratum
 ** [.string]#string#  "advisory_type" - type label such as 'Security', 'Bug Fix'
-** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'retracted'
+** [.string]#string#  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',
 ** [.string]#string#  "advisory_name" - name such as 'RHSA', etc.
 ** [.boolean]#boolean#  "reboot_suggested" - A boolean flag signaling whether a system reboot is
           advisable following the application of the errata. Typical example is upon kernel update.
@@ -2220,6 +2248,34 @@ Parameters:
 Returns:
 
 * [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-channel_software-setAutoSync-loggedInUser-channelLabel-autoSync]
+== Method: setAutoSync
+
+HTTP `POST`
+
+Description:
+
+Sets whether the channel is synchronized automatically
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  channelLabel - label of the channel
+ 
+* [.Boolean]#Boolean#  autoSync - Value to set on the channel automatic synchronization
+ 
+
+Returns:
+
+* [.boolean]#boolean#  result - The value set to the channel automatic synchronized option
  
 
 
