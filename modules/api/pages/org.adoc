@@ -17,6 +17,7 @@
 * <<apidoc-org-isOrgConfigManagedByOrgAdmin-loggedInUser-orgId,isOrgConfigManagedByOrgAdmin>>
 * <<apidoc-org-listOrgs-loggedInUser,listOrgs>>
 * <<apidoc-org-listUsers-loggedInUser-orgId,listUsers>>
+* <<apidoc-org-migrateSystems-loggedInUser-toOrgId-sids,migrateSystems>>
 * <<apidoc-org-setClmSyncPatchesConfig-loggedInUser-orgId-value,setClmSyncPatchesConfig>>
 * <<apidoc-org-setContentStaging-loggedInUser-orgId-enable,setContentStaging>>
 * <<apidoc-org-setErrataEmailNotifsForOrg-loggedInUser-orgId-enable,setErrataEmailNotifsForOrg>>
@@ -470,6 +471,46 @@ Returns:
 ** [.string]#string#  "email"
 ** [.boolean]#boolean#  "is_org_admin"
  
+ 
+
+
+
+[#apidoc-org-migrateSystems-loggedInUser-toOrgId-sids]
+== Method: migrateSystems (Deprecated)
+
+HTTP `POST`
+
+Description:
+
+Transfer systems from one organization to another.  If executed by
+ a #product() administrator, the systems will be transferred from their current
+ organization to the organization specified by the toOrgId.  If executed by
+ an organization administrator, the systems must exist in the same organization
+ as that administrator and the systems will be transferred to the organization
+ specified by the toOrgId. In any scenario, the origination and destination
+ organizations must be defined in a trust.
+
+ Note: This method is deprecated and will be removed in a future API version. Please use
+ transferSystems instead.
+
+
+Deprecated - being replaced by org.transferSystems(User loggedInUser, Integer toOrgId,
+ List(Integer) sids)
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  toOrgId - ID of the organization where the
+ system(s) will be transferred to.
+ 
+* [.array]#int array#  sids
+ 
+
+Returns:
+
+* [.array]#int array#  serverIdTransferred
  
 
 
