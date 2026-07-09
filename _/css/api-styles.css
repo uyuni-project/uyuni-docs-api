@@ -1,0 +1,501 @@
+/*
+ * api-styles.css — Uyuni variant
+ * Modernises API namespace pages to resemble Swagger UI.
+ * Structure mirrors the MLM variant; colours derived from Uyuni brand palette.
+ */
+
+/* ── HTTP verb badge colours (Uyuni brand — uyuni-project.org) ─────────────── */
+:root {
+  /* Core brand swatches */
+  --uyuni-teal:       #0e7774;
+  --uyuni-teal-dk:    #096550;
+  --uyuni-teal-pale:  #e8f5f4;
+  --uyuni-mint:       #90ebcc;
+  --uyuni-mint-pale:  #eafaf4;
+  --uyuni-dark:       #414141;
+  --uyuni-pine:       #0a322c;
+  --uyuni-blue:       #2453ff;
+  --uyuni-blue-pale:  #e6edfe;
+  --uyuni-coral:      #e9644e;
+  --uyuni-coral-dk:   #ff6a52;
+  --uyuni-coral-pale: #ffd3bd;
+  --uyuni-fog:        #efefef;
+
+  --api-get:     var(--uyuni-teal);
+  --api-post:    var(--uyuni-blue);
+  --api-put:     var(--uyuni-coral);
+  --api-delete:  var(--uyuni-coral-dk);
+  --api-patch:   var(--uyuni-pine);
+  --api-head:    #546e7a;
+  --api-options: var(--uyuni-dark);
+  /* verb tints for card headers */
+  --api-get-bg:     var(--uyuni-teal-pale);
+  --api-post-bg:    var(--uyuni-blue-pale);
+  --api-put-bg:     #fff0ec;
+  --api-delete-bg:  #fdecea;
+  --api-patch-bg:   var(--uyuni-fog);
+  --api-head-bg:    var(--uyuni-fog);
+  --api-options-bg: var(--uyuni-fog);
+  --api-bg:      #f5f7fa;
+  --api-border:  #d6dee8;
+  --api-card-bg: #ffffff;
+  --api-shadow:  0 1px 3px rgba(0,0,0,0.08);
+  --api-radius:  6px;
+  --api-expand-bg: #eef2f8;
+  --api-expand-open: #dce7f5;
+  /* type pill colours */
+  --api-type-pill-bg:    #eaf3f0;
+  --api-type-pill-color: #0e7774;
+  --api-string-pill-bg:  #fff8e6;
+  --api-string-pill-color: #8a6000;
+  --api-int-pill-bg:     #e8f0ff;
+  --api-int-pill-color:  #1a3fa0;
+  --api-bool-pill-bg:    #fdecea;
+  --api-bool-pill-color: #c0392b;
+  --api-struct-pill-bg:  #f0eaff;
+  --api-struct-pill-color: #5c2e91;
+  --api-array-pill-bg:   #e6f7f2;
+  --api-array-pill-color: #096550;
+  --api-date-pill-bg:    #fef3e2;
+  --api-date-pill-color: #7a4900;
+  --api-long-pill-bg:    #eaf0ff;
+  --api-long-pill-color: #263fa8;
+  --api-map-pill-bg:     #f3eaff;
+  --api-map-pill-color:  #5c2e91;
+  --api-object-pill-bg:  #e8f5e9;
+  --api-object-pill-color: #1b5e20;
+  --api-domain-pill-bg:  #fafafa;
+  --api-domain-pill-color: #444;
+  --api-domain-pill-border: #bbb;
+}
+
+/* ── Page container ──────────────────────────────────────────────────────────── */
+.doc .sect1 {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Method section cards (Swagger opblock-style, Uyuni colours) ───────────── */
+.api-method-card {
+  border-radius: 4px;
+  margin-bottom: 0.85rem;
+  background: var(--api-card-bg);
+  box-shadow: none;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease;
+}
+
+.api-method-card:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.api-method-card.api-verb-get    { border: 1px solid rgba(14, 119, 116, 0.45); }
+.api-method-card.api-verb-post   { border: 1px solid rgba(36, 83, 255, 0.45); }
+.api-method-card.api-verb-put    { border: 1px solid rgba(233, 100, 78, 0.45); }
+.api-method-card.api-verb-delete { border: 1px solid rgba(255, 106, 82, 0.45); }
+.api-method-card.api-verb-patch  { border: 1px solid rgba(10, 50, 44, 0.45); }
+.api-method-card.api-verb-head   { border: 1px solid rgba(84, 110, 122, 0.45); }
+.api-method-card.api-verb-options { border: 1px solid rgba(65, 65, 65, 0.45); }
+.api-method-card:not([class*="api-verb-"]) {
+  border: 1px solid var(--api-border);
+}
+
+/* Header row: flex row, badge inset with its own padding */
+.api-method-header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  min-height: 3.25rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.15s ease;
+}
+
+.api-method-header:hover {
+  filter: brightness(0.97);
+}
+
+.api-method-header.open {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Chevron on far right */
+.api-method-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #555;
+  padding: 0 0.5rem 0 1rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.api-method-header.open .api-method-toggle {
+  transform: rotate(180deg);
+}
+
+.api-method-body {
+  padding: 1.25rem 1.5rem;
+  display: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  background: #fff;
+}
+
+.api-method-body.open {
+  display: block;
+}
+
+/* ── Card body tints — matches verb header colour, much lighter ──────────────── */
+.api-method-card.api-verb-get    .api-method-body { background: #f2fafa; }
+.api-method-card.api-verb-post   .api-method-body { background: #f5f7ff; }
+.api-method-card.api-verb-put    .api-method-body { background: #fff8f6; }
+.api-method-card.api-verb-delete .api-method-body { background: #fff5f4; }
+.api-method-card.api-verb-patch  .api-method-body { background: #f5f5f5; }
+.api-method-card.api-verb-head   .api-method-body { background: #f5f5f5; }
+.api-method-card.api-verb-options .api-method-body { background: #f5f5f5; }
+
+/* Method name — monospace, sits to the right of the badge */
+.api-method-header h2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  color: var(--uyuni-pine);
+  background: transparent !important;
+  border-bottom: none !important;
+  font-family: ui-monospace, "Roboto Mono", "Fira Code", monospace;
+  letter-spacing: -0.01em;
+}
+
+.api-method-header h2 a {
+  color: var(--uyuni-pine) !important;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.api-method-header h2 a:hover {
+  color: var(--uyuni-teal) !important;
+}
+
+/* ── HTTP verb badge — inset pill, not flush to edge ─────────────────────────── */
+.http-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-family: ui-monospace, "Fira Code", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4em 1em;
+  margin: 0 0.25rem 0 0;
+  border-radius: 4px;
+  color: #fff;
+  flex-shrink: 0;
+  min-width: 5.25rem;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: none;
+  border: none;
+}
+
+.http-get {
+  background: var(--api-get);
+}
+
+.http-post {
+  background: var(--api-post);
+}
+
+.http-put {
+  background: var(--api-put);
+}
+
+.http-delete {
+  background: var(--api-delete);
+}
+
+.http-patch {
+  background: var(--api-patch);
+}
+
+.http-head {
+  background: var(--api-head);
+}
+
+.http-options {
+  background: var(--api-options);
+}
+
+/* Verb-coloured header row backgrounds */
+.api-method-card.api-verb-get    .api-method-header { background: var(--api-get-bg); }
+.api-method-card.api-verb-post   .api-method-header { background: var(--api-post-bg); }
+.api-method-card.api-verb-put    .api-method-header { background: var(--api-put-bg); }
+.api-method-card.api-verb-delete .api-method-header { background: var(--api-delete-bg); }
+.api-method-card.api-verb-patch  .api-method-header { background: var(--api-patch-bg); }
+.api-method-card.api-verb-head   .api-method-header { background: var(--api-head-bg); }
+.api-method-card.api-verb-options .api-method-header { background: var(--api-options-bg); }
+
+.api-method-card:not([class*="api-verb-"]) .api-method-header {
+  background: var(--api-expand-bg);
+}
+
+.api-method-card.api-verb-get    .api-method-header:hover,
+.api-method-card.api-verb-get    .api-method-header.open    { background: #c5e8e6; }
+.api-method-card.api-verb-post   .api-method-header:hover,
+.api-method-card.api-verb-post   .api-method-header.open    { background: #d4ddff; }
+.api-method-card.api-verb-put    .api-method-header:hover,
+.api-method-card.api-verb-put    .api-method-header.open    { background: #ffe0d8; }
+.api-method-card.api-verb-delete .api-method-header:hover,
+.api-method-card.api-verb-delete .api-method-header.open    { background: #fad4cf; }
+.api-method-card.api-verb-patch  .api-method-header:hover,
+.api-method-card.api-verb-patch  .api-method-header.open    { background: #e8e8e8; }
+.api-method-card.api-verb-head   .api-method-header:hover,
+.api-method-card.api-verb-head   .api-method-header.open    { background: #e8e8e8; }
+.api-method-card.api-verb-options .api-method-header:hover,
+.api-method-card.api-verb-options .api-method-header.open    { background: #e8e8e8; }
+
+/* ── Endpoint path chip ──────────────────────────────────────────────────────── */
+.api-endpoint-path {
+  font-family: ui-monospace, "Fira Code", monospace;
+  font-size: 0.82rem;
+  color: #333;
+  word-break: break-all;
+}
+
+/* ── Type pills (replaces [.struct], [.string], etc.) ───────────────────────── */
+.type-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.1em 0.6em;
+  font-family: ui-monospace, "Fira Code", monospace;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.type-struct  { background: var(--api-struct-pill-bg);  color: var(--api-struct-pill-color); }
+.type-string  { background: var(--api-string-pill-bg);  color: var(--api-string-pill-color); }
+.type-int     { background: var(--api-int-pill-bg);     color: var(--api-int-pill-color); }
+.type-boolean { background: var(--api-bool-pill-bg);    color: var(--api-bool-pill-color); }
+.type-array   { background: var(--api-type-pill-bg);    color: var(--api-type-pill-color); }
+.type-generic { background: #f0f0f0; color: #555; }
+
+/* ── Type role pills — shared base ───────────────────────────────────────────── */
+.doc .struct,
+.doc .string,
+.doc .int,
+.doc .integer,
+.doc .bool,
+.doc .boolean,
+.doc .array,
+.doc .long,
+.doc .date,
+.doc .dateTime,
+.doc .iso8601,
+.doc .map,
+.doc .object,
+.doc .entityType,
+.doc .rule,
+.doc .result_code,
+.doc .parameters,
+.doc .User {
+  display: inline-block;
+  font-weight: 600;
+  font-family: ui-monospace, "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.82em;
+  padding: 0.05em 0.45em;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+/* ── Per-type colours ────────────────────────────────────────────────────────── */
+.doc .struct {
+  background: var(--api-struct-pill-bg);
+  color: var(--api-struct-pill-color);
+}
+
+.doc .string {
+  background: var(--api-string-pill-bg);
+  color: var(--api-string-pill-color);
+}
+
+.doc .int,
+.doc .integer {
+  background: var(--api-int-pill-bg);
+  color: var(--api-int-pill-color);
+}
+
+.doc .bool,
+.doc .boolean {
+  background: var(--api-bool-pill-bg);
+  color: var(--api-bool-pill-color);
+}
+
+.doc .array {
+  background: var(--api-array-pill-bg);
+  color: var(--api-array-pill-color);
+}
+
+.doc .long {
+  background: var(--api-long-pill-bg);
+  color: var(--api-long-pill-color);
+}
+
+.doc .date,
+.doc .dateTime,
+.doc .iso8601 {
+  background: var(--api-date-pill-bg);
+  color: var(--api-date-pill-color);
+}
+
+.doc .map {
+  background: var(--api-map-pill-bg);
+  color: var(--api-map-pill-color);
+}
+
+.doc .object {
+  background: var(--api-object-pill-bg);
+  color: var(--api-object-pill-color);
+}
+
+.doc .entityType,
+.doc .rule,
+.doc .result_code,
+.doc .parameters,
+.doc .User {
+  background: var(--api-domain-pill-bg);
+  color: var(--api-domain-pill-color);
+  border: 1px solid var(--api-domain-pill-border);
+}
+
+/* ── Parameters / Return value tables ───────────────────────────────────────── */
+.doc table.tableblock {
+  font-size: 0.92rem;
+  border-radius: var(--api-radius);
+  overflow: hidden;
+  border: 1px solid var(--api-border);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1rem;
+  box-shadow: var(--api-shadow);
+}
+
+.doc table.tableblock th {
+  background: var(--api-expand-bg);
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  text-align: left;
+  border-bottom: 2px solid var(--api-border);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #3a4a5c;
+}
+
+.doc table.tableblock td {
+  padding: 0.45rem 0.85rem;
+  vertical-align: top;
+  border-bottom: 1px solid #eef0f4;
+  line-height: 1.5;
+}
+
+.doc table.tableblock tr:last-child td {
+  border-bottom: none;
+}
+
+.doc table.tableblock tbody tr:nth-child(even) td {
+  background: #f9fbfd;
+}
+
+/* ── Code blocks inside method bodies ────────────────────────────────────────── */
+.api-method-body pre,
+.api-method-body .listingblock pre {
+  font-size: 0.85rem;
+  border-radius: 6px;
+  background: var(--uyuni-dark);
+  color: #c7f1e3;
+  border: none;
+  padding: 0.85rem 1.1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+/* ── Method body content spacing ────────────────────────────────────────────── */
+.api-method-body .sect2 > h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #3a4a5c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1rem 0 0.4rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--api-border);
+}
+
+.api-method-body p {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Expand / collapse all controls ──────────────────────────────────────────── */
+.api-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.api-controls button {
+  background: var(--api-expand-bg);
+  border: 1px solid var(--api-border);
+  border-radius: var(--api-radius);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #2c3e50;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.api-controls button:hover {
+  background: var(--api-expand-open);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+/* ── Namespace section header ─────────────────────────────────────────────────── */
+.doc .sect1 > h2:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--uyuni-pine);
+  border-bottom: 3px solid var(--api-get);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+/* ── Endpoint path — monospace chip ────────────────────────────────────────── */
+.api-endpoint-path {
+  background: #f0f4f8;
+  border: 1px solid var(--api-border);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.88rem;
+}
+
+/* ── Anchor link icons on method headers ─────────────────────────────────────── */
+.api-method-header a.anchor {
+  display: none;
+}
