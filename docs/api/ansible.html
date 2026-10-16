@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ansible :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/ansible.html">
+    <link rel="prev" href="admin.payg.html">
+    <link rel="next" href="api.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>ansible</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">ansible</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-ansible-createAnsiblePath-loggedInUser-props">createAnsiblePath</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-discoverPlaybooks-loggedInUser-pathId">discoverPlaybooks</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath">fetchPlaybookContents</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-introspectInventory-loggedInUser-pathId">introspectInventory</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId">listAnsiblePaths</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId">lookupAnsiblePathById</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-removeAnsiblePath-loggedInUser-pathId">removeAnsiblePath</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs">schedulePlaybook</a></p>
+</li>
+<li>
+<p><a href="#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props">updateAnsiblePath</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides methods to manage Ansible systems</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>ansible</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-createAnsiblePath-loggedInUser-props"><a class="anchor" href="#apidoc-ansible-createAnsiblePath-loggedInUser-props"></a><a class="link" href="#apidoc-ansible-createAnsiblePath-loggedInUser-props">Method: createAnsiblePath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create ansible path</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  props</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "type" - The ansible path type: 'inventory' or 'playbook'</p>
+</li>
+<li>
+<p><span class="int">int</span>  "server_id" - ID of control node server</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-discoverPlaybooks-loggedInUser-pathId"><a class="anchor" href="#apidoc-ansible-discoverPlaybooks-loggedInUser-pathId"></a><a class="link" href="#apidoc-ansible-discoverPlaybooks-loggedInUser-pathId">Method: discoverPlaybooks</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Discover playbooks under given playbook path with given pathId</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  playbooks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  playbook</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath"><a class="anchor" href="#apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath"></a><a class="link" href="#apidoc-ansible-fetchPlaybookContents-loggedInUser-pathId-playbookRelPath">Method: fetchPlaybookContents</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Fetch the playbook content from the control node using a synchronous salt call.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - playbook path id</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookRelPath - relative path of playbook (inside path specified by
+pathId)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  contents - Text contents of the playbook</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-introspectInventory-loggedInUser-pathId"><a class="anchor" href="#apidoc-ansible-introspectInventory-loggedInUser-pathId"></a><a class="link" href="#apidoc-ansible-introspectInventory-loggedInUser-pathId">Method: introspectInventory</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Introspect inventory under given inventory path with given pathId and return it in a structured way</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Inventory in a nested structure</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="object">object</span>  Inventory item - Inventory item (can be nested)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId"><a class="anchor" href="#apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId"></a><a class="link" href="#apidoc-ansible-listAnsiblePaths-loggedInUser-controlNodeId">Method: listAnsiblePaths</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List ansible paths for server (control node)</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - id of ansible control node server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId"><a class="anchor" href="#apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId"></a><a class="link" href="#apidoc-ansible-lookupAnsiblePathById-loggedInUser-pathId">Method: lookupAnsiblePathById</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup ansible path by path id</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-removeAnsiblePath-loggedInUser-pathId"><a class="anchor" href="#apidoc-ansible-removeAnsiblePath-loggedInUser-pathId"></a><a class="link" href="#apidoc-ansible-removeAnsiblePath-loggedInUser-pathId">Method: removeAnsiblePath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create ansible path</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  testMode - 'true' if the playbook shall be executed in test mode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  ansibleArgs</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "extraVars"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "flushCache"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs"><a class="anchor" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs"></a><a class="link" href="#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  testMode - 'true' if the playbook shall be executed in test mode</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  ansibleArgs</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "extraVars"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "flushCache"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props"><a class="anchor" href="#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props"></a><a class="link" href="#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props">Method: updateAnsiblePath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create ansible path</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  pathId - path id</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  props</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "path" - The local path to inventory/playbook</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  ansible path</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "path id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type label"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id of the ansible control node system"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "local path to inventory or playbook"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="admin.payg.html">admin.payg</a></span>
+  <span class="next"><a href="api.html">api</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

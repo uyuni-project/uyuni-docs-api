@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SUSE Multi-Linux Manager API Version 5.1 :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/index.html">
+    <link rel="next" href="common_gfdl1.2_i.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="stylesheet" href="../_/css/search.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../_/css/font-styles.css">
+<link rel="stylesheet" href="../_/fonts/css/all.css">
+<link rel="stylesheet" href="../_/css/site-extra.css">
+<link rel="stylesheet" href="../_/css/api-styles.css">
+<link rel="stylesheet" href="../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api/virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>SUSE Multi-Linux Manager API Version 5.1</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SUSE Multi-Linux Manager API Version 5.1</h1>
+<div class="paragraph">
+<p>Welcome to the SUSE Multi-Linux Manager API. By using the included API calls, you can easily automate many of the tasks you perform every day. All API calls are grouped by common functionality.</p>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="common_gfdl1.2_i.html">License</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+<script async src="../_/js/vendor/tabs.js"></script>
+<script src="../_/js/language-switcher.js" defer></script>
+<script src="../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

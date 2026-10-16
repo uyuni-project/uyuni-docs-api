@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>user :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/user.html">
+    <link rel="prev" href="systemgroup.html">
+    <link rel="next" href="user.external.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>user</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">user</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault">addAssignedSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">addAssignedSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name">addDefaultSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames">addDefaultSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-addRole-loggedInUser-login-role">addRole</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email">create</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth">create</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-delete-loggedInUser-login">delete</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-disable-loggedInUser-login">disable</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-enable-loggedInUser-login">enable</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser">getCreateDefaultSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-getDetails-loggedInUser-login">getDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listAssignableRoles-loggedInUser">listAssignableRoles</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login">listAssignedSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login">listDefaultSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listPermissions-loggedInUser-login">listPermissions</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listRoles-loggedInUser-login">listRoles</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-listUsers-loggedInUser">listUsers</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault">removeAssignedSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">removeAssignedSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName">removeDefaultSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames">removeDefaultSystemGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-removeRole-loggedInUser-login-role">removeRole</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup">setCreateDefaultSystemGroup</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-setDetails-loggedInUser-login-details">setDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-setErrataNotifications-loggedInUser-login-value">setErrataNotifications</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly">setReadOnly</a></p>
+</li>
+<li>
+<p><a href="#apidoc-user-usePamAuthentication-loggedInUser-login-val">usePamAuthentication</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>User namespace contains methods to access common user functions
+ available from the web user interface.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>user</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault"><a class="anchor" href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault"></a><a class="link" href="#apidoc-user-addAssignedSystemGroup-loggedInUser-login-sgName-setDefault">Method: addAssignedSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add system group to user&#8217;s list of assigned system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="string">string</span>  sgName</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  setDefault - Should system group also be
+added to user&#8217;s list of default system groups.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"><a class="anchor" href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"></a><a class="link" href="#apidoc-user-addAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">Method: addAssignedSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add system groups to user&#8217;s list of assigned system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  sgNames - server group names</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  setDefault - Should system groups also be
+added to user&#8217;s list of default system groups.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-addDefaultSystemGroup-loggedInUser-login-name"><a class="anchor" href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name"></a><a class="link" href="#apidoc-user-addDefaultSystemGroup-loggedInUser-login-name">Method: addDefaultSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add system group to user&#8217;s list of default system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - server group name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames"><a class="anchor" href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames"></a><a class="link" href="#apidoc-user-addDefaultSystemGroups-loggedInUser-login-sgNames">Method: addDefaultSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add system groups to user&#8217;s list of default system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  sgNames - server group names</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-addRole-loggedInUser-login-role"><a class="anchor" href="#apidoc-user-addRole-loggedInUser-login-role"></a><a class="link" href="#apidoc-user-addRole-loggedInUser-login-role">Method: addRole</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Adds a role to a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - user login name to update</p>
+</li>
+<li>
+<p><span class="string">string</span>  role - the role label to add</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-create-loggedInUser-login-password-firstName-lastName-email"><a class="anchor" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email"></a><a class="link" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - desired login name, will fail if
+already in use.</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  firstName</p>
+</li>
+<li>
+<p><span class="string">string</span>  lastName</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - User&#8217;s e-mail address.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth"><a class="anchor" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth"></a><a class="link" href="#apidoc-user-create-loggedInUser-login-password-firstName-lastName-email-usePamAuth">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - desired login name,
+will fail if already in use.</p>
+</li>
+<li>
+<p><span class="string">string</span>  password</p>
+</li>
+<li>
+<p><span class="string">string</span>  firstName</p>
+</li>
+<li>
+<p><span class="string">string</span>  lastName</p>
+</li>
+<li>
+<p><span class="string">string</span>  email - User&#8217;s e-mail address.</p>
+</li>
+<li>
+<p><span class="int">int</span>  usePamAuth - 1 if you wish to use PAM
+authentication for this user, 0 otherwise.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-delete-loggedInUser-login"><a class="anchor" href="#apidoc-user-delete-loggedInUser-login"></a><a class="link" href="#apidoc-user-delete-loggedInUser-login">Method: delete</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User login name to delete.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-disable-loggedInUser-login"><a class="anchor" href="#apidoc-user-disable-loggedInUser-login"></a><a class="link" href="#apidoc-user-disable-loggedInUser-login">Method: disable</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Disable a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User login name to disable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-enable-loggedInUser-login"><a class="anchor" href="#apidoc-user-enable-loggedInUser-login"></a><a class="link" href="#apidoc-user-enable-loggedInUser-login">Method: enable</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Enable a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User login name to enable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-getCreateDefaultSystemGroup-loggedInUser"><a class="anchor" href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser"></a><a class="link" href="#apidoc-user-getCreateDefaultSystemGroup-loggedInUser">Method: getCreateDefaultSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the current value of the CreateDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-getDetails-loggedInUser-login"><a class="anchor" href="#apidoc-user-getDetails-loggedInUser-login"></a><a class="link" href="#apidoc-user-getDetails-loggedInUser-login">Method: getDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the details about a given user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  user details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "first_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "email"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "org_id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "org_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "prefix"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_login_date"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "created_date"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "enabled" - true if user is enabled,
+false if the user is disabled</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "use_pam" - true if user is configured to use
+PAM authentication</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "read_only" - true if user is readonly</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "errata_notification" - true if errata e-mail notification
+is enabled for the user</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listAssignableRoles-loggedInUser"><a class="anchor" href="#apidoc-user-listAssignableRoles-loggedInUser"></a><a class="link" href="#apidoc-user-listAssignableRoles-loggedInUser">Method: listAssignableRoles</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of user roles that this user can assign to others.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  (role label)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listAssignedSystemGroups-loggedInUser-login"><a class="anchor" href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login"></a><a class="link" href="#apidoc-user-listAssignedSystemGroups-loggedInUser-login">Method: listAssignedSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the system groups that a user can administer.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  system group</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "system_count"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listDefaultSystemGroups-loggedInUser-login"><a class="anchor" href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login"></a><a class="link" href="#apidoc-user-listDefaultSystemGroups-loggedInUser-login">Method: listDefaultSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a user&#8217;s list of default system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  system group</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "system_count"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "org_id" - Organization ID for this system group.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listPermissions-loggedInUser-login"><a class="anchor" href="#apidoc-user-listPermissions-loggedInUser-login"></a><a class="link" href="#apidoc-user-listPermissions-loggedInUser-login">Method: listPermissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists the effective RBAC permissions of a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - user&#8217;s login name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  namespace</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "namespace"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "access_mode"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listRoles-loggedInUser-login"><a class="anchor" href="#apidoc-user-listRoles-loggedInUser-login"></a><a class="link" href="#apidoc-user-listRoles-loggedInUser-login">Method: listRoles</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of the user&#8217;s roles.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - user&#8217;s login name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  the role label</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-listUsers-loggedInUser"><a class="anchor" href="#apidoc-user-listUsers-loggedInUser"></a><a class="link" href="#apidoc-user-listUsers-loggedInUser">Method: listUsers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of users in your organization.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  user</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "login"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "login_uc" - upper case version of the login</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "enabled" - true if user is enabled,
+false if the user is disabled</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroup-loggedInUser-login-sgName-setDefault">Method: removeAssignedSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove system group from the user&#8217;s list of assigned system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="string">string</span>  sgName - server group name</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  setDefault - Should system group also
+be removed from the user&#8217;s list of default system groups.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"><a class="anchor" href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault"></a><a class="link" href="#apidoc-user-removeAssignedSystemGroups-loggedInUser-login-sgNames-setDefault">Method: removeAssignedSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove system groups from a user&#8217;s list of assigned system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  sgNames - server group names</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  setDefault - Should system groups also be
+removed from the user&#8217;s list of default system groups.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroup-loggedInUser-login-sgName">Method: removeDefaultSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove a system group from user&#8217;s list of default system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="string">string</span>  sgName - server group name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames"><a class="anchor" href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames"></a><a class="link" href="#apidoc-user-removeDefaultSystemGroups-loggedInUser-login-sgNames">Method: removeDefaultSystemGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove system groups from a user&#8217;s list of default system groups.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  sgNames - server group names</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-removeRole-loggedInUser-login-role"><a class="anchor" href="#apidoc-user-removeRole-loggedInUser-login-role"></a><a class="link" href="#apidoc-user-removeRole-loggedInUser-login-role">Method: removeRole</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove a role from a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - user login name to update</p>
+</li>
+<li>
+<p><span class="string">string</span>  role - the role label to remove</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup"><a class="anchor" href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup"></a><a class="link" href="#apidoc-user-setCreateDefaultSystemGroup-loggedInUser-createDefaultSystemGroup">Method: setCreateDefaultSystemGroup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Sets the value of the createDefaultSystemGroup setting.
+ If True this will cause there to be a system group created (with the same name
+ as the user) every time a new user is created, with the user automatically given
+ permission to that system group and the system group being set as the default
+ group for the user (so every time the user registers a system it will be
+ placed in that system group by default). This can be useful if different
+ users will administer different groups of servers in the same organization.
+ Can only be called by an org_admin.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  createDefaultSystemGroup - true if we should automatically create system groups, false otherwise.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-setDetails-loggedInUser-login-details"><a class="anchor" href="#apidoc-user-setDetails-loggedInUser-login-details"></a><a class="link" href="#apidoc-user-setDetails-loggedInUser-login-details">Method: setDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Updates the details of a user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "first_names" - deprecated, use first_name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "first_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "last_name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "email"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "prefix"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "password"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-setErrataNotifications-loggedInUser-login-value"><a class="anchor" href="#apidoc-user-setErrataNotifications-loggedInUser-login-value"></a><a class="link" href="#apidoc-user-setErrataNotifications-loggedInUser-login-value">Method: setErrataNotifications</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Enables/disables errata mail notifications for a specific user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  value - True for enabling
+errata notifications, False for disabling</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-setReadOnly-loggedInUser-login-readOnly"><a class="anchor" href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly"></a><a class="link" href="#apidoc-user-setReadOnly-loggedInUser-login-readOnly">Method: setReadOnly</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Sets whether the target user should have only read-only API access or
+ standard full scale access.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  readOnly - Sets whether the target user should
+have only read-only API access or standard full scale access.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-user-usePamAuthentication-loggedInUser-login-val"><a class="anchor" href="#apidoc-user-usePamAuthentication-loggedInUser-login-val"></a><a class="link" href="#apidoc-user-usePamAuthentication-loggedInUser-login-val">Method: usePamAuthentication</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Toggles whether or not a user uses PAM authentication or
+ basic #product() authentication.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  login - User&#8217;s login name.</p>
+</li>
+<li>
+<p><span class="int">int</span>  val</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1 to enable PAM authentication</p>
+</li>
+<li>
+<p>0 to disable.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="systemgroup.html">systemgroup</a></span>
+  <span class="next"><a href="user.external.html">user.external</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

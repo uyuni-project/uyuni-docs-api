@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>sync.hub :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/sync.hub.html">
+    <link rel="prev" href="sync.content.html">
+    <link rel="next" href="system.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>sync.hub</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">sync.hub</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">addPeripheralChannelsToSync</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel">addPeripheralChannelsToSync</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-deregister-loggedInUser-fqdn">deregister</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal">deregister</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn">generateAccessToken</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn">getAllPeripheralChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn">getAllPeripheralOrgs</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-getManagerInfo-loggedInUser">getManagerInfo</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-isISSPeripheral-loggedInUser">isISSPeripheral</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn">listPeripheralChannelsToSync</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-listPeripheralServers-loggedInUser">listPeripheralServers</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">migrateFromISSv1</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData">migrateFromISSv2</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn">regenerateSCCCredentials</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password">registerPeripheral</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA">registerPeripheral</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token">registerPeripheralWithToken</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA">registerPeripheralWithToken</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">removePeripheralChannelsToSync</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn">replaceTokens</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser">scheduleUpdateTask</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest">scheduleUpdateTask</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync">scheduleUpdateTask</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data">setDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token">storeAccessToken</a></p>
+</li>
+<li>
+<p><a href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn">syncPeripheralChannels</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contains methods to set up and manage Hub Inter-Server synchronization</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>sync.hub</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"><a class="anchor" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"></a><a class="link" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">Method: addPeripheralChannelsToSync</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add peripheral channels to synchronize on a peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+<li>
+<p><span class="array">array</span>  " channelLabels "</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - The channel label</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel"><a class="anchor" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel"></a><a class="link" href="#apidoc-sync_hub-addPeripheralChannelsToSync-loggedInUser-fqdn-channelLabels-peripheralOrgIdWhenCustomChannel">Method: addPeripheralChannelsToSync</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add peripheral channels to synchronize on a peripheral server, forcing the peripheral org in custom channels</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+<li>
+<p><span class="array">array</span>  "channelLabels"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - The channel label</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="int">int</span>  "peripheralOrgIdWhenCustomChannel" - ID of the peripheral Org to be set in custom channels</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-deregister-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn">Method: deregister</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>De-register the server locally identified by the fqdn.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to de-register</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal"><a class="anchor" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal"></a><a class="link" href="#apidoc-sync_hub-deregister-loggedInUser-fqdn-onlyLocal">Method: deregister</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>De-register the server identified by the fqdn.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to de-register</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  onlyLocal -  true if the de - registration has to be performed only this
+server, false to instead fully deregister on both sides</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-generateAccessToken-loggedInUser-fqdn">Method: generateAccessToken</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Generate a new access token for ISS for accessing this system</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - FQDN of the peripheral/hub that will be using this access token</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  The serialized form of the token</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-getAllPeripheralChannels-loggedInUser-fqdn">Method: getAllPeripheralChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remotely collect data about peripheral channels</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>   channel info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="long">long</span>  "id" - the id of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - the name of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label" - the label of the channel</p>
+</li>
+<li>
+<p><span class="string">string</span>  "summary" - the summary of the channel</p>
+</li>
+<li>
+<p><span class="long">long</span>  "org_id" - the organization id of the channel</p>
+</li>
+<li>
+<p><span class="long">long</span>  "parent_channel_id" - the parent channel ID of the channel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-getAllPeripheralOrgs-loggedInUser-fqdn">Method: getAllPeripheralOrgs</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remotely collect data about peripheral organizations</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>   org info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="long">long</span>  "org_id" - org identifier</p>
+</li>
+<li>
+<p><span class="string">string</span>  "org_name" - org name</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-getManagerInfo-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-getManagerInfo-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-getManagerInfo-loggedInUser">Method: getManagerInfo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get manager info.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  manager info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "version" - version</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "report_db" - true if there is a report database</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_db_name" - name of the report database</p>
+</li>
+<li>
+<p><span class="string">string</span>  "report_db_host" - hostname of the report database</p>
+</li>
+<li>
+<p><span class="int">int</span>  "report_db_port" - port of the report database</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-isISSPeripheral-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-isISSPeripheral-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-isISSPeripheral-loggedInUser">Method: isISSPeripheral</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Check if this server is configured as peripheral server and read data from a Hub</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="boolean">boolean</span>  peripheral - True if this is an ISS peripheral, false otherwise</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-listPeripheralChannelsToSync-loggedInUser-fqdn">Method: listPeripheralChannelsToSync</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists current peripheral channel to synchronize on a peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - Label of a peripheral channel to sync</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-listPeripheralServers-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-listPeripheralServers-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-listPeripheralServers-loggedInUser">Method: listPeripheralServers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all peripheral servers.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  peripheral_server</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The FQDN of the peripheral server</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id" - The system ID of the peripheral server</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root CA certificate of the peripheral server</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"><a class="anchor" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData"></a><a class="link" href="#apidoc-sync_hub-migrateFromISSv1-loggedInUser-migrationData">Method: migrateFromISSv1</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Migrate the existing ISSv1 slaves to Hub Online Synchronization peripherals.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span>  migrationData</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The fully qualified domain name of the remote slave server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "token" - The token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca needed to establish a secure connection to the
+remote server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span>  "messages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  message</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "severity" - the severity of the message</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message" - the message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="result_code">result_code</span>  "success"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData"><a class="anchor" href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData"></a><a class="link" href="#apidoc-sync_hub-migrateFromISSv2-loggedInUser-migrationData">Method: migrateFromISSv2</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Migrate the existing ISSv2 peripherals to Hub Online Synchronization peripherals.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">array</span>  migrationData</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span></p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "fqdn" - The fully qualified domain name of the remote peripheral server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "token" - The token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca needed to establish a secure connection to the
+remote server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  result</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span>  "messages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  message</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "severity" - the severity of the message</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message" - the message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="result_code">result_code</span>  "success"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-regenerateSCCCredentials-loggedInUser-fqdn">Method: regenerateSCCCredentials</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Regenerate the username and the password for an existing peripheral.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password"><a class="anchor" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password"></a><a class="link" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password">Method: registerPeripheral</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Registers automatically a remote server with the specified ISS role.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
+</li>
+<li>
+<p><span class="string">string</span>  username - the name of the user, needed to access the remote server
+It must have the sat admin role</p>
+</li>
+<li>
+<p><span class="string">string</span>  password - the password of the user, needed to access the remote
+server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA"><a class="anchor" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA"></a><a class="link" href="#apidoc-sync_hub-registerPeripheral-loggedInUser-fqdn-username-password-rootCA">Method: registerPeripheral</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Registers automatically a remote server with the specified ISS role.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
+</li>
+<li>
+<p><span class="string">string</span>  username - the name of the user, needed to access the remote server
+It must have the sat admin role</p>
+</li>
+<li>
+<p><span class="string">string</span>  password - the password of the user, needed to access the remote
+server</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - the root CA certificate, in case it&#8217;s needed to establish a secure
+connection</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token"><a class="anchor" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token"></a><a class="link" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token">Method: registerPeripheralWithToken</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Registers a remote server with the specified ISS role using an existing specified access token.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
+</li>
+<li>
+<p><span class="string">string</span>  token - the token used to authenticate on the remote server.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA"><a class="anchor" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA"></a><a class="link" href="#apidoc-sync_hub-registerPeripheralWithToken-loggedInUser-fqdn-token-rootCA">Method: registerPeripheralWithToken</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Registers a remote server with the specified ISS role using an existing specified access token.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote server to register</p>
+</li>
+<li>
+<p><span class="string">string</span>  token - the token used to authenticate on the remote server.</p>
+</li>
+<li>
+<p><span class="string">string</span>  rootCA - the root CA certificate, in case it&#8217;s needed to establish a secure
+connection</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"><a class="anchor" href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels"></a><a class="link" href="#apidoc-sync_hub-removePeripheralChannelsToSync-loggedInUser-fqdn-channelLabels">Method: removePeripheralChannelsToSync</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove peripheral channels to synchronize on a peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+<li>
+<p><span class="array">array</span>  " channelLabels "</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - The channel label</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-replaceTokens-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-replaceTokens-loggedInUser-fqdn">Method: replaceTokens</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Replace the auth tokens for connections between this hub and the given peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the remote peripheral server to replace the tokens</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest - earliest time the task will be executed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync"><a class="anchor" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync"></a><a class="link" href="#apidoc-sync_hub-scheduleUpdateTask-loggedInUser-earliest-withReposync">Method: scheduleUpdateTask</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedules mgr-sync refresh with reposync on peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliest - earliest time the task will be executed.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  withReposync - if true reposync will be run after mgr-sync refresh</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data"><a class="anchor" href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data"></a><a class="link" href="#apidoc-sync_hub-setDetails-loggedInUser-fqdn-role-data">Method: setDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set server details. All arguments are optional and will only be modified
+ if included in the struct.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN of Hub or Peripheral server to lookup details for.</p>
+</li>
+<li>
+<p><span class="string">string</span>  role - The role which should be updated. Either 'HUB' or 'PERIPHERAL'.</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  data</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "root_ca" - The root ca</p>
+</li>
+<li>
+<p><span class="string">string</span>  "gpg_key" - The root gpg key - only for role HUB</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token"><a class="anchor" href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token"></a><a class="link" href="#apidoc-sync_hub-storeAccessToken-loggedInUser-fqdn-token">Method: storeAccessToken</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Generate a new access token for ISS for accessing this system</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - the FQDN of the peripheral/hub that generated this access token</p>
+</li>
+<li>
+<p><span class="string">string</span>  token - the access token</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn"><a class="anchor" href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn"></a><a class="link" href="#apidoc-sync_hub-syncPeripheralChannels-loggedInUser-fqdn">Method: syncPeripheralChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Synchronize peripheral channels on a peripheral server</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  fqdn - The FQDN identifying the peripheral server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="sync.content.html">sync.content</a></span>
+  <span class="next"><a href="system.html">system</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>
