@@ -4,44 +4,45 @@
 
 == Available methods
 
-* <<apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams,addAppStreams>>
-* <<apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels,addChildChannels>>
-* <<apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop,addConfigChannels>>
-* <<apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements,addEntitlements>>
-* <<apidoc-activationkey-addPackages-loggedInUser-key-packages,addPackages>>
-* <<apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds,addServerGroups>>
-* <<apidoc-activationkey-checkConfigDeployment-loggedInUser-key,checkConfigDeployment>>
-* <<apidoc-activationkey-clone-loggedInUser-key-cloneDescription,clone>>
-* <<apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault,create>>
-* <<apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault,create>>
-* <<apidoc-activationkey-delete-loggedInUser-key,delete>>
-* <<apidoc-activationkey-disableConfigDeployment-loggedInUser-key,disableConfigDeployment>>
-* <<apidoc-activationkey-enableConfigDeployment-loggedInUser-key,enableConfigDeployment>>
-* <<apidoc-activationkey-getDetails-loggedInUser-key,getDetails>>
-* <<apidoc-activationkey-listActivatedSystems-loggedInUser-key,listActivatedSystems>>
-* <<apidoc-activationkey-listActivationKeys-loggedInUser,listActivationKeys>>
-* <<apidoc-activationkey-listChannels-minionId-machinePassword-activationKey,listChannels>>
-* <<apidoc-activationkey-listConfigChannels-loggedInUser-key,listConfigChannels>>
-* <<apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams,removeAppStreams>>
-* <<apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels,removeChildChannels>>
-* <<apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels,removeConfigChannels>>
-* <<apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements,removeEntitlements>>
-* <<apidoc-activationkey-removePackages-loggedInUser-key-packages,removePackages>>
-* <<apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds,removeServerGroups>>
-* <<apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels,setConfigChannels>>
-* <<apidoc-activationkey-setDetails-loggedInUser-key-details,setDetails>>
+* <<apidoc-activationkey-addAppStreams-1291770939,addAppStreams>>
+* <<apidoc-activationkey-addChildChannels-465043151,addChildChannels>>
+* <<apidoc-activationkey-addConfigChannels--696116732,addConfigChannels>>
+* <<apidoc-activationkey-addEntitlements-1341998927,addEntitlements>>
+* <<apidoc-activationkey-addPackages-1307181014,addPackages>>
+* <<apidoc-activationkey-addServerGroups--731784123,addServerGroups>>
+* <<apidoc-activationkey-checkConfigDeployment-2068575428,checkConfigDeployment>>
+* <<apidoc-activationkey-clone-1917711432,clone>>
+* <<apidoc-activationkey-create--1254584581,create>>
+* <<apidoc-activationkey-create-647930028,create>>
+* <<apidoc-activationkey-delete-2068575428,delete>>
+* <<apidoc-activationkey-disableConfigDeployment-2068575428,disableConfigDeployment>>
+* <<apidoc-activationkey-enableConfigDeployment-2068575428,enableConfigDeployment>>
+* <<apidoc-activationkey-getDetails-2068575428,getDetails>>
+* <<apidoc-activationkey-listActivatedSystems-2068575428,listActivatedSystems>>
+* <<apidoc-activationkey-listActivationKeys--406943054,listActivationKeys>>
+* <<apidoc-activationkey-listChannels-526266946,listChannels>>
+* <<apidoc-activationkey-listConfigChannels-2068575428,listConfigChannels>>
+* <<apidoc-activationkey-removeAppStreams-1291770939,removeAppStreams>>
+* <<apidoc-activationkey-removeChildChannels-465043151,removeChildChannels>>
+* <<apidoc-activationkey-removeConfigChannels-1723639842,removeConfigChannels>>
+* <<apidoc-activationkey-removeEntitlements-1341998927,removeEntitlements>>
+* <<apidoc-activationkey-removePackages-1307181014,removePackages>>
+* <<apidoc-activationkey-removeServerGroups--731784123,removeServerGroups>>
+* <<apidoc-activationkey-setConfigChannels-1723639842,setConfigChannels>>
+* <<apidoc-activationkey-setDetails-1575667257,setDetails>>
 
 == Description
 
 Contains methods to access common activation key functions
- available from the web interface.
+ available from the web interface. 
+ 
 
 *Namespace*:
 
 activationkey
 
 
-[#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams]
+[#apidoc-activationkey-addAppStreams-1291770939]
 == Method: addAppStreams
 
 HTTP `POST`
@@ -49,7 +50,8 @@ HTTP `POST`
 Description:
 
 Add app streams to an activation key. If any of the provided app streams is not available in the
- channels of the activation key, the request will fail.
+ channels of the activation key, the request will fail. 
+ 
 
 
 
@@ -73,14 +75,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels]
+[#apidoc-activationkey-addChildChannels-465043151]
 == Method: addChildChannels
 
 HTTP `POST`
 
 Description:
 
-Add child channels to an activation key.
+Add child channels to an activation key. 
+ 
 
 
 
@@ -101,7 +104,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop]
+[#apidoc-activationkey-addConfigChannels--696116732]
 == Method: addConfigChannels
 
 HTTP `POST`
@@ -115,7 +118,8 @@ Given a list of activation keys and configuration channels,
  provided in the add list is maintained while adding.
  If one of the configuration channels in the 'add' list
  already exists in an activation key, the
- configuration  channel will be re-ranked to the appropriate place.
+ configuration  channel will be re-ranked to the appropriate place. 
+ 
 
 
 
@@ -142,14 +146,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements]
+[#apidoc-activationkey-addEntitlements-1341998927]
 == Method: addEntitlements
 
 HTTP `POST`
 
 Description:
 
-Add add-on System Types to an activation key.
+Add add-on System Types to an activation key. 
+ 
 
 
 
@@ -176,14 +181,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-addPackages-loggedInUser-key-packages]
+[#apidoc-activationkey-addPackages-1307181014]
 == Method: addPackages
 
 HTTP `POST`
 
 Description:
 
-Add packages to an activation key.
+Add packages to an activation key. 
+ 
 
 
 
@@ -207,14 +213,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds]
+[#apidoc-activationkey-addServerGroups--731784123]
 == Method: addServerGroups
 
 HTTP `POST`
 
 Description:
 
-Add server groups to an activation key.
+Add server groups to an activation key. 
+ 
 
 
 
@@ -235,7 +242,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-checkConfigDeployment-loggedInUser-key]
+[#apidoc-activationkey-checkConfigDeployment-2068575428]
 == Method: checkConfigDeployment
 
 HTTP `POST`
@@ -243,7 +250,8 @@ HTTP `POST`
 Description:
 
 Check configuration file deployment status for the
- activation key specified.
+ activation key specified. 
+ 
 
 
 
@@ -262,14 +270,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-clone-loggedInUser-key-cloneDescription]
+[#apidoc-activationkey-clone-1917711432]
 == Method: clone
 
 HTTP `POST`
 
 Description:
 
-Clone an existing activation key.
+Clone an existing activation key. 
+ 
 
 
 
@@ -290,7 +299,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault]
+[#apidoc-activationkey-create--1254584581]
 == Method: create
 
 HTTP `POST`
@@ -307,7 +316,8 @@ Create a new activation key.
 
  This call allows for the setting of a usage limit on this activation key.
  If unlimited usage is desired see the similarly named API method with no
- usage limit argument.
+ usage limit argument. 
+ 
 
 
 
@@ -343,7 +353,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault]
+[#apidoc-activationkey-create-647930028]
 == Method: create
 
 HTTP `POST`
@@ -356,7 +366,8 @@ Create a new activation key with unlimited usage.
  returned from the create call.
 
  Eg. If the caller passes in the key "foo" and belong to an organization with
- the ID 100, the actual activation key will be "100-foo".
+ the ID 100, the actual activation key will be "100-foo". 
+ 
 
 
 
@@ -384,14 +395,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-delete-loggedInUser-key]
+[#apidoc-activationkey-delete-2068575428]
 == Method: delete
 
 HTTP `POST`
 
 Description:
 
-Delete an activation key.
+Delete an activation key. 
+ 
 
 
 
@@ -410,14 +422,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-disableConfigDeployment-loggedInUser-key]
+[#apidoc-activationkey-disableConfigDeployment-2068575428]
 == Method: disableConfigDeployment
 
 HTTP `POST`
 
 Description:
 
-Disable configuration file deployment for the specified activation key.
+Disable configuration file deployment for the specified activation key. 
+ 
 
 
 
@@ -436,14 +449,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-enableConfigDeployment-loggedInUser-key]
+[#apidoc-activationkey-enableConfigDeployment-2068575428]
 == Method: enableConfigDeployment
 
 HTTP `POST`
 
 Description:
 
-Enable configuration file deployment for the specified activation key.
+Enable configuration file deployment for the specified activation key. 
+ 
 
 
 
@@ -462,14 +476,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-getDetails-loggedInUser-key]
+[#apidoc-activationkey-getDetails-2068575428]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Lookup an activation key's details.
+Lookup an activation key's details. 
+ 
 
 
 
@@ -508,14 +523,15 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-activationkey-listActivatedSystems-loggedInUser-key]
+[#apidoc-activationkey-listActivatedSystems-2068575428]
 == Method: listActivatedSystems
 
 HTTP `GET`
 
 Description:
 
-List the systems activated with the key provided.
+List the systems activated with the key provided. 
+ 
 
 
 
@@ -539,7 +555,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-listActivationKeys-loggedInUser]
+[#apidoc-activationkey-listActivationKeys--406943054]
 == Method: listActivationKeys
 
 HTTP `GET`
@@ -547,7 +563,8 @@ HTTP `GET`
 Description:
 
 List activation keys that are visible to the
- user.
+ user. 
+ 
 
 
 
@@ -585,7 +602,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-activationkey-listChannels-minionId-machinePassword-activationKey]
+[#apidoc-activationkey-listChannels-526266946]
 == Method: listChannels
 
 HTTP `GET`
@@ -594,7 +611,8 @@ Description:
 
 List the channels for the given activation key
  with temporary authentication tokens to access them.
- Authentication is done via a machine specific password.
+ Authentication is done via a machine specific password. 
+ 
 
 
 
@@ -621,7 +639,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-listConfigChannels-loggedInUser-key]
+[#apidoc-activationkey-listConfigChannels-2068575428]
 == Method: listConfigChannels
 
 HTTP `GET`
@@ -629,7 +647,8 @@ HTTP `GET`
 Description:
 
 List configuration channels
- associated to an activation key.
+ associated to an activation key. 
+ 
 
 
 
@@ -662,14 +681,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams]
+[#apidoc-activationkey-removeAppStreams-1291770939]
 == Method: removeAppStreams
 
 HTTP `POST`
 
 Description:
 
-Remove app streams from an activation key.
+Remove app streams from an activation key. 
+ 
 
 
 
@@ -693,14 +713,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels]
+[#apidoc-activationkey-removeChildChannels-465043151]
 == Method: removeChildChannels
 
 HTTP `POST`
 
 Description:
 
-Remove child channels from an activation key.
+Remove child channels from an activation key. 
+ 
 
 
 
@@ -721,14 +742,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels]
+[#apidoc-activationkey-removeConfigChannels-1723639842]
 == Method: removeConfigChannels
 
 HTTP `POST`
 
 Description:
 
-Remove configuration channels from the given activation keys.
+Remove configuration channels from the given activation keys. 
+ 
 
 
 
@@ -749,7 +771,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements]
+[#apidoc-activationkey-removeEntitlements-1341998927]
 == Method: removeEntitlements
 
 HTTP `POST`
@@ -757,7 +779,8 @@ HTTP `POST`
 Description:
 
 Remove entitlements (by label) from an activation key.
- Currently only virtualization_host add-on entitlement is permitted.
+ Currently only virtualization_host add-on entitlement is permitted. 
+ 
 
 
 
@@ -779,14 +802,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-removePackages-loggedInUser-key-packages]
+[#apidoc-activationkey-removePackages-1307181014]
 == Method: removePackages
 
 HTTP `POST`
 
 Description:
 
-Remove package names from an activation key.
+Remove package names from an activation key. 
+ 
 
 
 
@@ -810,14 +834,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds]
+[#apidoc-activationkey-removeServerGroups--731784123]
 == Method: removeServerGroups
 
 HTTP `POST`
 
 Description:
 
-Remove server groups from an activation key.
+Remove server groups from an activation key. 
+ 
 
 
 
@@ -838,7 +863,7 @@ Returns:
 
 
 
-[#apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels]
+[#apidoc-activationkey-setConfigChannels-1723639842]
 == Method: setConfigChannels
 
 HTTP `POST`
@@ -847,7 +872,8 @@ Description:
 
 Replace the existing set of
  configuration channels on the given activation keys.
- Channels are ranked by their order in the array.
+ Channels are ranked by their order in the array. 
+ 
 
 
 
@@ -868,14 +894,15 @@ Returns:
 
 
 
-[#apidoc-activationkey-setDetails-loggedInUser-key-details]
+[#apidoc-activationkey-setDetails-1575667257]
 == Method: setDetails
 
 HTTP `POST`
 
 Description:
 
-Update the details of an activation key.
+Update the details of an activation key. 
+ 
 
 
 

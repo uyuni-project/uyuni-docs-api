@@ -4,39 +4,41 @@
 
 == Available methods
 
-* <<apidoc-system_scap-deleteXccdfScan-loggedInUser-xid,deleteXccdfScan>>
-* <<apidoc-system_scap-getXccdfScanDetails-loggedInUser-xid,getXccdfScanDetails>>
-* <<apidoc-system_scap-getXccdfScanRuleResults-loggedInUser-xid,getXccdfScanRuleResults>>
-* <<apidoc-system_scap-listPolicies-loggedInUser,listPolicies>>
-* <<apidoc-system_scap-listScapContent-loggedInUser,listScapContent>>
-* <<apidoc-system_scap-listTailoringFiles-loggedInUser,listTailoringFiles>>
-* <<apidoc-system_scap-listXccdfScans-loggedInUser-sid,listXccdfScans>>
-* <<apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date,scheduleBetaXccdfScanCustom>>
-* <<apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date,scheduleBetaXccdfScanWithPolicy>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-date,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-ovalFiles-date,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams-date,scheduleXccdfScan>>
+* <<apidoc-system_scap-deleteXccdfScan-2068588024,deleteXccdfScan>>
+* <<apidoc-system_scap-getXccdfScanDetails-2068588024,getXccdfScanDetails>>
+* <<apidoc-system_scap-getXccdfScanRuleResults-2068588024,getXccdfScanRuleResults>>
+* <<apidoc-system_scap-listPolicies--406943054,listPolicies>>
+* <<apidoc-system_scap-listScapContent--406943054,listScapContent>>
+* <<apidoc-system_scap-listTailoringFiles--406943054,listTailoringFiles>>
+* <<apidoc-system_scap-listXccdfScans-2068583219,listXccdfScans>>
+* <<apidoc-system_scap-scheduleBetaXccdfScanCustom--1744105240,scheduleBetaXccdfScanCustom>>
+* <<apidoc-system_scap-scheduleBetaXccdfScanWithPolicy--1122631647,scheduleBetaXccdfScanWithPolicy>>
+* <<apidoc-system_scap-scheduleXccdfScan--1624901639,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-948710658,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-821774218,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan--1706199220,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScan-1658734991,scheduleXccdfScan>>
 
 == Description
 
-Provides methods to schedule SCAP scans and access the results.
+Provides methods to schedule SCAP scans and access the results. 
+ 
 
 *Namespace*:
 
 system.scap
 
 
-[#apidoc-system_scap-deleteXccdfScan-loggedInUser-xid]
+[#apidoc-system_scap-deleteXccdfScan-2068588024]
 == Method: deleteXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Delete OpenSCAP XCCDF Scan from the #product() database. Note that
- only those SCAP Scans can be deleted which have passed their retention period.
+Delete OpenSCAP XCCDF Scan from the Uyuni database. Note that
+ only those SCAP Scans can be deleted which have passed their retention period. 
+ 
 
 
 
@@ -55,14 +57,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-getXccdfScanDetails-loggedInUser-xid]
+[#apidoc-system_scap-getXccdfScanDetails-2068588024]
 == Method: getXccdfScanDetails
 
 HTTP `GET`
 
 Description:
 
-Get details of given OpenSCAP XCCDF scan.
+Get details of given OpenSCAP XCCDF scan. 
+ 
 
 
 
@@ -97,14 +100,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-getXccdfScanRuleResults-loggedInUser-xid]
+[#apidoc-system_scap-getXccdfScanRuleResults-2068588024]
 == Method: getXccdfScanRuleResults
 
 HTTP `GET`
 
 Description:
 
-Return a full list of RuleResults for given OpenSCAP XCCDF scan.
+Return a full list of RuleResults for given OpenSCAP XCCDF scan. 
+ 
 
 
 
@@ -128,14 +132,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-listPolicies-loggedInUser]
+[#apidoc-system_scap-listPolicies--406943054]
 == Method: listPolicies
 
 HTTP `GET`
 
 Description:
 
-List SCAP policies available for the user's organization.
+List SCAP policies available for the user's organization. 
+ 
 
 
 
@@ -164,14 +169,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-listScapContent-loggedInUser]
+[#apidoc-system_scap-listScapContent--406943054]
 == Method: listScapContent
 
 HTTP `GET`
 
 Description:
 
-List all available SCAP content.
+List all available SCAP content. 
+ 
 
 
 
@@ -195,14 +201,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-listTailoringFiles-loggedInUser]
+[#apidoc-system_scap-listTailoringFiles--406943054]
 == Method: listTailoringFiles
 
 HTTP `GET`
 
 Description:
 
-List tailoring files available for the user's organization.
+List tailoring files available for the user's organization. 
+ 
 
 
 
@@ -225,14 +232,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-listXccdfScans-loggedInUser-sid]
+[#apidoc-system_scap-listXccdfScans-2068583219]
 == Method: listXccdfScans
 
 HTTP `GET`
 
 Description:
 
-Return a list of finished OpenSCAP scans for a given system.
+Return a list of finished OpenSCAP scans for a given system. 
+ 
 
 
 
@@ -258,14 +266,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date]
+[#apidoc-system_scap-scheduleBetaXccdfScanCustom--1744105240]
 == Method: scheduleBetaXccdfScanCustom
 
 HTTP `POST`
 
 Description:
 
-Schedule SCAP scan with custom parameters.
+Schedule SCAP scan with custom parameters. 
+ 
 
 
 
@@ -295,14 +304,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date]
+[#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy--1122631647]
 == Method: scheduleBetaXccdfScanWithPolicy
 
 HTTP `POST`
 
 Description:
 
-Schedule SCAP scan based on an existing SCAP policy.
+Schedule SCAP scan based on an existing SCAP policy. 
+ 
 
 
 
@@ -325,14 +335,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams]
+[#apidoc-system_scap-scheduleXccdfScan--1624901639]
 == Method: scheduleXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Schedule OpenSCAP scan.
+Schedule OpenSCAP scan. 
+ 
 
 
 
@@ -355,14 +366,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-date]
+[#apidoc-system_scap-scheduleXccdfScan-948710658]
 == Method: scheduleXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Schedule OpenSCAP scan.
+Schedule OpenSCAP scan. 
+ 
 
 
 
@@ -387,14 +399,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-ovalFiles-date]
+[#apidoc-system_scap-scheduleXccdfScan-821774218]
 == Method: scheduleXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Schedule OpenSCAP scan.
+Schedule OpenSCAP scan. 
+ 
 
 
 
@@ -421,14 +434,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams]
+[#apidoc-system_scap-scheduleXccdfScan--1706199220]
 == Method: scheduleXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Schedule Scap XCCDF scan.
+Schedule Scap XCCDF scan. 
+ 
 
 
 
@@ -451,14 +465,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams-date]
+[#apidoc-system_scap-scheduleXccdfScan-1658734991]
 == Method: scheduleXccdfScan
 
 HTTP `POST`
 
 Description:
 
-Schedule Scap XCCDF scan.
+Schedule Scap XCCDF scan. 
+ 
 
 
 

@@ -1,0 +1,103 @@
+[#apidoc-admin_gpg]
+= admin.gpg
+
+
+== Available methods
+
+* <<apidoc-admin_gpg-listGpgKeys--406943054,listGpgKeys>>
+* <<apidoc-admin_gpg-removeGpgKey--1148122551,removeGpgKey>>
+* <<apidoc-admin_gpg-uploadGpgKey-634993756,uploadGpgKey>>
+
+== Description
+
+Provides methods to manage GPG data. 
+ 
+
+*Namespace*:
+
+admin.gpg
+
+
+[#apidoc-admin_gpg-listGpgKeys--406943054]
+== Method: listGpgKeys
+
+HTTP `GET`
+
+Description:
+
+Get all GPG keys from the keyring 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+
+Returns:
+
+* [.array]#array# :
+** [.struct]#struct#  GPG key
+*** [.int]#int#  "keyType" - OpenPGP public key algorithm type
+*** [.int]#int#  "keySize" - Key size in bits
+*** [.string]#string#  "fingerprint" - Fingerprint of the GPG key
+*** [.array]#array#  "names" - Users associated with the GPG key
+ 
+
+
+
+[#apidoc-admin_gpg-removeGpgKey--1148122551]
+== Method: removeGpgKey
+
+HTTP `POST`
+
+Description:
+
+Remove a GPG key from the keyring 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  fingerprint
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+
+
+[#apidoc-admin_gpg-uploadGpgKey-634993756]
+== Method: uploadGpgKey
+
+HTTP `POST`
+
+Description:
+
+Upload and add a GPG key to the keyring 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  gpgKey
+ 
+
+Returns:
+
+* [.int]#int#  - 1 on success, exception thrown otherwise.
+ 
+
+

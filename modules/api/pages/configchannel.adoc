@@ -4,54 +4,56 @@
 
 == Available methods
 
-* <<apidoc-configchannel-channelExists-loggedInUser-label,channelExists>>
-* <<apidoc-configchannel-create-loggedInUser-label-name-description,create>>
-* <<apidoc-configchannel-create-user-label-name-description-type,create>>
-* <<apidoc-configchannel-create-user-label-name-description-type-pathInfo,create>>
-* <<apidoc-configchannel-createOrUpdatePath-loggedInUser-label-path-isDir-pathInfo,createOrUpdatePath>>
-* <<apidoc-configchannel-createOrUpdateSymlink-loggedInUser-label-path-pathInfo,createOrUpdateSymlink>>
-* <<apidoc-configchannel-deleteChannels-loggedInUser-labels,deleteChannels>>
-* <<apidoc-configchannel-deleteFileRevisions-loggedInUser-label-filePath-revisions,deleteFileRevisions>>
-* <<apidoc-configchannel-deleteFiles-loggedInUser-label-paths,deleteFiles>>
-* <<apidoc-configchannel-deployAllSystems-loggedInUser-label,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-date,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath,deployAllSystems>>
-* <<apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath-date,deployAllSystems>>
-* <<apidoc-configchannel-getDetails-loggedInUser-label,getDetails>>
-* <<apidoc-configchannel-getDetails-loggedInUser-id,getDetails>>
-* <<apidoc-configchannel-getEncodedFileRevision-loggedInUser-label-filePath-revision,getEncodedFileRevision>>
-* <<apidoc-configchannel-getFileRevision-loggedInUser-label-filePath-revision,getFileRevision>>
-* <<apidoc-configchannel-getFileRevisions-loggedInUser-label-filePath,getFileRevisions>>
-* <<apidoc-configchannel-listAssignedSystemGroups-loggedInUser-label,listAssignedSystemGroups>>
-* <<apidoc-configchannel-listFiles-loggedInUser-label,listFiles>>
-* <<apidoc-configchannel-listGlobals-loggedInUser,listGlobals>>
-* <<apidoc-configchannel-listSubscribedSystems-loggedInUser-label,listSubscribedSystems>>
-* <<apidoc-configchannel-lookupChannelInfo-loggedInUser-labels,lookupChannelInfo>>
-* <<apidoc-configchannel-lookupFileInfo-loggedInUser-label-paths,lookupFileInfo>>
-* <<apidoc-configchannel-lookupFileInfo-loggedInUser-label-path-revision,lookupFileInfo>>
-* <<apidoc-configchannel-scheduleFileComparisons-loggedInUser-label-path-sids,scheduleFileComparisons>>
-* <<apidoc-configchannel-syncSaltFilesOnDisk-loggedInUser-labels,syncSaltFilesOnDisk>>
-* <<apidoc-configchannel-update-loggedInUser-label-name-description,update>>
-* <<apidoc-configchannel-updateInitSls-user-label-pathInfo,updateInitSls>>
+* <<apidoc-configchannel-channelExists--668086247,channelExists>>
+* <<apidoc-configchannel-create-11002606,create>>
+* <<apidoc-configchannel-create-312583250,create>>
+* <<apidoc-configchannel-create--132956786,create>>
+* <<apidoc-configchannel-createOrUpdatePath--1287539471,createOrUpdatePath>>
+* <<apidoc-configchannel-createOrUpdateSymlink--1730462617,createOrUpdateSymlink>>
+* <<apidoc-configchannel-deleteChannels-764162938,deleteChannels>>
+* <<apidoc-configchannel-deleteFileRevisions-485435168,deleteFileRevisions>>
+* <<apidoc-configchannel-deleteFiles--802173382,deleteFiles>>
+* <<apidoc-configchannel-deployAllSystems--668086247,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-1497786594,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-1974890229,deployAllSystems>>
+* <<apidoc-configchannel-deployAllSystems-98218886,deployAllSystems>>
+* <<apidoc-configchannel-getDetails--668086247,getDetails>>
+* <<apidoc-configchannel-getDetails-1452201494,getDetails>>
+* <<apidoc-configchannel-getEncodedFileRevision--261435469,getEncodedFileRevision>>
+* <<apidoc-configchannel-getFileRevision--261435469,getFileRevision>>
+* <<apidoc-configchannel-getFileRevisions-1974890229,getFileRevisions>>
+* <<apidoc-configchannel-listAssignedSystemGroups--668086247,listAssignedSystemGroups>>
+* <<apidoc-configchannel-listFiles--668086247,listFiles>>
+* <<apidoc-configchannel-listGlobals--406943054,listGlobals>>
+* <<apidoc-configchannel-listSubscribedSystems--668086247,listSubscribedSystems>>
+* <<apidoc-configchannel-lookupChannelInfo-764162938,lookupChannelInfo>>
+* <<apidoc-configchannel-lookupFileInfo--802173382,lookupFileInfo>>
+* <<apidoc-configchannel-lookupFileInfo-1069633999,lookupFileInfo>>
+* <<apidoc-configchannel-scheduleFileComparisons-1998950745,scheduleFileComparisons>>
+* <<apidoc-configchannel-syncSaltFilesOnDisk-764162938,syncSaltFilesOnDisk>>
+* <<apidoc-configchannel-update-11002606,update>>
+* <<apidoc-configchannel-updateInitSls-536251246,updateInitSls>>
 
 == Description
 
 Provides methods to access and modify many aspects of
- configuration channels.
+ configuration channels. 
+ 
 
 *Namespace*:
 
 configchannel
 
 
-[#apidoc-configchannel-channelExists-loggedInUser-label]
+[#apidoc-configchannel-channelExists--668086247]
 == Method: channelExists
 
 HTTP `POST`
 
 Description:
 
-Check for the existence of the config channel provided.
+Check for the existence of the config channel provided. 
+ 
 
 
 
@@ -70,7 +72,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-loggedInUser-label-name-description]
+[#apidoc-configchannel-create-11002606]
 == Method: create
 
 HTTP `POST`
@@ -78,7 +80,8 @@ HTTP `POST`
 Description:
 
 Create a new global config channel. Caller must be at least a
- config admin or an organization admin.
+ config admin or an organization admin. 
+ 
 
 
 
@@ -114,7 +117,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-user-label-name-description-type]
+[#apidoc-configchannel-create-312583250]
 == Method: create
 
 HTTP `POST`
@@ -122,7 +125,8 @@ HTTP `POST`
 Description:
 
 Create a new global config channel. Caller must be at least a
- config admin or an organization admin.
+ config admin or an organization admin. 
+ 
 
 
 
@@ -160,7 +164,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-create-user-label-name-description-type-pathInfo]
+[#apidoc-configchannel-create--132956786]
 == Method: create
 
 HTTP `POST`
@@ -168,7 +172,8 @@ HTTP `POST`
 Description:
 
 Create a new global config channel. Caller must be at least a
- config admin or an organization admin.
+ config admin or an organization admin. 
+ 
 
 
 
@@ -210,7 +215,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-createOrUpdatePath-loggedInUser-label-path-isDir-pathInfo]
+[#apidoc-configchannel-createOrUpdatePath--1287539471]
 == Method: createOrUpdatePath
 
 HTTP `POST`
@@ -218,7 +223,8 @@ HTTP `POST`
 Description:
 
 Create a new file or directory with the given path, or
- update an existing path.
+ update an existing path. 
+ 
 
 
 
@@ -286,7 +292,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-createOrUpdateSymlink-loggedInUser-label-path-pathInfo]
+[#apidoc-configchannel-createOrUpdateSymlink--1730462617]
 == Method: createOrUpdateSymlink
 
 HTTP `POST`
@@ -294,7 +300,8 @@ HTTP `POST`
 Description:
 
 Create a new symbolic link with the given path, or
- update an existing path in config channel of 'normal' type.
+ update an existing path in config channel of 'normal' type. 
+ 
 
 
 
@@ -348,7 +355,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-deleteChannels-loggedInUser-labels]
+[#apidoc-configchannel-deleteChannels-764162938]
 == Method: deleteChannels
 
 HTTP `POST`
@@ -356,7 +363,8 @@ HTTP `POST`
 Description:
 
 Delete a list of global config channels.
- Caller must be a config admin.
+ Caller must be a config admin. 
+ 
 
 
 
@@ -375,14 +383,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-deleteFileRevisions-loggedInUser-label-filePath-revisions]
+[#apidoc-configchannel-deleteFileRevisions-485435168]
 == Method: deleteFileRevisions
 
 HTTP `POST`
 
 Description:
 
-Delete specified revisions of a given configuration file
+Delete specified revisions of a given configuration file 
+ 
 
 
 
@@ -405,14 +414,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-deleteFiles-loggedInUser-label-paths]
+[#apidoc-configchannel-deleteFiles--802173382]
 == Method: deleteFiles
 
 HTTP `POST`
 
 Description:
 
-Remove file paths from a global channel.
+Remove file paths from a global channel. 
+ 
 
 
 
@@ -433,7 +443,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-loggedInUser-label]
+[#apidoc-configchannel-deployAllSystems--668086247]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -441,7 +451,8 @@ HTTP `POST`
 Description:
 
 Schedule an immediate configuration deployment for all systems
-    subscribed to a particular configuration channel.
+    subscribed to a particular configuration channel. 
+ 
 
 
 
@@ -460,7 +471,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-loggedInUser-label-date]
+[#apidoc-configchannel-deployAllSystems-1497786594]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -468,7 +479,8 @@ HTTP `POST`
 Description:
 
 Schedule a configuration deployment for all systems
-    subscribed to a particular configuration channel.
+    subscribed to a particular configuration channel. 
+ 
 
 
 
@@ -489,7 +501,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath]
+[#apidoc-configchannel-deployAllSystems-1974890229]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -497,7 +509,8 @@ HTTP `POST`
 Description:
 
 Schedule a configuration deployment of a certain file for all systems
-    subscribed to a particular configuration channel.
+    subscribed to a particular configuration channel. 
+ 
 
 
 
@@ -518,7 +531,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-deployAllSystems-loggedInUser-label-filePath-date]
+[#apidoc-configchannel-deployAllSystems-98218886]
 == Method: deployAllSystems
 
 HTTP `POST`
@@ -526,7 +539,8 @@ HTTP `POST`
 Description:
 
 Schedule a configuration deployment of a certain file for all systems
-    subscribed to a particular configuration channel.
+    subscribed to a particular configuration channel. 
+ 
 
 
 
@@ -549,14 +563,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-getDetails-loggedInUser-label]
+[#apidoc-configchannel-getDetails--668086247]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Lookup config channel details.
+Lookup config channel details. 
+ 
 
 
 
@@ -588,14 +603,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-getDetails-loggedInUser-id]
+[#apidoc-configchannel-getDetails-1452201494]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Lookup config channel details.
+Lookup config channel details. 
+ 
 
 
 
@@ -627,7 +643,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-getEncodedFileRevision-loggedInUser-label-filePath-revision]
+[#apidoc-configchannel-getEncodedFileRevision--261435469]
 == Method: getEncodedFileRevision
 
 HTTP `GET`
@@ -635,7 +651,8 @@ HTTP `GET`
 Description:
 
 Get revision of the specified configuration file and transmit the
-             contents as base64 encoded.
+             contents as base64 encoded. 
+ 
 
 
 
@@ -684,14 +701,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-getFileRevision-loggedInUser-label-filePath-revision]
+[#apidoc-configchannel-getFileRevision--261435469]
 == Method: getFileRevision
 
 HTTP `GET`
 
 Description:
 
-Get revision of the specified config file
+Get revision of the specified config file 
+ 
 
 
 
@@ -740,14 +758,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-getFileRevisions-loggedInUser-label-filePath]
+[#apidoc-configchannel-getFileRevisions-1974890229]
 == Method: getFileRevisions
 
 HTTP `GET`
 
 Description:
 
-Get list of revisions for specified config file
+Get list of revisions for specified config file 
+ 
 
 
 
@@ -795,14 +814,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-listAssignedSystemGroups-loggedInUser-label]
+[#apidoc-configchannel-listAssignedSystemGroups--668086247]
 == Method: listAssignedSystemGroups
 
 HTTP `GET`
 
 Description:
 
-Return a list of Groups where a given configuration channel is assigned to
+Return a list of Groups where a given configuration channel is assigned to 
+ 
 
 
 
@@ -828,14 +848,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-listFiles-loggedInUser-label]
+[#apidoc-configchannel-listFiles--668086247]
 == Method: listFiles
 
 HTTP `GET`
 
 Description:
 
-Return a list of files in a channel.
+Return a list of files in a channel. 
+ 
 
 
 
@@ -862,14 +883,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-listGlobals-loggedInUser]
+[#apidoc-configchannel-listGlobals--406943054]
 == Method: listGlobals
 
 HTTP `GET`
 
 Description:
 
-List all the global config channels accessible to the logged-in user.
+List all the global config channels accessible to the logged-in user. 
+ 
 
 
 
@@ -901,14 +923,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-listSubscribedSystems-loggedInUser-label]
+[#apidoc-configchannel-listSubscribedSystems--668086247]
 == Method: listSubscribedSystems
 
 HTTP `GET`
 
 Description:
 
-Return a list of systems subscribed to a configuration channel
+Return a list of systems subscribed to a configuration channel 
+ 
 
 
 
@@ -931,14 +954,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-lookupChannelInfo-loggedInUser-labels]
+[#apidoc-configchannel-lookupChannelInfo-764162938]
 == Method: lookupChannelInfo
 
 HTTP `GET`
 
 Description:
 
-Lists details on a list of channels given their channel labels.
+Lists details on a list of channels given their channel labels. 
+ 
 
 
 
@@ -971,7 +995,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-lookupFileInfo-loggedInUser-label-paths]
+[#apidoc-configchannel-lookupFileInfo--802173382]
 == Method: lookupFileInfo
 
 HTTP `GET`
@@ -979,7 +1003,8 @@ HTTP `GET`
 Description:
 
 Given a list of paths and a channel, returns details about
- the latest revisions of the paths.
+ the latest revisions of the paths. 
+ 
 
 
 
@@ -1028,7 +1053,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-configchannel-lookupFileInfo-loggedInUser-label-path-revision]
+[#apidoc-configchannel-lookupFileInfo-1069633999]
 == Method: lookupFileInfo
 
 HTTP `GET`
@@ -1036,7 +1061,8 @@ HTTP `GET`
 Description:
 
 Given a path, revision number, and a channel, returns details about
- the latest revisions of the paths.
+ the latest revisions of the paths. 
+ 
 
 
 
@@ -1086,7 +1112,7 @@ Returns:
 Available since API version: 10.12
 
 
-[#apidoc-configchannel-scheduleFileComparisons-loggedInUser-label-path-sids]
+[#apidoc-configchannel-scheduleFileComparisons-1998950745]
 == Method: scheduleFileComparisons
 
 HTTP `POST`
@@ -1094,7 +1120,8 @@ HTTP `POST`
 Description:
 
 Schedule a comparison of the latest revision of a file
- against the version deployed on a list of systems.
+ against the version deployed on a list of systems. 
+ 
 
 
 
@@ -1117,14 +1144,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-syncSaltFilesOnDisk-loggedInUser-labels]
+[#apidoc-configchannel-syncSaltFilesOnDisk-764162938]
 == Method: syncSaltFilesOnDisk
 
 HTTP `POST`
 
 Description:
 
-Synchronize all files on the disk to the current state of the database.
+Synchronize all files on the disk to the current state of the database. 
+ 
 
 
 
@@ -1143,7 +1171,7 @@ Returns:
 
 
 
-[#apidoc-configchannel-update-loggedInUser-label-name-description]
+[#apidoc-configchannel-update-11002606]
 == Method: update
 
 HTTP `POST`
@@ -1152,7 +1180,8 @@ Description:
 
 Update a global config channel. Caller must be at least a
  config admin or an organization admin, or have access to a system containing this
- config channel.
+ config channel. 
+ 
 
 
 
@@ -1188,14 +1217,15 @@ Returns:
 
 
 
-[#apidoc-configchannel-updateInitSls-user-label-pathInfo]
+[#apidoc-configchannel-updateInitSls-536251246]
 == Method: updateInitSls
 
 HTTP `POST`
 
 Description:
 
-Update the init.sls file for the given state channel. User can only update contents, nothing else.
+Update the init.sls file for the given state channel. User can only update contents, nothing else. 
+ 
 
 
 

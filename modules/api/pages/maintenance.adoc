@@ -4,33 +4,34 @@
 
 == Available methods
 
-* <<apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy,assignScheduleToSystems>>
-* <<apidoc-maintenance-createCalendar-loggedInUser-label-ical,createCalendar>>
-* <<apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url,createCalendarWithUrl>>
-* <<apidoc-maintenance-createSchedule-loggedInUser-name-type,createSchedule>>
-* <<apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar,createSchedule>>
-* <<apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions,deleteCalendar>>
-* <<apidoc-maintenance-deleteSchedule-loggedInUser-name,deleteSchedule>>
-* <<apidoc-maintenance-getCalendarDetails-loggedInUser-label,getCalendarDetails>>
-* <<apidoc-maintenance-getScheduleDetails-loggedInUser-name,getScheduleDetails>>
-* <<apidoc-maintenance-listCalendarLabels-loggedInUser,listCalendarLabels>>
-* <<apidoc-maintenance-listScheduleNames-loggedInUser,listScheduleNames>>
-* <<apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName,listSystemsWithSchedule>>
-* <<apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy,refreshCalendar>>
-* <<apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids,retractScheduleFromSystems>>
-* <<apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy,updateCalendar>>
-* <<apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy,updateSchedule>>
+* <<apidoc-maintenance-assignScheduleToSystems-2071707637,assignScheduleToSystems>>
+* <<apidoc-maintenance-createCalendar-1497936889,createCalendar>>
+* <<apidoc-maintenance-createCalendarWithUrl-1849447867,createCalendarWithUrl>>
+* <<apidoc-maintenance-createSchedule--648918047,createSchedule>>
+* <<apidoc-maintenance-createSchedule--1056637014,createSchedule>>
+* <<apidoc-maintenance-deleteCalendar--1388460450,deleteCalendar>>
+* <<apidoc-maintenance-deleteSchedule--298585914,deleteSchedule>>
+* <<apidoc-maintenance-getCalendarDetails--668086247,getCalendarDetails>>
+* <<apidoc-maintenance-getScheduleDetails--298585914,getScheduleDetails>>
+* <<apidoc-maintenance-listCalendarLabels--406943054,listCalendarLabels>>
+* <<apidoc-maintenance-listScheduleNames--406943054,listScheduleNames>>
+* <<apidoc-maintenance-listSystemsWithSchedule--365795075,listSystemsWithSchedule>>
+* <<apidoc-maintenance-refreshCalendar-1897441681,refreshCalendar>>
+* <<apidoc-maintenance-retractScheduleFromSystems--298429536,retractScheduleFromSystems>>
+* <<apidoc-maintenance-updateCalendar-390821628,updateCalendar>>
+* <<apidoc-maintenance-updateSchedule-1270043183,updateSchedule>>
 
 == Description
 
-Provides methods to access and modify Maintenance Schedules related entities
+Provides methods to access and modify Maintenance Schedules related entities 
+ 
 
 *Namespace*:
 
 maintenance
 
 
-[#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy]
+[#apidoc-maintenance-assignScheduleToSystems-2071707637]
 == Method: assignScheduleToSystems
 
 HTTP `POST`
@@ -40,7 +41,8 @@ Description:
 Assign schedule with given name to systems with given IDs.
  Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
  Throws a InvalidParameterException when some of the systems have pending actions that are not allowed in the
- maintenance mode.
+ maintenance mode. 
+ 
 
 
 
@@ -65,14 +67,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-createCalendar-loggedInUser-label-ical]
+[#apidoc-maintenance-createCalendar-1497936889]
 == Method: createCalendar
 
 HTTP `POST`
 
 Description:
 
-Create a new maintenance calendar
+Create a new maintenance calendar 
+ 
 
 
 
@@ -100,14 +103,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url]
+[#apidoc-maintenance-createCalendarWithUrl-1849447867]
 == Method: createCalendarWithUrl
 
 HTTP `POST`
 
 Description:
 
-Create a new maintenance calendar
+Create a new maintenance calendar 
+ 
 
 
 
@@ -135,14 +139,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-createSchedule-loggedInUser-name-type]
+[#apidoc-maintenance-createSchedule--648918047]
 == Method: createSchedule
 
 HTTP `POST`
 
 Description:
 
-Create a new maintenance Schedule
+Create a new maintenance Schedule 
+ 
 
 
 
@@ -176,14 +181,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar]
+[#apidoc-maintenance-createSchedule--1056637014]
 == Method: createSchedule
 
 HTTP `POST`
 
 Description:
 
-Create a new Maintenance Schedule
+Create a new Maintenance Schedule 
+ 
 
 
 
@@ -219,14 +225,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions]
+[#apidoc-maintenance-deleteCalendar--1388460450]
 == Method: deleteCalendar
 
 HTTP `POST`
 
 Description:
 
-Remove a maintenance calendar
+Remove a maintenance calendar 
+ 
 
 
 
@@ -263,14 +270,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-deleteSchedule-loggedInUser-name]
+[#apidoc-maintenance-deleteSchedule--298585914]
 == Method: deleteSchedule
 
 HTTP `POST`
 
 Description:
 
-Remove a maintenance schedule
+Remove a maintenance schedule 
+ 
 
 
 
@@ -289,14 +297,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-getCalendarDetails-loggedInUser-label]
+[#apidoc-maintenance-getCalendarDetails--668086247]
 == Method: getCalendarDetails
 
 HTTP `POST`
 
 Description:
 
-Lookup a specific maintenance schedule
+Lookup a specific maintenance schedule 
+ 
 
 
 
@@ -322,14 +331,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-getScheduleDetails-loggedInUser-name]
+[#apidoc-maintenance-getScheduleDetails--298585914]
 == Method: getScheduleDetails
 
 HTTP `POST`
 
 Description:
 
-Lookup a specific maintenance schedule
+Lookup a specific maintenance schedule 
+ 
 
 
 
@@ -361,14 +371,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-listCalendarLabels-loggedInUser]
+[#apidoc-maintenance-listCalendarLabels--406943054]
 == Method: listCalendarLabels
 
 HTTP `POST`
 
 Description:
 
-List schedule names visible to user
+List schedule names visible to user 
+ 
 
 
 
@@ -385,14 +396,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-listScheduleNames-loggedInUser]
+[#apidoc-maintenance-listScheduleNames--406943054]
 == Method: listScheduleNames
 
 HTTP `POST`
 
 Description:
 
-List Schedule Names visible to user
+List Schedule Names visible to user 
+ 
 
 
 
@@ -409,7 +421,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName]
+[#apidoc-maintenance-listSystemsWithSchedule--365795075]
 == Method: listSystemsWithSchedule
 
 HTTP `POST`
@@ -417,7 +429,8 @@ HTTP `POST`
 Description:
 
 List IDs of systems that have given schedule assigned
- Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user. 
+ 
 
 
 
@@ -436,14 +449,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy]
+[#apidoc-maintenance-refreshCalendar-1897441681]
 == Method: refreshCalendar
 
 HTTP `POST`
 
 Description:
 
-Refresh maintenance calendar data using the configured URL
+Refresh maintenance calendar data using the configured URL 
+ 
 
 
 
@@ -482,7 +496,7 @@ Returns:
 
 
 
-[#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids]
+[#apidoc-maintenance-retractScheduleFromSystems--298429536]
 == Method: retractScheduleFromSystems
 
 HTTP `POST`
@@ -490,7 +504,8 @@ HTTP `POST`
 Description:
 
 Retract schedule with given name from systems with given IDs
- Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user. 
+ 
 
 
 
@@ -509,14 +524,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy]
+[#apidoc-maintenance-updateCalendar-390821628]
 == Method: updateCalendar
 
 HTTP `POST`
 
 Description:
 
-Update a maintenance calendar
+Update a maintenance calendar 
+ 
 
 
 
@@ -559,14 +575,15 @@ Returns:
 
 
 
-[#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy]
+[#apidoc-maintenance-updateSchedule-1270043183]
 == Method: updateSchedule
 
 HTTP `POST`
 
 Description:
 
-Update a maintenance schedule
+Update a maintenance schedule 
+ 
 
 
 

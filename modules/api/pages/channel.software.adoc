@@ -4,103 +4,105 @@
 
 == Available methods
 
-* <<apidoc-channel_software-addPackages-loggedInUser-channelLabel-packageIds,addPackages>>
-* <<apidoc-channel_software-addRepoFilter-loggedInUser-label-filterProps,addRepoFilter>>
-* <<apidoc-channel_software-alignMetadata-loggedInUser-channelFromLabel-channelToLabel-metadataType,alignMetadata>>
-* <<apidoc-channel_software-applyChannelState-user-sids,applyChannelState>>
-* <<apidoc-channel_software-associateRepo-loggedInUser-channelLabel-repoLabel,associateRepo>>
-* <<apidoc-channel_software-clearRepoFilters-loggedInUser-label,clearRepoFilters>>
-* <<apidoc-channel_software-clone-loggedInUser-originalLabel-channelDetails-originalState,clone>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey-gpgCheck,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType,create>>
-* <<apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel,create>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url,createRepo>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey,createRepo>>
-* <<apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey-hasSignedMetadata,createRepo>>
-* <<apidoc-channel_software-delete-loggedInUser-channelLabel,delete>>
-* <<apidoc-channel_software-disassociateRepo-loggedInUser-channelLabel-repoLabel,disassociateRepo>>
-* <<apidoc-channel_software-getChannelLastBuildById-loggedInUser-id,getChannelLastBuildById>>
-* <<apidoc-channel_software-getDetails-loggedInUser-channelLabel,getDetails>>
-* <<apidoc-channel_software-getDetails-loggedInUser-id,getDetails>>
-* <<apidoc-channel_software-getRepoDetails-loggedInUser-repoLabel,getRepoDetails>>
-* <<apidoc-channel_software-getRepoDetails-loggedInUser-id,getRepoDetails>>
-* <<apidoc-channel_software-getRepoSyncCronExpression-loggedInUser-channelLabel,getRepoSyncCronExpression>>
-* <<apidoc-channel_software-isAutoSync-loggedInUser-channelLabel,isAutoSync>>
-* <<apidoc-channel_software-isExisting-loggedInUser-channelLabel,isExisting>>
-* <<apidoc-channel_software-isGloballySubscribable-loggedInUser-channelLabel,isGloballySubscribable>>
-* <<apidoc-channel_software-isUserManageable-loggedInUser-channelLabel-login,isUserManageable>>
-* <<apidoc-channel_software-isUserSubscribable-loggedInUser-channelLabel-login,isUserSubscribable>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate-endDate,listAllPackages>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate,listAllPackages>>
-* <<apidoc-channel_software-listAllPackages-loggedInUser-channelLabel,listAllPackages>>
-* <<apidoc-channel_software-listArches-loggedInUser,listArches>>
-* <<apidoc-channel_software-listChannelRepos-loggedInUser-channelLabel,listChannelRepos>>
-* <<apidoc-channel_software-listChildren-loggedInUser-channelLabel,listChildren>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate-lastModified,listErrata>>
-* <<apidoc-channel_software-listErrata-loggedInUser-channelLabel,listErrata>>
-* <<apidoc-channel_software-listErrataByType-loggedInUser-channelLabel-advisoryType,listErrataByType>>
-* <<apidoc-channel_software-listErrataNeedingSync-loggedInUser-channelLabel,listErrataNeedingSync>>
-* <<apidoc-channel_software-listLatestPackages-loggedInUser-channelLabel,listLatestPackages>>
-* <<apidoc-channel_software-listPackagesWithoutChannel-loggedInUser,listPackagesWithoutChannel>>
-* <<apidoc-channel_software-listRepoFilters-loggedInUser-label,listRepoFilters>>
-* <<apidoc-channel_software-listSubscribedSystems-loggedInUser-channelLabel,listSubscribedSystems>>
-* <<apidoc-channel_software-listSystemChannels-loggedInUser-sid,listSystemChannels>>
-* <<apidoc-channel_software-listUserRepos-loggedInUser,listUserRepos>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel,mergeErrata>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-startDate-endDate,mergeErrata>>
-* <<apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-errataNames,mergeErrata>>
-* <<apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel,mergePackages>>
-* <<apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel-alignModules,mergePackages>>
-* <<apidoc-channel_software-regenerateNeededCache-loggedInUser-channelLabel,regenerateNeededCache>>
-* <<apidoc-channel_software-regenerateNeededCache-loggedInUser,regenerateNeededCache>>
-* <<apidoc-channel_software-regenerateYumCache-loggedInUser-channelLabel-force,regenerateYumCache>>
-* <<apidoc-channel_software-removeErrata-loggedInUser-channelLabel-errataNames-removePackages,removeErrata>>
-* <<apidoc-channel_software-removePackages-loggedInUser-channelLabel-packageIds,removePackages>>
-* <<apidoc-channel_software-removeRepo-loggedInUser-id,removeRepo>>
-* <<apidoc-channel_software-removeRepo-loggedInUser-label,removeRepo>>
-* <<apidoc-channel_software-removeRepoFilter-loggedInUser-label-filterProps,removeRepoFilter>>
-* <<apidoc-channel_software-setAutoSync-loggedInUser-channelLabel-autoSync,setAutoSync>>
-* <<apidoc-channel_software-setContactDetails-loggedInUser-channelLabel-maintainerName-maintainerEmail-maintainerPhone-supportPolicy,setContactDetails>>
-* <<apidoc-channel_software-setDetails-loggedInUser-channelLabel-details,setDetails>>
-* <<apidoc-channel_software-setDetails-loggedInUser-channelId-details,setDetails>>
-* <<apidoc-channel_software-setGloballySubscribable-loggedInUser-channelLabel-value,setGloballySubscribable>>
-* <<apidoc-channel_software-setRepoFilters-loggedInUser-label-filterProps,setRepoFilters>>
-* <<apidoc-channel_software-setUserManageable-loggedInUser-channelLabel-login-value,setUserManageable>>
-* <<apidoc-channel_software-setUserSubscribable-loggedInUser-channelLabel-login-value,setUserSubscribable>>
-* <<apidoc-channel_software-syncErrata-loggedInUser-channelLabel,syncErrata>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabels,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-params,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr,syncRepo>>
-* <<apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr-params,syncRepo>>
-* <<apidoc-channel_software-updateRepo-loggedInUser-id-label-url,updateRepo>>
-* <<apidoc-channel_software-updateRepoLabel-loggedInUser-id-label,updateRepoLabel>>
-* <<apidoc-channel_software-updateRepoLabel-loggedInUser-label-newLabel,updateRepoLabel>>
-* <<apidoc-channel_software-updateRepoSsl-loggedInUser-id-sslCaCert-sslCliCert-sslCliKey,updateRepoSsl>>
-* <<apidoc-channel_software-updateRepoSsl-loggedInUser-label-sslCaCert-sslCliCert-sslCliKey,updateRepoSsl>>
-* <<apidoc-channel_software-updateRepoUrl-loggedInUser-id-url,updateRepoUrl>>
-* <<apidoc-channel_software-updateRepoUrl-loggedInUser-label-url,updateRepoUrl>>
+* <<apidoc-channel_software-addPackages--411462125,addPackages>>
+* <<apidoc-channel_software-addRepoFilter--518259420,addRepoFilter>>
+* <<apidoc-channel_software-alignMetadata-1864808149,alignMetadata>>
+* <<apidoc-channel_software-applyChannelState-293321255,applyChannelState>>
+* <<apidoc-channel_software-associateRepo-1536457985,associateRepo>>
+* <<apidoc-channel_software-clearRepoFilters--668086247,clearRepoFilters>>
+* <<apidoc-channel_software-clone--1870957673,clone>>
+* <<apidoc-channel_software-create--55262643,create>>
+* <<apidoc-channel_software-create-242632490,create>>
+* <<apidoc-channel_software-create--1552815196,create>>
+* <<apidoc-channel_software-create-1906402534,create>>
+* <<apidoc-channel_software-createRepo-2033081232,createRepo>>
+* <<apidoc-channel_software-createRepo-1300422642,createRepo>>
+* <<apidoc-channel_software-createRepo-98009738,createRepo>>
+* <<apidoc-channel_software-delete--1627011348,delete>>
+* <<apidoc-channel_software-disassociateRepo-1536457985,disassociateRepo>>
+* <<apidoc-channel_software-getChannelLastBuildById-1452201494,getChannelLastBuildById>>
+* <<apidoc-channel_software-getDetails--1627011348,getDetails>>
+* <<apidoc-channel_software-getDetails-1452201494,getDetails>>
+* <<apidoc-channel_software-getRepoDetails-2069348679,getRepoDetails>>
+* <<apidoc-channel_software-getRepoDetails-1452201494,getRepoDetails>>
+* <<apidoc-channel_software-getRepoSyncCronExpression--1627011348,getRepoSyncCronExpression>>
+* <<apidoc-channel_software-isAutoSync--1627011348,isAutoSync>>
+* <<apidoc-channel_software-isExisting--1627011348,isExisting>>
+* <<apidoc-channel_software-isGloballySubscribable--1627011348,isGloballySubscribable>>
+* <<apidoc-channel_software-isUserManageable--1337464504,isUserManageable>>
+* <<apidoc-channel_software-isUserSubscribable--1337464504,isUserSubscribable>>
+* <<apidoc-channel_software-listAllPackages-1705247979,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages--204334705,listAllPackages>>
+* <<apidoc-channel_software-listAllPackages--1627011348,listAllPackages>>
+* <<apidoc-channel_software-listArches--406943054,listArches>>
+* <<apidoc-channel_software-listChannelRepos--1627011348,listChannelRepos>>
+* <<apidoc-channel_software-listChildren--1627011348,listChildren>>
+* <<apidoc-channel_software-listErrata--204334705,listErrata>>
+* <<apidoc-channel_software-listErrata-1705247979,listErrata>>
+* <<apidoc-channel_software-listErrata-342276385,listErrata>>
+* <<apidoc-channel_software-listErrata--1627011348,listErrata>>
+* <<apidoc-channel_software-listErrataByType-1097831636,listErrataByType>>
+* <<apidoc-channel_software-listErrataNeedingSync--1627011348,listErrataNeedingSync>>
+* <<apidoc-channel_software-listLatestPackages--1627011348,listLatestPackages>>
+* <<apidoc-channel_software-listPackagesWithoutChannel--406943054,listPackagesWithoutChannel>>
+* <<apidoc-channel_software-listRepoFilters--668086247,listRepoFilters>>
+* <<apidoc-channel_software-listSubscribedSystems--1627011348,listSubscribedSystems>>
+* <<apidoc-channel_software-listSystemChannels-2068583219,listSystemChannels>>
+* <<apidoc-channel_software-listUserRepos--406943054,listUserRepos>>
+* <<apidoc-channel_software-mergeErrata--1417431263,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata-2093756896,mergeErrata>>
+* <<apidoc-channel_software-mergeErrata--841791213,mergeErrata>>
+* <<apidoc-channel_software-mergePackages--1417431263,mergePackages>>
+* <<apidoc-channel_software-mergePackages--625806354,mergePackages>>
+* <<apidoc-channel_software-regenerateNeededCache--1627011348,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateNeededCache--406943054,regenerateNeededCache>>
+* <<apidoc-channel_software-regenerateYumCache--1342995254,regenerateYumCache>>
+* <<apidoc-channel_software-removeErrata--2120477984,removeErrata>>
+* <<apidoc-channel_software-removePackages--411462125,removePackages>>
+* <<apidoc-channel_software-removeRepo-1452201494,removeRepo>>
+* <<apidoc-channel_software-removeRepo--668086247,removeRepo>>
+* <<apidoc-channel_software-removeRepoFilter--518259420,removeRepoFilter>>
+* <<apidoc-channel_software-setAutoSync--577387861,setAutoSync>>
+* <<apidoc-channel_software-setContactDetails--1130027720,setContactDetails>>
+* <<apidoc-channel_software-setDetails-107212897,setDetails>>
+* <<apidoc-channel_software-setDetails--1838642536,setDetails>>
+* <<apidoc-channel_software-setGloballySubscribable--1328641200,setGloballySubscribable>>
+* <<apidoc-channel_software-setRepoFilters--518259420,setRepoFilters>>
+* <<apidoc-channel_software-setUserManageable--550733652,setUserManageable>>
+* <<apidoc-channel_software-setUserSubscribable--550733652,setUserSubscribable>>
+* <<apidoc-channel_software-syncErrata--1627011348,syncErrata>>
+* <<apidoc-channel_software-syncRepo-1102255879,syncRepo>>
+* <<apidoc-channel_software-syncRepo--1627011348,syncRepo>>
+* <<apidoc-channel_software-syncRepo-1590180743,syncRepo>>
+* <<apidoc-channel_software-syncRepo-101234532,syncRepo>>
+* <<apidoc-channel_software-syncRepo-1025790991,syncRepo>>
+* <<apidoc-channel_software-updateRepo--1027558369,updateRepo>>
+* <<apidoc-channel_software-updateRepoLabel-139001981,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoLabel--225204120,updateRepoLabel>>
+* <<apidoc-channel_software-updateRepoSsl-198481068,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoSsl--1922622903,updateRepoSsl>>
+* <<apidoc-channel_software-updateRepoUrl-679482680,updateRepoUrl>>
+* <<apidoc-channel_software-updateRepoUrl-1849447867,updateRepoUrl>>
 
 == Description
 
-Provides methods to access and modify many aspects of a channel.
+Provides methods to access and modify many aspects of a channel. 
+ 
 
 *Namespace*:
 
 channel.software
 
 
-[#apidoc-channel_software-addPackages-loggedInUser-channelLabel-packageIds]
+[#apidoc-channel_software-addPackages--411462125]
 == Method: addPackages
 
 HTTP `POST`
 
 Description:
 
-Adds a given list of packages to the given channel.
+Adds a given list of packages to the given channel. 
+ 
 
 
 
@@ -122,14 +124,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-addRepoFilter-loggedInUser-label-filterProps]
+[#apidoc-channel_software-addRepoFilter--518259420]
 == Method: addRepoFilter
 
 HTTP `POST`
 
 Description:
 
-Adds a filter for a given repo.
+Adds a filter for a given repo. 
+ 
 
 
 
@@ -152,14 +155,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-alignMetadata-loggedInUser-channelFromLabel-channelToLabel-metadataType]
+[#apidoc-channel_software-alignMetadata-1864808149]
 == Method: alignMetadata
 
 HTTP `POST`
 
 Description:
 
-Align the metadata of a channel to another channel.
+Align the metadata of a channel to another channel. 
+ 
 
 
 
@@ -182,14 +186,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-applyChannelState-user-sids]
+[#apidoc-channel_software-applyChannelState-293321255]
 == Method: applyChannelState
 
 HTTP `POST`
 
 Description:
 
-Refresh pillar data and then schedule channels state on the provided systems
+Refresh pillar data and then schedule channels state on the provided systems 
+ 
 
 
 
@@ -208,14 +213,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-associateRepo-loggedInUser-channelLabel-repoLabel]
+[#apidoc-channel_software-associateRepo-1536457985]
 == Method: associateRepo
 
 HTTP `POST`
 
 Description:
 
-Associates a repository with a channel
+Associates a repository with a channel 
+ 
 
 
 
@@ -264,14 +270,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-clearRepoFilters-loggedInUser-label]
+[#apidoc-channel_software-clearRepoFilters--668086247]
 == Method: clearRepoFilters
 
 HTTP `POST`
 
 Description:
 
-Removes the filters for a repo
+Removes the filters for a repo 
+ 
 
 
 
@@ -290,7 +297,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-clone-loggedInUser-originalLabel-channelDetails-originalState]
+[#apidoc-channel_software-clone--1870957673]
 == Method: clone
 
 HTTP `POST`
@@ -299,7 +306,8 @@ Description:
 
 Clone a channel.  If arch_label is omitted, the arch label of the
       original channel will be used. If parent_label is omitted, the clone will be
-      a base channel.
+      a base channel. 
+ 
 
 
 
@@ -336,14 +344,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey-gpgCheck]
+[#apidoc-channel_software-create--55262643]
 == Method: create
 
 HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -388,14 +397,15 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType-gpgKey]
+[#apidoc-channel_software-create-242632490]
 == Method: create
 
 HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -437,14 +447,15 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel-checksumType]
+[#apidoc-channel_software-create--1552815196]
 == Method: create
 
 HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -481,14 +492,15 @@ Returns:
 Available since API version: 10.9
 
 
-[#apidoc-channel_software-create-loggedInUser-label-name-summary-archLabel-parentLabel]
+[#apidoc-channel_software-create-1906402534]
 == Method: create
 
 HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -517,14 +529,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url]
+[#apidoc-channel_software-createRepo-2033081232]
 == Method: createRepo
 
 HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -559,14 +572,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey]
+[#apidoc-channel_software-createRepo-1300422642]
 == Method: createRepo
 
 HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -607,14 +621,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-createRepo-loggedInUser-label-type-url-sslCaCert-sslCliCert-sslCliKey-hasSignedMetadata]
+[#apidoc-channel_software-createRepo-98009738]
 == Method: createRepo
 
 HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -661,14 +676,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-delete-loggedInUser-channelLabel]
+[#apidoc-channel_software-delete--1627011348]
 == Method: delete
 
 HTTP `POST`
 
 Description:
 
-Deletes a custom software channel
+Deletes a custom software channel 
+ 
 
 
 
@@ -687,14 +703,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-disassociateRepo-loggedInUser-channelLabel-repoLabel]
+[#apidoc-channel_software-disassociateRepo-1536457985]
 == Method: disassociateRepo
 
 HTTP `POST`
 
 Description:
 
-Disassociates a repository from a channel
+Disassociates a repository from a channel 
+ 
 
 
 
@@ -743,7 +760,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-getChannelLastBuildById-loggedInUser-id]
+[#apidoc-channel_software-getChannelLastBuildById-1452201494]
 == Method: getChannelLastBuildById
 
 HTTP `GET`
@@ -751,7 +768,8 @@ HTTP `GET`
 Description:
 
 Returns the last build date of the repomd.xml file
- for the given channel as a localised string.
+ for the given channel as a localised string. 
+ 
 
 
 
@@ -770,14 +788,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-getDetails-loggedInUser-channelLabel]
+[#apidoc-channel_software-getDetails--1627011348]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Returns details of the given channel as a map
+Returns details of the given channel as a map 
+ 
 
 
 
@@ -824,14 +843,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-getDetails-loggedInUser-id]
+[#apidoc-channel_software-getDetails-1452201494]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Returns details of the given channel as a map
+Returns details of the given channel as a map 
+ 
 
 
 
@@ -878,14 +898,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-getRepoDetails-loggedInUser-repoLabel]
+[#apidoc-channel_software-getRepoDetails-2069348679]
 == Method: getRepoDetails
 
 HTTP `GET`
 
 Description:
 
-Returns details of the given repository
+Returns details of the given repository 
+ 
 
 
 
@@ -916,14 +937,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-getRepoDetails-loggedInUser-id]
+[#apidoc-channel_software-getRepoDetails-1452201494]
 == Method: getRepoDetails
 
 HTTP `GET`
 
 Description:
 
-Returns details of the given repository
+Returns details of the given repository 
+ 
 
 
 
@@ -954,14 +976,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-getRepoSyncCronExpression-loggedInUser-channelLabel]
+[#apidoc-channel_software-getRepoSyncCronExpression--1627011348]
 == Method: getRepoSyncCronExpression
 
 HTTP `GET`
 
 Description:
 
-Returns repo synchronization cron expression
+Returns repo synchronization cron expression 
+ 
 
 
 
@@ -980,14 +1003,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-isAutoSync-loggedInUser-channelLabel]
+[#apidoc-channel_software-isAutoSync--1627011348]
 == Method: isAutoSync
 
 HTTP `GET`
 
 Description:
 
-Returns whether is synchronized automatically
+Returns whether is synchronized automatically 
+ 
 
 
 
@@ -1006,14 +1030,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-isExisting-loggedInUser-channelLabel]
+[#apidoc-channel_software-isExisting--1627011348]
 == Method: isExisting
 
 HTTP `GET`
 
 Description:
 
-Returns whether is existing
+Returns whether is existing 
+ 
 
 
 
@@ -1032,7 +1057,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-isGloballySubscribable-loggedInUser-channelLabel]
+[#apidoc-channel_software-isGloballySubscribable--1627011348]
 == Method: isGloballySubscribable
 
 HTTP `GET`
@@ -1040,7 +1065,8 @@ HTTP `GET`
 Description:
 
 Returns whether the channel is subscribable by any user
- in the organization
+ in the organization 
+ 
 
 
 
@@ -1059,14 +1085,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-isUserManageable-loggedInUser-channelLabel-login]
+[#apidoc-channel_software-isUserManageable--1337464504]
 == Method: isUserManageable
 
 HTTP `GET`
 
 Description:
 
-Returns whether the channel may be managed by the given user.
+Returns whether the channel may be managed by the given user. 
+ 
 
 
 
@@ -1087,14 +1114,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-isUserSubscribable-loggedInUser-channelLabel-login]
+[#apidoc-channel_software-isUserSubscribable--1337464504]
 == Method: isUserSubscribable
 
 HTTP `GET`
 
 Description:
 
-Returns whether the channel may be subscribed to by the given user.
+Returns whether the channel may be subscribed to by the given user. 
+ 
 
 
 
@@ -1115,7 +1143,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate-endDate]
+[#apidoc-channel_software-listAllPackages-1705247979]
 == Method: listAllPackages
 
 HTTP `GET`
@@ -1123,7 +1151,8 @@ HTTP `GET`
 Description:
 
 Lists all packages in the channel, regardless of package version,
- between the given dates.
+ between the given dates. 
+ 
 
 
 
@@ -1158,7 +1187,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel-startDate]
+[#apidoc-channel_software-listAllPackages--204334705]
 == Method: listAllPackages
 
 HTTP `GET`
@@ -1166,7 +1195,8 @@ HTTP `GET`
 Description:
 
 Lists all packages in the channel, regardless of version whose last
- modified date is greater than given date.
+ modified date is greater than given date. 
+ 
 
 
 
@@ -1199,14 +1229,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listAllPackages-loggedInUser-channelLabel]
+[#apidoc-channel_software-listAllPackages--1627011348]
 == Method: listAllPackages
 
 HTTP `GET`
 
 Description:
 
-Lists all packages in the channel, regardless of the package version
+Lists all packages in the channel, regardless of the package version 
+ 
 
 
 
@@ -1237,14 +1268,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listArches-loggedInUser]
+[#apidoc-channel_software-listArches--406943054]
 == Method: listArches
 
 HTTP `GET`
 
 Description:
 
-Lists the potential software channel architectures that can be created
+Lists the potential software channel architectures that can be created 
+ 
 
 
 
@@ -1265,14 +1297,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listChannelRepos-loggedInUser-channelLabel]
+[#apidoc-channel_software-listChannelRepos--1627011348]
 == Method: listChannelRepos
 
 HTTP `GET`
 
 Description:
 
-Lists associated repos with the given channel
+Lists associated repos with the given channel 
+ 
 
 
 
@@ -1304,14 +1337,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listChildren-loggedInUser-channelLabel]
+[#apidoc-channel_software-listChildren--1627011348]
 == Method: listChildren
 
 HTTP `GET`
 
 Description:
 
-List the children of a channel
+List the children of a channel 
+ 
 
 
 
@@ -1359,14 +1393,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate]
+[#apidoc-channel_software-listErrata--204334705]
 == Method: listErrata
 
 HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel after given startDate
+List the errata applicable to a channel after given startDate 
+ 
 
 
 
@@ -1402,14 +1437,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate]
+[#apidoc-channel_software-listErrata-1705247979]
 == Method: listErrata
 
 HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel between startDate and endDate.
+List the errata applicable to a channel between startDate and endDate. 
+ 
 
 
 
@@ -1447,14 +1483,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel-startDate-endDate-lastModified]
+[#apidoc-channel_software-listErrata-342276385]
 == Method: listErrata
 
 HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel between startDate and endDate.
+List the errata applicable to a channel between startDate and endDate. 
+ 
 
 
 
@@ -1494,14 +1531,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrata-loggedInUser-channelLabel]
+[#apidoc-channel_software-listErrata--1627011348]
 == Method: listErrata
 
 HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel
+List the errata applicable to a channel 
+ 
 
 
 
@@ -1535,14 +1573,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrataByType-loggedInUser-channelLabel-advisoryType]
+[#apidoc-channel_software-listErrataByType-1097831636]
 == Method: listErrataByType
 
 HTTP `GET`
 
 Description:
 
-List the errata of a specific type that are applicable to a channel
+List the errata of a specific type that are applicable to a channel 
+ 
 
 
 
@@ -1572,7 +1611,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listErrataNeedingSync-loggedInUser-channelLabel]
+[#apidoc-channel_software-listErrataNeedingSync--1627011348]
 == Method: listErrataNeedingSync
 
 HTTP `GET`
@@ -1585,7 +1624,8 @@ If you have synced a new channel then patches
  however. If you cloned a channel that includes those cloned errata and
  should include the new packages, they will not be included when they
  should. This method lists the errata that will be updated if you run the
- syncErrata method.
+ syncErrata method. 
+ 
 
 
 
@@ -1619,7 +1659,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listLatestPackages-loggedInUser-channelLabel]
+[#apidoc-channel_software-listLatestPackages--1627011348]
 == Method: listLatestPackages
 
 HTTP `GET`
@@ -1627,7 +1667,8 @@ HTTP `GET`
 Description:
 
 Lists the packages with the latest version (including release and
- epoch) for the given channel
+ epoch) for the given channel 
+ 
 
 
 
@@ -1653,7 +1694,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listPackagesWithoutChannel-loggedInUser]
+[#apidoc-channel_software-listPackagesWithoutChannel--406943054]
 == Method: listPackagesWithoutChannel
 
 HTTP `GET`
@@ -1661,7 +1702,8 @@ HTTP `GET`
 Description:
 
 Lists all packages that are not associated with a channel.  Typically
-          these are custom packages.
+          these are custom packages. 
+ 
 
 
 
@@ -1692,14 +1734,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listRepoFilters-loggedInUser-label]
+[#apidoc-channel_software-listRepoFilters--668086247]
 == Method: listRepoFilters
 
 HTTP `GET`
 
 Description:
 
-Lists the filters for a repo
+Lists the filters for a repo 
+ 
 
 
 
@@ -1723,14 +1766,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listSubscribedSystems-loggedInUser-channelLabel]
+[#apidoc-channel_software-listSubscribedSystems--1627011348]
 == Method: listSubscribedSystems
 
 HTTP `GET`
 
 Description:
 
-Returns list of subscribed systems for the given channel label
+Returns list of subscribed systems for the given channel label 
+ 
 
 
 
@@ -1752,7 +1796,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-listSystemChannels-loggedInUser-sid]
+[#apidoc-channel_software-listSystemChannels-2068583219]
 == Method: listSystemChannels
 
 HTTP `GET`
@@ -1760,7 +1804,8 @@ HTTP `GET`
 Description:
 
 Returns a list of channels that a system is subscribed to for the
- given system id
+ given system id 
+ 
 
 
 
@@ -1783,14 +1828,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-listUserRepos-loggedInUser]
+[#apidoc-channel_software-listUserRepos--406943054]
 == Method: listUserRepos
 
 HTTP `GET`
 
 Description:
 
-Returns a list of ContentSource (repos) that the user can see
+Returns a list of ContentSource (repos) that the user can see 
+ 
 
 
 
@@ -1811,14 +1857,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel]
+[#apidoc-channel_software-mergeErrata--1417431263]
 == Method: mergeErrata
 
 HTTP `POST`
 
 Description:
 
-Merges all errata from one channel into another. It does not associate the packages with the channel.
+Merges all errata from one channel into another. It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1849,7 +1896,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-startDate-endDate]
+[#apidoc-channel_software-mergeErrata-2093756896]
 == Method: mergeErrata
 
 HTTP `POST`
@@ -1857,7 +1904,8 @@ HTTP `POST`
 Description:
 
 Merges all errata from one channel into another based upon a
- given start/end date. It does not associate the packages with the channel.
+ given start/end date. It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1892,7 +1940,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-mergeErrata-loggedInUser-mergeFromLabel-mergeToLabel-errataNames]
+[#apidoc-channel_software-mergeErrata--841791213]
 == Method: mergeErrata
 
 HTTP `POST`
@@ -1900,7 +1948,8 @@ HTTP `POST`
 Description:
 
 Merges a list of errata from one channel into another.
- It does not associate the packages with the channel.
+ It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1933,14 +1982,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel]
+[#apidoc-channel_software-mergePackages--1417431263]
 == Method: mergePackages
 
 HTTP `POST`
 
 Description:
 
-Merges all packages from one channel into another
+Merges all packages from one channel into another 
+ 
 
 
 
@@ -1977,14 +2027,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-mergePackages-loggedInUser-mergeFromLabel-mergeToLabel-alignModules]
+[#apidoc-channel_software-mergePackages--625806354]
 == Method: mergePackages
 
 HTTP `POST`
 
 Description:
 
-Merges all packages from one channel into another
+Merges all packages from one channel into another 
+ 
 
 
 
@@ -2024,7 +2075,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-regenerateNeededCache-loggedInUser-channelLabel]
+[#apidoc-channel_software-regenerateNeededCache--1627011348]
 == Method: regenerateNeededCache
 
 HTTP `POST`
@@ -2035,7 +2086,8 @@ Completely clear and regenerate the needed Errata and Package
       cache for all systems subscribed to the specified channel.  This should
       be used only if you believe your cache is incorrect for all the systems
       in a given channel. This will schedule an asynchronous action to actually
-      do the processing.
+      do the processing. 
+ 
 
 
 
@@ -2055,7 +2107,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-regenerateNeededCache-loggedInUser]
+[#apidoc-channel_software-regenerateNeededCache--406943054]
 == Method: regenerateNeededCache
 
 HTTP `POST`
@@ -2063,9 +2115,10 @@ HTTP `POST`
 Description:
 
 Completely clear and regenerate the needed Errata and Package
-      cache for all systems subscribed. You must be a #product() Admin to
+      cache for all systems subscribed. You must be a Uyuni Admin to
       perform this action. This will schedule an asynchronous action to
-      actually do the processing.
+      actually do the processing. 
+ 
 
 
 
@@ -2082,14 +2135,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-regenerateYumCache-loggedInUser-channelLabel-force]
+[#apidoc-channel_software-regenerateYumCache--1342995254]
 == Method: regenerateYumCache
 
 HTTP `POST`
 
 Description:
 
-Regenerate yum cache for the specified channel.
+Regenerate yum cache for the specified channel. 
+ 
 
 
 
@@ -2111,14 +2165,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeErrata-loggedInUser-channelLabel-errataNames-removePackages]
+[#apidoc-channel_software-removeErrata--2120477984]
 == Method: removeErrata
 
 HTTP `POST`
 
 Description:
 
-Removes a given list of errata from the given channel.
+Removes a given list of errata from the given channel. 
+ 
 
 
 
@@ -2141,14 +2196,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-removePackages-loggedInUser-channelLabel-packageIds]
+[#apidoc-channel_software-removePackages--411462125]
 == Method: removePackages
 
 HTTP `POST`
 
 Description:
 
-Removes a given list of packages from the given channel.
+Removes a given list of packages from the given channel. 
+ 
 
 
 
@@ -2170,14 +2226,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepo-loggedInUser-id]
+[#apidoc-channel_software-removeRepo-1452201494]
 == Method: removeRepo
 
 HTTP `POST`
 
 Description:
 
-Removes a repository
+Removes a repository 
+ 
 
 
 
@@ -2196,14 +2253,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepo-loggedInUser-label]
+[#apidoc-channel_software-removeRepo--668086247]
 == Method: removeRepo
 
 HTTP `POST`
 
 Description:
 
-Removes a repository
+Removes a repository 
+ 
 
 
 
@@ -2222,14 +2280,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-removeRepoFilter-loggedInUser-label-filterProps]
+[#apidoc-channel_software-removeRepoFilter--518259420]
 == Method: removeRepoFilter
 
 HTTP `POST`
 
 Description:
 
-Removes a filter for a given repo.
+Removes a filter for a given repo. 
+ 
 
 
 
@@ -2252,14 +2311,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-setAutoSync-loggedInUser-channelLabel-autoSync]
+[#apidoc-channel_software-setAutoSync--577387861]
 == Method: setAutoSync
 
 HTTP `POST`
 
 Description:
 
-Sets whether the channel is synchronized automatically
+Sets whether the channel is synchronized automatically 
+ 
 
 
 
@@ -2280,14 +2340,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-setContactDetails-loggedInUser-channelLabel-maintainerName-maintainerEmail-maintainerPhone-supportPolicy]
+[#apidoc-channel_software-setContactDetails--1130027720]
 == Method: setContactDetails
 
 HTTP `POST`
 
 Description:
 
-Set contact/support information for given channel.
+Set contact/support information for given channel. 
+ 
 
 
 
@@ -2317,14 +2378,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-setDetails-loggedInUser-channelLabel-details]
+[#apidoc-channel_software-setDetails-107212897]
 == Method: setDetails
 
 HTTP `POST`
 
 Description:
 
-Allows to modify channel attributes
+Allows to modify channel attributes 
+ 
 
 
 
@@ -2361,14 +2423,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-setDetails-loggedInUser-channelId-details]
+[#apidoc-channel_software-setDetails--1838642536]
 == Method: setDetails
 
 HTTP `POST`
 
 Description:
 
-Allows to modify channel attributes
+Allows to modify channel attributes 
+ 
 
 
 
@@ -2405,14 +2468,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-setGloballySubscribable-loggedInUser-channelLabel-value]
+[#apidoc-channel_software-setGloballySubscribable--1328641200]
 == Method: setGloballySubscribable
 
 HTTP `POST`
 
 Description:
 
-Set globally subscribable attribute for given channel.
+Set globally subscribable attribute for given channel. 
+ 
 
 
 
@@ -2434,7 +2498,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-setRepoFilters-loggedInUser-label-filterProps]
+[#apidoc-channel_software-setRepoFilters--518259420]
 == Method: setRepoFilters
 
 HTTP `POST`
@@ -2442,7 +2506,8 @@ HTTP `POST`
 Description:
 
 Replaces the existing set of filters for a given repo.
- Filters are ranked by their order in the array.
+ Filters are ranked by their order in the array. 
+ 
 
 
 
@@ -2466,7 +2531,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-setUserManageable-loggedInUser-channelLabel-login-value]
+[#apidoc-channel_software-setUserManageable--550733652]
 == Method: setUserManageable
 
 HTTP `POST`
@@ -2475,7 +2540,8 @@ Description:
 
 Set the manageable flag for a given channel and user.
  If value is set to 'true', this method will give the user
- manage permissions to the channel. Otherwise, that privilege is revoked.
+ manage permissions to the channel. Otherwise, that privilege is revoked. 
+ 
 
 
 
@@ -2498,7 +2564,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-setUserSubscribable-loggedInUser-channelLabel-login-value]
+[#apidoc-channel_software-setUserSubscribable--550733652]
 == Method: setUserSubscribable
 
 HTTP `POST`
@@ -2507,7 +2573,8 @@ Description:
 
 Set the subscribable flag for a given channel and user.
  If value is set to 'true', this method will give the user
- subscribe permissions to the channel. Otherwise, that privilege is revoked.
+ subscribe permissions to the channel. Otherwise, that privilege is revoked. 
+ 
 
 
 
@@ -2530,7 +2597,7 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncErrata-loggedInUser-channelLabel]
+[#apidoc-channel_software-syncErrata--1627011348]
 == Method: syncErrata
 
 HTTP `POST`
@@ -2545,7 +2612,8 @@ If you have synced a new channel then patches
  should. This method updates all the errata in the given cloned channel
  with packages that have recently been added, and ensures that all the
  packages you expect are in the channel. It also updates cloned errata
- attributes like advisoryStatus.
+ attributes like advisoryStatus. 
+ 
 
 
 
@@ -2564,14 +2632,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabels]
+[#apidoc-channel_software-syncRepo-1102255879]
 == Method: syncRepo
 
 HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2590,14 +2659,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel]
+[#apidoc-channel_software-syncRepo--1627011348]
 == Method: syncRepo
 
 HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2616,14 +2686,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-params]
+[#apidoc-channel_software-syncRepo-1590180743]
 == Method: syncRepo
 
 HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2648,14 +2719,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr]
+[#apidoc-channel_software-syncRepo-101234532]
 == Method: syncRepo
 
 HTTP `POST`
 
 Description:
 
-Schedule periodic repo synchronization
+Schedule periodic repo synchronization 
+ 
 
 
 
@@ -2676,14 +2748,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-syncRepo-loggedInUser-channelLabel-cronExpr-params]
+[#apidoc-channel_software-syncRepo-1025790991]
 == Method: syncRepo
 
 HTTP `POST`
 
 Description:
 
-Schedule periodic repo synchronization
+Schedule periodic repo synchronization 
+ 
 
 
 
@@ -2710,14 +2783,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepo-loggedInUser-id-label-url]
+[#apidoc-channel_software-updateRepo--1027558369]
 == Method: updateRepo
 
 HTTP `POST`
 
 Description:
 
-Updates a ContentSource (repo)
+Updates a ContentSource (repo) 
+ 
 
 
 
@@ -2752,14 +2826,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoLabel-loggedInUser-id-label]
+[#apidoc-channel_software-updateRepoLabel-139001981]
 == Method: updateRepoLabel
 
 HTTP `POST`
 
 Description:
 
-Updates repository label
+Updates repository label 
+ 
 
 
 
@@ -2792,14 +2867,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoLabel-loggedInUser-label-newLabel]
+[#apidoc-channel_software-updateRepoLabel--225204120]
 == Method: updateRepoLabel
 
 HTTP `POST`
 
 Description:
 
-Updates repository label
+Updates repository label 
+ 
 
 
 
@@ -2832,14 +2908,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoSsl-loggedInUser-id-sslCaCert-sslCliCert-sslCliKey]
+[#apidoc-channel_software-updateRepoSsl-198481068]
 == Method: updateRepoSsl
 
 HTTP `POST`
 
 Description:
 
-Updates repository SSL certificates
+Updates repository SSL certificates 
+ 
 
 
 
@@ -2876,14 +2953,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoSsl-loggedInUser-label-sslCaCert-sslCliCert-sslCliKey]
+[#apidoc-channel_software-updateRepoSsl--1922622903]
 == Method: updateRepoSsl
 
 HTTP `POST`
 
 Description:
 
-Updates repository SSL certificates
+Updates repository SSL certificates 
+ 
 
 
 
@@ -2920,14 +2998,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoUrl-loggedInUser-id-url]
+[#apidoc-channel_software-updateRepoUrl-679482680]
 == Method: updateRepoUrl
 
 HTTP `POST`
 
 Description:
 
-Updates repository source URL
+Updates repository source URL 
+ 
 
 
 
@@ -2960,14 +3039,15 @@ Returns:
 
 
 
-[#apidoc-channel_software-updateRepoUrl-loggedInUser-label-url]
+[#apidoc-channel_software-updateRepoUrl-1849447867]
 == Method: updateRepoUrl
 
 HTTP `POST`
 
 Description:
 
-Updates repository source URL
+Updates repository source URL 
+ 
 
 
 
