@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>activationkey :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/activationkey.html">
+    <link rel="prev" href="actionchain.html">
+    <link rel="next" href="admin.configuration.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>activationkey</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">activationkey</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams">addAppStreams</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels">addChildChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop">addConfigChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements">addEntitlements</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-addPackages-loggedInUser-key-packages">addPackages</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds">addServerGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-checkConfigDeployment-loggedInUser-key">checkConfigDeployment</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-clone-loggedInUser-key-cloneDescription">clone</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault">create</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault">create</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-delete-loggedInUser-key">delete</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-disableConfigDeployment-loggedInUser-key">disableConfigDeployment</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-enableConfigDeployment-loggedInUser-key">enableConfigDeployment</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-getDetails-loggedInUser-key">getDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-listActivatedSystems-loggedInUser-key">listActivatedSystems</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-listActivationKeys-loggedInUser">listActivationKeys</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-listChannels-minionId-machinePassword-activationKey">listChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-listConfigChannels-loggedInUser-key">listConfigChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams">removeAppStreams</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels">removeChildChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels">removeConfigChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements">removeEntitlements</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removePackages-loggedInUser-key-packages">removePackages</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds">removeServerGroups</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels">setConfigChannels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-activationkey-setDetails-loggedInUser-key-details">setDetails</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contains methods to access common activation key functions
+ available from the web interface.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>activationkey</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams"><a class="anchor" href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams"></a><a class="link" href="#apidoc-activationkey-addAppStreams-loggedInUser-key-appStreams">Method: addAppStreams</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add app streams to an activation key. If any of the provided app streams is not available in the
+ channels of the activation key, the request will fail.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  appStreams</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Module Stream</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "stream"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels"><a class="anchor" href="#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels"></a><a class="link" href="#apidoc-activationkey-addChildChannels-loggedInUser-key-childChannelLabels">Method: addChildChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add child channels to an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">string array</span>  childChannelLabels</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop"><a class="anchor" href="#apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop"></a><a class="link" href="#apidoc-activationkey-addConfigChannels-loggedInUser-keys-configChannelLabels-addToTop">Method: addConfigChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Given a list of activation keys and configuration channels,
+ this method adds given configuration channels to either the top or
+ the bottom (whichever you specify) of an activation key&#8217;s
+ configuration channels list. The ordering of the configuration channels
+ provided in the add list is maintained while adding.
+ If one of the configuration channels in the 'add' list
+ already exists in an activation key, the
+ configuration  channel will be re-ranked to the appropriate place.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">string array</span>  keys</p>
+</li>
+<li>
+<p><span class="array">string array</span>  configChannelLabels - List of configuration channel labels in the ranked order.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  addToTop</p>
+<div class="ulist">
+<ul>
+<li>
+<p>true - To prepend the given channels to the beginning of
+the activation key&#8217;s config channel list</p>
+</li>
+<li>
+<p>false - To append the given channels to the end of
+the activation key&#8217;s config channel list</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements"><a class="anchor" href="#apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements"></a><a class="link" href="#apidoc-activationkey-addEntitlements-loggedInUser-key-entitlements">Method: addEntitlements</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add add-on System Types to an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">string array</span>  entitlements - Add-on system type labels to associate with the key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>container_build_host</p>
+</li>
+<li>
+<p>monitoring_entitled</p>
+</li>
+<li>
+<p>osimage_build_host</p>
+</li>
+<li>
+<p>virtualization_host</p>
+</li>
+<li>
+<p>ansible_control_node</p>
+</li>
+<li>
+<p>proxy_entitled</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addPackages-loggedInUser-key-packages"><a class="anchor" href="#apidoc-activationkey-addPackages-loggedInUser-key-packages"></a><a class="link" href="#apidoc-activationkey-addPackages-loggedInUser-key-packages">Method: addPackages</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add packages to an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  packages</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name" - Package name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - Arch label - Optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds"><a class="anchor" href="#apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds"></a><a class="link" href="#apidoc-activationkey-addServerGroups-loggedInUser-key-serverGroupIds">Method: addServerGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Add server groups to an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">int array</span>  serverGroupIds</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-checkConfigDeployment-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-checkConfigDeployment-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-checkConfigDeployment-loggedInUser-key">Method: checkConfigDeployment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Check configuration file deployment status for the
+ activation key specified.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  status - 1 if enabled, 0 if disabled, exception thrown otherwise</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-clone-loggedInUser-key-cloneDescription"><a class="anchor" href="#apidoc-activationkey-clone-loggedInUser-key-cloneDescription"></a><a class="link" href="#apidoc-activationkey-clone-loggedInUser-key-cloneDescription">Method: clone</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Clone an existing activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - Key to be cloned.</p>
+</li>
+<li>
+<p><span class="string">string</span>  cloneDescription - Description of the cloned key.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  The new activation key</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault"><a class="anchor" href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault"></a><a class="link" href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-usageLimit-entitlements-universalDefault">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new activation key.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Eg. If the caller passes in the key "foo" and belong to an organization with
+the ID 100, the actual activation key will be "100-foo".</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This call allows for the setting of a usage limit on this activation key.
+If unlimited usage is desired see the similarly named API method with no
+usage limit argument.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - Leave empty to have new key autogenerated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  baseChannelLabel - Leave empty to accept default.</p>
+</li>
+<li>
+<p><span class="int">int</span>  usageLimit - If unlimited usage is desired,
+use the create API that does not include the parameter.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  entitlements - Add-on system type labels to associate with the key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>container_build_host</p>
+</li>
+<li>
+<p>monitoring_entitled</p>
+</li>
+<li>
+<p>osimage_build_host</p>
+</li>
+<li>
+<p>virtualization_host</p>
+</li>
+<li>
+<p>ansible_control_node</p>
+</li>
+<li>
+<p>proxy_entitled</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  universalDefault</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  The new activation key</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault"><a class="anchor" href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault"></a><a class="link" href="#apidoc-activationkey-create-loggedInUser-key-description-baseChannelLabel-entitlements-universalDefault">Method: create</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new activation key with unlimited usage.
+ The activation key parameter passed
+ in will be prefixed with the organization ID, and this value will be
+ returned from the create call.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Eg. If the caller passes in the key "foo" and belong to an organization with
+the ID 100, the actual activation key will be "100-foo".</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key - Leave empty to have new key autogenerated.</p>
+</li>
+<li>
+<p><span class="string">string</span>  description</p>
+</li>
+<li>
+<p><span class="string">string</span>  baseChannelLabel - Leave empty to accept default.</p>
+</li>
+<li>
+<p><span class="array">string array</span>  entitlements - Add-on entitlement label to associate with the key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  universalDefault</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  The new activation key</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-delete-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-delete-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-delete-loggedInUser-key">Method: delete</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-disableConfigDeployment-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-disableConfigDeployment-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-disableConfigDeployment-loggedInUser-key">Method: disableConfigDeployment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Disable configuration file deployment for the specified activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-enableConfigDeployment-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-enableConfigDeployment-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-enableConfigDeployment-loggedInUser-key">Method: enableConfigDeployment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Enable configuration file deployment for the specified activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-getDetails-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-getDetails-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-getDetails-loggedInUser-key">Method: getDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup an activation key&#8217;s details.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  activation key</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "usage_limit"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "base_channel_label"</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "child_channel_labels" - childChannelLabel</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "entitlements" - entitlementLabel</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "server_group_ids" - serverGroupId</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "package_names" - packageName - (deprecated by packages)</p>
+</li>
+<li>
+<p><span class="array">array</span>  "packages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name" - packageName</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "universal_default"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "disabled"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>default</p>
+</li>
+<li>
+<p>ssh-push</p>
+</li>
+<li>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.2</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listActivatedSystems-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-listActivatedSystems-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-listActivatedSystems-loggedInUser-key">Method: listActivatedSystems</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the systems activated with the key provided.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  system structure</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - System id</p>
+</li>
+<li>
+<p><span class="string">string</span>  "hostname"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_checkin" - Last time server
+successfully checked in</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listActivationKeys-loggedInUser"><a class="anchor" href="#apidoc-activationkey-listActivationKeys-loggedInUser"></a><a class="link" href="#apidoc-activationkey-listActivationKeys-loggedInUser">Method: listActivationKeys</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List activation keys that are visible to the
+ user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  activation key</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "key"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "usage_limit"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "base_channel_label"</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "child_channel_labels" - childChannelLabel</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "entitlements" - entitlementLabel</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "server_group_ids" - serverGroupId</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "package_names" - packageName - (deprecated by packages)</p>
+</li>
+<li>
+<p><span class="array">array</span>  "packages"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name" - packageName</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - archLabel - optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "universal_default"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "disabled"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>default</p>
+</li>
+<li>
+<p>ssh-push</p>
+</li>
+<li>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Available since API version: 10.2</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listChannels-minionId-machinePassword-activationKey"><a class="anchor" href="#apidoc-activationkey-listChannels-minionId-machinePassword-activationKey"></a><a class="link" href="#apidoc-activationkey-listChannels-minionId-machinePassword-activationKey">Method: listChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the channels for the given activation key
+ with temporary authentication tokens to access them.
+ Authentication is done via a machine specific password.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  minionId - The id of the minion to authenticate with.</p>
+</li>
+<li>
+<p><span class="string">string</span>  machinePassword - password specific to a machine.</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - activation key to use channels from.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  channelInfo</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "label" - Channel label</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - Channel name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - Channel url</p>
+</li>
+<li>
+<p><span class="string">string</span>  "token" - Channel access token</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-listConfigChannels-loggedInUser-key"><a class="anchor" href="#apidoc-activationkey-listConfigChannels-loggedInUser-key"></a><a class="link" href="#apidoc-activationkey-listConfigChannels-loggedInUser-key">Method: listConfigChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List configuration channels
+ associated to an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  configuration channel information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "configChannelType"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  configuration channel type information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "priority"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams"><a class="anchor" href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams"></a><a class="link" href="#apidoc-activationkey-removeAppStreams-loggedInUser-key-appStreams">Method: removeAppStreams</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove app streams from an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  appStreams</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  Module Stream</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "module"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "stream"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels"><a class="anchor" href="#apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels"></a><a class="link" href="#apidoc-activationkey-removeChildChannels-loggedInUser-key-childChannelLabels">Method: removeChildChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove child channels from an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">string array</span>  childChannelLabels</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels"><a class="anchor" href="#apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels"></a><a class="link" href="#apidoc-activationkey-removeConfigChannels-loggedInUser-keys-configChannelLabels">Method: removeConfigChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove configuration channels from the given activation keys.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">string array</span>  keys</p>
+</li>
+<li>
+<p><span class="array">string array</span>  configChannelLabels</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements"><a class="anchor" href="#apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements"></a><a class="link" href="#apidoc-activationkey-removeEntitlements-loggedInUser-key-entitlements">Method: removeEntitlements</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove entitlements (by label) from an activation key.
+ Currently only virtualization_host add-on entitlement is permitted.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">string array</span>  entitlements</p>
+<div class="ulist">
+<ul>
+<li>
+<p>virtualization_host</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removePackages-loggedInUser-key-packages"><a class="anchor" href="#apidoc-activationkey-removePackages-loggedInUser-key-packages"></a><a class="link" href="#apidoc-activationkey-removePackages-loggedInUser-key-packages">Method: removePackages</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove package names from an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">array</span>  packages</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name" - Package name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - Arch label - Optional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds"><a class="anchor" href="#apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds"></a><a class="link" href="#apidoc-activationkey-removeServerGroups-loggedInUser-key-serverGroupIds">Method: removeServerGroups</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove server groups from an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="array">int array</span>  serverGroupIds</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels"><a class="anchor" href="#apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels"></a><a class="link" href="#apidoc-activationkey-setConfigChannels-loggedInUser-keys-configChannelLabels">Method: setConfigChannels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Replace the existing set of
+ configuration channels on the given activation keys.
+ Channels are ranked by their order in the array.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">string array</span>  keys</p>
+</li>
+<li>
+<p><span class="array">string array</span>  configChannelLabels</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-activationkey-setDetails-loggedInUser-key-details"><a class="anchor" href="#apidoc-activationkey-setDetails-loggedInUser-key-details"></a><a class="link" href="#apidoc-activationkey-setDetails-loggedInUser-key-details">Method: setDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update the details of an activation key.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  key</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description" - optional</p>
+</li>
+<li>
+<p><span class="string">string</span>  "base_channel_label" - optional -
+to set default base channel set to empty string or 'none'</p>
+</li>
+<li>
+<p><span class="int">int</span>  "usage_limit" - optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "unlimited_usage_limit" - Set true
+for unlimited usage and to override usage_limit</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "universal_default" - optional</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "disabled" - optional</p>
+</li>
+<li>
+<p><span class="string">string</span>  "contact_method" - One of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>default</p>
+</li>
+<li>
+<p>ssh-push</p>
+</li>
+<li>
+<p>ssh-push-tunnel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="actionchain.html">actionchain</a></span>
+  <span class="next"><a href="admin.configuration.html">admin.configuration</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

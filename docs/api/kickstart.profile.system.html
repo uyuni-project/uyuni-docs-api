@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>kickstart.profile.system :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/kickstart.profile.system.html">
+    <link rel="prev" href="kickstart.profile.software.html">
+    <link rel="next" href="kickstart.snippet.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>kickstart.profile.system</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">kickstart.profile.system</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations">addFilePreservations</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions">addKeys</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel">checkConfigManagement</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel">checkRemoteCommands</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel">disableConfigManagement</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel">disableRemoteCommands</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel">enableConfigManagement</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel">enableRemoteCommands</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel">getLocale</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel">getPartitioningScheme</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel">getRegistrationType</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel">getSELinux</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel">listFilePreservations</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel">listKeys</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations">removeFilePreservations</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions">removeKeys</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc">setLocale</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme">setPartitioningScheme</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType">setRegistrationType</a></p>
+</li>
+<li>
+<p><a href="#apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode">setSELinux</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides methods to set various properties of a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>kickstart.profile.system</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations"><a class="anchor" href="#apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations"></a><a class="link" href="#apidoc-kickstart_profile_system-addFilePreservations-loggedInUser-ksLabel-filePreservations">Method: addFilePreservations</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Adds the given list of file preservations to the specified kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  filePreservations - the list identifying the file preservations to add</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions"><a class="anchor" href="#apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions"></a><a class="link" href="#apidoc-kickstart_profile_system-addKeys-loggedInUser-ksLabel-descriptions">Method: addKeys</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Adds the given list of keys to the specified kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  descriptions - the list identifying the keys to add</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-checkConfigManagement-loggedInUser-ksLabel">Method: checkConfigManagement</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Check the configuration management status for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="boolean">boolean</span>  true if configuration management is enabled; otherwise, false</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-checkRemoteCommands-loggedInUser-ksLabel">Method: checkRemoteCommands</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Check the remote commands status flag for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="boolean">boolean</span>  true if remote commands support is enabled; otherwise, false</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-disableConfigManagement-loggedInUser-ksLabel">Method: disableConfigManagement</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Disables the configuration management flag in a kickstart profile
+ so that a system created using this profile will be NOT be configuration capable.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-disableRemoteCommands-loggedInUser-ksLabel">Method: disableRemoteCommands</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Disables the remote command flag in a kickstart profile
+ so that a system created using this profile
+ will be capable of running remote commands</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-enableConfigManagement-loggedInUser-ksLabel">Method: enableConfigManagement</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Enables the configuration management flag in a kickstart profile
+ so that a system created using this profile will be configuration capable.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-enableRemoteCommands-loggedInUser-ksLabel">Method: enableRemoteCommands</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Enables the remote command flag in a kickstart profile
+ so that a system created using this profile
+ will be capable of running remote commands</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-getLocale-loggedInUser-ksLabel">Method: getLocale</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Retrieves the locale for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  locale info</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "locale"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "useUtc"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>true - the hardware clock uses UTC</p>
+</li>
+<li>
+<p>false - the hardware clock does not use UTC</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-getPartitioningScheme-loggedInUser-ksLabel">Method: getPartitioningScheme</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get the partitioning scheme for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the label of a kickstart profile</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  a list of partitioning commands used to
+setup the partitions, logical volumes and volume groups</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-getRegistrationType-loggedInUser-ksLabel">Method: getRegistrationType</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>returns the registration type of a given kickstart profile.
+ Registration Type can be one of reactivation/deletion/none
+ These types determine the behaviour of the registration when using
+ this profile for reprovisioning.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  the registration type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>reactivation</p>
+</li>
+<li>
+<p>deletion</p>
+</li>
+<li>
+<p>none</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-getSELinux-loggedInUser-ksLabel">Method: getSELinux</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Retrieves the SELinux enforcing mode property of a kickstart
+ profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  enforcing mode</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enforcing</p>
+</li>
+<li>
+<p>permissive</p>
+</li>
+<li>
+<p>disabled</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-listFilePreservations-loggedInUser-ksLabel">Method: listFilePreservations</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the set of all file preservations associated with the given
+ kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  file list</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="array">string array</span>  "file_names" - the list of file names</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel"><a class="anchor" href="#apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel"></a><a class="link" href="#apidoc-kickstart_profile_system-listKeys-loggedInUser-ksLabel">Method: listKeys</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns the set of all keys associated with the given kickstart
+             profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  key</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "description"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "content"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations"><a class="anchor" href="#apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations"></a><a class="link" href="#apidoc-kickstart_profile_system-removeFilePreservations-loggedInUser-ksLabel-filePreservations">Method: removeFilePreservations</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes the given list of file preservations from the specified
+ kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  filePreservations - the list identifying the file preservations to add</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions"><a class="anchor" href="#apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions"></a><a class="link" href="#apidoc-kickstart_profile_system-removeKeys-loggedInUser-ksLabel-descriptions">Method: removeKeys</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Removes the given list of keys from the specified kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  descriptions - the list identifying the keys to remove</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc"><a class="anchor" href="#apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc"></a><a class="link" href="#apidoc-kickstart_profile_system-setLocale-loggedInUser-ksLabel-locale-useUtc">Method: setLocale</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Sets the locale for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="string">string</span>  locale - the locale</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  useUtc</p>
+<div class="ulist">
+<ul>
+<li>
+<p>true - the hardware clock uses UTC</p>
+</li>
+<li>
+<p>false - the hardware clock does not use UTC</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme"><a class="anchor" href="#apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme"></a><a class="link" href="#apidoc-kickstart_profile_system-setPartitioningScheme-loggedInUser-ksLabel-scheme">Method: setPartitioningScheme</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set the partitioning scheme for a kickstart profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the label of the kickstart profile to update</p>
+</li>
+<li>
+<p><span class="array">string array</span>  scheme - the partitioning scheme
+is a list of partitioning command strings used to setup the partitions,
+volume groups and logical volumes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType"><a class="anchor" href="#apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType"></a><a class="link" href="#apidoc-kickstart_profile_system-setRegistrationType-loggedInUser-ksLabel-registrationType">Method: setRegistrationType</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Sets the registration type of a given kickstart profile.
+ Registration Type can be one of reactivation/deletion/none
+ These types determine the behaviour of the re registration when using
+ this profile.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="string">string</span>  registrationType</p>
+<div class="ulist">
+<ul>
+<li>
+<p>reactivation - to try and generate a reactivation key
+and use that to register the system when reprovisioning a system.</p>
+</li>
+<li>
+<p>deletion - to try and delete the existing system profile
+and reregister the system being reprovisioned as new</p>
+</li>
+<li>
+<p>none - to preserve the status quo and leave the current system
+as a duplicate on a reprovision.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode"><a class="anchor" href="#apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode"></a><a class="link" href="#apidoc-kickstart_profile_system-setSELinux-loggedInUser-ksLabel-enforcingMode">Method: setSELinux</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Sets the SELinux enforcing mode property of a kickstart profile
+ so that a system created using this profile will be have
+ the appropriate SELinux enforcing mode.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  ksLabel - the kickstart profile label</p>
+</li>
+<li>
+<p><span class="string">string</span>  enforcingMode - the SELinux enforcing mode</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enforcing</p>
+</li>
+<li>
+<p>permissive</p>
+</li>
+<li>
+<p>disabled</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="kickstart.profile.software.html">kickstart.profile.software</a></span>
+  <span class="next"><a href="kickstart.snippet.html">kickstart.snippet</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

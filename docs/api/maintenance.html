@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>maintenance :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/maintenance.html">
+    <link rel="prev" href="kickstart.tree.html">
+    <link rel="next" href="org.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>maintenance</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">maintenance</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy">assignScheduleToSystems</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical">createCalendar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url">createCalendarWithUrl</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-createSchedule-loggedInUser-name-type">createSchedule</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar">createSchedule</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions">deleteCalendar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-deleteSchedule-loggedInUser-name">deleteSchedule</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label">getCalendarDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name">getScheduleDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-listCalendarLabels-loggedInUser">listCalendarLabels</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-listScheduleNames-loggedInUser">listScheduleNames</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName">listSystemsWithSchedule</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy">refreshCalendar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids">retractScheduleFromSystems</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy">updateCalendar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy">updateSchedule</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides methods to access and modify Maintenance Schedules related entities</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>maintenance</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-assignScheduleToSystems-loggedInUser-scheduleName-sids-rescheduleStrategy">Method: assignScheduleToSystems</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Assign schedule with given name to systems with given IDs.
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.
+ Throws a InvalidParameterException when some of the systems have pending actions that are not allowed in the
+ maintenance mode.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  scheduleName - The schedule name</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids - system IDs</p>
+</li>
+<li>
+<p><span class="array">string array</span>  rescheduleStrategy - available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cancel - cancel actions which are outside the maintenance windows</p>
+</li>
+<li>
+<p>Fail - let assignment fail. No operation will be performed</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">int array</span>  number of involved systems</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-createCalendar-loggedInUser-label-ical"><a class="anchor" href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical"></a><a class="link" href="#apidoc-maintenance-createCalendar-loggedInUser-label-ical">Method: createCalendar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new maintenance calendar</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+<li>
+<p><span class="string">string</span>  ical - ICal calendar data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url"><a class="anchor" href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url"></a><a class="link" href="#apidoc-maintenance-createCalendarWithUrl-loggedInUser-label-url">Method: createCalendarWithUrl</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new maintenance calendar</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+<li>
+<p><span class="string">string</span>  url - download URL for ICal calendar data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-createSchedule-loggedInUser-name-type"><a class="anchor" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type"></a><a class="link" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type">Method: createSchedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new maintenance Schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - maintenance schedule name</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - schedule type: single, multi</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance schedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar"><a class="anchor" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar"></a><a class="link" href="#apidoc-maintenance-createSchedule-loggedInUser-name-type-calendar">Method: createSchedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Create a new Maintenance Schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - maintenance schedule name</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - schedule type: single, multi</p>
+</li>
+<li>
+<p><span class="string">string</span>  calendar - maintenance calendar label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance schedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions"><a class="anchor" href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions"></a><a class="link" href="#apidoc-maintenance-deleteCalendar-loggedInUser-label-cancelScheduledActions">Method: deleteCalendar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove a maintenance calendar</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  cancelScheduledActions - cancel actions of affected schedules</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reschedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "strategy" - selected strategy</p>
+</li>
+<li>
+<p><span class="string">string</span>  "for_schedule_name"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "actions"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  action information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - action ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - action name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type" - action type</p>
+</li>
+<li>
+<p><span class="string">string</span>  "scheduler" - the user that scheduled the action (optional)</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "earliest" - the earliest date and time the action will be performed</p>
+</li>
+<li>
+<p><span class="int">int</span>  "prerequisite" - ID of the prerequisite action (optional)</p>
+</li>
+<li>
+<p><span class="array">int array</span>  "affected_system_ids" - affected system IDs</p>
+</li>
+<li>
+<p><span class="string">string</span>  "details" - action details string</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-deleteSchedule-loggedInUser-name"><a class="anchor" href="#apidoc-maintenance-deleteSchedule-loggedInUser-name"></a><a class="link" href="#apidoc-maintenance-deleteSchedule-loggedInUser-name">Method: deleteSchedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Remove a maintenance schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - maintenance schedule name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-getCalendarDetails-loggedInUser-label"><a class="anchor" href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label"></a><a class="link" href="#apidoc-maintenance-getCalendarDetails-loggedInUser-label">Method: getCalendarDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup a specific maintenance schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-getScheduleDetails-loggedInUser-name"><a class="anchor" href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name"></a><a class="link" href="#apidoc-maintenance-getScheduleDetails-loggedInUser-name">Method: getScheduleDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lookup a specific maintenance schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - maintenance Schedule Name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance schedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="struct">struct</span>  maintenance calendar information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "orgId"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - calendar url if present</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ical"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-listCalendarLabels-loggedInUser"><a class="anchor" href="#apidoc-maintenance-listCalendarLabels-loggedInUser"></a><a class="link" href="#apidoc-maintenance-listCalendarLabels-loggedInUser">Method: listCalendarLabels</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List schedule names visible to user</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  maintenance calendar labels</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-listScheduleNames-loggedInUser"><a class="anchor" href="#apidoc-maintenance-listScheduleNames-loggedInUser"></a><a class="link" href="#apidoc-maintenance-listScheduleNames-loggedInUser">Method: listScheduleNames</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List Schedule Names visible to user</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">string array</span>  maintenance schedule names</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName"><a class="anchor" href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName"></a><a class="link" href="#apidoc-maintenance-listSystemsWithSchedule-loggedInUser-scheduleName">Method: listSystemsWithSchedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List IDs of systems that have given schedule assigned
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  scheduleName - the schedule name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">int array</span>  system IDs</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-refreshCalendar-loggedInUser-label-rescheduleStrategy">Method: refreshCalendar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Refresh maintenance calendar data using the configured URL</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+<li>
+<p><span class="array">string array</span>  rescheduleStrategy - available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cancel - cancel actions which are outside the maintenance windows</p>
+</li>
+<li>
+<p>Fail - let update fail. The calendar stay untouched</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reschedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "strategy" - selected strategy</p>
+</li>
+<li>
+<p><span class="string">string</span>  "for_schedule_name"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "actions"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  action information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - action ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - action name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type" - action type</p>
+</li>
+<li>
+<p><span class="string">string</span>  "scheduler" - the user that scheduled the action (optional)</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "earliest" - the earliest date and time the action will be performed</p>
+</li>
+<li>
+<p><span class="int">int</span>  "prerequisite" - ID of the prerequisite action (optional)</p>
+</li>
+<li>
+<p><span class="array">int array</span>  "affected_system_ids" - affected system IDs</p>
+</li>
+<li>
+<p><span class="string">string</span>  "details" - action details string</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids"><a class="anchor" href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids"></a><a class="link" href="#apidoc-maintenance-retractScheduleFromSystems-loggedInUser-sids">Method: retractScheduleFromSystems</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Retract schedule with given name from systems with given IDs
+ Throws a PermissionCheckFailureException when some of the systems are not accessible by the user.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids - system IDs</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">int array</span>  number of involved systems</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-updateCalendar-loggedInUser-label-details-rescheduleStrategy">Method: updateCalendar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update a maintenance calendar</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  label - maintenance calendar label</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  details - maintenance calendar details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "ical" - new ical calendar data</p>
+</li>
+<li>
+<p><span class="string">string</span>  "url" - new calendar URL</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="array">string array</span>  rescheduleStrategy - available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cancel - cancel actions which are outside the maintenance windows</p>
+</li>
+<li>
+<p>Fail - let update fail. The calendar stay untouched</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  reschedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "strategy" - selected strategy</p>
+</li>
+<li>
+<p><span class="string">string</span>  "for_schedule_name"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "actions"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  action information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - action ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - action name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type" - action type</p>
+</li>
+<li>
+<p><span class="string">string</span>  "scheduler" - the user that scheduled the action (optional)</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "earliest" - the earliest date and time the action will be performed</p>
+</li>
+<li>
+<p><span class="int">int</span>  "prerequisite" - ID of the prerequisite action (optional)</p>
+</li>
+<li>
+<p><span class="array">int array</span>  "affected_system_ids" - affected system IDs</p>
+</li>
+<li>
+<p><span class="string">string</span>  "details" - action details string</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy"><a class="anchor" href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy"></a><a class="link" href="#apidoc-maintenance-updateSchedule-loggedInUser-name-details-rescheduleStrategy">Method: updateSchedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Update a maintenance schedule</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - maintenance schedule name</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  details - maintenance schedule details</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "type" - new schedule type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>single</p>
+</li>
+<li>
+<p>multi</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="string">string</span>  "calendar" - new calendar label</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="array">string array</span>  rescheduleStrategy - available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cancel - cancel actions which are outside the maintenance windows</p>
+</li>
+<li>
+<p>Fail - let update fail. The calendar stays untouched</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  reschedule information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "strategy" - selected strategy</p>
+</li>
+<li>
+<p><span class="string">string</span>  "for_schedule_name"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "status"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "message"</p>
+</li>
+<li>
+<p><span class="array">array</span>  "actions"</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  action information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - action ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - action name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type" - action type</p>
+</li>
+<li>
+<p><span class="string">string</span>  "scheduler" - the user that scheduled the action (optional)</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "earliest" - the earliest date and time the action will be performed</p>
+</li>
+<li>
+<p><span class="int">int</span>  "prerequisite" - ID of the prerequisite action (optional)</p>
+</li>
+<li>
+<p><span class="array">int array</span>  "affected_system_ids" - affected system IDs</p>
+</li>
+<li>
+<p><span class="string">string</span>  "details" - action details string</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="kickstart.tree.html">kickstart.tree</a></span>
+  <span class="next"><a href="org.html">org</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>

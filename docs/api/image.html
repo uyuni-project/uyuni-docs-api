@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>image :: SUSE Multi-Linux Manager 5.1 API Documentation</title>
+    <link rel="canonical" href="https://documentation.suse.com/multi-linux-manager/5.1/api/en/docs/api/image.html">
+    <link rel="prev" href="formula.html">
+    <link rel="next" href="image.delta.html">
+    <meta name="generator" content="Antora 3.1.15">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../_/css/font-styles.css">
+<link rel="stylesheet" href="../../_/fonts/css/all.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/api-styles.css">
+<link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_/css/vendor/light.css">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+<!-- SUSE Universal Visual Assets — shared-header web component -->
+<script type="module">
+  import { defineCustomElements, setAssetPath } from 'https://static.scc.suse.com/shared-header/1.19/shared-header.esm.js';
+  defineCustomElements();
+  setAssetPath("https://static.scc.suse.com/shared-header/1.19/assets");
+</script>
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+
+<!-- Qualtrics feedback widget -->
+<script src="../../_/js/qualatrix.js" defer></script>
+
+<!-- JSON-LD structured data -->
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<shared-header enable-search=false application="documentation-portal" language="en" languages='{
+                "en": { "label": "English", "url": "https://documentation.suse.com/en-us/" },
+                "de": { "label": "Deutsch", "url": "https://documentation.suse.com/de-de/" },
+                "fr": { "label": "Français", "url": "https://documentation.suse.com/fr-fr/" },
+                "es": { "label": "Español", "url": "https://documentation.suse.com/es-es/" },
+                "ja": {"label": "日本語", "url": "https://documentation.suse.com/ja-jp/" },
+                "zh_CN": { "label": "中文", "url": "https://documentation.suse.com/zh-cn/" },
+                "ko_KR": {"label": "한국어", "url": "https://documentation.suse.com/ko-kr/" },
+                "pt_BR": { "label": "Português Brasileiro", "url": "https://documentation.suse.com/pt-br/" }
+            }'>
+</shared-header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">SUSE Multi-Linux Manager API</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../common_gfdl1.2_i.html">License</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faqs.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="access.html">access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="actionchain.html">actionchain</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="activationkey.html">activationkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.configuration.html">admin.configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.monitoring.html">admin.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admin.payg.html">admin.payg</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ansible.html">ansible</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="api.html">api</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="audit.html">audit</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="auth.html">auth</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.html">channel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.access.html">channel.access</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.appstreams.html">channel.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.org.html">channel.org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="channel.software.html">channel.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configchannel.html">configchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentmanagement.html">contentmanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distchannel.html">distchannel</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="errata.html">errata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="formula.html">formula</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.delta.html">image.delta</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.profile.html">image.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="image.store.html">image.store</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.html">kickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.filepreservation.html">kickstart.filepreservation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.keys.html">kickstart.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.html">kickstart.profile</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.keys.html">kickstart.profile.keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.software.html">kickstart.profile.software</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.profile.system.html">kickstart.profile.system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.snippet.html">kickstart.snippet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="kickstart.tree.html">kickstart.tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maintenance.html">maintenance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.html">org</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="org.trusts.html">org.trusts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.html">packages</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.provider.html">packages.provider</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="packages.search.html">packages.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="preferences.locale.html">preferences.locale</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="proxy.html">proxy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.html">recurring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.custom.html">recurring.custom</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.highstate.html">recurring.highstate</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recurring.playbook.html">recurring.playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="saltkey.html">saltkey</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">schedule</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="subscriptionmatching.pinnedsubscription.html">subscriptionmatching.pinnedsubscription</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.content.html">sync.content</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sync.hub.html">sync.hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.html">system</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.appstreams.html">system.appstreams</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.config.html">system.config</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.custominfo.html">system.custominfo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.monitoring.html">system.monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.powermanagement.html">system.provisioning.powermanagement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.provisioning.snapshot.html">system.provisioning.snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.scap.html">system.scap</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system.search.html">system.search</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="systemgroup.html">systemgroup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.html">user</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.external.html">user.external</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user.notifications.html">user.notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="virtualhostmanager.html">virtualhostmanager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SUSE Multi-Linux Manager API</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">SUSE Multi-Linux Manager API</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle"></button>
+  <a href="https://documentation.suse.com/multi-linux-manager/5.1/" class="home-link" aria-label="SUSE Multi-Linux Manager 5.1 documentation home"></a>
+  <span class="toolbar-sep" aria-hidden="true">|</span>
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="../index.html">SUSE Multi-Linux Manager 5.1 API</a>
+    </li>
+    <li>image</li>
+  </ul>
+</nav>
+    <div class="toolbar-search">
+    <input id="search-input" type="text" placeholder="Search the docs&hellip;" aria-label="Search">
+  </div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="On this page" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">image</h1>
+<div class="sect1">
+<h2 id="_available_methods"><a class="anchor" href="#_available_methods"></a><a class="link" href="#_available_methods">Available methods</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#apidoc-image-addImageFile-loggedInUser-imageId-file-type-external">addImageFile</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-delete-loggedInUser-imageId">delete</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-deleteImageFile-loggedInUser-imageId-file">deleteImageFile</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-getCustomValues-loggedInUser-imageId">getCustomValues</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-getDetails-loggedInUser-imageId">getDetails</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-getPillar-loggedInUser-imageId">getPillar</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-getRelevantErrata-loggedInUser-imageId">getRelevantErrata</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence">importContainerImage</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence">importImage</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-importOSImage-loggedInUser-name-version-arch">importOSImage</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-listImages-loggedInUser">listImages</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-listPackages-loggedInUser-imageId">listPackages</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence">scheduleImageBuild</a></p>
+</li>
+<li>
+<p><a href="#apidoc-image-setPillar-loggedInUser-imageId-pillarData">setPillar</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides methods to access and modify images.</p>
+</div>
+<div class="paragraph">
+<p><strong>Namespace</strong>:</p>
+</div>
+<div class="paragraph">
+<p>image</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-addImageFile-loggedInUser-imageId-file-type-external"><a class="anchor" href="#apidoc-image-addImageFile-loggedInUser-imageId-file-type-external"></a><a class="link" href="#apidoc-image-addImageFile-loggedInUser-imageId-file-type-external">Method: addImageFile</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete image file</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId - ID of the image</p>
+</li>
+<li>
+<p><span class="string">string</span>  file - the file name, it must exist in the store</p>
+</li>
+<li>
+<p><span class="string">string</span>  type - the image type</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  external - the file is external</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-delete-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-delete-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-delete-loggedInUser-imageId">Method: delete</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete an image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-deleteImageFile-loggedInUser-imageId-file"><a class="anchor" href="#apidoc-image-deleteImageFile-loggedInUser-imageId-file"></a><a class="link" href="#apidoc-image-deleteImageFile-loggedInUser-imageId-file">Method: deleteImageFile</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Delete image file</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId - ID of the image</p>
+</li>
+<li>
+<p><span class="string">string</span>  file - the file name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-getCustomValues-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-getCustomValues-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-getCustomValues-loggedInUser-imageId">Method: getCustomValues</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get the custom data values defined for the image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  the map of custom labels to custom values</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "custom info label"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "value"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-getDetails-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-getDetails-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-getDetails-loggedInUser-imageId">Method: getDetails</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get details of an image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* <span class="struct">struct</span>  image overview information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - image name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "type" - image type</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version" - image tag/version</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - image build revision number</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - image architecture</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "external" - true if the image is built externally,
+false otherwise</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "profileLabel"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "storeLabel"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "buildStatus" - One of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>queued</p>
+</li>
+<li>
+<p>picked up</p>
+</li>
+<li>
+<p>completed</p>
+</li>
+<li>
+<p>failed</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="string">string</span>  "inspectStatus" - Available if the build is successful. One of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>queued</p>
+</li>
+<li>
+<p>picked up</p>
+</li>
+<li>
+<p>completed</p>
+</li>
+<li>
+<p>failed</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="int">int</span>  "buildServerId"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "securityErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "bugErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "enhancementErrata"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "outdatedPackages"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "installedPackages"</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  "files" - image files</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "obsolete" - true if the image has been replaced in the store</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-getPillar-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-getPillar-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-getPillar-loggedInUser-imageId">Method: getPillar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Get pillar data of an image. The "size" entries are converted to string.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  the pillar data</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-getRelevantErrata-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-getRelevantErrata-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-getRelevantErrata-loggedInUser-imageId">Method: getRelevantErrata</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Returns a list of all errata that are relevant for the image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  errata</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id" - errata ID</p>
+</li>
+<li>
+<p><span class="string">string</span>  "issue_date" - the date erratum was updated (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "date" - the date erratum was created (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "update_date" - the date erratum was updated (deprecated)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_synopsis" - summary of the erratum</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_type" - type label such as 'Security', 'Bug Fix'</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_status" - status label such as 'final', 'testing', 'stable', 'pending',</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advisory_name" - name such as 'RHSA', etc.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "reboot_suggested" - A boolean flag signaling whether a system reboot is
+advisable following the application of the errata. Typical example is upon kernel update.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "restart_suggested" - A boolean flag signaling a weather reboot of
+the package manager is advisable following the application of the errata. This is commonly
+used to address update stack issues before proceeding with other updates.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence"><a class="anchor" href="#apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence"></a><a class="link" href="#apidoc-image-importContainerImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence">Method: importContainerImage</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Import an image and schedule an inspect afterwards</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - image name as specified in the store</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to import or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system ID of the build host</p>
+</li>
+<li>
+<p><span class="string">string</span>  storeLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - activation key to get the channel data from</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the following inspect can run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  the ID of the inspect action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence"><a class="anchor" href="#apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence"></a><a class="link" href="#apidoc-image-importImage-loggedInUser-name-version-buildHostId-storeLabel-activationKey-earliestOccurrence">Method: importImage (Deprecated)</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Import an image and schedule an inspect afterwards</p>
+</div>
+<div class="paragraph">
+<p>Deprecated - Schedule a Container image import</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - image name as specified in the store</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to import or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system ID of the build host</p>
+</li>
+<li>
+<p><span class="string">string</span>  storeLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  activationKey - activation key to get the channel data from</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the following inspect can run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  the ID of the inspect action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-importOSImage-loggedInUser-name-version-arch"><a class="anchor" href="#apidoc-image-importOSImage-loggedInUser-name-version-arch"></a><a class="link" href="#apidoc-image-importOSImage-loggedInUser-name-version-arch">Method: importOSImage</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Import an image and schedule an inspect afterwards</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  name - image name as specified in the store</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to import</p>
+</li>
+<li>
+<p><span class="string">string</span>  arch - image architecture</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  the ID of the image</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-listImages-loggedInUser"><a class="anchor" href="#apidoc-image-listImages-loggedInUser"></a><a class="link" href="#apidoc-image-listImages-loggedInUser">Method: listImages</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List available images</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  image information</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "name" - image name</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version" - image tag/version</p>
+</li>
+<li>
+<p><span class="int">int</span>  "revision" - image build revision number</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch" - image architecture</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "external" - true if the image is built externally,
+false otherwise</p>
+</li>
+<li>
+<p><span class="string">string</span>  "storeLabel"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "checksum"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "obsolete"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-listPackages-loggedInUser-imageId"><a class="anchor" href="#apidoc-image-listPackages-loggedInUser-imageId"></a><a class="link" href="#apidoc-image-listPackages-loggedInUser-imageId">Method: listPackages</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>List the installed packages on the given image</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence"><a class="anchor" href="#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence"></a><a class="link" href="#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence">Method: scheduleImageBuild</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule an image build</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to build or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system id of the build host</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the build can run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  the ID of the build action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-setPillar-loggedInUser-imageId-pillarData"><a class="anchor" href="#apidoc-image-setPillar-loggedInUser-imageId-pillarData"></a><a class="link" href="#apidoc-image-setPillar-loggedInUser-imageId-pillarData">Method: setPillar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Set pillar data of an image. The "size" entries should be passed as string.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  imageId</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  pillarData</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  - 1 on success, exception thrown otherwise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="formula.html">formula</a></span>
+  <span class="next"><a href="image.delta.html">image.delta</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/tabs.js"></script>
+<script src="../../_/js/language-switcher.js" defer></script>
+<script src="../../_/js/api-collapse.js" defer></script>
+  </body>
+</html>
