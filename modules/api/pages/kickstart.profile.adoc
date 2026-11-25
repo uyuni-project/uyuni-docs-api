@@ -42,7 +42,8 @@
 == Description
 
 Provides methods to access and modify many aspects of
- a kickstart profile.
+ a kickstart profile. 
+ 
 
 *Namespace*:
 
@@ -56,7 +57,8 @@ HTTP `POST`
 
 Description:
 
-Add an ip range to a kickstart profile.
+Add an ip range to a kickstart profile. 
+ 
 
 
 
@@ -89,7 +91,8 @@ HTTP `POST`
 
 Description:
 
-Add a pre/post script to a kickstart profile.
+Add a pre/post script to a kickstart profile. 
+ 
 
 
 
@@ -131,7 +134,8 @@ HTTP `POST`
 
 Description:
 
-Add a pre/post script to a kickstart profile.
+Add a pre/post script to a kickstart profile. 
+ 
 
 
 
@@ -175,7 +179,8 @@ HTTP `POST`
 
 Description:
 
-Add a pre/post script to a kickstart profile.
+Add a pre/post script to a kickstart profile. 
+ 
 
 
 
@@ -223,7 +228,8 @@ HTTP `POST`
 Description:
 
 Returns a list for each kickstart profile; each list will contain
-             activation keys not present on the other profile.
+             activation keys not present on the other profile. 
+ 
 
 
 
@@ -299,7 +305,8 @@ Description:
 
 Returns a list for each kickstart profile; each list will contain the
              properties that differ between the profiles and their values for that
-             specific profile .
+             specific profile . 
+ 
 
 
 
@@ -344,7 +351,8 @@ HTTP `POST`
 Description:
 
 Returns a list for each kickstart profile; each list will contain
-             package names not present on the other profile.
+             package names not present on the other profile. 
+ 
 
 
 
@@ -378,7 +386,8 @@ HTTP `POST`
 
 Description:
 
-Download the full contents of a kickstart file.
+Download the full contents of a kickstart file. 
+ 
 
 
 
@@ -391,7 +400,7 @@ Parameters:
  kickstart to download.
  
 * [.string]#string#  host - The host to use when
- referring to the Uyuni server. Usually this should be the FQDN,
+ referring to the SUSE Multi-Linux Manager server. Usually this should be the FQDN,
  but could be the ip address or shortname as well.
  
 
@@ -412,7 +421,8 @@ HTTP `POST`
 
 Description:
 
-Downloads the Cobbler-rendered Kickstart file.
+Downloads the Cobbler-rendered Kickstart file. 
+ 
 
 
 
@@ -439,7 +449,8 @@ HTTP `GET`
 
 Description:
 
-Get advanced options for a kickstart profile.
+Get advanced options for a kickstart profile. 
+ 
 
 
 
@@ -471,7 +482,8 @@ HTTP `GET`
 Description:
 
 Lists available OS repositories to associate with the provided
- kickstart profile.
+ kickstart profile. 
+ 
 
 
 
@@ -497,7 +509,8 @@ HTTP `GET`
 
 Description:
 
-Get ks.cfg preservation option for a kickstart profile.
+Get ks.cfg preservation option for a kickstart profile. 
+ 
 
 
 
@@ -525,7 +538,8 @@ HTTP `GET`
 
 Description:
 
-Get the child channels for a kickstart profile.
+Get the child channels for a kickstart profile. 
+ 
 
 
 
@@ -552,7 +566,8 @@ HTTP `GET`
 
 Description:
 
-Get custom options for a kickstart profile.
+Get custom options for a kickstart profile. 
+ 
 
 
 
@@ -582,7 +597,8 @@ HTTP `GET`
 
 Description:
 
-Get the kickstart tree for a kickstart profile.
+Get the kickstart tree for a kickstart profile. 
+ 
 
 
 
@@ -609,7 +625,8 @@ HTTP `GET`
 
 Description:
 
-Lists all OS repositories associated with provided kickstart profile.
+Lists all OS repositories associated with provided kickstart profile. 
+ 
 
 
 
@@ -635,7 +652,8 @@ HTTP `GET`
 
 Description:
 
-Get the update type for a kickstart profile.
+Get the update type for a kickstart profile. 
+ 
 
 
 
@@ -663,7 +681,8 @@ HTTP `GET`
 Description:
 
 Returns a list of variables
-                      associated with the specified kickstart profile
+                      associated with the specified kickstart profile 
+ 
 
 
 
@@ -692,7 +711,8 @@ HTTP `GET`
 Description:
 
 For given kickstart profile label returns label of
- virtualization type it's using
+ virtualization type it's using 
+ 
 
 
 
@@ -718,7 +738,8 @@ HTTP `GET`
 
 Description:
 
-List all ip ranges for a kickstart profile.
+List all ip ranges for a kickstart profile. 
+ 
 
 
 
@@ -751,7 +772,8 @@ HTTP `GET`
 Description:
 
 List the pre and post scripts for a kickstart profile
- in the order they will run during the kickstart.
+ in the order they will run during the kickstart. 
+ 
 
 
 
@@ -800,7 +822,8 @@ Change the order that kickstart scripts will run for
  for the post scripts that run before registration and server
  actions happen, and one for post scripts that run after registration
  and server actions. All scripts must be included in one of these
- lists, as appropriate.
+ lists, as appropriate. 
+ 
 
 
 
@@ -835,7 +858,8 @@ HTTP `POST`
 
 Description:
 
-Remove an ip range from a kickstart profile.
+Remove an ip range from a kickstart profile. 
+ 
 
 
 
@@ -867,7 +891,8 @@ HTTP `POST`
 
 Description:
 
-Remove a script from a kickstart profile.
+Remove a script from a kickstart profile. 
+ 
 
 
 
@@ -901,7 +926,8 @@ Set advanced options for a kickstart profile.
  'md5_crypt_rootpw' is not supported anymore.
  If 'sha256_crypt_rootpw' is set to 'True', 'root_pw' is taken as plaintext and
  will sha256 encrypted on server side, otherwise a hash encoded password
- (according to the auth option) is expected
+ (according to the auth option) is expected 
+ 
 
 
 
@@ -939,7 +965,8 @@ HTTP `POST`
 
 Description:
 
-Set ks.cfg preservation option for a kickstart profile.
+Set ks.cfg preservation option for a kickstart profile. 
+ 
 
 
 
@@ -969,7 +996,8 @@ HTTP `POST`
 
 Description:
 
-Set the child channels for a kickstart profile.
+Set the child channels for a kickstart profile. 
+ 
 
 
 
@@ -998,7 +1026,8 @@ HTTP `POST`
 
 Description:
 
-Set custom options for a kickstart profile.
+Set custom options for a kickstart profile. 
+ 
 
 
 
@@ -1026,7 +1055,8 @@ HTTP `POST`
 
 Description:
 
-Set the kickstart tree for a kickstart profile.
+Set the kickstart tree for a kickstart profile. 
+ 
 
 
 
@@ -1056,7 +1086,8 @@ HTTP `POST`
 
 Description:
 
-Set logging options for a kickstart profile.
+Set logging options for a kickstart profile. 
+ 
 
 
 
@@ -1089,7 +1120,8 @@ HTTP `POST`
 
 Description:
 
-Associates OS repository to a kickstart profile.
+Associates OS repository to a kickstart profile. 
+ 
 
 
 
@@ -1117,7 +1149,8 @@ HTTP `POST`
 
 Description:
 
-Set the update typefor a kickstart profile.
+Set the update typefor a kickstart profile. 
+ 
 
 
 
@@ -1148,7 +1181,8 @@ HTTP `POST`
 Description:
 
 Associates list of kickstart variables
-                              with the specified kickstart profile
+                              with the specified kickstart profile 
+ 
 
 
 
@@ -1178,7 +1212,8 @@ HTTP `POST`
 
 Description:
 
-For given kickstart profile label sets its virtualization type.
+For given kickstart profile label sets its virtualization type. 
+ 
 
 
 

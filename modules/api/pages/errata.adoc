@@ -26,7 +26,8 @@
 
 == Description
 
-Provides methods to access and modify errata.
+Provides methods to access and modify errata. 
+ 
 
 *Namespace*:
 
@@ -41,7 +42,8 @@ HTTP `POST`
 Description:
 
 Add a set of packages to an erratum with the given advisory name.
- This method will only allow for modification of custom errata created either through the UI or API.
+ This method will only allow for modification of custom errata created either through the UI or API. 
+ 
 
 
 
@@ -71,7 +73,8 @@ Description:
 
 Returns a list of channels applicable to the errata with the given advisory name.
  For those errata that are present in both vendor and user organizations under the same advisory name,
- this method retrieves the list of channels applicable of both of them.
+ this method retrieves the list of channels applicable of both of them. 
+ 
 
 
 
@@ -107,7 +110,8 @@ Get the Bugzilla fixes for an erratum matching the given
  the key.  i.e. 208144="errata.bugzillaFixes Method Returns different
  results than docs say"
  For those errata that are present in both vendor and user organizations under the same advisory name,
- this method retrieves the list of Bugzilla fixes of both of them.
+ this method retrieves the list of Bugzilla fixes of both of them. 
+ 
 
 
 
@@ -140,6 +144,9 @@ Clone a list of errata into the specified channel.
  It only links the packages if the destination channel already contains an older version of the
  same package (same name and architecture). If the package is completely new to that channel,
  it will not be linked and the resulting behaviour will be the same as a channel.software.mergeErrata call.
+ Errata already cloned in the organization are reused as they are, so changes to the original erratum
+ since then, such as a retraction, are not included. Use channel.software.syncErrata to update them. 
+ 
 
 
 
@@ -177,6 +184,8 @@ Description:
 
 Clones a list of errata into a specified cloned channel according the original erratas.
  It always links the packages to the target channel by searching all related packages among all the parent clones.
+ Existing clones are reused as described in errata.clone. 
+ 
 
 
 
@@ -215,6 +224,8 @@ Description:
 Asynchronously clones a list of errata into a specified cloned channel
  according the original erratas.
  It always links the packages to the target channel by searching all related packages among all the parent clones.
+ Existing clones are reused as described in errata.clone. 
+ 
 
 
 
@@ -243,6 +254,8 @@ HTTP `POST`
 Description:
 
 Asynchronously clone a list of errata into the specified channel.
+ Existing clones are reused as described in errata.clone. 
+ 
 
 
 
@@ -270,7 +283,8 @@ HTTP `POST`
 
 Description:
 
-Create a custom errata
+Create a custom errata 
+ 
 
 
 
@@ -334,7 +348,8 @@ HTTP `POST`
 Description:
 
 Delete an erratum.  This method will only allow for deletion
- of custom errata created either through the UI or API.
+ of custom errata created either through the UI or API. 
+ 
 
 
 
@@ -361,7 +376,8 @@ HTTP `GET`
 Description:
 
 Lookup the details for errata associated with the given CVE
- (e.g. CVE-2008-3270)
+ (e.g. CVE-2008-3270) 
+ 
 
 
 
@@ -395,7 +411,8 @@ HTTP `GET`
 
 Description:
 
-Retrieves the details for the erratum matching the given advisory name.
+Retrieves the details for the erratum matching the given advisory name. 
+ 
 
 
 
@@ -445,7 +462,8 @@ Description:
 
 Return the list of systems affected by the errata with the given advisory name.
  For those errata that are present in both vendor and user organizations under the same advisory name,
- this method retrieves the affected systems by both of them.
+ this method retrieves the affected systems by both of them. 
+ 
 
 
 
@@ -484,7 +502,8 @@ Description:
 
 Returns a list of CVEs (http://cve.mitre.org/) applicable to the errata
  with the given advisory name. For those errata that are present in both vendor and user organizations under the
- same advisory name, this method retrieves the list of CVEs of both of them.
+ same advisory name, this method retrieves the list of CVEs of both of them. 
+ 
 
 
 
@@ -512,7 +531,8 @@ Description:
 
 Get the keywords associated with an erratum matching the given advisory name.
  For those errata that are present in both vendor and user organizations under the same advisory name,
- this method retrieves the keywords of both of them.
+ this method retrieves the keywords of both of them. 
+ 
 
 
 
@@ -540,7 +560,8 @@ Description:
 
 Returns a list of the packages affected by the errata with the given advisory name.
  For those errata that are present in both vendor and user organizations under the same advisory name,
- this method retrieves the packages of both of them.
+ this method retrieves the packages of both of them. 
+ 
 
 
 
@@ -589,7 +610,8 @@ HTTP `POST`
 
 Description:
 
-Adds an existing errata to a set of channels.
+Adds an existing errata to a set of channels. 
+ 
 
 
 
@@ -625,7 +647,8 @@ HTTP `POST`
 Description:
 
 Adds an existing cloned errata to a set of cloned
- channels according to its original erratum
+ channels according to its original erratum 
+ 
 
 
 
@@ -661,7 +684,8 @@ HTTP `POST`
 Description:
 
 Remove a set of packages from an erratum with the given advisory name.
- This method will only allow for modification of custom errata created either through the UI or API.
+ This method will only allow for modification of custom errata created either through the UI or API. 
+ 
 
 
 
@@ -691,7 +715,8 @@ Description:
 
 Set erratum details. All arguments are optional and will only be modified
  if included in the struct. This method will only allow for modification of custom
- errata created either through the UI or API.
+ errata created either through the UI or API. 
+ 
 
 
 

@@ -17,11 +17,13 @@
 * <<apidoc-image-listImages-loggedInUser,listImages>>
 * <<apidoc-image-listPackages-loggedInUser-imageId,listPackages>>
 * <<apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence,scheduleImageBuild>>
+* <<apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence-actionDescription,scheduleImageBuild>>
 * <<apidoc-image-setPillar-loggedInUser-imageId-pillarData,setPillar>>
 
 == Description
 
-Provides methods to access and modify images.
+Provides methods to access and modify images. 
+ 
 
 *Namespace*:
 
@@ -35,7 +37,8 @@ HTTP `POST`
 
 Description:
 
-Delete image file
+Delete image file 
+ 
 
 
 
@@ -67,7 +70,8 @@ HTTP `POST`
 
 Description:
 
-Delete an image
+Delete an image 
+ 
 
 
 
@@ -93,7 +97,8 @@ HTTP `POST`
 
 Description:
 
-Delete image file
+Delete image file 
+ 
 
 
 
@@ -121,7 +126,8 @@ HTTP `GET`
 
 Description:
 
-Get the custom data values defined for the image
+Get the custom data values defined for the image 
+ 
 
 
 
@@ -149,7 +155,8 @@ HTTP `GET`
 
 Description:
 
-Get details of an image
+Get details of an image 
+ 
 
 
 
@@ -205,7 +212,8 @@ HTTP `GET`
 
 Description:
 
-Get pillar data of an image. The "size" entries are converted to string.
+Get pillar data of an image. The "size" entries are converted to string. 
+ 
 
 
 
@@ -231,7 +239,8 @@ HTTP `GET`
 
 Description:
 
-Returns a list of all errata that are relevant for the image
+Returns a list of all errata that are relevant for the image 
+ 
 
 
 
@@ -272,7 +281,8 @@ HTTP `POST`
 
 Description:
 
-Import an image and schedule an inspect afterwards
+Import an image and schedule an inspect afterwards 
+ 
 
 
 
@@ -308,7 +318,8 @@ HTTP `POST`
 
 Description:
 
-Import an image and schedule an inspect afterwards
+Import an image and schedule an inspect afterwards 
+ 
 
 
 Deprecated - Schedule a Container image import
@@ -345,7 +356,8 @@ HTTP `POST`
 
 Description:
 
-Import an image and schedule an inspect afterwards
+Import an image and schedule an inspect afterwards 
+ 
 
 
 
@@ -375,7 +387,8 @@ HTTP `GET`
 
 Description:
 
-List available images
+List available images 
+ 
 
 
 
@@ -411,7 +424,8 @@ HTTP `GET`
 
 Description:
 
-List the installed packages on the given image
+List the installed packages on the given image 
+ 
 
 
 
@@ -443,7 +457,8 @@ HTTP `POST`
 
 Description:
 
-Schedule an image build
+Schedule an image build 
+ 
 
 
 
@@ -468,6 +483,41 @@ Returns:
 
 
 
+[#apidoc-image-scheduleImageBuild-loggedInUser-profileLabel-version-buildHostId-earliestOccurrence-actionDescription]
+== Method: scheduleImageBuild
+
+HTTP `POST`
+
+Description:
+
+Schedule an image build with an action description 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  profileLabel
+ 
+* [.string]#string#  version - version to build or empty
+ 
+* [.int]#int#  buildHostId - system id of the build host
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the build can run.
+ 
+* [.string]#string#  actionDescription - Comment / action description
+ 
+
+Returns:
+
+* [.int]#int#  the ID of the build action created
+ 
+
+
+
 [#apidoc-image-setPillar-loggedInUser-imageId-pillarData]
 == Method: setPillar
 
@@ -475,7 +525,8 @@ HTTP `POST`
 
 Description:
 
-Set pillar data of an image. The "size" entries should be passed as string.
+Set pillar data of an image. The "size" entries should be passed as string. 
+ 
 
 
 

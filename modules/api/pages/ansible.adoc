@@ -15,11 +15,13 @@
 * <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode,schedulePlaybook>>
 * <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-ansibleArgs,schedulePlaybook>>
 * <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs,schedulePlaybook>>
+* <<apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs-actionDescription,schedulePlaybook>>
 * <<apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props,updateAnsiblePath>>
 
 == Description
 
-Provides methods to manage Ansible systems
+Provides methods to manage Ansible systems 
+ 
 
 *Namespace*:
 
@@ -33,7 +35,8 @@ HTTP `POST`
 
 Description:
 
-Create ansible path
+Create ansible path 
+ 
 
 
 
@@ -67,7 +70,8 @@ HTTP `POST`
 
 Description:
 
-Discover playbooks under given playbook path with given pathId
+Discover playbooks under given playbook path with given pathId 
+ 
 
 
 
@@ -100,7 +104,8 @@ HTTP `POST`
 
 Description:
 
-Fetch the playbook content from the control node using a synchronous salt call.
+Fetch the playbook content from the control node using a synchronous salt call. 
+ 
 
 
 
@@ -129,7 +134,8 @@ HTTP `POST`
 
 Description:
 
-Introspect inventory under given inventory path with given pathId and return it in a structured way
+Introspect inventory under given inventory path with given pathId and return it in a structured way 
+ 
 
 
 
@@ -156,7 +162,8 @@ HTTP `GET`
 
 Description:
 
-List ansible paths for server (control node)
+List ansible paths for server (control node) 
+ 
 
 
 
@@ -188,7 +195,8 @@ HTTP `GET`
 
 Description:
 
-Lookup ansible path by path id
+Lookup ansible path by path id 
+ 
 
 
 
@@ -219,7 +227,8 @@ HTTP `POST`
 
 Description:
 
-Create ansible path
+Remove ansible path 
+ 
 
 
 
@@ -245,7 +254,8 @@ HTTP `POST`
 
 Description:
 
-Schedule a playbook execution
+Schedule a playbook execution 
+ 
 
 
 
@@ -279,7 +289,8 @@ HTTP `POST`
 
 Description:
 
-Schedule a playbook execution
+Schedule a playbook execution 
+ 
 
 
 
@@ -315,7 +326,8 @@ HTTP `POST`
 
 Description:
 
-Schedule a playbook execution
+Schedule a playbook execution 
+ 
 
 
 
@@ -353,7 +365,8 @@ HTTP `POST`
 
 Description:
 
-Schedule a playbook execution
+Schedule a playbook execution 
+ 
 
 
 
@@ -386,6 +399,49 @@ Returns:
 
 
 
+[#apidoc-ansible-schedulePlaybook-loggedInUser-playbookPath-inventoryPath-controlNodeId-earliestOccurrence-actionChainLabel-testMode-ansibleArgs-actionDescription]
+== Method: schedulePlaybook
+
+HTTP `POST`
+
+Description:
+
+Schedule a playbook execution with an action description 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.string]#string#  playbookPath
+ 
+* [.string]#string#  inventoryPath - path to Ansible inventory or empty
+ 
+* [.int]#int#  controlNodeId - system ID of the control node
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used
+ 
+* [.string]#string#  actionChainLabel - label of an action chain to use, or None
+ 
+* [.boolean]#boolean#  testMode - 'true' if the playbook shall be executed in test mode
+ 
+* [.struct]#struct#  ansibleArgs
+** [.string]#string#  "extraVars"
+** [.boolean]#boolean#  "flushCache"
+ 
+* [.string]#string#  actionDescription - Comment / action description
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of the playbook execution action created
+ 
+
+
+
 [#apidoc-ansible-updateAnsiblePath-loggedInUser-pathId-props]
 == Method: updateAnsiblePath
 
@@ -393,7 +449,8 @@ HTTP `POST`
 
 Description:
 
-Create ansible path
+Update ansible path 
+ 
 
 
 

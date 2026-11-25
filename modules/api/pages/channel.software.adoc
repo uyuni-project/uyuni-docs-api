@@ -45,6 +45,7 @@
 * <<apidoc-channel_software-listErrataNeedingSync-loggedInUser-channelLabel,listErrataNeedingSync>>
 * <<apidoc-channel_software-listLatestPackages-loggedInUser-channelLabel,listLatestPackages>>
 * <<apidoc-channel_software-listPackagesWithoutChannel-loggedInUser,listPackagesWithoutChannel>>
+* <<apidoc-channel_software-listPackagesWithoutChannel-loggedInUser-offset-limit,listPackagesWithoutChannel>>
 * <<apidoc-channel_software-listRepoFilters-loggedInUser-label,listRepoFilters>>
 * <<apidoc-channel_software-listSubscribedSystems-loggedInUser-channelLabel,listSubscribedSystems>>
 * <<apidoc-channel_software-listSystemChannels-loggedInUser-sid,listSystemChannels>>
@@ -86,7 +87,8 @@
 
 == Description
 
-Provides methods to access and modify many aspects of a channel.
+Provides methods to access and modify many aspects of a channel. 
+ 
 
 *Namespace*:
 
@@ -100,7 +102,8 @@ HTTP `POST`
 
 Description:
 
-Adds a given list of packages to the given channel.
+Adds a given list of packages to the given channel. 
+ 
 
 
 
@@ -129,7 +132,8 @@ HTTP `POST`
 
 Description:
 
-Adds a filter for a given repo.
+Adds a filter for a given repo. 
+ 
 
 
 
@@ -159,7 +163,8 @@ HTTP `POST`
 
 Description:
 
-Align the metadata of a channel to another channel.
+Align the metadata of a channel to another channel. 
+ 
 
 
 
@@ -189,7 +194,8 @@ HTTP `POST`
 
 Description:
 
-Refresh pillar data and then schedule channels state on the provided systems
+Refresh pillar data and then schedule channels state on the provided systems 
+ 
 
 
 
@@ -215,7 +221,8 @@ HTTP `POST`
 
 Description:
 
-Associates a repository with a channel
+Associates a repository with a channel 
+ 
 
 
 
@@ -271,7 +278,8 @@ HTTP `POST`
 
 Description:
 
-Removes the filters for a repo
+Removes the filters for a repo 
+ 
 
 
 
@@ -300,6 +308,12 @@ Description:
 Clone a channel.  If arch_label is omitted, the arch label of the
       original channel will be used. If parent_label is omitted, the clone will be
       a base channel.
+      If originalState is true, only the original packages are cloned, without
+      patches. Otherwise, the current packages and patches are cloned.
+      Patches already cloned in the organization are reused as they are, so
+      changes to the original patch since then, such as a retraction, are not
+      included. Use channel.software.syncErrata to update them. 
+ 
 
 
 
@@ -343,7 +357,8 @@ HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -395,7 +410,8 @@ HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -444,7 +460,8 @@ HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -488,7 +505,8 @@ HTTP `POST`
 
 Description:
 
-Creates a software channel
+Creates a software channel 
+ 
 
 
 
@@ -524,7 +542,8 @@ HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -566,7 +585,8 @@ HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -614,7 +634,8 @@ HTTP `POST`
 
 Description:
 
-Creates a repository
+Creates a repository 
+ 
 
 
 
@@ -668,7 +689,8 @@ HTTP `POST`
 
 Description:
 
-Deletes a custom software channel
+Deletes a custom software channel 
+ 
 
 
 
@@ -694,7 +716,8 @@ HTTP `POST`
 
 Description:
 
-Disassociates a repository from a channel
+Disassociates a repository from a channel 
+ 
 
 
 
@@ -751,7 +774,8 @@ HTTP `GET`
 Description:
 
 Returns the last build date of the repomd.xml file
- for the given channel as a localised string.
+ for the given channel as a localised string. 
+ 
 
 
 
@@ -777,7 +801,8 @@ HTTP `GET`
 
 Description:
 
-Returns details of the given channel as a map
+Returns details of the given channel as a map 
+ 
 
 
 
@@ -831,7 +856,8 @@ HTTP `GET`
 
 Description:
 
-Returns details of the given channel as a map
+Returns details of the given channel as a map 
+ 
 
 
 
@@ -885,7 +911,8 @@ HTTP `GET`
 
 Description:
 
-Returns details of the given repository
+Returns details of the given repository 
+ 
 
 
 
@@ -923,7 +950,8 @@ HTTP `GET`
 
 Description:
 
-Returns details of the given repository
+Returns details of the given repository 
+ 
 
 
 
@@ -961,7 +989,8 @@ HTTP `GET`
 
 Description:
 
-Returns repo synchronization cron expression
+Returns repo synchronization cron expression 
+ 
 
 
 
@@ -987,7 +1016,8 @@ HTTP `GET`
 
 Description:
 
-Returns whether is synchronized automatically
+Returns whether is synchronized automatically 
+ 
 
 
 
@@ -1013,7 +1043,8 @@ HTTP `GET`
 
 Description:
 
-Returns whether is existing
+Returns whether is existing 
+ 
 
 
 
@@ -1040,7 +1071,8 @@ HTTP `GET`
 Description:
 
 Returns whether the channel is subscribable by any user
- in the organization
+ in the organization 
+ 
 
 
 
@@ -1066,7 +1098,8 @@ HTTP `GET`
 
 Description:
 
-Returns whether the channel may be managed by the given user.
+Returns whether the channel may be managed by the given user. 
+ 
 
 
 
@@ -1094,7 +1127,8 @@ HTTP `GET`
 
 Description:
 
-Returns whether the channel may be subscribed to by the given user.
+Returns whether the channel may be subscribed to by the given user. 
+ 
 
 
 
@@ -1123,7 +1157,8 @@ HTTP `GET`
 Description:
 
 Lists all packages in the channel, regardless of package version,
- between the given dates.
+ between the given dates. 
+ 
 
 
 
@@ -1166,7 +1201,8 @@ HTTP `GET`
 Description:
 
 Lists all packages in the channel, regardless of version whose last
- modified date is greater than given date.
+ modified date is greater than given date. 
+ 
 
 
 
@@ -1206,7 +1242,8 @@ HTTP `GET`
 
 Description:
 
-Lists all packages in the channel, regardless of the package version
+Lists all packages in the channel, regardless of the package version 
+ 
 
 
 
@@ -1244,7 +1281,8 @@ HTTP `GET`
 
 Description:
 
-Lists the potential software channel architectures that can be created
+Lists the potential software channel architectures that can be created 
+ 
 
 
 
@@ -1272,7 +1310,8 @@ HTTP `GET`
 
 Description:
 
-Lists associated repos with the given channel
+Lists associated repos with the given channel 
+ 
 
 
 
@@ -1311,7 +1350,8 @@ HTTP `GET`
 
 Description:
 
-List the children of a channel
+List the children of a channel 
+ 
 
 
 
@@ -1366,7 +1406,8 @@ HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel after given startDate
+List the errata applicable to a channel after given startDate 
+ 
 
 
 
@@ -1409,7 +1450,8 @@ HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel between startDate and endDate.
+List the errata applicable to a channel between startDate and endDate. 
+ 
 
 
 
@@ -1454,7 +1496,8 @@ HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel between startDate and endDate.
+List the errata applicable to a channel between startDate and endDate. 
+ 
 
 
 
@@ -1501,7 +1544,8 @@ HTTP `GET`
 
 Description:
 
-List the errata applicable to a channel
+List the errata applicable to a channel 
+ 
 
 
 
@@ -1542,7 +1586,8 @@ HTTP `GET`
 
 Description:
 
-List the errata of a specific type that are applicable to a channel
+List the errata of a specific type that are applicable to a channel 
+ 
 
 
 
@@ -1585,7 +1630,8 @@ If you have synced a new channel then patches
  however. If you cloned a channel that includes those cloned errata and
  should include the new packages, they will not be included when they
  should. This method lists the errata that will be updated if you run the
- syncErrata method.
+ syncErrata method. 
+ 
 
 
 
@@ -1627,7 +1673,8 @@ HTTP `GET`
 Description:
 
 Lists the packages with the latest version (including release and
- epoch) for the given channel
+ epoch) for the given channel 
+ 
 
 
 
@@ -1661,7 +1708,8 @@ HTTP `GET`
 Description:
 
 Lists all packages that are not associated with a channel.  Typically
-          these are custom packages.
+          these are custom packages. 
+ 
 
 
 
@@ -1692,6 +1740,50 @@ Returns:
 
 
 
+[#apidoc-channel_software-listPackagesWithoutChannel-loggedInUser-offset-limit]
+== Method: listPackagesWithoutChannel
+
+HTTP `GET`
+
+Description:
+
+Lists all packages that are not associated with a channel.  Typically
+          these are custom packages. 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.int]#int#  offset
+ 
+* [.int]#int#  limit
+ 
+
+Returns:
+
+* [.array]#array# :
+      * [.struct]#struct#  package
+** [.string]#string#  "name"
+** [.string]#string#  "version"
+** [.string]#string#  "release"
+** [.string]#string#  "epoch"
+** [.int]#int#  "id"
+** [.string]#string#  "arch_label"
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_modified"
+** [.string]#string#  "path" - the path on that file system that the package
+             resides
+** [.boolean]#boolean#  "part_of_retracted_patch" - true if the package is a part of a retracted patch
+** [.string]#string#  "provider" - the provider of the package, determined by
+              the gpg key it was signed with.
+ 
+ 
+
+
+
 [#apidoc-channel_software-listRepoFilters-loggedInUser-label]
 == Method: listRepoFilters
 
@@ -1699,7 +1791,8 @@ HTTP `GET`
 
 Description:
 
-Lists the filters for a repo
+Lists the filters for a repo 
+ 
 
 
 
@@ -1730,7 +1823,8 @@ HTTP `GET`
 
 Description:
 
-Returns list of subscribed systems for the given channel label
+Returns list of subscribed systems for the given channel label 
+ 
 
 
 
@@ -1760,7 +1854,8 @@ HTTP `GET`
 Description:
 
 Returns a list of channels that a system is subscribed to for the
- given system id
+ given system id 
+ 
 
 
 
@@ -1790,7 +1885,8 @@ HTTP `GET`
 
 Description:
 
-Returns a list of ContentSource (repos) that the user can see
+Returns a list of ContentSource (repos) that the user can see 
+ 
 
 
 
@@ -1818,7 +1914,8 @@ HTTP `POST`
 
 Description:
 
-Merges all errata from one channel into another. It does not associate the packages with the channel.
+Merges all errata from one channel into another. It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1857,7 +1954,8 @@ HTTP `POST`
 Description:
 
 Merges all errata from one channel into another based upon a
- given start/end date. It does not associate the packages with the channel.
+ given start/end date. It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1900,7 +1998,8 @@ HTTP `POST`
 Description:
 
 Merges a list of errata from one channel into another.
- It does not associate the packages with the channel.
+ It does not associate the packages with the channel. 
+ 
 
 
 
@@ -1940,7 +2039,8 @@ HTTP `POST`
 
 Description:
 
-Merges all packages from one channel into another
+Merges all packages from one channel into another 
+ 
 
 
 
@@ -1984,7 +2084,8 @@ HTTP `POST`
 
 Description:
 
-Merges all packages from one channel into another
+Merges all packages from one channel into another 
+ 
 
 
 
@@ -2035,7 +2136,8 @@ Completely clear and regenerate the needed Errata and Package
       cache for all systems subscribed to the specified channel.  This should
       be used only if you believe your cache is incorrect for all the systems
       in a given channel. This will schedule an asynchronous action to actually
-      do the processing.
+      do the processing. 
+ 
 
 
 
@@ -2063,9 +2165,10 @@ HTTP `POST`
 Description:
 
 Completely clear and regenerate the needed Errata and Package
-      cache for all systems subscribed. You must be a #product() Admin to
+      cache for all systems subscribed. You must be a SUSE Multi-Linux Manager Admin to
       perform this action. This will schedule an asynchronous action to
-      actually do the processing.
+      actually do the processing. 
+ 
 
 
 
@@ -2089,7 +2192,8 @@ HTTP `POST`
 
 Description:
 
-Regenerate yum cache for the specified channel.
+Regenerate yum cache for the specified channel. 
+ 
 
 
 
@@ -2118,7 +2222,8 @@ HTTP `POST`
 
 Description:
 
-Removes a given list of errata from the given channel.
+Removes a given list of errata from the given channel. 
+ 
 
 
 
@@ -2148,7 +2253,8 @@ HTTP `POST`
 
 Description:
 
-Removes a given list of packages from the given channel.
+Removes a given list of packages from the given channel. 
+ 
 
 
 
@@ -2177,7 +2283,8 @@ HTTP `POST`
 
 Description:
 
-Removes a repository
+Removes a repository 
+ 
 
 
 
@@ -2203,7 +2310,8 @@ HTTP `POST`
 
 Description:
 
-Removes a repository
+Removes a repository 
+ 
 
 
 
@@ -2229,7 +2337,8 @@ HTTP `POST`
 
 Description:
 
-Removes a filter for a given repo.
+Removes a filter for a given repo. 
+ 
 
 
 
@@ -2259,7 +2368,8 @@ HTTP `POST`
 
 Description:
 
-Sets whether the channel is synchronized automatically
+Sets whether the channel is synchronized automatically 
+ 
 
 
 
@@ -2287,7 +2397,8 @@ HTTP `POST`
 
 Description:
 
-Set contact/support information for given channel.
+Set contact/support information for given channel. 
+ 
 
 
 
@@ -2324,7 +2435,8 @@ HTTP `POST`
 
 Description:
 
-Allows to modify channel attributes
+Allows to modify channel attributes 
+ 
 
 
 
@@ -2368,7 +2480,8 @@ HTTP `POST`
 
 Description:
 
-Allows to modify channel attributes
+Allows to modify channel attributes 
+ 
 
 
 
@@ -2412,7 +2525,8 @@ HTTP `POST`
 
 Description:
 
-Set globally subscribable attribute for given channel.
+Set globally subscribable attribute for given channel. 
+ 
 
 
 
@@ -2442,7 +2556,8 @@ HTTP `POST`
 Description:
 
 Replaces the existing set of filters for a given repo.
- Filters are ranked by their order in the array.
+ Filters are ranked by their order in the array. 
+ 
 
 
 
@@ -2475,7 +2590,8 @@ Description:
 
 Set the manageable flag for a given channel and user.
  If value is set to 'true', this method will give the user
- manage permissions to the channel. Otherwise, that privilege is revoked.
+ manage permissions to the channel. Otherwise, that privilege is revoked. 
+ 
 
 
 
@@ -2507,7 +2623,8 @@ Description:
 
 Set the subscribable flag for a given channel and user.
  If value is set to 'true', this method will give the user
- subscribe permissions to the channel. Otherwise, that privilege is revoked.
+ subscribe permissions to the channel. Otherwise, that privilege is revoked. 
+ 
 
 
 
@@ -2545,7 +2662,8 @@ If you have synced a new channel then patches
  should. This method updates all the errata in the given cloned channel
  with packages that have recently been added, and ensures that all the
  packages you expect are in the channel. It also updates cloned errata
- attributes like advisoryStatus.
+ attributes like advisoryStatus. 
+ 
 
 
 
@@ -2571,7 +2689,8 @@ HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2597,7 +2716,8 @@ HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2623,7 +2743,8 @@ HTTP `POST`
 
 Description:
 
-Trigger immediate repo synchronization
+Trigger immediate repo synchronization 
+ 
 
 
 
@@ -2655,7 +2776,8 @@ HTTP `POST`
 
 Description:
 
-Schedule periodic repo synchronization
+Schedule periodic repo synchronization 
+ 
 
 
 
@@ -2683,7 +2805,8 @@ HTTP `POST`
 
 Description:
 
-Schedule periodic repo synchronization
+Schedule periodic repo synchronization 
+ 
 
 
 
@@ -2717,7 +2840,8 @@ HTTP `POST`
 
 Description:
 
-Updates a ContentSource (repo)
+Updates a ContentSource (repo) 
+ 
 
 
 
@@ -2759,7 +2883,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository label
+Updates repository label 
+ 
 
 
 
@@ -2799,7 +2924,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository label
+Updates repository label 
+ 
 
 
 
@@ -2839,7 +2965,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository SSL certificates
+Updates repository SSL certificates 
+ 
 
 
 
@@ -2883,7 +3010,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository SSL certificates
+Updates repository SSL certificates 
+ 
 
 
 
@@ -2927,7 +3055,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository source URL
+Updates repository source URL 
+ 
 
 
 
@@ -2967,7 +3096,8 @@ HTTP `POST`
 
 Description:
 
-Updates repository source URL
+Updates repository source URL 
+ 
 
 
 

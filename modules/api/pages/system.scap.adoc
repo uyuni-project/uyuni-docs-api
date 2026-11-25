@@ -11,17 +11,15 @@
 * <<apidoc-system_scap-listScapContent-loggedInUser,listScapContent>>
 * <<apidoc-system_scap-listTailoringFiles-loggedInUser,listTailoringFiles>>
 * <<apidoc-system_scap-listXccdfScans-loggedInUser-sid,listXccdfScans>>
-* <<apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date,scheduleBetaXccdfScanCustom>>
-* <<apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date,scheduleBetaXccdfScanWithPolicy>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-date,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-ovalFiles-date,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams,scheduleXccdfScan>>
-* <<apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams-date,scheduleXccdfScan>>
+* <<apidoc-system_scap-scheduleXccdfScanCustom-loggedInUser-sids-params-date,scheduleXccdfScanCustom>>
+* <<apidoc-system_scap-scheduleXccdfScanCustom-loggedInUser-sids-params-date-actionDescription,scheduleXccdfScanCustom>>
+* <<apidoc-system_scap-scheduleXccdfScanWithPolicy-loggedInUser-sids-policyId-date,scheduleXccdfScanWithPolicy>>
+* <<apidoc-system_scap-scheduleXccdfScanWithPolicy-loggedInUser-sids-policyId-date-actionDescription,scheduleXccdfScanWithPolicy>>
 
 == Description
 
-Provides methods to schedule SCAP scans and access the results.
+Provides methods to schedule SCAP scans and access the results. 
+ 
 
 *Namespace*:
 
@@ -35,8 +33,9 @@ HTTP `POST`
 
 Description:
 
-Delete OpenSCAP XCCDF Scan from the #product() database. Note that
- only those SCAP Scans can be deleted which have passed their retention period.
+Delete OpenSCAP XCCDF Scan from the SUSE Multi-Linux Manager database. Note that
+ only those SCAP Scans can be deleted which have passed their retention period. 
+ 
 
 
 
@@ -62,7 +61,8 @@ HTTP `GET`
 
 Description:
 
-Get details of given OpenSCAP XCCDF scan.
+Get details of given OpenSCAP XCCDF scan. 
+ 
 
 
 
@@ -104,7 +104,8 @@ HTTP `GET`
 
 Description:
 
-Return a full list of RuleResults for given OpenSCAP XCCDF scan.
+Return a full list of RuleResults for given OpenSCAP XCCDF scan. 
+ 
 
 
 
@@ -135,7 +136,8 @@ HTTP `GET`
 
 Description:
 
-List SCAP policies available for the user's organization.
+List SCAP policies available for the user's organization. 
+ 
 
 
 
@@ -171,7 +173,8 @@ HTTP `GET`
 
 Description:
 
-List all available SCAP content.
+List all available SCAP content. 
+ 
 
 
 
@@ -202,7 +205,8 @@ HTTP `GET`
 
 Description:
 
-List tailoring files available for the user's organization.
+List tailoring files available for the user's organization. 
+ 
 
 
 
@@ -232,7 +236,8 @@ HTTP `GET`
 
 Description:
 
-Return a list of finished OpenSCAP scans for a given system.
+Return a list of finished OpenSCAP scans for a given system. 
+ 
 
 
 
@@ -258,14 +263,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleBetaXccdfScanCustom-loggedInUser-sids-params-date]
-== Method: scheduleBetaXccdfScanCustom
+[#apidoc-system_scap-scheduleXccdfScanCustom-loggedInUser-sids-params-date]
+== Method: scheduleXccdfScanCustom
 
 HTTP `POST`
 
 Description:
 
-Schedule SCAP scan with custom parameters.
+Schedule SCAP scan with custom parameters. 
+ 
 
 
 
@@ -295,14 +301,48 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy-loggedInUser-sids-policyId-date]
-== Method: scheduleBetaXccdfScanWithPolicy
+[#apidoc-system_scap-scheduleXccdfScanCustom-loggedInUser-sids-params-date-actionDescription]
+== Method: scheduleXccdfScanCustom
 
 HTTP `POST`
 
 Description:
 
-Schedule SCAP scan based on an existing SCAP policy.
+Schedule custom SCAP scan with an action description. 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+* [.struct]#struct#  params - Map of SCAP parameters
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
+ 
+* [.string]#string#  actionDescription - Comment / action description
+ 
+
+Returns:
+
+* [.int]#int#  id - ID of SCAP action created
+ 
+
+
+
+[#apidoc-system_scap-scheduleXccdfScanWithPolicy-loggedInUser-sids-policyId-date]
+== Method: scheduleXccdfScanWithPolicy
+
+HTTP `POST`
+
+Description:
+
+Schedule SCAP scan based on an existing SCAP policy. 
+ 
 
 
 
@@ -325,14 +365,15 @@ Returns:
 
 
 
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams]
-== Method: scheduleXccdfScan
+[#apidoc-system_scap-scheduleXccdfScanWithPolicy-loggedInUser-sids-policyId-date-actionDescription]
+== Method: scheduleXccdfScanWithPolicy
 
 HTTP `POST`
 
 Description:
 
-Schedule OpenSCAP scan.
+Schedule SCAP scan based on an existing SCAP policy with an action description. 
+ 
 
 
 
@@ -343,142 +384,16 @@ Parameters:
  
 * [.array]#int array#  sids
  
-* [.string]#string#  xccdfPath - path to xccdf content on targeted systems.
- 
-* [.string]#string#  oscapParams - additional parameters for oscap tool.
- 
-
-Returns:
-
-* [.int]#int#  id - ID if SCAP action created
- 
-
-
-
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-date]
-== Method: scheduleXccdfScan
-
-HTTP `POST`
-
-Description:
-
-Schedule OpenSCAP scan.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.array]#int array#  sids
- 
-* [.string]#string#  xccdfPath - path to xccdf content on targeted systems.
- 
-* [.string]#string#  oscapParams - additional parameters for oscap tool.
+* [.int]#int#  policyId - SCAP policy ID
  
 * [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
  
-
-Returns:
-
-* [.int]#int#  id - ID if SCAP action created
- 
-
-
-
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sids-xccdfPath-oscapParams-ovalFiles-date]
-== Method: scheduleXccdfScan
-
-HTTP `POST`
-
-Description:
-
-Schedule OpenSCAP scan.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.array]#int array#  sids
- 
-* [.string]#string#  xccdfPath - Path to xccdf content on targeted systems.
- 
-* [.string]#string#  oscapPrams - Additional parameters for oscap tool.
- 
-* [.string]#string#  ovalFiles - Additional OVAL files for oscap tool.
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
+* [.string]#string#  actionDescription - Comment / action description
  
 
 Returns:
 
-* [.int]#int#  id - ID if SCAP action created
- 
-
-
-
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams]
-== Method: scheduleXccdfScan
-
-HTTP `POST`
-
-Description:
-
-Schedule Scap XCCDF scan.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid
- 
-* [.string]#string#  xccdfPath - Path to xccdf content on targeted systems.
- 
-* [.string]#string#  oscapPrams - Additional parameters for oscap tool.
- 
-
-Returns:
-
-* [.int]#int#  id - ID of the scap action created
- 
-
-
-
-[#apidoc-system_scap-scheduleXccdfScan-loggedInUser-sid-xccdfPath-oscapParams-date]
-== Method: scheduleXccdfScan
-
-HTTP `POST`
-
-Description:
-
-Schedule Scap XCCDF scan.
-
-
-
-
-Parameters:
-
-* [.string]#string#  sessionKey
- 
-* [.int]#int#  sid
- 
-* [.string]#string#  xccdfPath - Path to xccdf content on targeted systems.
- 
-* [.string]#string#  oscapPrams - Additional parameters for oscap tool.
- 
-* [.dateTime.iso8601]#dateTime.iso8601#  date - The date to schedule the action
- 
-
-Returns:
-
-* [.int]#int#  id - ID of the scap action created
+* [.int]#int#  id - ID of SCAP action created
  
 
 

@@ -14,13 +14,15 @@
 * <<apidoc-system_config-lookupFileInfo-loggedInUser-sid-paths-searchLocal,lookupFileInfo>>
 * <<apidoc-system_config-removeChannels-loggedInUser-sids-configChannelLabels,removeChannels>>
 * <<apidoc-system_config-scheduleApplyConfigChannel-user-sids-earliest-test,scheduleApplyConfigChannel>>
+* <<apidoc-system_config-scheduleApplyConfigChannel-user-sids-earliest-test-actionDescription,scheduleApplyConfigChannel>>
 * <<apidoc-system_config-setChannels-loggedInUser-sids-configChannelLabels,setChannels>>
 
 == Description
 
 Provides methods to access and modify many aspects of
  configuration channels and server association.
- basically system.config name space
+ basically system.config name space 
+ 
 
 *Namespace*:
 
@@ -41,7 +43,8 @@ Given a list of servers and configuration channels,
  provided in the add list is maintained while adding.
  If one of the configuration channels in the 'add' list
  has been previously subscribed by a server, the
- subscribed channel will be re-ranked to the appropriate place.
+ subscribed channel will be re-ranked to the appropriate place. 
+ 
 
 
 
@@ -76,7 +79,8 @@ HTTP `POST`
 Description:
 
 Create a new file (text or binary) or directory with the given path, or
- update an existing path on a server.
+ update an existing path on a server. 
+ 
 
 
 
@@ -159,7 +163,8 @@ HTTP `POST`
 Description:
 
 Create a new symbolic link with the given path, or
- update an existing path.
+ update an existing path. 
+ 
 
 
 
@@ -225,7 +230,8 @@ HTTP `POST`
 
 Description:
 
-Removes file paths from a local or sandbox channel of a server.
+Removes file paths from a local or sandbox channel of a server. 
+ 
 
 
 
@@ -260,7 +266,8 @@ HTTP `POST`
 Description:
 
 Schedules a deploy action for all the configuration files
- on the given list of systems.
+ on the given list of systems. 
+ 
 
 
 
@@ -289,7 +296,8 @@ HTTP `GET`
 Description:
 
 List all global('Normal', 'State') configuration channels associated to a
-              system in the order of their ranking.
+              system in the order of their ranking. 
+ 
 
 
 
@@ -329,7 +337,8 @@ HTTP `GET`
 
 Description:
 
-Return the list of files in a given channel.
+Return the list of files in a given channel. 
+ 
 
 
 
@@ -380,7 +389,8 @@ HTTP `GET`
 Description:
 
 Given a list of paths and a server, returns details about
- the latest revisions of the paths.
+ the latest revisions of the paths. 
+ 
 
 
 
@@ -443,7 +453,8 @@ HTTP `POST`
 
 Description:
 
-Remove config channels from the given servers.
+Remove config channels from the given servers. 
+ 
 
 
 
@@ -472,7 +483,8 @@ HTTP `POST`
 
 Description:
 
-Schedule highstate application for a given system.
+Schedule highstate application for a given system. 
+ 
 
 
 
@@ -495,6 +507,39 @@ Returns:
 
 
 
+[#apidoc-system_config-scheduleApplyConfigChannel-user-sids-earliest-test-actionDescription]
+== Method: scheduleApplyConfigChannel
+
+HTTP `POST`
+
+Description:
+
+Schedule highstate application for a given system with an action description. 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+* [.boolean]#boolean#  test - Run states in test-only mode
+ 
+* [.string]#string#  actionDescription - Comment / action description
+ 
+
+Returns:
+
+* [.int]#int#  actionId
+ 
+
+
+
 [#apidoc-system_config-setChannels-loggedInUser-sids-configChannelLabels]
 == Method: setChannels
 
@@ -504,7 +549,8 @@ Description:
 
 Replace the existing set of config channels on the given servers.
  Channels are ranked according to their order in the configChannelLabels
- array.
+ array. 
+ 
 
 
 
