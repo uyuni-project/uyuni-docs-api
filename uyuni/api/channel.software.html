@@ -488,6 +488,9 @@
 <p><a href="#apidoc-channel_software-listPackagesWithoutChannel&#8212;&#8203;406943054">listPackagesWithoutChannel</a></p>
 </li>
 <li>
+<p><a href="#apidoc-channel_software-listPackagesWithoutChannel&#8212;&#8203;2060593860">listPackagesWithoutChannel</a></p>
+</li>
+<li>
 <p><a href="#apidoc-channel_software-listRepoFilters&#8212;&#8203;668086247">listRepoFilters</a></p>
 </li>
 <li>
@@ -972,7 +975,12 @@ add to the channel</p>
 <div class="paragraph">
 <p>Clone a channel.  If arch_label is omitted, the arch label of the
       original channel will be used. If parent_label is omitted, the clone will be
-      a base channel.</p>
+      a base channel.
+      If originalState is true, only the original packages are cloned, without
+      patches. Otherwise, the current packages and patches are cloned.
+      Patches already cloned in the organization are reused as they are, so
+      changes to the original patch since then, such as a retraction, are not
+      included. Use channel.software.syncErrata to update them.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -3515,6 +3523,86 @@ used to address update stack issues before proceeding with other updates.</p>
 <ul>
 <li>
 <p><span class="string">string</span>  sessionKey</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="array">array</span> :</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  package</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "name"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "version"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "release"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "epoch"</p>
+</li>
+<li>
+<p><span class="int">int</span>  "id"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "arch_label"</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  "last_modified"</p>
+</li>
+<li>
+<p><span class="string">string</span>  "path" - the path on that file system that the package
+resides</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "part_of_retracted_patch" - true if the package is a part of a retracted patch</p>
+</li>
+<li>
+<p><span class="string">string</span>  "provider" - the provider of the package, determined by
+the gpg key it was signed with.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-channel_software-listPackagesWithoutChannel--2060593860"><a class="anchor" href="#apidoc-channel_software-listPackagesWithoutChannel--2060593860"></a><a class="link" href="#apidoc-channel_software-listPackagesWithoutChannel--2060593860">Method: listPackagesWithoutChannel</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Lists all packages that are not associated with a channel.  Typically
+          these are custom packages.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="int">int</span>  offset</p>
+</li>
+<li>
+<p><span class="int">int</span>  limit</p>
 </li>
 </ul>
 </div>
