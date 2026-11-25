@@ -404,6 +404,9 @@
 <p><a href="#apidoc-image-scheduleImageBuild&#8212;&#8203;970551524">scheduleImageBuild</a></p>
 </li>
 <li>
+<p><a href="#apidoc-image-scheduleImageBuild&#8212;&#8203;562688139">scheduleImageBuild</a></p>
+</li>
+<li>
 <p><a href="#apidoc-image-setPillar&#8212;&#8203;1409886394">setPillar</a></p>
 </li>
 </ul>
@@ -1155,6 +1158,55 @@ false otherwise</p>
 </li>
 <li>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the build can run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  the ID of the build action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-image-scheduleImageBuild--562688139"><a class="anchor" href="#apidoc-image-scheduleImageBuild--562688139"></a><a class="link" href="#apidoc-image-scheduleImageBuild--562688139">Method: scheduleImageBuild</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule an image build with an action description</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  profileLabel</p>
+</li>
+<li>
+<p><span class="string">string</span>  version - version to build or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  buildHostId - system id of the build host</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the build can run.</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionDescription - Comment / action description</p>
 </li>
 </ul>
 </div>

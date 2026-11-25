@@ -398,6 +398,9 @@
 <p><a href="#apidoc-ansible-schedulePlaybook-729235015">schedulePlaybook</a></p>
 </li>
 <li>
+<p><a href="#apidoc-ansible-schedulePlaybook&#8212;&#8203;1808307744">schedulePlaybook</a></p>
+</li>
+<li>
 <p><a href="#apidoc-ansible-updateAnsiblePath&#8212;&#8203;156022594">updateAnsiblePath</a></p>
 </li>
 </ul>
@@ -991,6 +994,74 @@ pathId)</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of the playbook execution action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-ansible-schedulePlaybook--1808307744"><a class="anchor" href="#apidoc-ansible-schedulePlaybook--1808307744"></a><a class="link" href="#apidoc-ansible-schedulePlaybook--1808307744">Method: schedulePlaybook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule a playbook execution with an action description</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="string">string</span>  playbookPath</p>
+</li>
+<li>
+<p><span class="string">string</span>  inventoryPath - path to Ansible inventory or empty</p>
+</li>
+<li>
+<p><span class="int">int</span>  controlNodeId - system ID of the control node</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence - earliest the execution command can be sent to the control node. ignored when actionChainLabel is used</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionChainLabel - label of an action chain to use, or None</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  testMode - 'true' if the playbook shall be executed in test mode</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  ansibleArgs</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  "extraVars"</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "flushCache"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="string">string</span>  actionDescription - Comment / action description</p>
 </li>
 </ul>
 </div>

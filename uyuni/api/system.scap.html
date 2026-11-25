@@ -386,25 +386,16 @@
 <p><a href="#apidoc-system_scap-listXccdfScans-2068583219">listXccdfScans</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_scap-scheduleBetaXccdfScanCustom&#8212;&#8203;1744105240">scheduleBetaXccdfScanCustom</a></p>
+<p><a href="#apidoc-system_scap-scheduleXccdfScanCustom&#8212;&#8203;1744105240">scheduleXccdfScanCustom</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy&#8212;&#8203;1122631647">scheduleBetaXccdfScanWithPolicy</a></p>
+<p><a href="#apidoc-system_scap-scheduleXccdfScanCustom-1046623809">scheduleXccdfScanCustom</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_scap-scheduleXccdfScan&#8212;&#8203;1624901639">scheduleXccdfScan</a></p>
+<p><a href="#apidoc-system_scap-scheduleXccdfScanWithPolicy&#8212;&#8203;1122631647">scheduleXccdfScanWithPolicy</a></p>
 </li>
 <li>
-<p><a href="#apidoc-system_scap-scheduleXccdfScan-948710658">scheduleXccdfScan</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_scap-scheduleXccdfScan-821774218">scheduleXccdfScan</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_scap-scheduleXccdfScan&#8212;&#8203;1706199220">scheduleXccdfScan</a></p>
-</li>
-<li>
-<p><a href="#apidoc-system_scap-scheduleXccdfScan-1658734991">scheduleXccdfScan</a></p>
+<p><a href="#apidoc-system_scap-scheduleXccdfScanWithPolicy&#8212;&#8203;786486982">scheduleXccdfScanWithPolicy</a></p>
 </li>
 </ul>
 </div>
@@ -841,7 +832,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_scap-scheduleBetaXccdfScanCustom--1744105240"><a class="anchor" href="#apidoc-system_scap-scheduleBetaXccdfScanCustom--1744105240"></a><a class="link" href="#apidoc-system_scap-scheduleBetaXccdfScanCustom--1744105240">Method: scheduleBetaXccdfScanCustom</a></h2>
+<h2 id="apidoc-system_scap-scheduleXccdfScanCustom--1744105240"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScanCustom--1744105240"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScanCustom--1744105240">Method: scheduleXccdfScanCustom</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -851,6 +842,80 @@
 </div>
 <div class="paragraph">
 <p>Schedule SCAP scan with custom parameters.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
+</li>
+<li>
+<p><span class="struct">struct</span>  params</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  "scapContentId" - SCAP content ID (required)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "xccdfProfileId" - XCCDF profile ID (required)</p>
+</li>
+<li>
+<p><span class="int">int</span>  "tailoringFileId" - Tailoring file ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "tailoringProfileId" - Tailoring profile ID (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "ovalFiles" - OVAL files (optional)</p>
+</li>
+<li>
+<p><span class="string">string</span>  "advancedArgs" - Advanced arguments for the oscap tool (optional).
+Only the options selecting the rules to evaluate and the content to use are passed on:
+--rule, --skip-rule, --reference, --cpe, --local-files, --datastream-id, --xccdf-id,
+--benchmark-id, --tailoring-id, --fetch-remote-resources and --remediate. The paths given
+to --cpe and --local-files are read on the scanned system: only the XCCDF content and the
+tailoring file are transferred from the server. Other options are ignored; result and
+report options are set by the scan itself.</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  "fetchRemoteResources" - Fetch remote resources (optional, default false)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  id - ID of SCAP action created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_scap-scheduleXccdfScanCustom-1046623809"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScanCustom-1046623809"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScanCustom-1046623809">Method: scheduleXccdfScanCustom</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule SCAP scan with custom parameters and an action description.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -894,6 +959,9 @@
 <li>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
 </li>
+<li>
+<p><span class="string">string</span>  actionDescription - Comment / action description</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -909,7 +977,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_scap-scheduleBetaXccdfScanWithPolicy--1122631647"><a class="anchor" href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy--1122631647"></a><a class="link" href="#apidoc-system_scap-scheduleBetaXccdfScanWithPolicy--1122631647">Method: scheduleBetaXccdfScanWithPolicy</a></h2>
+<h2 id="apidoc-system_scap-scheduleXccdfScanWithPolicy--1122631647"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScanWithPolicy--1122631647"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScanWithPolicy--1122631647">Method: scheduleXccdfScanWithPolicy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -952,7 +1020,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="apidoc-system_scap-scheduleXccdfScan--1624901639"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScan--1624901639"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScan--1624901639">Method: scheduleXccdfScan</a></h2>
+<h2 id="apidoc-system_scap-scheduleXccdfScanWithPolicy--786486982"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScanWithPolicy--786486982"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScanWithPolicy--786486982">Method: scheduleXccdfScanWithPolicy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HTTP <code>POST</code></p>
@@ -961,7 +1029,7 @@
 <p>Description:</p>
 </div>
 <div class="paragraph">
-<p>Schedule OpenSCAP scan.</p>
+<p>Schedule SCAP scan based on an existing SCAP policy with an action description.</p>
 </div>
 <div class="paragraph">
 <p>Parameters:</p>
@@ -975,105 +1043,13 @@
 <p><span class="array">int array</span>  sids</p>
 </li>
 <li>
-<p><span class="string">string</span>  xccdfPath - path to xccdf content on targeted systems.</p>
-</li>
-<li>
-<p><span class="string">string</span>  oscapParams - additional parameters for oscap tool.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  id - ID if SCAP action created</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_scap-scheduleXccdfScan-948710658"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScan-948710658"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScan-948710658">Method: scheduleXccdfScan</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Schedule OpenSCAP scan.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="array">int array</span>  sids</p>
-</li>
-<li>
-<p><span class="string">string</span>  xccdfPath - path to xccdf content on targeted systems.</p>
-</li>
-<li>
-<p><span class="string">string</span>  oscapParams - additional parameters for oscap tool.</p>
+<p><span class="int">int</span>  policyId - SCAP policy ID</p>
 </li>
 <li>
 <p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p><span class="int">int</span>  id - ID if SCAP action created</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_scap-scheduleXccdfScan-821774218"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScan-821774218"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScan-821774218">Method: scheduleXccdfScan</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Schedule OpenSCAP scan.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="array">int array</span>  sids</p>
-</li>
-<li>
-<p><span class="string">string</span>  xccdfPath - Path to xccdf content on targeted systems.</p>
-</li>
-<li>
-<p><span class="string">string</span>  oscapPrams - Additional parameters for oscap tool.</p>
-</li>
-<li>
-<p><span class="string">string</span>  ovalFiles - Additional OVAL files for oscap tool.</p>
-</li>
-<li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
+<p><span class="string">string</span>  actionDescription - Comment / action description</p>
 </li>
 </ul>
 </div>
@@ -1083,96 +1059,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><span class="int">int</span>  id - ID if SCAP action created</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_scap-scheduleXccdfScan--1706199220"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScan--1706199220"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScan--1706199220">Method: scheduleXccdfScan</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Schedule Scap XCCDF scan.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-<li>
-<p><span class="string">string</span>  xccdfPath - Path to xccdf content on targeted systems.</p>
-</li>
-<li>
-<p><span class="string">string</span>  oscapPrams - Additional parameters for oscap tool.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  id - ID of the scap action created</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="apidoc-system_scap-scheduleXccdfScan-1658734991"><a class="anchor" href="#apidoc-system_scap-scheduleXccdfScan-1658734991"></a><a class="link" href="#apidoc-system_scap-scheduleXccdfScan-1658734991">Method: scheduleXccdfScan</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>HTTP <code>POST</code></p>
-</div>
-<div class="paragraph">
-<p>Description:</p>
-</div>
-<div class="paragraph">
-<p>Schedule Scap XCCDF scan.</p>
-</div>
-<div class="paragraph">
-<p>Parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="string">string</span>  sessionKey</p>
-</li>
-<li>
-<p><span class="int">int</span>  sid</p>
-</li>
-<li>
-<p><span class="string">string</span>  xccdfPath - Path to xccdf content on targeted systems.</p>
-</li>
-<li>
-<p><span class="string">string</span>  oscapPrams - Additional parameters for oscap tool.</p>
-</li>
-<li>
-<p><span class="dateTime iso8601">dateTime.iso8601</span>  date - The date to schedule the action</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="int">int</span>  id - ID of the scap action created</p>
+<p><span class="int">int</span>  id - ID of SCAP action created</p>
 </li>
 </ul>
 </div>

@@ -395,6 +395,9 @@
 <p><a href="#apidoc-system_config-scheduleApplyConfigChannel&#8212;&#8203;425472090">scheduleApplyConfigChannel</a></p>
 </li>
 <li>
+<p><a href="#apidoc-system_config-scheduleApplyConfigChannel-805044607">scheduleApplyConfigChannel</a></p>
+</li>
+<li>
 <p><a href="#apidoc-system_config-setChannels-1721185555">setChannels</a></p>
 </li>
 </ul>
@@ -1311,6 +1314,52 @@ would like to remove configuration channels..</p>
 </li>
 <li>
 <p><span class="boolean">boolean</span>  test - Run states in test-only mode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Returns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="int">int</span>  actionId</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apidoc-system_config-scheduleApplyConfigChannel-805044607"><a class="anchor" href="#apidoc-system_config-scheduleApplyConfigChannel-805044607"></a><a class="link" href="#apidoc-system_config-scheduleApplyConfigChannel-805044607">Method: scheduleApplyConfigChannel</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP <code>POST</code></p>
+</div>
+<div class="paragraph">
+<p>Description:</p>
+</div>
+<div class="paragraph">
+<p>Schedule highstate application for a given system with an action description.</p>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="string">string</span>  sessionKey</p>
+</li>
+<li>
+<p><span class="array">int array</span>  sids</p>
+</li>
+<li>
+<p><span class="dateTime iso8601">dateTime.iso8601</span>  earliestOccurrence</p>
+</li>
+<li>
+<p><span class="boolean">boolean</span>  test - Run states in test-only mode</p>
+</li>
+<li>
+<p><span class="string">string</span>  actionDescription - Comment / action description</p>
 </li>
 </ul>
 </div>
