@@ -4,33 +4,35 @@
 
 == Available methods
 
-* <<apidoc-org_trusts-addTrust-loggedInUser-orgId-trustOrgId,addTrust>>
-* <<apidoc-org_trusts-getDetails-loggedInUser-orgId,getDetails>>
-* <<apidoc-org_trusts-listChannelsConsumed-loggedInUser-orgId,listChannelsConsumed>>
-* <<apidoc-org_trusts-listChannelsProvided-loggedInUser-orgId,listChannelsProvided>>
-* <<apidoc-org_trusts-listOrgs-loggedInUser,listOrgs>>
-* <<apidoc-org_trusts-listSystemsAffected-loggedInUser-orgId-trustOrgId,listSystemsAffected>>
-* <<apidoc-org_trusts-listTrusts-loggedInUser-orgId,listTrusts>>
-* <<apidoc-org_trusts-removeTrust-loggedInUser-orgId-trustOrgId,removeTrust>>
+* <<apidoc-org_trusts-addTrust--303099696,addTrust>>
+* <<apidoc-org_trusts-getDetails--664805308,getDetails>>
+* <<apidoc-org_trusts-listChannelsConsumed--664805308,listChannelsConsumed>>
+* <<apidoc-org_trusts-listChannelsProvided--664805308,listChannelsProvided>>
+* <<apidoc-org_trusts-listOrgs--406943054,listOrgs>>
+* <<apidoc-org_trusts-listSystemsAffected--303099696,listSystemsAffected>>
+* <<apidoc-org_trusts-listTrusts--664805308,listTrusts>>
+* <<apidoc-org_trusts-removeTrust--303099696,removeTrust>>
 
 == Description
 
 Contains methods to access common organization trust information
- available from the web interface.
+ available from the web interface. 
+ 
 
 *Namespace*:
 
 org.trusts
 
 
-[#apidoc-org_trusts-addTrust-loggedInUser-orgId-trustOrgId]
+[#apidoc-org_trusts-addTrust--303099696]
 == Method: addTrust
 
 HTTP `POST`
 
 Description:
 
-Add an organization to the list of trusted organizations.
+Add an organization to the list of trusted organizations. 
+ 
 
 
 
@@ -51,7 +53,7 @@ Returns:
 
 
 
-[#apidoc-org_trusts-getDetails-loggedInUser-orgId]
+[#apidoc-org_trusts-getDetails--664805308]
 == Method: getDetails
 
 HTTP `GET`
@@ -59,7 +61,8 @@ HTTP `GET`
 Description:
 
 The trust details about an organization given
- the organization's ID.
+ the organization's ID. 
+ 
 
 
 
@@ -94,7 +97,7 @@ Returns:
 
 
 
-[#apidoc-org_trusts-listChannelsConsumed-loggedInUser-orgId]
+[#apidoc-org_trusts-listChannelsConsumed--664805308]
 == Method: listChannelsConsumed
 
 HTTP `GET`
@@ -102,7 +105,8 @@ HTTP `GET`
 Description:
 
 Lists all software channels that the organization given may consume
- from the user's organization.
+ from the user's organization. 
+ 
 
 
 
@@ -126,7 +130,7 @@ Returns:
 
 
 
-[#apidoc-org_trusts-listChannelsProvided-loggedInUser-orgId]
+[#apidoc-org_trusts-listChannelsProvided--664805308]
 == Method: listChannelsProvided
 
 HTTP `GET`
@@ -134,7 +138,8 @@ HTTP `GET`
 Description:
 
 Lists all software channels that the organization given is providing to
- the user's organization.
+ the user's organization. 
+ 
 
 
 
@@ -158,14 +163,15 @@ Returns:
 
 
 
-[#apidoc-org_trusts-listOrgs-loggedInUser]
+[#apidoc-org_trusts-listOrgs--406943054]
 == Method: listOrgs
 
 HTTP `GET`
 
 Description:
 
-List all organanizations trusted by the user's organization.
+List all organanizations trusted by the user's organization. 
+ 
 
 
 
@@ -187,7 +193,7 @@ Returns:
 
 
 
-[#apidoc-org_trusts-listSystemsAffected-loggedInUser-orgId-trustOrgId]
+[#apidoc-org_trusts-listSystemsAffected--303099696]
 == Method: listSystemsAffected
 
 HTTP `GET`
@@ -196,7 +202,8 @@ Description:
 
 Get a list of systems within the  trusted organization
    that would be affected if the trust relationship was removed.
-   This basically lists systems that are sharing at least (1) package.
+   This basically lists systems that are sharing at least (1) package. 
+ 
 
 
 
@@ -220,14 +227,15 @@ Returns:
 
 
 
-[#apidoc-org_trusts-listTrusts-loggedInUser-orgId]
+[#apidoc-org_trusts-listTrusts--664805308]
 == Method: listTrusts
 
 HTTP `GET`
 
 Description:
 
-Returns the list of trusted organizations.
+Returns the list of trusted organizations. 
+ 
 
 
 
@@ -251,14 +259,15 @@ Returns:
 
 
 
-[#apidoc-org_trusts-removeTrust-loggedInUser-orgId-trustOrgId]
+[#apidoc-org_trusts-removeTrust--303099696]
 == Method: removeTrust
 
 HTTP `POST`
 
 Description:
 
-Remove an organization to the list of trusted organizations.
+Remove an organization to the list of trusted organizations. 
+ 
 
 
 

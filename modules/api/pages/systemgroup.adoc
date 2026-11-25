@@ -4,49 +4,51 @@
 
 == Available methods
 
-* <<apidoc-systemgroup-addOrRemoveAdmins-loggedInUser-systemGroupName-loginNames-add,addOrRemoveAdmins>>
-* <<apidoc-systemgroup-addOrRemoveSystems-loggedInUser-systemGroupName-serverIds-add,addOrRemoveSystems>>
-* <<apidoc-systemgroup-create-loggedInUser-name-description,create>>
-* <<apidoc-systemgroup-delete-loggedInUser-systemGroupName,delete>>
-* <<apidoc-systemgroup-getDetails-loggedInUser-systemGroupId,getDetails>>
-* <<apidoc-systemgroup-getDetails-loggedInUser-systemGroupName,getDetails>>
-* <<apidoc-systemgroup-listActiveSystemsInGroup-loggedInUser-systemGroupName,listActiveSystemsInGroup>>
-* <<apidoc-systemgroup-listAdministrators-loggedInUser-systemGroupName,listAdministrators>>
-* <<apidoc-systemgroup-listAllGroups-loggedInUser,listAllGroups>>
-* <<apidoc-systemgroup-listAssignedConfigChannels-loggedInUser-systemGroupName,listAssignedConfigChannels>>
-* <<apidoc-systemgroup-listAssignedFormuals-loggedInUser-systemGroupName,listAssignedFormuals>>
-* <<apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-loggedInUser,listGroupsWithNoAssociatedAdmins>>
-* <<apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName-daysInactive,listInactiveSystemsInGroup>>
-* <<apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName,listInactiveSystemsInGroup>>
-* <<apidoc-systemgroup-listSystems-loggedInUser-systemGroupName,listSystems>>
-* <<apidoc-systemgroup-listSystemsMinimal-loggedInUser-systemGroupName,listSystemsMinimal>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence-onlyRelevant,scheduleApplyErrataToActive>>
-* <<apidoc-systemgroup-subscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels,subscribeConfigChannel>>
-* <<apidoc-systemgroup-unsubscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels,unsubscribeConfigChannel>>
-* <<apidoc-systemgroup-update-loggedInUser-systemGroupName-description,update>>
+* <<apidoc-systemgroup-addOrRemoveAdmins-984791424,addOrRemoveAdmins>>
+* <<apidoc-systemgroup-addOrRemoveSystems--454144164,addOrRemoveSystems>>
+* <<apidoc-systemgroup-create-2089979253,create>>
+* <<apidoc-systemgroup-delete--1686821088,delete>>
+* <<apidoc-systemgroup-getDetails--2088903952,getDetails>>
+* <<apidoc-systemgroup-getDetails--1686821088,getDetails>>
+* <<apidoc-systemgroup-listActiveSystemsInGroup--1686821088,listActiveSystemsInGroup>>
+* <<apidoc-systemgroup-listAdministrators--1686821088,listAdministrators>>
+* <<apidoc-systemgroup-listAllGroups--406943054,listAllGroups>>
+* <<apidoc-systemgroup-listAssignedConfigChannels--1686821088,listAssignedConfigChannels>>
+* <<apidoc-systemgroup-listAssignedFormuals--1686821088,listAssignedFormuals>>
+* <<apidoc-systemgroup-listGroupsWithNoAssociatedAdmins--406943054,listGroupsWithNoAssociatedAdmins>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup--537461905,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listInactiveSystemsInGroup--1686821088,listInactiveSystemsInGroup>>
+* <<apidoc-systemgroup-listSystems--1686821088,listSystems>>
+* <<apidoc-systemgroup-listSystemsMinimal--1686821088,listSystemsMinimal>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive--305021822,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive--1777068369,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-scheduleApplyErrataToActive--1542726457,scheduleApplyErrataToActive>>
+* <<apidoc-systemgroup-subscribeConfigChannel-1739147411,subscribeConfigChannel>>
+* <<apidoc-systemgroup-unsubscribeConfigChannel-1739147411,unsubscribeConfigChannel>>
+* <<apidoc-systemgroup-update--842855217,update>>
 
 == Description
 
-Provides methods to access and modify system groups.
+Provides methods to access and modify system groups. 
+ 
 
 *Namespace*:
 
 systemgroup
 
 
-[#apidoc-systemgroup-addOrRemoveAdmins-loggedInUser-systemGroupName-loginNames-add]
+[#apidoc-systemgroup-addOrRemoveAdmins-984791424]
 == Method: addOrRemoveAdmins
 
 HTTP `POST`
 
 Description:
 
-Add or remove administrators to/from the given group. #product() and
+Add or remove administrators to/from the given group. Uyuni and
  Organization administrators are granted access to groups within their organization
  by default; therefore, users with those roles should not be included in the array
- provided. Caller must be an organization administrator.
+ provided. Caller must be an organization administrator. 
+ 
 
 
 
@@ -69,14 +71,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-addOrRemoveSystems-loggedInUser-systemGroupName-serverIds-add]
+[#apidoc-systemgroup-addOrRemoveSystems--454144164]
 == Method: addOrRemoveSystems
 
 HTTP `POST`
 
 Description:
 
-Add/remove the given servers to a system group.
+Add/remove the given servers to a system group. 
+ 
 
 
 
@@ -100,14 +103,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-create-loggedInUser-name-description]
+[#apidoc-systemgroup-create-2089979253]
 == Method: create
 
 HTTP `POST`
 
 Description:
 
-Create a new system group.
+Create a new system group. 
+ 
 
 
 
@@ -135,14 +139,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-delete-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-delete--1686821088]
 == Method: delete
 
 HTTP `POST`
 
 Description:
 
-Delete a system group.
+Delete a system group. 
+ 
 
 
 
@@ -161,14 +166,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-getDetails-loggedInUser-systemGroupId]
+[#apidoc-systemgroup-getDetails--2088903952]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Retrieve details of a ServerGroup based on it's id
+Retrieve details of a ServerGroup based on it's id 
+ 
 
 
 
@@ -193,14 +199,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-getDetails-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-getDetails--1686821088]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Retrieve details of a ServerGroup based on it's name
+Retrieve details of a ServerGroup based on it's name 
+ 
 
 
 
@@ -225,14 +232,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listActiveSystemsInGroup-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listActiveSystemsInGroup--1686821088]
 == Method: listActiveSystemsInGroup
 
 HTTP `GET`
 
 Description:
 
-Lists active systems within a server group
+Lists active systems within a server group 
+ 
 
 
 
@@ -251,7 +259,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listAdministrators-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listAdministrators--1686821088]
 == Method: listAdministrators
 
 HTTP `GET`
@@ -259,7 +267,8 @@ HTTP `GET`
 Description:
 
 Returns the list of users who can administer the given group.
- Caller must be a system group admin or an organization administrator.
+ Caller must be a system group admin or an organization administrator. 
+ 
 
 
 
@@ -285,7 +294,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listAllGroups-loggedInUser]
+[#apidoc-systemgroup-listAllGroups--406943054]
 == Method: listAllGroups
 
 HTTP `GET`
@@ -293,7 +302,8 @@ HTTP `GET`
 Description:
 
 Retrieve a list of system groups that are accessible by the logged
-      in user.
+      in user. 
+ 
 
 
 
@@ -317,14 +327,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listAssignedConfigChannels-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listAssignedConfigChannels--1686821088]
 == Method: listAssignedConfigChannels
 
 HTTP `GET`
 
 Description:
 
-List all Configuration Channels assigned to a system group
+List all Configuration Channels assigned to a system group 
+ 
 
 
 
@@ -358,14 +369,15 @@ Returns:
 Available since API version: 25
 
 
-[#apidoc-systemgroup-listAssignedFormuals-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listAssignedFormuals--1686821088]
 == Method: listAssignedFormuals
 
 HTTP `GET`
 
 Description:
 
-List all Configuration Channels assigned to a system group
+List all Configuration Channels assigned to a system group 
+ 
 
 
 
@@ -390,7 +402,7 @@ Returns:
 Available since API version: 25
 
 
-[#apidoc-systemgroup-listGroupsWithNoAssociatedAdmins-loggedInUser]
+[#apidoc-systemgroup-listGroupsWithNoAssociatedAdmins--406943054]
 == Method: listGroupsWithNoAssociatedAdmins
 
 HTTP `GET`
@@ -399,7 +411,8 @@ Description:
 
 Returns a list of system groups that do not have an administrator.
  (who is not an organization administrator, as they have implicit access to
- system groups) Caller must be an organization administrator.
+ system groups) Caller must be an organization administrator. 
+ 
 
 
 
@@ -423,7 +436,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName-daysInactive]
+[#apidoc-systemgroup-listInactiveSystemsInGroup--537461905]
 == Method: listInactiveSystemsInGroup
 
 HTTP `GET`
@@ -431,7 +444,8 @@ HTTP `GET`
 Description:
 
 Lists inactive systems within a server group using a
-          specified inactivity time.
+          specified inactivity time. 
+ 
 
 
 
@@ -453,7 +467,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listInactiveSystemsInGroup-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listInactiveSystemsInGroup--1686821088]
 == Method: listInactiveSystemsInGroup
 
 HTTP `GET`
@@ -461,7 +475,8 @@ HTTP `GET`
 Description:
 
 Lists inactive systems within a server group using the default
-          1 day threshold.
+          1 day threshold. 
+ 
 
 
 
@@ -480,7 +495,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listSystems-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listSystems--1686821088]
 == Method: listSystems
 
 HTTP `GET`
@@ -488,7 +503,8 @@ HTTP `GET`
 Description:
 
 Return a list of systems associated with this system group.
- User must have access to this system group.
+ User must have access to this system group. 
+ 
 
 
 
@@ -542,7 +558,7 @@ Returns:
 
 
 
-[#apidoc-systemgroup-listSystemsMinimal-loggedInUser-systemGroupName]
+[#apidoc-systemgroup-listSystemsMinimal--1686821088]
 == Method: listSystemsMinimal
 
 HTTP `GET`
@@ -550,7 +566,8 @@ HTTP `GET`
 Description:
 
 Return a list of systems associated with this system group.
- User must have access to this system group.
+ User must have access to this system group. 
+ 
 
 
 
@@ -568,19 +585,29 @@ Returns:
           * [.struct]#struct#  system
 ** [.int]#int#  "id"
 ** [.string]#string#  "name"
-** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server
-             successfully checked in
+** [.int]#int#  "group_count" - number of groups the system is in
+** [.int]#int#  "security_errata" - number of applied security erratas
+** [.int]#int#  "bug_errata" - number of applied bug erratas
+** [.int]#int#  "enhancement_errata" - number of applied enhancement erratas
+** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
+** [.int]#int#  "config_files_with_difference" - number of configuration files changed
+** [.string]#string#  "channel_labels" - channel set on the system
+** [.dateTime.iso8601]#dateTime.iso8601#  "last_checkin" - last time server successfully checked in
+** [.boolean]#boolean#  "mgr_server" - true if the system is a peripheral server
+** [.boolean]#boolean#  "proxy" - true if the system is a proxy
+** [.array]#string array#  "entitlement" - List of entitlements of the system
+** [.boolean]#boolean#  "virtual_host" - true if the system is a virtual host
+** [.boolean]#boolean#  "virtual_guest" - true if the system is a virtual guest
+** [.int]#int#  "extra_pkg_count" - number of packages not belonging to any assigned channel
+** [.boolean]#boolean#  "requires_reboot" - true if the systems needs to be rebooted
 ** [.dateTime.iso8601]#dateTime.iso8601#  "created" - server registration time
 ** [.dateTime.iso8601]#dateTime.iso8601#  "last_boot" - last server boot time
-** [.int]#int#  "extra_pkg_count" - number of packages not belonging
-             to any assigned channel
-** [.int]#int#  "outdated_pkg_count" - number of out-of-date packages
  
  
 
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds]
+[#apidoc-systemgroup-scheduleApplyErrataToActive--305021822]
 == Method: scheduleApplyErrataToActive
 
 HTTP `POST`
@@ -588,7 +615,8 @@ HTTP `POST`
 Description:
 
 Schedules an action to apply errata updates to active systems
- from a group.
+ from a group. 
+ 
 
 
 
@@ -610,7 +638,7 @@ Returns:
 Available since API version: 13.0
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence]
+[#apidoc-systemgroup-scheduleApplyErrataToActive--1777068369]
 == Method: scheduleApplyErrataToActive
 
 HTTP `POST`
@@ -618,7 +646,8 @@ HTTP `POST`
 Description:
 
 Schedules an action to apply errata updates to active systems
- from a group at a given date/time.
+ from a group at a given date/time. 
+ 
 
 
 
@@ -642,7 +671,7 @@ Returns:
 Available since API version: 13.0
 
 
-[#apidoc-systemgroup-scheduleApplyErrataToActive-loggedInUser-systemGroupName-errataIds-earliestOccurrence-onlyRelevant]
+[#apidoc-systemgroup-scheduleApplyErrataToActive--1542726457]
 == Method: scheduleApplyErrataToActive
 
 HTTP `POST`
@@ -650,7 +679,8 @@ HTTP `POST`
 Description:
 
 Schedules an action to apply errata updates to active systems
- from a group at a given date/time.
+ from a group at a given date/time. 
+ 
 
 
 
@@ -676,14 +706,15 @@ Returns:
 Available since API version: 24
 
 
-[#apidoc-systemgroup-subscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels]
+[#apidoc-systemgroup-subscribeConfigChannel-1739147411]
 == Method: subscribeConfigChannel
 
 HTTP `POST`
 
 Description:
 
-Subscribe given config channels to a system group
+Subscribe given config channels to a system group 
+ 
 
 
 
@@ -704,14 +735,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-unsubscribeConfigChannel-loggedInUser-systemGroupName-configChannelLabels]
+[#apidoc-systemgroup-unsubscribeConfigChannel-1739147411]
 == Method: unsubscribeConfigChannel
 
 HTTP `POST`
 
 Description:
 
-Unsubscribe given config channels to a system group
+Unsubscribe given config channels to a system group 
+ 
 
 
 
@@ -732,14 +764,15 @@ Returns:
 
 
 
-[#apidoc-systemgroup-update-loggedInUser-systemGroupName-description]
+[#apidoc-systemgroup-update--842855217]
 == Method: update
 
 HTTP `POST`
 
 Description:
 
-Update an existing system group.
+Update an existing system group. 
+ 
 
 
 

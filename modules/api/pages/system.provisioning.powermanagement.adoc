@@ -4,19 +4,19 @@
 
 == Available methods
 
-* <<apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid,getDetails>>
-* <<apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name,getDetails>>
-* <<apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid,getStatus>>
-* <<apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name,getStatus>>
-* <<apidoc-system_provisioning_powermanagement-listTypes-loggedInUser,listTypes>>
-* <<apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid,powerOff>>
-* <<apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name,powerOff>>
-* <<apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid,powerOn>>
-* <<apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name,powerOn>>
-* <<apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid,reboot>>
-* <<apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name,reboot>>
-* <<apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data,setDetails>>
-* <<apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data,setDetails>>
+* <<apidoc-system_provisioning_powermanagement-getDetails-2068583219,getDetails>>
+* <<apidoc-system_provisioning_powermanagement-getDetails--298585914,getDetails>>
+* <<apidoc-system_provisioning_powermanagement-getStatus-2068583219,getStatus>>
+* <<apidoc-system_provisioning_powermanagement-getStatus--298585914,getStatus>>
+* <<apidoc-system_provisioning_powermanagement-listTypes--406943054,listTypes>>
+* <<apidoc-system_provisioning_powermanagement-powerOff-2068583219,powerOff>>
+* <<apidoc-system_provisioning_powermanagement-powerOff--298585914,powerOff>>
+* <<apidoc-system_provisioning_powermanagement-powerOn-2068583219,powerOn>>
+* <<apidoc-system_provisioning_powermanagement-powerOn--298585914,powerOn>>
+* <<apidoc-system_provisioning_powermanagement-reboot-2068583219,reboot>>
+* <<apidoc-system_provisioning_powermanagement-reboot--298585914,reboot>>
+* <<apidoc-system_provisioning_powermanagement-setDetails-2046297604,setDetails>>
+* <<apidoc-system_provisioning_powermanagement-setDetails--649417647,setDetails>>
 
 == Description
 
@@ -27,21 +27,23 @@ Provides methods to access and modify power management for systems.
  The variant with name expects a cobbler system name prefix. These functions
  enhance the name by adding the org id of the user to limit access to systems
  from the own organization. Additionally Org Admin permissions are required to
- call these functions.
+ call these functions. 
+ 
 
 *Namespace*:
 
 system.provisioning.powermanagement
 
 
-[#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-sid]
+[#apidoc-system_provisioning_powermanagement-getDetails-2068583219]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Get current power management settings of the given system
+Get current power management settings of the given system 
+ 
 
 
 
@@ -65,14 +67,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-getDetails-loggedInUser-name]
+[#apidoc-system_provisioning_powermanagement-getDetails--298585914]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Get current power management settings of the given system
+Get current power management settings of the given system 
+ 
 
 
 
@@ -96,14 +99,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-sid]
+[#apidoc-system_provisioning_powermanagement-getStatus-2068583219]
 == Method: getStatus
 
 HTTP `GET`
 
 Description:
 
-Execute powermanagement actions
+Execute powermanagement actions 
+ 
 
 
 
@@ -122,14 +126,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-getStatus-loggedInUser-name]
+[#apidoc-system_provisioning_powermanagement-getStatus--298585914]
 == Method: getStatus
 
 HTTP `GET`
 
 Description:
 
-Execute powermanagement actions
+Execute powermanagement actions 
+ 
 
 
 
@@ -148,14 +153,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-listTypes-loggedInUser]
+[#apidoc-system_provisioning_powermanagement-listTypes--406943054]
 == Method: listTypes
 
 HTTP `GET`
 
 Description:
 
-Return a list of available power management types
+Return a list of available power management types 
+ 
 
 
 
@@ -172,14 +178,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-sid]
+[#apidoc-system_provisioning_powermanagement-powerOff-2068583219]
 == Method: powerOff
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'powerOff'
+Execute power management action 'powerOff' 
+ 
 
 
 
@@ -198,14 +205,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOff-loggedInUser-name]
+[#apidoc-system_provisioning_powermanagement-powerOff--298585914]
 == Method: powerOff
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'powerOff'
+Execute power management action 'powerOff' 
+ 
 
 
 
@@ -224,14 +232,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-sid]
+[#apidoc-system_provisioning_powermanagement-powerOn-2068583219]
 == Method: powerOn
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'powerOn'
+Execute power management action 'powerOn' 
+ 
 
 
 
@@ -250,14 +259,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-powerOn-loggedInUser-name]
+[#apidoc-system_provisioning_powermanagement-powerOn--298585914]
 == Method: powerOn
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'powerOn'
+Execute power management action 'powerOn' 
+ 
 
 
 
@@ -276,14 +286,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-sid]
+[#apidoc-system_provisioning_powermanagement-reboot-2068583219]
 == Method: reboot
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'Reboot'
+Execute power management action 'Reboot' 
+ 
 
 
 
@@ -302,14 +313,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-reboot-loggedInUser-name]
+[#apidoc-system_provisioning_powermanagement-reboot--298585914]
 == Method: reboot
 
 HTTP `POST`
 
 Description:
 
-Execute power management action 'Reboot'
+Execute power management action 'Reboot' 
+ 
 
 
 
@@ -328,14 +340,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-sid-data]
+[#apidoc-system_provisioning_powermanagement-setDetails-2046297604]
 == Method: setDetails
 
 HTTP `POST`
 
 Description:
 
-Get current power management settings of the given system
+Get current power management settings of the given system 
+ 
 
 
 
@@ -361,14 +374,15 @@ Returns:
 
 
 
-[#apidoc-system_provisioning_powermanagement-setDetails-loggedInUser-name-data]
+[#apidoc-system_provisioning_powermanagement-setDetails--649417647]
 == Method: setDetails
 
 HTTP `POST`
 
 Description:
 
-Get current power management settings of the given system
+Get current power management settings of the given system 
+ 
 
 
 

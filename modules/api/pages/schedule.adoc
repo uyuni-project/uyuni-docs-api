@@ -4,40 +4,42 @@
 
 == Available methods
 
-* <<apidoc-schedule-archiveActions-loggedInUser-actionIds,archiveActions>>
-* <<apidoc-schedule-cancelActions-loggedInUser-actionIds,cancelActions>>
-* <<apidoc-schedule-deleteActions-loggedInUser-actionIds,deleteActions>>
-* <<apidoc-schedule-failSystemAction-loggedInUser-sid-actionId,failSystemAction>>
-* <<apidoc-schedule-failSystemAction-loggedInUser-sid-actionId-message,failSystemAction>>
-* <<apidoc-schedule-listAllActions-loggedInUser,listAllActions>>
-* <<apidoc-schedule-listAllArchivedActions-loggedInUser,listAllArchivedActions>>
-* <<apidoc-schedule-listAllCompletedActions-loggedInUser,listAllCompletedActions>>
-* <<apidoc-schedule-listArchivedActions-loggedInUser,listArchivedActions>>
-* <<apidoc-schedule-listCompletedActions-loggedInUser,listCompletedActions>>
-* <<apidoc-schedule-listCompletedSystems-loggedInUser-actionId,listCompletedSystems>>
-* <<apidoc-schedule-listFailedActions-loggedInUser,listFailedActions>>
-* <<apidoc-schedule-listFailedSystems-loggedInUser-actionId,listFailedSystems>>
-* <<apidoc-schedule-listInProgressActions-loggedInUser,listInProgressActions>>
-* <<apidoc-schedule-listInProgressSystems-loggedInUser-actionId,listInProgressSystems>>
-* <<apidoc-schedule-rescheduleActions-loggedInUser-actionIds-onlyFailed,rescheduleActions>>
+* <<apidoc-schedule-archiveActions--1638358201,archiveActions>>
+* <<apidoc-schedule-cancelActions--1638358201,cancelActions>>
+* <<apidoc-schedule-deleteActions--1638358201,deleteActions>>
+* <<apidoc-schedule-failSystemAction-1166748491,failSystemAction>>
+* <<apidoc-schedule-failSystemAction--188968059,failSystemAction>>
+* <<apidoc-schedule-listAllActions--406943054,listAllActions>>
+* <<apidoc-schedule-listAllArchivedActions--406943054,listAllArchivedActions>>
+* <<apidoc-schedule-listAllCompletedActions--406943054,listAllCompletedActions>>
+* <<apidoc-schedule-listArchivedActions--406943054,listArchivedActions>>
+* <<apidoc-schedule-listCompletedActions--406943054,listCompletedActions>>
+* <<apidoc-schedule-listCompletedSystems-224244396,listCompletedSystems>>
+* <<apidoc-schedule-listFailedActions--406943054,listFailedActions>>
+* <<apidoc-schedule-listFailedSystems-224244396,listFailedSystems>>
+* <<apidoc-schedule-listInProgressActions--406943054,listInProgressActions>>
+* <<apidoc-schedule-listInProgressSystems-224244396,listInProgressSystems>>
+* <<apidoc-schedule-rescheduleActions--680004273,rescheduleActions>>
 
 == Description
 
-Methods to retrieve information about scheduled actions.
+Methods to retrieve information about scheduled actions. 
+ 
 
 *Namespace*:
 
 schedule
 
 
-[#apidoc-schedule-archiveActions-loggedInUser-actionIds]
+[#apidoc-schedule-archiveActions--1638358201]
 == Method: archiveActions
 
 HTTP `POST`
 
 Description:
 
-Archive all actions in the given list.
+Archive all actions in the given list. 
+ 
 
 
 
@@ -56,7 +58,7 @@ Returns:
 
 
 
-[#apidoc-schedule-cancelActions-loggedInUser-actionIds]
+[#apidoc-schedule-cancelActions--1638358201]
 == Method: cancelActions
 
 HTTP `POST`
@@ -64,7 +66,8 @@ HTTP `POST`
 Description:
 
 Cancel all actions in given list. If an invalid action is provided,
- none of the actions given will be canceled.
+ none of the actions given will be canceled. 
+ 
 
 
 
@@ -83,14 +86,15 @@ Returns:
 
 
 
-[#apidoc-schedule-deleteActions-loggedInUser-actionIds]
+[#apidoc-schedule-deleteActions--1638358201]
 == Method: deleteActions
 
 HTTP `POST`
 
 Description:
 
-Delete all archived actions in the given list.
+Delete all archived actions in the given list. 
+ 
 
 
 
@@ -109,14 +113,15 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-loggedInUser-sid-actionId]
+[#apidoc-schedule-failSystemAction-1166748491]
 == Method: failSystemAction
 
 HTTP `POST`
 
 Description:
 
-Fail specific event on specified system
+Fail specific event on specified system 
+ 
 
 
 
@@ -137,14 +142,15 @@ Returns:
 
 
 
-[#apidoc-schedule-failSystemAction-loggedInUser-sid-actionId-message]
+[#apidoc-schedule-failSystemAction--188968059]
 == Method: failSystemAction
 
 HTTP `POST`
 
 Description:
 
-Fail specific event on specified system
+Fail specific event on specified system 
+ 
 
 
 
@@ -167,7 +173,7 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllActions-loggedInUser]
+[#apidoc-schedule-listAllActions--406943054]
 == Method: listAllActions
 
 HTTP `GET`
@@ -175,7 +181,8 @@ HTTP `GET`
 Description:
 
 Returns a list of all actions.  This includes completed, in progress,
- failed and archived actions.
+ failed and archived actions. 
+ 
 
 
 
@@ -204,14 +211,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllArchivedActions-loggedInUser]
+[#apidoc-schedule-listAllArchivedActions--406943054]
 == Method: listAllArchivedActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that have been archived.
+Returns a list of actions that have been archived. 
+ 
 
 
 
@@ -240,14 +248,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listAllCompletedActions-loggedInUser]
+[#apidoc-schedule-listAllCompletedActions--406943054]
 == Method: listAllCompletedActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that have been completed.
+Returns a list of actions that have been completed. 
+ 
 
 
 
@@ -276,14 +285,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listArchivedActions-loggedInUser]
+[#apidoc-schedule-listArchivedActions--406943054]
 == Method: listArchivedActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that have been archived.
+Returns a list of actions that have been archived. 
+ 
 
 
 
@@ -312,14 +322,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedActions-loggedInUser]
+[#apidoc-schedule-listCompletedActions--406943054]
 == Method: listCompletedActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that have completed successfully.
+Returns a list of actions that have completed successfully. 
+ 
 
 
 
@@ -348,14 +359,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listCompletedSystems-loggedInUser-actionId]
+[#apidoc-schedule-listCompletedSystems-224244396]
 == Method: listCompletedSystems
 
 HTTP `GET`
 
 Description:
 
-Returns a list of systems that have completed a specific action.
+Returns a list of systems that have completed a specific action. 
+ 
 
 
 
@@ -383,14 +395,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedActions-loggedInUser]
+[#apidoc-schedule-listFailedActions--406943054]
 == Method: listFailedActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that have failed.
+Returns a list of actions that have failed. 
+ 
 
 
 
@@ -419,14 +432,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listFailedSystems-loggedInUser-actionId]
+[#apidoc-schedule-listFailedSystems-224244396]
 == Method: listFailedSystems
 
 HTTP `GET`
 
 Description:
 
-Returns a list of systems that have failed a specific action.
+Returns a list of systems that have failed a specific action. 
+ 
 
 
 
@@ -454,14 +468,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressActions-loggedInUser]
+[#apidoc-schedule-listInProgressActions--406943054]
 == Method: listInProgressActions
 
 HTTP `GET`
 
 Description:
 
-Returns a list of actions that are in progress.
+Returns a list of actions that are in progress. 
+ 
 
 
 
@@ -490,14 +505,15 @@ Returns:
 
 
 
-[#apidoc-schedule-listInProgressSystems-loggedInUser-actionId]
+[#apidoc-schedule-listInProgressSystems-224244396]
 == Method: listInProgressSystems
 
 HTTP `GET`
 
 Description:
 
-Returns a list of systems that have a specific action in progress.
+Returns a list of systems that have a specific action in progress. 
+ 
 
 
 
@@ -525,14 +541,15 @@ Returns:
 
 
 
-[#apidoc-schedule-rescheduleActions-loggedInUser-actionIds-onlyFailed]
+[#apidoc-schedule-rescheduleActions--680004273]
 == Method: rescheduleActions
 
 HTTP `POST`
 
 Description:
 
-Reschedule all actions in the given list.
+Reschedule all actions in the given list. 
+ 
 
 
 

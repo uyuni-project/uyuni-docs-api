@@ -4,23 +4,24 @@
 
 == Available methods
 
-* <<apidoc-packages_search-advanced-sessionKey-luceneQuery,advanced>>
-* <<apidoc-packages_search-advancedWithActKey-sessionKey-luceneQuery-activationKey,advancedWithActKey>>
-* <<apidoc-packages_search-advancedWithChannel-sessionKey-luceneQuery-channelLabel,advancedWithChannel>>
-* <<apidoc-packages_search-name-sessionKey-name,name>>
-* <<apidoc-packages_search-nameAndDescription-sessionKey-query,nameAndDescription>>
-* <<apidoc-packages_search-nameAndSummary-sessionKey-query,nameAndSummary>>
+* <<apidoc-packages_search-advanced-403759970,advanced>>
+* <<apidoc-packages_search-advancedWithActKey--838351298,advancedWithActKey>>
+* <<apidoc-packages_search-advancedWithChannel--1984099268,advancedWithChannel>>
+* <<apidoc-packages_search-name--440593937,name>>
+* <<apidoc-packages_search-nameAndDescription--770150940,nameAndDescription>>
+* <<apidoc-packages_search-nameAndSummary--770150940,nameAndSummary>>
 
 == Description
 
-Methods to interface to package search capabilities in search server..
+Methods to interface to package search capabilities in search server.. 
+ 
 
 *Namespace*:
 
 packages.search
 
 
-[#apidoc-packages_search-advanced-sessionKey-luceneQuery]
+[#apidoc-packages_search-advanced-403759970]
 == Method: advanced
 
 HTTP `GET`
@@ -33,7 +34,8 @@ Lucene Query Parser syntax is defined at lucene.apache.org
  (http://lucene.apache.org/java/3_5_0/queryparsersyntax.html).
 
 Fields searchable for Packages: name, epoch, version, release, arch, description, summary.
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel" 
+ 
 
 
 
@@ -63,7 +65,7 @@ Returns:
 
 
 
-[#apidoc-packages_search-advancedWithActKey-sessionKey-luceneQuery-activationKey]
+[#apidoc-packages_search-advancedWithActKey--838351298]
 == Method: advancedWithActKey
 
 HTTP `GET`
@@ -77,7 +79,8 @@ Lucene Query Parser syntax is defined at lucene.apache.org
  (http://lucene.apache.org/java/3_5_0/queryparsersyntax.html).
 
 Fields searchable for Packages: name, epoch, version, release, arch, description, summary.
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel" 
+ 
 
 
 
@@ -109,7 +112,7 @@ Returns:
 
 
 
-[#apidoc-packages_search-advancedWithChannel-sessionKey-luceneQuery-channelLabel]
+[#apidoc-packages_search-advancedWithChannel--1984099268]
 == Method: advancedWithChannel
 
 HTTP `GET`
@@ -123,7 +126,8 @@ Lucene Query Parser syntax is defined at lucene.apache.org
  (http://lucene.apache.org/java/3_5_0/queryparsersyntax.html).
 
 Fields searchable for Packages: name, epoch, version, release, arch, description, summary.
-Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel"
+Lucene Query Example: "name:kernel AND version:2.6.18 AND -description:devel" 
+ 
 
 
 
@@ -155,7 +159,7 @@ Returns:
 
 
 
-[#apidoc-packages_search-name-sessionKey-name]
+[#apidoc-packages_search-name--440593937]
 == Method: name
 
 HTTP `GET`
@@ -163,7 +167,8 @@ HTTP `GET`
 Description:
 
 Search the lucene package indexes for all packages which
-          match the given name.
+          match the given name. 
+ 
 
 
 
@@ -193,7 +198,7 @@ Returns:
 
 
 
-[#apidoc-packages_search-nameAndDescription-sessionKey-query]
+[#apidoc-packages_search-nameAndDescription--770150940]
 == Method: nameAndDescription
 
 HTTP `GET`
@@ -201,7 +206,8 @@ HTTP `GET`
 Description:
 
 Search the lucene package indexes for all packages which
-          match the given query in name or description
+          match the given query in name or description 
+ 
 
 
 
@@ -231,7 +237,7 @@ Returns:
 
 
 
-[#apidoc-packages_search-nameAndSummary-sessionKey-query]
+[#apidoc-packages_search-nameAndSummary--770150940]
 == Method: nameAndSummary
 
 HTTP `GET`
@@ -239,7 +245,8 @@ HTTP `GET`
 Description:
 
 Search the lucene package indexes for all packages which
-          match the given query in name or summary.
+          match the given query in name or summary. 
+ 
 
 
 

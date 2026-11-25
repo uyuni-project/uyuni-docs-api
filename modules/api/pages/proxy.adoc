@@ -4,32 +4,33 @@
 
 == Available methods
 
-* <<apidoc-proxy-activateProxy-clientcert-version,activateProxy>>
-* <<apidoc-proxy-backupConfiguration-loggedInUser-sids,backupConfiguration>>
-* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey,bootstrapProxy>>
-* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag,bootstrapProxy>>
-* <<apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag,bootstrapProxy>>
-* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey,containerConfig>>
-* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email,containerConfig>>
-* <<apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail,containerConfig>>
-* <<apidoc-proxy-createMonitoringScout-clientcert,createMonitoringScout>>
-* <<apidoc-proxy-deactivateProxy-clientcert,deactivateProxy>>
-* <<apidoc-proxy-isProxy-clientcert,isProxy>>
-* <<apidoc-proxy-listAvailableProxyChannels-clientcert,listAvailableProxyChannels>>
-* <<apidoc-proxy-listProxies-loggedInUser,listProxies>>
-* <<apidoc-proxy-listProxyClients-loggedInUser-proxyId,listProxyClients>>
+* <<apidoc-proxy-activateProxy-743620986,activateProxy>>
+* <<apidoc-proxy-backupConfiguration--298429536,backupConfiguration>>
+* <<apidoc-proxy-bootstrapProxy--1075245337,bootstrapProxy>>
+* <<apidoc-proxy-bootstrapProxy--274578118,bootstrapProxy>>
+* <<apidoc-proxy-bootstrapProxy--1794657750,bootstrapProxy>>
+* <<apidoc-proxy-containerConfig--1550236212,containerConfig>>
+* <<apidoc-proxy-containerConfig-627479818,containerConfig>>
+* <<apidoc-proxy-containerConfig--208582172,containerConfig>>
+* <<apidoc-proxy-createMonitoringScout-1102880879,createMonitoringScout>>
+* <<apidoc-proxy-deactivateProxy-1102880879,deactivateProxy>>
+* <<apidoc-proxy-isProxy-1102880879,isProxy>>
+* <<apidoc-proxy-listAvailableProxyChannels-1102880879,listAvailableProxyChannels>>
+* <<apidoc-proxy-listProxies--406943054,listProxies>>
+* <<apidoc-proxy-listProxyClients-1968540686,listProxyClients>>
 
 == Description
 
 Provides methods to activate/deactivate a proxy
- server.
+ server. 
+ 
 
 *Namespace*:
 
 proxy
 
 
-[#apidoc-proxy-activateProxy-clientcert-version]
+[#apidoc-proxy-activateProxy-743620986]
 == Method: activateProxy
 
 HTTP `POST`
@@ -37,7 +38,8 @@ HTTP `POST`
 Description:
 
 Activates the proxy identified by the given client
- certificate i.e. systemid file.
+ certificate i.e. systemid file. 
+ 
 
 
 
@@ -57,14 +59,15 @@ Returns:
 
 
 
-[#apidoc-proxy-backupConfiguration-loggedInUser-sids]
+[#apidoc-proxy-backupConfiguration--298429536]
 == Method: backupConfiguration
 
 HTTP `POST`
 
 Description:
 
-Backup the configuration of proxies in order to migrate them later.
+Backup the configuration of proxies in order to migrate them later. 
+ 
 
 
 
@@ -83,14 +86,15 @@ Returns:
 
 
 
-[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey]
+[#apidoc-proxy-bootstrapProxy--1075245337]
 == Method: bootstrapProxy
 
 HTTP `POST`
 
 Description:
 
-Deploy a proxy container on given salt minion. It expects that the images are installed as RPMs.
+Deploy a proxy container on given salt minion. It expects that the images are installed as RPMs. 
+ 
 
 
 
@@ -125,14 +129,15 @@ Returns:
 
 
 
-[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryBaseURL-registryBaseTag]
+[#apidoc-proxy-bootstrapProxy--274578118]
 == Method: bootstrapProxy
 
 HTTP `POST`
 
 Description:
 
-Deploy a proxy container on given salt minion. Use the given registry for the images.
+Deploy a proxy container on given salt minion. Use the given registry for the images. 
+ 
 
 
 
@@ -171,14 +176,15 @@ Returns:
 
 
 
-[#apidoc-proxy-bootstrapProxy-loggedInUser-hostId-parentFqdn-proxyPort-maxCache-email-rootCA-intermediateCAs-proxyCert-proxyKey-registryHttpdURL-registryHttpdTag-registrySaltbrokerURL-registrySaltbrokerTag-registrySquidURL-registrySquidTag-registrySshURL-registrySshTag-registryTftpdURL-registryTftpdTag]
+[#apidoc-proxy-bootstrapProxy--1794657750]
 == Method: bootstrapProxy
 
 HTTP `POST`
 
 Description:
 
-Deploy a proxy container on given salt minion. Allows individual registry for each image.
+Deploy a proxy container on given salt minion. Allows individual registry for each image. 
+ 
 
 
 
@@ -233,14 +239,15 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-rootCA-intermediateCAs-proxyCrt-proxyKey]
+[#apidoc-proxy-containerConfig--1550236212]
 == Method: containerConfig
 
 HTTP `POST`
 
 Description:
 
-Compute and download the configuration for proxy containers
+Compute and download the configuration for proxy containers 
+ 
 
 
 
@@ -275,7 +282,7 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email]
+[#apidoc-proxy-containerConfig-627479818]
 == Method: containerConfig
 
 HTTP `POST`
@@ -283,7 +290,8 @@ HTTP `POST`
 Description:
 
 Compute and download the configuration for proxy containers without adding the TLS certificate
-   for Apache. In such a case, the certificate files need to be deployed to the proxy in a different way.
+   for Apache. In such a case, the certificate files need to be deployed to the proxy in a different way. 
+ 
 
 
 
@@ -310,14 +318,15 @@ Returns:
 
 
 
-[#apidoc-proxy-containerConfig-loggedInUser-proxyName-proxyPort-server-maxCache-email-caCrt-caKey-caPassword-cnames-country-state-city-org-orgUnit-sslEmail]
+[#apidoc-proxy-containerConfig--208582172]
 == Method: containerConfig
 
 HTTP `POST`
 
 Description:
 
-Compute and download the configuration for proxy containers
+Compute and download the configuration for proxy containers 
+ 
 
 
 
@@ -364,14 +373,15 @@ Returns:
 
 
 
-[#apidoc-proxy-createMonitoringScout-clientcert]
+[#apidoc-proxy-createMonitoringScout-1102880879]
 == Method: createMonitoringScout
 
 HTTP `POST`
 
 Description:
 
-Create Monitoring Scout for proxy.
+Create Monitoring Scout for proxy. 
+ 
 
 
 
@@ -389,7 +399,7 @@ Returns:
 Available since API version: 10.7
 
 
-[#apidoc-proxy-deactivateProxy-clientcert]
+[#apidoc-proxy-deactivateProxy-1102880879]
 == Method: deactivateProxy
 
 HTTP `POST`
@@ -397,7 +407,8 @@ HTTP `POST`
 Description:
 
 Deactivates the proxy identified by the given client
- certificate i.e. systemid file.
+ certificate i.e. systemid file. 
+ 
 
 
 
@@ -414,7 +425,7 @@ Returns:
 
 
 
-[#apidoc-proxy-isProxy-clientcert]
+[#apidoc-proxy-isProxy-1102880879]
 == Method: isProxy
 
 HTTP `GET`
@@ -422,7 +433,8 @@ HTTP `GET`
 Description:
 
 Test, if the system identified by the given client
- certificate i.e. systemid file, is proxy.
+ certificate i.e. systemid file, is proxy. 
+ 
 
 
 
@@ -439,7 +451,7 @@ Returns:
 
 
 
-[#apidoc-proxy-listAvailableProxyChannels-clientcert]
+[#apidoc-proxy-listAvailableProxyChannels-1102880879]
 == Method: listAvailableProxyChannels
 
 HTTP `GET`
@@ -447,7 +459,8 @@ HTTP `GET`
 Description:
 
 List available version of proxy channel for system
- identified by the given client certificate i.e. systemid file.
+ identified by the given client certificate i.e. systemid file. 
+ 
 
 
 
@@ -465,14 +478,15 @@ Returns:
 Available since API version: 10.5
 
 
-[#apidoc-proxy-listProxies-loggedInUser]
+[#apidoc-proxy-listProxies--406943054]
 == Method: listProxies
 
 HTTP `GET`
 
 Description:
 
-List the proxies within the user's organization.
+List the proxies within the user's organization. 
+ 
 
 
 
@@ -497,14 +511,15 @@ Returns:
 
 
 
-[#apidoc-proxy-listProxyClients-loggedInUser-proxyId]
+[#apidoc-proxy-listProxyClients-1968540686]
 == Method: listProxyClients
 
 HTTP `GET`
 
 Description:
 
-List the clients directly connected to a given Proxy.
+List the clients directly connected to a given Proxy. 
+ 
 
 
 

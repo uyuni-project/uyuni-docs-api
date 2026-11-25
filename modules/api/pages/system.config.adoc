@@ -4,30 +4,32 @@
 
 == Available methods
 
-* <<apidoc-system_config-addChannels-loggedInUser-sids-configChannelLabels-addToTop,addChannels>>
-* <<apidoc-system_config-createOrUpdatePath-loggedInUser-sid-path-isDir-data-commitToLocal,createOrUpdatePath>>
-* <<apidoc-system_config-createOrUpdateSymlink-loggedInUser-sid-path-data-commitToLocal,createOrUpdateSymlink>>
-* <<apidoc-system_config-deleteFiles-loggedInUser-sid-paths-deleteFromLocal,deleteFiles>>
-* <<apidoc-system_config-deployAll-loggedInUser-sids-date,deployAll>>
-* <<apidoc-system_config-listChannels-loggedInUser-sid,listChannels>>
-* <<apidoc-system_config-listFiles-loggedInUser-sid-listLocal,listFiles>>
-* <<apidoc-system_config-lookupFileInfo-loggedInUser-sid-paths-searchLocal,lookupFileInfo>>
-* <<apidoc-system_config-removeChannels-loggedInUser-sids-configChannelLabels,removeChannels>>
-* <<apidoc-system_config-scheduleApplyConfigChannel-user-sids-earliest-test,scheduleApplyConfigChannel>>
-* <<apidoc-system_config-setChannels-loggedInUser-sids-configChannelLabels,setChannels>>
+* <<apidoc-system_config-addChannels-786992179,addChannels>>
+* <<apidoc-system_config-createOrUpdatePath--1273283026,createOrUpdatePath>>
+* <<apidoc-system_config-createOrUpdateSymlink-1034167716,createOrUpdateSymlink>>
+* <<apidoc-system_config-deleteFiles-1058572925,deleteFiles>>
+* <<apidoc-system_config-deployAll-964035003,deployAll>>
+* <<apidoc-system_config-listChannels-2068583219,listChannels>>
+* <<apidoc-system_config-listFiles-369410899,listFiles>>
+* <<apidoc-system_config-lookupFileInfo--2044486614,lookupFileInfo>>
+* <<apidoc-system_config-removeChannels-1721185555,removeChannels>>
+* <<apidoc-system_config-scheduleApplyConfigChannel--425472090,scheduleApplyConfigChannel>>
+* <<apidoc-system_config-scheduleApplyConfigChannel-805044607,scheduleApplyConfigChannel>>
+* <<apidoc-system_config-setChannels-1721185555,setChannels>>
 
 == Description
 
 Provides methods to access and modify many aspects of
  configuration channels and server association.
- basically system.config name space
+ basically system.config name space 
+ 
 
 *Namespace*:
 
 system.config
 
 
-[#apidoc-system_config-addChannels-loggedInUser-sids-configChannelLabels-addToTop]
+[#apidoc-system_config-addChannels-786992179]
 == Method: addChannels
 
 HTTP `POST`
@@ -41,7 +43,8 @@ Given a list of servers and configuration channels,
  provided in the add list is maintained while adding.
  If one of the configuration channels in the 'add' list
  has been previously subscribed by a server, the
- subscribed channel will be re-ranked to the appropriate place.
+ subscribed channel will be re-ranked to the appropriate place. 
+ 
 
 
 
@@ -68,7 +71,7 @@ Returns:
 
 
 
-[#apidoc-system_config-createOrUpdatePath-loggedInUser-sid-path-isDir-data-commitToLocal]
+[#apidoc-system_config-createOrUpdatePath--1273283026]
 == Method: createOrUpdatePath
 
 HTTP `POST`
@@ -76,7 +79,8 @@ HTTP `POST`
 Description:
 
 Create a new file (text or binary) or directory with the given path, or
- update an existing path on a server.
+ update an existing path on a server. 
+ 
 
 
 
@@ -151,7 +155,7 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-system_config-createOrUpdateSymlink-loggedInUser-sid-path-data-commitToLocal]
+[#apidoc-system_config-createOrUpdateSymlink-1034167716]
 == Method: createOrUpdateSymlink
 
 HTTP `POST`
@@ -159,7 +163,8 @@ HTTP `POST`
 Description:
 
 Create a new symbolic link with the given path, or
- update an existing path.
+ update an existing path. 
+ 
 
 
 
@@ -218,14 +223,15 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-system_config-deleteFiles-loggedInUser-sid-paths-deleteFromLocal]
+[#apidoc-system_config-deleteFiles-1058572925]
 == Method: deleteFiles
 
 HTTP `POST`
 
 Description:
 
-Removes file paths from a local or sandbox channel of a server.
+Removes file paths from a local or sandbox channel of a server. 
+ 
 
 
 
@@ -252,7 +258,7 @@ Returns:
 
 
 
-[#apidoc-system_config-deployAll-loggedInUser-sids-date]
+[#apidoc-system_config-deployAll-964035003]
 == Method: deployAll
 
 HTTP `POST`
@@ -260,7 +266,8 @@ HTTP `POST`
 Description:
 
 Schedules a deploy action for all the configuration files
- on the given list of systems.
+ on the given list of systems. 
+ 
 
 
 
@@ -281,7 +288,7 @@ Returns:
 
 
 
-[#apidoc-system_config-listChannels-loggedInUser-sid]
+[#apidoc-system_config-listChannels-2068583219]
 == Method: listChannels
 
 HTTP `GET`
@@ -289,7 +296,8 @@ HTTP `GET`
 Description:
 
 List all global('Normal', 'State') configuration channels associated to a
-              system in the order of their ranking.
+              system in the order of their ranking. 
+ 
 
 
 
@@ -322,14 +330,15 @@ Returns:
 
 
 
-[#apidoc-system_config-listFiles-loggedInUser-sid-listLocal]
+[#apidoc-system_config-listFiles-369410899]
 == Method: listFiles
 
 HTTP `GET`
 
 Description:
 
-Return the list of files in a given channel.
+Return the list of files in a given channel. 
+ 
 
 
 
@@ -372,7 +381,7 @@ Returns:
 
 
 
-[#apidoc-system_config-lookupFileInfo-loggedInUser-sid-paths-searchLocal]
+[#apidoc-system_config-lookupFileInfo--2044486614]
 == Method: lookupFileInfo
 
 HTTP `GET`
@@ -380,7 +389,8 @@ HTTP `GET`
 Description:
 
 Given a list of paths and a server, returns details about
- the latest revisions of the paths.
+ the latest revisions of the paths. 
+ 
 
 
 
@@ -436,14 +446,15 @@ Returns:
 Available since API version: 10.2
 
 
-[#apidoc-system_config-removeChannels-loggedInUser-sids-configChannelLabels]
+[#apidoc-system_config-removeChannels-1721185555]
 == Method: removeChannels
 
 HTTP `POST`
 
 Description:
 
-Remove config channels from the given servers.
+Remove config channels from the given servers. 
+ 
 
 
 
@@ -465,14 +476,15 @@ Returns:
 
 
 
-[#apidoc-system_config-scheduleApplyConfigChannel-user-sids-earliest-test]
+[#apidoc-system_config-scheduleApplyConfigChannel--425472090]
 == Method: scheduleApplyConfigChannel
 
 HTTP `POST`
 
 Description:
 
-Schedule highstate application for a given system.
+Schedule highstate application for a given system. 
+ 
 
 
 
@@ -495,7 +507,40 @@ Returns:
 
 
 
-[#apidoc-system_config-setChannels-loggedInUser-sids-configChannelLabels]
+[#apidoc-system_config-scheduleApplyConfigChannel-805044607]
+== Method: scheduleApplyConfigChannel
+
+HTTP `POST`
+
+Description:
+
+Schedule highstate application for a given system with an action description. 
+ 
+
+
+
+
+Parameters:
+
+* [.string]#string#  sessionKey
+ 
+* [.array]#int array#  sids
+ 
+* [.dateTime.iso8601]#dateTime.iso8601#  earliestOccurrence
+ 
+* [.boolean]#boolean#  test - Run states in test-only mode
+ 
+* [.string]#string#  actionDescription - Comment / action description
+ 
+
+Returns:
+
+* [.int]#int#  actionId
+ 
+
+
+
+[#apidoc-system_config-setChannels-1721185555]
 == Method: setChannels
 
 HTTP `POST`
@@ -504,7 +549,8 @@ Description:
 
 Replace the existing set of config channels on the given servers.
  Channels are ranked according to their order in the configChannelLabels
- array.
+ array. 
+ 
 
 
 

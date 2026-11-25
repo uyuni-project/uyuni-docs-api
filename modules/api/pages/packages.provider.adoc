@@ -4,21 +4,22 @@
 
 == Available methods
 
-* <<apidoc-packages_provider-associateKey-loggedInUser-providerName-key-type,associateKey>>
-* <<apidoc-packages_provider-list-loggedInUser,list>>
-* <<apidoc-packages_provider-listKeys-loggedInUser-providerName,listKeys>>
+* <<apidoc-packages_provider-associateKey--1851036770,associateKey>>
+* <<apidoc-packages_provider-list--406943054,list>>
+* <<apidoc-packages_provider-listKeys--1947033769,listKeys>>
 
 == Description
 
 Methods to retrieve information about Package Providers associated with
-      packages.
+      packages. 
+ 
 
 *Namespace*:
 
 packages.provider
 
 
-[#apidoc-packages_provider-associateKey-loggedInUser-providerName-key-type]
+[#apidoc-packages_provider-associateKey--1851036770]
 == Method: associateKey
 
 HTTP `POST`
@@ -27,7 +28,8 @@ Description:
 
 Associate a package security key and with the package provider.
       If the provider or key doesn't exist, it is created. User executing the
-      request must be a #product() administrator.
+      request must be a Uyuni administrator. 
+ 
 
 
 
@@ -51,7 +53,7 @@ Returns:
 
 
 
-[#apidoc-packages_provider-list-loggedInUser]
+[#apidoc-packages_provider-list--406943054]
 == Method: list
 
 HTTP `POST`
@@ -59,7 +61,8 @@ HTTP `POST`
 Description:
 
 List all Package Providers.
- User executing the request must be a #product() administrator.
+ User executing the request must be a Uyuni administrator. 
+ 
 
 
 
@@ -84,7 +87,7 @@ Returns:
 
 
 
-[#apidoc-packages_provider-listKeys-loggedInUser-providerName]
+[#apidoc-packages_provider-listKeys--1947033769]
 == Method: listKeys
 
 HTTP `GET`
@@ -92,7 +95,8 @@ HTTP `GET`
 Description:
 
 List all security keys associated with a package provider.
- User executing the request must be a #product() administrator.
+ User executing the request must be a Uyuni administrator. 
+ 
 
 
 

@@ -4,30 +4,31 @@
 
 == Available methods
 
-* <<apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel,findByNvrea>>
-* <<apidoc-packages-getDetails-loggedInUser-pid,getDetails>>
-* <<apidoc-packages-getPackage-loggedInUser-pid,getPackage>>
-* <<apidoc-packages-getPackageUrl-loggedInUser-pid,getPackageUrl>>
-* <<apidoc-packages-listChangelog-loggedInUser-pid,listChangelog>>
-* <<apidoc-packages-listDependencies-loggedInUser-pid,listDependencies>>
-* <<apidoc-packages-listFiles-loggedInUser-pid,listFiles>>
-* <<apidoc-packages-listProvidingChannels-loggedInUser-pid,listProvidingChannels>>
-* <<apidoc-packages-listProvidingErrata-loggedInUser-pid,listProvidingErrata>>
-* <<apidoc-packages-listSourcePackages-loggedInUser,listSourcePackages>>
-* <<apidoc-packages-removePackage-loggedInUser-pid,removePackage>>
-* <<apidoc-packages-removeSourcePackage-loggedInUser-psid,removeSourcePackage>>
+* <<apidoc-packages-findByNvrea-36432696,findByNvrea>>
+* <<apidoc-packages-getDetails-2068580336,getDetails>>
+* <<apidoc-packages-getPackage-2068580336,getPackage>>
+* <<apidoc-packages-getPackageUrl-2068580336,getPackageUrl>>
+* <<apidoc-packages-listChangelog-2068580336,listChangelog>>
+* <<apidoc-packages-listDependencies-2068580336,listDependencies>>
+* <<apidoc-packages-listFiles-2068580336,listFiles>>
+* <<apidoc-packages-listProvidingChannels-2068580336,listProvidingChannels>>
+* <<apidoc-packages-listProvidingErrata-2068580336,listProvidingErrata>>
+* <<apidoc-packages-listSourcePackages--406943054,listSourcePackages>>
+* <<apidoc-packages-removePackage-2068580336,removePackage>>
+* <<apidoc-packages-removeSourcePackage--298509159,removeSourcePackage>>
 
 == Description
 
 Methods to retrieve information about the Packages contained
- within this server.
+ within this server. 
+ 
 
 *Namespace*:
 
 packages
 
 
-[#apidoc-packages-findByNvrea-loggedInUser-name-version-release-epoch-archLabel]
+[#apidoc-packages-findByNvrea-36432696]
 == Method: findByNvrea
 
 HTTP `GET`
@@ -35,7 +36,8 @@ HTTP `GET`
 Description:
 
 Lookup the details for packages with the given name, version,
-          release, architecture label, and (optionally) epoch.
+          release, architecture label, and (optionally) epoch. 
+ 
 
 
 
@@ -79,14 +81,15 @@ Returns:
 
 
 
-[#apidoc-packages-getDetails-loggedInUser-pid]
+[#apidoc-packages-getDetails-2068580336]
 == Method: getDetails
 
 HTTP `GET`
 
 Description:
 
-Retrieve details for the package with the ID.
+Retrieve details for the package with the ID. 
+ 
 
 
 
@@ -127,7 +130,7 @@ Returns:
 
 
 
-[#apidoc-packages-getPackage-loggedInUser-pid]
+[#apidoc-packages-getPackage-2068580336]
 == Method: getPackage
 
 HTTP `GET`
@@ -136,7 +139,8 @@ Description:
 
 Retrieve the package file associated with a package.
  (Consider using #getPackageUrlpackages.getPackageUrl
- for larger files.)
+ for larger files.) 
+ 
 
 
 
@@ -155,7 +159,7 @@ Returns:
 
 
 
-[#apidoc-packages-getPackageUrl-loggedInUser-pid]
+[#apidoc-packages-getPackageUrl-2068580336]
 == Method: getPackageUrl
 
 HTTP `GET`
@@ -163,7 +167,8 @@ HTTP `GET`
 Description:
 
 Retrieve the url that can be used to download a package.
-      This will expire after a certain time period.
+      This will expire after a certain time period. 
+ 
 
 
 
@@ -182,14 +187,15 @@ Returns:
 
 
 
-[#apidoc-packages-listChangelog-loggedInUser-pid]
+[#apidoc-packages-listChangelog-2068580336]
 == Method: listChangelog
 
 HTTP `GET`
 
 Description:
 
-List the change log for a package.
+List the change log for a package. 
+ 
 
 
 
@@ -208,14 +214,15 @@ Returns:
 
 
 
-[#apidoc-packages-listDependencies-loggedInUser-pid]
+[#apidoc-packages-listDependencies-2068580336]
 == Method: listDependencies
 
 HTTP `GET`
 
 Description:
 
-List the dependencies for a package.
+List the dependencies for a package. 
+ 
 
 
 
@@ -248,14 +255,15 @@ Returns:
 
 
 
-[#apidoc-packages-listFiles-loggedInUser-pid]
+[#apidoc-packages-listFiles-2068580336]
 == Method: listFiles
 
 HTTP `GET`
 
 Description:
 
-List the files associated with a package.
+List the files associated with a package. 
+ 
 
 
 
@@ -282,14 +290,15 @@ Returns:
 
 
 
-[#apidoc-packages-listProvidingChannels-loggedInUser-pid]
+[#apidoc-packages-listProvidingChannels-2068580336]
 == Method: listProvidingChannels
 
 HTTP `GET`
 
 Description:
 
-List the channels that provide the a package.
+List the channels that provide the a package. 
+ 
 
 
 
@@ -312,14 +321,15 @@ Returns:
 
 
 
-[#apidoc-packages-listProvidingErrata-loggedInUser-pid]
+[#apidoc-packages-listProvidingErrata-2068580336]
 == Method: listProvidingErrata
 
 HTTP `GET`
 
 Description:
 
-List the errata providing the a package.
+List the errata providing the a package. 
+ 
 
 
 
@@ -345,14 +355,15 @@ Returns:
 
 
 
-[#apidoc-packages-listSourcePackages-loggedInUser]
+[#apidoc-packages-listSourcePackages--406943054]
 == Method: listSourcePackages
 
 HTTP `GET`
 
 Description:
 
-List all source packages in user's organization.
+List all source packages in user's organization. 
+ 
 
 
 
@@ -372,14 +383,15 @@ Returns:
 
 
 
-[#apidoc-packages-removePackage-loggedInUser-pid]
+[#apidoc-packages-removePackage-2068580336]
 == Method: removePackage
 
 HTTP `POST`
 
 Description:
 
-Remove a package from #product().
+Remove a package from Uyuni. 
+ 
 
 
 
@@ -398,14 +410,15 @@ Returns:
 
 
 
-[#apidoc-packages-removeSourcePackage-loggedInUser-psid]
+[#apidoc-packages-removeSourcePackage--298509159]
 == Method: removeSourcePackage
 
 HTTP `POST`
 
 Description:
 
-Remove a source package.
+Remove a source package. 
+ 
 
 
 

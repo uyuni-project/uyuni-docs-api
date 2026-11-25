@@ -4,37 +4,38 @@
 
 == Available methods
 
-* <<apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles,createExternalGroupToRoleMap>>
-* <<apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames,createExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name,deleteExternalGroupToRoleMap>>
-* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name,deleteExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getDefaultOrg-loggedInUser,getDefaultOrg>>
-* <<apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name,getExternalGroupToRoleMap>>
-* <<apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name,getExternalGroupToSystemGroupMap>>
-* <<apidoc-user_external-getKeepTemporaryRoles-loggedInUser,getKeepTemporaryRoles>>
-* <<apidoc-user_external-getUseOrgUnit-loggedInUser,getUseOrgUnit>>
-* <<apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser,listExternalGroupToRoleMaps>>
-* <<apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser,listExternalGroupToSystemGroupMaps>>
-* <<apidoc-user_external-setDefaultOrg-loggedInUser-orgId,setDefaultOrg>>
-* <<apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles,setExternalGroupRoles>>
-* <<apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames,setExternalGroupSystemGroups>>
-* <<apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles,setKeepTemporaryRoles>>
-* <<apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit,setUseOrgUnit>>
+* <<apidoc-user_external-createExternalGroupToRoleMap-1356228342,createExternalGroupToRoleMap>>
+* <<apidoc-user_external-createExternalGroupToSystemGroupMap-973638512,createExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-deleteExternalGroupToRoleMap--298585914,deleteExternalGroupToRoleMap>>
+* <<apidoc-user_external-deleteExternalGroupToSystemGroupMap--298585914,deleteExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getDefaultOrg--406943054,getDefaultOrg>>
+* <<apidoc-user_external-getExternalGroupToRoleMap--298585914,getExternalGroupToRoleMap>>
+* <<apidoc-user_external-getExternalGroupToSystemGroupMap--298585914,getExternalGroupToSystemGroupMap>>
+* <<apidoc-user_external-getKeepTemporaryRoles--406943054,getKeepTemporaryRoles>>
+* <<apidoc-user_external-getUseOrgUnit--406943054,getUseOrgUnit>>
+* <<apidoc-user_external-listExternalGroupToRoleMaps--406943054,listExternalGroupToRoleMaps>>
+* <<apidoc-user_external-listExternalGroupToSystemGroupMaps--406943054,listExternalGroupToSystemGroupMaps>>
+* <<apidoc-user_external-setDefaultOrg--664805308,setDefaultOrg>>
+* <<apidoc-user_external-setExternalGroupRoles-1356228342,setExternalGroupRoles>>
+* <<apidoc-user_external-setExternalGroupSystemGroups-973638512,setExternalGroupSystemGroups>>
+* <<apidoc-user_external-setKeepTemporaryRoles-698619101,setKeepTemporaryRoles>>
+* <<apidoc-user_external-setUseOrgUnit-367879420,setUseOrgUnit>>
 
 == Description
 
 If you are using IPA integration to allow authentication of users from
- an external IPA server (rare) the users will still need to be created in the #product()
+ an external IPA server (rare) the users will still need to be created in the Uyuni
  database. Methods in this namespace allow you to configure some specifics of how this
  happens, like what organization they are created in or what roles they will have.
- These options can also be set in the web admin interface.
+ These options can also be set in the web admin interface. 
+ 
 
 *Namespace*:
 
 user.external
 
 
-[#apidoc-user_external-createExternalGroupToRoleMap-loggedInUser-name-roles]
+[#apidoc-user_external-createExternalGroupToRoleMap-1356228342]
 == Method: createExternalGroupToRoleMap
 
 HTTP `POST`
@@ -43,7 +44,8 @@ Description:
 
 Externally authenticated users may be members of external groups. You
  can use these groups to assign additional roles to the users when they log in.
- Can only be called by a #product() Administrator.
+ Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -71,7 +73,7 @@ Returns:
 
 
 
-[#apidoc-user_external-createExternalGroupToSystemGroupMap-loggedInUser-name-groupNames]
+[#apidoc-user_external-createExternalGroupToSystemGroupMap-973638512]
 == Method: createExternalGroupToSystemGroupMap
 
 HTTP `POST`
@@ -80,7 +82,8 @@ Description:
 
 Externally authenticated users may be members of external groups. You
  can use these groups to give access to server groups to the users when they log in.
- Can only be called by an org_admin.
+ Can only be called by an org_admin. 
+ 
 
 
 
@@ -106,7 +109,7 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToRoleMap-loggedInUser-name]
+[#apidoc-user_external-deleteExternalGroupToRoleMap--298585914]
 == Method: deleteExternalGroupToRoleMap
 
 HTTP `POST`
@@ -114,7 +117,8 @@ HTTP `POST`
 Description:
 
 Delete the role map for an external group. Can only be called
- by a #product() Administrator.
+ by a Uyuni Administrator. 
+ 
 
 
 
@@ -133,7 +137,7 @@ Returns:
 
 
 
-[#apidoc-user_external-deleteExternalGroupToSystemGroupMap-loggedInUser-name]
+[#apidoc-user_external-deleteExternalGroupToSystemGroupMap--298585914]
 == Method: deleteExternalGroupToSystemGroupMap
 
 HTTP `POST`
@@ -141,7 +145,8 @@ HTTP `POST`
 Description:
 
 Delete the server group map for an external group. Can only be called
- by an org_admin.
+ by an org_admin. 
+ 
 
 
 
@@ -160,7 +165,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getDefaultOrg-loggedInUser]
+[#apidoc-user_external-getDefaultOrg--406943054]
 == Method: getDefaultOrg
 
 HTTP `GET`
@@ -168,7 +173,8 @@ HTTP `GET`
 Description:
 
 Get the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -185,7 +191,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToRoleMap-loggedInUser-name]
+[#apidoc-user_external-getExternalGroupToRoleMap--298585914]
 == Method: getExternalGroupToRoleMap
 
 HTTP `GET`
@@ -193,7 +199,8 @@ HTTP `GET`
 Description:
 
 Get a representation of the role mapping for an external group.
- Can only be called by a #product() Administrator.
+ Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -215,7 +222,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getExternalGroupToSystemGroupMap-loggedInUser-name]
+[#apidoc-user_external-getExternalGroupToSystemGroupMap--298585914]
 == Method: getExternalGroupToSystemGroupMap
 
 HTTP `GET`
@@ -223,7 +230,8 @@ HTTP `GET`
 Description:
 
 Get a representation of the server group mapping for an external
- group. Can only be called by an org_admin.
+ group. Can only be called by an org_admin. 
+ 
 
 
 
@@ -245,7 +253,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getKeepTemporaryRoles-loggedInUser]
+[#apidoc-user_external-getKeepTemporaryRoles--406943054]
 == Method: getKeepTemporaryRoles
 
 HTTP `GET`
@@ -254,7 +262,8 @@ Description:
 
 Get whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a Uyuni Administrator. 
+ 
 
 
 
@@ -272,7 +281,7 @@ Returns:
 
 
 
-[#apidoc-user_external-getUseOrgUnit-loggedInUser]
+[#apidoc-user_external-getUseOrgUnit--406943054]
 == Method: getUseOrgUnit
 
 HTTP `GET`
@@ -281,7 +290,8 @@ Description:
 
 Get whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+Uyuni organization name. Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -299,7 +309,7 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToRoleMaps-loggedInUser]
+[#apidoc-user_external-listExternalGroupToRoleMaps--406943054]
 == Method: listExternalGroupToRoleMaps
 
 HTTP `GET`
@@ -307,7 +317,8 @@ HTTP `GET`
 Description:
 
 List role mappings for all known external groups. Can only be called
- by a #product() Administrator.
+ by a Uyuni Administrator. 
+ 
 
 
 
@@ -328,7 +339,7 @@ Returns:
 
 
 
-[#apidoc-user_external-listExternalGroupToSystemGroupMaps-loggedInUser]
+[#apidoc-user_external-listExternalGroupToSystemGroupMaps--406943054]
 == Method: listExternalGroupToSystemGroupMaps
 
 HTTP `GET`
@@ -336,7 +347,8 @@ HTTP `GET`
 Description:
 
 List server group mappings for all known external groups. Can only be
- called by an org_admin.
+ called by an org_admin. 
+ 
 
 
 
@@ -357,7 +369,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setDefaultOrg-loggedInUser-orgId]
+[#apidoc-user_external-setDefaultOrg--664805308]
 == Method: setDefaultOrg
 
 HTTP `POST`
@@ -365,7 +377,8 @@ HTTP `POST`
 Description:
 
 Set the default org that users should be added in if orgunit from
- IPA server isn't found or is disabled. Can only be called by a #product() Administrator.
+ IPA server isn't found or is disabled. Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -385,7 +398,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupRoles-loggedInUser-name-roles]
+[#apidoc-user_external-setExternalGroupRoles-1356228342]
 == Method: setExternalGroupRoles
 
 HTTP `POST`
@@ -393,7 +406,8 @@ HTTP `POST`
 Description:
 
 Update the roles for an external group. Replace previously set roles
- with the ones passed in here. Can only be called by a #product() Administrator.
+ with the ones passed in here. Can only be called by a Uyuni Administrator. 
+ 
 
 
 
@@ -417,7 +431,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setExternalGroupSystemGroups-loggedInUser-name-groupNames]
+[#apidoc-user_external-setExternalGroupSystemGroups-973638512]
 == Method: setExternalGroupSystemGroups
 
 HTTP `POST`
@@ -425,7 +439,8 @@ HTTP `POST`
 Description:
 
 Update the server groups for an external group. Replace previously set
- server groups with the ones passed in here. Can only be called by an org_admin.
+ server groups with the ones passed in here. Can only be called by an org_admin. 
+ 
 
 
 
@@ -447,7 +462,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setKeepTemporaryRoles-loggedInUser-keepRoles]
+[#apidoc-user_external-setKeepTemporaryRoles-698619101]
 == Method: setKeepTemporaryRoles
 
 HTTP `POST`
@@ -456,7 +471,8 @@ Description:
 
 Set whether we should keeps roles assigned to users because of
  their IPA groups even after they log in through a non-IPA method. Can only be
- called by a #product() Administrator.
+ called by a Uyuni Administrator. 
+ 
 
 
 
@@ -476,7 +492,7 @@ Returns:
 
 
 
-[#apidoc-user_external-setUseOrgUnit-loggedInUser-useOrgUnit]
+[#apidoc-user_external-setUseOrgUnit-367879420]
 == Method: setUseOrgUnit
 
 HTTP `POST`
@@ -485,7 +501,8 @@ Description:
 
 Set whether we place users into the organization that corresponds
  to the "orgunit" set on the IPA server. The orgunit name must match exactly the
- #product() organization name. Can only be called by a #product() Administrator.
+Uyuni organization name. Can only be called by a Uyuni Administrator. 
+ 
 
 
 
